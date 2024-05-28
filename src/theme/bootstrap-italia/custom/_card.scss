@@ -1,0 +1,51 @@
+.card {
+  &.rounded {
+    overflow: hidden;
+  }
+
+  .card-title {
+    font-size: 1.551rem;
+    line-height: 1.2;
+    font-weight: $font-weight-semibold;
+  }
+  .card-body {
+    .card-text {
+      font-family: $font-family-sans-serif;
+    }
+  }
+  .event-date {
+    font-size: 1.33rem;
+    font-weight: $font-weight-semibold;
+  }
+
+  //category bottom
+  .category-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+
+    .category {
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: $card-link-color;
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    .data {
+      font-size: $card-category-size;
+      text-transform: uppercase;
+      color: $text-muted; //$card-p-color;
+      font-family: $font-family-monospace;
+    }
+  }
+}
