@@ -3,5 +3,22 @@
 .card.card-ghost {
   .card-title {
     font-weight: $font-weight-bold;
+    &.card-title-icon {
+      display: flex;
+      justify-content: space-between;
+
+      .icon {
+        flex: 0 0 auto;
+        color: $accent;
+        fill: $accent;
+        margin-left: 1rem;
+      }
+    }
+  }
+  &.border-bottom-card {
+    &:before {
+      height: 1px;
+      background-color: $gray-border;
+    }
   }
 }

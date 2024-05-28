@@ -19,17 +19,16 @@ import './cardGhost.scss';
 
 export const CardGhost = ({ item, isEditMode, rrule = {} }) => {
   return (
-    <Card className="no-after card-ghost">
+    <Card className="no-after card-ghost border-bottom-card">
       <CardBody className="p-4">
         <UniversalLink
           item={!isEditMode ? item : null}
           href={isEditMode ? '#' : ''}
         >
           <CardTitle tag="h3" className="card-title-icon">
-            <span>{item.title}</span>
-            <div className="icon-wrapper">
-              <Icon icon="it-chevron-right" />
-            </div>
+            {item.title}
+
+            <Icon icon="it-chevron-right" />
           </CardTitle>
         </UniversalLink>
 
