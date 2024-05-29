@@ -3203,6 +3203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"big.js@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "big.js@npm:5.2.2"
+  checksum: b89b6e8419b097a8fb4ed2399a1931a68c612bce3cfd5ca8c214b2d017531191070f990598de2fc6f3f993d91c0f08aa82697717f6b3b8732c9731866d233c9e
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -4129,6 +4136,13 @@ __metadata:
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
   checksum: 8487182da74aabd810ac6d6f1994111dfc0e331b01271ae01ec1eb0ad7b5ecc2bbbbd2f053c05cb55a1ac30449527d819bbfbf0e3de1023db308cbcb47f86601
+  languageName: node
+  linkType: hard
+
+"emojis-list@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "emojis-list@npm:3.0.0"
+  checksum: ddaaa02542e1e9436c03970eeed445f4ed29a5337dfba0fe0c38dfdd2af5da2429c2a0821304e8a8d1cadf27fdd5b22ff793571fa803ae16852a6975c65e8e70
   languageName: node
   linkType: hard
 
@@ -5833,9 +5847,14 @@ __metadata:
     stylelint-config-idiomatic-order: 9.0.0
     stylelint-config-sass-guidelines: 10.0.0
     stylelint-prettier: 4.0.2
+    svg-inline-loader: 0.8.2
+    svg-inline-react: 3.2.1
     typeface-lora: 1.1.13
     typeface-roboto-mono: 1.1.13
     typeface-titillium-web: 1.1.13
+    volto-slimheader: 0.1.1
+    volto-social-settings: 3.0.0
+    volto-subsites: 4.0.0
   peerDependencies:
     "@plone/volto": ^18.0.0
   languageName: unknown
@@ -6438,7 +6457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^1.0.2":
+"json5@npm:^1.0.1, json5@npm:^1.0.2":
   version: 1.0.2
   resolution: "json5@npm:1.0.2"
   dependencies:
@@ -6571,6 +6590,17 @@ __metadata:
   version: 1.2.4
   resolution: "lines-and-columns@npm:1.2.4"
   checksum: 0c37f9f7fa212b38912b7145e1cd16a5f3cd34d782441c3e6ca653485d326f58b3caccda66efce1c5812bde4961bbde3374fae4b0d11bf1226152337f3894aa5
+  languageName: node
+  linkType: hard
+
+"loader-utils@npm:^1.1.0":
+  version: 1.4.2
+  resolution: "loader-utils@npm:1.4.2"
+  dependencies:
+    big.js: ^5.2.2
+    emojis-list: ^3.0.0
+    json5: ^1.0.1
+  checksum: eb6fb622efc0ffd1abdf68a2022f9eac62bef8ec599cf8adb75e94d1d338381780be6278534170e99edc03380a6d29bc7eb1563c89ce17c5fed3a0b17f1ad804
   languageName: node
   linkType: hard
 
@@ -7271,7 +7301,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.1.1":
+"object-assign@npm:^4.0.1, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -7865,7 +7895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.8, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.0, prop-types@npm:^15.5.8, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -8685,6 +8715,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"simple-html-tokenizer@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "simple-html-tokenizer@npm:0.1.1"
+  checksum: 20978069be4830d3d986227c48243c14495359ec65f6ddc97affdf462d249d43522163d2747728f8d15534464aa0dc0ed61f322112b5d229b8f1506f9660a951
+  languageName: node
+  linkType: hard
+
 "slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
@@ -9157,6 +9194,28 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"svg-inline-loader@npm:0.8.2":
+  version: 0.8.2
+  resolution: "svg-inline-loader@npm:0.8.2"
+  dependencies:
+    loader-utils: ^1.1.0
+    object-assign: ^4.0.1
+    simple-html-tokenizer: ^0.1.1
+  checksum: 7cf165cd55149ae48197eac543909e72327c26a406e3068657cce796ad70f8f893f9a83e06707bbffd96a9ccd2e36f9a3cca6cc00dd40fdd0cab47b785df413e
+  languageName: node
+  linkType: hard
+
+"svg-inline-react@npm:3.2.1":
+  version: 3.2.1
+  resolution: "svg-inline-react@npm:3.2.1"
+  dependencies:
+    prop-types: ^15.5.0
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17
+  checksum: c0d72dc2800fee9f523be8b3597920ee9027785f3044a057240b879bd255b0d278bdc840791efc21b4abda4d8a4ba54469f4ff2792f3f27c3d93f59814ea02d3
   languageName: node
   linkType: hard
 
@@ -9642,6 +9701,33 @@ __metadata:
   dependencies:
     global: ^4.3.1
   checksum: 2658de26830e412f7539f2674019348374d36f05fcdae548be001d596798f50c0d2e026163afdeff34286919de7aae08cb97af612925164167204b301d246241
+  languageName: node
+  linkType: hard
+
+"volto-slimheader@npm:0.1.1":
+  version: 0.1.1
+  resolution: "volto-slimheader@npm:0.1.1"
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 94bafa197c4ef2c8cbb15333df102fa189220cac5e24a95d330ebf1544a0203d4ec33fdbd7aafcc006d0bdbd529c87aa88f827ea7a8d9ef7ecb361291cab90af
+  languageName: node
+  linkType: hard
+
+"volto-social-settings@npm:3.0.0":
+  version: 3.0.0
+  resolution: "volto-social-settings@npm:3.0.0"
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 60ff28306d9accddad54303d2246f0e041fcb5e67a128feeff34543589b322fbb2c9874a479c71bfb1abfce230eed34eb379351ab6533fa0fac028239e0a0d56
+  languageName: node
+  linkType: hard
+
+"volto-subsites@npm:4.0.0":
+  version: 4.0.0
+  resolution: "volto-subsites@npm:4.0.0"
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 9f943abc00fb1d25d1bf2b487b9f545663ad85b216c751a2fd37739cea7cfd62de958edc8bdfbb51b3e795007199706b272f344e9e08179874a02f903b3e2071
   languageName: node
   linkType: hard
 
