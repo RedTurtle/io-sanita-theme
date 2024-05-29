@@ -40,38 +40,6 @@ const plugins = (defaultPlugins) => {
 };
 
 const modify = (webpackConfig, { target, dev }, webpackObject) => {
-  const fileLoader = webpackConfig.module.rules.find(fileLoaderFinder) || {};
-  fileLoader.exclude = [
-    /bootstrap-italia\/src\/svg\/.*\.svg$/,
-    ...(fileLoader?.exclude || []),
-  ];
-
-  const SVG_LOADER = {
-    test: /bootstrap-italia\/src\/svg\/.*\.svg$/,
-    use: [
-      {
-        loader: 'svg-loader',
-      },
-      {
-        loader: 'svgo-loader',
-        options: {
-          plugins: [
-            { name: 'removeTitle', params: { removeTitle: true } },
-            { name: 'convertPathData', params: { convertPathData: false } },
-            {
-              name: 'removeUselessStrokeAndFill',
-              params: { removeUselessStrokeAndFill: true },
-            },
-            { name: 'removeViewBox', params: { removeViewBox: false } },
-            'removeDimensions',
-          ],
-        },
-      },
-    ],
-  };
-
-  webpackConfig.module.rules.push(SVG_LOADER);
-
   // const urlLoader = webpackConfig.module.rules.find(urlLoaderFinder);
   // urlLoader.exclude = [/\.(png|jpe?g)$/i, ...(urlLoader.exclude || [])];
   // // see: node_modules/razzle/config/createConfig.js

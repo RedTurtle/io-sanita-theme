@@ -48,6 +48,8 @@
   "dependencies": {
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.4",
+    "svg-inline-loader": "^0.8.2",
+    "svg-inline-react": "^3.2.1",
     "typeface-lora": "1.1.13",
     "typeface-roboto-mono": "1.1.13",
     "typeface-titillium-web": "1.1.13"
