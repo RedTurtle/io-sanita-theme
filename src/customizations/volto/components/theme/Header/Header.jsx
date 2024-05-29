@@ -14,11 +14,11 @@ import {
   /* SearchWidget,*/
 } from '@plone/volto/components';
 
-// import {
-//   HeaderSlim,
-//   HeaderCenter,
-//   SubsiteHeader,
-// } from 'io-sanita-theme/components';
+import {
+  HeaderSlim,
+  HeaderCenter,
+  SubsiteHeader,
+} from 'io-sanita-theme/components';
 import { Headers } from 'design-react-kit';
 
 const Header = ({ pathname }) => {
@@ -42,12 +42,12 @@ const Header = ({ pathname }) => {
       /> */}
         {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
         <Headers>
-          {/* <HeaderSlim />
+          <HeaderSlim />
 
           <div className="it-nav-wrapper">
             <HeaderCenter />
             <Navigation pathname={pathname} />
-          </div> */}
+          </div>
         </Headers>
         <SubsiteHeader />
       </div>

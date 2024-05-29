@@ -1,5 +1,10 @@
 export Icon from 'io-sanita-theme/components/Icon/Icon';
 
+//renderer
+export RenderBlocks from 'io-sanita-theme/components/View/commons/RenderBlocks';
+export RichText from 'io-sanita-theme/components/View/commons/RichTextView/RichText';
+export RichTextRender from 'io-sanita-theme/components/View/commons/RichTextView/RichTextRender';
+
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';

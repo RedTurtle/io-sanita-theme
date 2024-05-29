@@ -5,7 +5,7 @@ import { values } from 'lodash';
 import { flattenHTMLToAppURL } from '@plone/volto/helpers';
 import { hasBlocksData } from '@plone/volto/helpers';
 export { richTextHasContent } from 'io-sanita-theme/helpers';
-import { RenderBlocks } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { RenderBlocks } from 'io-sanita-theme/components';
 
 /**
  * RichTextRender view component class.
@@ -46,7 +46,7 @@ const RichTextRender = ({
   ) : null;
 };
 
-export { RichTextRender, richTextHasContent };
+export default RichTextRender;
 
 RichTextRender.propTypes = {
   data: PropTypes.object,

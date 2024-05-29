@@ -1,6 +1,6 @@
 import { values } from 'lodash';
 import { hasBlocksData } from '@plone/volto/helpers';
-import { RenderBlocks } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { RenderBlocks } from 'io-sanita-theme/components';
 
 export const richTextHasContent = (data) => {
   if (hasBlocksData(data)) {

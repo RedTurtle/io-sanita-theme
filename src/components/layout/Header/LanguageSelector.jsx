@@ -10,7 +10,6 @@ import { find, map } from 'lodash';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { Helmet, flattenToAppURL, langmap } from '@plone/volto/helpers';
 import {
   Row,
   Col,
@@ -18,8 +17,10 @@ import {
   DropdownToggle,
   LinkList,
   LinkListItem,
-  UncontrolledDropdown,
+  Dropdown,
 } from 'design-react-kit';
+
+import { Helmet, flattenToAppURL, langmap } from '@plone/volto/helpers';
 import { Icon } from 'io-sanita-theme/components';
 import config from '@plone/volto/registry';
 
@@ -49,7 +50,7 @@ const LanguageSelector = (props) => {
   );
 
   return config.settings.isMultilingual ? (
-    <UncontrolledDropdown nav tag="div">
+    <Dropdown nav tag="div">
       <DropdownToggle aria-haspopup caret color="secondary" nav>
         {languagesISO392[currentLang]}
         <Icon color="" icon="it-expand" padding={false} size="" />
@@ -83,7 +84,7 @@ const LanguageSelector = (props) => {
           </Col>
         </Row>
       </DropdownMenu>
-    </UncontrolledDropdown>
+    </Dropdown>
   ) : (
     <Helmet>
       <html lang={config.settings.defaultLanguage} />

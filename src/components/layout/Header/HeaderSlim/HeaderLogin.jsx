@@ -21,7 +21,7 @@ import {
   DropdownToggle,
   LinkList,
   LinkListItem,
-  UncontrolledDropdown,
+  Dropdown,
 } from 'design-react-kit';
 import { getUser, logout, purgeMessages } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
@@ -102,7 +102,7 @@ const HeaderLogin = () => {
           </LoginButton>
         ) : (
           <>
-            <UncontrolledDropdown nav tag="div">
+            <Dropdown nav tag="div">
               <DropdownToggle
                 aria-haspopup
                 caret
@@ -145,7 +145,7 @@ const HeaderLogin = () => {
                   </Col>
                 </Row>
               </DropdownMenu>
-            </UncontrolledDropdown>
+            </Dropdown>
           </>
         )
       ) : null}

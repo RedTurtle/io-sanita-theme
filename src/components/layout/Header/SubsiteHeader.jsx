@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { isSubsiteRoot } from 'volto-subsites';
-import { richTextHasContent, RichText } from 'io-sanita-theme/components/View';
+import { RichText } from 'io-sanita-theme/components';
+import { richTextHasContent } from 'io-sanita-theme/helpers';
 
 const SubsiteHeader = () => {
   const subsite = useSelector((state) => state.subsite?.data);
