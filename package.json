@@ -13,6 +13,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "addons": [
+    "volto-slimheader",
+    "volto-social-settings",
+    "volto-subsites"
+  ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",

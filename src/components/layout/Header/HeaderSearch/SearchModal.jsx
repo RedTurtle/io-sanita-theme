@@ -35,6 +35,8 @@ import { getSearchFilters } from 'io-sanita-theme/actions';
 import { Checkbox } from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 
+import './searchModal.scss';
+
 const {
   defaultOptions,
   isGroupChecked,

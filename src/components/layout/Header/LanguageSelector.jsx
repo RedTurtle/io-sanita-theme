@@ -21,7 +21,6 @@ import {
 } from 'design-react-kit';
 
 import { Helmet, flattenToAppURL, langmap } from '@plone/volto/helpers';
-import { Icon } from 'io-sanita-theme/components';
 import config from '@plone/volto/registry';
 
 const languagesISO392 = {
@@ -50,10 +49,9 @@ const LanguageSelector = (props) => {
   );
 
   return config.settings.isMultilingual ? (
-    <Dropdown nav tag="div">
-      <DropdownToggle aria-haspopup caret color="secondary" nav>
+    <Dropdown inNavbar tag="div">
+      <DropdownToggle aria-haspopup caret inNavbar>
         {languagesISO392[currentLang]}
-        <Icon color="" icon="it-expand" padding={false} size="" />
       </DropdownToggle>
       <DropdownMenu flip tag="div">
         <Row tag="div">

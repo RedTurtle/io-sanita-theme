@@ -1,9 +1,16 @@
 export Icon from 'io-sanita-theme/components/Icon/Icon';
 
+//commons
+export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
+
 //renderer
 export RenderBlocks from 'io-sanita-theme/components/View/commons/RenderBlocks';
 export RichText from 'io-sanita-theme/components/View/commons/RichTextView/RichText';
 export RichTextRender from 'io-sanita-theme/components/View/commons/RichTextView/RichTextRender';
+
+//Login
+export LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
+export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButtons';
 
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';

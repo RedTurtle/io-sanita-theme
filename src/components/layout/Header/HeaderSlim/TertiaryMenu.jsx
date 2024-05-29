@@ -12,7 +12,6 @@ import { Nav, NavItem, NavLink } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 
-import { getSiteProperty } from 'io-sanita-theme/helpers';
 import { getSlimHeader, getItemsByPath } from 'volto-slimheader';
 
 const TertiaryMenu = () => {
@@ -31,14 +30,11 @@ const TertiaryMenu = () => {
       };
     });
 
-  const staticMenu =
-    getSiteProperty('headerslimTertiaryMenu', intl.locale) ?? [];
-
   useEffect(() => {
     dispatch(getSlimHeader());
   }, [dispatch]);
 
-  const items = slimHeaderItems?.length > 0 ? slimHeaderItems : staticMenu;
+  const items = slimHeaderItems ?? [];
 
   return items?.length > 0 ? (
     <Nav vertical={false} className="tertiary-menu">
