@@ -16,7 +16,9 @@
   "addons": [
     "volto-slimheader",
     "volto-social-settings",
-    "volto-subsites"
+    "volto-subsites",
+    "volto-dropdownmenu",
+    "volto-secondarymenu"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -65,6 +67,8 @@
     "typeface-lora": "1.1.13",
     "typeface-roboto-mono": "1.1.13",
     "typeface-titillium-web": "1.1.13",
+    "volto-dropdownmenu": "4.1.2",
+    "volto-secondarymenu": "4.1.0",
     "volto-slimheader": "0.1.1",
     "volto-social-settings": "3.0.0",
     "volto-subsites": "4.0.0"

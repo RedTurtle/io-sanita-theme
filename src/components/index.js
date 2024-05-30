@@ -27,6 +27,11 @@ export TertiaryMenu from 'io-sanita-theme/components/layout/Header/HeaderSlim/Te
 export SocialHeader from 'io-sanita-theme/components/layout/Header/SocialHeader';
 export HeaderSearch from 'io-sanita-theme/components/layout/Header/HeaderSearch/HeaderSearch';
 
+//Menu
+export CollapseNavigation from 'io-sanita-theme/components/layout/Navigation/CollapseNavigation';
+export MegaMenu from 'io-sanita-theme/components/layout/Navigation/MegaMenu/MegaMenu';
+export MenuSecondary from 'io-sanita-theme/components/layout/Navigation/MenuSecondary/MenuSecondary';
+
 //Logo and Brand
 export Logo from 'io-sanita-theme/components/Logo/Logo';
 export BrandText from 'io-sanita-theme/components/BrandText/BrandText';
