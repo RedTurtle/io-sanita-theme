@@ -1,0 +1,11 @@
+button.btn.btn-primary,
+.btn.btn-primary {
+  svg.icon {
+    fill: $primary-text;
+  }
+  &:focus-visible &:not(:hover) {
+    svg.icon {
+      fill: var(--bs-btn-hover-color);
+    }
+  }
+}

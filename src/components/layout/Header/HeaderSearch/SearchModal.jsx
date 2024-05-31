@@ -494,8 +494,8 @@ const SearchModal = ({ closeModal, show }) => {
               <div className="search-filters search-filters-topics">
                 <div className="h6">{intl.formatMessage(messages.topics)}</div>
                 <button
-                  className={cx('chip chip-simple chip-lg me-2 mb-2', {
-                    selected: allTopicsChecked,
+                  className={cx('chip chip-simple chip-lg', {
+                    'chip-primary': allTopicsChecked,
                   })}
                   type="button"
                   onClick={resetTopics}
@@ -508,7 +508,7 @@ const SearchModal = ({ closeModal, show }) => {
                 {Object.keys(selectedTopics).map((topicId) => (
                   <div
                     role="presentation"
-                    className="chip chip-lg selected"
+                    className="chip chip-lg chip-primary"
                     key={topicId}
                     onClick={() => setTopicChecked(topicId, false)}
                   >
@@ -539,8 +539,8 @@ const SearchModal = ({ closeModal, show }) => {
               <div className="search-filters search-filters-options">
                 <div className="h6">{intl.formatMessage(messages.options)}</div>
                 <button
-                  className={cx('chip chip-simple chip-lg me-2 mb-2', {
-                    selected: allOptionsSet,
+                  className={cx('chip chip-simple chip-lg', {
+                    'chip-primary': allOptionsSet,
                   })}
                   type="button"
                   onClick={resetOptions}
@@ -552,7 +552,7 @@ const SearchModal = ({ closeModal, show }) => {
                 {options.activeContent && (
                   <div
                     role="presentation"
-                    className="chip chip-lg selected"
+                    className="chip chip-lg chip-primary"
                     onClick={() => setOptionValue('activeContent', false)}
                   >
                     <span className="chip-label">
@@ -570,7 +570,7 @@ const SearchModal = ({ closeModal, show }) => {
                 {options.dateStart && (
                   <div
                     role="presentation"
-                    className="chip chip-lg selected"
+                    className="chip chip-lg chip-primary"
                     onClick={() => setOptionValue('dateStart', null)}
                   >
                     <span className="chip-label">
@@ -596,7 +596,7 @@ const SearchModal = ({ closeModal, show }) => {
                 {options.dateEnd && (
                   <div
                     role="presentation"
-                    className="chip chip-lg selected"
+                    className="chip chip-lg chip-primary"
                     onClick={() => setOptionValue('dateEnd', null)}
                   >
                     <span className="chip-label">
