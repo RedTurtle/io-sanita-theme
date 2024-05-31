@@ -4157,9 +4157,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"design-react-kit@npm:5.0.4":
-  version: 5.0.4
-  resolution: "design-react-kit@npm:5.0.4"
+"design-react-kit@npm:5.0.0-10":
+  version: 5.0.0-10
+  resolution: "design-react-kit@npm:5.0.0-10"
   dependencies:
     classnames: ^2.3.1
     is-number: ^7.0.0
@@ -4167,12 +4167,13 @@ __metadata:
     react-stickup: ^1.12.1
     react-toastify: ^7.0.4
     react-transition-group: ^4.4.5
+    react-use-navscroll: 0.2.0
     reactstrap: 9.2.2
     webfontloader: ^1.6.28
   peerDependencies:
     bootstrap-italia: 2.8.2
     react: ">=17.0.2"
-  checksum: 94d2ab0039a6a27e53f58d11fe9268ca3b6c17e901b951b6ea69ad09dc787ddea6bce3a2d309d97c0a0de25e8edc6dd461148c24b97029059843af3f27bd414c
+  checksum: 950eb8a82f8af7e664ae9a7094d09529af3e306bc7e05cb4923e7d8106be0b0d1cf269c0561b5d4d32cd8eec228074a773211a456e6263224f0aad742426fd27
   languageName: node
   linkType: hard
 
@@ -5993,7 +5994,7 @@ __metadata:
     "@plone/scripts": ^3.3.2
     babel-plugin-lodash: ^3.3.4
     bootstrap-italia: 2.8.7
-    design-react-kit: 5.0.4
+    design-react-kit: 5.0.0-10
     eslint: 8.49.0
     eslint-config-prettier: 9.0.0
     eslint-config-react-app: 7.0.1
@@ -8323,6 +8324,15 @@ __metadata:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: 75602840106aa9c6545149d6d7ae1502fb7b7abadcce70a6954c4b64a438ff1cd16fc77a0a1e5197cdd72da398f39eb929ea06f9005c45b132ed34e056ebdeb1
+  languageName: node
+  linkType: hard
+
+"react-use-navscroll@npm:0.2.0":
+  version: 0.2.0
+  resolution: "react-use-navscroll@npm:0.2.0"
+  peerDependencies:
+    react: ^16.9.0
+  checksum: 2f215264273f0c787e06fe071b38ae3592bf3f5d97474256119a9b28f85a94931ebdd6a9a44744a530a62d0e04bf74729edae54288cc5279ac60482c300ba9a3
   languageName: node
   linkType: hard
 
