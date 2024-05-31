@@ -35,6 +35,7 @@ export MenuSecondary from 'io-sanita-theme/components/layout/Navigation/MenuSeco
 //Logo and Brand
 export Logo from 'io-sanita-theme/components/Logo/Logo';
 export BrandText from 'io-sanita-theme/components/BrandText/BrandText';
+export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 
 //Widgets
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';

@@ -14,7 +14,6 @@ import { getSecondaryMenu, getItemsByPath } from 'volto-secondarymenu';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 
-
 const messages = defineMessages({
   menu_selected: {
     id: 'Menu selezionato',
@@ -22,7 +21,7 @@ const messages = defineMessages({
   },
 });
 
-const MenuSecondary = ({ pathname }) => {
+const MenuSecondary = ({ pathname = '/' }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
 

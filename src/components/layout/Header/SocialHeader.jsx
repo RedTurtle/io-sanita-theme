@@ -45,7 +45,10 @@ const SocialHeader = () => {
 
   return (
     socials?.length > 0 && (
-      <HeaderSocialsZone label={intl.formatMessage(messages.followUs)}>
+      <HeaderSocialsZone
+        className="d-md-none d-lg-flex"
+        label={intl.formatMessage(messages.followUs)}
+      >
         <ul>
           {socials?.map((social, idx) => (
             <li key={idx}>

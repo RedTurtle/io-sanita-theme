@@ -12,7 +12,6 @@ import FocusLock from 'react-focus-lock';
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
 
 import { CollapseNavigation } from 'io-sanita-theme/components';
 import {
@@ -23,10 +22,10 @@ import {
   Logo,
   Icon,
   SocialHeader,
-  BrandText,
+  BrandWrapper,
 } from 'io-sanita-theme/components';
 
-const Navigation = ({ pathname }) => {
+const Navigation = ({ pathname = '/' }) => {
   const intl = useIntl();
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [focusTrapActive, setFocusTrapActive] = useState(false);
@@ -34,14 +33,6 @@ const Navigation = ({ pathname }) => {
   const dispatch = useDispatch();
 
   const subsite = useSelector((state) => state.subsite?.data);
-  const logoSubsite = subsite?.subsite_logo && (
-    <figure className="icon">
-      <img
-        src={flattenToAppURL(subsite.subsite_logo.scales?.mini?.download)}
-        alt="Logo"
-      />
-    </figure>
-  );
 
   const items = useSelector((state) => state.dropdownMenuNavItems?.result);
   useEffect(() => {
@@ -94,7 +85,7 @@ const Navigation = ({ pathname }) => {
   return (
     <Header theme="" type="navbar">
       {menu?.length > 0 ? (
-        <HeaderContent expand="lg" megamenu id="navigation">
+        <HeaderContent expand="lg" megamenu id="navigation" container={true}>
           <HeaderToggler
             aria-controls="it-navigation-collapse"
             aria-expanded={collapseOpen}
@@ -126,17 +117,8 @@ const Navigation = ({ pathname }) => {
           >
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
-                <div className="it-brand-wrapper" role="navigation">
-                  <UniversalLink
-                    href={
-                      subsite?.['@id'] ? flattenToAppURL(subsite['@id']) : '/'
-                    }
-                    onClick={() => setCollapseOpen(false)}
-                  >
-                    {subsite?.subsite_logo ? logoSubsite : <Logo />}
-                    <BrandText mobile={true} subsite={subsite} />
-                  </UniversalLink>
-                </div>
+                <BrandWrapper mobile={true} setCollapseOpen={setCollapseOpen} />
+
                 {/* Main Menu */}
                 <Nav data-element="main-navigation" navbar role="menubar">
                   {menu

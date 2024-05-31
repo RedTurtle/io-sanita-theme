@@ -5,8 +5,16 @@ $primary: hsl($primary-h, $primary-s, $primary-b); //#07768d;
 $primary-dark: hsl($primary-h, $primary-s, 20);
 $accent: #9c0769;
 
+//font
+$font-weight-base: 300;
+$body-color: #2f475e;
+
 //header
 $header-slim-bg-color: $primary-dark;
+
+//nav
+$nav-link-font-size: 1rem;
+$nav-link-font-weight: 600;
 
 //card
 $card-link-color: $accent;
@@ -14,8 +22,7 @@ $card-link-color: $accent;
 //chips
 $color-text-secondary: $accent;
 $color-border-subtle: $accent;
-$font-weight-base: 300;
-$body-color: #2f475e;
+
 //$color-text-base: #2f475e;
 $card-color: $body-color;
 $card-p-color: $body-color;
