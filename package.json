@@ -18,7 +18,9 @@
     "volto-social-settings",
     "volto-subsites",
     "volto-dropdownmenu",
-    "volto-secondarymenu"
+    "volto-secondarymenu",
+    "volto-editablefooter",
+    "volto-google-analytics"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -69,6 +71,8 @@
     "typeface-roboto-mono": "1.1.13",
     "typeface-titillium-web": "1.1.13",
     "volto-dropdownmenu": "4.1.2",
+    "volto-editablefooter": "5.1.5",
+    "volto-google-analytics": "2.1.0",
     "volto-secondarymenu": "4.1.0",
     "volto-slimheader": "0.1.1",
     "volto-social-settings": "3.0.0",

@@ -27,6 +27,15 @@ export TertiaryMenu from 'io-sanita-theme/components/layout/Header/HeaderSlim/Te
 export SocialHeader from 'io-sanita-theme/components/layout/Header/SocialHeader';
 export HeaderSearch from 'io-sanita-theme/components/layout/Header/HeaderSearch/HeaderSearch';
 
+//Footer
+export LogoFooter from 'io-sanita-theme/components/LogoFooter/LogoFooter';
+export BrandTextFooter from 'io-sanita-theme/components/BrandTextFooter/BrandTextFooter';
+export FooterMain from 'io-sanita-theme/components/layout/Footer/FooterMain';
+export FooterNavigation from 'io-sanita-theme/components/layout/Footer/FooterNavigation';
+export FooterInfos from 'io-sanita-theme/components/layout/Footer/FooterInfos';
+export FooterNewsletterSubscribe from 'io-sanita-theme/components/layout/Footer/FooterInfos';
+export FooterSocials from 'io-sanita-theme/components/layout/Footer/FooterSocials';
+
 //Menu
 export CollapseNavigation from 'io-sanita-theme/components/layout/Navigation/CollapseNavigation';
 export MegaMenu from 'io-sanita-theme/components/layout/Navigation/MegaMenu/MegaMenu';
