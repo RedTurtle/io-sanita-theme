@@ -10,3 +10,7 @@ body.public-ui,
 
   @include font-size($font-size-base);
 }
+
+.public-ui {
+  font-family: $font-family-base;
+}

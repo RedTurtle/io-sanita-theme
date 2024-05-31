@@ -13,6 +13,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "addons": [
+    "volto-slimheader",
+    "volto-social-settings",
+    "volto-subsites",
+    "volto-dropdownmenu",
+    "volto-secondarymenu"
+  ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
@@ -22,8 +29,11 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
+    "@babel/core": "7.19.6",
+    "@babel/eslint-parser": "7.23.3",
+    "@babel/plugin-syntax-export-namespace-from": "^7.8.3",
     "@plone/scripts": "^3.3.2",
+    "babel-plugin-lodash": "^3.3.4",
     "eslint": "8.49.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-config-react-app": "7.0.1",
@@ -46,12 +56,22 @@
     "@plone/volto": "^18.0.0"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "7.18.9",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
+    "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@loadable/babel-plugin": "5.13.2",
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.4",
-    "svg-inline-loader": "^0.8.2",
-    "svg-inline-react": "^3.2.1",
+    "react-focus-lock": "2.12.1",
+    "svg-inline-loader": "0.8.2",
+    "svg-inline-react": "3.2.1",
     "typeface-lora": "1.1.13",
     "typeface-roboto-mono": "1.1.13",
-    "typeface-titillium-web": "1.1.13"
+    "typeface-titillium-web": "1.1.13",
+    "volto-dropdownmenu": "4.1.2",
+    "volto-secondarymenu": "4.1.0",
+    "volto-slimheader": "0.1.1",
+    "volto-social-settings": "3.0.0",
+    "volto-subsites": "4.0.0"
   }
 }

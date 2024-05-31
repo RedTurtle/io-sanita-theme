@@ -1,0 +1,120 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+body.search-modal-opened {
+  overflow: hidden; /*to disable scroll on search modal opened*/
+}
+
+#search-modal {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+
+  #search-button {
+    border-bottom: 1px solid $neutral-1-a7;
+    line-height: 2rem;
+  }
+
+  .btn-link {
+    &:focus {
+      box-shadow:
+        $btn-box-shadow,
+        0 0 0 $btn-focus-width rgba($link-color, 0.5);
+    }
+  }
+
+  .modal-header {
+    flex-shrink: 0;
+
+    button.btn-close {
+      display: none;
+    }
+
+    .modal-title {
+      width: 100%;
+    }
+  }
+
+  .modal-title {
+    .modal-title-centered {
+      flex: 1;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+
+  .modal-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .search-filters {
+    max-width: 700px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .back-to-search {
+    .icon {
+      margin-right: 0.3em;
+    }
+  }
+
+  .group-col {
+    margin-top: 40px;
+  }
+
+  .chip {
+    cursor: pointer;
+  }
+
+  .nav-tabs {
+    .nav-item {
+      &:first-of-type {
+        a.nav-link:not(.active):focus {
+          border-right: 2px solid hsl(36deg, 100%, 50%) !important;
+          border-left: 2px solid hsl(36deg, 100%, 50%) !important;
+        }
+
+        a.nav-link.active:focus {
+          border-right: 2px solid hsl(36deg, 100%, 50%) !important;
+          border-left: 2px solid hsl(36deg, 100%, 50%) !important;
+        }
+      }
+
+      &:last-of-type {
+        a.nav-link:focus {
+          border-right: 2px solid hsl(36deg, 100%, 50%) !important;
+          border-right: 2px solid hsl(36deg, 100%, 50%) !important;
+        }
+      }
+
+      a.nav-link {
+        width: 100%;
+        border-top: 2px solid transparent;
+
+        &.active {
+          border-right: none;
+          border-left: none;
+        }
+
+        &:focus {
+          border-color: hsl(36deg, 100%, 50%) !important;
+          border-right: none;
+          border-left: none;
+          box-shadow: 0 0 0 2px hsl(36deg, 100%, 50%) !important;
+          outline: none;
+        }
+
+        &:not(.active):focus {
+          border-right: 2px solid hsl(36deg, 100%, 50%) !important;
+        }
+      }
+    }
+  }
+
+  .group-col.columns {
+    columns: 2;
+  }
+}
