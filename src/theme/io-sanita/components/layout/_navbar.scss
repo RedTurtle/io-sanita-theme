@@ -1,0 +1,7 @@
+@media (min-width: 992px) {
+  .public-ui .navbar .navbar-collapsable .navbar-nav li.nav-item a.nav-link {
+    &.active {
+      border-color: #fff !important;
+    }
+  }
+}
