@@ -14,14 +14,18 @@
     "access": "public"
   },
   "addons": [
+    "@plone-collective/volto-contents-next",
+    "volto-slate-italia",
     "volto-slimheader",
     "volto-social-settings",
     "volto-subsites",
     "volto-dropdownmenu",
     "volto-secondarymenu",
+    "volto-gdpr-privacy",
     "volto-editablefooter",
     "volto-feedback",
-    "volto-feedback-italia"
+    "volto-feedback-italia",
+    "volto-subfooter"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -63,6 +67,7 @@
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
     "@loadable/babel-plugin": "5.13.2",
+    "@plone-collective/volto-contents-next": "0.4.4",
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.0-10",
     "react-focus-lock": "2.12.1",

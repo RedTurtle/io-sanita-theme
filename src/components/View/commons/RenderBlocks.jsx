@@ -55,9 +55,6 @@ const RenderBlocks = ({
   //è il caso in cui c'è solo il primo blocco di testo vuoto. Non si vuole renderizzare il <br/>
   if (items?.length === 1) {
     const block = blockContent[blocksFieldname][items[0]];
-    if (block['@type'] === 'text' && !block.text) {
-      return null;
-    }
     if (block['@type'] === 'slate' && block.plaintext?.length === 0) {
       return null;
     }

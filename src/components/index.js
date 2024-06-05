@@ -12,6 +12,10 @@ export RichTextRender from 'io-sanita-theme/components/View/commons/RichTextView
 export LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
 export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButtons';
 
+//layout
+export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
+export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
+
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';

@@ -19,7 +19,7 @@ import {
   FooterSocials,
 } from 'io-sanita-theme/components';
 
-import { fromHtml } from 'io-sanita-theme/config/Slate/utils';
+import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 
 const messages = defineMessages({
   goToPage: {
