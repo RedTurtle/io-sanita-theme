@@ -5,14 +5,14 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useGoogleAnalytics } from 'volto-google-analytics';
 
 import {
   FooterMain,
   FooterSmall,
   SubsiteFooter,
-  FeedbackForm,
 } from 'io-sanita-theme/components/';
+
+import { FeedbackForm } from 'volto-feedback-italia';
 
 import config from '@plone/volto/registry';
 /**
@@ -22,8 +22,6 @@ import config from '@plone/volto/registry';
  */
 
 const Footer = ({ intl }) => {
-  useGoogleAnalytics();
-
   const currentContent = useSelector((state) => state.content?.data);
   let contentType = currentContent?.['@type'];
 

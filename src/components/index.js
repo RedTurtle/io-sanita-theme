@@ -35,6 +35,8 @@ export FooterNavigation from 'io-sanita-theme/components/layout/Footer/FooterNav
 export FooterInfos from 'io-sanita-theme/components/layout/Footer/FooterInfos';
 export FooterNewsletterSubscribe from 'io-sanita-theme/components/layout/Footer/FooterInfos';
 export FooterSocials from 'io-sanita-theme/components/layout/Footer/FooterSocials';
+export FooterSmall from 'io-sanita-theme/components/layout/Footer/FooterSmall';
+export SubsiteFooter from 'io-sanita-theme/components/layout/Footer/SubsiteFooter';
 
 //Menu
 export CollapseNavigation from 'io-sanita-theme/components/layout/Navigation/CollapseNavigation';
