@@ -1,8 +1,10 @@
 @import 'addonsThemeCustomizationsVariables';
 
 @import './bootstrap-italia';
+@import 'cms-ui';
 
 /*IoSanita theme*/
+@import './css_variables';
 @import './io-sanita/components/layout/navbar';
 @import './io-sanita/components/layout/mobileMenu';
 /****************/

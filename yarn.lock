@@ -8037,7 +8037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1":
+"hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -8325,6 +8325,8 @@ __metadata:
     volto-blocks-widget: 3.4.1
     volto-dropdownmenu: 4.1.2
     volto-editablefooter: 5.1.5
+    volto-feedback: 0.3.2
+    volto-feedback-italia: 1.0.0
     volto-gdpr-privacy: 2.2.6
     volto-secondarymenu: 4.1.0
     volto-slimheader: 0.1.1
@@ -8852,6 +8854,13 @@ __metadata:
     "@sideway/formula": ^3.0.1
     "@sideway/pinpoint": ^2.0.0
   checksum: e755140446a0e0fb679c0f512d20dfe1625691de368abe8069507c9bccae5216b5bb56b5a83100a600808b1753ab44fdfdc9933026268417f84b6e0832a9604e
+  languageName: node
+  linkType: hard
+
+"jquery@npm:x.*":
+  version: 3.7.1
+  resolution: "jquery@npm:3.7.1"
+  checksum: 4370b8139d6ae82867eb6f7f21d1edccf1d1bdf41c0840920ea80d366c2cd5dbe1ceebb110ee9772aa839b04400faa1572c5c560b507c688ed7b61cea26c0e27
   languageName: node
   linkType: hard
 
@@ -10794,6 +10803,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-google-recaptcha-v3@npm:1.9.5":
+  version: 1.9.5
+  resolution: "react-google-recaptcha-v3@npm:1.9.5"
+  dependencies:
+    hoist-non-react-statics: ^3.3.2
+  peerDependencies:
+    react: ^17.0
+    react-dom: ^17.0
+  checksum: 73827f42b7f50282364bb596b3b7ade08c9907b2cad92192d92f5ef96951d7b4f55256ccc9f49dae9c87ff1b34896dbf7be00d3e93c54ec8ff98eec8e9448f99
+  languageName: node
+  linkType: hard
+
 "react-input-autosize@npm:^3.0.0":
   version: 3.0.0
   resolution: "react-input-autosize@npm:3.0.0"
@@ -11449,6 +11470,15 @@ __metadata:
     ajv: ^6.12.4
     ajv-keywords: ^3.5.2
   checksum: 32c62fc9e28edd101e1bd83453a4216eb9bd875cc4d3775e4452b541908fa8f61a7bbac8ffde57484f01d7096279d3ba0337078e85a918ecbeb72872fb09fb2b
+  languageName: node
+  linkType: hard
+
+"semantic-ui-css@npm:2.5.0":
+  version: 2.5.0
+  resolution: "semantic-ui-css@npm:2.5.0"
+  dependencies:
+    jquery: x.*
+  checksum: f8f9bea6f06f084a9ab0bd0fa46191586a4fc94194f092fbd78deff49ee559257eb3ba9b732916073143fa7816348a7424684a94e60621e889cb184906a750d6
   languageName: node
   linkType: hard
 
@@ -12752,6 +12782,28 @@ __metadata:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-blocks-widget: ">=3.4.0"
   checksum: d5ecd1ee11bbcd2f45691cfc0ab57883ebc11bb7fd1283283894b83962f37e65a02ccab9c11980e8fc34c1c3559865e1297d4347e063be325c66a548ea27065b
+  languageName: node
+  linkType: hard
+
+"volto-feedback-italia@npm:1.0.0":
+  version: 1.0.0
+  resolution: "volto-feedback-italia@npm:1.0.0"
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+    volto-feedback: ^0.3.2
+  checksum: 784723e38f210a7ace4dedc269b8395dd4d0e456bf1cfe96fc233069ec0eb8fcaafc03fef50ff732056126658a7ef98069debc8723f066cc23a81259f4130a16
+  languageName: node
+  linkType: hard
+
+"volto-feedback@npm:0.3.2":
+  version: 0.3.2
+  resolution: "volto-feedback@npm:0.3.2"
+  dependencies:
+    react-google-recaptcha-v3: 1.9.5
+    semantic-ui-css: 2.5.0
+  peerDependencies:
+    "@plone/volto": ">=16.0.0"
+  checksum: bfc7951ca5761640896e54fbe84c612176f95bad06682b198596425905b592bf1a287664cc1a8ebade814325c4514313043e62568ae3ac2325a18a43d2c43722
   languageName: node
   linkType: hard
 
