@@ -46,7 +46,7 @@ const FooterMain = () => {
 
         {footerNavigation && <section>{footerNavigation}</section>}
 
-        <section className="py-4">
+        <section>
           <FooterInfos />
         </section>
       </Container>

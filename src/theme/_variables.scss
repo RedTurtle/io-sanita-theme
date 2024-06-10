@@ -14,6 +14,13 @@ $body-color: #2f475e;
 //header
 $header-slim-bg-color: $primary-dark;
 
+// //footer
+$footer-top-background-asl: hsla(
+  $primary-h,
+  $primary-s,
+  12
+); // color-ocean-10 --> $primary-a12 //questo perchè su bootstrap-italia la variabile $footer-top-background non è definita come !default
+
 //nav
 $nav-link-font-size: 1rem;
 $nav-link-font-weight: 600;
