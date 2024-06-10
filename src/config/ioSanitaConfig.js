@@ -19,6 +19,9 @@ const messages = defineMessages({
 });
 
 export default function applyConfig(config) {
+  /******************************************************************************
+   * SETTINGS
+   ******************************************************************************/
   config.settings = {
     ...config.settings,
     openExternalLinkInNewTab: true,
@@ -151,7 +154,7 @@ export default function applyConfig(config) {
   //   { id: 'search', title: 'Ricerca' },
   // ];
   // const customInitialBlocks = {
-  //   'Pagina Argomento': ['title', 'description', 'text'],
+  //   'Pagina Argomento': ['title', 'description', 'slate'],
   //   'Bando Folder Deepening': ['title', 'description', 'listing'],
   // };
   // const customRequiredBlocks = ['description'];

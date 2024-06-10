@@ -12,6 +12,10 @@ export RichTextRender from 'io-sanita-theme/components/View/commons/RichTextView
 export LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
 export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButtons';
 
+//layout
+export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
+export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
+
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';
@@ -26,6 +30,17 @@ export HeaderLogin from 'io-sanita-theme/components/layout/Header/HeaderSlim/Hea
 export TertiaryMenu from 'io-sanita-theme/components/layout/Header/HeaderSlim/TertiaryMenu';
 export SocialHeader from 'io-sanita-theme/components/layout/Header/SocialHeader';
 export HeaderSearch from 'io-sanita-theme/components/layout/Header/HeaderSearch/HeaderSearch';
+
+//Footer
+export LogoFooter from 'io-sanita-theme/components/LogoFooter/LogoFooter';
+export BrandTextFooter from 'io-sanita-theme/components/BrandTextFooter/BrandTextFooter';
+export FooterMain from 'io-sanita-theme/components/layout/Footer/FooterMain';
+export FooterNavigation from 'io-sanita-theme/components/layout/Footer/FooterNavigation';
+export FooterInfos from 'io-sanita-theme/components/layout/Footer/FooterInfos';
+export FooterNewsletterSubscribe from 'io-sanita-theme/components/layout/Footer/FooterInfos';
+export FooterSocials from 'io-sanita-theme/components/layout/Footer/FooterSocials';
+export FooterSmall from 'io-sanita-theme/components/layout/Footer/FooterSmall';
+export SubsiteFooter from 'io-sanita-theme/components/layout/Footer/SubsiteFooter';
 
 //Menu
 export CollapseNavigation from 'io-sanita-theme/components/layout/Navigation/CollapseNavigation';
