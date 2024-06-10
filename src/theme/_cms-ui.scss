@@ -1,8 +1,11 @@
 @import 'cms-ui_container';
 
 body.cms-ui {
+  color: $body-color;
+  font-weight: $font-weight-base;
+
   .block {
-    font-family: $font-family-serif;
+    font-family: $font-family-sans-serif;
 
     %heading {
       margin-top: 0; /* 1*/
@@ -16,8 +19,6 @@ body.cms-ui {
     h1 {
       @extend %heading;
       @include font-size($h1-font-size);
-      font-size: 2.66rem;
-      line-height: 1.25;
     }
 
     h2 {
@@ -53,6 +54,19 @@ body.cms-ui {
     }
 
     @import 'bootstrap-italia/src/scss/custom/type'; //to apply styles for headers on different screen sizes
+    &,
+    p,
+    ul,
+    ol,
+    dl {
+      font-size: 16px;
+      line-height: 1.5;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 18px;
+        line-height: 1.555;
+      }
+    }
 
     // Placeholder block title
     .title {
@@ -467,6 +481,11 @@ body.cms-ui {
     }
   }
 
+  /*Block chooser*/
+  [data-popper-placement] {
+    z-index: 1000;
+  }
+
   /*Modals*/
   .ui.page.modals.dimmer {
     .ui.modal {
@@ -629,6 +648,15 @@ body.cms-ui {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+      }
+    }
+  }
+
+  //search weekday fix
+  .DayPicker {
+    .DayPicker_weekHeader {
+      .DayPicker_weekHeader_ul {
+        padding-left: 0;
       }
     }
   }

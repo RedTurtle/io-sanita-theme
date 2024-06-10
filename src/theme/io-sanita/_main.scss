@@ -1,0 +1,199 @@
+h1.documentFirstHeading {
+  border: none;
+  &:before {
+    content: none;
+  }
+}
+.public-ui {
+  h1 {
+    @include rem-size(font-size, 48);
+  }
+
+  h5 {
+    @include rem-size(font-size, 24);
+  }
+}
+
+.documentDescription {
+  @include rem-size(font-size, 24);
+  margin-top: 1.5rem;
+  color: $body-color;
+  line-height: 2rem;
+  white-space: pre-wrap;
+}
+
+a {
+  cursor: pointer;
+
+  &[href^='mailto'],
+  &[target='_blank'],
+  &[rel='noopener noreferreer'] {
+    word-break: break-word;
+  }
+}
+
+.listing-item img {
+  max-width: unset;
+  margin-right: unset;
+}
+
+::selection {
+  background-color: default;
+}
+
+.public-ui {
+  a.btn.btn-primary {
+    svg {
+      fill: $primary-text;
+    }
+  }
+}
+
+iframe {
+  max-width: 100%;
+  border: none;
+}
+
+#text-body {
+  .full-width {
+    position: static;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+.loading {
+  .progress-spinner {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.slate-editor-link {
+  clear: both;
+
+  &.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: $btn-border-radius;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    &:hover,
+    &:active {
+      font-weight: 600;
+    }
+
+    &.btn-primary {
+      background-color: $primary;
+      color: $primary-text;
+      &:hover,
+      &:active {
+        background-color: darken($primary, 8);
+        color: $primary-text;
+      }
+    }
+  }
+}
+
+/*icone*/
+.public-ui,
+* {
+  .fa,
+  .fas,
+  .far,
+  .fal,
+  .fad,
+  .fab {
+    display: inline-block;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+  }
+
+  .fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -0.0667em;
+  }
+
+  .fa-xs {
+    font-size: 0.75em;
+  }
+
+  .fa-sm {
+    font-size: 0.875em;
+  }
+
+  .fa-1x {
+    font-size: 1em;
+  }
+
+  .fa-2x {
+    font-size: 2em;
+  }
+
+  .fa-3x {
+    font-size: 3em;
+  }
+
+  .fa-4x {
+    font-size: 4em;
+  }
+
+  .fa-5x {
+    font-size: 5em;
+  }
+
+  .fa-6x {
+    font-size: 6em;
+  }
+
+  .fa-7x {
+    font-size: 7em;
+  }
+
+  .fa-8x {
+    font-size: 8em;
+  }
+
+  .fa-9x {
+    font-size: 9em;
+  }
+
+  .fa-10x {
+    font-size: 10em;
+  }
+
+  svg.fa-icon {
+    width: 1em;
+    fill: currentColor;
+  }
+
+  .icon.fa-icon.placeholder {
+    //to prevent layout shift
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+  }
+}
+
+//table overflow mobile
+@media (max-width: #{map-get($grid-breakpoints, lg)}) {
+  .public-ui table.ui.table {
+    display: block;
+    overflow: auto;
+
+    th {
+      white-space: nowrap;
+    }
+  }
+}

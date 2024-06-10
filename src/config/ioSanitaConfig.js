@@ -9,7 +9,11 @@ import { Search } from '@plone/volto/components';
 
 import logSVG from 'io-sanita-theme/icons/log.svg';
 import reducers from 'io-sanita-theme/reducers';
-import { LoginAgid } from 'io-sanita-theme/components';
+import {
+  LoginAgid,
+  HandleAnchor,
+  GenericAppExtras,
+} from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   search_brdc: {
@@ -97,7 +101,17 @@ export default function applyConfig(config) {
         GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
       },
     ],
-    appExtras: [...config.settings.appExtras],
+    appExtras: [
+      ...config.settings.appExtras,
+      {
+        match: '',
+        component: HandleAnchor,
+      },
+      {
+        match: '',
+        component: GenericAppExtras,
+      },
+    ],
     maxFileUploadSize: null,
 
     'volto-editablefooter': {

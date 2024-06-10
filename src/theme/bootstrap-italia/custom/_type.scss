@@ -1,10 +1,16 @@
 html,
 body.public-ui {
-  font-size: 16px;
-  line-height: 1.5;
+  &,
+  p,
+  ul,
+  ol,
+  dl {
+    font-size: 16px;
+    line-height: 1.5;
 
-  @include media-breakpoint-up(sm) {
-    font-size: 18px;
-    line-height: 1.555;
+    @include media-breakpoint-up(sm) {
+      font-size: 18px;
+      line-height: 1.555;
+    }
   }
 }

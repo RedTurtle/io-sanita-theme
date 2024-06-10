@@ -15,6 +15,10 @@ export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButt
 //layout
 export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
 export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
+export HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
+export GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExtras';
+export PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader';
+export ScrollToTop from 'io-sanita-theme/components/ScrollToTop/ScrollToTop';
 
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';

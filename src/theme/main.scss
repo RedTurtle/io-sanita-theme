@@ -5,10 +5,13 @@
 
 /*IoSanita theme*/
 @import './css_variables';
+@import './io-sanita/mixins';
+@import './io-sanita/main';
 @import './io-sanita/addons/volto-gdpr-privacy';
 @import './io-sanita/components/layout/navbar';
 @import './io-sanita/components/layout/mobileMenu';
 @import './io-sanita/components/layout/footer';
+@import './io-sanita/components/layout/pageLoader';
 /****************/
 
 @import 'addonsThemeCustomizationsMain';
