@@ -1,0 +1,16 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+.break-block {
+  padding: 0;
+  margin: 0;
+  clear: both;
+  color: $neutral-1-a2;
+  font-size: 0.7em;
+  font-style: italic;
+  text-align: center;
+
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}

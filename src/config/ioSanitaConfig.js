@@ -15,6 +15,8 @@ import {
   GenericAppExtras,
 } from 'io-sanita-theme/components';
 
+import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
+
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
@@ -125,6 +127,8 @@ export default function applyConfig(config) {
   config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
     (route) => route !== '/contact-form',
   );
+
+  applyIoSanitaBlocksConfig(config);
 
   // /******************************************************************************
   //  * VIEWS
