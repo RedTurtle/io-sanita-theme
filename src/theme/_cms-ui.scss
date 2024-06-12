@@ -660,6 +660,25 @@ body.cms-ui {
       }
     }
   }
+
+  /*Colors widget*/
+  .color-picker-widget {
+    .ui.circular.button {
+      border-radius: 100%;
+      width: 2em;
+      height: 2em;
+      padding: 1em;
+
+      &.bg-none {
+        background-image: repeating-conic-gradient(
+          #f5f2fa 0 25%,
+          transparent 0 50%
+        );
+        background-position: 50%;
+        background-size: 12px 12px;
+      }
+    }
+  }
 }
 
 /*Has toolbar*/

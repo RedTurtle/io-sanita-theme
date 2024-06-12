@@ -186,6 +186,72 @@ iframe {
   }
 }
 
+/* io-sanita Backgrounds */
+
+.bg-primary-lightest {
+  background: $bg-primary-lightest !important;
+}
+.bg-primary-lighter {
+  background: $bg-primary-lighter !important;
+}
+
+/*Full-width*/
+.full-width,
+.ui.image img.full-width,
+picture.volto-image.responsive.full-width img,
+picture.volto-image.full-width img,
+picture.volto-image.responsive img.full-width,
+.block.image.align.full img.full-width {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  height: auto;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+  object-fit: cover;
+
+  $toolbar-width: 80px;
+  $toolbar-collapsed-width: 20px;
+  $sidebar-width: 375px;
+  $sidebar-collapsed-width: 20px;
+
+  .has-toolbar & {
+    left: calc(50% + calc($toolbar-width / 2));
+    width: calc(100vw - $toolbar-width) !important;
+  }
+
+  .has-toolbar.has-sidebar & {
+    $toolbars-width: calc($toolbar-width + $sidebar-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+
+  .has-toolbar.has-sidebar-collapsed & {
+    $toolbars-width: calc($toolbar-width + $sidebar-collapsed-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+
+  .has-toolbar-collapsed & {
+    left: calc(50% + calc($toolbar-collapsed-width / 2));
+    width: calc(100vw - $toolbar-collapsed-width) !important;
+  }
+
+  .has-toolbar-collapsed.has-sidebar & {
+    $toolbars-width: calc($toolbar-collapsed-width + $sidebar-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+
+  .has-toolbar-collapsed.has-sidebar-collapsed & {
+    $toolbars-width: calc($toolbar-collapsed-width + $sidebar-collapsed-width);
+    left: calc(50% + calc($toolbars-width / 2));
+    width: calc(100vw - $toolbars-width) !important;
+  }
+}
+
 //table overflow mobile
 @media (max-width: #{map-get($grid-breakpoints, lg)}) {
   .public-ui table.ui.table {

@@ -7,3 +7,8 @@ export {
 export SearchUtils from 'io-sanita-theme/helpers/search';
 export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export { richTextHasContent } from 'io-sanita-theme/helpers/richText';
+export {
+  removeListingVariation,
+  addSchemaStyles,
+  DEFAULT_BG_COLORS,
+} from 'io-sanita-theme/helpers/blocks_config';

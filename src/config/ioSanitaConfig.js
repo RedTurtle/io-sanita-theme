@@ -15,6 +15,8 @@ import {
   GenericAppExtras,
 } from 'io-sanita-theme/components';
 
+import { removeListingVariation } from 'io-sanita-theme/helpers';
+
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 
 const messages = defineMessages({
@@ -149,111 +151,15 @@ export default function applyConfig(config) {
   // /******************************************************************************
   //  * BLOCKS
   //  ******************************************************************************/
-  // const rssBlock = {
-  //   ...customRssBlock,
-  //   templates: {
-  //     ...customRssBlock.templates,
-  //     default: {
-  //       label: 'Card senza immagine',
-  //       template: CardWithoutImageRssTemplate,
-  //       skeleton: CardWithoutImageRssTemplateSkeleton,
-  //     },
-  //     card_without_image: {
-  //       label: 'Card con immagine',
-  //       template: CardWithImageRssTemplate,
-  //       skeleton: CardWithImageRssTemplateSkeleton,
-  //     },
-  //   },
-  // };
+  //per avere la conf dei blocchi anche nel blocco grid, altrimenti nel blocco grid prende la conf base di volto.
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
+    blocksConfig: config.blocks.blocksConfig,
+  };
 
-  // const customBlocksOrder = [
-  //   { id: 'news', title: 'News' },
-  //   { id: 'homePage', title: 'Home Page' },
-  //   { id: 'search', title: 'Ricerca' },
-  // ];
-  // const customInitialBlocks = {
-  //   'Pagina Argomento': ['title', 'description', 'slate'],
-  //   'Bando Folder Deepening': ['title', 'description', 'listing'],
-  // };
-  // const customRequiredBlocks = ['description'];
-
-  // const customBlocks = {
-  //   ...getItaliaBlocks(config),
-
-  //   listing: {
-  //     ...config.blocks.blocksConfig.listing,
-  //     showLinkMore: true,
-  //     blockSchema: schemaListing,
-  //     variations: [
-  //       ...config.blocks.blocksConfig.listing.variations,
-  //       ...getItaliaListingVariations(config),
-  //     ],
-  //     listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
-  //     listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
-  //     getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina (per ora continuiamo con rendertron)
-  //   },
-  //   hero: {
-  //     ...config.blocks.blocksConfig.hero,
-  //     hasOwnFocusManagement: true,
-  //     sidebarTab: 1,
-  //   },
-  //   html: {
-  //     ...config.blocks.blocksConfig.html,
-  //     sidebarTab: 1,
-  //   },
-  //   rssBlock,
-  //   maps: {
-  //     ...config.blocks.blocksConfig.maps,
-  //     restricted: true,
-  //   },
-  //   search: {
-  //     ...config.blocks.blocksConfig.search,
-  //     icon: searchIcon,
-  //     variations: [
-  //       {
-  //         id: 'facetsRightSide',
-  //         title: 'Colonna a destra',
-  //         view: RightColumnFacets,
-  //         isDefault: true,
-  //       },
-  //       {
-  //         id: 'facetsLeftSide',
-  //         title: 'Colonna a sinistra',
-  //         view: LeftColumnFacets,
-  //         isDefault: false,
-  //       },
-  //     ],
-  //   },
-  // };
-  // config.blocks = {
-  //   ...config.blocks,
-  //   blocksConfig: { ...config.blocks.blocksConfig, ...customBlocks },
-  //   groupBlocksOrder: config.blocks.groupBlocksOrder.concat(customBlocksOrder),
-  //   initialBlocks: { ...config.blocks.initialBlocks, ...customInitialBlocks },
-  //   requiredBlocks: [...config.blocks.requiredBlocks, ...customRequiredBlocks],
-  //   showEditBlocksInBabelView: true,
-  // };
-
-  // //per avere la conf dei blocchi anche nel blocco grid, altrimenti nel blocco grid prende la conf base di volto.
-  // config.blocks.blocksConfig.gridBlock = {
-  //   ...config.blocks.blocksConfig.gridBlock,
-  //   blocksConfig: config.blocks.blocksConfig,
-  // };
-
-  // removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
-  // removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
-  // removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
-
-  // // BUG#10398
-  // // We chose to disallow leadimage block usage in editor. If you want it back someday,
-  // // comment out the following line and add the leadimage behavior in Document.xml file
-  // delete config.blocks.blocksConfig['leadimage'];
-
-  // // Remove Horizontal Menu variation of TOC Block
-  // config.blocks.blocksConfig.toc.variations =
-  //   config.blocks.blocksConfig.toc.variations.filter(
-  //     (v) => v.id !== 'horizontalMenu',
-  //   );
+  //removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
+  removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
+  removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
 
   // // COMPONENTS
   // config.components = {
