@@ -28,7 +28,7 @@ const customRequiredBlocks = [
 export const applyIoSanitaBlocksConfig = (config) => {
   delete config.blocks.blocksConfig.teaser;
   delete config.blocks.blocksConfig.leadimage;
-
+  console.log(config.blocks.blocksConfig.search);
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
     maps: {
@@ -45,6 +45,10 @@ export const applyIoSanitaBlocksConfig = (config) => {
       ...config.blocks.blocksConfig.html,
       sidebarTab: 1,
       schema: HTMLBlockSchema,
+    },
+    search: {
+      ...config.blocks.blocksConfig.search,
+      templates: ['simpleCard', 'simpleListTemplate'],
     },
     break: {
       id: 'break',

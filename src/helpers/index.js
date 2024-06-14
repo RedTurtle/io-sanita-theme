@@ -12,3 +12,8 @@ export {
   addSchemaStyles,
   DEFAULT_BG_COLORS,
 } from 'io-sanita-theme/helpers/blocks_config';
+export { commonSearchBlockMessages } from 'io-sanita-theme/helpers/Translations/searchBlockExtendedTranslations';
+export {
+  videoUrlHelper,
+  checkIfValidVideoLink,
+} from 'io-sanita-theme/helpers/video';

@@ -25,7 +25,8 @@
     "volto-editablefooter",
     "volto-feedback",
     "volto-feedback-italia",
-    "volto-subfooter"
+    "volto-subfooter",
+    "volto-querywidget-with-browser"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -82,6 +83,7 @@
     "volto-feedback": "0.3.2",
     "volto-feedback-italia": "1.0.0",
     "volto-gdpr-privacy": "2.2.6",
+    "volto-querywidget-with-browser": "0.4.2",
     "volto-secondarymenu": "4.1.0",
     "volto-slimheader": "0.1.1",
     "volto-social-settings": "3.0.0",

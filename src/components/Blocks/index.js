@@ -6,6 +6,9 @@ export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
 
+/*Skeleton*/
+export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton.jsx';
+
 /*Edit*/
 const BreakEdit = loadable(() =>
   import(
