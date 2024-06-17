@@ -64,7 +64,10 @@ const isActive = (item, pathname) => {
   );
 };
 
-const isChildActive = (itemUrl, pathname) => {
+const isChildActive = (itemUrl, pathname, exact = false) => {
+  if (exact) {
+    return itemUrl === pathname;
+  }
   return pathname.indexOf(itemUrl) > -1;
 };
 
@@ -313,6 +316,7 @@ const MegaMenu = ({ item, pathname }) => {
                                     active: isChildActive(
                                       flattenToAppURL(child['@id']),
                                       pathname,
+                                      true,
                                     ),
                                   })}
                                   role="menuitem"
