@@ -13,6 +13,8 @@ import {
   LoginAgid,
   HandleAnchor,
   GenericAppExtras,
+  Icon,
+  FileWidget,
 } from 'io-sanita-theme/components';
 
 import { removeListingVariation } from 'io-sanita-theme/helpers';
@@ -142,6 +144,11 @@ export default function applyConfig(config) {
       options: { socials: true, newsletterSubscribe: true },
     },
 
+    'volto-form-block-italia': {
+      ...config.settings['volto-form-block-italia'],
+      IconComponent: Icon,
+      FileWidgetComponent: FileWidget,
+    },
     videoAllowExternalsDefault: false,
   };
 
