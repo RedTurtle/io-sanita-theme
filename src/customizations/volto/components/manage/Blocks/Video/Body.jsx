@@ -14,10 +14,10 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
+import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { isInternalURL, getParentUrl } from '@plone/volto/helpers';
 import { videoUrlHelper } from 'io-sanita-theme/helpers';
-import { ConditionalEmbed } from 'volto-gdpr-privacy';
-import FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
+import { FontAwesomeIcon } from 'io-sanita-theme/components';
 import config from '@plone/volto/registry';
 
 /**

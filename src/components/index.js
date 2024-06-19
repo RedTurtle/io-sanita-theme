@@ -1,7 +1,9 @@
 export Icon from 'io-sanita-theme/components/Icon/Icon';
+export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
 
 //commons
 export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
+export Unauthorized from 'io-sanita-theme/components/Unauthorized/Unauthorized';
 
 //renderer
 export RenderBlocks from 'io-sanita-theme/components/View/commons/RenderBlocks';

@@ -17,3 +17,8 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
+export {
+  getFileViewFormat,
+  FILE_EXTENSIONS,
+  FILE_FORMATS,
+} from 'io-sanita-theme/helpers/files';

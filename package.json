@@ -14,6 +14,7 @@
     "access": "public"
   },
   "addons": [
+    "@plone-collective/volto-sentry",
     "@plone-collective/volto-contents-next",
     "volto-slate-italia",
     "volto-slimheader",
@@ -69,6 +70,7 @@
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-contents-next": "0.4.4",
+    "@plone-collective/volto-sentry": "0.3.1",
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.0-10",
     "react-focus-lock": "2.12.1",

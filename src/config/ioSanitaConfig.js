@@ -30,9 +30,28 @@ export default function applyConfig(config) {
   /******************************************************************************
    * SETTINGS
    ******************************************************************************/
+  const voltoSentryOptions = config.settings.sentryOptions;
+
   config.settings = {
     ...config.settings,
     openExternalLinkInNewTab: true,
+    sentryOptions: (libraries) => ({
+      ...voltoSentryOptions(libraries),
+      ignoreErrors: [
+        'ChunkLoadError',
+        'Loading CSS chunk',
+        'Timeout (n)', //errori di recaptcha nella customer satisfaction
+        'Uncaught (in promise) Timeout (n)', //errori di recaptcha nella customer satisfaction
+      ],
+      // https://docs.sentry.io/platforms/javascript/data-management/sensitive-data/
+      // beforeSend(event) {
+      //   // Modify the event here (e.g.)
+      //   // if (event.user) {
+      //   //   delete event.user.email;
+      //   // }
+      //  return event;
+      // },
+    }),
     isMultilingual: false,
     supportedLanguages: ['it'],
     defaultLanguage: 'it',

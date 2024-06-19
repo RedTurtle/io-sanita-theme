@@ -77,6 +77,4 @@ export const addSchemaStyles = (
     ...schema.properties.styles.schema.properties,
     ...properties,
   };
-
-  console.log(schema);
 };

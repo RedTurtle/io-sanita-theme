@@ -21,6 +21,41 @@ msgstr ""
 msgid "Cerca"
 msgstr ""
 
+#. Default: "Clear filters"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "Clear filters"
+msgstr ""
+
+#. Default: "Current filters applied"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "Current filters applied"
+msgstr ""
+
+#. Default: "Al {end}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryAl"
+msgstr ""
+
+#. Default: "Dal {start}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryDal"
+msgstr ""
+
+#. Default: "Dal {start} al {end}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryDalAl"
+msgstr ""
+
+#. Default: "HTML"
+#: components/Blocks/HTML/schema
+msgid "HTML"
+msgstr ""
+
+#. Default: "Headline"
+#: components/Blocks/HTML/schema
+msgid "Headline"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
@@ -57,14 +92,39 @@ msgstr ""
 msgid "Menu selezionato"
 msgstr ""
 
+#. Default: "Pagina successiva"
+#: components/Pagination/PaginationItem
+msgid "Next page"
+msgstr ""
+
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
 msgstr ""
 
+#. Default: "Pagina"
+#: components/Pagination/PaginationItem
+msgid "Page"
+msgstr ""
+
+#. Default: "Pagina precedente"
+#: components/Pagination/PaginationItem
+msgid "Previous page"
+msgstr ""
+
 #. Default: "Torna su"
 #: components/ScrollToTop/ScrollToTop
 msgid "Scroll to top"
+msgstr ""
+
+#. Default: "Cerca una parola chiave"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "SearchSearchBlock"
+msgstr ""
+
+#. Default: "Search"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "SearchSearchBlockButtonText"
 msgstr ""
 
 #. Default: "Seguici su"
@@ -77,6 +137,16 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+#. Default: "Thank you."
+#: components/Unauthorized/Unauthorized
+msgid "Thank you."
+msgstr ""
+
+#. Default: "Unauthorized"
+#: components/Unauthorized/Unauthorized
+msgid "Unauthorized"
+msgstr ""
+
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
 #: components/layout/Footer/FooterNavigation
@@ -87,6 +157,11 @@ msgstr ""
 #. Default: "Vedi tutto"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
+msgstr ""
+
+#. Default: "You are trying to access a protected resource, please {login} first."
+#: components/Unauthorized/Unauthorized
+msgid "You are trying to access a protected resource, please {login} first."
 msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
@@ -117,6 +192,21 @@ msgstr ""
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "breadcrumb"
+msgstr ""
+
+#. Default: "Clear all filters"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearAllFilters"
+msgstr ""
+
+#. Default: "Clear {filterName} filter"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearFilter"
+msgstr ""
+
+#. Default: "Clear search"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearSearch"
 msgstr ""
 
 #. Default: "Chiudi menu"
@@ -164,6 +254,11 @@ msgstr ""
 msgid "listing_event_recurrence_label"
 msgstr ""
 
+#. Default: "log in"
+#: components/Unauthorized/Unauthorized
+msgid "log in"
+msgstr ""
+
 #. Default: "Log in"
 #: components/LoginAgid/LoginAgid
 msgid "login_agid"
@@ -176,11 +271,13 @@ msgstr ""
 
 #. Default: "Other users"
 #: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
 msgid "login_agid_other"
 msgstr ""
 
 #. Default: "Alternatively you can use these methods."
 #: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
 msgid "login_agid_other_description"
 msgstr ""
 
@@ -201,6 +298,7 @@ msgstr ""
 
 #. Default: "Log in as employee"
 #: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
 msgid "login_plone_user"
 msgstr ""
 
@@ -237,6 +335,16 @@ msgstr ""
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
+msgstr ""
+
+#. Default: "Scarica il file"
+#: components/View/commons/DownloadFileFormat
+msgid "modulo_download_file"
+msgstr ""
+
+#. Default: "Scarica in formato"
+#: components/View/commons/DownloadFileFormat
+msgid "modulo_download_in_format"
 msgstr ""
 
 #. Default: "Contenuto attivo"
@@ -284,6 +392,11 @@ msgstr ""
 msgid "options"
 msgstr ""
 
+#. Default: "Selettore di pagina"
+#: components/Pagination/Pagination
+msgid "paginationLabel"
+msgstr ""
+
 #. Default: "Rimuovi opzione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeOption"
@@ -324,6 +437,11 @@ msgstr ""
 msgid "search_brdc"
 msgstr ""
 
+#. Default: "Ricerca per: <em>{searchedtext}</em>."
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "searchedFor"
+msgstr ""
+
 #. Default: "Sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "sections"
@@ -362,6 +480,11 @@ msgstr ""
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "topics"
+msgstr ""
+
+#. Default: "You are trying to access a protected resource, please login first."
+#: components/Unauthorized/Unauthorized
+msgid "unauthorized_description"
 msgstr ""
 
 #. Default: "Blocco sconosciuto"

@@ -28,7 +28,7 @@ const customRequiredBlocks = [
 export const applyIoSanitaBlocksConfig = (config) => {
   delete config.blocks.blocksConfig.teaser;
   delete config.blocks.blocksConfig.leadimage;
-  console.log(config.blocks.blocksConfig.search);
+
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
     maps: {
