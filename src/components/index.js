@@ -60,6 +60,7 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 
 //Widgets
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
+export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
 
 //Cards
 export CardFeatured from 'io-sanita-theme/components/Cards/CardFeatured/CardFeatured';

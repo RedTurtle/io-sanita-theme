@@ -22,3 +22,16 @@ export {
   FILE_EXTENSIONS,
   FILE_FORMATS,
 } from 'io-sanita-theme/helpers/files';
+
+export {
+  blocksFieldIsEmpty,
+  getRealEmptyField,
+  serviceFormValidationHelper,
+  eventFormValidationHelper,
+} from 'io-sanita-theme/helpers/FormValidation/FormValidation';
+
+export {
+  CUSTOM_DGFIELD_VALIDATION,
+  realWidgetType,
+  getSpecificDataGridFieldValidation,
+} from 'io-sanita-theme/helpers/FormValidation/DataGrid';
