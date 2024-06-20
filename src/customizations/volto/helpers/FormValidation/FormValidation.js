@@ -25,13 +25,16 @@ import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import {
+  getRealEmptyField,
   serviceFormValidationHelper,
   eventFormValidationHelper,
-  getRealEmptyField,
-  getSpecificDataGridFieldValidation,
-  realWidgetType,
+} from 'io-sanita-theme/helpers/FormValidation/FormValidation';
+
+import {
   CUSTOM_DGFIELD_VALIDATION,
-} from 'io-sanita-theme/helpers';
+  realWidgetType,
+  getSpecificDataGridFieldValidation,
+} from 'io-sanita-theme/helpers/FormValidation/DataGrid';
 import config from '@plone/volto/registry';
 
 /**
@@ -427,8 +430,6 @@ class FormValidation {
   }
 }
 
-export default FormValidation;
-
 /**
  * Check if a file upload is within the maximum size limit.
  * @param {File} file
@@ -454,3 +455,5 @@ export const validateFileUploadSize = (file, intlFunc) => {
   }
   return isValid;
 };
+
+export default FormValidation;
