@@ -1,0 +1,37 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.scroll-to-top {
+  .btn.btn-sm {
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    padding: 0.8rem;
+    border-radius: 50%;
+    line-height: 1rem;
+
+    //small - tablet
+    @media (min-width: #{map-get($grid-breakpoints, md)}) {
+      right: 30px;
+      bottom: 30px;
+    }
+  }
+}
+
+body.cms-ui {
+  &.has-sidebar {
+    .scroll-to-top {
+      .btn {
+        right: 405px;
+      }
+    }
+  }
+
+  &.has-sidebar-collapsed {
+    .scroll-to-top {
+      .btn {
+        right: 50px;
+      }
+    }
+  }
+}

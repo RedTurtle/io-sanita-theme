@@ -7,6 +7,7 @@
 @import './css_variables';
 @import './io-sanita/mixins';
 @import './io-sanita/main';
+@import './io-sanita/buttons';
 @import './io-sanita/addons/volto-gdpr-privacy';
 @import './io-sanita/components/layout/navbar';
 @import './io-sanita/components/layout/mobileMenu';
@@ -15,6 +16,7 @@
 @import './io-sanita/components/blocks/grid';
 @import './io-sanita/components/blocks/search';
 @import './io-sanita/components/blocks/video';
+
 /****************/
 
 @import 'addonsThemeCustomizationsMain';

@@ -8570,8 +8570,9 @@ __metadata:
     volto-dropdownmenu: 4.1.2
     volto-editablefooter: 5.1.5
     volto-feedback: 0.3.2
-    volto-feedback-italia: 1.0.1
+    volto-feedback-italia: 1.0.2
     volto-form-block: 3.8.7
+    volto-form-block-italia: 1.0.0
     volto-gdpr-privacy: 2.2.6
     volto-querywidget-with-browser: 0.4.2
     volto-secondarymenu: 4.1.0
@@ -13211,13 +13212,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-feedback-italia@npm:1.0.1":
-  version: 1.0.1
-  resolution: "volto-feedback-italia@npm:1.0.1"
+"volto-feedback-italia@npm:1.0.2":
+  version: 1.0.2
+  resolution: "volto-feedback-italia@npm:1.0.2"
   peerDependencies:
     "@plone/volto": ^17.0.0
     volto-feedback: ^0.3.2
-  checksum: 49281e1a24ffa4a44cab51e2089de49c87ac4e7123341b56889e25146eba4bbdd364aaaeacea524014e7d244fdaa908badddcac4ae1da98633fc2a8e421b0a5f
+  checksum: d15f328cd15fa732db6aa9e66cb0491648b891e6e3b467867fc3fed0420622bacc5c7a0c53c7a9ca2f1250105e391caec69a421d3024dfbcdcab420bea72f7db
   languageName: node
   linkType: hard
 
@@ -13230,6 +13231,16 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0"
   checksum: bfc7951ca5761640896e54fbe84c612176f95bad06682b198596425905b592bf1a287664cc1a8ebade814325c4514313043e62568ae3ac2325a18a43d2c43722
+  languageName: node
+  linkType: hard
+
+"volto-form-block-italia@npm:1.0.0":
+  version: 1.0.0
+  resolution: "volto-form-block-italia@npm:1.0.0"
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+    volto-form-block: ^3.9.0
+  checksum: 2f1c93b5ba2b4d2c58ed1d7ccee65834bc37a2750802525c62677d08f6d33f5a44cfd5e943020fc0eb440f01d28a103daef6b6a7ca7f940f0859c1667f2d2d66
   languageName: node
   linkType: hard
 

@@ -21,8 +21,6 @@
   },
   "include": [
     "src",
-    "../volto-slate-italia/src/components/manage",
-    "../volto-slate-italia/src/config/Slate"
   ],
   "exclude": ["node_modules"]
 }

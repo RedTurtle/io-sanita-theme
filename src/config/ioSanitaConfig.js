@@ -6,6 +6,8 @@ import menuAltSVG from '@plone/volto/icons/menu-alt.svg';
 import navSVG from '@plone/volto/icons/nav.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
 import { Search } from '@plone/volto/components';
+import { TextEditorWidget } from 'volto-slate-italia';
+import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 
 import logSVG from 'io-sanita-theme/icons/log.svg';
 import reducers from 'io-sanita-theme/reducers';
@@ -148,6 +150,8 @@ export default function applyConfig(config) {
       ...config.settings['volto-form-block-italia'],
       IconComponent: Icon,
       FileWidgetComponent: FileWidget,
+      TextEditorWidgetComponent: TextEditorWidget,
+      fromHtml: fromHtml,
     },
     videoAllowExternalsDefault: false,
   };

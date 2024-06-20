@@ -28,7 +28,8 @@
     "volto-feedback-italia",
     "volto-subfooter",
     "volto-querywidget-with-browser",
-    "volto-form-block"
+    "volto-form-block",
+    "volto-form-block-italia"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -84,8 +85,9 @@
     "volto-dropdownmenu": "4.1.2",
     "volto-editablefooter": "5.1.5",
     "volto-feedback": "0.3.2",
-    "volto-feedback-italia": "1.0.1",
+    "volto-feedback-italia": "1.0.2",
     "volto-form-block": "3.8.7",
+    "volto-form-block-italia": "1.0.0",
     "volto-gdpr-privacy": "2.2.6",
     "volto-querywidget-with-browser": "0.4.2",
     "volto-secondarymenu": "4.1.0",
