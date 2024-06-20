@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-06-19T09:58:25.193Z\n"
+"POT-Creation-Date: 2024-06-20T14:03:55.836Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,14 +18,29 @@ msgstr ""
 msgid "Accedi all'area personale"
 msgstr ""
 
+#. Default: "Bando"
+#: components/View/commons/PageHeader/PageHeaderBando
+msgid "Bando"
+msgstr ""
+
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/HeaderSearch
 msgid "Cerca"
 msgstr ""
 
+#. Default: "Pulisci i campi"
+#: overrideTranslations
+msgid "Clear dates"
+msgstr ""
+
 #. Default: "Clear filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Clear filters"
+msgstr ""
+
+#. Default: "Clicca qui per sostituire il file"
+#: components/Widgets/FileWidget
+msgid "Clicca qui per sostituire il file"
 msgstr ""
 
 #. Default: "Current filters applied"
@@ -114,6 +129,11 @@ msgstr ""
 msgid "Previous page"
 msgstr ""
 
+#. Default: "Rimuovi il file"
+#: components/Widgets/FileWidget
+msgid "Rimuovi il file"
+msgstr ""
+
 #. Default: "Torna su"
 #: components/ScrollToTop/ScrollToTop
 msgid "Scroll to top"
@@ -134,6 +154,11 @@ msgstr ""
 msgid "Seguici su"
 msgstr ""
 
+#. Default: "Seleziona un file"
+#: components/Widgets/FileWidget
+msgid "Seleziona un file"
+msgstr ""
+
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "Subscribe"
@@ -142,6 +167,21 @@ msgstr ""
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
 msgid "Thank you."
+msgstr ""
+
+#. Default: "Trascina qui il file..."
+#: components/Widgets/FileWidget
+msgid "Trascina qui il file ..."
+msgstr ""
+
+#. Default: "Trascina qui un file per caricare un nuovo file"
+#: components/Widgets/FileWidget
+msgid "Trascina qui un file per caricare un nuovo file"
+msgstr ""
+
+#. Default: "Trascina qui un file per sostituire quello esistente"
+#: components/Widgets/FileWidget
+msgid "Trascina qui un file per sostituire quello esistente"
 msgstr ""
 
 #. Default: "Unauthorized"
@@ -164,6 +204,11 @@ msgstr ""
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
 msgid "You are trying to access a protected resource, please {login} first."
+msgstr ""
+
+#. Default: "Vedi azioni"
+#: components/View/commons/Actions
+msgid "actions"
 msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
@@ -189,6 +234,26 @@ msgstr ""
 #. Default: "Torna alla ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "backToSearch"
+msgstr ""
+
+#. Default: "Scaduto"
+#: components/View/Bando/BandoStatus
+msgid "bando_closed"
+msgstr ""
+
+#. Default: "In corso"
+#: components/View/Bando/BandoStatus
+msgid "bando_inProgress"
+msgstr ""
+
+#. Default: "Attivo"
+#: components/View/Bando/BandoStatus
+msgid "bando_open"
+msgstr ""
+
+#. Default: "Programmato"
+#: components/View/Bando/BandoStatus
+msgid "bando_scheduled"
 msgstr ""
 
 #. Default: "Percorso di navigazione"
@@ -226,9 +291,29 @@ msgstr ""
 msgid "currentActive"
 msgstr ""
 
+#. Default: "dal {dateStart} fino a conclusione"
+#: components/View/commons/PageHeader/PageHeaderEventDates
+msgid "dal {dateStart} fino a conclusione"
+msgstr ""
+
+#. Default: "Data"
+#: components/View/commons/PageHeader/PageHeaderDates
+msgid "date"
+msgstr ""
+
 #. Default: "Non cercare nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "deselectSearchSection"
+msgstr ""
+
+#. Default: "Protocollo {protocollo} del {data_protocollo}"
+#: components/View/commons/PageHeader/PageHeaderDocumento
+msgid "documento_header_protocollo"
+msgstr ""
+
+#. Default: "Scarica"
+#: components/View/commons/Actions
+msgid "download"
 msgstr ""
 
 #. Default: "Close menu"
@@ -236,9 +321,29 @@ msgstr ""
 msgid "dropdownmenu-close-menu-button"
 msgstr ""
 
+#. Default: "La data di fine deve essere successiva alla data di inizio"
+#: helpers/FormValidation/FormValidation
+msgid "event_end"
+msgstr ""
+
+#. Default: "Scadenza"
+#: components/View/commons/PageHeader/PageHeaderDates
+msgid "expire"
+msgstr ""
+
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
+msgstr ""
+
+#. Default: "Annulla"
+#: overrideTranslations
+msgid "form_default_cancel_label"
+msgstr ""
+
+#. Default: "Ricomincia"
+#: overrideTranslations
+msgid "form_reset"
 msgstr ""
 
 #. Default: "dal"
@@ -249,6 +354,16 @@ msgstr ""
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
+msgstr ""
+
+#. Default: "Icona per l'argomento {topic_title}"
+#: components/View/Argomento/ArgumentIcon
+msgid "icon_title"
+msgstr ""
+
+#. Default: "I campi contrassegnati da (*) sono obbligatori."
+#: overrideTranslations
+msgid "legend_required"
 msgstr ""
 
 #. Default: "Questo evento ha più date: vedi tutte"
@@ -339,6 +454,16 @@ msgstr ""
 msgid "mail@example.com"
 msgstr ""
 
+#. Default: "Invia"
+#: components/View/commons/Actions
+msgid "mailto"
+msgstr ""
+
+#. Default: "min"
+#: components/View/commons/PageHeader/PageHeader
+msgid "minutes"
+msgstr ""
+
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
@@ -347,6 +472,11 @@ msgstr ""
 #. Default: "Scarica in formato"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_in_format"
+msgstr ""
+
+#. Default: "Numero del comunicato stampa"
+#: components/View/commons/PageHeader/PageHeaderNewsItem
+msgid "numero_progressivo_cs"
 msgstr ""
 
 #. Default: "Contenuto attivo"
@@ -399,6 +529,16 @@ msgstr ""
 msgid "paginationLabel"
 msgstr ""
 
+#. Default: "Stampa"
+#: components/View/commons/Actions
+msgid "print"
+msgstr ""
+
+#. Default: "Tempo di lettura"
+#: components/View/commons/PageHeader/PageHeader
+msgid "reading_time"
+msgstr ""
+
 #. Default: "Rimuovi opzione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeOption"
@@ -407,6 +547,51 @@ msgstr ""
 #. Default: "Rimuovi argomento"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
+msgstr ""
+
+#. Default: "il giorno"
+#: overrideTranslations
+msgid "rrule_in"
+msgstr ""
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_nd"
+msgstr ""
+
+#. Default: "di"
+#: overrideTranslations
+msgid "rrule_on"
+msgstr ""
+
+#. Default: "di"
+#: overrideTranslations
+msgid "rrule_on the"
+msgstr ""
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_rd"
+msgstr ""
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_st"
+msgstr ""
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_th"
+msgstr ""
+
+#. Default: "giorno feriale"
+#: overrideTranslations
+msgid "rrule_weekday"
+msgstr ""
+
+#. Default: "giorni feriali"
+#: overrideTranslations
+msgid "rrule_weekdays"
 msgstr ""
 
 #. Default: "Cerca"
@@ -454,9 +639,29 @@ msgstr ""
 msgid "selectTopicFilters"
 msgstr ""
 
+#. Default: "Servizio non attivo"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "service_off"
+msgstr ""
+
+#. Default: "Servizio attivo"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "service_on"
+msgstr ""
+
+#. Default: "Accedi al servizio"
+#: components/View/commons/PageHeader/PageHeaderLinkServizio
+msgid "servizio_canale_digitale_link"
+msgstr ""
+
 #. Default: "Vai alle altre opzioni di ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "setMoreSearchOptions"
+msgstr ""
+
+#. Default: "Condividi"
+#: components/View/commons/Sharing
+msgid "share"
 msgstr ""
 
 #. Default: "Skip to footer"
@@ -474,13 +679,34 @@ msgstr ""
 msgid "skiplink-navigation"
 msgstr ""
 
+#. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
+#: helpers/FormValidation/DataGrid
+msgid "timeline_tempi_scadenze_validation_error"
+msgstr ""
+
 #. Default: "al"
 #: helpers/dates
 msgid "to"
 msgstr ""
 
+#. Default: "{action} il menu"
+#: overrideTranslations
+msgid "toggle-menu"
+msgstr ""
+
+#. Default: "Chiudi"
+#: overrideTranslations
+msgid "toggleMenu_close"
+msgstr ""
+
+#. Default: "Apri"
+#: overrideTranslations
+msgid "toggleMenu_open"
+msgstr ""
+
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
 msgstr ""
 

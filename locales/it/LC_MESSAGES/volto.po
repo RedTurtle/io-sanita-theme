@@ -14,37 +14,52 @@ msgstr ""
 #. Default: "Accedi all'area personale"
 #: components/layout/Header/HeaderSlim/HeaderLogin
 msgid "Accedi all'area personale"
-msgstr ""
+msgstr "Accedi all'area personale"
+
+#. Default: "Bando"
+#: components/View/commons/PageHeader/PageHeaderBando
+msgid "Bando"
+msgstr "Bando"
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/HeaderSearch
 msgid "Cerca"
+msgstr "Cerca"
+
+#. Default: "Pulisci i campi"
+#: overrideTranslations
+msgid "Clear dates"
 msgstr ""
 
 #. Default: "Clear filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Clear filters"
-msgstr ""
+msgstr "Azzera filtri"
+
+#. Default: "Clicca qui per sostituire il file"
+#: components/Widgets/FileWidget
+msgid "Clicca qui per sostituire il file"
+msgstr "Clicca qui per sostituire il file"
 
 #. Default: "Current filters applied"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Current filters applied"
-msgstr ""
+msgstr "Filtri attualmente applicati"
 
 #. Default: "Al {end}"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "DateRangeFacetFilterListEntryAl"
-msgstr ""
+msgstr "Al {end}"
 
 #. Default: "Dal {start}"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "DateRangeFacetFilterListEntryDal"
-msgstr ""
+msgstr "Dal {start}"
 
 #. Default: "Dal {start} al {end}"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "DateRangeFacetFilterListEntryDalAl"
-msgstr ""
+msgstr "Dal {start} al {end}"
 
 #. Default: "HTML"
 #: components/Blocks/HTML/schema
@@ -59,48 +74,48 @@ msgstr ""
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Default: "Impostazioni cookie"
 #: components/layout/Footer/FooterSmall
 msgid "Impostazioni cookie footer"
-msgstr ""
+msgstr "Impostazioni cookie"
 
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
 msgid "Interruzione di pagina"
-msgstr ""
+msgstr "Interruzione di pagina"
 
 #. Default: "Iscriviti per riceverla"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "Iscriviti per ricevere la newsletter"
-msgstr ""
+msgstr "Iscriviti per ricevere la newsletter"
 
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader
 msgid "Loading page..."
-msgstr ""
+msgstr "Sto caricando la pagina richiesta..."
 
 #. Default: "Esci"
 #: components/layout/Header/HeaderSlim/HeaderLogin
 msgid "Logout"
-msgstr ""
+msgstr "Esci"
 
 #. Default: "Menu selezionato"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/layout/Navigation/MenuSecondary/MenuSecondary
 msgid "Menu selezionato"
-msgstr ""
+msgstr "Menu selezionato"
 
 #. Default: "Pagina successiva"
 #: components/Pagination/PaginationItem
 msgid "Next page"
-msgstr ""
+msgstr "Pagina successiva"
 
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
-msgstr ""
+msgstr "- apri in nuova scheda"
 
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
@@ -110,84 +125,134 @@ msgstr ""
 #. Default: "Pagina precedente"
 #: components/Pagination/PaginationItem
 msgid "Previous page"
-msgstr ""
+msgstr "Pagina precedente"
+
+#. Default: "Rimuovi il file"
+#: components/Widgets/FileWidget
+msgid "Rimuovi il file"
+msgstr "Rimuovi il file"
 
 #. Default: "Torna su"
 #: components/ScrollToTop/ScrollToTop
 msgid "Scroll to top"
-msgstr ""
+msgstr "Torna su"
 
 #. Default: "Cerca una parola chiave"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlock"
-msgstr ""
+msgstr "Cerca una parola chiave"
 
 #. Default: "Search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlockButtonText"
-msgstr ""
+msgstr "Cerca"
 
 #. Default: "Seguici su"
 #: components/layout/Header/SocialHeader
 msgid "Seguici su"
-msgstr ""
+msgstr "Seguici su"
+
+#. Default: "Seleziona un file"
+#: components/Widgets/FileWidget
+msgid "Seleziona un file"
+msgstr "Seleziona un file"
 
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "Subscribe"
-msgstr ""
+msgstr "Iscriviti"
 
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
 msgid "Thank you."
-msgstr ""
+msgstr "Grazie."
+
+#. Default: "Trascina qui il file..."
+#: components/Widgets/FileWidget
+msgid "Trascina qui il file ..."
+msgstr "Trascina qui il file..."
+
+#. Default: "Trascina qui un file per caricare un nuovo file"
+#: components/Widgets/FileWidget
+msgid "Trascina qui un file per caricare un nuovo file"
+msgstr "Trascina qui un file per caricare un nuovo file"
+
+#. Default: "Trascina qui un file per sostituire quello esistente"
+#: components/Widgets/FileWidget
+msgid "Trascina qui un file per sostituire quello esistente"
+msgstr "Trascina qui un file per sostituire quello esistente"
 
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
-msgstr ""
+msgstr "Non autorizzato"
 
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
 #: components/layout/Footer/FooterNavigation
 #: components/layout/Footer/FooterSmall
 msgid "Vai alla pagina"
-msgstr ""
+msgstr "Vai alla pagina"
 
 #. Default: "Vedi tutto"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
-msgstr ""
+msgstr "Vedi tutto"
 
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
 msgid "You are trying to access a protected resource, please {login} first."
-msgstr ""
+msgstr "Stai provando ad accedere ad una risorsa protetta, per favore {login} al sito."
+
+#. Default: "Vedi azioni"
+#: components/View/commons/Actions
+msgid "actions"
+msgstr "Vedi azioni"
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "advandedSectionsFilters"
-msgstr ""
+msgstr "Vai alla ricerca per sezioni avanzata"
 
 #. Default: "Tutto"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allFilters"
-msgstr ""
+msgstr "Tutto"
 
 #. Default: "Tutte le date"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allOptions"
-msgstr ""
+msgstr "Tutte le opzioni"
 
 #. Default: "Tutti gli argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allTopics"
-msgstr ""
+msgstr "Tutti gli argomenti"
 
 #. Default: "Torna alla ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "backToSearch"
-msgstr ""
+msgstr "Torna alla ricerca"
+
+#. Default: "Scaduto"
+#: components/View/Bando/BandoStatus
+msgid "bando_closed"
+msgstr "Scaduto"
+
+#. Default: "In corso"
+#: components/View/Bando/BandoStatus
+msgid "bando_inProgress"
+msgstr "In corso"
+
+#. Default: "Attivo"
+#: components/View/Bando/BandoStatus
+msgid "bando_open"
+msgstr "Attivo"
+
+#. Default: "Programmato"
+#: components/View/Bando/BandoStatus
+msgid "bando_scheduled"
+msgstr "Programmato"
 
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
@@ -197,89 +262,139 @@ msgstr ""
 #. Default: "Clear all filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearAllFilters"
-msgstr ""
+msgstr "Rimuovi tutti i filtri"
 
 #. Default: "Clear {filterName} filter"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearFilter"
-msgstr ""
+msgstr "Rimuovi il filtro {filterName}"
 
 #. Default: "Clear search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearSearch"
-msgstr ""
+msgstr "Rimuovi ricerca testuale"
 
 #. Default: "Chiudi menu"
 #: components/layout/Navigation/CollapseNavigation
 msgid "close-menu"
-msgstr ""
+msgstr "Chiudi menu"
 
 #. Default: "Chiudi cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "closeSearch"
-msgstr ""
+msgstr "Chiudi ricerca"
 
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
 msgstr ""
 
+#. Default: "dal {dateStart} fino a conclusione"
+#: components/View/commons/PageHeader/PageHeaderEventDates
+msgid "dal {dateStart} fino a conclusione"
+msgstr "dal {dateStart} fino a conclusione"
+
+#. Default: "Data"
+#: components/View/commons/PageHeader/PageHeaderDates
+msgid "date"
+msgstr "Data"
+
 #. Default: "Non cercare nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "deselectSearchSection"
-msgstr ""
+msgstr "Non cercare nella sezione"
+
+#. Default: "Protocollo {protocollo} del {data_protocollo}"
+#: components/View/commons/PageHeader/PageHeaderDocumento
+msgid "documento_header_protocollo"
+msgstr "Protocollo {protocollo} del {data_protocollo}"
+
+#. Default: "Scarica"
+#: components/View/commons/Actions
+msgid "download"
+msgstr "Scarica"
 
 #. Default: "Close menu"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "dropdownmenu-close-menu-button"
-msgstr ""
+msgstr "Chiudi il menu"
+
+#. Default: "La data di fine deve essere successiva alla data di inizio"
+#: helpers/FormValidation/FormValidation
+msgid "event_end"
+msgstr "La data di fine deve essere successiva alla data di inizio"
+
+#. Default: "Scadenza"
+#: components/View/commons/PageHeader/PageHeaderDates
+msgid "expire"
+msgstr "Scadenza"
 
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
-msgstr ""
+msgstr "Filtri"
+
+#. Default: "Annulla"
+#: overrideTranslations
+msgid "form_default_cancel_label"
+msgstr "Annulla"
+
+#. Default: "Ricomincia"
+#: overrideTranslations
+msgid "form_reset"
+msgstr "Ricomincia"
 
 #. Default: "dal"
 #: helpers/dates
 msgid "from"
-msgstr ""
+msgstr "dal"
 
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
+msgstr "Home page"
+
+#. Default: "Icona per l'argomento {topic_title}"
+#: components/View/Argomento/ArgumentIcon
+msgid "icon_title"
 msgstr ""
+
+#. Default: "I campi contrassegnati da (*) sono obbligatori."
+#: overrideTranslations
+msgid "legend_required"
+msgstr "I campi contrassegnati da (*) sono obbligatori."
 
 #. Default: "Questo evento ha più date: vedi tutte"
 #: helpers/dates
 msgid "listing_event_recurrence_label"
-msgstr ""
+msgstr "Questo evento ha più date: vedi tutte"
 
 #. Default: "log in"
 #: components/Unauthorized/Unauthorized
 msgid "log in"
-msgstr ""
+msgstr "accedi"
 
 #. Default: "Log in"
 #: components/LoginAgid/LoginAgid
 msgid "login_agid"
-msgstr ""
+msgstr "Accedi"
 
 #. Default: "To access the site and its services, use one of the following methods."
 #: components/LoginAgid/LoginAgid
 msgid "login_agid_description"
-msgstr ""
+msgstr "Per accedere al sito a ai suoi servizi, utilizza una delle seguenti modalità."
 
 #. Default: "Other users"
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_agid_other"
-msgstr ""
+msgstr "Altre utenze"
 
 #. Default: "Alternatively you can use these methods."
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_agid_other_description"
-msgstr ""
+msgstr "In alternativa puoi utilizzare le seguenti modalità."
 
 #. Default: "CIE"
 #: components/LoginAgid/LoginAgidButtons
@@ -289,148 +404,218 @@ msgstr ""
 #. Default: "Log in with CIE."
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_cie_description"
-msgstr ""
+msgstr "Entra con CIE"
 
 #. Default: "How to activate CIE"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_cie_help"
-msgstr ""
+msgstr "Maggiori informazioni sulla CIE"
 
 #. Default: "Log in as employee"
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_plone_user"
-msgstr ""
+msgstr "Accesso operatore"
 
 #. Default: "SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid"
-msgstr ""
+msgstr "SPID"
 
 #. Default: "Log in with SPID, the public digital identity system."
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid_description"
-msgstr ""
+msgstr "Accedi con SPID, il sistema Pubblico di Identità Digitale."
 
 #. Default: "How to activate SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid_help"
-msgstr ""
+msgstr "Come attivare SPID"
 
 #. Default: "Login with CIE"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_with_cie"
-msgstr ""
+msgstr "Entra con CIE"
 
 #. Default: "Login with SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_with_spid"
-msgstr ""
+msgstr "Accedi con Spid"
 
 #. Default: "Logo"
 #: components/BrandWrapper/BrandWrapper
 msgid "logo-subsite-alt"
-msgstr ""
+msgstr "Logo"
 
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
-msgstr ""
+msgstr "mail@example.com"
+
+#. Default: "Invia"
+#: components/View/commons/Actions
+msgid "mailto"
+msgstr "Invia"
+
+#. Default: "min"
+#: components/View/commons/PageHeader/PageHeader
+msgid "minutes"
+msgstr "min"
 
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
-msgstr ""
+msgstr "Scarica il file"
 
 #. Default: "Scarica in formato"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_in_format"
-msgstr ""
+msgstr "Scarica in formato"
+
+#. Default: "Numero del comunicato stampa"
+#: components/View/commons/PageHeader/PageHeaderNewsItem
+msgid "numero_progressivo_cs"
+msgstr "Numero del comunicato stampa"
 
 #. Default: "Contenuto attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionActiveContentButton"
-msgstr ""
+msgstr "Contenuto attivo"
 
 #. Default: "Verranno esclusi dalla ricerca i contenuti archiviati e non più validi come gli eventi terminati o i bandi scaduti."
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionActiveContentInfo"
-msgstr ""
+msgstr "Verranno esclusi dalla ricerca i contenuti archiviati e non più validi come gli eventi terminati o i bandi scaduti."
 
 #. Default: "Cerca solo tra i contenuti attivi"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionActiveContentLabel"
-msgstr ""
+msgstr "Cerca solo tra i contenuti attivi"
 
 #. Default: "Data fine"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionDateEnd"
-msgstr ""
+msgstr "Data fine"
 
 #. Default: "Al"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionDateEndButton"
-msgstr ""
+msgstr "Al"
 
 #. Default: "inserisci la data in formato gg/mm/aaaa"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionDatePlaceholder"
-msgstr ""
+msgstr "inserisci la data in formato gg/mm/aaaa"
 
 #. Default: "Data inizio"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionDateStart"
-msgstr ""
+msgstr "Data inizio"
 
 #. Default: "Dal"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "optionDateStartButton"
-msgstr ""
+msgstr "Dal"
 
 #. Default: "Opzioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "options"
-msgstr ""
+msgstr "Opzioni"
 
 #. Default: "Selettore di pagina"
 #: components/Pagination/Pagination
 msgid "paginationLabel"
-msgstr ""
+msgstr "Selettore di pagina"
+
+#. Default: "Stampa"
+#: components/View/commons/Actions
+msgid "print"
+msgstr "Stampa"
+
+#. Default: "Tempo di lettura"
+#: components/View/commons/PageHeader/PageHeader
+msgid "reading_time"
+msgstr "Tempo di lettura"
 
 #. Default: "Rimuovi opzione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeOption"
-msgstr ""
+msgstr "Rimuovi opzione"
 
 #. Default: "Rimuovi argomento"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
-msgstr ""
+msgstr "Rimuovi argomento"
+
+#. Default: "il giorno"
+#: overrideTranslations
+msgid "rrule_in"
+msgstr "il giorno"
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_nd"
+msgstr " "
+
+#. Default: "di"
+#: overrideTranslations
+msgid "rrule_on"
+msgstr "di"
+
+#. Default: "di"
+#: overrideTranslations
+msgid "rrule_on the"
+msgstr "di"
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_rd"
+msgstr " "
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_st"
+msgstr " "
+
+#. Default: "_"
+#: overrideTranslations
+msgid "rrule_th"
+msgstr " "
+
+#. Default: "giorno feriale"
+#: overrideTranslations
+msgid "rrule_weekday"
+msgstr "giorno feriale"
+
+#. Default: "giorni feriali"
+#: overrideTranslations
+msgid "rrule_weekdays"
+msgstr "giorni feriali"
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "search"
-msgstr ""
+msgstr "Cerca"
 
 #. Default: "Cerca in tutte le sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllSections"
-msgstr ""
+msgstr "Cerca in tutte le sezioni"
 
 #. Default: "Cerca tutti gli argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllTopics"
-msgstr ""
+msgstr "Cerca tutti gli argomenti"
 
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchInSection"
-msgstr ""
+msgstr "Cerca nella sezione"
 
 #. Default: "Cerca nel sito"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
-msgstr ""
+msgstr "Cerca nel sito"
 
 #. Default: "Ricerca"
 #: config/ioSanitaConfig
@@ -440,54 +625,95 @@ msgstr ""
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
-msgstr ""
+msgstr "Ricerca per: <em>{searchedtext}</em>."
 
 #. Default: "Sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "sections"
-msgstr ""
+msgstr "Sezioni"
 
 #. Default: "Seleziona gli argomenti che vuoi cercare"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "selectTopicFilters"
-msgstr ""
+msgstr "Seleziona gli argomenti che vuoi cercare"
+
+#. Default: "Servizio non attivo"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "service_off"
+msgstr "Servizio non attivo"
+
+#. Default: "Servizio attivo"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "service_on"
+msgstr "Servizio attivo"
+
+#. Default: "Accedi al servizio"
+#: components/View/commons/PageHeader/PageHeaderLinkServizio
+msgid "servizio_canale_digitale_link"
+msgstr "Accedi al servizio"
 
 #. Default: "Vai alle altre opzioni di ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "setMoreSearchOptions"
-msgstr ""
+msgstr "Vai alle altre opzioni di ricerca"
+
+#. Default: "Condividi"
+#: components/View/commons/Sharing
+msgid "share"
+msgstr "Condividi"
 
 #. Default: "Skip to footer"
 #: components/SkipLinks/SkipLinks
 msgid "skiplink-footer"
-msgstr ""
+msgstr "Vai al footer"
 
 #. Default: "Skip to main content"
 #: components/SkipLinks/SkipLinks
 msgid "skiplink-main-content"
-msgstr ""
+msgstr "Vai al contenuto"
 
 #. Default: "Skip to navigation"
 #: components/SkipLinks/SkipLinks
 msgid "skiplink-navigation"
-msgstr ""
+msgstr "Vai alla navigazione"
+
+#. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
+#: helpers/FormValidation/DataGrid
+msgid "timeline_tempi_scadenze_validation_error"
+msgstr "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
 
 #. Default: "al"
 #: helpers/dates
 msgid "to"
+msgstr "al"
+
+#. Default: "{action} il menu"
+#: overrideTranslations
+msgid "toggle-menu"
+msgstr ""
+
+#. Default: "Chiudi"
+#: overrideTranslations
+msgid "toggleMenu_close"
+msgstr ""
+
+#. Default: "Apri"
+#: overrideTranslations
+msgid "toggleMenu_open"
 msgstr ""
 
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
-msgstr ""
+msgstr "Argomenti"
 
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
-msgstr ""
+msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al sito."
 
 #. Default: "Blocco sconosciuto"
 #: components/View/commons/RenderBlocks
 msgid "unknownBlock"
-msgstr ""
+msgstr "Blocco sconosciuto"
