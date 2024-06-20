@@ -1,0 +1,145 @@
+.navbar {
+  .dropdown-menu {
+    .link-list-wrapper {
+      ul.link-list {
+        &.bordered {
+          li {
+            border-bottom: 1px solid rgba($link-color, 0.2);
+
+            &:hover,
+            &:active,
+            a.active {
+              background-color: rgba($link-color, 0.06);
+            }
+
+            a,
+            a span {
+              text-decoration: none;
+            }
+
+            h3 {
+              display: block;
+              padding: 0;
+              margin: 0;
+              margin-bottom: 5px !important;
+
+              a {
+                display: inline;
+                padding: 0 !important;
+
+                span {
+                  color: $body-color;
+                }
+              }
+            }
+
+            @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+              h3 {
+                margin-top: 2em !important;
+              }
+            }
+            @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+              &:not(:first-of-type) {
+                h3 {
+                  margin-top: 2em !important;
+                }
+              }
+            }
+          }
+        }
+
+        li {
+          &.it-more {
+            a {
+              justify-content: flex-end;
+              span {
+                font-weight: $font-weight-bold;
+                text-transform: uppercase;
+                font-size: 0.889rem;
+                margin-right: 0.6em;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .megamenu-close-button {
+      button {
+        &:active,
+        &:focus {
+          outline: 1px dotted;
+          outline: 5px auto -webkit-focus-ring-color;
+        }
+      }
+    }
+
+    .it-external {
+      .link-list-wrapper {
+        @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+          justify-content: flex-end;
+        }
+
+        .link-list {
+          li.it-more a {
+            // more button
+            &:before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{map-get($grid-breakpoints, lg)}) {
+  .megamenu-close-button button {
+    position: absolute !important;
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: -1px !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+  .navbar {
+    .dropdown-menu {
+      left: 0;
+      right: 0;
+    }
+    &.has-megamenu {
+      li.nav-item {
+        &.megamenu {
+          & > .dropdown {
+            position: static;
+            display: flex;
+
+            &.show {
+              > a.nav-link[aria-expanded='true'] {
+                position: relative;
+
+                &::after {
+                  position: absolute;
+                  bottom: -5px;
+                  left: calc(50% - 10px);
+                  width: 0;
+                  height: 0;
+                  border-width: 0 10px 10px;
+                  border-style: solid;
+                  border-color: transparent transparent #fff;
+                  content: '';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

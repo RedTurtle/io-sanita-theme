@@ -15,6 +15,15 @@
             &.focus--mouse {
               border-color: unset !important;
             }
+            &.dropdown-toggle {
+              svg {
+                width: calc(1.5rem - 3px);
+                height: calc(1.5rem - 3px);
+                @media (max-width: 991px) {
+                  fill: $primary;
+                }
+              }
+            }
           }
         }
       }

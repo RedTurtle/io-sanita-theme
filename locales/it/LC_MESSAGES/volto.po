@@ -1,0 +1,493 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. Default: "Accedi all'area personale"
+#: components/layout/Header/HeaderSlim/HeaderLogin
+msgid "Accedi all'area personale"
+msgstr ""
+
+#. Default: "Cerca"
+#: components/layout/Header/HeaderSearch/HeaderSearch
+msgid "Cerca"
+msgstr ""
+
+#. Default: "Clear filters"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "Clear filters"
+msgstr ""
+
+#. Default: "Current filters applied"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "Current filters applied"
+msgstr ""
+
+#. Default: "Al {end}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryAl"
+msgstr ""
+
+#. Default: "Dal {start}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryDal"
+msgstr ""
+
+#. Default: "Dal {start} al {end}"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "DateRangeFacetFilterListEntryDalAl"
+msgstr ""
+
+#. Default: "HTML"
+#: components/Blocks/HTML/schema
+msgid "HTML"
+msgstr ""
+
+#. Default: "Headline"
+#: components/Blocks/HTML/schema
+msgid "Headline"
+msgstr ""
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Home"
+msgstr ""
+
+#. Default: "Impostazioni cookie"
+#: components/layout/Footer/FooterSmall
+msgid "Impostazioni cookie footer"
+msgstr ""
+
+#. Default: "Interruzione di pagina"
+#: components/Blocks/Break/Edit
+msgid "Interruzione di pagina"
+msgstr ""
+
+#. Default: "Iscriviti per riceverla"
+#: components/layout/Footer/FooterNewsletterSubscribe
+msgid "Iscriviti per ricevere la newsletter"
+msgstr ""
+
+#. Default: "Sto caricando la pagina richiesta..."
+#: components/AppExtras/PageLoader
+msgid "Loading page..."
+msgstr ""
+
+#. Default: "Esci"
+#: components/layout/Header/HeaderSlim/HeaderLogin
+msgid "Logout"
+msgstr ""
+
+#. Default: "Menu selezionato"
+#: components/layout/Navigation/MegaMenu/MegaMenu
+#: components/layout/Navigation/MenuSecondary/MenuSecondary
+msgid "Menu selezionato"
+msgstr ""
+
+#. Default: "Pagina successiva"
+#: components/Pagination/PaginationItem
+msgid "Next page"
+msgstr ""
+
+#. Default: "- apri in nuova scheda"
+#: components/layout/Header/SocialHeader
+msgid "Nuova scheda"
+msgstr ""
+
+#. Default: "Pagina"
+#: components/Pagination/PaginationItem
+msgid "Page"
+msgstr ""
+
+#. Default: "Pagina precedente"
+#: components/Pagination/PaginationItem
+msgid "Previous page"
+msgstr ""
+
+#. Default: "Torna su"
+#: components/ScrollToTop/ScrollToTop
+msgid "Scroll to top"
+msgstr ""
+
+#. Default: "Cerca una parola chiave"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "SearchSearchBlock"
+msgstr ""
+
+#. Default: "Search"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "SearchSearchBlockButtonText"
+msgstr ""
+
+#. Default: "Seguici su"
+#: components/layout/Header/SocialHeader
+msgid "Seguici su"
+msgstr ""
+
+#. Default: "Iscriviti"
+#: components/layout/Footer/FooterNewsletterSubscribe
+msgid "Subscribe"
+msgstr ""
+
+#. Default: "Thank you."
+#: components/Unauthorized/Unauthorized
+msgid "Thank you."
+msgstr ""
+
+#. Default: "Unauthorized"
+#: components/Unauthorized/Unauthorized
+msgid "Unauthorized"
+msgstr ""
+
+#. Default: "Vai alla pagina"
+#: components/layout/Footer/FooterInfos
+#: components/layout/Footer/FooterNavigation
+#: components/layout/Footer/FooterSmall
+msgid "Vai alla pagina"
+msgstr ""
+
+#. Default: "Vedi tutto"
+#: components/layout/Navigation/MegaMenu/MegaMenu
+msgid "Vedi tutto"
+msgstr ""
+
+#. Default: "You are trying to access a protected resource, please {login} first."
+#: components/Unauthorized/Unauthorized
+msgid "You are trying to access a protected resource, please {login} first."
+msgstr ""
+
+#. Default: "Vai alla ricerca per sezioni avanzata"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "advandedSectionsFilters"
+msgstr ""
+
+#. Default: "Tutto"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "allFilters"
+msgstr ""
+
+#. Default: "Tutte le date"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "allOptions"
+msgstr ""
+
+#. Default: "Tutti gli argomenti"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "allTopics"
+msgstr ""
+
+#. Default: "Torna alla ricerca"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "backToSearch"
+msgstr ""
+
+#. Default: "Percorso di navigazione"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "breadcrumb"
+msgstr ""
+
+#. Default: "Clear all filters"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearAllFilters"
+msgstr ""
+
+#. Default: "Clear {filterName} filter"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearFilter"
+msgstr ""
+
+#. Default: "Clear search"
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "clearSearch"
+msgstr ""
+
+#. Default: "Chiudi menu"
+#: components/layout/Navigation/CollapseNavigation
+msgid "close-menu"
+msgstr ""
+
+#. Default: "Chiudi cerca"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "closeSearch"
+msgstr ""
+
+#. Default: "attivo"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "currentActive"
+msgstr ""
+
+#. Default: "Non cercare nella sezione"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "deselectSearchSection"
+msgstr ""
+
+#. Default: "Close menu"
+#: components/layout/Navigation/MegaMenu/MegaMenu
+msgid "dropdownmenu-close-menu-button"
+msgstr ""
+
+#. Default: "Filtri"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "filters"
+msgstr ""
+
+#. Default: "dal"
+#: helpers/dates
+msgid "from"
+msgstr ""
+
+#. Default: "homepage"
+#: components/BrandWrapper/BrandWrapper
+msgid "homepage"
+msgstr ""
+
+#. Default: "Questo evento ha più date: vedi tutte"
+#: helpers/dates
+msgid "listing_event_recurrence_label"
+msgstr ""
+
+#. Default: "log in"
+#: components/Unauthorized/Unauthorized
+msgid "log in"
+msgstr ""
+
+#. Default: "Log in"
+#: components/LoginAgid/LoginAgid
+msgid "login_agid"
+msgstr ""
+
+#. Default: "To access the site and its services, use one of the following methods."
+#: components/LoginAgid/LoginAgid
+msgid "login_agid_description"
+msgstr ""
+
+#. Default: "Other users"
+#: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
+msgid "login_agid_other"
+msgstr ""
+
+#. Default: "Alternatively you can use these methods."
+#: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
+msgid "login_agid_other_description"
+msgstr ""
+
+#. Default: "CIE"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_cie"
+msgstr ""
+
+#. Default: "Log in with CIE."
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_cie_description"
+msgstr ""
+
+#. Default: "How to activate CIE"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_cie_help"
+msgstr ""
+
+#. Default: "Log in as employee"
+#: components/LoginAgid/LoginAgid
+#: components/Unauthorized/Unauthorized
+msgid "login_plone_user"
+msgstr ""
+
+#. Default: "SPID"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_spid"
+msgstr ""
+
+#. Default: "Log in with SPID, the public digital identity system."
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_spid_description"
+msgstr ""
+
+#. Default: "How to activate SPID"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_spid_help"
+msgstr ""
+
+#. Default: "Login with CIE"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_with_cie"
+msgstr ""
+
+#. Default: "Login with SPID"
+#: components/LoginAgid/LoginAgidButtons
+msgid "login_with_spid"
+msgstr ""
+
+#. Default: "Logo"
+#: components/BrandWrapper/BrandWrapper
+msgid "logo-subsite-alt"
+msgstr ""
+
+#. Default: "mail@example.com"
+#: components/layout/Footer/FooterNewsletterSubscribe
+msgid "mail@example.com"
+msgstr ""
+
+#. Default: "Scarica il file"
+#: components/View/commons/DownloadFileFormat
+msgid "modulo_download_file"
+msgstr ""
+
+#. Default: "Scarica in formato"
+#: components/View/commons/DownloadFileFormat
+msgid "modulo_download_in_format"
+msgstr ""
+
+#. Default: "Contenuto attivo"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionActiveContentButton"
+msgstr ""
+
+#. Default: "Verranno esclusi dalla ricerca i contenuti archiviati e non più validi come gli eventi terminati o i bandi scaduti."
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionActiveContentInfo"
+msgstr ""
+
+#. Default: "Cerca solo tra i contenuti attivi"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionActiveContentLabel"
+msgstr ""
+
+#. Default: "Data fine"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionDateEnd"
+msgstr ""
+
+#. Default: "Al"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionDateEndButton"
+msgstr ""
+
+#. Default: "inserisci la data in formato gg/mm/aaaa"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionDatePlaceholder"
+msgstr ""
+
+#. Default: "Data inizio"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionDateStart"
+msgstr ""
+
+#. Default: "Dal"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "optionDateStartButton"
+msgstr ""
+
+#. Default: "Opzioni"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "options"
+msgstr ""
+
+#. Default: "Selettore di pagina"
+#: components/Pagination/Pagination
+msgid "paginationLabel"
+msgstr ""
+
+#. Default: "Rimuovi opzione"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "removeOption"
+msgstr ""
+
+#. Default: "Rimuovi argomento"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "removeTopic"
+msgstr ""
+
+#. Default: "Cerca"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "search"
+msgstr ""
+
+#. Default: "Cerca in tutte le sezioni"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "searchAllSections"
+msgstr ""
+
+#. Default: "Cerca tutti gli argomenti"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "searchAllTopics"
+msgstr ""
+
+#. Default: "Cerca nella sezione"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "searchInSection"
+msgstr ""
+
+#. Default: "Cerca nel sito"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "searchLabel"
+msgstr ""
+
+#. Default: "Ricerca"
+#: config/ioSanitaConfig
+msgid "search_brdc"
+msgstr ""
+
+#. Default: "Ricerca per: <em>{searchedtext}</em>."
+#: helpers/Translations/searchBlockExtendedTranslations
+msgid "searchedFor"
+msgstr ""
+
+#. Default: "Sezioni"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "sections"
+msgstr ""
+
+#. Default: "Seleziona gli argomenti che vuoi cercare"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "selectTopicFilters"
+msgstr ""
+
+#. Default: "Vai alle altre opzioni di ricerca"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "setMoreSearchOptions"
+msgstr ""
+
+#. Default: "Skip to footer"
+#: components/SkipLinks/SkipLinks
+msgid "skiplink-footer"
+msgstr ""
+
+#. Default: "Skip to main content"
+#: components/SkipLinks/SkipLinks
+msgid "skiplink-main-content"
+msgstr ""
+
+#. Default: "Skip to navigation"
+#: components/SkipLinks/SkipLinks
+msgid "skiplink-navigation"
+msgstr ""
+
+#. Default: "al"
+#: helpers/dates
+msgid "to"
+msgstr ""
+
+#. Default: "Argomenti"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "topics"
+msgstr ""
+
+#. Default: "You are trying to access a protected resource, please login first."
+#: components/Unauthorized/Unauthorized
+msgid "unauthorized_description"
+msgstr ""
+
+#. Default: "Blocco sconosciuto"
+#: components/View/commons/RenderBlocks
+msgid "unknownBlock"
+msgstr ""

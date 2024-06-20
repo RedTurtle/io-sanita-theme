@@ -64,7 +64,10 @@ const isActive = (item, pathname) => {
   );
 };
 
-const isChildActive = (itemUrl, pathname) => {
+const isChildActive = (itemUrl, pathname, exact = false) => {
+  if (exact) {
+    return itemUrl === pathname;
+  }
   return pathname.indexOf(itemUrl) > -1;
 };
 
@@ -245,13 +248,10 @@ const MegaMenu = ({ item, pathname }) => {
             color="secondary"
             nav
             data-element={item.id_lighthouse}
-            className="dropdown-toggle"
+            className={cx('dropdown-toggle', { active: isItemActive })}
           >
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
-            <Icon
-              icon="it-expand"
-              className={cx('megamenu-toggle-icon', { open: menuStatus })}
-            />
+            <Icon icon="it-expand" className={cx('', { open: menuStatus })} />
           </DropdownToggle>
           <DropdownMenu flip tag="div">
             <div className="text-end megamenu-close-button">
@@ -316,6 +316,7 @@ const MegaMenu = ({ item, pathname }) => {
                                     active: isChildActive(
                                       flattenToAppURL(child['@id']),
                                       pathname,
+                                      true,
                                     ),
                                   })}
                                   role="menuitem"

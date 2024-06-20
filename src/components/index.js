@@ -1,7 +1,9 @@
 export Icon from 'io-sanita-theme/components/Icon/Icon';
+export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
 
 //commons
 export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
+export Unauthorized from 'io-sanita-theme/components/Unauthorized/Unauthorized';
 
 //renderer
 export RenderBlocks from 'io-sanita-theme/components/View/commons/RenderBlocks';
@@ -58,8 +60,12 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 
 //Widgets
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
+export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
 
 //Cards
 export CardFeatured from 'io-sanita-theme/components/Cards/CardFeatured/CardFeatured';
 export CardImage from 'io-sanita-theme/components/Cards/CardImage/CardImage';
 export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
+
+//Pagination
+export Pagination from 'io-sanita-theme/components/Pagination/Pagination';

@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Button } from 'design-react-kit';
 import { Icon } from 'io-sanita-theme/components';
+import './_scrollToTop.scss';
 
 const messages = defineMessages({
   scrollToTop: {
@@ -45,7 +46,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <div className="public-ui scroll-to-top">
           <Button
-            color="tertiary"
+            color="accent"
             size="sm"
             title={intl.formatMessage(messages.scrollToTop)}
             onClick={scrollToTop}

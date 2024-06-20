@@ -84,7 +84,6 @@ export const getCalendarDate = (item, rrulestr) => {
     case 'Event':
       let realStart = item.start;
       let realEnd = item.end;
-      console.log(realStart, realEnd);
       if (item.recurrence) {
         const _start = item.start && viewDate(intl.locale, item.start);
         const recurrenceDates = getRealStartAndEndWithRecurrence(

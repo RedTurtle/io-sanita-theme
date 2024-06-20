@@ -1,11 +1,15 @@
 $primary-h: 190;
 $primary-s: 91;
 $primary-b: 29;
-$primary: hsl($primary-h, $primary-s, $primary-b); //#07768d;
-$primary-dark: hsl($primary-h, $primary-s, 20);
+$primary: hsl($primary-h, $primary-s * 1%, $primary-b * 1%); //#07768d;
+$primary-dark: hsl($primary-h, $primary-s * 1%, 20%);
 $accent: #9c0769;
 
 $primary-text: #fff;
+$accent-text: #fff;
+
+$bg-primary-lightest: hsl($primary-h, 50%, 97%); //#F4FAFB;
+$bg-primary-lighter: hsl($primary-h, 50%, 87%); //#CDE9EE;
 
 //font
 $font-weight-base: 300;
@@ -17,8 +21,8 @@ $header-slim-bg-color: $primary-dark;
 // //footer
 $footer-top-background-asl: hsla(
   $primary-h,
-  $primary-s,
-  12
+  $primary-s * 1%,
+  12%
 ); // color-ocean-10 --> $primary-a12 //questo perchè su bootstrap-italia la variabile $footer-top-background non è definita come !default
 
 //nav
