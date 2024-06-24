@@ -5,11 +5,6 @@ export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
 export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
 export Unauthorized from 'io-sanita-theme/components/Unauthorized/Unauthorized';
 
-//renderer
-export RenderBlocks from 'io-sanita-theme/components/View/commons/RenderBlocks';
-export RichText from 'io-sanita-theme/components/View/commons/RichTextView/RichText';
-export RichTextRender from 'io-sanita-theme/components/View/commons/RichTextView/RichTextRender';
-
 //Login
 export LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
 export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButtons';

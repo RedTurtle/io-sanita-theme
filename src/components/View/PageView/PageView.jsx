@@ -5,19 +5,25 @@
 import React from 'react';
 import cx from 'classnames';
 import {
+  RichText,
+  richTextHasContent,
+  TextOrBlocks,
+} from 'io-sanita-theme/helpers';
+
+import {
+  Sharing,
+  Actions,
+  PageHeaderTassonomiaArgomenti,
+} from 'io-sanita-theme/components/View';
+
+import {
   SearchSectionForm,
   PageHeaderNav,
   RelatedItems,
   PagePlaceholderAfterContent,
   PagePlaceholderAfterRelatedItems,
   PagePlaceholderTitle,
-  TextOrBlocks,
-  RichText,
   RelatedItemInEvidence,
-  richTextHasContent,
-  PageHeaderTassonomiaArgomenti,
-  Sharing,
-  Actions,
   PageMetadata,
 } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { defineMessages, useIntl } from 'react-intl';

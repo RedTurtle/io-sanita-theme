@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { RichTextRender } from 'io-sanita-theme/components';
+import { RichTextRender } from 'io-sanita-theme/helpers';
 /**
  * RichText view component class.
  * @function RichText

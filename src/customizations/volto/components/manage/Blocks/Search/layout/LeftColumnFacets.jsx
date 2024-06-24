@@ -11,8 +11,8 @@ import {
 import { UniversalLink } from '@plone/volto/components';
 import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
-import { RichText } from 'io-sanita-theme/components';
-import { richTextHasContent } from 'io-sanita-theme/helpers';
+
+import { RichText, richTextHasContent } from 'io-sanita-theme/helpers';
 
 const FacetWrapper = ({ children }) => (
   <Col className="facet pt-4">{children}</Col>

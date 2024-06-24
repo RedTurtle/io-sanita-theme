@@ -1,7 +1,6 @@
 import { defineMessages, useIntl } from 'react-intl';
 import { Chip, ChipLabel } from 'design-react-kit';
-import { RichText } from 'io-sanita-theme/components';
-import { richTextHasContent } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichText } from 'io-sanita-theme/helpers';
 
 const PageHeaderServizio = ({ content }) => {
   const intl = useIntl();
