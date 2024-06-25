@@ -14,7 +14,7 @@ import './cardFeatured.scss';
 
 const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
-
+console.log(item);
   const img =
     item.image_field && item[item.image_field] ? (
       <Image item={item} alt="" />
@@ -32,6 +32,7 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
         <UniversalLink
           item={!isEditMode ? item : null}
           href={isEditMode ? '#' : ''}
+          className="card-title-link"
         >
           <CardTitle tag="h3">{item.title}</CardTitle>
         </UniversalLink>
@@ -40,15 +41,17 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
           <CardText>{item.description}</CardText>
         )}
 
-        <div className="category-bottom">
+
           {item.topic && (
-            <div className="category">
-              <UniversalLink href="#">
-                <span className="text">{item.topic}</span>
-              </UniversalLink>
+            <div className="category-bottom">
+              <div className="category">
+                <UniversalLink href="#">
+                  <span className="text">{item.topic}</span>
+                </UniversalLink>
+              </div>
             </div>
           )}
-        </div>
+
       </CardBody>
 
       {img && <div className="card-image card-image-rounded">{img}</div>}

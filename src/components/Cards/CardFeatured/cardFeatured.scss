@@ -3,6 +3,14 @@
 .card-featured.card-teaser-wrapper-equal.card-teaser-block-2 {
   display: block;
 
+  a.card-title-link:not(:hover):not(:active):not(:focus){
+    text-decoration: none;
+  }
+
+  h3.card-title{
+    color: var(--bs-primary);
+  }
+
   .card-teaser-image {
     .card-image {
       overflow: hidden;

@@ -15,7 +15,7 @@ import {
   SearchSectionForm,
   Placeholder,
   PageMetadata,
-  Topics
+  Topics,RelatedItems
 } from 'io-sanita-theme/components/View';
 
 import { defineMessages, useIntl } from 'react-intl';
@@ -110,7 +110,7 @@ const PageView = ({ content, token, location, history }) => {
 
           {content.show_modified && <PageMetadata content={content} />}
         </div>
-
+        <RelatedItems content={content} />
         <Placeholder position="afterContent" content={content} />
       </>
     );

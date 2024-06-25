@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
-import { DownloadFileFormat } from 'io-sanita-theme/components/View';
+import { DownloadFileFormat } from 'io-sanita-theme/helpers';
 
 /**
  * File view component class.

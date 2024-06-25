@@ -1,5 +1,5 @@
+
 /*Commons */
-export DownloadFileFormat from 'io-sanita-theme/components/View/commons/DownloadFileFormat';
 export PageHeader from 'io-sanita-theme/components/View/commons/PageHeader/PageHeader';
 export PageHeaderBando from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderBando';
 export PageHeaderDates from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDates';
@@ -14,6 +14,7 @@ export Sharing from 'io-sanita-theme/components/View/commons/Sharing/Sharing';
 export PageMetadata from 'io-sanita-theme/components/View/commons/PageMetadata/PageMetadata';
 export SkipToMainContent from 'io-sanita-theme/components/View/commons/SkipToMainContent';
 export Topics from 'io-sanita-theme/components/View/commons/Topics';
+export RelatedItems from 'io-sanita-theme/components/View/commons/RelatedItems';
 export Placeholder from 'io-sanita-theme/components/View/commons/Placeholder';
 
 /*Page*/

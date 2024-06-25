@@ -21,7 +21,9 @@ export {
   getFileViewFormat,
   FILE_EXTENSIONS,
   FILE_FORMATS,
-} from 'io-sanita-theme/helpers/files';
+} from 'io-sanita-theme/helpers/Files/files';
+
+export DownloadFileFormat from 'io-sanita-theme/helpers/Files/DownloadFileFormat';
 
 export {
   blocksFieldIsEmpty,

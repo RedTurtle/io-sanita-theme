@@ -12,7 +12,6 @@
 // import {
 //   ContentImage,
 //   RelatedItems,
-
 //   EventoPlaceholderAfterContent,
 //   EventoPlaceholderAfterRelatedItems,
 //   EventoCosE,
@@ -152,5 +151,5 @@
 // };
 
 // export default EventoView;
-const View = ()=>{};
-export default View;
+
+export default ()=>{}
