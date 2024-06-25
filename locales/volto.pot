@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-06-20T14:03:55.836Z\n"
+"POT-Creation-Date: 2024-06-25T09:43:34.613Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -81,6 +81,11 @@ msgstr ""
 #. Default: "Impostazioni cookie"
 #: components/layout/Footer/FooterSmall
 msgid "Impostazioni cookie footer"
+msgstr ""
+
+#. Default: "In questa sezione"
+#: components/View/PageView/PageView
+msgid "In this section"
 msgstr ""
 
 #. Default: "Interruzione di pagina"
@@ -184,9 +189,19 @@ msgstr ""
 msgid "Trascina qui un file per sostituire quello esistente"
 msgstr ""
 
+#. Default: "Digita il testo…"
+#: helpers/Translations/overrideTranslations
+msgid "Type text…"
+msgstr ""
+
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
+msgstr ""
+
+#. Default: "Unknown Block {block}"
+#: components/View/PageView/PageView
+msgid "Unknown Block"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -464,6 +479,12 @@ msgstr ""
 msgid "minutes"
 msgstr ""
 
+#. Default: "Ultimo aggiornamento"
+#: components/View/commons/PageMetadata
+#: components/View/PageView/PageView
+msgid "modified"
+msgstr ""
+
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
@@ -596,6 +617,7 @@ msgstr ""
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr ""
 
@@ -607,6 +629,11 @@ msgstr ""
 #. Default: "Cerca tutti gli argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllTopics"
+msgstr ""
+
+#. Default: "Cerca contenuti in"
+#: components/View/commons/PageHeader/SearchSectionForm
+msgid "searchContentIn"
 msgstr ""
 
 #. Default: "Cerca nella sezione"
@@ -706,7 +733,6 @@ msgstr ""
 
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
-#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
 msgstr ""
 
@@ -716,6 +742,6 @@ msgid "unauthorized_description"
 msgstr ""
 
 #. Default: "Blocco sconosciuto"
-#: components/View/commons/RenderBlocks
+#: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr ""

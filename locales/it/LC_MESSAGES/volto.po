@@ -81,6 +81,11 @@ msgstr "Home"
 msgid "Impostazioni cookie footer"
 msgstr "Impostazioni cookie"
 
+#. Default: "In questa sezione"
+#: components/View/PageView/PageView
+msgid "In this section"
+msgstr ""
+
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
 msgid "Interruzione di pagina"
@@ -182,10 +187,20 @@ msgstr "Trascina qui un file per caricare un nuovo file"
 msgid "Trascina qui un file per sostituire quello esistente"
 msgstr "Trascina qui un file per sostituire quello esistente"
 
+#. Default: "Digita il testo…"
+#: helpers/Translations/overrideTranslations
+msgid "Type text…"
+msgstr "Digita il testo…"
+
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
 msgstr "Non autorizzato"
+
+#. Default: "Unknown Block {block}"
+#: components/View/PageView/PageView
+msgid "Unknown Block"
+msgstr ""
 
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
@@ -462,6 +477,12 @@ msgstr "Invia"
 msgid "minutes"
 msgstr "min"
 
+#. Default: "Ultimo aggiornamento"
+#: components/View/commons/PageMetadata
+#: components/View/PageView/PageView
+msgid "modified"
+msgstr ""
+
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
@@ -594,6 +615,7 @@ msgstr "giorni feriali"
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr "Cerca"
 
@@ -606,6 +628,11 @@ msgstr "Cerca in tutte le sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllTopics"
 msgstr "Cerca tutti gli argomenti"
+
+#. Default: "Cerca contenuti in"
+#: components/View/commons/PageHeader/SearchSectionForm
+msgid "searchContentIn"
+msgstr ""
 
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -704,7 +731,6 @@ msgstr ""
 
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
-#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
 msgstr "Argomenti"
 
@@ -714,6 +740,6 @@ msgid "unauthorized_description"
 msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al sito."
 
 #. Default: "Blocco sconosciuto"
-#: components/View/commons/RenderBlocks
+#: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Blocco sconosciuto"

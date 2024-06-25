@@ -1,0 +1,35 @@
+.page-sharing {
+  .btn.dropdown-toggle {
+    text-decoration: underline;
+    svg.icon {
+      fill: var(--bs-primary);
+    }
+    &:hover {
+      color: shade-color(var(--bs-primary), 19%);
+    }
+  }
+
+  .link-list-wrapper {
+    ul {
+      li {
+        a.list-item,
+        a.list-item a,
+        button.btn-link {
+          display: flex;
+          align-items: center;
+          font-size: var(--bs-dropdown-font-size);
+
+          .icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 0.5em;
+          }
+        }
+
+        button.btn-link {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

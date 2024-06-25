@@ -22,6 +22,7 @@ import {
 import { removeListingVariation } from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
+import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 
 const messages = defineMessages({
   search_brdc: {
@@ -160,15 +161,15 @@ export default function applyConfig(config) {
     (route) => route !== '/contact-form',
   );
 
+  /******************************************************************************
+   * BLOCKS
+   ******************************************************************************/
   applyIoSanitaBlocksConfig(config);
 
-  // /******************************************************************************
-  //  * VIEWS
-  //  ******************************************************************************/
-  // config.views = {
-  //   ...config.views,
-  //   ...getItaliaViews(config),
-  // };
+  /******************************************************************************
+   * VIEWS
+   ******************************************************************************/
+  applyIoSanitaViews(config);
 
   // /******************************************************************************
   //  * WIDGETS

@@ -81,6 +81,11 @@ msgstr ""
 msgid "Impostazioni cookie footer"
 msgstr "Cookies settings"
 
+#. Default: "In questa sezione"
+#: components/View/PageView/PageView
+msgid "In this section"
+msgstr ""
+
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
 msgid "Interruzione di pagina"
@@ -182,9 +187,19 @@ msgstr "Drop the file here to upload a new file"
 msgid "Trascina qui un file per sostituire quello esistente"
 msgstr "Drop the file here to replace existing file"
 
+#. Default: "Digita il testo…"
+#: helpers/Translations/overrideTranslations
+msgid "Type text…"
+msgstr ""
+
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
+msgstr ""
+
+#. Default: "Unknown Block {block}"
+#: components/View/PageView/PageView
+msgid "Unknown Block"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -462,6 +477,12 @@ msgstr "Send"
 msgid "minutes"
 msgstr "min."
 
+#. Default: "Ultimo aggiornamento"
+#: components/View/commons/PageMetadata
+#: components/View/PageView/PageView
+msgid "modified"
+msgstr ""
+
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
@@ -594,6 +615,7 @@ msgstr "weekdays"
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr "Search"
 
@@ -606,6 +628,11 @@ msgstr "Search in all sections"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllTopics"
 msgstr "Search by all topics"
+
+#. Default: "Cerca contenuti in"
+#: components/View/commons/PageHeader/SearchSectionForm
+msgid "searchContentIn"
+msgstr ""
 
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -704,7 +731,6 @@ msgstr "Open"
 
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
-#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
 msgstr "Topics"
 
@@ -714,6 +740,6 @@ msgid "unauthorized_description"
 msgstr ""
 
 #. Default: "Blocco sconosciuto"
-#: components/View/commons/RenderBlocks
+#: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Unknown block"

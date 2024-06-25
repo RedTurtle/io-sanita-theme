@@ -1,5 +1,3 @@
-#. Translation of volto.pot to Spanish
-#. Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
@@ -89,6 +87,11 @@ msgstr "Inicio"
 #: components/layout/Footer/FooterSmall
 msgid "Impostazioni cookie footer"
 msgstr "Configuración de cookies"
+
+#. Default: "In questa sezione"
+#: components/View/PageView/PageView
+msgid "In this section"
+msgstr ""
 
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
@@ -191,10 +194,20 @@ msgstr "Suelte el archivo aquí para cargar un nuevo archivo"
 msgid "Trascina qui un file per sostituire quello esistente"
 msgstr "Suelte el archivo aquí para reemplazar el archivo existente"
 
+#. Default: "Digita il testo…"
+#: helpers/Translations/overrideTranslations
+msgid "Type text…"
+msgstr ""
+
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
 msgstr "No autorizado"
+
+#. Default: "Unknown Block {block}"
+#: components/View/PageView/PageView
+msgid "Unknown Block"
+msgstr ""
 
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
@@ -471,6 +484,12 @@ msgstr "Enviar"
 msgid "minutes"
 msgstr "min."
 
+#. Default: "Ultimo aggiornamento"
+#: components/View/commons/PageMetadata
+#: components/View/PageView/PageView
+msgid "modified"
+msgstr ""
+
 #. Default: "Scarica il file"
 #: components/View/commons/DownloadFileFormat
 msgid "modulo_download_file"
@@ -603,6 +622,7 @@ msgstr ""
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
+#: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr "Búsqueda"
 
@@ -615,6 +635,11 @@ msgstr "Buscar en todas las secciones"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchAllTopics"
 msgstr "Buscar por todos los temas"
+
+#. Default: "Cerca contenuti in"
+#: components/View/commons/PageHeader/SearchSectionForm
+msgid "searchContentIn"
+msgstr ""
 
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -713,7 +738,6 @@ msgstr ""
 
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
-#: components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti
 msgid "topics"
 msgstr "Temas"
 
@@ -723,6 +747,6 @@ msgid "unauthorized_description"
 msgstr ""
 
 #. Default: "Blocco sconosciuto"
-#: components/View/commons/RenderBlocks
+#: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Bloque desconocido"

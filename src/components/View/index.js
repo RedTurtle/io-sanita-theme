@@ -8,9 +8,12 @@ export PageHeaderExtend from 'io-sanita-theme/components/View/commons/PageHeader
 export PageHeaderLinkServizio from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderLinkServizio';
 export PageHeaderNewsItem from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderNewsItem';
 export PageHeaderStatoServizio from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderStatoServizio';
-export PageHeaderTassonomiaArgomenti from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderTassonomiaArgomenti';
-export Sharing from 'io-sanita-theme/components/View/commons/Sharing';
-export Actions from 'io-sanita-theme/components/View/commons/Actions';
+export SearchSectionForm from 'io-sanita-theme/components/View/commons/PageHeader/SearchSectionForm';
+export Sharing from 'io-sanita-theme/components/View/commons/Sharing/Sharing';
+
+export PageMetadata from 'io-sanita-theme/components/View/commons/PageMetadata';
+
+export Placeholder from 'io-sanita-theme/components/View/commons/Placeholder';
 
 /*Argomento*/
 export ArgumentIcon from 'io-sanita-theme/components/View/Argomento/ArgumentIcon';
