@@ -15,6 +15,7 @@ import {
   SearchSectionForm,
   Placeholder,
   PageMetadata,
+  Topics
 } from 'io-sanita-theme/components/View';
 
 import { defineMessages, useIntl } from 'react-intl';
@@ -103,6 +104,9 @@ const PageView = ({ content, token, location, history }) => {
           </div>
 
           <TextOrBlocks content={content} />
+
+
+          <Topics content={content}/>
 
           {content.show_modified && <PageMetadata content={content} />}
         </div>

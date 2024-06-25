@@ -3,6 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
 import { viewDate } from 'io-sanita-theme/helpers';
+import './pageMetadata.scss';
 
 const messages = defineMessages({
   modified: {
@@ -21,7 +22,7 @@ const PageMetadata = ({ content, children }) => {
   const intl = useIntl();
 
   return (
-    <article id="metadata" className="my-4">
+    <article id="metadata" className="my-4 ">
       <span className="fw-semibold">
         {intl.formatMessage(messages.modified)}:
       </span>{' '}

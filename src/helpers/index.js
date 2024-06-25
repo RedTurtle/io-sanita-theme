@@ -45,3 +45,7 @@ export { richTextHasContent } from 'io-sanita-theme/helpers/RichText/richTextUti
 //blocks
 export RenderBlocks from 'io-sanita-theme/helpers/Blocks/RenderBlocks';
 export TextOrBlocks from 'io-sanita-theme/helpers/Blocks/TextOrBlocks';
+
+//views
+export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeViewSections'
+export {useSideMenu} from 'io-sanita-theme/helpers/Views/SideMenu'

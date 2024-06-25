@@ -7,9 +7,9 @@ const Placeholder = ({ content, position, children }) => {
   const PlaceholderComponent =
     config.views?.contentTypesViewsSections?.[contentType]?.placeholder?.[
       position
-    ] ?? React.Fragment;
+    ] ;
 
-  return <PlaceholderComponent content={content} children={children} />;
+  return PlaceholderComponent? <PlaceholderComponent content={content} children={children} /> : <React.Fragment children={children}/> ;
 };
 
 export default Placeholder;
