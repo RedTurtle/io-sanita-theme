@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { values } from 'lodash';
 import { flattenHTMLToAppURL } from '@plone/volto/helpers';
 import { hasBlocksData } from '@plone/volto/helpers';
-export { richTextHasContent, RenderBlocks } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RenderBlocks } from 'io-sanita-theme/helpers';
 
 /**
  * RichTextRender view component class.

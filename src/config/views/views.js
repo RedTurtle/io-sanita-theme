@@ -1,5 +1,3 @@
-
-
 import PageView from 'io-sanita-theme/components/View/PageView/PageView';
 
 /*  CONTENT TYPES VIEWS */
@@ -22,6 +20,14 @@ const applyIoSanitaViews = (config) => {
     layoutViews: {
       ...config.views.layoutViews,
       ...ioSanitaLayoutViews,
+    },
+    contentTypesViewsSections: {
+      //---example:
+      // Document: {
+      //   sections: [],
+      //   placeholder: { afterContent: ComponentToRender, title: ComponentToRender },
+      // },
+      //------------
     },
   };
 };

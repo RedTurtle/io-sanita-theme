@@ -12,20 +12,11 @@ import {
 
 import {
   Sharing,
-  Actions,
-  PageHeaderTassonomiaArgomenti,
+  SearchSectionForm,
+  Placeholder,
+  PageMetadata,
 } from 'io-sanita-theme/components/View';
 
-import {
-  SearchSectionForm,
-  PageHeaderNav,
-  RelatedItems,
-  PagePlaceholderAfterContent,
-  PagePlaceholderAfterRelatedItems,
-  PagePlaceholderTitle,
-  RelatedItemInEvidence,
-  PageMetadata,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { defineMessages, useIntl } from 'react-intl';
 import { getLayoutFieldname } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
@@ -59,8 +50,6 @@ const PageView = ({ content, token, location, history }) => {
     const rightHeaderHasContent =
       content.image?.scales ||
       richTextHasContent(content.info_testata) ||
-      content.mostra_navigazione ||
-      content?.tassonomia_argomenti?.length > 0 ||
       content.mostra_bottoni_condivisione;
 
     return (
@@ -75,30 +64,26 @@ const PageView = ({ content, token, location, history }) => {
                   'col-lg-12': !rightHeaderHasContent,
                 })}
               >
-                <PagePlaceholderTitle content={content}>
+                <Placeholder position="title" content={content}>
                   <h1 className="mb-3" data-element="page-name">
                     {content?.title}
                   </h1>
-                </PagePlaceholderTitle>
+                </Placeholder>
 
                 <p className="description">{content?.description}</p>
-                {content?.ricerca_in_testata && (
-                  <SearchSectionForm content={content} />
-                )}
               </div>
               {rightHeaderHasContent && (
-                <div className="col-lg-4 offset-lg-2">
+                <div className="col-lg-4 offset-lg-2 d-flex flex-column align-items-end">
                   {content.mostra_bottoni_condivisione && (
                     <div className="px-4 mb-4">
                       <Sharing url={content['@id']} title={content.title} />
-                      <Actions url={content['@id']} title={content.title} />
                     </div>
                   )}
                   {content.image && (
                     <div className="header-image px-4 mb-3">
                       <Image
                         item={content}
-                        alt=""
+                        alt={content.image_caption ?? ''}
                         sizes="250px"
                         responsive={true}
                       />
@@ -109,21 +94,12 @@ const PageView = ({ content, token, location, history }) => {
                       <RichText serif={false} data={content.info_testata} />
                     </div>
                   )}
-
-                  {content.mostra_navigazione && (
-                    <PageHeaderNav
-                      content={content}
-                      title={intl.formatMessage(messages.inThisSection)}
-                    />
-                  )}
-                  {content?.tassonomia_argomenti?.length > 0 && (
-                    <div className="px-4">
-                      <PageHeaderTassonomiaArgomenti content={content} />
-                    </div>
-                  )}
                 </div>
               )}
             </div>
+            {content?.ricerca_in_testata && (
+              <SearchSectionForm content={content} />
+            )}
           </div>
 
           <TextOrBlocks content={content} />
@@ -131,10 +107,7 @@ const PageView = ({ content, token, location, history }) => {
           {content.show_modified && <PageMetadata content={content} />}
         </div>
 
-        <PagePlaceholderAfterContent content={content} />
-        <RelatedItems content={content} />
-        <RelatedItemInEvidence content={content} />
-        <PagePlaceholderAfterRelatedItems content={content} />
+        <Placeholder position="afterContent" content={content} />
       </>
     );
   } else {

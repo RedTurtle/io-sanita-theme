@@ -18,6 +18,5 @@ PageHeaderExtend.propTypes = {
     imageinheader: PropTypes.bool,
     imageinheader_field: PropTypes.string,
     showdates: PropTypes.bool,
-    showtassonomiaargomenti: PropTypes.bool,
   }),
 };

@@ -145,6 +145,7 @@
   @import './bootstrap-italia/custom/headerslim';
   @import 'bootstrap-italia/src/scss/custom/headerslimtheme';
   @import 'bootstrap-italia/src/scss/custom/headercenter';
+  @import './bootstrap-italia/custom/headercenter';
   @import 'bootstrap-italia/src/scss/custom/headercentertheme';
   @import 'bootstrap-italia/src/scss/custom/headernavbar';
   @import 'bootstrap-italia/src/scss/custom/headernavbartheme';
@@ -152,6 +153,7 @@
 
   // footer
   @import 'bootstrap-italia/src/scss/custom/footer';
+  @import './bootstrap-italia/custom/footer';
 
   // colors theme
   @import 'bootstrap-italia/src/scss/custom/navigationtheme';

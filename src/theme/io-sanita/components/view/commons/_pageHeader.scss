@@ -1,0 +1,9 @@
+.PageHeaderWrapper {
+  p.description {
+    @include rem-size(font-size, 24);
+  }
+
+  .header-image {
+    max-width: 16em;
+  }
+}

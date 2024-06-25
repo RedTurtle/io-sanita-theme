@@ -45,7 +45,6 @@ const RichText = ({
     </>
   ) : null;
 };
-export default RichText;
 
 RichText.propTypes = {
   title: PropTypes.string,
@@ -57,3 +56,5 @@ RichText.propTypes = {
   lighthouseId: PropTypes.string,
   content: PropTypes.object,
 };
+
+export default RichText;

@@ -78,8 +78,8 @@ const RenderBlocks = ({ content, exclude = ['title', 'description'] }) => {
   ) : null;
 };
 
-export default RenderBlocks;
-
 RenderBlocks.propTypes = {
   data: PropTypes.any,
 };
+
+export default RenderBlocks;

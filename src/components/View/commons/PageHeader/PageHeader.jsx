@@ -5,7 +5,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import {
-  Actions,
   ArgumentIcon,
   PageHeaderBando,
   PageHeaderDates,
@@ -14,7 +13,6 @@ import {
   PageHeaderNewsItem,
   PageHeaderStatoServizio,
   PageHeaderLinkServizio,
-  PageHeaderTassonomiaArgomenti,
   PageHeaderDocumento,
   Sharing,
 } from 'io-sanita-theme/components/View';
@@ -38,17 +36,10 @@ const messages = defineMessages({
  * @params readingtime {number} reading time in minutes
  * @params showreadingtime {boolean} show or hide reading time
  * @params showdates {boolean} show or hide dates in header
- * @params showtassonomiaargomenti {boolean} show or hide argomenti in header
  * @returns {string} Markup of the component.
  */
 const PageHeader = (props) => {
-  const {
-    content,
-    readingtime,
-    showdates,
-    showreadingtime,
-    showtassonomiaargomenti,
-  } = props;
+  const { content, readingtime, showdates, showreadingtime } = props;
   const intl = useIntl();
 
   return (
@@ -119,13 +110,10 @@ const PageHeader = (props) => {
           )}
         </div>
 
-        <div className={'page-header-right py-lg-4 col-lg-3 offset-lg-1'}>
+        <div
+          className={'page-header-right py-lg-4 col-lg-3 offset-lg-1 text-end'}
+        >
           <Sharing url={content['@id']} title={content.title} />
-          <Actions url={content['@id']} title={content.title} />
-
-          {showtassonomiaargomenti && (
-            <PageHeaderTassonomiaArgomenti content={content} />
-          )}
         </div>
       </div>
     </div>
@@ -140,6 +128,5 @@ PageHeader.propTypes = {
     readingtime: PropTypes.string,
     showdates: PropTypes.bool,
     showreadingtime: PropTypes.bool,
-    showtassonomiaargomenti: PropTypes.bool,
   }),
 };
