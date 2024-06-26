@@ -18,6 +18,7 @@ import {
   Icon,
   FileWidget,
 } from 'io-sanita-theme/components';
+import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
 
 import { removeListingVariation } from 'io-sanita-theme/helpers';
 
@@ -102,7 +103,7 @@ export default function applyConfig(config) {
     defaultExcludedFromSearch: {
       portalTypes: ['Image', 'File'],
     },
-
+    loadables: { ...config.settings.loadables, ...IoSanitaLoadables },
     siteProperties: {
       siteTitle: 'io-Sanita', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome dell'istituzione', 'en':'Site name'}. Se multilingua il default è comunque la stringa.
       siteSubtitle: "Tag line dell'istituzione", //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Uno dei tanti Comuni d'Italia', 'en':'Uno dei tanti Comuni d'Italia'}. Se multilingua il default è comunque la stringa.

@@ -50,4 +50,4 @@ export TextOrBlocks from 'io-sanita-theme/helpers/Blocks/TextOrBlocks';
 
 //views
 export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeViewSections'
-export contentFolderHasItems from 'io-sanita-theme/helpers/Views/content';
+export { contentFolderHasItems } from 'io-sanita-theme/helpers/Views/content';

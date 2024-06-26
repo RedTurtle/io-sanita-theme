@@ -24,7 +24,6 @@ import {
 } from 'io-sanita-theme/components/View/Evento';
 
 // import {
-//   EventoCosE,
 //   EventoLuoghi,
 //   EventoDateOrari,
 //   EventoCosti,

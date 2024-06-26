@@ -72,7 +72,7 @@ export CarouselWrapper from 'io-sanita-theme/components/Slider/CarouselWrapper';
 export NextArrow from 'io-sanita-theme/components/Slider/NextArrow';
 export PrevArrow from 'io-sanita-theme/components/Slider/PrevArrow';
 export SingleSlideWrapper from 'io-sanita-theme/components/Slider/SingleSlideWrapper';
-export useSlider from 'io-sanita-theme/components/Slider/slider';
+export { useSlider } from 'io-sanita-theme/components/Slider/slider';
 
 //Commons
 export EmbeddedVideo from 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo';
