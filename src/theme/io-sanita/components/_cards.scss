@@ -1,0 +1,5 @@
+.card {
+  a.card-title-link:not(:hover):not(:active):not(:focus) {
+    text-decoration: none;
+  }
+}

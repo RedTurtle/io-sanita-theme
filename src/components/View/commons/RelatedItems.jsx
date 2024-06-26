@@ -5,7 +5,8 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Container, Row, Col } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon } from 'io-sanita-theme/components';
-import { CardFeatured } from 'io-sanita-theme/components';
+import { CardImage } from 'io-sanita-theme/components';
+
 
 const SITE_SECTIONS = {
   amministrazione: { icon: 'it-pa' },
@@ -82,7 +83,7 @@ const RelatedItems = ({
             <Row className="mt-lg-4">
               {related.map((item, i) => (
                 <Col md={4} key={item['@id'] + i} className="mb-3">
-                    <CardFeatured
+                    <CardImage
                       item={item}
                     />
                 </Col>

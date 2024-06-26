@@ -24,6 +24,7 @@ export const CardGhost = ({ item, isEditMode, rrule = {} }) => {
         <UniversalLink
           item={!isEditMode ? item : null}
           href={isEditMode ? '#' : ''}
+          className="card-title-link"
         >
           <CardTitle tag="h3" className="card-title-icon">
             {item.title}

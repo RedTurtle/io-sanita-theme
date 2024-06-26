@@ -16,7 +16,7 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
 console.log(item);
   const img =
-    item.image_field && item[item.image_field] ? (
+    item.image_field && item.image_scales?.[item.image_field] ? (
       <Image item={item} alt="" />
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
