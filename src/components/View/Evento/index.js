@@ -13,6 +13,24 @@ export const EventoCosE = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoCosE'
     ),
 );
+export const EventoDateOrari = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoDateOrari'
+    ),
+);
+export const Dates = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/Dates'
+    ),
+);
+export const EventoCosti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoCosti'
+    ),
+);
 
 export const EventoUlterioriInformazioni = loadable(
   () =>

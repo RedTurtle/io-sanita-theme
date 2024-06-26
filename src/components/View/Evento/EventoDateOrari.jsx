@@ -5,10 +5,11 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import {
   RichText,
-  RichTextSection,
-  Dates,
   richTextHasContent,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+  RichTextSection,
+} from 'io-sanita-theme/helpers';
+
+import { Dates } from 'io-sanita-theme/components/View/Evento';
 
 const messages = defineMessages({
   date_e_orari: {
