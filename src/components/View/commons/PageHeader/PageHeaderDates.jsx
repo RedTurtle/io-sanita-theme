@@ -24,35 +24,34 @@ const messages = defineMessages({
 
 const PageHeaderDates = ({ content }) => {
   const intl = useIntl();
+  const view_effective = content.effective && content['@type'] !== 'Event';
+  const view_expires = content.expires && content['@type'] !== 'News Item';
+  const view = view_effective || view_expires;
 
-  return (
-    <>
-      {(content.effective || content.expires) && (
-        <div className="col-6">
-          {content.effective && content['@type'] !== 'Event' && (
-            <div className="row">
-              <div className="col-12">
-                <small>{intl.formatMessage(messages.date)}:</small>
-                <p className="font-monospace">
-                  {viewDate(intl.locale, content.effective, 'DD MMMM YYYY')}
-                </p>
-              </div>
-            </div>
-          )}
-          {content.expires && content['@type'] !== 'News Item' && (
-            <div className="row">
-              <div className="col-12">
-                <small>{intl.formatMessage(messages.expire)}:</small>
-                <p className="font-monospace">
-                  {viewDate(intl.locale, content.expires, 'DD-MM-Y')}
-                </p>
-              </div>
-            </div>
-          )}
+  return view ? (
+    <div className="col-6">
+      {view_effective && (
+        <div className="row">
+          <div className="col-12">
+            <small>{intl.formatMessage(messages.date)}:</small>
+            <p className="font-monospace">
+              {viewDate(intl.locale, content.effective, 'DD MMMM YYYY')}
+            </p>
+          </div>
         </div>
       )}
-    </>
-  );
+      {view_expires && (
+        <div className="row">
+          <div className="col-12">
+            <small>{intl.formatMessage(messages.expire)}:</small>
+            <p className="font-monospace">
+              {viewDate(intl.locale, content.expires, 'DD-MM-Y')}
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  ) : null;
 };
 
 export default PageHeaderDates;

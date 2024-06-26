@@ -5,7 +5,7 @@ import { RenderBlocks } from 'io-sanita-theme/helpers';
 export const richTextHasContent = (data) => {
   if (hasBlocksData(data)) {
     //ReactDOMServer.renderToStaticMarkup(RenderBlocks({ data: data })),
-    const renderedBlocks = RenderBlocks({ data: data });
+    const renderedBlocks = RenderBlocks({ content: data });
 
     const textBlocks = values(data.blocks).filter(
       (b) => b['@type'] === 'slate',

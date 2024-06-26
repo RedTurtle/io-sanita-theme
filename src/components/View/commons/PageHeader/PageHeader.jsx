@@ -5,7 +5,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import {
-  ArgumentIcon,
   PageHeaderBando,
   PageHeaderDates,
   PageHeaderEventDates,
@@ -14,8 +13,13 @@ import {
   PageHeaderStatoServizio,
   PageHeaderLinkServizio,
   PageHeaderDocumento,
-  Sharing,
-} from 'io-sanita-theme/components/View';
+  Sharing
+} from 'io-sanita-theme/components/View/commons';
+
+import {
+  ArgumentIcon,
+} from 'io-sanita-theme/components/View/Argomento';
+
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -42,10 +46,13 @@ const PageHeader = (props) => {
   const { content, readingtime, showdates, showreadingtime } = props;
   const intl = useIntl();
 
+  const render_reading_time = showreadingtime && readingtime;
+  const render_dates = showdates ? <PageHeaderDates content={content}/> :null;
+
   return (
     <div className="PageHeaderWrapper mb-4">
       <div className="row mb-2 mb-lg-0 page-header">
-        <div className="py-lg-2 page-header-left">
+        <div className="py-lg-2 col-lg-10 page-header-left">
           {(content.icon || content.icona) && (
             <ArgumentIcon icon={content.icon || content.icona} />
           )}
@@ -69,7 +76,7 @@ const PageHeader = (props) => {
 
           {content.description && (
             <p
-              className="documentDescription"
+              className="description"
               data-element={
                 content['@type'] === 'Servizio'
                   ? 'service-description'
@@ -88,16 +95,15 @@ const PageHeader = (props) => {
 
           <PageHeaderExtend {...props} />
 
-          {(showreadingtime || showdates) && (
+          {(render_reading_time || render_dates) && (
             <div className="row mt-5 mb-4 readingtime-dates">
-              {showdates ? (
-                <PageHeaderDates content={content} />
+              {render_dates ? (
+               <>{render_dates}</>
               ) : (
                 <div className="col-6"></div>
               )}
 
-              {showreadingtime &&
-                readingtime > 0 &&
+              {render_reading_time &&
                 ((
                   <div className="col-6">
                     <small>{intl.formatMessage(messages.reading_time)}:</small>
@@ -111,7 +117,7 @@ const PageHeader = (props) => {
         </div>
 
         <div
-          className={'page-header-right py-lg-4 col-lg-3 offset-lg-1 text-end'}
+          className={'page-header-right py-lg-4 col-lg-2 text-end'}
         >
           <Sharing url={content['@id']} title={content.title} />
         </div>

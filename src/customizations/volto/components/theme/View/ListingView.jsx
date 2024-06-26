@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { PageHeader } from 'io-sanita-theme/components/View';
+import { PageHeader } from 'io-sanita-theme/components/View/commons';
 import { ListingImage } from 'io-sanita-theme/components/Blocks';
 
 /**

@@ -18,7 +18,6 @@ import config from '@plone/volto/registry';
 
 export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
-  console.log(item);
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
       <Image item={item} alt="" />
@@ -39,13 +38,15 @@ export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
         </div>
       )}
       <CardBody className="p-4">
-        <UniversalLink
-          item={!isEditMode ? item : null}
-          href={isEditMode ? '#' : ''}
-          className="card-title-link"
-        >
-          <CardTitle tag="h3">{item.title}</CardTitle>
-        </UniversalLink>
+        <CardTitle tag="h3">
+          <UniversalLink
+            item={!isEditMode ? item : null}
+            href={isEditMode ? '#' : ''}
+            className="card-title-link"
+          >
+            {item.title}
+          </UniversalLink>
+        </CardTitle>
 
         {item['@type'] === 'Event' && <p className="event-date">{date}</p>}
 

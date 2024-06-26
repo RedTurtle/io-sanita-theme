@@ -23,7 +23,6 @@ const RichText = ({
     add_class,
     serif,
     lighthouseId,
-    content,
   });
 
   const Tag = title_size;

@@ -4,7 +4,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import { Icon } from 'io-sanita-theme/components';
-import { BandoStatus } from 'io-sanita-theme/components/View';
+import { BandoStatus } from 'io-sanita-theme/components/View/Bando';
 
 /**
  * PageHeaderBando view component class.

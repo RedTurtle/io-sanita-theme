@@ -1,0 +1,7 @@
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+  .callout {
+    p {
+      font-size: 1rem;
+    }
+  }
+}

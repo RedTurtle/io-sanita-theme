@@ -8,7 +8,7 @@ const ContentTypeViewSections = ({ content, defaultSections }) => {
   }
 
   const sections =
-    config.views?.contentTypesViewsSections?.[content['@type']]?.sections ??
+    config.views?.ioSanitaContentTypesViewsConfig?.[content['@type']]?.sections ??
     defaultSections;
 
   return sections?.length > 0 ? (

@@ -5,7 +5,7 @@ import config from '@plone/volto/registry';
 const Placeholder = ({ content, position, children }) => {
   const contentType = content?.['@type'];
   const PlaceholderComponent =
-    config.views?.contentTypesViewsSections?.[contentType]?.placeholder?.[
+    config.views?.ioSanitaContentTypesViewsConfig?.[contentType]?.placeholder?.[
       position
     ] ;
 

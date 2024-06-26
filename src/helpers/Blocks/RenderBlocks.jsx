@@ -33,7 +33,7 @@ const Wrapper = ({ block, id, children }) => {
  */
 const RenderBlocks = ({ content, exclude = ['title', 'description'] }) => {
   /* Render text or blocks in view, skip title and description blocks by default*/
-  const blockContent = content; // For backwards compatibility of old blocks
+  const blockContent =  content;
   const blocksFieldname = getBlocksFieldname(blockContent);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(blockContent);
   const intl = useIntl();

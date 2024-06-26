@@ -14,7 +14,6 @@ import './cardFeatured.scss';
 
 const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
-console.log(item);
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
       <Image item={item} alt="" />
@@ -29,13 +28,15 @@ console.log(item);
       wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured card-featured-${size}`}
     >
       <CardBody className="p-4">
-        <UniversalLink
-          item={!isEditMode ? item : null}
-          href={isEditMode ? '#' : ''}
-          className="card-title-link"
-        >
-          <CardTitle tag="h3">{item.title}</CardTitle>
-        </UniversalLink>
+        <CardTitle tag="h3">
+          <UniversalLink
+            item={!isEditMode ? item : null}
+            href={isEditMode ? '#' : ''}
+            className="card-title-link"
+          >
+            {item.title}
+          </UniversalLink>
+        </CardTitle>
 
         {item.description && size !== 'small' && (
           <CardText>{item.description}</CardText>

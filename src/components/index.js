@@ -64,3 +64,15 @@ export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
 
 //Pagination
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';
+
+//Gallery e Slider
+export GalleryPreview from 'io-sanita-theme/components/GalleryPreview/GalleryPreview';
+export ButtonPlayPause from 'io-sanita-theme/components/Slider/ButtonPlayPause';
+export CarouselWrapper from 'io-sanita-theme/components/Slider/CarouselWrapper';
+export NextArrow from 'io-sanita-theme/components/Slider/NextArrow';
+export PrevArrow from 'io-sanita-theme/components/Slider/PrevArrow';
+export SingleSlideWrapper from 'io-sanita-theme/components/Slider/SingleSlideWrapper';
+export useSlider from 'io-sanita-theme/components/Slider/slider';
+
+//Commons
+export EmbeddedVideo from 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo';

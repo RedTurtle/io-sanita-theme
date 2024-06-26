@@ -17,7 +17,6 @@ const RichTextRender = ({
   add_class,
   serif = true,
   lighthouseId = '',
-  content,
 }) => {
   let hasContent = richTextHasContent(data);
 
@@ -31,7 +30,7 @@ const RichTextRender = ({
           'data-element': lighthouseId,
         })}
       >
-        <RenderBlocks data={data} content={content} />
+        <RenderBlocks content={data} />
       </div>
     ) : (
       <div

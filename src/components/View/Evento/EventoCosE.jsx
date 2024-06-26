@@ -1,33 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-
 import { Chip, ChipLabel } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import {
   RichText,
-  RichTextSection,
   richTextHasContent,
-  Gallery,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
-import { contentFolderHasItems } from 'design-comuni-plone-theme/helpers';
+  RichTextSection,
+  contentFolderHasItems,
+} from 'io-sanita-theme/helpers';
+
+import { Gallery } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   cos_e: {
     id: 'event_cos_e',
     defaultMessage: "Cos'è",
   },
-  event_destinatari: {
-    id: 'event_destinatari',
-    defaultMessage: 'A chi è rivolto',
-  },
   a_chi_rivolto: {
     id: 'a_chi_rivolto',
     defaultMessage: 'A chi è rivolto',
   },
-
   parteciperanno: {
     id: 'parteciperanno',
     defaultMessage: 'Parteciperanno',
@@ -53,6 +47,7 @@ const EventoCosE = ({ content }) => {
       show_title={true}
       data={content.descrizione_estesa}
     >
+      {/*Parteciperanno*/}
       {content?.persone_amministrazione?.length > 0 && (
         <>
           <h3 className="parteciperanno-section h5">
@@ -78,12 +73,16 @@ const EventoCosE = ({ content }) => {
           ))}
         </>
       )}
+
+      {/*Gallery*/}
       <Gallery
         content={content}
         folder_name={'immagini'}
         className="mt-4 pb-4"
       />
       <Gallery content={content} folder_name={'video'} />
+
+      {/*A chi è rivolto*/}
       {richTextHasContent(content?.descrizione_destinatari) && (
         <div className="mb-5 pt-2">
           <RichText
@@ -93,6 +92,7 @@ const EventoCosE = ({ content }) => {
         </div>
       )}
 
+      {/*Tipologia evento*/}
       {content?.tipologia_evento && (
         <div className="mb-5 pt-2">
           <h3 className="tipologia-section h5">
