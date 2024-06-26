@@ -73,6 +73,8 @@ export NextArrow from 'io-sanita-theme/components/Slider/NextArrow';
 export PrevArrow from 'io-sanita-theme/components/Slider/PrevArrow';
 export SingleSlideWrapper from 'io-sanita-theme/components/Slider/SingleSlideWrapper';
 export { useSlider } from 'io-sanita-theme/components/Slider/slider';
+export SliderContainer  from 'io-sanita-theme/components/Slider/SliderContainer';
+
 
 //Commons
 export EmbeddedVideo from 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo';

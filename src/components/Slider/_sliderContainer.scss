@@ -1,0 +1,86 @@
+/** override slider slick-theme **/
+.slider-container {
+    margin-bottom: 2.5rem;
+
+    .slick-slide {
+      figure {
+        width: 95%;
+      }
+    }
+
+    .it-single-slide-wrapper {
+      &:focus {
+        border: 1px solid;
+      }
+
+      figure {
+        a {
+          display: block;
+        }
+      }
+      .enhance-link {
+        display: none;
+      }
+    }
+
+    .no-external-if-link > .external-link {
+      display: none;
+    }
+  }
+
+  .slick-slider {
+    ul.slick-dots {
+      bottom: unset;
+      padding: 0;
+      margin: 0;
+
+      li {
+        button:before {
+          border-radius: 50%;
+          background-color: var(--bs-700);
+          background-image: none;
+          background-size: 20px;
+          opacity: 1;
+        }
+
+        &.slick-active button:before {
+          background-color: var(--bs-primary);
+        }
+      }
+    }
+
+    .slick-arrow {
+      width: 25px;
+      height: 40px;
+      padding: 0;
+
+      &.slick-prev,
+      &.slick-next {
+        outline: none !important;
+
+        .icon {
+          width: 25px;
+          height: 40px;
+          color: var(--bs-primary);
+          fill: var(--bs-primary);
+        }
+
+        &:hover .icon {
+          color: var(--primary-darker);
+          fill: var(--primary-darker);
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.slick-prev {
+        left: -40px;
+      }
+
+      &.slick-next {
+        right: -40px;
+      }
+    }
+  }

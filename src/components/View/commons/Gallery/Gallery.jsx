@@ -17,6 +17,7 @@ import { EmbeddedVideo, GalleryPreview } from 'io-sanita-theme/components';
 import {
   SingleSlideWrapper,
   CarouselWrapper,
+  SliderContainer
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
@@ -136,7 +137,7 @@ const Gallery = ({
           className={`it-carousel-wrapper it-carousel-landscape-abstract-three-cols ${className}`}
           id={id}
         >
-          <div className="slider-container">
+          <SliderContainer>
             <div className="it-header-block">
               <div className="it-header-block-title">
                 {title_type === 'h2' && (
@@ -199,7 +200,7 @@ const Gallery = ({
                 items={images}
               />
             </CarouselWrapper>
-          </div>
+          </SliderContainer>
         </div>
       ) : null}
 
@@ -207,7 +208,7 @@ const Gallery = ({
         <div
           className={`it-carousel-wrapper it-carousel-landscape-abstract-three-cols ${className}`}
         >
-          <div className="slider-container">
+          <SliderContainer>
             {title_video && (
               <div className="it-header-block">
                 <div className="it-header-block-title">
@@ -240,7 +241,7 @@ const Gallery = ({
                 ))}
               </Slider>
             </CarouselWrapper>
-          </div>
+          </SliderContainer>
         </div>
       ) : null}
     </>

@@ -4,7 +4,7 @@ import { defineMessages, injectIntl, useIntl } from 'react-intl';
 import { Embed } from 'semantic-ui-react';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
-
+import './_embeddedVideo.scss';
 
 const messages = defineMessages({
   loadVideo: {
