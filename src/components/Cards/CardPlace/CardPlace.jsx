@@ -14,6 +14,7 @@ import {
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { Icon } from 'io-sanita-theme/components';
+import { Address } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
 const messages = defineMessages({
@@ -36,22 +37,6 @@ export const CardPlace = ({
   isEditMode,
 }) => {
   const intl = useIntl();
-  const address_row_2 = ['zip_code', 'city', 'province']
-    .map((key) => item?.[key])
-    .filter(Boolean)
-    .join(' - ');
-
-  const address = (
-    <>
-      {item.street}
-      {(item.zip_code || item.city || item.province) && (
-        <>
-          <br />
-          {address_row_2}
-        </>
-      )}
-    </>
-  );
 
   return (
     <Card
@@ -85,14 +70,16 @@ export const CardPlace = ({
               <>
                 {showAddress && (
                   <p>
-                    {intl.formatMessage(messages.address)}: {address}
+                    {intl.formatMessage(messages.address)}:{' '}
+                    <Address item={item} showDistance={false} />
                   </p>
                 )}
                 {showDistance && (
-                  <div className="distance fw-semibold">
-                    <Icon icon="it-map-marker" size="sm" /> implementare il
-                    calcolo della distanza
-                  </div>
+                  <Address
+                    item={item}
+                    showAddress={false}
+                    showDistance={true}
+                  />
                 )}
               </>
             )}

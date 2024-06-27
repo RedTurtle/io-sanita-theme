@@ -62,6 +62,7 @@ export CardFeatured from 'io-sanita-theme/components/Cards/CardFeatured/CardFeat
 export CardImage from 'io-sanita-theme/components/Cards/CardImage/CardImage';
 export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
 export CardPlace from 'io-sanita-theme/components/Cards/CardPlace/CardPlace';
+export CardPersona from 'io-sanita-theme/components/Cards/CardPersona/CardPersona';
 
 //Pagination
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';
@@ -74,8 +75,7 @@ export NextArrow from 'io-sanita-theme/components/Slider/NextArrow';
 export PrevArrow from 'io-sanita-theme/components/Slider/PrevArrow';
 export SingleSlideWrapper from 'io-sanita-theme/components/Slider/SingleSlideWrapper';
 export { useSlider } from 'io-sanita-theme/components/Slider/slider';
-export SliderContainer  from 'io-sanita-theme/components/Slider/SliderContainer';
-
+export SliderContainer from 'io-sanita-theme/components/Slider/SliderContainer';
 
 //Commons
 export EmbeddedVideo from 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo';

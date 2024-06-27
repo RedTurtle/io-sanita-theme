@@ -1,0 +1,14 @@
+.public-ui .card.card-persona {
+  .avatar {
+    background-color: var(--primary-lightest);
+  }
+
+  .card-body {
+    .card-text {
+      &,
+      p {
+        font-size: 0.8886rem;
+      }
+    }
+  }
+}

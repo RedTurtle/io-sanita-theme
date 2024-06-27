@@ -49,6 +49,12 @@ export const EventoLuoghi = loadable(
     ),
 );
 
+export const EventoPartecipanti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoPartecipanti'
+    ),
+);
 export const EventoSponsors = loadable(
   () =>
     import(

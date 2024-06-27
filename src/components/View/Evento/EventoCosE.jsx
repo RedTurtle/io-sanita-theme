@@ -10,7 +10,7 @@ import {
   RichTextSection,
   contentFolderHasItems,
 } from 'io-sanita-theme/helpers';
-
+import { EventoPartecipanti } from 'io-sanita-theme/components/View/Evento';
 import { Gallery } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
@@ -48,31 +48,7 @@ const EventoCosE = ({ content }) => {
       data={content.descrizione_estesa}
     >
       {/*Parteciperanno*/}
-      {content?.persone_amministrazione?.length > 0 && (
-        <>
-          <h3 className="parteciperanno-section h5">
-            {intl.formatMessage(messages.parteciperanno)}
-          </h3>
-          {content?.persone_amministrazione?.map((item, i) => (
-            <UniversalLink
-              href={flattenToAppURL(item['@id'])}
-              key={item['@id']}
-            >
-              <Chip
-                color="primary"
-                disabled={false}
-                large={false}
-                simple
-                tag="div"
-                key={item['@id']}
-                className="me-2"
-              >
-                <ChipLabel tag="span">{item.title}</ChipLabel>
-              </Chip>
-            </UniversalLink>
-          ))}
-        </>
-      )}
+      <EventoPartecipanti content={content} />
 
       {/*Gallery*/}
       <Gallery

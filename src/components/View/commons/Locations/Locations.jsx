@@ -28,7 +28,7 @@ const Locations = ({ content = {}, locations = [] }) => {
     <>
       <Row className="align-items-stretch mb-4">
         {[...location_items].map((item, i) => (
-          <Col xl={6}>
+          <Col lg={6} className="py-lg-2">
             <CardPlace key={item['@id'] + i} item={item} showDistance={false} />
           </Col>
         ))}

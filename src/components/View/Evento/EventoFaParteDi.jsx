@@ -24,7 +24,7 @@ const EventoFaParteDi = ({ content }) => {
       title={intl.formatMessage(messages.fa_parte_di)}
     >
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="py-lg-2">
           <CardImage item={parentEvent} showDescription={false} />
         </Col>
       </Row>

@@ -49,5 +49,6 @@ export RenderBlocks from 'io-sanita-theme/helpers/Blocks/RenderBlocks';
 export TextOrBlocks from 'io-sanita-theme/helpers/Blocks/TextOrBlocks';
 
 //views
-export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeViewSections'
+export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeViewSections';
 export { contentFolderHasItems } from 'io-sanita-theme/helpers/Views/content';
+export Address from 'io-sanita-theme/helpers/Address/Address';
