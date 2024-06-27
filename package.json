@@ -29,7 +29,8 @@
     "volto-subfooter",
     "volto-querywidget-with-browser",
     "volto-form-block",
-    "volto-form-block-italia"
+    "volto-form-block-italia",
+    "volto-venue"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -97,6 +98,7 @@
     "volto-slimheader": "0.1.2",
     "volto-social-settings": "3.0.0",
     "volto-subfooter": "3.1.1",
-    "volto-subsites": "4.0.2"
+    "volto-subsites": "4.0.2",
+    "volto-venue": "4.1.0"
   }
 }

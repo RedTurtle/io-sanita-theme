@@ -32,6 +32,9 @@ a {
   }
 }
 
+.font-small {
+  @include rem-size(font-size, 16);
+}
 .listing-item img {
   max-width: unset;
   margin-right: unset;
@@ -263,7 +266,6 @@ picture.volto-image.responsive img.full-width,
     }
   }
 }
-
 
 //callout (remove volto's styles)
 .callout {

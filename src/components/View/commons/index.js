@@ -18,6 +18,18 @@ export const HelpBox = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/HelpBox'
     ),
 );
+export const Locations = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Locations/Locations'
+    ),
+);
+export const LocationsMap = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Locations/LocationsMap'
+    ),
+);
 export const Metadata = loadable(
   () =>
     import(

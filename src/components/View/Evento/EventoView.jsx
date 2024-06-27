@@ -23,10 +23,11 @@ import {
   EventoUlterioriInformazioni,
   EventoDateOrari,
   EventoCosti,
+  EventoLuoghi,
+  EventoSponsors,
 } from 'io-sanita-theme/components/View/Evento';
 
 // import {
-//   EventoLuoghi,
 //   EventoDocumenti,
 //   EventoContatti,
 //   EventoPadreEFigli,
@@ -35,13 +36,13 @@ import {
 
 export const EventoViewSectionsOrder = [
   { /* COS'è */ component: EventoCosE },
-  // { /* LUOGHI */ component: EventoLuoghi },
+  { /* LUOGHI */ component: EventoLuoghi },
   { /* DATE E ORARI */ component: EventoDateOrari },
   { /* COSTI */ component: EventoCosti },
   // { /* DOCUMENTI */ component: EventoDocumenti },
   // { /* CONTATTI */ component: EventoContatti },
   // { /* EVENTS */ component: EventoPadreEFigli },
-  // { /* SPONSORS */ component: EventoSponsors },
+  { /* SPONSORS */ component: EventoSponsors },
   { /* ULTERIORI INFORMAZIONI */ component: EventoUlterioriInformazioni },
   // { /* EVENTI CORRELATI */ component: EventoEventiCorrelati },
   { /* METADATA */ component: Metadata },

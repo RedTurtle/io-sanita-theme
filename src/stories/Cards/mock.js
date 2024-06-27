@@ -23,3 +23,23 @@ export const ExampleEventItem = {
   // recurrence:
   //   'DTSTART:20240515T000000Z\nRRULE:FREQ=WEEKLY;INTERVAL=1;UNTIL=20240617T000000Z;BYDAY=TU\nRDATE:20240531T000000Z\nEXDATE:20240530T000000Z',
 };
+
+export const ExampleStrrutturaItem={
+  '@id': '/test-prova-struttura',
+  '@type': 'Struttura',
+  title: 'Laboratorio analisi cliniche Santa Cecilia',
+  category: {'@id': '/ambulatori-dei-medici-di-base',
+    '@type': 'CategoriaStruttura',
+    title: 'Ambulatori dei medici di base'},
+  effective: '2024-04-17T10:40:05+00:00',
+  circoscrizione:null,
+  city:"Palazzuolo sul senio",
+  country:{
+    "title": "Italia",
+    "token": "380"
+  },geolocation:{
+    "latitude": 41.8337833,
+    "longitude": 12.4677863
+  }, quartiere:null,
+  street:'Via Nome della via 23',zip_code:'44100',
+}
