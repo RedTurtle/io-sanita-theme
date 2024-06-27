@@ -6,7 +6,12 @@ export const EventoView = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoView'
     ),
 );
-
+export const EventoAppuntamenti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAppuntamenti'
+    ),
+);
 export const EventoCosE = loadable(
   () =>
     import(
@@ -31,18 +36,19 @@ export const EventoCosti = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoCosti'
     ),
 );
+export const EventoFaParteDi = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoFaParteDi'
+    ),
+);
 export const EventoLuoghi = loadable(
   () =>
     import(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoLuoghi'
     ),
 );
-export const EventoPadreEFigli = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoPadreEFigli'
-    ),
-);
+
 export const EventoSponsors = loadable(
   () =>
     import(

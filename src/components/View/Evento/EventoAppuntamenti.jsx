@@ -7,19 +7,15 @@ import { CardImage } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   events: {
-    id: 'events',
+    id: 'evento_appuntamenti',
     defaultMessage: 'Appuntamenti',
   },
 });
 
-const EventoPadreEFigli = ({ content }) => {
+const EventoAppuntamenti = ({ content }) => {
   const intl = useIntl();
-  const isChildEvent = content?.parent['@type'] === 'Event';
-  const events = isChildEvent
-    ? content?.parent
-      ? [content.parent]
-      : []
-    : content?.items?.filter((el) => el['@type'] === 'Event') || [];
+
+  const events = content?.items?.filter((el) => el['@type'] === 'Event') || [];
 
   return events.length > 0 ? (
     <RichTextSection
@@ -39,8 +35,8 @@ const EventoPadreEFigli = ({ content }) => {
   );
 };
 
-EventoPadreEFigli.propTypes = {
+EventoAppuntamenti.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoPadreEFigli;
+export default EventoAppuntamenti;
