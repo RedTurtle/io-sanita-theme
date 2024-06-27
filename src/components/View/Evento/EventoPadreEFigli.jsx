@@ -1,23 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { defineMessages, useIntl } from 'react-intl';
+import { Row, Col } from 'design-react-kit';
+import { RichTextSection } from 'io-sanita-theme/helpers';
+import { CardImage } from 'io-sanita-theme/components';
 
-import { Events } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+const messages = defineMessages({
+  events: {
+    id: 'events',
+    defaultMessage: 'Appuntamenti',
+  },
+});
 
 const EventoPadreEFigli = ({ content }) => {
+  const intl = useIntl();
   const isChildEvent = content?.parent['@type'] === 'Event';
+  const events = isChildEvent
+    ? content?.parent
+      ? [content.parent]
+      : []
+    : content?.items?.filter((el) => el['@type'] === 'Event') || [];
 
-  const events_path = isChildEvent
-    ? content?.parent['@id']?.split('/').splice(-1)[0]
-    : content?.['@id'].split('/').splice(-1)[0];
-
-  return content ? (
-    <Events
-      content={content}
-      show_image={true}
-      title={null}
-      folder_name={events_path}
-      isChild={isChildEvent}
-    />
+  return events.length > 0 ? (
+    <RichTextSection
+      tag_id="appuntamenti"
+      title={intl.formatMessage(messages.events)}
+    >
+      <Row>
+        {events.map((item, i) => (
+          <Col lg={6} key={item['@id']}>
+            <CardImage item={item} showDescription={false} />
+          </Col>
+        ))}
+      </Row>
+    </RichTextSection>
   ) : (
     <></>
   );

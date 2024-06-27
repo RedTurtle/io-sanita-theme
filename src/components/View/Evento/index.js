@@ -37,6 +37,12 @@ export const EventoLuoghi = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoLuoghi'
     ),
 );
+export const EventoPadreEFigli = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoPadreEFigli'
+    ),
+);
 export const EventoSponsors = loadable(
   () =>
     import(

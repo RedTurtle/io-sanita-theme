@@ -16,7 +16,22 @@ import {
 
 import config from '@plone/volto/registry';
 
-export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
+/*
+TODO:
+- capire come arriva la categoria e mostrarla bene (ora è item.topic)
+*/
+
+/*
+ - Implementa la Card Eventi e la Card News del template AGID delle AUSL
+ - Used to display Events and other content-types with image like News
+ */
+export const CardImage = ({
+  item,
+  showDescription = true,
+  imgSrc,
+  isEditMode,
+  rrule = {},
+}) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
@@ -50,7 +65,9 @@ export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
 
         {item['@type'] === 'Event' && <p className="event-date">{date}</p>}
 
-        {item.description && <CardText>{item.description}</CardText>}
+        {item.description && showDescription && (
+          <CardText>{item.description}</CardText>
+        )}
 
         {eventRecurrenceMore && (
           <div className="py-2">{eventRecurrenceMore}</div>

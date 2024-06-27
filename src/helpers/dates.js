@@ -100,19 +100,21 @@ export const getCalendarDate = (item, rrulestr) => {
         realStart = recurrenceDates.recurrenceStart || item.start;
         realEnd = recurrenceDates.recurrenceEnd || item.end;
       }
-      ret = (
-        <When
-          start={realStart}
-          end={realEnd}
-          whole_day={item.whole_day}
-          open_end={item.open_end}
-          start_label={intl.formatMessage(messages.from)}
-          end_label={intl.formatMessage(messages.to)}
-          start_date_format={'DD MMM YYYY'}
-          end_date_format={'DD MMM YYYY'}
-          show_time={false}
-        />
-      );
+      if (item.start || item.end) {
+        ret = (
+          <When
+            start={realStart}
+            end={realEnd}
+            whole_day={item.whole_day}
+            open_end={item.open_end}
+            start_label={intl.formatMessage(messages.from)}
+            end_label={intl.formatMessage(messages.to)}
+            start_date_format={'DD MMM YYYY'}
+            end_date_format={'DD MMM YYYY'}
+            show_time={false}
+          />
+        );
+      }
       break;
     case 'News Item':
       ret = effective;
