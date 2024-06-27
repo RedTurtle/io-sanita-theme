@@ -32,7 +32,6 @@ import {
 // import {
 //   EventoDocumenti,
 //   EventoContatti,
-//   EventoSponsors,
 // } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 export const EventoViewSectionsOrder = [

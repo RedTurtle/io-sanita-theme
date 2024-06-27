@@ -15,7 +15,7 @@ import {
 } from 'io-sanita-theme/helpers';
 
 import config from '@plone/volto/registry';
-
+import './cardImage.scss';
 /*
 TODO:
 - capire come arriva la categoria e mostrarla bene (ora è item.topic)
@@ -30,6 +30,7 @@ export const CardImage = ({
   showDescription = true,
   imgSrc,
   isEditMode,
+  titleTag = 'h3',
   rrule = {},
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -44,7 +45,7 @@ export const CardImage = ({
   const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
 
   return (
-    <Card className="shadow rounded no-after">
+    <Card className="shadow rounded no-after card-image">
       {img && (
         <div class="img-responsive-wrapper">
           <div class="img-responsive img-responsive-panoramic">
@@ -53,7 +54,7 @@ export const CardImage = ({
         </div>
       )}
       <CardBody className="p-4">
-        <CardTitle tag="h3">
+        <CardTitle tag={titleTag}>
           <UniversalLink
             item={!isEditMode ? item : null}
             href={isEditMode ? '#' : ''}
@@ -63,7 +64,9 @@ export const CardImage = ({
           </UniversalLink>
         </CardTitle>
 
-        {item['@type'] === 'Event' && <p className="event-date">{date}</p>}
+        {item['@type'] === 'Event' && date && (
+          <p className="event-date">{date}</p>
+        )}
 
         {item.description && showDescription && (
           <CardText>{item.description}</CardText>

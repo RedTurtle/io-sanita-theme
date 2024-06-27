@@ -25,7 +25,7 @@ const EventoFaParteDi = ({ content }) => {
     >
       <Row>
         <Col lg={6} className="py-lg-2">
-          <CardImage item={parentEvent} showDescription={false} />
+          <CardImage item={parentEvent} showDescription={false} titleTag="h5" />
         </Col>
       </Row>
     </RichTextSection>
