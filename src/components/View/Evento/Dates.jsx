@@ -111,7 +111,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         </div>
         {!openEnd && (
           <div className="point-list">
-            <div className="point-list-aside point-list-primary">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {end.format('DD')}
               </span>

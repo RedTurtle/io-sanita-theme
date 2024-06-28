@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import { Attachments } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { Attachments } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   documenti: {

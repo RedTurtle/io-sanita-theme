@@ -6,8 +6,6 @@ import {
   CardBody,
   CardTitle,
   CardText,
-  CardCategory,
-  CardFooter,
   AvatarIcon,
 } from 'design-react-kit';
 

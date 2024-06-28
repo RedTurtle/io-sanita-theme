@@ -27,10 +27,10 @@ import {
   EventoSponsors,
   EventoFaParteDi,
   EventoAppuntamenti,
+  EventoDocumenti,
 } from 'io-sanita-theme/components/View/Evento';
 
 // import {
-//   EventoDocumenti,
 //   EventoContatti,
 // } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
@@ -40,7 +40,7 @@ export const EventoViewSectionsOrder = [
   { /* LUOGHI */ component: EventoLuoghi },
   { /* DATE E ORARI */ component: EventoDateOrari },
   { /* COSTI */ component: EventoCosti },
-  // { /* DOCUMENTI */ component: EventoDocumenti },
+  { /* DOCUMENTI */ component: EventoDocumenti },
   // { /* CONTATTI */ component: EventoContatti },
   { /* EVENTS */ component: EventoAppuntamenti },
   { /* SPONSORS */ component: EventoSponsors },

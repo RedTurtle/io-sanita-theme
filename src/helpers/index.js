@@ -17,12 +17,15 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
+
+//file
 export {
   getFileViewFormat,
   FILE_EXTENSIONS,
   FILE_FORMATS,
 } from 'io-sanita-theme/helpers/Files/files';
 
+export FileIcon from 'io-sanita-theme/helpers/Files/FileIcon';
 export DownloadFileFormat from 'io-sanita-theme/helpers/Files/DownloadFileFormat';
 
 export {

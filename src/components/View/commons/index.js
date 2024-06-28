@@ -1,5 +1,12 @@
 import loadable from '@loadable/component';
 
+export const Attachments = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Attachments/Attachments'
+    ),
+);
+
 export const ContentImage = loadable(
   () =>
     import(

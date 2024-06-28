@@ -36,6 +36,12 @@ export const EventoCosti = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoCosti'
     ),
 );
+export const EventoDocumenti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoDocumenti'
+    ),
+);
 export const EventoFaParteDi = loadable(
   () =>
     import(

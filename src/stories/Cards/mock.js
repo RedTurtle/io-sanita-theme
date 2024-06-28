@@ -61,3 +61,34 @@ export const ExamplePersonaItem = {
   title: 'persona pubblica',
   type_title: 'Persona pubblica',
 };
+
+export const ExampleFileItem = {
+  '@id':
+    'https://slate.io-comune.redturtle.it/api/io-sanita/evento/documenti/schermata-2024-01-16-alle-15-36-28.png',
+  '@type': 'File',
+  UID: '48355357faa644988e4bbab3515d2335',
+  created: '2024-01-25T14:54:18+00:00',
+  description:
+    'Descrizione del documento. Lunghezza suggerita massimo 3 righe, dopodiché viene troncata.',
+  effective: '2024-06-27T10:58:07+00:00',
+  expires: null,
+  file: {
+    'content-type': 'image/png',
+    download:
+      'https://slate.io-comune.redturtle.it/api/io-sanita/evento/documenti/schermata-2024-01-16-alle-15-36-28.png/@@download/file',
+    enhanced_links_enabled: true,
+    filename: 'Schermata 2024-01-16 alle 15.36.28.png',
+    getObjSize: '116.8 KB',
+    size: 119611,
+  },
+  id: 'schermata-2024-01-16-alle-15-36-28.png',
+  is_folderish: false,
+  language: {
+    title: 'Italiano',
+    token: 'it',
+  },
+  modified: '2024-06-27T10:58:07+00:00',
+  subjects: [],
+  title: 'Schermata 2024-01-16 alle 15.36.28.png',
+  type_title: 'File',
+};
