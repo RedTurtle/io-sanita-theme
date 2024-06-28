@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { ContactCard } from 'io-sanita-theme/components/View/commons';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
-// import EventoContattiOrganizzatoreEsterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno';
-// import EventoContattiOrganizzatoreInterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno';
-// import EventoContattiSupportatoDa from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiSupportatoDa';
+import EventoContattiOrganizzatoreEsterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno';
+import EventoContattiOrganizzatoreInterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno';
 
 const messages = defineMessages({
   contatti: {
@@ -29,13 +28,10 @@ const EventoContatti = ({ content }) => {
       ))}
 
       {/* ---organizzato da esterno */}
-      {/* <EventoContattiOrganizzatoreEsterno content={content} /> */}
+      <EventoContattiOrganizzatoreEsterno content={content} />
 
       {/* ---contatti interno */}
-      {/* <EventoContattiOrganizzatoreInterno content={content} /> */}
-
-      {/* ---supportato da */}
-      {/* <EventoContattiSupportatoDa content={content} /> */}
+      <EventoContattiOrganizzatoreInterno content={content} />
     </RichTextSection>
   ) : null;
 };
