@@ -47,9 +47,9 @@ export const CardImage = ({
   return (
     <Card className="shadow rounded no-after card-image">
       {img && (
-        <div class="img-responsive-wrapper">
-          <div class="img-responsive img-responsive-panoramic">
-            <figure class="img-wrapper">{img}</figure>
+        <div className="img-responsive-wrapper">
+          <div className="img-responsive img-responsive-panoramic">
+            <figure className="img-wrapper">{img}</figure>
           </div>
         </div>
       )}

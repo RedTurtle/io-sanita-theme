@@ -2,7 +2,6 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 
-
 const messages = defineMessages({
   successivo: {
     id: 'successivo',
@@ -26,7 +25,7 @@ export default function NextArrow(props) {
       id={id}
     >
       <Icon icon="chevron-right" key="chevron-right" title={_title} />
-      <span class="visually-hidden">{_title}</span>
+      <span className="visually-hidden">{_title}</span>
     </button>
   );
 }
