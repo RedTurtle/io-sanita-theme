@@ -12,6 +12,12 @@ export const EventoAppuntamenti = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAppuntamenti'
     ),
 );
+export const EventoContatti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoContatti'
+    ),
+);
 export const EventoCosE = loadable(
   () =>
     import(

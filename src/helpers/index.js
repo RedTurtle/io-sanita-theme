@@ -55,3 +55,4 @@ export TextOrBlocks from 'io-sanita-theme/helpers/Blocks/TextOrBlocks';
 export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeViewSections';
 export { contentFolderHasItems } from 'io-sanita-theme/helpers/Views/content';
 export Address from 'io-sanita-theme/helpers/Address/Address';
+export PuntoDiContattoValue from 'io-sanita-theme/helpers/Views/PuntoDiContattoValue';
