@@ -41,9 +41,24 @@ msgstr ""
 msgid "Clicca qui per sostituire il file"
 msgstr "Click here to replace file"
 
+#. Default: "Contatti"
+#: components/View/Evento/EventoContatti
+msgid "Contatti"
+msgstr ""
+
+#. Default: "Contenuto"
+#: components/View/commons/SideMenu/SideMenu
+msgid "Contenuto"
+msgstr ""
+
 #. Default: "Current filters applied"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Current filters applied"
+msgstr ""
+
+#. Default: "Date aggiuntive"
+#: components/View/Evento/Dates
+msgid "Date aggiuntive"
 msgstr ""
 
 #. Default: "Al {end}"
@@ -60,6 +75,11 @@ msgstr "Starting from {start}"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Between {start} and {end}"
+
+#. Default: "Vai al contenuto"
+#: components/View/commons/SkipToMainContent
+msgid "Go to content"
+msgstr ""
 
 #. Default: "HTML"
 #: components/Blocks/HTML/schema
@@ -82,7 +102,7 @@ msgid "Impostazioni cookie footer"
 msgstr "Cookies settings"
 
 #. Default: "In questa sezione"
-#: components/View/PageView/PageView
+#: components/View/Page/PageView
 msgid "In this section"
 msgstr ""
 
@@ -95,6 +115,11 @@ msgstr ""
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "Iscriviti per ricevere la newsletter"
 msgstr "Subscribe to receive newsletter"
+
+#. Default: "L'evento non si terrà nelle seguenti date"
+#: components/View/Evento/Dates
+msgid "L'evento non si terrà nelle seguenti date"
+msgstr ""
 
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader
@@ -126,6 +151,16 @@ msgstr "- open in a new tab"
 #: components/Pagination/PaginationItem
 msgid "Page"
 msgstr "Page"
+
+#. Default: "Seleziona per mettere in pausa lo slider"
+#: components/Slider/ButtonPlayPause
+msgid "Pause slider"
+msgstr ""
+
+#. Default: "Seleziona per riprodurre lo slider"
+#: components/Slider/ButtonPlayPause
+msgid "Play slider"
+msgstr ""
 
 #. Default: "Pagina precedente"
 #: components/Pagination/PaginationItem
@@ -198,7 +233,8 @@ msgid "Unauthorized"
 msgstr ""
 
 #. Default: "Unknown Block {block}"
-#: components/View/PageView/PageView
+#: components/layout/Navigation/MegaMenu/MegaMenu
+#: components/View/Page/PageView
 msgid "Unknown Block"
 msgstr ""
 
@@ -219,10 +255,10 @@ msgstr "View all"
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "You are trying to access a protected resource, please {login} first."
 
-#. Default: "Vedi azioni"
-#: components/View/commons/Actions
-msgid "actions"
-msgstr "View actions"
+#. Default: "A chi è rivolto"
+#: components/View/Evento/EventoCosE
+msgid "a_chi_rivolto"
+msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -243,6 +279,11 @@ msgstr "All options"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allTopics"
 msgstr "All topics"
+
+#. Default: "Amministrazione"
+#: components/View/commons/RelatedItems
+msgid "amministrazione"
+msgstr ""
 
 #. Default: "Torna alla ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -273,6 +314,16 @@ msgstr "Scheduled"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "breadcrumb"
 msgstr "Navigation path"
+
+#. Default: "Carosello"
+#: components/Slider/CarouselWrapper
+msgid "carousel"
+msgstr ""
+
+#. Default: "Slide"
+#: components/Slider/SingleSlideWrapper
+msgid "carouselSlide"
+msgstr ""
 
 #. Default: "Clear all filters"
 #: helpers/Translations/searchBlockExtendedTranslations
@@ -314,30 +365,75 @@ msgstr ""
 msgid "date"
 msgstr "Date"
 
+#. Default: "Date e orari"
+#: components/View/Evento/EventoDateOrari
+msgid "date_e_orari"
+msgstr ""
+
 #. Default: "Non cercare nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "deselectSearchSection"
 msgstr "Do not search in section"
+
+#. Default: "Documenti e dati"
+#: components/View/commons/RelatedItems
+msgid "documenti-e-dati"
+msgstr ""
 
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
 msgstr ""
 
-#. Default: "Scarica"
-#: components/View/commons/Actions
-msgid "download"
-msgstr "Download"
+#. Default: "Download and Play video"
+#: components/EmbeddedVideo/EmbeddedVideo
+msgid "downloadPlayVideo"
+msgstr ""
 
 #. Default: "Close menu"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "dropdownmenu-close-menu-button"
 msgstr "Close menu"
 
+#. Default: "YouTube Video {id}"
+#: components/EmbeddedVideo/EmbeddedVideo
+msgid "embedVideo"
+msgstr ""
+
+#. Default: "Fine evento"
+#: components/View/Evento/Dates
+msgid "end"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Evento/EventoCosE
+msgid "event_cos_e"
+msgstr ""
+
+#. Default: "Costi"
+#: components/View/Evento/EventoCosti
+msgid "event_costi"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Evento/EventoDocumenti
+msgid "event_documenti"
+msgstr ""
+
 #. Default: "La data di fine deve essere successiva alla data di inizio"
 #: helpers/FormValidation/FormValidation
 msgid "event_end"
 msgstr "You cannot specify an end date prior to the start date."
+
+#. Default: "Ulteriori informazioni"
+#: components/View/Evento/EventoUlterioriInformazioni
+msgid "event_ulteriori_informazioni"
+msgstr ""
+
+#. Default: "Url dell'evento"
+#: components/View/Evento/EventoUlterioriInformazioni
+msgid "event_url"
+msgstr ""
 
 #. Default: "Scadenza"
 #: components/View/commons/PageHeader/PageHeaderDates
@@ -364,6 +460,31 @@ msgstr "Restart"
 msgid "from"
 msgstr "from"
 
+#. Default: "Galleria immagini"
+#: components/View/commons/Gallery/Gallery
+msgid "gallery"
+msgstr ""
+
+#. Default: "Chiudi l'anteprima"
+#: components/GalleryPreview/GalleryPreview
+msgid "gallery_close_preview"
+msgstr ""
+
+#. Default: "Vedi l'anteprima di"
+#: components/View/commons/Gallery/Gallery
+msgid "gallery_viewPreview"
+msgstr ""
+
+#. Default: "Immagine successiva"
+#: components/GalleryPreview/GalleryPreview
+msgid "gallery_view_next"
+msgstr ""
+
+#. Default: "Immagine precedente"
+#: components/GalleryPreview/GalleryPreview
+msgid "gallery_view_prev"
+msgstr ""
+
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
@@ -374,6 +495,11 @@ msgstr "Home page"
 msgid "icon_title"
 msgstr "Icon for {topic_title} topic"
 
+#. Default: "Indice della pagina"
+#: components/View/commons/SideMenu/SideMenu
+msgid "index"
+msgstr ""
+
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
 #: overrideTranslations
 msgid "legend_required"
@@ -383,6 +509,11 @@ msgstr "Fields marked with (*) are required."
 #: helpers/dates
 msgid "listing_event_recurrence_label"
 msgstr "This event has multiple dates: see all"
+
+#. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
+#: components/EmbeddedVideo/EmbeddedVideo
+msgid "loadVideo"
+msgstr ""
 
 #. Default: "log in"
 #: components/Unauthorized/Unauthorized
@@ -462,13 +593,18 @@ msgstr ""
 msgid "logo-subsite-alt"
 msgstr ""
 
+#. Default: "Luogo"
+#: components/View/Evento/EventoLuoghi
+msgid "luogo"
+msgstr ""
+
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
 msgstr ""
 
 #. Default: "Invia"
-#: components/View/commons/Actions
+#: components/View/commons/Sharing/Sharing
 msgid "mailto"
 msgstr "Send"
 
@@ -478,25 +614,35 @@ msgid "minutes"
 msgstr "min."
 
 #. Default: "Ultimo aggiornamento"
-#: components/View/commons/PageMetadata
-#: components/View/PageView/PageView
+#: components/View/commons/Metadata/Metadata
+#: components/View/Page/PageView
 msgid "modified"
 msgstr ""
 
 #. Default: "Scarica il file"
-#: components/View/commons/DownloadFileFormat
+#: helpers/Files/DownloadFileFormat
 msgid "modulo_download_file"
 msgstr "Download file"
 
 #. Default: "Scarica in formato"
-#: components/View/commons/DownloadFileFormat
+#: helpers/Files/DownloadFileFormat
 msgid "modulo_download_in_format"
 msgstr "Download in"
+
+#. Default: "Novità"
+#: components/View/commons/RelatedItems
+msgid "novita"
+msgstr ""
 
 #. Default: "Numero del comunicato stampa"
 #: components/View/commons/PageHeader/PageHeaderNewsItem
 msgid "numero_progressivo_cs"
 msgstr "Press release number"
+
+#. Default: "Questo evento ha una data di fine aperta/variabile."
+#: components/View/Evento/Dates
+msgid "open_end"
+msgstr ""
 
 #. Default: "Contenuto attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -543,13 +689,48 @@ msgstr "From"
 msgid "options"
 msgstr "Options"
 
+#. Default: "Orari"
+#: components/View/Evento/EventoDateOrari
+msgid "orari"
+msgstr ""
+
+#. Default: "Organizzato da"
+#: components/View/Evento/EventoContattiOrganizzatoreInterno
+msgid "organizzato_da"
+msgstr ""
+
+#. Default: "Organizzatore"
+#: components/View/Evento/EventoContattiOrganizzatoreEsterno
+msgid "organizzatore"
+msgstr ""
+
+#. Default: "PARLIAMO DI"
+#: components/View/commons/Topics
+msgid "page_topics"
+msgstr ""
+
 #. Default: "Selettore di pagina"
 #: components/Pagination/Pagination
 msgid "paginationLabel"
 msgstr ""
 
+#. Default: "Parteciperanno"
+#: components/View/Evento/EventoCosE
+msgid "parteciperanno"
+msgstr ""
+
+#. Default: "Patrocinato da"
+#: components/View/Evento/EventoUlterioriInformazioni
+msgid "patrocinato_da"
+msgstr ""
+
+#. Default: "Precedente"
+#: components/Slider/PrevArrow
+msgid "precedente"
+msgstr ""
+
 #. Default: "Stampa"
-#: components/View/commons/Actions
+#: components/View/commons/Sharing/Sharing
 msgid "print"
 msgstr "Print"
 
@@ -557,6 +738,11 @@ msgstr "Print"
 #: components/View/commons/PageHeader/PageHeader
 msgid "reading_time"
 msgstr "Reading time"
+
+#. Default: "Contenuti correlati"
+#: components/View/commons/RelatedItems
+msgid "related_items"
+msgstr ""
 
 #. Default: "Rimuovi opzione"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -674,6 +860,11 @@ msgstr "Service not available"
 msgid "service_on"
 msgstr "Service available"
 
+#. Default: "Servizi"
+#: components/View/commons/RelatedItems
+msgid "servizi"
+msgstr ""
+
 #. Default: "Accedi al servizio"
 #: components/View/commons/PageHeader/PageHeaderLinkServizio
 msgid "servizio_canale_digitale_link"
@@ -685,7 +876,7 @@ msgid "setMoreSearchOptions"
 msgstr "Go to other search options"
 
 #. Default: "Condividi"
-#: components/View/commons/Sharing
+#: components/View/commons/Sharing/Sharing
 msgid "share"
 msgstr "Share"
 
@@ -704,9 +895,29 @@ msgstr "Go to content"
 msgid "skiplink-navigation"
 msgstr "Go to navigation"
 
+#. Default: "Inizio evento"
+#: components/View/Evento/Dates
+msgid "start"
+msgstr ""
+
+#. Default: "Successivo"
+#: components/Slider/NextArrow
+msgid "successivo"
+msgstr ""
+
+#. Default: "Con il supporto di"
+#: components/View/Evento/EventoContattiSupportatoDa
+msgid "supported_by"
+msgstr ""
+
 #. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
 #: helpers/FormValidation/DataGrid
 msgid "timeline_tempi_scadenze_validation_error"
+msgstr ""
+
+#. Default: "Tipo evento"
+#: components/View/Evento/EventoCosE
+msgid "tipologia_evento"
 msgstr ""
 
 #. Default: "al"
@@ -734,6 +945,11 @@ msgstr "Open"
 msgid "topics"
 msgstr "Topics"
 
+#. Default: "Ulteriori informazioni"
+#: components/View/commons/HelpBox
+msgid "ulteriori_info_icona"
+msgstr ""
+
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
@@ -743,3 +959,8 @@ msgstr ""
 #: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Unknown block"
+
+#. Default: "Questo evento ha luogo per tutta la giornata."
+#: components/View/Evento/Dates
+msgid "whole_day"
+msgstr ""

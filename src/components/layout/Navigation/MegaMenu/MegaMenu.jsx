@@ -41,6 +41,10 @@ const messages = defineMessages({
     id: 'dropdownmenu-close-menu-button',
     defaultMessage: 'Close menu',
   },
+  unknownBlock: {
+    id: 'Unknown Block',
+    defaultMessage: 'Unknown Block {block}',
+  },
 });
 
 const MEGAMENU_MAX_ROWS = 8;
