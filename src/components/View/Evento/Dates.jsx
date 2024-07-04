@@ -84,9 +84,9 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
             <span className="point-date font-monospace">
               {start.format('DD')}
             </span>
-            <span className="point-month">{start.format('MMMM')}</span>
+            <span className="point-month font-monospace">{start.format('MMMM')}</span>
             {!start.isSame(end, 'year') && (
-              <span className="point-month">{start.format('YYYY')}</span>
+              <span className="point-month font-monospace">{start.format('YYYY')}</span>
             )}
           </div>
           <div className="point-list-content">

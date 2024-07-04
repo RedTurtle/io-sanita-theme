@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { ContactCard } from 'io-sanita-theme/components/View/commons';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
-import EventoContattiOrganizzatoreEsterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreEsterno';
-import EventoContattiOrganizzatoreInterno from 'design-comuni-plone-theme/components/ItaliaTheme/View/EventoView/EventoContattiOrganizzatoreInterno';
+import EventoContattiOrganizzatoreEsterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreEsterno';
+import EventoContattiOrganizzatoreInterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreInterno';
 
 const messages = defineMessages({
   contatti: {
@@ -16,7 +16,7 @@ const EventoContatti = ({ content }) => {
   const intl = useIntl();
 
   return richTextHasContent(content?.organizzato_da_esterno) ||
-    content?.organizzato_da_interno.length > 0 ||
+    content?.organizzato_da_interno?.length > 0 ||
     content?.supportato_da?.length > 0 ||
     content?.contact_info?.length > 0 ? (
     <RichTextSection

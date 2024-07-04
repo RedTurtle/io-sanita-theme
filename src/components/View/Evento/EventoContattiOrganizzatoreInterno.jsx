@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  richTextHasContent,
-  OfficeCard,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
+import { richTextHasContent } from 'io-sanita-theme/helpers';
+
+// OfficeCard,
 
 const messages = defineMessages({
   organizzato_da: {
@@ -19,17 +19,18 @@ const EventoContattiOrganizzatoreInterno = ({ content }) => {
     <div className="mb-5">
       <h3 className="h5">{intl.formatMessage(messages.organizzato_da)}</h3>
       {content?.organizzato_da_interno?.map((item, index) => (
-        <OfficeCard
-          margin_bottom={index < content?.organizzato_da_interno?.length - 1}
-          key={item['@id']}
-          office={item}
-        >
-          {richTextHasContent(content?.contatto_reperibilita) && (
-            <p className="card-text mt-3">
-              {content?.contatto_reperibilita?.replace(/(<([^>]+)>)/g, '')}
-            </p>
-          )}
-        </OfficeCard>
+        // <OfficeCard
+        //   margin_bottom={index < content?.organizzato_da_interno?.length - 1}
+        //   key={item['@id']}
+        //   office={item}
+        // >
+        //   {richTextHasContent(content?.contatto_reperibilita) && (
+        //     <p className="card-text mt-3">
+        //       {content?.contatto_reperibilita?.replace(/(<([^>]+)>)/g, '')}
+        //     </p>
+        //   )}
+        // </OfficeCard>
+        <></>
       ))}
     </div>
   ) : null;

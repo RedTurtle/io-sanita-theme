@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Card, CardBody } from 'design-react-kit';
-import {
-  RichText,
-  richTextHasContent,
-  ContactLink,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
+//ContactLink
+
+import { richTextHasContent, RichText } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   organizzatore: {
@@ -32,12 +31,12 @@ const EventoContattiOrganizzatoreEsterno = ({ content }) => {
           <RichText data={content.organizzato_da_esterno} />
           {content?.telefono && (
             <p className="card-text mt-3">
-              <ContactLink tel={content.telefono} label={true} />
+              {/* <ContactLink tel={content.telefono} label={true} /> */}
             </p>
           )}
           {content?.fax && (
             <p className="card-text mt-3">
-              <ContactLink fax={content.fax} label={true} />
+              {/* <ContactLink fax={content.fax} label={true} /> */}
             </p>
           )}
           {content?.reperibilita?.replace(/(<([^>]+)>)/g, '').length > 0 && (
@@ -47,7 +46,7 @@ const EventoContattiOrganizzatoreEsterno = ({ content }) => {
           )}
           {content?.email && (
             <p className="card-text mt-3">
-              <ContactLink email={content.email} label={true} />
+              {/* <ContactLink email={content.email} label={true} /> */}
             </p>
           )}
         </CardBody>
