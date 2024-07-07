@@ -1,10 +1,12 @@
-import {PageView} from 'io-sanita-theme/components/View/Page';
-import {EventoView} from 'io-sanita-theme/components/View/Evento';
+import { PageView } from 'io-sanita-theme/components/View/Page';
+import { EventoView } from 'io-sanita-theme/components/View/Evento';
+import { ComeFarePerView } from 'io-sanita-theme/components/View/ComeFarePer';
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
   Document: PageView,
   Event: EventoView,
+  ComeFarePer: ComeFarePerView,
 };
 
 /* LAYOUT VIEWS */

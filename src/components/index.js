@@ -64,6 +64,7 @@ export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
 export CardPlace from 'io-sanita-theme/components/Cards/CardPlace/CardPlace';
 export CardPersona from 'io-sanita-theme/components/Cards/CardPersona/CardPersona';
 export CardFile from 'io-sanita-theme/components/Cards/CardFile/CardFile';
+export CardGuide from 'io-sanita-theme/components/Cards/CardGuide/CardGuide';
 
 //Pagination
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';

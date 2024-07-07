@@ -92,3 +92,15 @@ export const ExampleFileItem = {
   title: 'Schermata 2024-01-16 alle 15.36.28.png',
   type_title: 'File',
 };
+
+export const ExampleLink = {
+  '@id': '/test-del-collegamento',
+  '@type': 'Link',
+  UID: '7651c76386aa4672aa2d693494d84a94',
+  description: '',
+  id: 'test-del-collegamento',
+  review_state: 'private',
+  title: 'Test del collegamento',
+  type_title: 'Collegamento',
+  remoteUrl: "/link-di-test"
+};
