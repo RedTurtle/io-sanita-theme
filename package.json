@@ -30,7 +30,8 @@
     "volto-querywidget-with-browser",
     "volto-form-block",
     "volto-form-block-italia",
-    "volto-venue"
+    "volto-venue",
+    "volto-site-settings"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
