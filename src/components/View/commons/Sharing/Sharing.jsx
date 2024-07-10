@@ -141,7 +141,7 @@ const Sharing = ({ url, title }) => {
                   icon={false}
                   title={item.title}
                   alt={item.title}
-                  ariaLabel={item.title}
+                  aria-label={item.title}
                   tag="button"
                   id={item.id}
                   onClick={handlePrint}

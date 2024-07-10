@@ -1,0 +1,18 @@
+.public-ui .card.card-file {
+  .card-body {
+    .icon {
+      height: 40px !important;
+      width: auto;
+      font-size: 40px;
+    }
+    h5.card-title {
+      font-size: 1rem;
+    }
+    .card-text {
+      &,
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

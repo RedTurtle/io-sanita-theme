@@ -4,12 +4,7 @@
 
 .public-ui {
   .btn.btn-accent {
-    @include button-variant($accent, $accent);
-
-    svg {
-      fill: $accent-text;
-    }
-
+    &,
     &:hover,
     &:active {
       svg {
@@ -19,9 +14,13 @@
   }
 
   a.btn.btn-accent {
-    color: $accent-text !important;
+    &:focus-visible {
+      color: $accent;
+    }
 
-    &:focus {
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
       border-color: $focus-outline-color;
       box-shadow:
         inset 0 1px 0 $focus-outline-color,
@@ -29,9 +28,5 @@
         0 0 0 0.2rem $focus-outline-color;
       outline: none;
     }
-  }
-
-  .btn.btn-outline-accent {
-    @include button-outline-variant($accent);
   }
 }

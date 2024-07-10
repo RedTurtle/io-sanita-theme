@@ -80,7 +80,7 @@ const SearchSectionForm = ({ content }) => {
       <Container className="px-5">
         <div className="form-group my-0">
           <div className="input-group">
-            <span class="input-group-text">
+            <span className="input-group-text">
               <Icon
                 icon="it-search"
                 aria-hidden={true}
@@ -103,7 +103,7 @@ const SearchSectionForm = ({ content }) => {
               }"`}
               aria-describedby="search-page-button"
             />
-            <div class="input-group-append">
+            <div className="input-group-append">
               <Button
                 color="accent"
                 onClick={() => doSearch()}

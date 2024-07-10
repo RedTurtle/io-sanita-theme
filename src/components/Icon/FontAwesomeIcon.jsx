@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid';
 import { fontAwesomeAliases } from './fontAwesomeAliases';
 
 const FontAwesomeIcon = (props) => {
-  const { className, icon, prefix, title } = props;
+  const { className, icon, prefix, title, color } = props;
   const iconID = useMemo(() => uuid(), []);
   const [loadedIcon, setLoadedIcon] = React.useState({
     module: null,
@@ -73,7 +73,9 @@ const FontAwesomeIcon = (props) => {
       viewBox={
         loadedIcon.module.attributes && loadedIcon.module.attributes.viewBox
       }
-      className={`icon fa-icon ${className ?? ''}`}
+      className={`icon fa-icon ${className ?? ''} ${
+        color ? 'icon-' + color : ''
+      }`}
       dangerouslySetInnerHTML={{
         __html: title
           ? `<title id="${iconID}">${title}</title>${loadedIcon.module.content}`
@@ -83,7 +85,11 @@ const FontAwesomeIcon = (props) => {
       aria-hidden={props['aria-hidden']}
     />
   ) : icon ? (
-    <span className={`icon fa-icon placeholder ${className ?? ''}`}></span>
+    <span
+      className={`icon fa-icon placeholder ${className ?? ''} ${
+        color ? 'icon-' + color : ''
+      } `}
+    ></span>
   ) : (
     <></>
   );

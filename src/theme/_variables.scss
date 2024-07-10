@@ -10,9 +10,16 @@ $primary-darker: hsl(
 ); // color-ocean-10 --> $primary-a12 --> primary-darker
 $accent: #9c0769;
 
-
 $primary-text: #fff;
 $accent-text: #fff;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    'accent': $accent,
+  ),
+  $theme-colors
+);
 
 $bg-primary-lightest: hsl($primary-h, 50%, 97%); //#F4FAFB;
 $bg-primary-lighter: hsl($primary-h, 50%, 87%); //#CDE9EE;
@@ -68,6 +75,3 @@ $gdpr-focus-shadow:
   inset 0 1px 0 rgba(255, 255, 255, 0.15),
   0 1px 1px rgba(0, 0, 0, 0.075),
   0 0 0 0.2rem $gdpr-focus-color !default;
-
-
-

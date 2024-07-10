@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import {
-  RichTextSection,
-  Locations,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { RichTextSection } from 'io-sanita-theme/helpers';
+import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   luoghi: {
@@ -34,7 +32,6 @@ const EventoLuoghi = ({ content }) => {
       <Locations
         content={content}
         locations={content?.luoghi_correlati ?? []}
-        show_icon={true}
       />
     </RichTextSection>
   ) : (

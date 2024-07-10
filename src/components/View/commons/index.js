@@ -1,5 +1,18 @@
 import loadable from '@loadable/component';
 
+export const Attachments = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Attachments/Attachments'
+    ),
+);
+
+export const ContactCard = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/ContactCard/ContactCard'
+    ),
+);
 export const ContentImage = loadable(
   () =>
     import(
@@ -16,6 +29,18 @@ export const HelpBox = loadable(
   () =>
     import(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/HelpBox'
+    ),
+);
+export const Locations = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Locations/Locations'
+    ),
+);
+export const LocationsMap = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Locations/LocationsMap'
     ),
 );
 export const Metadata = loadable(
