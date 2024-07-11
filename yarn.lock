@@ -8585,7 +8585,7 @@ __metadata:
     volto-gdpr-privacy: 2.2.7
     volto-querywidget-with-browser: 0.4.2
     volto-secondarymenu: 4.1.1
-    volto-slate-italia: 1.0.0
+    volto-slate-italia: 1.0.1
     volto-slimheader: 0.1.2
     volto-social-settings: 3.0.0
     volto-subfooter: 3.1.1
@@ -13390,12 +13390,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-slate-italia@npm:1.0.0":
-  version: 1.0.0
-  resolution: "volto-slate-italia@npm:1.0.0"
+"volto-slate-italia@npm:1.0.1":
+  version: 1.0.1
+  resolution: "volto-slate-italia@npm:1.0.1"
   peerDependencies:
     "@plone/volto": ^17.0.0
-  checksum: 8524409fd966a17655074850b3206de3c2f28d26d1f9eea67931e31e68370be5887734ad95a0266d8cded37b28f77eb51832ca3eaf7087946948d50c24fd01dc
+  checksum: 9918173740fe64140cea6452ad1039646742841a1fdb1e56b75dd81c5da2ed497ba8428f33a943cb099f8a85004293dc0b660045e3d86593831e33b2300b7b58
   languageName: node
   linkType: hard
 
