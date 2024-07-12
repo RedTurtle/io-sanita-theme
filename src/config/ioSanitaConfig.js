@@ -15,6 +15,7 @@ import {
   LoginAgid,
   HandleAnchor,
   GenericAppExtras,
+  SiteSettingsExtras,
   Icon,
   FileWidget,
 } from 'io-sanita-theme/components';
@@ -140,6 +141,10 @@ export default function applyConfig(config) {
         match: '',
         component: GenericAppExtras,
       },
+      {
+        match: '',
+        component: SiteSettingsExtras,
+      },
     ],
     maxFileUploadSize: null,
 
@@ -198,6 +203,11 @@ export default function applyConfig(config) {
   //   ...config.components,
   //   BlockExtraTags: { component: () => null },
   // };
+
+  config.registerComponent({
+    name: 'SiteSettingsExtras',
+    component: SiteSettingsExtras,
+  });
 
   // REDUCERS
   config.addonReducers = {

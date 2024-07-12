@@ -14,6 +14,7 @@ export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
 export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
 export HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
 export GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExtras';
+export SiteSettingsExtras from 'io-sanita-theme/components/AppExtras/SiteSettingsExtras';
 export PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader';
 export ScrollToTop from 'io-sanita-theme/components/ScrollToTop/ScrollToTop';
 
