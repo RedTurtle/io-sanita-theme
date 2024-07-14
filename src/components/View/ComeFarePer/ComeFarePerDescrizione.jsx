@@ -17,18 +17,16 @@ const messages = defineMessages({
 const ComeFarePerDescrizione = ({ content }) => {
   const intl = useIntl();
 
-  /* TO DO: verificare che sia cambiato in 'panoramica' invece che 'descrizione_estesa' */
-  return richTextHasContent(content?.panoramica) ? (
+  return richTextHasContent(content?.descrizione_estesa) ? (
     <RichTextSection
       tag_id="panoramica"
       title={intl.formatMessage(messages.panoramica)}
     >
-      {richTextHasContent(content?.panoramica) && (
+      {richTextHasContent(content?.descrizione_estesa) && (
         <div className="mt-4">
           <div className="mb-5">
             <RichText
-              title={intl.formatMessage(messages.panoramica)}
-              data={content?.panoramica}
+              data={content?.descrizione_estesa}
             />
           </div>
         </div>

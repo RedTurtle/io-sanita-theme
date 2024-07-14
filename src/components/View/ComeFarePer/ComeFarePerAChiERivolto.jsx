@@ -7,6 +7,10 @@ import {
   RichTextSection,
 } from 'io-sanita-theme/helpers';
 
+import {
+  TassonomiaUtenti
+} from 'io-sanita-theme/components/View/commons';
+
 const messages = defineMessages({
   a_chi_si_rivolge: {
     id: 'come_fare_per_a_chi_si_rivolge',
@@ -17,7 +21,6 @@ const messages = defineMessages({
 const ComeFarePerAChiERivolto = ({ content }) => {
   const intl = useIntl();
 
-  /* TO DO: verificare che sia cambiato in 'panoramica' invece che 'AChiERivolto_estesa' */
   return richTextHasContent(content?.a_chi_si_rivolge) ? (
     <RichTextSection
       tag_id="a_chi_si_rivolge"
@@ -27,12 +30,13 @@ const ComeFarePerAChiERivolto = ({ content }) => {
         <div className="mt-4">
           <div className="mb-5">
             <RichText
-              title={intl.formatMessage(messages.a_chi_si_rivolge)}
               data={content?.a_chi_si_rivolge}
             />
           </div>
         </div>
       )}
+
+      <TassonomiaUtenti content={content} />
     </RichTextSection>
   ) : (
     <></>
