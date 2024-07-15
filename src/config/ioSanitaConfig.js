@@ -164,10 +164,6 @@ export default function applyConfig(config) {
     videoAllowExternalsDefault: false,
   };
 
-  config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
-    (route) => route !== '/contact-form',
-  );
-
   /******************************************************************************
    * BLOCKS
    ******************************************************************************/
@@ -240,5 +236,14 @@ export default function applyConfig(config) {
     },
   ];
 
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes.filter(
+      (route) => route !== '/contact-form',
+    ),
+    '/argomento/',
+    '/tipologia-utente/',
+    ///\/argomento\/.*$/,
+    ///\/tipologia-utente\/.*$/,
+  ];
   return config;
 }

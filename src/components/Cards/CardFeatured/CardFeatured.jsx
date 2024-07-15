@@ -9,6 +9,7 @@ import {
 
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import './cardFeatured.scss';
 
@@ -42,17 +43,10 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
           <CardText>{item.description}</CardText>
         )}
 
-
-          {item.topic && (
-            <div className="category-bottom">
-              <div className="category">
-                <UniversalLink href="#">
-                  <span className="text">{item.topic}</span>
-                </UniversalLink>
-              </div>
-            </div>
-          )}
-
+        <CardCategoryBottom
+          category={item.parliamo_di?.[0]}
+          isEditMode={isEditMode}
+        />
       </CardBody>
 
       {img && <div className="card-image card-image-rounded">{img}</div>}

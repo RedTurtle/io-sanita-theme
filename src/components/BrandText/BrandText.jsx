@@ -21,10 +21,10 @@ const BrandText = ({ mobile = false, getParent = false }) => {
 
   const titleSplit = title?.split('\n') ?? null;
   title = titleSplit?.map((t, i) => (
-    <>
+    <React.Fragment key={i}>
       {t}
       {i < titleSplit.length - 1 && <br />}
-    </>
+    </React.Fragment>
   ));
 
   return (

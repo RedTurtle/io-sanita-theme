@@ -8,17 +8,25 @@ import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { throttle } from 'lodash';
 import cx from 'classnames';
-import { Sidebar, LinkList, LinkListItem } from 'design-react-kit';
+import {
+  Sidebar,
+  LinkList,
+  LinkListItem,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+  AccordionItem,
+} from 'design-react-kit';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  index: {
-    id: 'index',
-    defaultMessage: 'Indice della pagina',
-  },
   contenuto: {
     id: 'Contenuto',
     defaultMessage: 'Contenuto',
+  },
+  content_types: {
+    id: 'Tipi di contenuto',
+    defaultMessage: 'Tipi di contenuto',
   },
 });
 
@@ -39,8 +47,10 @@ const SideMenu = ({ sections }) => {
   const [activeSection, setActiveSection] = useState(null);
 
   const [isNavOpen, setIsNavOpen] = useState(
-    __CLIENT__ ? window.innerWidth >= 992 : false,
+    true,
+    // __CLIENT__ ? window.innerWidth >= 992 : false,
   );
+  const isMobile = __CLIENT__ ? window.innerWidth < 992 : false;
 
   useEffect(() => {
     setActiveSection(sections[0].id);
@@ -48,9 +58,9 @@ const SideMenu = ({ sections }) => {
 
   const handleClickAnchor = (item) => (e) => {
     e.preventDefault();
-    if (window.innerWidth < 992) {
-      setIsNavOpen(false);
-    }
+    // if (window.innerWidth < 992) {
+    //   setIsNavOpen(false);
+    // }
 
     //ToDo
     alert(
@@ -61,21 +71,42 @@ const SideMenu = ({ sections }) => {
   //Todo: gestire la visualizzazione su mobile
   return sections?.length > 0 ? (
     <div className="page-side-menu affix-top ">
-      <Sidebar right>
-        <LinkList>
-          {sections.map((item, i) => {
-            return (
-              <LinkListItem
-                active={item.id === activeSection}
-                bold
-                onClick={handleClickAnchor(item)}
-                href={`#${item.id}`}
-              >
-                <span>{item.title}</span>
-              </LinkListItem>
-            );
-          })}
-        </LinkList>
+      <Sidebar right className="py-0">
+        <Accordion>
+          <AccordionItem>
+            <AccordionHeader
+              active={isNavOpen}
+              onToggle={() => {
+                setIsNavOpen(!isNavOpen);
+              }}
+              aria-controls="side-menu-body"
+              className={!isMobile ? 'd-none' : ''}
+            >
+              <h3 className="px-0">
+                {intl.formatMessage(messages.content_types)}
+              </h3>
+            </AccordionHeader>
+
+            <AccordionBody active={isNavOpen} id="side-menu-body" role="region">
+              <LinkList data-element="page-index">
+                {sections.map((item, i) => {
+                  return (
+                    <LinkListItem
+                      active={item.id === activeSection}
+                      bold
+                      onClick={handleClickAnchor(item)}
+                      href={`#${item.id}`}
+                      key={i}
+                      aria-controls="main-content-section"
+                    >
+                      <span>{item.title}</span>
+                    </LinkListItem>
+                  );
+                })}
+              </LinkList>
+            </AccordionBody>
+          </AccordionItem>
+        </Accordion>
       </Sidebar>
     </div>
   ) : null;
