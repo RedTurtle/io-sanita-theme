@@ -13,7 +13,7 @@ import { searchFiltersReducer } from './searchFiltersReducer';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
-
+import { tassonomieSearchReducer } from './tassonomieSearchReducer';
 /**
  * Root reducer.
  * @function
@@ -23,6 +23,7 @@ import { searchFiltersReducer } from './searchFiltersReducer';
  */
 const reducers = {
   searchFilters: searchFiltersReducer,
+  tassonomieSearch: tassonomieSearchReducer,
   // searchResults: searchResultsReducer,
   // calendarSearch: calendarSearchReducer,
   // calendarDaySearch: calendarDaySearchReducer,

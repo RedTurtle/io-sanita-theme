@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 
@@ -21,6 +22,8 @@ import {
   CardSimple,
   Pagination,
 } from 'io-sanita-theme/components';
+
+import { getTassonomieSearch } from 'io-sanita-theme/actions';
 
 import config from '@plone/volto/registry';
 import './_aggregationPage.scss';
@@ -48,9 +51,13 @@ const messages = defineMessages({
  */
 const AggregationPage = ({ match, route, location }) => {
   const intl = useIntl();
+  const dispatch = useDispatch();
   const id = match?.params?.id ?? '';
   const type = route?.type;
   const b_size = config.settings.defaultPageSize.b_size; // batchsize
+
+  const tassonomieSearch = useSelector((state) => state.tassonomieSearch);
+  const result = useSelector((state) => state.tassonomieSearch.data);
 
   const title = id.charAt(0).toUpperCase() + id.slice(1);
   const description = intl.formatMessage(
@@ -68,98 +75,34 @@ const AggregationPage = ({ match, route, location }) => {
       title: intl.formatMessage(messages.all_contents),
       type: null,
     },
-    // {
-    //   id: 'servizi',
-    //   title: 'Servizi e prestazioni',
-    //   type: 'Servizio',
-    // },
-    // {
-    //   id: 'come_fare_per',
-    //   title: 'Come fare per',
-    //   type: 'ComeFarePer',
-    // },
-    // {
-    //   id: 'strutture',
-    //   title: 'Strutture',
-    //   type: 'Struttura',
-    // },
-    // {
-    //   id: 'asl_comunica',
-    //   title: 'ASL Comunica',
-    //   type: 'Notizia',
-    // },
-    // {
-    //   id: 'documenti',
-    //   title: 'Documenti',
-    //   type: 'Documento',
-    // },
   ];
   const [sections, setSections] = useState(defaultSections);
 
+  //carico i dati iniziali
   useEffect(() => {
-    //ToDo: qui vanno caricati i risultati per 'tutti' come default, e vanno aggiunte le sections in base ai tipi disponibili ritornati dalla prima ricerca
+    dispatch(getTassonomieSearch(type, id));
   }, [id, type]);
 
-  const results = {
-    batching: {
-      '@id':
-        'https://v3.io-comune.redturtle.it/api/amministrazione/uffici/@querystring-search',
-      first:
-        'https://v3.io-comune.redturtle.it/api/amministrazione/uffici/@querystring-search?b_start=0',
-      last: 'https://v3.io-comune.redturtle.it/api/amministrazione/uffici/@querystring-search?b_start=15',
-      next: 'https://v3.io-comune.redturtle.it/api/amministrazione/uffici/@querystring-search?b_start=15',
-    },
-    items_total: 30,
-    items: [
-      {
-        '@id': 'https://v3.io-comune.redturtle.it/api/test',
-        title: 'Curva glicemica',
-        description:
-          'La curva glicemica è un test utilizzato per la diagnosi del diabete.',
-        parliamo_di: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
-        '@type': 'ComeFarePer',
-        portal_type_title: 'Come fare per',
-      },
-      {
-        '@id': 'https://v3.io-comune.redturtle.it/api/test-1',
-        title: 'Emocromo completo',
-        description:
-          "L'emocromo completo è un test automatizzato che serve a rilevare il numero delle cellule del sangue.",
-        parliamo_di: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
-        '@type': 'ComeFarePer',
-        portal_type_title: 'Come fare per',
-      },
-      {
-        '@id': 'https://v3.io-comune.redturtle.it/api/test-2',
-        title:
-          'Inaugurazione della nuova sala per il parto in acqua per l’Ospedale M. Bufalini',
-        description:
-          'Un nuovo importante gesto di solidarietà nei confronti della Sanità romagnola destinato al reparto di Ostetricia Ginecologia dell’Ospedale G. Rossetti.',
-        '@type': 'NewsItem',
-        portal_type_title: 'Notizia',
-      },
-      {
-        '@id': 'https://v3.io-comune.redturtle.it/api/test-2',
-        title: 'Bando di prova',
-        description:
-          'Bando destinato al reparto di Ostetricia Ginecologia dell’Ospedale G. Rossetti.',
-        '@type': 'Bando',
-        portal_type_title: 'Bando',
-        effective: '2024-06-27T10:58:07+00:00',
-      },
-      {
-        '@id': 'https://v3.io-comune.redturtle.it/api/test-2',
-        title: 'Servizio di prova',
-        description:
-          'Servizio destinato al reparto di Ostetricia Ginecologia dell’Ospedale G. Rossetti.',
-        '@type': 'Servizio',
-        portal_type_title: 'Servizio',
-        canale_digitale_link: 'https://canaledigitale-del-servizio',
-      },
-    ],
-  };
+  //setto le voci laterali
+  useEffect(() => {
+    if (result?.facets?.portal_types) {
+      setSections([
+        ...defaultSections,
+        ...result.facets.portal_types.map((f) => {
+          return {
+            id: f.token,
+            title: f.title,
+            type: f.token,
+          };
+        }),
+      ]);
+    }
+  }, [result]);
 
-  const totalPages = 6; //useState(Math.ceil(results.items_total / b_size));
+  //todo: sistemare questo totalpages, deve cambiare al cambio della ricerca
+  const totalPages = useState(
+    result?.items_total ? Math.ceil(result.items_total / b_size) : 0,
+  );
   const currentPage = useState(1);
   const onPaginationChange = () => {
     alert('Todo: implementare on paginatioon change');
@@ -197,31 +140,37 @@ const AggregationPage = ({ match, route, location }) => {
               />
             </div>
             <div className="results">
-              {results.items.map((item, i) => {
-                //setta la tipologia del content-type se nn ci sono gli argomenti
-                const parliamo_di =
-                  item.parliamo_di?.length > 0
-                    ? item.parliamo_di
-                    : item.portal_type_title
-                    ? [{ title: item.portal_type_title }]
-                    : [];
-                return (
-                  <CardSimple
-                    key={i + 'result'}
-                    item={{ ...item, parliamo_di: parliamo_di }}
-                    className="mb-3"
-                  />
-                );
-              })}
+              {tassonomieSearch?.loading ? (
+                <>todo: metterer lo spinner</>
+              ) : (
+                <>
+                  {result?.items.map((item, i) => {
+                    //setta la tipologia del content-type se nn ci sono gli argomenti
+                    const parliamo_di =
+                      item.parliamo_di?.length > 0
+                        ? item.parliamo_di
+                        : item.portal_type_title
+                        ? [{ title: item.portal_type_title }]
+                        : [];
+                    return (
+                      <CardSimple
+                        key={i + 'result'}
+                        item={{ ...item, parliamo_di: parliamo_di }}
+                        className="mb-3"
+                      />
+                    );
+                  })}
 
-              {totalPages > 1 && (
-                <div className="pagination-wrapper">
-                  <Pagination
-                    activePage={currentPage}
-                    totalPages={totalPages}
-                    onPageChange={onPaginationChange}
-                  />
-                </div>
+                  {totalPages > 1 && (
+                    <div className="pagination-wrapper">
+                      <Pagination
+                        activePage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={onPaginationChange}
+                      />
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </section>

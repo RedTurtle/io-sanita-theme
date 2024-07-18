@@ -227,12 +227,12 @@ export default function applyConfig(config) {
     {
       path: ['/argomento/:id'],
       component: AggregationPage,
-      type: 'Argomento',
+      type: 'parliamo_di',
     },
     {
       path: ['/tipologia-utente/:id'],
       component: AggregationPage,
-      type: 'TipologiaUtente',
+      type: 'a_chi_si_rivolge_tassonomia',
     },
   ];
 
