@@ -989,7 +989,7 @@ const store = mockStore({
           rootPath: '/sottosito-di-prova',
         },
       ],
-      parliamo_di: [
+      parliamo_di_metadata: [
         { title: "Accesso all'informazione", key: 'accesso-all-informazione' },
         { title: 'Animale domestico', key: 'animale-domestico' },
       ],

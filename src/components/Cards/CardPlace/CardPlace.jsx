@@ -84,7 +84,7 @@ export const CardPlace = ({
             )}
             {type !== 'synthetic' && (
               <CardCategoryBottom
-                category={item.parliamo_di?.[0]}
+                category={item.parliamo_di_metadata?.[0]}
                 isEditMode={isEditMode}
               />
             )}

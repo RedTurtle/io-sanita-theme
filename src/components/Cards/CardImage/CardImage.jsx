@@ -73,10 +73,10 @@ export const CardImage = ({
           <div className="py-2">{eventRecurrenceMore}</div>
         )}
 
-        {(item.parliamo_di?.length > 0 ||
+        {(item.parliamo_di_metadata?.length > 0 ||
           (item['@type'] !== 'Event' && date)) && (
           <CardCategoryBottom
-            category={item.parliamo_di[0]}
+            category={item.parliamo_di_metadata[0]}
             date={date && item['@type'] !== 'Event' ? date : null}
             isEditMode={isEditMode}
           />

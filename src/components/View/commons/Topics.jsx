@@ -22,12 +22,12 @@ const messages = defineMessages({
 const Topics = ({ content }) => {
   const intl = useIntl();
 
-  return content?.parliamo_di?.length > 0 ? (
+  return content?.parliamo_di_metadata?.length > 0 ? (
     <div className="mt-4 mb-4 page-topics">
       <h5>
         <small>{intl.formatMessage(messages.topics)}</small>
       </h5>
-      {content.parliamo_di.map((item, i) => (
+      {content.parliamo_di_metadata.map((item, i) => (
         <UniversalLink
           item={item}
           key={item['@id']}

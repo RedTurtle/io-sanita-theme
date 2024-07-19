@@ -11,6 +11,7 @@ import {
   Button,
 } from 'design-react-kit';
 import { Icon } from 'io-sanita-theme/components';
+import './_sort_by.scss';
 
 /**
  * Dropdown view component class.
@@ -25,25 +26,36 @@ const messages = defineMessages({
   },
   sort_title: {
     id: 'sort_name',
-    defaultMessage: 'Nome',
+    defaultMessage: 'Alfabeticamente',
   },
-  sort_argument: {
-    id: 'sort_argument',
-    defaultMessage: 'Argomento',
+  sort_relevance: {
+    id: 'sort_relevance',
+    defaultMessage: 'Rilevanza',
+  },
+  sort_date: {
+    id: 'sort_data_desc',
+    defaultMessage: 'Data (prima i più recenti)',
   },
 });
 
-const SortBy = ({ action }) => {
+const SortBy = ({ order, action }) => {
   const intl = useIntl();
 
   const options = [
     {
-      id: 'title',
+      sort_on: null,
+      sort_order: null,
+      title: intl.formatMessage(messages.sort_relevance),
+    },
+    {
+      sort_on: 'sortable_title',
+      sort_order: 'ascending',
       title: intl.formatMessage(messages.sort_title),
     },
     {
-      id: 'argument',
-      title: intl.formatMessage(messages.sort_argument),
+      sort_on: 'created',
+      sort_order: 'descending',
+      title: intl.formatMessage(messages.sort_date),
     },
   ];
 
@@ -61,7 +73,7 @@ const SortBy = ({ action }) => {
   };
 
   return (
-    <UncontrolledDropdown>
+    <UncontrolledDropdown className="sort_results">
       <DropdownToggle color="primary" outline caret>
         <small>{intl.formatMessage(messages.sort)}</small>{' '}
         <Icon color="primary" icon="it-expand" padding={false} size="sm" />
@@ -70,23 +82,26 @@ const SortBy = ({ action }) => {
         <LinkList>
           {options.map((item, i) => (
             <LinkListItem
-              key={item.id}
+              key={item.sort_on}
               target="_target"
               role="menuitem"
               tabIndex={-1}
               onKeyDown={handleKeyDown}
+              aria-controls="main-content-section"
+              active={order.sort_on === item.sort_on}
             >
               <Button
                 title={item.title}
                 alt={item.title}
                 aria-label={item.title}
                 tag="button"
-                id={item.id}
+                id={item.sort_on}
                 onClick={() => {
-                  action(item.id);
+                  action(item);
                 }}
+                aria-controls="main-content-section"
                 color="link"
-                className="px-0"
+                className="px-0 text-start"
               >
                 <span>{item.title}</span>
               </Button>

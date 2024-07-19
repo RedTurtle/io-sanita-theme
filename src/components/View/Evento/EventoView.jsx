@@ -137,7 +137,7 @@ EventoView.propTypes = {
     modified: PropTypes.string,
     luoghi_evento: PropTypes.array,
     related_news: PropTypes.array,
-    parliamo_di: PropTypes.arrayOf(
+    parliamo_di_metadata: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
         token: PropTypes.string,

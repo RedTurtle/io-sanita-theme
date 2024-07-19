@@ -8,7 +8,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
-
+import { Spinner } from 'design-react-kit';
 import {
   PageHeader,
   SkipToMainContent,
@@ -41,6 +41,10 @@ const messages = defineMessages({
     id: 'aggregation_page_all',
     defaultMessage: 'Tutti',
   },
+  no_results: {
+    id: 'aggregation_page_no_results',
+    defaultMessage: 'Nessun risultato trovato.',
+  },
 });
 
 /**
@@ -54,14 +58,24 @@ const AggregationPage = ({ match, route, location }) => {
   const dispatch = useDispatch();
   const id = match?.params?.id ?? '';
   const type = route?.type;
-  const b_size = config.settings.defaultPageSize.b_size; // batchsize
 
+  //search
+  const b_size = config.settings.defaultPageSize; //batchsize
+  const [searchParams, setSearchParams] = useState({
+    type: type,
+    id: id,
+    portalType: null, //per filtrare su un tipo di conteneuto specifico (click dal menu laterale)
+    order: { sort_on: null, sort_order: null },
+    currentPage: 1,
+  });
   const tassonomieSearch = useSelector((state) => state.tassonomieSearch);
-  const result = useSelector((state) => state.tassonomieSearch.data);
+  const result = useSelector((state) => state.tassonomieSearch.result);
+  const [totalPages, setTotalPages] = useState(0);
 
+  //page title and description
   const title = id.charAt(0).toUpperCase() + id.slice(1);
   const description = intl.formatMessage(
-    type === 'TipologiaUtente'
+    type === 'a_chi_si_rivolge_tassonomia'
       ? messages.description_tipologia_utente
       : messages.description_argument,
     {
@@ -69,9 +83,9 @@ const AggregationPage = ({ match, route, location }) => {
     },
   );
 
+  //menu sections
   const defaultSections = [
     {
-      id: 'tutti',
       title: intl.formatMessage(messages.all_contents),
       type: null,
     },
@@ -80,40 +94,54 @@ const AggregationPage = ({ match, route, location }) => {
 
   //carico i dati iniziali
   useEffect(() => {
-    dispatch(getTassonomieSearch(type, id));
-  }, [id, type]);
+    doSearch();
+  }, [searchParams]);
 
-  //setto le voci laterali
+  const doSearch = () => {
+    if (!tassonomieSearch.loading) {
+      dispatch(getTassonomieSearch(searchParams));
+    }
+  };
+
+  //all'arrivo dei risultati
   useEffect(() => {
-    if (result?.facets?.portal_types) {
+    //setto le voci laterali
+    if (
+      result?.facets?.portal_types &&
+      sections.length <= defaultSections.length
+    ) {
       setSections([
         ...defaultSections,
         ...result.facets.portal_types.map((f) => {
           return {
-            id: f.token,
             title: f.title,
             type: f.token,
           };
         }),
       ]);
     }
+    //setto la paginazione
+    setTotalPages(
+      result?.items_total > 0 ? Math.ceil(result.items_total / b_size) : 0,
+    );
   }, [result]);
 
-  //todo: sistemare questo totalpages, deve cambiare al cambio della ricerca
-  const totalPages = useState(
-    result?.items_total ? Math.ceil(result.items_total / b_size) : 0,
-  );
-  const currentPage = useState(1);
-  const onPaginationChange = () => {
-    alert('Todo: implementare on paginatioon change');
+  //paginazione
+  useEffect(() => {
+    setSearchParams({ ...searchParams, currentPage: 1 });
+  }, [searchParams.portalType, searchParams.order]);
+
+  const onPaginationChange = (e, { activePage }) => {
+    setSearchParams({ ...searchParams, currentPage: activePage });
   };
+
   return (
     <>
       <Helmet title={title} />
       <BodyClass className="public-ui" />
       <RemoveBodyClass className="cms-ui" />
 
-      <div className="container px-4 my-4 aggregation-page-view">
+      <div className="container px-4 my-4 aggregation-page-view public-ui">
         <SkipToMainContent />
         <PageHeader
           content={{
@@ -125,7 +153,13 @@ const AggregationPage = ({ match, route, location }) => {
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">
-            <SideMenu sections={sections} />
+            <SideMenu
+              sections={sections}
+              selected={searchParams.portalType}
+              setSelected={(pt) => {
+                setSearchParams({ ...searchParams, portalType: pt });
+              }}
+            />
           </aside>
           <section
             id="main-content-section"
@@ -134,28 +168,39 @@ const AggregationPage = ({ match, route, location }) => {
           >
             <div className="d-flex justify-content-end mb-4">
               <SortBy
-                action={(sort_by) => {
-                  sort(sort_by);
+                order={searchParams.order}
+                action={(sortby) => {
+                  setSearchParams({ ...searchParams, order: sortby });
                 }}
               />
             </div>
             <div className="results">
               {tassonomieSearch?.loading ? (
-                <>todo: metterer lo spinner</>
-              ) : (
+                <div className="d-flex my-4 justify-content-center">
+                  <Spinner active />
+                </div>
+              ) : tassonomieSearch?.loaded ? (
                 <>
-                  {result?.items.map((item, i) => {
+                  {result?.items_total === 0 && (
+                    <div className="text-center">
+                      {intl.formatMessage(messages.no_results)}
+                    </div>
+                  )}
+                  {result?.items?.map((item, i) => {
                     //setta la tipologia del content-type se nn ci sono gli argomenti
-                    const parliamo_di =
-                      item.parliamo_di?.length > 0
-                        ? item.parliamo_di
+                    const parliamo_di_metadata =
+                      item.parliamo_di_metadata?.length > 0
+                        ? item.parliamo_di_metadata
                         : item.portal_type_title
                         ? [{ title: item.portal_type_title }]
                         : [];
                     return (
                       <CardSimple
                         key={i + 'result'}
-                        item={{ ...item, parliamo_di: parliamo_di }}
+                        item={{
+                          ...item,
+                          parliamo_di_metadata: parliamo_di_metadata,
+                        }}
                         className="mb-3"
                       />
                     );
@@ -164,13 +209,15 @@ const AggregationPage = ({ match, route, location }) => {
                   {totalPages > 1 && (
                     <div className="pagination-wrapper">
                       <Pagination
-                        activePage={currentPage}
+                        activePage={searchParams.currentPage}
                         totalPages={totalPages}
                         onPageChange={onPaginationChange}
                       />
                     </div>
                   )}
                 </>
+              ) : (
+                <></>
               )}
             </div>
           </section>

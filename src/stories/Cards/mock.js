@@ -4,7 +4,7 @@ export const ExampleNewsItem = {
   title: 'Titolo dela card Notizia, anche su più righe',
   description:
     'Descrizione della card, contiene testo che riassume il contenuto della pagina di destinazione. Suggeriamo lunghezza massima 3 righe da desktop, dopodiché viene troncato con punti di sospensione.',
-  parliamo_di: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
   effective: '2024-04-17T10:40:05+00:00',
 };
 
@@ -14,7 +14,7 @@ export const ExampleEventItem = {
   title: 'Titolo dela card Evento, anche su più righe',
   description:
     'Descrizione della card, contiene testo che riassume il contenuto della pagina di destinazione. Suggeriamo lunghezza massima 3 righe da desktop, dopodiché viene troncato con punti di sospensione.',
-  parliamo_di: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
   effective: '2024-04-17T10:40:05+00:00',
   start: '2024-05-15T09:00:00+00:00',
   end: '2024-06-17T15:00:00+00:00',
@@ -88,7 +88,7 @@ export const ExampleFileItem = {
     token: 'it',
   },
   modified: '2024-06-27T10:58:07+00:00',
-  parliamo_di: [],
+  parliamo_di_metadata: [],
   title: 'Schermata 2024-01-16 alle 15.36.28.png',
   type_title: 'File',
 };
@@ -104,7 +104,7 @@ export const ExampleSimpleItem = {
   expires: null,
   id: 'testt',
   modified: '2024-06-27T10:58:07+00:00',
-  parliamo_di: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
   title: 'Spirometria',
   type_title: 'Come fare per',
 };
@@ -120,7 +120,7 @@ export const ExampleBandoItem = {
   expires: null,
   id: 'testt',
   modified: '2024-06-27T10:58:07+00:00',
-  parliamo_di: [],
+  parliamo_di_metadata: [],
   title: 'Bando di prova',
   type_title: 'Bando',
 };
@@ -136,7 +136,7 @@ export const ExampleServiceItem = {
   expires: null,
   id: 'test-servizio',
   modified: '2024-06-27T10:58:07+00:00',
-  parliamo_di: [{ title: 'Categoria', key: 'categoria' }],
+  parliamo_di_metadata: [{ title: 'Categoria', key: 'categoria' }],
   title: 'Servizio di prova',
   canale_digitale_link: 'https://canaledigitale-del-servizio',
   type_title: 'Servizio',

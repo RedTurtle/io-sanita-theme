@@ -4,7 +4,7 @@ Costruisce il sidemenu in base alle sections passate come parametro
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-expressions */
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { throttle } from 'lodash';
 import cx from 'classnames';
@@ -36,7 +36,7 @@ const messages = defineMessages({
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const SideMenu = ({ sections }) => {
+const SideMenu = ({ sections, selected, setSelected }) => {
   /*
   sections=[
     {id:'tutti',title:'Tutti',type:null},
@@ -44,28 +44,18 @@ const SideMenu = ({ sections }) => {
   ]*/
   const intl = useIntl();
 
-  const [activeSection, setActiveSection] = useState(null);
-
   const [isNavOpen, setIsNavOpen] = useState(
     true,
     // __CLIENT__ ? window.innerWidth >= 992 : false,
   );
   const isMobile = __CLIENT__ ? window.innerWidth < 992 : false;
 
-  useEffect(() => {
-    setActiveSection(sections[0].id);
-  }, [sections]);
-
   const handleClickAnchor = (item) => (e) => {
     e.preventDefault();
     // if (window.innerWidth < 992) {
     //   setIsNavOpen(false);
     // }
-
-    //ToDo
-    alert(
-      'Fare la chiamata al backend per caricare i dati giusti per ' + item.type,
-    );
+    setSelected(item.type);
   };
 
   //Todo: gestire la visualizzazione su mobile
@@ -92,10 +82,10 @@ const SideMenu = ({ sections }) => {
                 {sections.map((item, i) => {
                   return (
                     <LinkListItem
-                      active={item.id === activeSection}
+                      active={item.type === selected}
                       bold
                       onClick={handleClickAnchor(item)}
-                      href={`#${item.id}`}
+                      href={`#${item.type}`}
                       key={i}
                       aria-controls="main-content-section"
                     >

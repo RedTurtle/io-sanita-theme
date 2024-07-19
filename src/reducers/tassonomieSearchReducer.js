@@ -9,7 +9,7 @@ const initialState = {
   error: null,
   hasError: false,
   result: {},
-  loadingResults: false,
+  loading: false,
   loaded: false,
 };
 
@@ -18,7 +18,7 @@ export const tassonomieSearchReducer = (state = initialState, action = {}) => {
     case `${GET_TASSONOMIE_SEARCH}_PENDING`:
       return {
         ...state,
-        loadingResults: true,
+        loading: true,
         loaded: false,
       };
 
@@ -26,7 +26,7 @@ export const tassonomieSearchReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         result: action.result,
-        loadingResults: false,
+        loading: false,
         loaded: true,
       };
 
@@ -35,7 +35,7 @@ export const tassonomieSearchReducer = (state = initialState, action = {}) => {
         ...state,
         error: action.error,
         hasError: true,
-        loadingResults: false,
+        loading: false,
         loaded: false,
       };
 
