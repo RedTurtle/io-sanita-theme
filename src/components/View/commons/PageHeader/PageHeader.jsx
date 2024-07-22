@@ -13,12 +13,8 @@ import {
   PageHeaderStatoServizio,
   PageHeaderLinkServizio,
   PageHeaderDocumento,
-  Sharing
+  Sharing,
 } from 'io-sanita-theme/components/View/commons';
-
-import {
-  ArgumentIcon,
-} from 'io-sanita-theme/components/View/Argomento';
 
 import config from '@plone/volto/registry';
 
@@ -47,15 +43,12 @@ const PageHeader = (props) => {
   const intl = useIntl();
 
   const render_reading_time = showreadingtime && readingtime;
-  const render_dates = showdates ? <PageHeaderDates content={content}/> :null;
+  const render_dates = showdates ? <PageHeaderDates content={content} /> : null;
 
   return (
     <div className="PageHeaderWrapper mb-4">
       <div className="row mb-2 mb-lg-0 page-header">
         <div className="py-lg-2 col-lg-10 page-header-left">
-          {(content.icon || content.icona) && (
-            <ArgumentIcon icon={content.icon || content.icona} />
-          )}
           <h1
             data-element={
               content['@type'] === 'Servizio' ? 'service-title' : 'page-name'
@@ -98,7 +91,7 @@ const PageHeader = (props) => {
           {(render_reading_time || render_dates) && (
             <div className="row mt-5 mb-4 readingtime-dates">
               {render_dates ? (
-               <>{render_dates}</>
+                <>{render_dates}</>
               ) : (
                 <div className="col-6"></div>
               )}
@@ -116,9 +109,7 @@ const PageHeader = (props) => {
           )}
         </div>
 
-        <div
-          className={'page-header-right py-lg-4 col-lg-2 text-end'}
-        >
+        <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
         </div>
       </div>

@@ -8,6 +8,7 @@ import {
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import {
   getCalendarDate,
@@ -16,10 +17,6 @@ import {
 
 import config from '@plone/volto/registry';
 import './cardImage.scss';
-/*
-TODO:
-- capire come arriva la categoria e mostrarla bene (ora è item.topic)
-*/
 
 /*
  - Implementa la Card Eventi e la Card News del template AGID delle AUSL
@@ -76,19 +73,13 @@ export const CardImage = ({
           <div className="py-2">{eventRecurrenceMore}</div>
         )}
 
-        {(item.topic || (item['@type'] !== 'Event' && date)) && (
-          <div className="category-bottom">
-            {item.topic && (
-              <div className="category">
-                <UniversalLink href="#">
-                  <span className="text">{item.topic}</span>
-                </UniversalLink>
-              </div>
-            )}
-            {date && item['@type'] !== 'Event' && (
-              <div className="data">{date}</div>
-            )}
-          </div>
+        {(item.parliamo_di_metadata?.length > 0 ||
+          (item['@type'] !== 'Event' && date)) && (
+          <CardCategoryBottom
+            category={item.parliamo_di_metadata[0]}
+            date={date && item['@type'] !== 'Event' ? date : null}
+            isEditMode={isEditMode}
+          />
         )}
       </CardBody>
     </Card>

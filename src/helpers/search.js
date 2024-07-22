@@ -114,7 +114,7 @@ const parseFetchedSections = (fetchedSections, location, subsite) => {
 };
 
 const parseFetchedTopics = (topics, location) => {
-  const qsTopics = qs.parse(location?.search ?? '')?.tassonomia_argomenti ?? [];
+  const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
 
   return topics.reduce((acc, topic) => {
     acc[flattenToAppURL(topic['@id'])] = {
@@ -265,7 +265,7 @@ const getSearchParamsURL = (
     let obj = {
       ...(text ?? {}),
       ...(pathQuery ?? {}),
-      tassonomia_argomenti: activeTopics,
+      parliamo_di: activeTopics,
       ...optionsQuery,
       ...sortOn,
       ...portal_type,
@@ -284,7 +284,7 @@ const getSearchParamsURL = (
       {
         ...(text ?? {}),
         ...(pathQuery ?? {}),
-        tassonomia_argomenti: activeTopics,
+        parliamo_di: activeTopics,
         ...optionsQuery,
         ...sortOn,
         ...portal_type,

@@ -59,13 +59,14 @@ export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
 export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
 
 //Cards
+export CardCategoryBottom from 'io-sanita-theme/components/Cards/common/CardCategoryBottom';
 export CardFeatured from 'io-sanita-theme/components/Cards/CardFeatured/CardFeatured';
 export CardImage from 'io-sanita-theme/components/Cards/CardImage/CardImage';
 export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
 export CardPlace from 'io-sanita-theme/components/Cards/CardPlace/CardPlace';
 export CardPersona from 'io-sanita-theme/components/Cards/CardPersona/CardPersona';
 export CardFile from 'io-sanita-theme/components/Cards/CardFile/CardFile';
-
+export CardSimple from 'io-sanita-theme/components/Cards/CardSimple/CardSimple';
 //Pagination
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';
 

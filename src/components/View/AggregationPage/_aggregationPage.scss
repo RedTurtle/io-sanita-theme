@@ -1,0 +1,23 @@
+.public-ui .aggregation-page-view {
+  .row.row-column-border {
+    border-top: 0;
+  }
+  .sidebar-wrapper {
+    &.it-line-right-side {
+      border-right: none;
+    }
+    .accordion {
+      border-bottom: none;
+      .accordion-body {
+        padding: 0;
+      }
+    }
+
+    .link-list-wrapper ul li a span {
+      color: var(--text-color);
+    }
+  }
+  .row.row-column-border > [class^='col-'] {
+    padding-top: 0;
+  }
+}
