@@ -20,6 +20,8 @@ export function getTassonomieSearch({ type, id, portalType, order, page }) {
   */
 
   const b_size = config.settings.defaultPageSize;
+  const params = {};
+
   return {
     type: GET_TASSONOMIE_SEARCH,
     request: {
@@ -28,13 +30,13 @@ export function getTassonomieSearch({ type, id, portalType, order, page }) {
       params: {
         type,
         value: id,
-        portal_type: portalType,
-        sort_on: order?.sort_on,
-        sort_order: order?.sort_order,
-        b_size: b_size,
+        ...(portalType && { portal_type: portalType }),
+        ...(order?.sort_on && { sort_on: order.sort_on }),
+        ...(order?.sort_order & { sort_order: order.sort_order }),
         ...(page && {
           b_start: b_size * (page - 1),
         }),
+        b_size: b_size,
       },
     },
   };

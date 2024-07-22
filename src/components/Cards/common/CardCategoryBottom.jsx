@@ -7,8 +7,10 @@ const CardCategoryBottom = ({ category, date, isEditMode }) => {
       <div className="category">
         {/* ToDo: usare il componente che fa il link alla tassonomia
                     argomento */}
-        {category.key ? (
-          <UniversalLink href={isEditMode ? '#' : '/argomento/' + category.key}>
+        {category.token ? (
+          <UniversalLink
+            href={isEditMode ? '#' : '/argomento/' + category.token}
+          >
             <span className="text">{category.title}</span>
           </UniversalLink>
         ) : (

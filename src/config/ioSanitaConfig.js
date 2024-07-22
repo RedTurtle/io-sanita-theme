@@ -245,6 +245,10 @@ export default function applyConfig(config) {
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
-  //config.settings.publicUiRoutes = ['/argomento/', '/tipologia-utente/'];
+  config.settings.publicNonContentRoutes = [
+    ...(config.settings.publicNonContentRoutes ?? []),
+    '/argomento/',
+    '/tipologia-utente/',
+  ];
   return config;
 }
