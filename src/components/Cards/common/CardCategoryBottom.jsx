@@ -1,5 +1,6 @@
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
+import {AGGREGATION_PAGE_ARGOMENTO} from 'io-sanita-theme/config/ioSanitaConfig';
 
 const CardCategoryBottom = ({ category, date, isEditMode }) => {
   return category || date ? (
@@ -9,7 +10,7 @@ const CardCategoryBottom = ({ category, date, isEditMode }) => {
                     argomento */}
         {category.token ? (
           <UniversalLink
-            href={isEditMode ? '#' : '/argomento/' + category.token}
+            href={isEditMode ? '#' : AGGREGATION_PAGE_ARGOMENTO + category.token}
           >
             <span className="text">{category.title}</span>
           </UniversalLink>

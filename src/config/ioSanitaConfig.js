@@ -27,6 +27,9 @@ import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
+
+export const AGGREGATION_PAGE_ARGOMENTO = "/argomento/";
+export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = "/tipologia-utente/";
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
@@ -225,12 +228,12 @@ export default function applyConfig(config) {
       component: LoginAgid,
     },
     {
-      path: ['/argomento/:id'],
+      path: [AGGREGATION_PAGE_ARGOMENTO+':id'],
       component: AggregationPage,
       type: 'parliamo_di',
     },
     {
-      path: ['/tipologia-utente/:id'],
+      path: [AGGREGATION_PAGE_TIPOLOGIA_UTENTE+':id'],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
     },
@@ -240,15 +243,15 @@ export default function applyConfig(config) {
     ...config.settings.nonContentRoutes.filter(
       (route) => route !== '/contact-form',
     ),
-    '/argomento/',
-    '/tipologia-utente/',
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
   config.settings.publicNonContentRoutes = [
     ...(config.settings.publicNonContentRoutes ?? []),
-    '/argomento/',
-    '/tipologia-utente/',
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE
   ];
   return config;
 }
