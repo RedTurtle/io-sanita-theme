@@ -6,6 +6,7 @@ import {
   RichText,
   RichTextSection,
 } from 'io-sanita-theme/helpers';
+import { Steps } from 'io-sanita-theme/components/View/ComeFarePer';
 
 const messages = defineMessages({
   come_fare: {
@@ -18,17 +19,25 @@ const messages = defineMessages({
 
 const ComeFarePerComeFare = ({ content }) => {
   const intl = useIntl();
+  const steps = content.items ?? []; //?.filter((item) => item.id !== 'multimedia') ?? [];
 
-  return (
+  return richTextHasContent(content?.come_fare) || steps.length > 0 ? (
     <RichTextSection
       tag_id="come_fare"
       title={intl.formatMessage(messages.come_fare)}
     >
+      {richTextHasContent(content?.come_fare) && (
+        <div className="mt-4">
+          <div className="mb-5">
+            <RichText data={content?.come_fare} />
+          </div>
+        </div>
+      )}
+      <Steps steps={steps} />
     </RichTextSection>
+  ) : (
+    <></>
   );
-  // ) : (
-  //   <></>
-  // );
 };
 
 export default ComeFarePerComeFare;

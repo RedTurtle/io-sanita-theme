@@ -1,0 +1,39 @@
+.steps {
+  .accordion {
+    border-bottom: none;
+
+    .accordion-header {
+      .accordion-button {
+        background-color: var(--primary-lightest);
+        border-top: none;
+        color: var(--text-color);
+        padding: 0;
+
+        .step-number,
+        .step-title {
+          padding: 0.8rem 1.2rem;
+        }
+        .step-number {
+          border-right: 1px solid #fff;
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+
+    &.accordion-background-active {
+      .accordion-header {
+        .accordion-button[aria-expanded='true'] {
+          background-color: var(--primary-dark);
+          border-color: var(--primary-dark);
+
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}

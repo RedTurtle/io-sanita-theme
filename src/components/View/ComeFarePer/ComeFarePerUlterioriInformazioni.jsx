@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { HelpBox } from 'io-sanita-theme/components/View/commons';
-import {
-  richTextHasContent,
-  RichTextSection,
-} from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   ulteriori_informazioni: {
@@ -30,12 +27,6 @@ const ComeFarePerUlterioriInformazioni = ({ content }) => {
       {richTextHasContent(content?.ulteriori_informazioni) && (
         <HelpBox text={content?.ulteriori_informazioni} />
       )}
-
-      {/* TO DO:
-        Da fare la vista per la tassonomia argomenti,
-        la sezione utilizza le chips per restituire l'argomento con la quale è stato taggato il CT,
-        aggiungere anche il titoletto {intl.formatMessage(messages.parliamo_di)}
-      */}
     </RichTextSection>
   ) : (
     <></>
