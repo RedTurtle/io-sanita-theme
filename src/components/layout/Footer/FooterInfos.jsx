@@ -19,6 +19,7 @@ import {
   FooterNewsletterSubscribe,
   FooterSocials,
 } from 'io-sanita-theme/components';
+import { richTextHasContent } from 'io-sanita-theme/helpers';
 
 import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 
@@ -93,7 +94,7 @@ const FooterInfos = () => {
             )}
           </h4>
           {column.showSocial && <FooterSocials />}
-          {column.slateText ? (
+          {richTextHasContent(column.slateText) ? (
             <TextBlockView data={{ value: column.slateText }} />
           ) : (
             column.text && (

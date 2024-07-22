@@ -22,14 +22,6 @@ const BrandWrapper = ({ mobile = false, setCollapseOpen }) => {
   const subsite = useSelector((state) => state.subsite?.data);
 
   const intl = useIntl();
-  const logoSubsite = subsite?.subsite_logo && (
-    <figure className="icon">
-      <img
-        src={flattenToAppURL(subsite.subsite_logo.scales?.mini?.download)}
-        alt={intl.formatMessage(messages.logoSubsiteAlt)}
-      />
-    </figure>
-  );
 
   let wrapperAttrs = {};
   let linkAttrs = {};
@@ -46,8 +38,10 @@ const BrandWrapper = ({ mobile = false, setCollapseOpen }) => {
         title={intl.formatMessage(messages.homepage)}
         {...linkAttrs}
       >
-        {subsite?.subsite_logo ? logoSubsite : <Logo />}
-        <BrandText mobile={mobile} subsite={subsite} />
+        <Logo
+          alt={subsite ? intl.formatMessage(messages.logoSubsiteAlt) : null}
+        />
+        <BrandText mobile={mobile} />
       </UniversalLink>
     </div>
   );

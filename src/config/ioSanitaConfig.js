@@ -15,6 +15,7 @@ import {
   LoginAgid,
   HandleAnchor,
   GenericAppExtras,
+  SiteSettingsExtras,
   Icon,
   FileWidget,
 } from 'io-sanita-theme/components';
@@ -24,6 +25,7 @@ import { removeListingVariation } from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
+import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
 const messages = defineMessages({
   search_brdc: {
@@ -140,6 +142,10 @@ export default function applyConfig(config) {
         match: '',
         component: GenericAppExtras,
       },
+      {
+        match: '',
+        component: SiteSettingsExtras,
+      },
     ],
     maxFileUploadSize: null,
 
@@ -157,10 +163,6 @@ export default function applyConfig(config) {
     },
     videoAllowExternalsDefault: false,
   };
-
-  config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
-    (route) => route !== '/contact-form',
-  );
 
   /******************************************************************************
    * BLOCKS
@@ -199,6 +201,11 @@ export default function applyConfig(config) {
   //   BlockExtraTags: { component: () => null },
   // };
 
+  config.registerComponent({
+    name: 'SiteSettingsExtras',
+    component: SiteSettingsExtras,
+  });
+
   // REDUCERS
   config.addonReducers = {
     ...config.addonReducers,
@@ -217,7 +224,31 @@ export default function applyConfig(config) {
       path: ['/login', '/**/login'],
       component: LoginAgid,
     },
+    {
+      path: ['/argomento/:id'],
+      component: AggregationPage,
+      type: 'parliamo_di',
+    },
+    {
+      path: ['/tipologia-utente/:id'],
+      component: AggregationPage,
+      type: 'a_chi_si_rivolge_tassonomia',
+    },
   ];
 
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes.filter(
+      (route) => route !== '/contact-form',
+    ),
+    '/argomento/',
+    '/tipologia-utente/',
+    ///\/argomento\/.*$/,
+    ///\/tipologia-utente\/.*$/,
+  ];
+  config.settings.publicNonContentRoutes = [
+    ...(config.settings.publicNonContentRoutes ?? []),
+    '/argomento/',
+    '/tipologia-utente/',
+  ];
   return config;
 }
