@@ -13,7 +13,6 @@ import {
   ContentImage,
   RelatedItems,
   useSideMenu,
-  Topics,
   Metadata,
   Placeholder,
 } from 'io-sanita-theme/components/View/commons';
@@ -138,7 +137,7 @@ EventoView.propTypes = {
     modified: PropTypes.string,
     luoghi_evento: PropTypes.array,
     related_news: PropTypes.array,
-    tassonomia_argomenti: PropTypes.arrayOf(
+    parliamo_di_metadata: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
         token: PropTypes.string,

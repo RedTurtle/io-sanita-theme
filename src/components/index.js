@@ -14,6 +14,7 @@ export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
 export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
 export HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
 export GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExtras';
+export SiteSettingsExtras from 'io-sanita-theme/components/AppExtras/SiteSettingsExtras';
 export PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader';
 export ScrollToTop from 'io-sanita-theme/components/ScrollToTop/ScrollToTop';
 
@@ -58,14 +59,15 @@ export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
 export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
 
 //Cards
+export CardCategoryBottom from 'io-sanita-theme/components/Cards/common/CardCategoryBottom';
 export CardFeatured from 'io-sanita-theme/components/Cards/CardFeatured/CardFeatured';
 export CardImage from 'io-sanita-theme/components/Cards/CardImage/CardImage';
 export CardGhost from 'io-sanita-theme/components/Cards/CardGhost/CardGhost';
 export CardPlace from 'io-sanita-theme/components/Cards/CardPlace/CardPlace';
 export CardPersona from 'io-sanita-theme/components/Cards/CardPersona/CardPersona';
 export CardFile from 'io-sanita-theme/components/Cards/CardFile/CardFile';
-export CardGuide from 'io-sanita-theme/components/Cards/CardGuide/CardGuide';
-
+export CardGuide from 'io-sanita-theme/components/Cards/CardGuide/CardGuide'
+export CardSimple from 'io-sanita-theme/components/Cards/CardSimple/CardSimple';
 //Pagination
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';
 

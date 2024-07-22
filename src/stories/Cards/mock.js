@@ -4,7 +4,7 @@ export const ExampleNewsItem = {
   title: 'Titolo dela card Notizia, anche su più righe',
   description:
     'Descrizione della card, contiene testo che riassume il contenuto della pagina di destinazione. Suggeriamo lunghezza massima 3 righe da desktop, dopodiché viene troncato con punti di sospensione.',
-  topic: 'Categoria',
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
   effective: '2024-04-17T10:40:05+00:00',
 };
 
@@ -14,7 +14,7 @@ export const ExampleEventItem = {
   title: 'Titolo dela card Evento, anche su più righe',
   description:
     'Descrizione della card, contiene testo che riassume il contenuto della pagina di destinazione. Suggeriamo lunghezza massima 3 righe da desktop, dopodiché viene troncato con punti di sospensione.',
-  topic: 'Categoria',
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
   effective: '2024-04-17T10:40:05+00:00',
   start: '2024-05-15T09:00:00+00:00',
   end: '2024-06-17T15:00:00+00:00',
@@ -88,7 +88,7 @@ export const ExampleFileItem = {
     token: 'it',
   },
   modified: '2024-06-27T10:58:07+00:00',
-  subjects: [],
+  parliamo_di_metadata: [],
   title: 'Schermata 2024-01-16 alle 15.36.28.png',
   type_title: 'File',
 };
@@ -102,5 +102,54 @@ export const ExampleLink = {
   review_state: 'private',
   title: 'Test del collegamento',
   type_title: 'Collegamento',
-  remoteUrl: "/link-di-test"
+  remoteUrl: "/link-di-test",
+};
+
+export const ExampleSimpleItem = {
+  '@id': 'test-item',
+  '@type': 'ComeFarePer',
+  UID: '1234',
+  created: '2024-01-25T14:54:18+00:00',
+  description:
+    'Descrizione dell elemento. Lunghezza suggerita massimo 3 righe, dopodiché viene troncata.',
+  effective: '2024-06-27T10:58:07+00:00',
+  expires: null,
+  id: 'testt',
+  modified: '2024-06-27T10:58:07+00:00',
+  parliamo_di_metadata: [{ title: 'Esami e analisi', key: 'esami-e-analisi' }],
+  title: 'Spirometria',
+  type_title: 'Come fare per',
+};
+
+export const ExampleBandoItem = {
+  '@id': 'test-item',
+  '@type': 'Bando',
+  UID: '1234',
+  created: '2024-01-25T14:54:18+00:00',
+  description:
+    'Descrizione del bando. Lunghezza suggerita massimo 3 righe, dopodiché viene troncata.',
+  effective: '2024-06-27T10:58:07+00:00',
+  expires: null,
+  id: 'testt',
+  modified: '2024-06-27T10:58:07+00:00',
+  parliamo_di_metadata: [],
+  title: 'Bando di prova',
+  type_title: 'Bando',
+};
+
+export const ExampleServiceItem = {
+  '@id': 'test-item',
+  '@type': 'Servizio',
+  UID: '12345',
+  created: '2024-01-25T14:54:18+00:00',
+  description:
+    'Descrizione del servizio. Lunghezza suggerita massimo 3 righe, dopodiché viene troncata.',
+  effective: '2024-06-27T10:58:07+00:00',
+  expires: null,
+  id: 'test-servizio',
+  modified: '2024-06-27T10:58:07+00:00',
+  parliamo_di_metadata: [{ title: 'Categoria', key: 'categoria' }],
+  title: 'Servizio di prova',
+  canale_digitale_link: 'https://canaledigitale-del-servizio',
+  type_title: 'Servizio',
 };

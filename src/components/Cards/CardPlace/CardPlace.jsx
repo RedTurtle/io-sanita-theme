@@ -6,14 +6,13 @@ import {
   CardBody,
   CardTitle,
   CardText,
-  CardCategory,
   CardFooter,
   AvatarIcon,
 } from 'design-react-kit';
 
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
-import { Icon } from 'io-sanita-theme/components';
+import { Icon, CardCategoryBottom } from 'io-sanita-theme/components';
 import { Address } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
@@ -84,20 +83,10 @@ export const CardPlace = ({
               </>
             )}
             {type !== 'synthetic' && (
-              <>
-                {item.category && (
-                  <div className="category-bottom">
-                    <div className="category">
-                      <UniversalLink
-                        item={!isEditMode ? item.category : null}
-                        href={isEditMode ? '#' : ''}
-                      >
-                        <span className="text">{item.category.title}</span>
-                      </UniversalLink>
-                    </div>
-                  </div>
-                )}
-              </>
+              <CardCategoryBottom
+                category={item.parliamo_di_metadata?.[0]}
+                isEditMode={isEditMode}
+              />
             )}
           </CardText>
         </div>
