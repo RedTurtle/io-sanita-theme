@@ -7,9 +7,9 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
-  luoghi: {
-    id: 'luogo',
-    defaultMessage: 'Luogo',
+  dove: {
+    id: 'dove',
+    defaultMessage: 'Dove',
   },
 });
 
@@ -27,7 +27,7 @@ const EventoLuoghi = ({ content }) => {
     content?.country?.length > 0 ? (
     <RichTextSection
       tag_id="luoghi"
-      title={intl.formatMessage(messages.luoghi)}
+      title={intl.formatMessage(messages.dove)}
     >
       <Locations
         content={content}

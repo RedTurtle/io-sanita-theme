@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { ContactCard } from 'io-sanita-theme/components/View/commons';
-import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
-import EventoContattiOrganizzatoreEsterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreEsterno';
-import EventoContattiOrganizzatoreInterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreInterno';
+import { CardSimple } from 'io-sanita-theme/components';
+import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   contatti: {
@@ -15,23 +13,17 @@ const messages = defineMessages({
 const EventoContatti = ({ content }) => {
   const intl = useIntl();
 
-  return richTextHasContent(content?.organizzato_da_esterno) ||
-    content?.organizzato_da_interno?.length > 0 ||
-    content?.supportato_da?.length > 0 ||
-    content?.contact_info?.length > 0 ? (
+  return content?.punti_di_contatto?.length > 0 ? (
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {content.contact_info.map((contact) => (
-        <ContactCard contact={contact} key={contact['@id']} />
+      {/* TO DO: capire come mostrare i punti di contatto */}
+      {/* Punto di contatto */}
+      {content?.punti_di_contatto.map((item, i) => (
+        <CardSimple item={item} key={'contact_' + i} />
       ))}
 
-      {/* ---organizzato da esterno */}
-      <EventoContattiOrganizzatoreEsterno content={content} />
-
-      {/* ---contatti interno */}
-      <EventoContattiOrganizzatoreInterno content={content} />
     </RichTextSection>
   ) : null;
 };

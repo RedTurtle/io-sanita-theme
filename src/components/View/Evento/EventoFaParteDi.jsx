@@ -18,6 +18,8 @@ const EventoFaParteDi = ({ content }) => {
   const parentEvent =
     content?.parent['@type'] === 'Event' ? content?.parent : null;
 
+    // TO DO: fare una chiamata al contenuto di questa card per avere tutti i dati
+
   return parentEvent ? (
     <RichTextSection
       tag_id="fa_parte_di"

@@ -54,7 +54,6 @@ function reducePropsToState(propsList) {
  * @returns {null} null
  */
 function handleStateChangeOnClient(classList) {
-  console.log('rremove', classList);
   classList.forEach((c) => {
     if (c.indexOf(' ') > 0) {
       c.split(' ').forEach((cc) => document.body.classList.remove(cc));

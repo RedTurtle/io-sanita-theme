@@ -6,4 +6,17 @@
   .header-image {
     max-width: 16em;
   }
+
+  @media (min-width: #{map-get($grid-breakpoints, md)}) {
+    & + .content-image {
+      .wide-image {
+        margin-right: 0em;
+        margin-left: -0.9em;
+
+        figure {
+          margin: 0;
+        }
+      }
+    }
+  }
 }

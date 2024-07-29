@@ -59,6 +59,7 @@
 
 .public-ui {
   @import 'bootstrap-italia/src/scss/custom/grid';
+  @import './bootstrap-italia/custom/grid';
   @import 'bootstrap-italia/src/scss/custom/tables';
   @import 'bootstrap-italia/src/scss/custom/breadcrumb';
   @import 'bootstrap-italia/src/scss/custom/modal';

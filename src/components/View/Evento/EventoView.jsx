@@ -19,6 +19,8 @@ import {
 
 import {
   EventoCosE,
+  EventoPartecipanti,
+  EventoAChiSiRivolge,
   EventoUlterioriInformazioni,
   EventoDateOrari,
   EventoCosti,
@@ -28,16 +30,19 @@ import {
   EventoAppuntamenti,
   EventoDocumenti,
   EventoContatti,
+  EventoOrganizzatoDa,
 } from 'io-sanita-theme/components/View/Evento';
 
 export const EventoViewSectionsOrder = [
   { /* COS'è */ component: EventoCosE },
+  { /* CHI PARTECIPA */ component: EventoPartecipanti },
   { /* EVENTS */ component: EventoFaParteDi },
   { /* LUOGHI */ component: EventoLuoghi },
   { /* DATE E ORARI */ component: EventoDateOrari },
   { /* COSTI */ component: EventoCosti },
   { /* DOCUMENTI */ component: EventoDocumenti },
   { /* CONTATTI */ component: EventoContatti },
+  { /* ORGANIZZATO DA */ component: EventoOrganizzatoDa },
   { /* EVENTS */ component: EventoAppuntamenti },
   { /* SPONSORS */ component: EventoSponsors },
   { /* ULTERIORI INFORMAZIONI */ component: EventoUlterioriInformazioni },
@@ -62,7 +67,7 @@ const EventoView = ({ content, location }) => {
         <PageHeader content={content} showdates={true} />
 
         {/* HEADER IMAGE */}
-        <ContentImage content={content} />
+        <ContentImage content={content} position={"afterHeader"} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">

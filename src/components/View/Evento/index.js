@@ -12,10 +12,22 @@ export const EventoAppuntamenti = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAppuntamenti'
     ),
 );
+export const EventoAChiSiRivolge = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAChiSiRivolge'
+    ),
+);
 export const EventoContatti = loadable(
   () =>
     import(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoContatti'
+    ),
+);
+export const EventoOrganizzatoDa = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoOrganizzatoDa'
     ),
 );
 export const EventoCosE = loadable(
