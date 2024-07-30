@@ -17,30 +17,45 @@ import { getSiteProperty } from 'io-sanita-theme/helpers';
 import { SiteProperty } from 'volto-site-settings';
 
 const HeaderContacts = () => {
-  const subsite = useSelector((state) => state.subsite?.data);
-  const intl = useIntl();
+  // const subsite = useSelector((state) => state.subsite?.data);
+  // const intl = useIntl();
 
-  const parentSiteURL = subsite
-    ? '/'
-    : getSiteProperty('parentSiteURL', intl.locale);
+  // const parentSiteURL = subsite
+  //   ? '/'
+  //   : getSiteProperty('parentSiteURL', intl.locale);
 
-  const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
+  // const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
 
-  const parentSiteTile = SiteProperty({
-    property: 'site_title',
-    forceValue: subsite ? null : staticParentSiteTitle,
-    defaultValue: staticParentSiteTitle,
-    getValue: true,
-    getParent: true,
-  });
+  // const parentSiteTile = SiteProperty({
+  //   property: 'site_title',
+  //   forceValue: subsite ? null : staticParentSiteTitle,
+  //   defaultValue: staticParentSiteTitle,
+  //   getValue: true,
+  //   getParent: true,
+  // });
 
-  const target = subsite ? null : '_blank';
+  // const target = subsite ? null : '_blank';
   return (
-    <div class="container">
+    <div class="container header-contacts">
       <div class="row">
-        <div class="col-sm"> Una di tre colonne </div>
-        <div class="col-sm"> Una di tre colonne </div>
-        <div class="col-sm">Una di tre colonne</div>
+        <div class="col-sm">
+          <spam>Una di tre colonne</spam>
+          <spam>
+            CUP <a>0601020304</a>
+          </spam>
+        </div>
+        <div class="col-sm">
+          <spam>Una di tre colonne</spam>
+          <spam>
+            CUP <a>0601020304</a>
+          </spam>
+        </div>
+        <div class="col-sm">
+          <spam>Una di tre colonne</spam>
+          <spam>
+            CUP <a>0601020304</a>
+          </spam>
+        </div>
       </div>
     </div>
   );
