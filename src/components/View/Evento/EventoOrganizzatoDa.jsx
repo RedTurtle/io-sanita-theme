@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 // import { CardPlace } from 'io-sanita-theme/components';
+import { Col } from 'design-react-kit';
 import { richTextHasContent, RichTextSection, RichText } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
@@ -38,9 +39,9 @@ const EventoOrganizzatoDa = ({ content }) => {
       {/* {content?.organizzato_da_interno?.length > 0 && (
         <div className="mb-5">
           {content?.organizzato_da_interno?.map((item, index) => (
-            <div className="col-lg-6">
+            <Col lg={6}>
               <CardPlace item={item} size={'small'} type={'synthetic'} />
-            </div>
+            </Col>
           ))}
         </div>
       )} */}

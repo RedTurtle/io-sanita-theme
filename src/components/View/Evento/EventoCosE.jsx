@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { Chip, ChipLabel } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
-import {
-  RichText,
-  richTextHasContent,
-  RichTextSection,
-  contentFolderHasItems,
-} from 'io-sanita-theme/helpers';
-import { Gallery } from 'io-sanita-theme/components/View/commons';
+import {richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   cos_e: {
@@ -27,18 +18,16 @@ const EventoCosE = ({ content }) => {
   const intl = useIntl();
 
   return richTextHasContent(content?.descrizione_estesa) ||
-    contentFolderHasItems(content, 'immagini') ||
-    contentFolderHasItems(content, 'video') ||
     content?.tipologia_evento ? (
     <RichTextSection
-      tag_id={'text-body'}
+      tag_id="text-body"
       title={intl.formatMessage(messages.cos_e)}
       show_title={true}
       data={content.descrizione_estesa}
     >
 
       {/* TO DO: da spostare nell'hero della pagina */}
-      {/*Tipologia evento*/}
+      {/* Tipologia evento */}
       {content?.tipologia_evento && (
         <div className="mb-5 pt-2">
           <h3 className="tipologia-section h5">
@@ -49,16 +38,6 @@ const EventoCosE = ({ content }) => {
           </p>
         </div>
       )}
-
-      {/*Gallery*/}
-      <Gallery
-        content={content}
-        folder_name={'immagini'}
-        className="mt-4 pb-4"
-      />
-      <Gallery content={content} folder_name={'video'} />
-
-
     </RichTextSection>
   ) : (
     <></>

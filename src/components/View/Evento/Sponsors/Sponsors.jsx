@@ -1,4 +1,3 @@
-import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -8,13 +7,6 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import './_sponsors.scss';
-
-const messages = defineMessages({
-  sponsors: {
-    id: 'sponsors',
-    defaultMessage: 'Sponsor',
-  },
-});
 
 /**
  * Sponsor view component class.
@@ -50,8 +42,7 @@ const Sponsor = ({ item }) => {
  * @params {string} folder name where to find images.
  * @returns {string} Markup of the component.
  */
-const Sponsors = ({ content, folder_name, title }) => {
-  const intl = useIntl();
+const Sponsors = ({ content, folder_name }) => {
   const dispatch = useDispatch();
   const url = `${flattenToAppURL(content['@id'])}/${folder_name}`;
   const searchResults = useSelector((state) => state.search.subrequests);
@@ -82,11 +73,6 @@ const Sponsors = ({ content, folder_name, title }) => {
   const sponsors_logos = sponsors.filter((sponsor) => sponsor.image_field);
   return sponsors?.length > 0 ? (
     <>
-      {title ? (
-        <strong>{`${title}:`}</strong>
-      ) : (
-        <strong>{`${intl.formatMessage(messages.sponsors)}:`}</strong>
-      )}
       <div className="sponsor-wrapper">
         {sponsors_logos.length > 0 && (
           <div className="sponsor-logos">

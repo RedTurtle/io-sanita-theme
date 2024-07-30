@@ -1,3 +1,7 @@
+/*
+  Viene mostrato l'item "genitore" quando l'Evento è figlio di un altro Evento
+*/
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
