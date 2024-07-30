@@ -4,60 +4,39 @@
  */
 
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { UniversalLink } from '@plone/volto/components';
+import { Icon } from 'io-sanita-theme/components';
 
-import {
-  Header,
-  HeaderBrand,
-  HeaderContent,
-  HeaderRightZone,
-} from 'design-react-kit';
-import { useIntl } from 'react-intl';
-import { getSiteProperty } from 'io-sanita-theme/helpers';
-import { SiteProperty } from 'volto-site-settings';
+import './headerContacts.scss';
 
 const HeaderContacts = () => {
-  // const subsite = useSelector((state) => state.subsite?.data);
-  // const intl = useIntl();
-
-  // const parentSiteURL = subsite
-  //   ? '/'
-  //   : getSiteProperty('parentSiteURL', intl.locale);
-
-  // const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
-
-  // const parentSiteTile = SiteProperty({
-  //   property: 'site_title',
-  //   forceValue: subsite ? null : staticParentSiteTitle,
-  //   defaultValue: staticParentSiteTitle,
-  //   getValue: true,
-  //   getParent: true,
-  // });
-
-  // const target = subsite ? null : '_blank';
+  //esempio items - arriverà via props
+  const items = [
+    { text: 'testo 1', href: '0239238348', href_type: 'tel' },
+    { text: 'testo 2', href: '0239321312', href_type: 'tel' },
+    { text: 'testo 3', href: '0236456546', href_type: 'tel' },
+  ];
   return (
-    <div class="container header-contacts">
-      <div class="row">
-        <div class="col-sm">
-          <spam>Una di tre colonne</spam>
-          <spam>
-            CUP <a>0601020304</a>
-          </spam>
-        </div>
-        <div class="col-sm">
-          <spam>Una di tre colonne</spam>
-          <spam>
-            CUP <a>0601020304</a>
-          </spam>
-        </div>
-        <div class="col-sm">
-          <spam>Una di tre colonne</spam>
-          <spam>
-            CUP <a>0601020304</a>
-          </spam>
+    items && (
+      <div class="header-contacts">
+        <div class="container">
+          <div class="row">
+            {items.map((item, index) => (
+              <div class="col col-sm" key={'header-contact' + index}>
+                <spam>{item?.text}</spam>
+                <UniversalLink href={item.href} className={item?.href}>
+                  {item?.href}
+                </UniversalLink>
+                <Icon
+                  icon={item.href_type === 'tel' ? 'it-telephone' : 'it-link'}
+                  size="sm"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };
 

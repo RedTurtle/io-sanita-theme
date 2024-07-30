@@ -1,0 +1,14 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.header-contacts {
+  background-color: $bg-primary-lightest;
+  padding: 0.3rem 0;
+  .col {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    a {
+      color: $accent;
+    }
+  }
+}
