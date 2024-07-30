@@ -47,14 +47,15 @@ $dropdown-font-size: 0.889rem;
 
 //card
 $card-link-color: $accent;
+$card-color: $body-color;
+$card-p-color: $body-color;
+$card-category-size: calc(14 / 18) + rem;
 
 //chips
 $color-text-secondary: $accent;
 $color-border-subtle: $accent;
 
 //$color-text-base: #2f475e;
-$card-color: $body-color;
-$card-p-color: $body-color;
 
 // ALERT-BLOCK CUSTOM COLORS
 $alert-danger: #a32219 !default;

@@ -24,10 +24,12 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
+    font-size: $card-category-size;
 
     .category {
       font-weight: $font-weight-semibold;
       text-transform: uppercase;
+      color: $card-link-color;
     }
 
     a {
@@ -42,7 +44,6 @@
     }
 
     .data {
-      font-size: $card-category-size;
       text-transform: uppercase;
       color: $text-muted; //$card-p-color;
       font-family: $font-family-monospace;

@@ -28,6 +28,26 @@ msgstr "Accede a tu área personal"
 msgid "Bando"
 msgstr "Aviso"
 
+#. Default: "Indirizzo"
+#: components/Cards/CardPersona/CardPersona
+msgid "CardPersona: address label"
+msgstr ""
+
+#. Default: "Apri in mappa"
+#: components/Cards/CardPersona/CardPersona
+msgid "CardPersona: view on googlemaps"
+msgstr ""
+
+#. Default: "Indirizzo"
+#: components/Cards/CardPlace/CardPlace
+msgid "CardPlace: address label"
+msgstr ""
+
+#. Default: "Apri in mappa"
+#: components/Cards/CardPlace/CardPlace
+msgid "CardPlace: view on googlemaps"
+msgstr ""
+
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/HeaderSearch
 msgid "Cerca"
@@ -54,6 +74,7 @@ msgid "Contatti"
 msgstr ""
 
 #. Default: "Contenuto"
+#: components/View/AggregationPage/SideMenu
 #: components/View/commons/SideMenu/SideMenu
 msgid "Contenuto"
 msgstr ""
@@ -214,6 +235,11 @@ msgstr "Suscribir"
 msgid "Thank you."
 msgstr "Gracias."
 
+#. Default: "Tipi di contenuto"
+#: components/View/AggregationPage/SideMenu
+msgid "Tipi di contenuto"
+msgstr ""
+
 #. Default: "Trascina qui il file..."
 #: components/Widgets/FileWidget
 msgid "Trascina qui il file ..."
@@ -272,6 +298,26 @@ msgstr ""
 msgid "advandedSectionsFilters"
 msgstr "Ir a búsqueda avanzada por secciones"
 
+#. Default: "Tutti"
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_all"
+msgstr ""
+
+#. Default: "Tutti i contenuti relativi all'argomento "{title}""
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_description_argument"
+msgstr ""
+
+#. Default: "Tutti i contenuti dedicati a "{title}""
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_description_tipologia_utente"
+msgstr ""
+
+#. Default: "Nessun risultato trovato."
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_no_results"
+msgstr ""
+
 #. Default: "Tutto"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allFilters"
@@ -290,6 +336,16 @@ msgstr "Todos los temas"
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
 msgid "amministrazione"
+msgstr ""
+
+#. Default: "Allegato"
+#: components/Cards/CardFile/CardFile
+msgid "attachment"
+msgstr ""
+
+#. Default: "Allegati"
+#: components/View/commons/Attachments/Attachments
+msgid "attachments"
 msgstr ""
 
 #. Default: "Torna alla ricerca"
@@ -442,6 +498,16 @@ msgstr ""
 msgid "event_url"
 msgstr ""
 
+#. Default: "Appuntamenti"
+#: components/View/Evento/EventoAppuntamenti
+msgid "evento_appuntamenti"
+msgstr ""
+
+#. Default: "Fa parte di"
+#: components/View/Evento/EventoFaParteDi
+msgid "evento_fa_parte_di"
+msgstr ""
+
 #. Default: "Scadenza"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "expire"
@@ -495,11 +561,6 @@ msgstr ""
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
-msgstr ""
-
-#. Default: "Icona per l'argomento {topic_title}"
-#: components/View/Argomento/ArgumentIcon
-msgid "icon_title"
 msgstr ""
 
 #. Default: "Indice della pagina"
@@ -627,12 +688,12 @@ msgid "modified"
 msgstr ""
 
 #. Default: "Scarica il file"
-#: helpers/Files/DownloadFileFormat
+#: helpers/Files/FileIcon
 msgid "modulo_download_file"
 msgstr "Descargar archivo"
 
 #. Default: "Scarica in formato"
-#: helpers/Files/DownloadFileFormat
+#: helpers/Files/FileIcon
 msgid "modulo_download_in_format"
 msgstr "Descargar en"
 
@@ -723,12 +784,58 @@ msgstr ""
 
 #. Default: "Parteciperanno"
 #: components/View/Evento/EventoCosE
+#: components/View/Evento/EventoPartecipanti
 msgid "parteciperanno"
 msgstr ""
 
 #. Default: "Patrocinato da"
 #: components/View/Evento/EventoUlterioriInformazioni
 msgid "patrocinato_da"
+msgstr ""
+
+#. Default: "Account"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_account"
+msgstr ""
+
+#. Default: "Email"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_email"
+msgstr ""
+
+#. Default: "Fax"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_fax"
+msgstr ""
+
+#. Default: "LinkedIn"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_linkedin"
+msgstr ""
+
+#. Default: "Social"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_social"
+msgstr ""
+
+#. Default: "Numero di telefono"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_telefono"
+msgstr ""
+
+#. Default: "Twitter"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_twitter"
+msgstr ""
+
+#. Default: "Sito web"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_url"
+msgstr ""
+
+#. Default: "PEC"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pec"
 msgstr ""
 
 #. Default: "Precedente"
@@ -877,6 +984,11 @@ msgstr ""
 msgid "servizio_canale_digitale_link"
 msgstr ""
 
+#. Default: "Servizio online"
+#: components/Cards/CardSimple/CardSimple
+msgid "servizio_online_chip"
+msgstr ""
+
 #. Default: "Vai alle altre opzioni di ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "setMoreSearchOptions"
@@ -902,6 +1014,36 @@ msgstr "Ir al contenido"
 msgid "skiplink-navigation"
 msgstr "Ir a navegación"
 
+#. Default: "Skype"
+#: helpers/Views/PuntoDiContattoValue
+msgid "skype"
+msgstr ""
+
+#. Default: "Ordina per"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_by"
+msgstr ""
+
+#. Default: "Data (prima i più recenti)"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_data_desc"
+msgstr ""
+
+#. Default: "Alfabeticamente"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_name"
+msgstr ""
+
+#. Default: "Rilevanza"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_relevance"
+msgstr ""
+
+#. Default: "Sponsor"
+#: components/View/Evento/Sponsors/Sponsors
+msgid "sponsors"
+msgstr ""
+
 #. Default: "Inizio evento"
 #: components/View/Evento/Dates
 msgid "start"
@@ -912,9 +1054,9 @@ msgstr ""
 msgid "successivo"
 msgstr ""
 
-#. Default: "Con il supporto di"
-#: components/View/Evento/EventoContattiSupportatoDa
-msgid "supported_by"
+#. Default: "Telegram"
+#: helpers/Views/PuntoDiContattoValue
+msgid "telegram"
 msgstr ""
 
 #. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
@@ -952,11 +1094,6 @@ msgstr ""
 msgid "topics"
 msgstr "Temas"
 
-#. Default: "Ulteriori informazioni"
-#: components/View/commons/HelpBox
-msgid "ulteriori_info_icona"
-msgstr ""
-
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
@@ -966,6 +1103,26 @@ msgstr ""
 #: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Bloque desconocido"
+
+#. Default: "Vedi su Apple Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_applemaps"
+msgstr ""
+
+#. Default: "Vedi su Bing Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_bingmaps"
+msgstr ""
+
+#. Default: "Vedi su Google Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_googlemaps"
+msgstr ""
+
+#. Default: "Whatsapp"
+#: helpers/Views/PuntoDiContattoValue
+msgid "whatsapp"
+msgstr ""
 
 #. Default: "Questo evento ha luogo per tutta la giornata."
 #: components/View/Evento/Dates
