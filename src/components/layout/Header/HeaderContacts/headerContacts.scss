@@ -3,10 +3,16 @@
 .header-contacts {
   background-color: $bg-primary-lightest;
   padding: 0.3rem 0;
-  .col {
+  font-size: $font-size-sm;
+  .contact-wrapper {
     display: flex;
     align-items: center;
     gap: 0.5em;
+    .item-description {
+      @media (max-width: #{map-get($grid-breakpoints, md)}) {
+        display: none;
+      }
+    }
     a {
       color: $accent;
       .icon.external-link {

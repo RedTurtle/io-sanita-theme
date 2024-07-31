@@ -6,17 +6,27 @@
 import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
-
 import { Container, Row, Col } from 'design-react-kit';
-
 import './headerContacts.scss';
 
 const HeaderContacts = () => {
-  //esempio items - arriverà via props
+  // exemplo items - arriverà via props
   const items = [
-    { text: 'testo 1', href: 'https://www.sitoweb.it' },
-    { text: 'testo 2', href: 'tel:0532123456' },
-    { text: 'testo 3', href: 'mailto:teto@prova.it' },
+    {
+      text_1: 'Prenota servizi e prestazioni',
+      text_2: 'CUP',
+      href: 'https://www.sitoweb.it',
+    },
+    {
+      text_1: 'Richiedi informazioni o fai una segnalazione',
+      text_2: 'URP',
+      href: 'tel:0532123456',
+    },
+    {
+      text_1: 'Prenota servizi e prestazioni',
+      text_2: 'CUP',
+      href: 'mailto:teto@prova.it',
+    },
   ];
 
   const getDisplayText = (link) => {
@@ -34,27 +44,35 @@ const HeaderContacts = () => {
       <div className="header-contacts">
         <Container>
           <Row>
-            {items.map((item, index) => (
-              <Col key={'header-contact' + index}>
-                <span>{item?.text}</span>
-                <UniversalLink
-                  href={item.href}
-                  title={getDisplayText(item.href)}
+            {items.map((item, index) => {
+              return (
+                <Col
+                  md="12"
+                  lg="4"
+                  className="contact-wrapper"
+                  key={'header-contact' + index}
                 >
-                  {getDisplayText(item.href)}
-                </UniversalLink>
-                <Icon
-                  icon={
-                    item.href.startsWith('tel:')
-                      ? 'it-telephone'
-                      : item.href.startsWith('mailto:')
-                        ? 'it-mail'
-                        : 'it-link'
-                  }
-                  size="sm"
-                />
-              </Col>
-            ))}
+                  <span className="item-description">{item.text_1}</span>
+                  <span className="item-type">{item.text_2}</span>
+                  <UniversalLink
+                    href={item.href}
+                    title={getDisplayText(item.href)}
+                  >
+                    {getDisplayText(item.href)}
+                  </UniversalLink>
+                  <Icon
+                    icon={
+                      item.href.startsWith('tel:')
+                        ? 'it-telephone'
+                        : item.href.startsWith('mailto:')
+                          ? 'it-mail'
+                          : 'it-link'
+                    }
+                    size="xs"
+                  />
+                </Col>
+              );
+            })}
           </Row>
         </Container>
       </div>
