@@ -7,34 +7,56 @@ import React from 'react';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
 
+import { Container, Row, Col } from 'design-react-kit';
+
 import './headerContacts.scss';
 
 const HeaderContacts = () => {
   //esempio items - arriverà via props
   const items = [
-    { text: 'testo 1', href: '0239238348', href_type: 'tel' },
-    { text: 'testo 2', href: '0239321312', href_type: 'tel' },
-    { text: 'testo 3', href: '0236456546', href_type: 'tel' },
+    { text: 'testo 1', href: 'https://www.sitoweb.it' },
+    { text: 'testo 2', href: 'tel:0532123456' },
+    { text: 'testo 3', href: 'mailto:teto@prova.it' },
   ];
+
+  const getDisplayText = (link) => {
+    if (link.startsWith('tel:')) {
+      return link.replace('tel:', '');
+    } else if (link.startsWith('mailto:')) {
+      return link.replace('mailto:', '');
+    } else {
+      return link;
+    }
+  };
+
   return (
     items && (
-      <div class="header-contacts">
-        <div class="container">
-          <div class="row">
+      <div className="header-contacts">
+        <Container>
+          <Row>
             {items.map((item, index) => (
-              <div class="col col-sm" key={'header-contact' + index}>
-                <spam>{item?.text}</spam>
-                <UniversalLink href={item.href} className={item?.href}>
-                  {item?.href}
+              <Col key={'header-contact' + index}>
+                <span>{item?.text}</span>
+                <UniversalLink
+                  href={item.href}
+                  title={getDisplayText(item.href)}
+                >
+                  {getDisplayText(item.href)}
                 </UniversalLink>
                 <Icon
-                  icon={item.href_type === 'tel' ? 'it-telephone' : 'it-link'}
+                  icon={
+                    item.href.startsWith('tel:')
+                      ? 'it-telephone'
+                      : item.href.startsWith('mailto:')
+                        ? 'it-mail'
+                        : 'it-link'
+                  }
                   size="sm"
                 />
-              </div>
+              </Col>
             ))}
-          </div>
-        </div>
+          </Row>
+        </Container>
       </div>
     )
   );
