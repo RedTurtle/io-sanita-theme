@@ -47,8 +47,7 @@ const HeaderContacts = () => {
             {items.map((item, index) => {
               return (
                 <Col
-                  md="12"
-                  lg="4"
+                  xs="6"
                   className="contact-wrapper"
                   key={'header-contact' + index}
                 >
@@ -68,7 +67,8 @@ const HeaderContacts = () => {
                           ? 'it-mail'
                           : 'it-link'
                     }
-                    size="xs"
+                    color="primary"
+                    size="sm"
                   />
                 </Col>
               );

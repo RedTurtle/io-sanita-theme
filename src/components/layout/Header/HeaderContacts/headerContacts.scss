@@ -4,22 +4,26 @@
   background-color: $bg-primary-lightest;
   padding: 0.3rem 0;
   font-size: $font-size-sm;
-  .contact-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    .item-description {
-      @media (max-width: #{map-get($grid-breakpoints, md)}) {
-        display: none;
+  border-bottom: 1px solid $bg-primary-lighter;
+  .row {
+    row-gap: 0.5rem;
+    .contact-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      .item-description {
+        @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+          display: none;
+        }
       }
-    }
-    .item-type {
-      font-weight: 700;
-    }
-    a {
-      color: $accent;
-      .icon.external-link {
-        display: none;
+      .item-type {
+        font-weight: 700;
+      }
+      a {
+        color: $accent;
+        .icon.external-link {
+          display: none;
+        }
       }
     }
   }
