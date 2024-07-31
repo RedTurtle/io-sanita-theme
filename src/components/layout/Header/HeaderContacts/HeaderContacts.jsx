@@ -27,6 +27,11 @@ const HeaderContacts = () => {
       text_2: 'CUP',
       href: 'mailto:teto@prova.it',
     },
+    {
+      text_1: 'Richiedi informazioni o fai una segnalazione',
+      text_2: 'URP',
+      href: 'tel:0532123456',
+    },
   ];
 
   const getDisplayText = (link) => {
@@ -46,11 +51,7 @@ const HeaderContacts = () => {
           <Row>
             {items.map((item, index) => {
               return (
-                <Col
-                  xs="6"
-                  className="contact-wrapper"
-                  key={'header-contact' + index}
-                >
+                <Col className="contact-wrapper" key={'header-contact' + index}>
                   <span className="item-description">{item.text_1}</span>
                   <span className="item-type">{item.text_2}</span>
                   <UniversalLink
