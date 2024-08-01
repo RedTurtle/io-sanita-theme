@@ -7,12 +7,17 @@ import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import PropTypes from 'prop-types';
 import {
+  richTextHasContent,
+  RichText,
+} from 'io-sanita-theme/helpers';
+import {
   Accordion,
   AccordionItem,
   AccordionHeader,
   AccordionBody,
   Button,
 } from 'design-react-kit';
+import { Icon } from 'io-sanita-theme/components';
 import './steps.scss';
 
 const messages = defineMessages({
@@ -48,10 +53,14 @@ const Steps = ({ steps = [] }) => {
     setActiveItem('');
   }, [allOpen]);
 
+  // TO DO: fare la chiamata alla fullobject dello step
+
   return steps.length > 0 ? (
     <div className="steps">
       <Button
         color="link"
+        className="btn-link-accent no-padding"
+        size="xs"
         aria-expanded={allOpen === true}
         onClick={() => {
           setAllOpen(!allOpen);
@@ -60,7 +69,7 @@ const Steps = ({ steps = [] }) => {
         {allOpen
           ? intl.formatMessage(messages.hide_all)
           : intl.formatMessage(messages.show_all)}{' '}
-        (TODO: mettere il caret)
+        <Icon icon={allOpen ? "it-collapse" : "it-expand"} size="sm" />
       </Button>
       <Accordion background="active">
         {steps.map((step, index) => {
@@ -73,35 +82,42 @@ const Steps = ({ steps = [] }) => {
           };
 
           return (
-            <AccordionItem>
+            <AccordionItem key={"accordion" + itemIndex}>
               <AccordionHeader
                 active={isActive()}
                 onToggle={() => toggleItem()}
                 append={
-                  <>
+                  <div className="accordion-wrap-btn">
                     {!allOpen && (
                       <Button
                         color="link"
+                        className="btn-link-accent"
+                        size="xs"
                         aria-expanded={isActive()}
                         onClick={() => toggleItem()}
                       >
                         {isActive()
                           ? intl.formatMessage(messages.hide_details)
                           : intl.formatMessage(messages.show_details)}{' '}
-                        (TODO: mettere il caret)
+                        <Icon icon={isActive() ? "it-collapse" : "it-expand"} size="sm" />
                       </Button>
                     )}
-                  </>
+                  </div>
                 }
               >
                 <div className="step-number">{itemIndex}</div>
                 <div className="step-title">{step.title}</div>
               </AccordionHeader>
               <AccordionBody active={isActive()}>
-                Vestibulum hendrerit ultrices nibh, sed pharetra lacus ultrices
-                eget. Morbi et ipsum et sapien dapibus facilisis. Integer eget
-                semper nibh. Proin enim nulla, egestas ac rutrum eget,
-                ullamcorper nec turpis.
+                {richTextHasContent(step?.testo) && (
+                  <div className="mt-4">
+                    <div className="mb-5">
+                      <RichText
+                        data={step?.testo}
+                      />
+                    </div>
+                  </div>
+                )}
               </AccordionBody>
             </AccordionItem>
           );

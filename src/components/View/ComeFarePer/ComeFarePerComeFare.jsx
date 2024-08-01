@@ -19,7 +19,7 @@ const messages = defineMessages({
 
 const ComeFarePerComeFare = ({ content }) => {
   const intl = useIntl();
-  const steps = content.items ?? []; //?.filter((item) => item.id !== 'multimedia') ?? [];
+  const steps = content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
 
   return richTextHasContent(content?.come_fare) || steps.length > 0 ? (
     <RichTextSection

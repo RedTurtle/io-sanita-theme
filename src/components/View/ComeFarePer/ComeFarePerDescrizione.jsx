@@ -17,16 +17,16 @@ const messages = defineMessages({
 const ComeFarePerDescrizione = ({ content }) => {
   const intl = useIntl();
 
-  return richTextHasContent(content?.descrizione_estesa) ? (
+  return richTextHasContent(content?.panoramica) ? (
     <RichTextSection
       tag_id="panoramica"
       title={intl.formatMessage(messages.panoramica)}
     >
-      {richTextHasContent(content?.descrizione_estesa) && (
+      {richTextHasContent(content?.panoramica) && (
         <div className="mt-4">
           <div className="mb-5">
             <RichText
-              data={content?.descrizione_estesa}
+              data={content?.panoramica}
             />
           </div>
         </div>
@@ -41,7 +41,6 @@ export default ComeFarePerDescrizione;
 
 ComeFarePerDescrizione.propTypes = {
   content: PropTypes.shape({
-    /* TO DO: verificare che sia cambiato in 'panoramica' invece che 'descrizione_estesa' */
     panoramica: PropTypes.shape({
       'content-type': PropTypes.string,
       data: PropTypes.string,

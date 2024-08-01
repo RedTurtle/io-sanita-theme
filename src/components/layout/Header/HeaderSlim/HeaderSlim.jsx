@@ -44,7 +44,7 @@ const HeaderSlim = () => {
           target={target}
           rel="noopener noreferrer"
         >
-          {parentSiteTile.replaceAll('\\n', ' - ')}
+          {/* {parentSiteTile.replaceAll('\\n', ' - ')} */}
         </HeaderBrand>
         <HeaderRightZone>
           <HeaderSlimRightZone />
