@@ -21,17 +21,15 @@ const SiteSettingsExtras = (props) => {
     property: 'site_title',
     getValue: true,
     getParent: true,
-    defaultValue: getSiteProperty('parentSiteTitle', intl.locale),
+    defaultValue: getSiteProperty('siteTitle', intl.locale),
   });
 
   if (parentSiteTitle !== siteTitle) {
     siteTitle = siteTitle + ' - ' + parentSiteTitle;
   }
 
-  // siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
+  siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
 
-  // return <Helmet titleTemplate={`%s - ${siteTitle}`} />;
-
-  return <></>;
+  return <Helmet titleTemplate={`%s - ${siteTitle}`} />;
 };
 export default SiteSettingsExtras;
