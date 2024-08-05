@@ -411,6 +411,36 @@ msgstr ""
 msgid "closeSearch"
 msgstr ""
 
+#. Default: "A chi è rivolto"
+#: components/View/ComeFarePer/ComeFarePerAChiERivolto
+msgid "come_fare_per_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Come fare"
+#: components/View/ComeFarePer/ComeFarePerComeFare
+msgid "come_fare_per_come_fare"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Panoramica"
+#: components/View/ComeFarePer/ComeFarePerDescrizione
+msgid "come_fare_per_panoramica"
+msgstr ""
+
+#. Default: "Parliamo di"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_parliamo_di"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_ulteriori_informazioni"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -569,6 +599,11 @@ msgstr ""
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
 #: overrideTranslations
 msgid "legend_required"
+msgstr ""
+
+#. Default: "Collegamento"
+#: components/Cards/CardGuide/CardGuide
+msgid "link"
 msgstr ""
 
 #. Default: "Questo evento ha più date: vedi tutte"
@@ -1045,6 +1080,26 @@ msgstr ""
 #. Default: "Inizio evento"
 #: components/View/Evento/Dates
 msgid "start"
+msgstr ""
+
+#. Default: "Nascondi tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_all"
+msgstr ""
+
+#. Default: "Nascondi dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_details"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_all"
+msgstr ""
+
+#. Default: "Mostra dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_details"
 msgstr ""
 
 #. Default: "Successivo"
