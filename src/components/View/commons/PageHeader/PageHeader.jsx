@@ -56,8 +56,7 @@ const PageHeader = (props) => {
           >
             {content.title}
           </h1>
-          <p className="h2">
-            {content.subtitle && `${content.subtitle}`}
+          <p className="subtitle">
             {content.sottotitolo && `${content.sottotitolo}`}
           </p>
 

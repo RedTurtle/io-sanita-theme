@@ -1,4 +1,13 @@
 .PageHeaderWrapper {
+  h1 {
+    margin-bottom: 0.67em;
+  }
+  p.subtitle {
+    font-weight: bold;
+    color: $headings-color;
+
+    @include rem-size(font-size, 19.36);
+  }
   p.description {
     @include rem-size(font-size, 24);
   }

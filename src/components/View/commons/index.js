@@ -148,3 +148,9 @@ export const Topics = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Topics'
     ),
 );
+export const TassonomiaUtenti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/TassonomiaUtenti'
+    ),
+);
