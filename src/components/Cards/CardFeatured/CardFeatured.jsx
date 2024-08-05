@@ -43,10 +43,7 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
           <CardText>{item.description}</CardText>
         )}
 
-        <CardCategoryBottom
-          category={item.parliamo_di_metadata?.[0]}
-          isEditMode={isEditMode}
-        />
+        <CardCategoryBottom item={item} isEditMode={isEditMode} />
       </CardBody>
 
       {img && <div className="card-image card-image-rounded">{img}</div>}

@@ -61,7 +61,7 @@ export const CardSimple = ({
             {showDescription && <>{item.description}</>}
 
             <CardCategoryBottom
-              category={item.parliamo_di_metadata?.[0]}
+              item={item}
               date={date}
               isEditMode={isEditMode}
             />
