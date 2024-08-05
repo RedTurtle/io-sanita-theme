@@ -33,7 +33,7 @@ const ComeFarePerComeFare = ({ content }) => {
           </div>
         </div>
       )}
-      <Steps steps={steps} />
+      <Steps content={content} steps={steps} />
     </RichTextSection>
   ) : (
     <></>

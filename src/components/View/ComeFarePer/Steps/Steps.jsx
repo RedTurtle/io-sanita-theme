@@ -5,6 +5,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
+import { getContent, resetContent } from '@plone/volto/actions';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
 import {
   richTextHasContent,
@@ -44,8 +47,10 @@ const messages = defineMessages({
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const Steps = ({ steps = [] }) => {
+const Steps = ({ content, steps = [] }) => {
+
   const intl = useIntl();
+  const dispatch = useDispatch();
   const [activeItem, setActiveItem] = useState('');
   const [allOpen, setAllOpen] = useState(false);
 
@@ -54,6 +59,32 @@ const Steps = ({ steps = [] }) => {
   }, [allOpen]);
 
   // TO DO: fare la chiamata alla fullobject dello step
+
+  const searchSteps = useSelector((state) => state.content?.subrequests);
+
+  // one request is made for every step
+  useEffect(() => {
+    if (steps?.length > 0) {
+      steps.forEach((item) => {
+        const url = flattenToAppURL(item['@id']);
+        const loaded =
+          searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
+        if (!loaded) {
+          dispatch(getContent(url, null, url));
+        }
+      });
+    }
+
+    console.log('step content', content);
+
+    return () => {
+      if (steps?.length > 0) {
+        steps.forEach((item) => {
+          dispatch(resetContent(flattenToAppURL(item['@id'])));
+        });
+      }
+    };
+  }, [content]);
 
   return steps.length > 0 ? (
     <div className="steps">
@@ -72,7 +103,8 @@ const Steps = ({ steps = [] }) => {
         <Icon icon={allOpen ? "it-collapse" : "it-expand"} size="sm" />
       </Button>
       <Accordion background="active">
-        {steps.map((step, index) => {
+        {steps.map((s, index) => {
+          const step = searchSteps[flattenToAppURL(s['@id'])]?.data;
           const itemIndex = index + 1;
           const toggleItem = () => {
             setActiveItem(activeItem !== itemIndex ? itemIndex : '');
@@ -106,7 +138,7 @@ const Steps = ({ steps = [] }) => {
                 }
               >
                 <div className="step-number">{itemIndex}</div>
-                <div className="step-title">{step.title}</div>
+                {step?.title && <div className="step-title">{step.title}</div>}
               </AccordionHeader>
               <AccordionBody active={isActive()}>
                 {richTextHasContent(step?.testo) && (
