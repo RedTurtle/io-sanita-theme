@@ -16,6 +16,10 @@
       & > .chip-label {
         color: var(--is-accent-text);
       }
+
+      .icon {
+        fill: var(--is-accent-text) !important;
+      }
     }
   }
 }

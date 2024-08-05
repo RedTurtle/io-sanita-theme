@@ -83,10 +83,7 @@ const CardPlace = ({
               </>
             )}
             {type !== 'synthetic' && (
-              <CardCategoryBottom
-                category={item.parliamo_di_metadata?.[0]}
-                isEditMode={isEditMode}
-              />
+              <CardCategoryBottom item={item} isEditMode={isEditMode} />
             )}
           </CardText>
         </div>

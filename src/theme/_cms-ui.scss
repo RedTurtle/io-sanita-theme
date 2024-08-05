@@ -150,6 +150,8 @@ body.cms-ui {
     }
   }
 
+  a .icon.external-link{ height: 1rem; margin-left: 0.1rem;}
+
   /*Select*/
   .react-select__menu {
     z-index: 11;
@@ -208,6 +210,9 @@ body.cms-ui {
   }
 
   &.section-controlpanel {
+    .ui .grid h3 .content {
+      font-size: 1rem;
+    }
     a {
       text-decoration: none;
 

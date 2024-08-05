@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
+import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
 
 /**
  * Topics view component class.
@@ -21,16 +22,17 @@ const messages = defineMessages({
 
 const Topics = ({ content }) => {
   const intl = useIntl();
+  const list = content.parliamo_di_metadata ?? content.parliamo_di; // gli argomenti possono esssere in uno di questi due campi, a seconda di dove arriva l'oggetto principale (brain o load)
 
-  return content?.parliamo_di_metadata?.length > 0 ? (
-    <div className="mt-4 mb-4 page-topics">
+  return list?.length > 0 ? (
+    <div className="mt-4 mb-5 page-topics">
       <h5>
         <small>{intl.formatMessage(messages.topics)}</small>
       </h5>
-      {content.parliamo_di_metadata.map((item, i) => (
+      {list.map((item, i) => (
         <UniversalLink
-          item={item}
-          key={item['@id']}
+          href={AGGREGATION_PAGE_ARGOMENTO + item.token}
+          key={item.token}
           className="text-decoration-none me-2 d-inline-block"
           data-element="service-topic"
         >
