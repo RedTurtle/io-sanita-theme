@@ -20,6 +20,7 @@ export ScrollToTop from 'io-sanita-theme/components/ScrollToTop/ScrollToTop';
 
 //Header
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';
+export HeaderContacts from 'io-sanita-theme/components/layout/Header/HeaderContacts/HeaderContacts';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';
 export SubsiteHeader from 'io-sanita-theme/components/layout/Header/SubsiteHeader';
 export SearchModal from 'io-sanita-theme/components/layout/Header/HeaderSearch/SearchModal';

@@ -17,6 +17,7 @@ import {
 import {
   HeaderSlim,
   HeaderCenter,
+  HeaderContacts,
   SubsiteHeader,
 } from 'io-sanita-theme/components';
 import { Headers } from 'design-react-kit';
@@ -48,6 +49,7 @@ const Header = ({ pathname }) => {
             <HeaderCenter />
             <Navigation pathname={pathname} />
           </div>
+          <HeaderContacts />
         </Headers>
         <SubsiteHeader />
       </div>
