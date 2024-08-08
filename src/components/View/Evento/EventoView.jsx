@@ -19,29 +19,38 @@ import {
 
 import {
   EventoCosE,
+  EventoPartecipanti,
+  EventoAChiSiRivolge,
   EventoUlterioriInformazioni,
   EventoDateOrari,
+  EventoGalleria,
   EventoCosti,
-  EventoLuoghi,
+  EventoDove,
   EventoSponsors,
   EventoFaParteDi,
   EventoAppuntamenti,
   EventoDocumenti,
   EventoContatti,
+  EventoEventiCorrelati,
+  EventoOrganizzatoDa,
 } from 'io-sanita-theme/components/View/Evento';
 
 export const EventoViewSectionsOrder = [
   { /* COS'è */ component: EventoCosE },
-  { /* EVENTS */ component: EventoFaParteDi },
-  { /* LUOGHI */ component: EventoLuoghi },
+  { /* CHI PARTECIPA */ component: EventoPartecipanti },
+  { /* EVENTI PADRI */ component: EventoFaParteDi },
+  { /* GALLERY */ component: EventoGalleria },
+  { /* A CHI SI RIVOLGE */ component: EventoAChiSiRivolge },
+  { /* DOVE */ component: EventoDove },
   { /* DATE E ORARI */ component: EventoDateOrari },
   { /* COSTI */ component: EventoCosti },
   { /* DOCUMENTI */ component: EventoDocumenti },
   { /* CONTATTI */ component: EventoContatti },
-  { /* EVENTS */ component: EventoAppuntamenti },
+  { /* ORGANIZZATO DA */ component: EventoOrganizzatoDa },
+  { /* EVENTI FIGLI */ component: EventoAppuntamenti },
+  { /* EVENTI CORRELATI */ component: EventoEventiCorrelati },
   { /* SPONSORS */ component: EventoSponsors },
   { /* ULTERIORI INFORMAZIONI */ component: EventoUlterioriInformazioni },
-  // { /* EVENTI CORRELATI */ component: EventoEventiCorrelati },
   { /* METADATA */ component: Metadata },
 ];
 
@@ -62,7 +71,7 @@ const EventoView = ({ content, location }) => {
         <PageHeader content={content} showdates={true} />
 
         {/* HEADER IMAGE */}
-        <ContentImage content={content} />
+        <ContentImage content={content} position={"afterHeader"} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">

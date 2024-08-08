@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { Chip, ChipLabel, Row, Col } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+import { Row, Col } from 'design-react-kit';
+import {
+  RichText,
+  richTextHasContent,
+  RichTextSection,
+} from 'io-sanita-theme/helpers';
 import { CardPersona } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
@@ -16,27 +19,43 @@ const messages = defineMessages({
 const EventoPartecipanti = ({ content }) => {
   const intl = useIntl();
 
-  return content?.persone_amministrazione?.length > 0 ? (
-    <>
-      <h3 className="parteciperanno-section h5">
-        {intl.formatMessage(messages.parteciperanno)}
-      </h3>
-      <Row>
-        {content?.persone_amministrazione?.map((item, i) => (
-          <Col lg={6} key={item['@id']} className="py-lg-2">
-            <CardPersona item={item} />
-          </Col>
-        ))}
-      </Row>
-    </>
+  return richTextHasContent(content?.parteciperanno) ||
+    content?.persona_correlata?.length > 0 ? (
+    <RichTextSection
+      tag_id="parteciperanno"
+      title={intl.formatMessage(messages.parteciperanno)}
+    >
+      {/* Parteciperanno - testo */}
+      {richTextHasContent(content?.parteciperanno) && (
+        <div className="mt-4">
+          <div className="mb-2">
+            <RichText data={content?.parteciperanno} />
+          </div>
+        </div>
+      )}
+
+      {/* Parteciperanno - link correlato */}
+      {content?.persona_correlata?.length > 0 && (
+        <Row>
+          {content?.persona_correlata?.map((item, i) => (
+            <Col lg={6} key={item['@id']} className="py-lg-2">
+              <CardPersona item={item} />
+            </Col>
+          ))}
+        </Row>
+      )}
+
+    </RichTextSection>
   ) : (
     <></>
   );
 };
 
+
 EventoPartecipanti.propTypes = {
   content: PropTypes.shape({
-    persone_amministrazione: PropTypes.array,
+    persona_correlata: PropTypes.array,
+    parteciperanno: PropTypes.object,
   }).isRequired,
 };
 

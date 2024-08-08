@@ -12,7 +12,7 @@ const ContactCard = ({ contact = {}, show_title = false, ...rest }) => {
     <Card
       teaser
       noWrapper
-      className="shadow rounded my-3 pt-0 contacts-card"
+      className="shadow rounded my-3 contacts-card"
       {...rest}
     >
       {show_title && <Icon icon="it-telephone" />}

@@ -10,7 +10,7 @@ const messages = defineMessages({
   },
 });
 
-const EventoContatti = ({ content }) => {
+const UOContatti = ({ content }) => {
   const intl = useIntl();
 
   return content?.pdc_correlato?.length > 0 ? (
@@ -28,8 +28,8 @@ const EventoContatti = ({ content }) => {
   ) : null;
 };
 
-EventoContatti.propTypes = {
+UOContatti.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoContatti;
+export default UOContatti;

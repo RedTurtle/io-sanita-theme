@@ -7,13 +7,13 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
-  luoghi: {
-    id: 'luogo',
-    defaultMessage: 'Luogo',
+  dove: {
+    id: 'dove',
+    defaultMessage: 'Dove',
   },
 });
 
-const EventoLuoghi = ({ content }) => {
+const EventoDove = ({ content }) => {
   const intl = useIntl();
 
   return content?.luoghi_correlati?.length > 0 ||
@@ -27,7 +27,7 @@ const EventoLuoghi = ({ content }) => {
     content?.country?.length > 0 ? (
     <RichTextSection
       tag_id="luoghi"
-      title={intl.formatMessage(messages.luoghi)}
+      title={intl.formatMessage(messages.dove)}
     >
       <Locations
         content={content}
@@ -39,8 +39,8 @@ const EventoLuoghi = ({ content }) => {
   );
 };
 
-EventoLuoghi.propTypes = {
+EventoDove.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoLuoghi;
+export default EventoDove;

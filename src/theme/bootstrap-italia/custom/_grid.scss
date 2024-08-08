@@ -1,0 +1,6 @@
+// removed space between header content and page columns
+@media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .row.row-column-border.row-column-menu-left {
+        margin-top: 0rem;
+    }
+}
