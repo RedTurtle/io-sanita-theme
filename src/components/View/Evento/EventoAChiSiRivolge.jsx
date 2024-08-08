@@ -6,8 +6,7 @@ import {
   RichText,
   RichTextSection,
 } from 'io-sanita-theme/helpers';
-
-// import { TassonomiaUtenti } from 'io-sanita-theme/components/View/commons';
+import { TassonomiaUtenti } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   a_chi_si_rivolge: {
@@ -33,8 +32,7 @@ const EventoAChiSiRivolge = ({ content }) => {
         </div>
       )}
 
-      {/* <TassonomiaUtenti content={content} /> */}
-      {/* TO DO: Da riattivare quando si mergia con il ct ComeFarePer */}
+      <TassonomiaUtenti content={content} />
     </RichTextSection>
   ) : (
     <></>

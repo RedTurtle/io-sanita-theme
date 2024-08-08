@@ -69,7 +69,11 @@ const CardPlace = ({
               <>
                 {showAddress && (
                   <p>
-                    {intl.formatMessage(messages.address)}:{' '}
+                    {(item.street || item.zip_code || item.city || item.province) && (
+                      <>
+                        {intl.formatMessage(messages.address)}:{' '}
+                      </>
+                    )}
                     <Address item={item} showDistance={false} />
                   </p>
                 )}

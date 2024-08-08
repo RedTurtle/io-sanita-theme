@@ -2,7 +2,7 @@ import React from 'react';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 
-const UOMoreInfos = ({ content }) => {
+const UOUlterioriInformazioni = ({ content }) => {
   const intl = useIntl();
   return richTextHasContent(content.ulteriori_informazioni) ? (
     <RichTextSection
@@ -14,7 +14,7 @@ const UOMoreInfos = ({ content }) => {
   ) : null;
 };
 
-export default UOMoreInfos;
+export default UOUlterioriInformazioni;
 
 const messages = defineMessages({
   other_info: {

@@ -20,7 +20,8 @@ import {
   AccordionBody,
   Button,
 } from 'design-react-kit';
-import { Icon } from 'io-sanita-theme/components';
+import { Icon, CardPlace, CardFile} from 'io-sanita-theme/components';
+import { ContactCard, Attachments } from 'io-sanita-theme/components/View/commons';
 import './steps.scss';
 
 const messages = defineMessages({
@@ -40,6 +41,18 @@ const messages = defineMessages({
     id: 'steps_hide_details',
     defaultMessage: 'Nascondi dettagli',
   },
+  where: {
+    id: 'steps_where',
+    defaultMessage: 'Dove',
+  },
+  contacts: {
+    id: 'steps_contacts',
+    defaultMessage: 'Contatti',
+  },
+  documents: {
+    id: 'steps_documents',
+    defaultMessage: 'Documenti',
+  },
 });
 /**
  * Steps view component class.
@@ -58,8 +71,6 @@ const Steps = ({ content, steps = [] }) => {
     setActiveItem('');
   }, [allOpen]);
 
-  // TO DO: fare la chiamata alla fullobject dello step
-
   const searchSteps = useSelector((state) => state.content?.subrequests);
 
   // one request is made for every step
@@ -74,8 +85,6 @@ const Steps = ({ content, steps = [] }) => {
         }
       });
     }
-
-    console.log('step content', content);
 
     return () => {
       if (steps?.length > 0) {
@@ -141,6 +150,7 @@ const Steps = ({ content, steps = [] }) => {
                 {step?.title && <div className="step-title">{step.title}</div>}
               </AccordionHeader>
               <AccordionBody active={isActive()}>
+                {/* TESTO */}
                 {richTextHasContent(step?.testo) && (
                   <div className="mt-4">
                     <div className="mb-5">
@@ -148,6 +158,36 @@ const Steps = ({ content, steps = [] }) => {
                         data={step?.testo}
                       />
                     </div>
+                  </div>
+                )}
+
+                {/* UFFICI CORRELATI */}
+                {step?.uo_correlata?.length > 0 && (
+                  <div className="mb-5">
+                    <h4 className="h5">{intl.formatMessage(messages.where)}</h4>
+                    {step.uo_correlata.map(uo => {
+                      return <CardPlace item={uo} />
+                    })}
+                  </div>
+                )}
+
+                {/* PDC CORRELATI */}
+                {step?.pdc_correlato?.length > 0 && (
+                  <div className="mb-5">
+                    <h4 className="h5">{intl.formatMessage(messages.contacts)}</h4>
+                    {step.pdc_correlato.map((pdc) => (
+                      <ContactCard contact={pdc} show_title={true} key={pdc['@id']} />
+                    ))}
+                  </div>
+                )}
+
+                {/* DOCUMENTI */}
+                {step?.items.some((e) => e.id === 'documenti') && (
+                  <div className="mb-3">
+                    <h4 className="h5">{intl.formatMessage(messages.documents)}</h4>
+                      {step.items.filter((e) => e.id === 'documenti').map((item) => (
+                        <CardFile item={item} key={item['@id']} />
+                      ))}
                   </div>
                 )}
               </AccordionBody>

@@ -6,22 +6,22 @@ export const UOView = loadable(
       /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOView'
     ),
 );
-export const UOContacts = loadable(
+export const UOContatti = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOContacts'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOContatti'
     ),
 );
-export const UODocuments = loadable(
+export const UODocumenti = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UODocuments'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UODocumenti'
     ),
 );
-export const UOMoreInfos = loadable(
+export const UOUlterioriInformazioni = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOMoreInfos'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOUlterioriInformazioni'
     ),
 );
 export const UOPeople = loadable(
@@ -42,9 +42,27 @@ export const UOStructure = loadable(
       /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOStructure'
     ),
 );
-export const UOWhatDoesItDo = loadable(
+export const UODove = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOWhatDoesItDo'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UODove'
+    ),
+);
+export const UODateOrari = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UODateOrari'
+    ),
+);
+export const UOFaParteDi = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOFaParteDi'
+    ),
+);
+export const UOCompetenze = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOCompetenze'
     ),
 );

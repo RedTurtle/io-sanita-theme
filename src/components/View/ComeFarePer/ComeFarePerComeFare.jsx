@@ -15,8 +15,6 @@ const messages = defineMessages({
   },
 });
 
-/* TO DO: questo campo deve essere costruito con un accordion */
-
 const ComeFarePerComeFare = ({ content }) => {
   const intl = useIntl();
   const steps = content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
@@ -44,6 +42,5 @@ export default ComeFarePerComeFare;
 
 ComeFarePerComeFare.propTypes = {
   content: PropTypes.shape({
-    /* TO DO: aggiungere lo schema che ritorna */
   }).isRequired,
 };

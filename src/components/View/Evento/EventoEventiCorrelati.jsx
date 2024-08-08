@@ -17,8 +17,6 @@ const EventoEventiCorrelati = ({ content }) => {
 
   const events = content?.eventi_correlati || [];
 
-  // TO DO: aggiungere la card per gli eventi
-
   return events.length > 0 ? (
     <RichTextSection
       tag_id="eventi_correlati"

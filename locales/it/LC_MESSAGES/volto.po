@@ -63,6 +63,7 @@ msgstr "Clicca qui per sostituire il file"
 
 #. Default: "Contatti"
 #: components/View/Evento/EventoContatti
+#: components/View/UOView/UOContatti
 msgid "Contatti"
 msgstr ""
 
@@ -281,9 +282,9 @@ msgstr "Vedi tutto"
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "Stai provando ad accedere ad una risorsa protetta, per favore {login} al sito."
 
-#. Default: "A chi è rivolto"
-#: components/View/Evento/EventoCosE
-msgid "a_chi_rivolto"
+#. Default: "A chi si rivolge"
+#: components/View/Evento/EventoAChiSiRivolge
+msgid "a_chi_si_rivolge"
 msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
@@ -329,6 +330,11 @@ msgstr "Tutti gli argomenti"
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
 msgid "amministrazione"
+msgstr ""
+
+#. Default: "Assessore di riferimento"
+#: components/View/UOView/UOStructure
+msgid "assessore_riferimento"
 msgstr ""
 
 #. Default: "Allegato"
@@ -436,6 +442,11 @@ msgstr ""
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
+#. Default: "Competenze"
+#: components/View/UOView/UOCompetenze
+msgid "competenze"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -453,6 +464,7 @@ msgstr "Data"
 
 #. Default: "Date e orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/UOView/UODateOrari
 msgid "date_e_orari"
 msgstr ""
 
@@ -470,6 +482,12 @@ msgstr ""
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
 msgstr "Protocollo {protocollo} del {data_protocollo}"
+
+#. Default: "Dove"
+#: components/View/Evento/EventoDove
+#: components/View/UOView/UODove
+msgid "dove"
+msgstr ""
 
 #. Default: "Download and Play video"
 #: components/EmbeddedVideo/EmbeddedVideo
@@ -511,6 +529,11 @@ msgstr ""
 msgid "event_end"
 msgstr "La data di fine deve essere successiva alla data di inizio"
 
+#. Default: "Galleria"
+#: components/View/Evento/EventoGalleria
+msgid "event_gallery"
+msgstr ""
+
 #. Default: "Ulteriori informazioni"
 #: components/View/Evento/EventoUlterioriInformazioni
 msgid "event_ulteriori_informazioni"
@@ -526,15 +549,21 @@ msgstr ""
 msgid "evento_appuntamenti"
 msgstr ""
 
-#. Default: "Fa parte di"
-#: components/View/Evento/EventoFaParteDi
-msgid "evento_fa_parte_di"
+#. Default: "Eventi correlati"
+#: components/View/Evento/EventoEventiCorrelati
+msgid "evento_related_events"
 msgstr ""
 
 #. Default: "Scadenza"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "expire"
 msgstr "Scadenza"
+
+#. Default: "Fa parte di"
+#: components/View/Evento/EventoFaParteDi
+#: components/View/UOView/UOFaParteDi
+msgid "fa_parte_di"
+msgstr ""
 
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -589,6 +618,21 @@ msgstr "Home page"
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
+msgstr ""
+
+#. Default: "Servizi o uffici di riferimento"
+#: components/View/UOView/UOStructure
+msgid "legami_altre_strutture"
+msgstr ""
+
+#. Default: "Unità organizzativa genitore"
+#: components/View/UOView/UOStructure
+msgid "legami_struttura_padre"
+msgstr ""
+
+#. Default: "Servizi o uffici interni"
+#: components/View/UOView/UOStructure
+msgid "legami_strutture_figlie"
 msgstr ""
 
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
@@ -689,11 +733,6 @@ msgstr "Accedi con Spid"
 msgid "logo-subsite-alt"
 msgstr "Logo"
 
-#. Default: "Luogo"
-#: components/View/Evento/EventoLuoghi
-msgid "luogo"
-msgstr ""
-
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
@@ -787,17 +826,18 @@ msgstr "Opzioni"
 
 #. Default: "Orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/UOView/UODateOrari
 msgid "orari"
 msgstr ""
 
 #. Default: "Organizzato da"
-#: components/View/Evento/EventoContattiOrganizzatoreInterno
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "organizzato_da"
 msgstr ""
 
-#. Default: "Organizzatore"
-#: components/View/Evento/EventoContattiOrganizzatoreEsterno
-msgid "organizzatore"
+#. Default: "Ulteriori informazioni"
+#: components/View/UOView/UOUlterioriInformazioni
+msgid "other_info"
 msgstr ""
 
 #. Default: "PARLIAMO DI"
@@ -811,13 +851,12 @@ msgid "paginationLabel"
 msgstr "Selettore di pagina"
 
 #. Default: "Parteciperanno"
-#: components/View/Evento/EventoCosE
 #: components/View/Evento/EventoPartecipanti
 msgid "parteciperanno"
 msgstr ""
 
 #. Default: "Patrocinato da"
-#: components/View/Evento/EventoUlterioriInformazioni
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "patrocinato_da"
 msgstr ""
 
@@ -866,6 +905,16 @@ msgstr ""
 msgid "pec"
 msgstr ""
 
+#. Default: "Tutte le persone che fanno parte di questo servizio"
+#: components/View/UOView/UOPeople
+msgid "persone_p_description"
+msgstr ""
+
+#. Default: "Persone"
+#: components/View/UOView/UOPeople
+msgid "persone_struttura"
+msgstr ""
+
 #. Default: "Precedente"
 #: components/Slider/PrevArrow
 msgid "precedente"
@@ -895,6 +944,11 @@ msgstr "Rimuovi opzione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
 msgstr "Rimuovi argomento"
+
+#. Default: "Responsabile"
+#: components/View/UOView/UOStructure
+msgid "responsabile"
+msgstr ""
 
 #. Default: "il giorno"
 #: overrideTranslations
@@ -1007,6 +1061,11 @@ msgstr "Servizio attivo"
 msgid "servizi"
 msgstr ""
 
+#. Default: "Servizi disponibili"
+#: components/View/UOView/UOServices
+msgid "servizi_offerti"
+msgstr ""
+
 #. Default: "Accedi al servizio"
 #: components/View/commons/PageHeader/PageHeaderLinkServizio
 msgid "servizio_canale_digitale_link"
@@ -1068,13 +1127,23 @@ msgid "sort_relevance"
 msgstr ""
 
 #. Default: "Sponsor"
-#: components/View/Evento/Sponsors/Sponsors
+#: components/View/Evento/EventoSponsors
 msgid "sponsors"
 msgstr ""
 
 #. Default: "Inizio evento"
 #: components/View/Evento/Dates
 msgid "start"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_contacts"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_documents"
 msgstr ""
 
 #. Default: "Nascondi tutto"
@@ -1097,6 +1166,16 @@ msgstr ""
 msgid "steps_show_details"
 msgstr ""
 
+#. Default: "Dove"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_where"
+msgstr ""
+
+#. Default: "Struttura"
+#: components/View/UOView/UOStructure
+msgid "struttura"
+msgstr ""
+
 #. Default: "Successivo"
 #: components/Slider/NextArrow
 msgid "successivo"
@@ -1115,6 +1194,11 @@ msgstr "Impossibile aggiungere un elemento alla timeline senza aver compilato il
 #. Default: "Tipo evento"
 #: components/View/Evento/EventoCosE
 msgid "tipologia_evento"
+msgstr ""
+
+#. Default: "Tipologia di organizzazione"
+#: components/View/UOView/UOStructure
+msgid "tipologia_organizzazione"
 msgstr ""
 
 #. Default: "al"
@@ -1151,6 +1235,11 @@ msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al 
 #: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
 msgstr "Blocco sconosciuto"
+
+#. Default: "Allegati"
+#: components/View/UOView/UODocumenti
+msgid "uo_documenti"
+msgstr ""
 
 #. Default: "Vedi su Apple Maps"
 #: components/View/commons/Locations/LocationsMap

@@ -7,13 +7,16 @@ import React, { createRef } from 'react';
 
 import PropTypes from 'prop-types';
 import {
-  UOContacts,
-  UODocuments,
-  UOMoreInfos,
+  UOContatti,
+  UODocumenti,
+  UOUlterioriInformazioni,
   UOPeople,
   UOServices,
   UOStructure,
-  UOWhatDoesItDo,
+  UODove,
+  UOFaParteDi,
+  UODateOrari,
+  UOCompetenze,
 } from 'io-sanita-theme/components/View/UOView';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -28,26 +31,16 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 export const UOViewSectionsOrder = [
-  {
-    /* HEADER IMAGE */
-
-    component: ContentImage,
-    props: { position: 'documentBody' },
-  },
-
-  { /*** COSA FA ***/ component: UOWhatDoesItDo },
-
-  { /*** STRUTTURA ***/ component: UOStructure },
-
-  { /*** PERSONE ***/ component: UOPeople },
-
-  { /*** SERVIZI ***/ component: UOServices },
-
-  { /*** CONTATTI ***/ component: UOContacts },
-
-  { /* DOCUMENTI */ component: UODocuments },
-
-  { /* ULTERIORI INFORMAZIONI */ component: UOMoreInfos },
+  { /* COMPETENZE */ component: UOCompetenze },
+  { /* DOVE */ component: UODove },
+  { /* DATE E ORARI */ component: UODateOrari },
+  { /* FA PARTE DI */ component: UOFaParteDi },
+  { /* STRUTTURA */ component: UOStructure },
+  { /* PERSONE */ component: UOPeople },
+  { /* SERVIZI */ component: UOServices },
+  { /* CONTATTI */ component: UOContatti },
+  { /* DOCUMENTI */ component: UODocumenti },
+  { /* ULTERIORI INFORMAZIONI */ component: UOUlterioriInformazioni },
 ];
 
 /**

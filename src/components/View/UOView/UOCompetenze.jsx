@@ -3,17 +3,13 @@ import { defineMessages, useIntl } from 'react-intl';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
-  cosa_fa: {
-    id: 'cosa_fa',
-    defaultMessage: 'Cosa fa',
-  },
   competenze: {
     id: 'competenze',
     defaultMessage: 'Competenze',
   },
 });
 
-const UOWhatDoesItDo = ({ content }) => {
+const UOCompetenze = ({ content }) => {
   const intl = useIntl();
   return richTextHasContent(content?.competenze) ? (
     <RichTextSection
@@ -24,4 +20,4 @@ const UOWhatDoesItDo = ({ content }) => {
   ) : null;
 };
 
-export default UOWhatDoesItDo;
+export default UOCompetenze;

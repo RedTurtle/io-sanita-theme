@@ -26,7 +26,7 @@ const EventoCosE = ({ content }) => {
       data={content.descrizione_estesa}
     >
 
-      {/* TO DO: da spostare nell'hero della pagina */}
+      {/* TO DO: da excell è da spostare nell'hero della pagina */}
       {/* Tipologia evento */}
       {content?.tipologia_evento && (
         <div className="mb-5 pt-2">

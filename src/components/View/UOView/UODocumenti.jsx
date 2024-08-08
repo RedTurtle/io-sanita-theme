@@ -12,7 +12,7 @@ const messages = defineMessages({
   },
 });
 
-const UODocuments = ({ content }) => {
+const UODocumenti = ({ content }) => {
   const intl = useIntl();
 
   return (
@@ -41,4 +41,4 @@ const UODocuments = ({ content }) => {
   );
 };
 
-export default UODocuments;
+export default UODocumenti;

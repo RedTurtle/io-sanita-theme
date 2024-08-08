@@ -13,7 +13,7 @@ const messages = defineMessages({
   },
 });
 
-const EventoLuoghi = ({ content }) => {
+const EventoDove = ({ content }) => {
   const intl = useIntl();
 
   return content?.luoghi_correlati?.length > 0 ||
@@ -39,8 +39,8 @@ const EventoLuoghi = ({ content }) => {
   );
 };
 
-EventoLuoghi.propTypes = {
+EventoDove.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoLuoghi;
+export default EventoDove;

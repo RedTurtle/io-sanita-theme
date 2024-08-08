@@ -1,5 +1,5 @@
 /*
-  Viene mostrato l'item "genitore" quando l'Evento è figlio di un altro Evento
+  Viene mostrato l'item "genitore" quando l'uo è figlio di un altro uo
 */
 
 import React, { useEffect } from 'react';
@@ -11,7 +11,7 @@ import { CardImage } from 'io-sanita-theme/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { CardFeatured } from 'io-sanita-theme/components';
+import { CardPlace } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   fa_parte_di: {
@@ -20,40 +20,40 @@ const messages = defineMessages({
   },
 });
 
-const EventoFaParteDi = ({ content }) => {
+const UOFaParteDi = ({ content }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
 
-  const parentEvent =
-    content?.parent['@type'] === 'Event' ? content?.parent : null;
+  const parentUO =
+    content?.parent['@type'] === 'UnitaOrganizzativa' ? content?.parent : null;
 
-  const searchEvents = useSelector((state) => state.content?.subrequests);
+  const searchUO = useSelector((state) => state.content?.subrequests);
 
-  // one request is made for parentEvent
+  // one request is made for parentUO
   useEffect(() => {
-    if (parentEvent) {
-      const url = flattenToAppURL(parentEvent['@id']);
+    if (parentUO) {
+      const url = flattenToAppURL(parentUO['@id']);
       const loaded =
-      searchEvents?.[url]?.loading || searchEvents?.[url]?.loaded;
+      searchUO?.[url]?.loading || searchUO?.[url]?.loaded;
       if (!loaded) {
         dispatch(getContent(url, null, url));
       }
     }
     return () => {
-      if (parentEvent) {
-        dispatch(resetContent(flattenToAppURL(parentEvent['@id'])));
+      if (parentUO) {
+        dispatch(resetContent(flattenToAppURL(parentUO['@id'])));
       }
     };
   }, [content]);
 
-  return parentEvent ? (
+  return parentUO ? (
     <RichTextSection
       tag_id="fa_parte_di"
       title={intl.formatMessage(messages.fa_parte_di)}
     >
       <Row>
         <Col lg={6} className="py-lg-2">
-          <CardFeatured item={parentEvent} />
+          <CardPlace item={parentUO} />
         </Col>
       </Row>
     </RichTextSection>
@@ -62,8 +62,8 @@ const EventoFaParteDi = ({ content }) => {
   );
 };
 
-EventoFaParteDi.propTypes = {
+UOFaParteDi.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoFaParteDi;
+export default UOFaParteDi;
