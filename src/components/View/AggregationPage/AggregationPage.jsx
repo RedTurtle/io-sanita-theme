@@ -97,6 +97,8 @@ const AggregationPage = ({ match, route, location }) => {
     doSearch();
   }, [searchParams]);
 
+
+
   const doSearch = () => {
     if (!tassonomieSearch.loading) {
       dispatch(getTassonomieSearch(searchParams));
@@ -106,10 +108,7 @@ const AggregationPage = ({ match, route, location }) => {
   //all'arrivo dei risultati
   useEffect(() => {
     //setto le voci laterali
-    if (
-      result?.facets?.portal_types &&
-      sections.length <= defaultSections.length
-    ) {
+    if (result?.facets?.portal_types) {
       setSections([
         ...defaultSections,
         ...result.facets.portal_types.map((f) => {

@@ -12,10 +12,22 @@ export const EventoAppuntamenti = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAppuntamenti'
     ),
 );
+export const EventoAChiSiRivolge = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoAChiSiRivolge'
+    ),
+);
 export const EventoContatti = loadable(
   () =>
     import(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoContatti'
+    ),
+);
+export const EventoOrganizzatoDa = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoOrganizzatoDa'
     ),
 );
 export const EventoCosE = loadable(
@@ -54,10 +66,10 @@ export const EventoFaParteDi = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoFaParteDi'
     ),
 );
-export const EventoLuoghi = loadable(
+export const EventoDove = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoLuoghi'
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoDove'
     ),
 );
 
@@ -84,5 +96,18 @@ export const EventoUlterioriInformazioni = loadable(
   () =>
     import(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoUlterioriInformazioni'
+    ),
+);
+
+export const EventoGalleria = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoGalleria'
+    ),
+);
+export const EventoEventiCorrelati = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoEventiCorrelati'
     ),
 );

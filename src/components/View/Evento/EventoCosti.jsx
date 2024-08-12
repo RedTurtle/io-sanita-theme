@@ -19,7 +19,7 @@ const EventoCosti = ({ content }) => {
 
   return (
     <RichTextSection
-      data={content?.prezzo}
+      data={content?.costo}
       tag_id="costi"
       title={intl.formatMessage(messages.costi)}
     />
@@ -28,7 +28,7 @@ const EventoCosti = ({ content }) => {
 
 EventoCosti.propTypes = {
   content: PropTypes.shape({
-    prezzo: PropTypes.shape({
+    costo: PropTypes.shape({
       data: PropTypes.string,
     }),
   }).isRequired,

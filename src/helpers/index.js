@@ -56,3 +56,7 @@ export ContentTypeViewSections from 'io-sanita-theme/helpers/Views/ContentTypeVi
 export { contentFolderHasItems } from 'io-sanita-theme/helpers/Views/content';
 export Address from 'io-sanita-theme/helpers/Address/Address';
 export PuntoDiContattoValue from 'io-sanita-theme/helpers/Views/PuntoDiContattoValue';
+
+//pagination
+export { usePaginatedItemsSection } from 'io-sanita-theme/helpers/usePaginatedItemsSection.hook.ts';
+

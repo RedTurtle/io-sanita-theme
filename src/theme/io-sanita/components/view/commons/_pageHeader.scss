@@ -1,9 +1,31 @@
 .PageHeaderWrapper {
+  h1 {
+    margin-bottom: 0.67em;
+  }
+  p.subtitle {
+    font-weight: bold;
+    color: $headings-color;
+
+    @include rem-size(font-size, 19.36);
+  }
   p.description {
     @include rem-size(font-size, 24);
   }
 
   .header-image {
     max-width: 16em;
+  }
+
+  @media (min-width: #{map-get($grid-breakpoints, md)}) {
+    & + .content-image {
+      .wide-image {
+        margin-right: 0em;
+        margin-left: -0.9em;
+
+        figure {
+          margin: 0;
+        }
+      }
+    }
   }
 }

@@ -37,7 +37,7 @@ const TertiaryMenu = () => {
   const items = slimHeaderItems ?? [];
 
   return items?.length > 0 ? (
-    <Nav vertical={false} className="tertiary-menu">
+    <Nav vertical={false} className="tertiary-menu d-none d-lg-flex">
       {items.map((navitem, id) => (
         <NavItem
           tag="li"

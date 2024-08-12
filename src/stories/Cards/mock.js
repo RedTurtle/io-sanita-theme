@@ -93,6 +93,18 @@ export const ExampleFileItem = {
   type_title: 'File',
 };
 
+export const ExampleLink = {
+  '@id': '/test-del-collegamento',
+  '@type': 'Link',
+  UID: '7651c76386aa4672aa2d693494d84a94',
+  description: '',
+  id: 'test-del-collegamento',
+  review_state: 'private',
+  title: 'Test del collegamento',
+  type_title: 'Collegamento',
+  remoteUrl: "/link-di-test",
+};
+
 export const ExampleSimpleItem = {
   '@id': 'test-item',
   '@type': 'ComeFarePer',

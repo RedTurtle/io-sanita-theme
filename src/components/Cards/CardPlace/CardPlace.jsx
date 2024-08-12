@@ -27,9 +27,9 @@ const messages = defineMessages({
   },
 });
 
-export const CardPlace = ({
-  size = 'big',
-  type = 'complete',
+const CardPlace = ({
+  size = 'big', // 'small'
+  type = 'complete', // 'synthetic'
   showDistance = false,
   showAddress = true,
   item,
@@ -69,7 +69,11 @@ export const CardPlace = ({
               <>
                 {showAddress && (
                   <p>
-                    {intl.formatMessage(messages.address)}:{' '}
+                    {(item.street || item.zip_code || item.city || item.province) && (
+                      <>
+                        {intl.formatMessage(messages.address)}:{' '}
+                      </>
+                    )}
                     <Address item={item} showDistance={false} />
                   </p>
                 )}
@@ -83,10 +87,7 @@ export const CardPlace = ({
               </>
             )}
             {type !== 'synthetic' && (
-              <CardCategoryBottom
-                category={item.parliamo_di_metadata?.[0]}
-                isEditMode={isEditMode}
-              />
+              <CardCategoryBottom item={item} isEditMode={isEditMode} />
             )}
           </CardText>
         </div>
@@ -94,12 +95,13 @@ export const CardPlace = ({
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
-      {size != 'small' && type == 'complete' && (
+      {(size != 'small' && type == 'complete') &&
+        (item?.geolocation?.latitude && item?.geolocation?.longitude) && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
           <UniversalLink
-            href={`http://maps.google.com/?q=${item.street ?? ''} ${
-              item.zip_code ?? ''
-            } ${item.city ?? ''} ${item.province ?? ''} ${
+            href={`http://maps.google.com/?q=${item?.street ?? ''} ${
+              item?.zip_code ?? ''
+            } ${item?.city ?? ''} ${item?.province ?? ''} ${
               item.geolocation.latitude
             },${item.geolocation.longitude}`}
             target="_blank"
