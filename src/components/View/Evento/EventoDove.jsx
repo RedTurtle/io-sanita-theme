@@ -16,7 +16,7 @@ const messages = defineMessages({
 const EventoDove = ({ content }) => {
   const intl = useIntl();
 
-  return content?.luoghi_correlati?.length > 0 ||
+  return content?.struttura_correlata?.length > 0 ||
     content?.nome_sede?.length > 0 ||
     content?.street?.length > 0 ||
     (content?.geolocation?.latitude && content?.geolocation?.longitude) ||
@@ -25,13 +25,10 @@ const EventoDove = ({ content }) => {
     content?.quartiere?.length > 0 ||
     content?.circoscrizione?.length > 0 ||
     content?.country?.length > 0 ? (
-    <RichTextSection
-      tag_id="luoghi"
-      title={intl.formatMessage(messages.dove)}
-    >
+    <RichTextSection tag_id="luoghi" title={intl.formatMessage(messages.dove)}>
       <Locations
         content={content}
-        locations={content?.luoghi_correlati ?? []}
+        locations={content?.struttura_correlata ?? []}
       />
     </RichTextSection>
   ) : (

@@ -260,7 +260,7 @@ export const eventFormValidationHelper = (
 
   // Validazione dei campi obbligatori per il luogo
   const fullMandatoryList = [
-    'luoghi_correlati',
+    'struttura_correlata',
     'nome_sede',
     'street',
     'zip_code',
@@ -268,11 +268,11 @@ export const eventFormValidationHelper = (
     'country',
   ];
 
-  // Luoghi correlati è stato modificato
-  if ('luoghi_correlati' in touchedField) {
+  // struttura_correlata è stato modificato
+  if ('struttura_correlata' in touchedField) {
     if (
-      isEmpty(touchedField.luoghi_correlati) &&
-      // Se siamo qui vuol dire che luoghi correlati è stato svuotato.
+      isEmpty(touchedField.struttura_correlata) &&
+      // Se siamo qui vuol dire che  struttura_correlata è stato svuotato.
       (isEmpty(formData.nome_sede) ||
         isEmpty(formData.street) ||
         isEmpty(formData.zip_code) ||
@@ -284,13 +284,13 @@ export const eventFormValidationHelper = (
     }
   }
   // Uno dei campi dell'indirizzo viene compilato.
-  // Per ciascuno controllo se luoghi_correlati è compilato.
+  // Per ciascuno controllo se struttura_correlata è compilato.
   // Se non lo è e ne manca almeno uno degli altri, metto tutto obbligatorio.
   // Per ciascuno uso il touchedField quando è stato modificato lui stesso,
   // mentre controllo da formData per gli altri.
   else if ('nome_sede' in touchedField) {
     if (
-      isEmpty(formData.luoghi_correlati) &&
+      isEmpty(formData.struttura_correlata) &&
       (isEmpty(touchedField.nome_sede) ||
         isEmpty(formData.street) ||
         isEmpty(formData.zip_code) ||
@@ -301,7 +301,7 @@ export const eventFormValidationHelper = (
     }
   } else if ('street' in touchedField) {
     if (
-      isEmpty(formData.luoghi_correlati) &&
+      isEmpty(formData.struttura_correlata) &&
       (isEmpty(formData.nome_sede) ||
         isEmpty(touchedField.street) ||
         isEmpty(formData.zip_code) ||
@@ -312,7 +312,7 @@ export const eventFormValidationHelper = (
     }
   } else if ('zip_code' in touchedField) {
     if (
-      isEmpty(formData.luoghi_correlati) &&
+      isEmpty(formData.struttura_correlata) &&
       (isEmpty(formData.nome_sede) ||
         isEmpty(formData.street) ||
         isEmpty(touchedField.zip_code) ||
@@ -323,7 +323,7 @@ export const eventFormValidationHelper = (
     }
   } else if ('city' in touchedField) {
     if (
-      isEmpty(formData.luoghi_correlati) &&
+      isEmpty(formData.struttura_correlata) &&
       (isEmpty(formData.nome_sede) ||
         isEmpty(formData.street) ||
         isEmpty(formData.zip_code) ||
@@ -334,7 +334,7 @@ export const eventFormValidationHelper = (
     }
   } else if ('country' in touchedField) {
     if (
-      isEmpty(formData.luoghi_correlati) &&
+      isEmpty(formData.struttura_correlata) &&
       (isEmpty(formData.nome_sede) ||
         isEmpty(formData.street) ||
         isEmpty(formData.zip_code) ||
@@ -346,7 +346,7 @@ export const eventFormValidationHelper = (
   }
   // Il campo modificato è un altro, faccio un check base su tutti i campi
   else if (
-    isEmpty(formData.luoghi_correlati) &&
+    isEmpty(formData.struttura_correlata) &&
     (isEmpty(formData.nome_sede) ||
       isEmpty(formData.street) ||
       isEmpty(formData.zip_code) ||
