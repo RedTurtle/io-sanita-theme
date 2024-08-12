@@ -25,7 +25,7 @@ const messages = defineMessages({
 const PageHeaderDates = ({ content }) => {
   const intl = useIntl();
   const view_effective = content.effective && content['@type'] !== 'Event';
-  const view_expires = content.expires && content['@type'] !== 'News Item';
+  const view_expires = content.expires;
   const view = view_effective || view_expires;
 
   return view ? (

@@ -9,7 +9,7 @@ import { NewsItemView } from 'io-sanita-theme/components/View/NewsItem';
 const ioSanitaContentTypesViews = {
   Document: PageView,
   Event: EventoView,
-  NewsItem: NewsItemView,
+  'News Item': NewsItemView,
   UnitaOrganizzativa: UOView,
   ComeFarePer: ComeFarePerView,
   Step: StepView,

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import { Attachments } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+
+import { Attachments } from 'io-sanita-theme/components/View/commons';
 
 const NewsItemDocumenti = ({ content }) => {
-  // return <Attachments content={content} folder_name={'documenti-allegati'} />;
+  return <Attachments content={content} folder_name={'documenti-allegati'} />;
 };
 
 NewsItemDocumenti.propTypes = {

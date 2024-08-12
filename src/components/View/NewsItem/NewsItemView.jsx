@@ -6,7 +6,7 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
+import { ContentTypeViewSections, useReadingTime } from 'io-sanita-theme/helpers';
 import {
   PageHeader,
   SkipToMainContent,
@@ -14,8 +14,7 @@ import {
   RelatedItems,
   useSideMenu,
   Metadata,
-  RelatedItemInEvidence,
-  //useReadingTime,
+  Placeholder
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -29,27 +28,20 @@ import {
   NewsItemACuraDi,
   NewsItemNotizieCorrelate,
   NewsItemUlterioriInformazioni
-} from 'io-sanita-theme/components/View/Evento';
+} from 'io-sanita-theme/components/View/NewsItem';
 
  export const NewsItemViewSectionsOrder = [
-   {
-     /* HEADER IMAGE */
-     component: ContentImage,
-     props: { position: 'documentBody' },
-   },
-   //{ /* TIPOLOGIA NOTIZIA */ component: NewsItemText }, /* TO DO: da capire se va aggiunto nell'header come tassonomia */
-   //{ /* DESCRIZIONE BREVE */ component: NewsItemDescrizione },
-   //{ /* DATE */ component: NewsItemText }, /* DATA DI PUBBLICAZIONE E SCADENZA DELLA NOTIZIA */ TO DO: capire se basta visualizzarlo nell'header
-   // { /* NUMERO PROGRESSIVO COMUNICATO STAMPA */ component: NewsItemText }, -> TO DO: dice che viene visualizzato nell'hero */
+
+
    { /* TESTO COMPLETO */ component: NewsItemTesto },
    { /* DOCUMENTI */ component: NewsItemDocumenti },
    { /* GALLERY */ component: NewsItemGallery },
-  //  { /* RELAZIONE CON LE PERSONE */ component: NewsItemPersone },
-  //  { /* RELAZIONE CON LE STRUTTURE */ component: NewsItemStrutture },
-  //  { /* RELAZIONE CON SERVIZI E PRESTAZIONI */ component: NewsItemServiziEPrestazioni },
+   { /* RELAZIONE CON LE PERSONE */ component: NewsItemPersone },
+   { /* RELAZIONE CON LE STRUTTURE */ component: NewsItemStrutture },
+   { /* RELAZIONE CON SERVIZI E PRESTAZIONI */ component: NewsItemServiziEPrestazioni },
    { /* A CURA DI */ component: NewsItemACuraDi },
-  // { /* NOTIZIE CORRELATE */ component: NewsItemNotizieCorrelate }, // TO DO: forse ci basta il RelatedItems
-   { /* ULTERIORI INFORMAZIONI - PARLIAMO DI */ component: NewsItemUlterioriInformazioni }, //TO DO: CHIPS ARGOMENTI E UTENTI
+   { /* NOTIZIE CORRELATE */ component: NewsItemNotizieCorrelate },
+   { /* ULTERIORI INFORMAZIONI - PARLIAMO DI */ component: NewsItemUlterioriInformazioni },
    { /* METADATA */ component: Metadata },
  ];
 
@@ -62,12 +54,9 @@ import {
  const NewsItemView = ({ content, location }) => {
    let documentBody = createRef();
    const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
-   //const { readingtime } = useReadingTime(content, documentBody);
+   const { readingtime } = useReadingTime(content, documentBody);
 
    let related_items = [];
-   if (content?.notizie_correlate?.length > 0) {
-     related_items = [...related_items, ...content.notizie_correlate];
-   }
    if (content?.relatedItems?.length > 0) {
      related_items = [...related_items, ...content.relatedItems];
    }
@@ -78,15 +67,14 @@ import {
          <SkipToMainContent />
          <PageHeader
            content={content}
-          //  readingtime={readingtime}
-          //  showreadingtime={true}
-          // TO DO: forse qua a aggiunto il numero progressivo
+            readingtime={readingtime}
+           showreadingtime={true}
            showdates={true}
            showtassonomiaargomenti={true}
          />
 
          {/* HEADER IMAGE */}
-         <ContentImage content={content} position="afterHeader" />
+         <ContentImage content={content} />
          <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">
             {__CLIENT__ && (
@@ -106,10 +94,10 @@ import {
            </section>
          </div>
        </div>
-       {/* <NewsItemPlaceholderAfterContent content={content} /> */}
+
+       <Placeholder position="afterContent" content={content} />
        <RelatedItems list={related_items} />
-       <RelatedItemInEvidence content={content} />
-       {/* <NewsItemPlaceholderAfterRelatedItems content={content} /> */}
+       <Placeholder position="afterRelatedItems" content={content} />
      </>
    );
  };
