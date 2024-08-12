@@ -71,7 +71,7 @@ const EventoView = ({ content, location }) => {
         <PageHeader content={content} showdates={true} />
 
         {/* HEADER IMAGE */}
-        <ContentImage content={content} position={'afterHeader'} />
+        <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">
