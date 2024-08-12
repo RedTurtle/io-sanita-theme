@@ -13,7 +13,7 @@
         position: absolute;
         left: 1.5rem;
         bottom: -0.5rem;
-        background-color: #C5C7C9;
+        background-color: #c5c7c9;
       }
     }
 
@@ -50,8 +50,14 @@
     .accordion-body {
       margin-left: 2.8rem;
       padding-bottom: 12px;
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--bs-font-sans-serif);
+      }
     }
-
 
     &.accordion-background-active {
       .accordion-header {
