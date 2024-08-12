@@ -1,0 +1,18 @@
+.navbar {
+    &.it-navscroll-wrapper {
+        .link-list-wrapper {
+            ul {
+                li {
+                    a {
+                        &.active {
+                            border-left: 2px solid $headings-color; //$navscroll-selection-link-left;
+                            span {
+                                color: $headings-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
