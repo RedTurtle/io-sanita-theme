@@ -15,6 +15,7 @@ import {
   LoginAgid,
   HandleAnchor,
   GenericAppExtras,
+  SiteSettingsExtras,
   Icon,
   FileWidget,
 } from 'io-sanita-theme/components';
@@ -24,7 +25,11 @@ import { removeListingVariation } from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
+import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
+
+export const AGGREGATION_PAGE_ARGOMENTO = "/argomento/";
+export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = "/tipologia-utente/";
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
@@ -140,6 +145,10 @@ export default function applyConfig(config) {
         match: '',
         component: GenericAppExtras,
       },
+      {
+        match: '',
+        component: SiteSettingsExtras,
+      },
     ],
     maxFileUploadSize: null,
 
@@ -157,10 +166,6 @@ export default function applyConfig(config) {
     },
     videoAllowExternalsDefault: false,
   };
-
-  config.settings.nonContentRoutes = config.settings.nonContentRoutes.filter(
-    (route) => route !== '/contact-form',
-  );
 
   /******************************************************************************
    * BLOCKS
@@ -199,6 +204,11 @@ export default function applyConfig(config) {
   //   BlockExtraTags: { component: () => null },
   // };
 
+  config.registerComponent({
+    name: 'SiteSettingsExtras',
+    component: SiteSettingsExtras,
+  });
+
   // REDUCERS
   config.addonReducers = {
     ...config.addonReducers,
@@ -217,7 +227,31 @@ export default function applyConfig(config) {
       path: ['/login', '/**/login'],
       component: LoginAgid,
     },
+    {
+      path: [AGGREGATION_PAGE_ARGOMENTO+':id'],
+      component: AggregationPage,
+      type: 'parliamo_di',
+    },
+    {
+      path: [AGGREGATION_PAGE_TIPOLOGIA_UTENTE+':id'],
+      component: AggregationPage,
+      type: 'a_chi_si_rivolge_tassonomia',
+    },
   ];
 
+  config.settings.nonContentRoutes = [
+    ...config.settings.nonContentRoutes.filter(
+      (route) => route !== '/contact-form',
+    ),
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+    ///\/argomento\/.*$/,
+    ///\/tipologia-utente\/.*$/,
+  ];
+  config.settings.publicNonContentRoutes = [
+    ...(config.settings.publicNonContentRoutes ?? []),
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE
+  ];
   return config;
 }

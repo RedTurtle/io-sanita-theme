@@ -9,12 +9,12 @@ import config from '@plone/volto/registry';
  * @returns {string} Markup of the component.
  */
 const ContentImage = ({ content }) => {
-  const view = content?.image_field;
+  const view = content?.image;
   const Image = config.getComponent({ name: 'Image' }).component;
 
   return view ? (
     <div className="content-image">
-      <div className="row wide-image row-full-width my-3">
+      <div className="row wide-image row-full-width">
         <figure className="figure">
           <Image
             item={content}

@@ -1,0 +1,16 @@
+.public-ui .card.card-guide {
+  .card-body {
+    .icon.icon-svg-book {
+      height: 17px !important;
+    }
+    h5.card-title {
+      font-size: 1rem;
+    }
+    .card-text {
+      &,
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

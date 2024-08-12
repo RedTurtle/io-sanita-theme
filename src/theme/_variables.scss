@@ -10,9 +10,16 @@ $primary-darker: hsl(
 ); // color-ocean-10 --> $primary-a12 --> primary-darker
 $accent: #9c0769;
 
-
 $primary-text: #fff;
 $accent-text: #fff;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    'accent': $accent,
+  ),
+  $theme-colors
+);
 
 $bg-primary-lightest: hsl($primary-h, 50%, 97%); //#F4FAFB;
 $bg-primary-lighter: hsl($primary-h, 50%, 87%); //#CDE9EE;
@@ -21,6 +28,7 @@ $bg-primary-lighter: hsl($primary-h, 50%, 87%); //#CDE9EE;
 $font-weight-base: 300;
 $body-color: #2f475e;
 $headings-color: #1a1a1a;
+$accordion-title-color: $body-color;
 
 //header
 $header-slim-bg-color: $primary-dark;
@@ -32,6 +40,8 @@ $footer-top-background-asl: $primary-darker; // color-ocean-10 --> $primary-a12 
 $nav-link-font-size: 1rem;
 $nav-link-font-weight: 600;
 
+
+
 //breadcrumbs
 $breadcrumb-link-color: $primary-darker;
 
@@ -40,14 +50,15 @@ $dropdown-font-size: 0.889rem;
 
 //card
 $card-link-color: $accent;
+$card-color: $body-color;
+$card-p-color: $body-color;
+$card-category-size: calc(14 / 18) + rem;
 
 //chips
 $color-text-secondary: $accent;
 $color-border-subtle: $accent;
 
 //$color-text-base: #2f475e;
-$card-color: $body-color;
-$card-p-color: $body-color;
 
 // ALERT-BLOCK CUSTOM COLORS
 $alert-danger: #a32219 !default;
@@ -68,6 +79,3 @@ $gdpr-focus-shadow:
   inset 0 1px 0 rgba(255, 255, 255, 0.15),
   0 1px 1px rgba(0, 0, 0, 0.075),
   0 0 0 0.2rem $gdpr-focus-color !default;
-
-
-

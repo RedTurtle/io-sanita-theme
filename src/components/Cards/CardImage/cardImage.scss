@@ -1,0 +1,9 @@
+.public-ui .card.card-image {
+  .card-body {
+    .card-title {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

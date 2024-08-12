@@ -1,0 +1,37 @@
+.public-ui .card.card-place {
+  .avatar {
+    border-radius: 0;
+    background-color: var(--primary-lightest);
+  }
+
+  .card-body {
+    .card-text {
+      &,
+      p {
+        font-size: 0.8886rem;
+      }
+    }
+  }
+
+  .card-footer {
+    a {
+      display: inline-flex;
+      align-items: center;
+
+      .icon.icon-xs {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &.card-place-small {
+    font-size: 0.889rem;
+    h5.card-title {
+      font-size: 0.889rem;
+    }
+    .category {
+      font-size: 0.8rem;
+    }
+  }
+}

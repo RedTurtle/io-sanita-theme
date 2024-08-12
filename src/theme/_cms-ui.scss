@@ -150,77 +150,7 @@ body.cms-ui {
     }
   }
 
-  // Link button and tooltip
-  .link-form-container {
-    display: flex;
-    padding: 0.3rem 0;
-
-    .field {
-      display: flex;
-
-      .wrap-field {
-        display: flex;
-        align-items: center;
-
-        .input-anchorlink-theme input:focus,
-        .ui.icon.button:focus,
-        .ui.basic.button:focus {
-          border-radius: 0;
-          outline: solid 2px $focus-outline-color;
-        }
-
-        .cancel .icon {
-          fill: #e40166 !important;
-        }
-      }
-
-      input#field-link {
-        height: auto;
-        color: #444;
-        font-weight: normal;
-      }
-
-      #field-data-element-select {
-        position: relative;
-        width: 100%;
-        min-width: 220px;
-        height: 34px;
-        padding: 0 7px 0 12px;
-        margin-top: 0.2rem;
-        background-color: transparent;
-        color: #444;
-        font-family: 'Poppins', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-        font-size: 0.8rem;
-        font-style: normal;
-        font-weight: normal;
-
-        .react-select__control {
-          min-height: 0;
-          background-color: #fafafa;
-
-          .react-select__single-value {
-            color: #444;
-            font-weight: normal;
-          }
-
-          .react-select__placeholder {
-            opacity: 0.4;
-          }
-        }
-      }
-
-      .wrapper-submit {
-        display: flex;
-        justify-content: flex-end;
-        padding-left: 0.8rem;
-
-        .ui.basic.button:focus {
-          border-radius: 0;
-          outline: solid 2px $focus-outline-color;
-        }
-      }
-    }
-  }
+  a .icon.external-link{ height: 1rem; margin-left: 0.1rem;}
 
   /*Select*/
   .react-select__menu {
@@ -280,6 +210,9 @@ body.cms-ui {
   }
 
   &.section-controlpanel {
+    .ui .grid h3 .content {
+      font-size: 1rem;
+    }
     a {
       text-decoration: none;
 

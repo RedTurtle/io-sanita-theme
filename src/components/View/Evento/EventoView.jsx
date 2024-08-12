@@ -13,37 +13,44 @@ import {
   ContentImage,
   RelatedItems,
   useSideMenu,
-  Topics,
   Metadata,
   Placeholder,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
   EventoCosE,
+  EventoPartecipanti,
+  EventoAChiSiRivolge,
   EventoUlterioriInformazioni,
   EventoDateOrari,
+  EventoGalleria,
   EventoCosti,
+  EventoDove,
+  EventoSponsors,
+  EventoFaParteDi,
+  EventoAppuntamenti,
+  EventoDocumenti,
+  EventoContatti,
+  EventoEventiCorrelati,
+  EventoOrganizzatoDa,
 } from 'io-sanita-theme/components/View/Evento';
-
-// import {
-//   EventoLuoghi,
-//   EventoDocumenti,
-//   EventoContatti,
-//   EventoPadreEFigli,
-//   EventoSponsors,
-// } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 
 export const EventoViewSectionsOrder = [
   { /* COS'è */ component: EventoCosE },
-  // { /* LUOGHI */ component: EventoLuoghi },
+  { /* CHI PARTECIPA */ component: EventoPartecipanti },
+  { /* EVENTI PADRI */ component: EventoFaParteDi },
+  { /* GALLERY */ component: EventoGalleria },
+  { /* A CHI SI RIVOLGE */ component: EventoAChiSiRivolge },
+  { /* DOVE */ component: EventoDove },
   { /* DATE E ORARI */ component: EventoDateOrari },
   { /* COSTI */ component: EventoCosti },
-  // { /* DOCUMENTI */ component: EventoDocumenti },
-  // { /* CONTATTI */ component: EventoContatti },
-  // { /* EVENTS */ component: EventoPadreEFigli },
-  // { /* SPONSORS */ component: EventoSponsors },
+  { /* DOCUMENTI */ component: EventoDocumenti },
+  { /* CONTATTI */ component: EventoContatti },
+  { /* ORGANIZZATO DA */ component: EventoOrganizzatoDa },
+  { /* EVENTI FIGLI */ component: EventoAppuntamenti },
+  { /* EVENTI CORRELATI */ component: EventoEventiCorrelati },
+  { /* SPONSORS */ component: EventoSponsors },
   { /* ULTERIORI INFORMAZIONI */ component: EventoUlterioriInformazioni },
-  // { /* EVENTI CORRELATI */ component: EventoEventiCorrelati },
   { /* METADATA */ component: Metadata },
 ];
 
@@ -64,7 +71,7 @@ const EventoView = ({ content, location }) => {
         <PageHeader content={content} showdates={true} />
 
         {/* HEADER IMAGE */}
-        <ContentImage content={content} />
+        <ContentImage content={content} position={'afterHeader'} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-md-12 col-lg-4">
@@ -139,7 +146,7 @@ EventoView.propTypes = {
     modified: PropTypes.string,
     luoghi_evento: PropTypes.array,
     related_news: PropTypes.array,
-    tassonomia_argomenti: PropTypes.arrayOf(
+    parliamo_di_metadata: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
         token: PropTypes.string,

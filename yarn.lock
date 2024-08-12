@@ -8579,17 +8579,19 @@ __metadata:
     volto-dropdownmenu: 4.1.3
     volto-editablefooter: 5.1.7
     volto-feedback: 0.3.2
-    volto-feedback-italia: 1.0.2
+    volto-feedback-italia: 1.0.3
     volto-form-block: 3.8.7
     volto-form-block-italia: 1.0.0
-    volto-gdpr-privacy: 2.2.7
+    volto-gdpr-privacy: 2.2.8
     volto-querywidget-with-browser: 0.4.2
     volto-secondarymenu: 4.1.1
-    volto-slate-italia: 1.0.0
-    volto-slimheader: 0.1.2
+    volto-site-settings: 0.4.4
+    volto-slate-italia: 1.0.3
+    volto-slimheader: 0.1.3
     volto-social-settings: 3.0.0
     volto-subfooter: 3.1.1
     volto-subsites: 4.0.2
+    volto-venue: 4.1.0
   peerDependencies:
     "@plone/volto": ^18.0.0
   languageName: unknown
@@ -9334,6 +9336,22 @@ __metadata:
   dependencies:
     package-json: ^8.1.0
   checksum: 1f0deba00d5a34394cce4463c938811f51bbb539b131674f4bb2062c63f2cc3b80bccd56ecade3bd5932d04a34cf0a5a8a2ccc4ec9e5e6b285a9a7b3e27d0d66
+  languageName: node
+  linkType: hard
+
+"leaflet.markercluster@npm:1.5.0":
+  version: 1.5.0
+  resolution: "leaflet.markercluster@npm:1.5.0"
+  peerDependencies:
+    leaflet: ^1.3.1
+  checksum: 69853f7799a1f29bc3f8b0807cd13ae8c240b1538c3000e7ac2c3d0878ad948d75b6daf21c48231591ffa4ff7dbd27c09800981e65520783150e4458c268b10a
+  languageName: node
+  linkType: hard
+
+"leaflet@npm:1.6.0":
+  version: 1.6.0
+  resolution: "leaflet@npm:1.6.0"
+  checksum: 792eb233adb6d7191df5380014fa3f980120aa4577df3e759f37dd2ae8d2132d23f0b6260e078873326c8afd1fcb1316ee3e472869e57c45bb43d13302387ed3
   languageName: node
   linkType: hard
 
@@ -11222,6 +11240,22 @@ __metadata:
   version: 18.3.1
   resolution: "react-is@npm:18.3.1"
   checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
+  languageName: node
+  linkType: hard
+
+"react-leaflet@npm:2.7.0":
+  version: 2.7.0
+  resolution: "react-leaflet@npm:2.7.0"
+  dependencies:
+    "@babel/runtime": ^7.9.2
+    fast-deep-equal: ^3.1.1
+    hoist-non-react-statics: ^3.3.2
+    warning: ^4.0.3
+  peerDependencies:
+    leaflet: ^1.6.0
+    react: ^16.8.0
+    react-dom: ^16.8.0
+  checksum: ae699476d094f8fd5e212530ba18f02f615b8ab33b0452dca2dcd4d3ea5258c1306b711de0259407df7fb6efec75a86c666eb6f4c5e1613e19c1bf7d352c8d51
   languageName: node
   linkType: hard
 
@@ -13269,13 +13303,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-feedback-italia@npm:1.0.2":
-  version: 1.0.2
-  resolution: "volto-feedback-italia@npm:1.0.2"
+"volto-feedback-italia@npm:1.0.3":
+  version: 1.0.3
+  resolution: "volto-feedback-italia@npm:1.0.3"
   peerDependencies:
     "@plone/volto": ^17.0.0
     volto-feedback: ^0.3.2
-  checksum: d15f328cd15fa732db6aa9e66cb0491648b891e6e3b467867fc3fed0420622bacc5c7a0c53c7a9ca2f1250105e391caec69a421d3024dfbcdcab420bea72f7db
+  checksum: 37603fcb8be731173fd59a5723d7219e753e46a5c38434c53447d49dd568c9f84df05902dcfe5d3a21662203dafb0d4cbb5208c8670566ea153f8bd1200537db
   languageName: node
   linkType: hard
 
@@ -13316,15 +13350,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.2.7":
-  version: 2.2.7
-  resolution: "volto-gdpr-privacy@npm:2.2.7"
+"volto-gdpr-privacy@npm:2.2.8":
+  version: 2.2.8
+  resolution: "volto-gdpr-privacy@npm:2.2.8"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: beb301d21ff8f831fd1c1b924830e2b23fea91050f139d0211c2f91a009e81ac336334df77a636245cb50c199fba8d88ba9742048c81befad20ef7c9d995b1b0
+  checksum: c46d8b35aeb1780d933cb0a629459e9f2d502af6b910a70939ba960f40ebda985a3932aa6b7466edbd974b7681533b7f96b72d97736f92b0cf8077117d955365
   languageName: node
   linkType: hard
 
@@ -13357,21 +13391,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-slate-italia@npm:1.0.0":
-  version: 1.0.0
-  resolution: "volto-slate-italia@npm:1.0.0"
+"volto-site-settings@npm:0.4.4":
+  version: 0.4.4
+  resolution: "volto-site-settings@npm:0.4.4"
+  dependencies:
+    volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ^17.0.0
-  checksum: 8524409fd966a17655074850b3206de3c2f28d26d1f9eea67931e31e68370be5887734ad95a0266d8cded37b28f77eb51832ca3eaf7087946948d50c24fd01dc
+  checksum: ef0c504b64075b7d40d5eb2fd5102428ecd1a2ef4622ee162ed4fd1d8b2a3772c2c83558c056b9e292b9e593a179879c0e7738db81921efff78872821543b1dd
   languageName: node
   linkType: hard
 
-"volto-slimheader@npm:0.1.2":
-  version: 0.1.2
-  resolution: "volto-slimheader@npm:0.1.2"
+"volto-slate-italia@npm:1.0.3":
+  version: 1.0.3
+  resolution: "volto-slate-italia@npm:1.0.3"
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+  checksum: bc9b9cec10b7bde0afde571bedb17ca9c5f8fa888aafd34ffec076a64020320f290497b5cb86c654166fdb1ecb1e82b12c667f92dba1189cf82b6c1d7f7936fc
+  languageName: node
+  linkType: hard
+
+"volto-slimheader@npm:0.1.3":
+  version: 0.1.3
+  resolution: "volto-slimheader@npm:0.1.3"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: fb657c3274785f3201d7720e8fde999e1be6cec18bda98634d6ed68192a524cbbb4298b48b9758d3600549b37db1bcc69b6a2f3264193f0956bb57dcc0db0e9b
+  checksum: 2314fa185cdd5b02dbcaff172d8893e13622fee92c2ffad9f4e674ae43bb632155b70bfb827b818665c38380de1dfed3a91e5043e4e6e67da0e9e81c2f9368e0
   languageName: node
   linkType: hard
 
@@ -13414,6 +13459,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"volto-venue@npm:4.1.0":
+  version: 4.1.0
+  resolution: "volto-venue@npm:4.1.0"
+  dependencies:
+    leaflet: 1.6.0
+    leaflet.markercluster: 1.5.0
+    react-leaflet: 2.7.0
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 64ca36bc93a08e503fdc372476020a0643b109819b101a604c24221655a8c43d6a8b20ed61b759d1ad0a8d6a82b5c1b6c687438a7847ff40770e0d15dd1c0292
+  languageName: node
+  linkType: hard
+
 "wait-on@npm:^7.2.0":
   version: 7.2.0
   resolution: "wait-on@npm:7.2.0"
@@ -13429,7 +13487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"warning@npm:^4.0.2":
+"warning@npm:^4.0.2, warning@npm:^4.0.3":
   version: 4.0.3
   resolution: "warning@npm:4.0.3"
   dependencies:

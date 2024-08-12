@@ -32,6 +32,9 @@ a {
   }
 }
 
+.font-small {
+  @include rem-size(font-size, 16);
+}
 .listing-item img {
   max-width: unset;
   margin-right: unset;
@@ -173,15 +176,15 @@ iframe {
   }
 
   svg.fa-icon {
-    width: 1em;
+    width: auto;
     fill: currentColor;
   }
 
   .icon.fa-icon.placeholder {
     //to prevent layout shift
     display: inline-block;
-    width: 1em;
     height: 1em;
+    width: auto;
     line-height: 1;
   }
 }
@@ -263,7 +266,6 @@ picture.volto-image.responsive img.full-width,
     }
   }
 }
-
 
 //callout (remove volto's styles)
 .callout {

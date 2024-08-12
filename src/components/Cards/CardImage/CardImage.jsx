@@ -8,6 +8,7 @@ import {
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import {
   getCalendarDate,
@@ -15,8 +16,20 @@ import {
 } from 'io-sanita-theme/helpers';
 
 import config from '@plone/volto/registry';
+import './cardImage.scss';
 
-export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
+/*
+ - Implementa la Card Eventi e la Card News del template AGID delle AUSL
+ - Used to display Events and other content-types with image like News
+ */
+export const CardImage = ({
+  item,
+  showDescription = true,
+  imgSrc,
+  isEditMode,
+  titleTag = 'h3',
+  rrule = {},
+}) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
@@ -29,16 +42,16 @@ export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
   const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
 
   return (
-    <Card className="shadow rounded no-after">
+    <Card className="shadow rounded no-after card-image">
       {img && (
-        <div class="img-responsive-wrapper">
-          <div class="img-responsive img-responsive-panoramic">
-            <figure class="img-wrapper">{img}</figure>
+        <div className="img-responsive-wrapper">
+          <div className="img-responsive img-responsive-panoramic">
+            <figure className="img-wrapper">{img}</figure>
           </div>
         </div>
       )}
       <CardBody className="p-4">
-        <CardTitle tag="h3">
+        <CardTitle tag={titleTag}>
           <UniversalLink
             item={!isEditMode ? item : null}
             href={isEditMode ? '#' : ''}
@@ -48,28 +61,23 @@ export const CardImage = ({ item, imgSrc, isEditMode, rrule = {} }) => {
           </UniversalLink>
         </CardTitle>
 
-        {item['@type'] === 'Event' && <p className="event-date">{date}</p>}
+        {item['@type'] === 'Event' && date && (
+          <p className="event-date">{date}</p>
+        )}
 
-        {item.description && <CardText>{item.description}</CardText>}
+        {item.description && showDescription && (
+          <CardText>{item.description}</CardText>
+        )}
 
         {eventRecurrenceMore && (
           <div className="py-2">{eventRecurrenceMore}</div>
         )}
 
-        {(item.topic || (item['@type'] !== 'Event' && date)) && (
-          <div className="category-bottom">
-            {item.topic && (
-              <div className="category">
-                <UniversalLink href="#">
-                  <span className="text">{item.topic}</span>
-                </UniversalLink>
-              </div>
-            )}
-            {date && item['@type'] !== 'Event' && (
-              <div className="data">{date}</div>
-            )}
-          </div>
-        )}
+        <CardCategoryBottom
+          item={item}
+          date={date && item['@type'] !== 'Event' ? date : null}
+          isEditMode={isEditMode}
+        />
       </CardBody>
     </Card>
   );

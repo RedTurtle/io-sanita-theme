@@ -54,26 +54,11 @@ function reducePropsToState(propsList) {
  * @returns {null} null
  */
 function handleStateChangeOnClient(classList) {
-  //  document.body.className = '';
-  let domClassNames = [];
-  Object.keys(document.body.classList).forEach((k) => {
-    domClassNames.push(document.body.classList[k]);
-  });
-
-  classList.forEach((className) => {
-    // This allows the component to accept more than one class at the same time
-    if (className.includes(' ')) {
-      className.split(' ').forEach((className) => {
-        if (document.body.classList.contains(className)) {
-          domClassNames.splice(domClassNames.indexOf(className), 1);
-        }
-      });
-      document.body.classList = domClassNames.join(' ');
+  classList.forEach((c) => {
+    if (c.indexOf(' ') > 0) {
+      c.split(' ').forEach((cc) => document.body.classList.remove(cc));
     } else {
-      if (document.body.classList.contains(className)) {
-        domClassNames.splice(domClassNames.indexOf(className), 1);
-        document.body.classList = domClassNames.join(' ');
-      }
+      document.body.classList.remove(c);
     }
   });
 }

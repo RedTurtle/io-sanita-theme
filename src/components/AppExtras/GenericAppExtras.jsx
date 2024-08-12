@@ -30,6 +30,7 @@ const GenericAppExtras = (props) => {
           <RemoveBodyClass className="cms-ui" />
         </>
       )}
+
       <ScrollToTop />
       <SubsiteLoader pathname={location.pathname} />
     </>

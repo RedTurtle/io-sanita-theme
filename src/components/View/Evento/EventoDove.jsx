@@ -3,22 +3,20 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import {
-  RichTextSection,
-  Locations,
-} from 'design-comuni-plone-theme/components/ItaliaTheme/View';
+import { RichTextSection } from 'io-sanita-theme/helpers';
+import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
-  luoghi: {
-    id: 'luogo',
-    defaultMessage: 'Luogo',
+  dove: {
+    id: 'dove',
+    defaultMessage: 'Dove',
   },
 });
 
-const EventoLuoghi = ({ content }) => {
+const EventoDove = ({ content }) => {
   const intl = useIntl();
 
-  return content?.luoghi_correlati?.length > 0 ||
+  return content?.struttura_correlata?.length > 0 ||
     content?.nome_sede?.length > 0 ||
     content?.street?.length > 0 ||
     (content?.geolocation?.latitude && content?.geolocation?.longitude) ||
@@ -27,14 +25,10 @@ const EventoLuoghi = ({ content }) => {
     content?.quartiere?.length > 0 ||
     content?.circoscrizione?.length > 0 ||
     content?.country?.length > 0 ? (
-    <RichTextSection
-      tag_id="luoghi"
-      title={intl.formatMessage(messages.luoghi)}
-    >
+    <RichTextSection tag_id="luoghi" title={intl.formatMessage(messages.dove)}>
       <Locations
         content={content}
-        locations={content?.luoghi_correlati ?? []}
-        show_icon={true}
+        locations={content?.struttura_correlata ?? []}
       />
     </RichTextSection>
   ) : (
@@ -42,8 +36,8 @@ const EventoLuoghi = ({ content }) => {
   );
 };
 
-EventoLuoghi.propTypes = {
+EventoDove.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoLuoghi;
+export default EventoDove;

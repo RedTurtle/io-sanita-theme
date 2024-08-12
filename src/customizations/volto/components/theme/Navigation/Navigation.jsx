@@ -118,7 +118,6 @@ const Navigation = ({ pathname = '/' }) => {
             <FocusLock disabled={!focusTrapActive}>
               <div className="menu-wrapper">
                 <BrandWrapper mobile={true} setCollapseOpen={setCollapseOpen} />
-
                 {/* Main Menu */}
                 <Nav data-element="main-navigation" navbar role="menubar">
                   {menu
@@ -131,16 +130,12 @@ const Navigation = ({ pathname = '/' }) => {
                       />
                     ))}
                 </Nav>
-
                 {/* Secondary Menu */}
                 <MenuSecondary pathname={pathname} />
-
                 {/* Headerslim Menu - main site */}
                 {!subsite && <TertiaryMenu />}
-
                 {/* Social Links */}
                 <SocialHeader />
-
                 {/* Headerslim Menu - parent site (if subsite) */}
                 {subsite && <ParentSiteMenu />}
               </div>

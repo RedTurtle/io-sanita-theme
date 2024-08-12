@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-07-03T13:26:09.922Z\n"
+"POT-Creation-Date: 2024-08-08T22:21:56.541Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,6 +21,26 @@ msgstr ""
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
+msgstr ""
+
+#. Default: "Indirizzo"
+#: components/Cards/CardPersona/CardPersona
+msgid "CardPersona: address label"
+msgstr ""
+
+#. Default: "Apri in mappa"
+#: components/Cards/CardPersona/CardPersona
+msgid "CardPersona: view on googlemaps"
+msgstr ""
+
+#. Default: "Indirizzo"
+#: components/Cards/CardPlace/CardPlace
+msgid "CardPlace: address label"
+msgstr ""
+
+#. Default: "Apri in mappa"
+#: components/Cards/CardPlace/CardPlace
+msgid "CardPlace: view on googlemaps"
 msgstr ""
 
 #. Default: "Cerca"
@@ -45,10 +65,12 @@ msgstr ""
 
 #. Default: "Contatti"
 #: components/View/Evento/EventoContatti
+#: components/View/UOView/UOContatti
 msgid "Contatti"
 msgstr ""
 
 #. Default: "Contenuto"
+#: components/View/AggregationPage/SideMenu
 #: components/View/commons/SideMenu/SideMenu
 msgid "Contenuto"
 msgstr ""
@@ -209,6 +231,11 @@ msgstr ""
 msgid "Thank you."
 msgstr ""
 
+#. Default: "Tipi di contenuto"
+#: components/View/AggregationPage/SideMenu
+msgid "Tipi di contenuto"
+msgstr ""
+
 #. Default: "Trascina qui il file..."
 #: components/Widgets/FileWidget
 msgid "Trascina qui il file ..."
@@ -257,14 +284,34 @@ msgstr ""
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr ""
 
-#. Default: "A chi è rivolto"
-#: components/View/Evento/EventoCosE
-msgid "a_chi_rivolto"
+#. Default: "A chi si rivolge"
+#: components/View/Evento/EventoAChiSiRivolge
+msgid "a_chi_si_rivolge"
 msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "advandedSectionsFilters"
+msgstr ""
+
+#. Default: "Tutti"
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_all"
+msgstr ""
+
+#. Default: "Tutti i contenuti relativi all'argomento "{title}""
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_description_argument"
+msgstr ""
+
+#. Default: "Tutti i contenuti dedicati a "{title}""
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_description_tipologia_utente"
+msgstr ""
+
+#. Default: "Nessun risultato trovato."
+#: components/View/AggregationPage/AggregationPage
+msgid "aggregation_page_no_results"
 msgstr ""
 
 #. Default: "Tutto"
@@ -285,6 +332,21 @@ msgstr ""
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
 msgid "amministrazione"
+msgstr ""
+
+#. Default: "Assessore di riferimento"
+#: components/View/UOView/UOStructure
+msgid "assessore_riferimento"
+msgstr ""
+
+#. Default: "Allegato"
+#: components/Cards/CardFile/CardFile
+msgid "attachment"
+msgstr ""
+
+#. Default: "Allegati"
+#: components/View/commons/Attachments/Attachments
+msgid "attachments"
 msgstr ""
 
 #. Default: "Torna alla ricerca"
@@ -352,6 +414,41 @@ msgstr ""
 msgid "closeSearch"
 msgstr ""
 
+#. Default: "A chi è rivolto"
+#: components/View/ComeFarePer/ComeFarePerAChiERivolto
+msgid "come_fare_per_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Come fare"
+#: components/View/ComeFarePer/ComeFarePerComeFare
+msgid "come_fare_per_come_fare"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Panoramica"
+#: components/View/ComeFarePer/ComeFarePerDescrizione
+msgid "come_fare_per_panoramica"
+msgstr ""
+
+#. Default: "Parliamo di"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_parliamo_di"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_ulteriori_informazioni"
+msgstr ""
+
+#. Default: "Competenze"
+#: components/View/UOView/UOCompetenze
+msgid "competenze"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -369,6 +466,7 @@ msgstr ""
 
 #. Default: "Date e orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/UOView/UODateOrari
 msgid "date_e_orari"
 msgstr ""
 
@@ -385,6 +483,12 @@ msgstr ""
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Evento/EventoDove
+#: components/View/UOView/UODove
+msgid "dove"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -427,6 +531,11 @@ msgstr ""
 msgid "event_end"
 msgstr ""
 
+#. Default: "Galleria"
+#: components/View/Evento/EventoGalleria
+msgid "event_gallery"
+msgstr ""
+
 #. Default: "Ulteriori informazioni"
 #: components/View/Evento/EventoUlterioriInformazioni
 msgid "event_ulteriori_informazioni"
@@ -437,9 +546,25 @@ msgstr ""
 msgid "event_url"
 msgstr ""
 
+#. Default: "Appuntamenti"
+#: components/View/Evento/EventoAppuntamenti
+msgid "evento_appuntamenti"
+msgstr ""
+
+#. Default: "Eventi correlati"
+#: components/View/Evento/EventoEventiCorrelati
+msgid "evento_related_events"
+msgstr ""
+
 #. Default: "Scadenza"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "expire"
+msgstr ""
+
+#. Default: "Fa parte di"
+#: components/View/Evento/EventoFaParteDi
+#: components/View/UOView/UOFaParteDi
+msgid "fa_parte_di"
 msgstr ""
 
 #. Default: "Filtri"
@@ -492,19 +617,34 @@ msgstr ""
 msgid "homepage"
 msgstr ""
 
-#. Default: "Icona per l'argomento {topic_title}"
-#: components/View/Argomento/ArgumentIcon
-msgid "icon_title"
-msgstr ""
-
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
 msgstr ""
 
+#. Default: "Servizi o uffici di riferimento"
+#: components/View/UOView/UOStructure
+msgid "legami_altre_strutture"
+msgstr ""
+
+#. Default: "Unità organizzativa genitore"
+#: components/View/UOView/UOStructure
+msgid "legami_struttura_padre"
+msgstr ""
+
+#. Default: "Servizi o uffici interni"
+#: components/View/UOView/UOStructure
+msgid "legami_strutture_figlie"
+msgstr ""
+
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
 #: overrideTranslations
 msgid "legend_required"
+msgstr ""
+
+#. Default: "Collegamento"
+#: components/Cards/CardGuide/CardGuide
+msgid "link"
 msgstr ""
 
 #. Default: "Questo evento ha più date: vedi tutte"
@@ -595,11 +735,6 @@ msgstr ""
 msgid "logo-subsite-alt"
 msgstr ""
 
-#. Default: "Luogo"
-#: components/View/Evento/EventoLuoghi
-msgid "luogo"
-msgstr ""
-
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
@@ -622,12 +757,12 @@ msgid "modified"
 msgstr ""
 
 #. Default: "Scarica il file"
-#: helpers/Files/DownloadFileFormat
+#: helpers/Files/FileIcon
 msgid "modulo_download_file"
 msgstr ""
 
 #. Default: "Scarica in formato"
-#: helpers/Files/DownloadFileFormat
+#: helpers/Files/FileIcon
 msgid "modulo_download_in_format"
 msgstr ""
 
@@ -693,17 +828,18 @@ msgstr ""
 
 #. Default: "Orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/UOView/UODateOrari
 msgid "orari"
 msgstr ""
 
 #. Default: "Organizzato da"
-#: components/View/Evento/EventoContattiOrganizzatoreInterno
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "organizzato_da"
 msgstr ""
 
-#. Default: "Organizzatore"
-#: components/View/Evento/EventoContattiOrganizzatoreEsterno
-msgid "organizzatore"
+#. Default: "Ulteriori informazioni"
+#: components/View/UOView/UOUlterioriInformazioni
+msgid "other_info"
 msgstr ""
 
 #. Default: "PARLIAMO DI"
@@ -717,13 +853,68 @@ msgid "paginationLabel"
 msgstr ""
 
 #. Default: "Parteciperanno"
-#: components/View/Evento/EventoCosE
+#: components/View/Evento/EventoPartecipanti
 msgid "parteciperanno"
 msgstr ""
 
 #. Default: "Patrocinato da"
-#: components/View/Evento/EventoUlterioriInformazioni
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "patrocinato_da"
+msgstr ""
+
+#. Default: "Account"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_account"
+msgstr ""
+
+#. Default: "Email"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_email"
+msgstr ""
+
+#. Default: "Fax"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_fax"
+msgstr ""
+
+#. Default: "LinkedIn"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_linkedin"
+msgstr ""
+
+#. Default: "Social"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_social"
+msgstr ""
+
+#. Default: "Numero di telefono"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_telefono"
+msgstr ""
+
+#. Default: "Twitter"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_twitter"
+msgstr ""
+
+#. Default: "Sito web"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_url"
+msgstr ""
+
+#. Default: "PEC"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pec"
+msgstr ""
+
+#. Default: "Tutte le persone che fanno parte di questo servizio"
+#: components/View/UOView/UOPeople
+msgid "persone_p_description"
+msgstr ""
+
+#. Default: "Persone"
+#: components/View/UOView/UOPeople
+msgid "persone_struttura"
 msgstr ""
 
 #. Default: "Precedente"
@@ -754,6 +945,11 @@ msgstr ""
 #. Default: "Rimuovi argomento"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/UOView/UOStructure
+msgid "responsabile"
 msgstr ""
 
 #. Default: "il giorno"
@@ -867,9 +1063,19 @@ msgstr ""
 msgid "servizi"
 msgstr ""
 
+#. Default: "Servizi disponibili"
+#: components/View/UOView/UOServices
+msgid "servizi_offerti"
+msgstr ""
+
 #. Default: "Accedi al servizio"
 #: components/View/commons/PageHeader/PageHeaderLinkServizio
 msgid "servizio_canale_digitale_link"
+msgstr ""
+
+#. Default: "Servizio online"
+#: components/Cards/CardSimple/CardSimple
+msgid "servizio_online_chip"
 msgstr ""
 
 #. Default: "Vai alle altre opzioni di ricerca"
@@ -897,9 +1103,79 @@ msgstr ""
 msgid "skiplink-navigation"
 msgstr ""
 
+#. Default: "Skype"
+#: helpers/Views/PuntoDiContattoValue
+msgid "skype"
+msgstr ""
+
+#. Default: "Ordina per"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_by"
+msgstr ""
+
+#. Default: "Data (prima i più recenti)"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_data_desc"
+msgstr ""
+
+#. Default: "Alfabeticamente"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_name"
+msgstr ""
+
+#. Default: "Rilevanza"
+#: components/View/AggregationPage/SortBy/SortBy
+msgid "sort_relevance"
+msgstr ""
+
+#. Default: "Sponsor"
+#: components/View/Evento/EventoSponsors
+msgid "sponsors"
+msgstr ""
+
 #. Default: "Inizio evento"
 #: components/View/Evento/Dates
 msgid "start"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_contacts"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_documents"
+msgstr ""
+
+#. Default: "Nascondi tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_all"
+msgstr ""
+
+#. Default: "Nascondi dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_details"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_all"
+msgstr ""
+
+#. Default: "Mostra dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_details"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_where"
+msgstr ""
+
+#. Default: "Struttura"
+#: components/View/UOView/UOStructure
+msgid "struttura"
 msgstr ""
 
 #. Default: "Successivo"
@@ -907,9 +1183,9 @@ msgstr ""
 msgid "successivo"
 msgstr ""
 
-#. Default: "Con il supporto di"
-#: components/View/Evento/EventoContattiSupportatoDa
-msgid "supported_by"
+#. Default: "Telegram"
+#: helpers/Views/PuntoDiContattoValue
+msgid "telegram"
 msgstr ""
 
 #. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
@@ -920,6 +1196,11 @@ msgstr ""
 #. Default: "Tipo evento"
 #: components/View/Evento/EventoCosE
 msgid "tipologia_evento"
+msgstr ""
+
+#. Default: "Tipologia di organizzazione"
+#: components/View/UOView/UOStructure
+msgid "tipologia_organizzazione"
 msgstr ""
 
 #. Default: "al"
@@ -947,11 +1228,6 @@ msgstr ""
 msgid "topics"
 msgstr ""
 
-#. Default: "Ulteriori informazioni"
-#: components/View/commons/HelpBox
-msgid "ulteriori_info_icona"
-msgstr ""
-
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
@@ -960,6 +1236,31 @@ msgstr ""
 #. Default: "Blocco sconosciuto"
 #: helpers/Blocks/RenderBlocks
 msgid "unknownBlock"
+msgstr ""
+
+#. Default: "Allegati"
+#: components/View/UOView/UODocumenti
+msgid "uo_documenti"
+msgstr ""
+
+#. Default: "Vedi su Apple Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_applemaps"
+msgstr ""
+
+#. Default: "Vedi su Bing Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_bingmaps"
+msgstr ""
+
+#. Default: "Vedi su Google Maps"
+#: components/View/commons/Locations/LocationsMap
+msgid "view_on_googlemaps"
+msgstr ""
+
+#. Default: "Whatsapp"
+#: helpers/Views/PuntoDiContattoValue
+msgid "whatsapp"
 msgstr ""
 
 #. Default: "Questo evento ha luogo per tutta la giornata."

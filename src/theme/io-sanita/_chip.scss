@@ -1,20 +1,25 @@
-.chip, .public-ui .chip{
+.chip,
+.public-ui .chip {
   &.chip-accent {
-      background-color: transparent;
-      border-color: var(--is-accent);
+    background-color: transparent;
+    border-color: var(--is-accent);
+    color: var(--is-accent);
+
+    & > .chip-label {
       color: var(--is-accent);
+    }
+
+    &:hover {
+      background-color: var(--is-accent);
+      border-color: var(--is-accent);
 
       & > .chip-label {
-        color: var(--is-accent);
+        color: var(--is-accent-text);
       }
 
-      &:hover {
-        background-color: var(--is-accent);
-        border-color: var(--is-accent);
-
-        & > .chip-label {
-          color: var(--is-accent-text);
-        }
+      .icon {
+        fill: var(--is-accent-text) !important;
       }
     }
+  }
 }
