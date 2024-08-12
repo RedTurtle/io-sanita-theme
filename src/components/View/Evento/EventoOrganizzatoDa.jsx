@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-// import { CardPlace } from 'io-sanita-theme/components';
-import { Col } from 'design-react-kit';
-import { richTextHasContent, RichTextSection, RichText } from 'io-sanita-theme/helpers';
+import { CardPlace } from 'io-sanita-theme/components';
+import { Row, Col } from 'design-react-kit';
+import {
+  richTextHasContent,
+  RichTextSection,
+  RichText,
+} from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   organizzato_da: {
@@ -34,17 +38,18 @@ const EventoOrganizzatoDa = ({ content }) => {
         </div>
       )}
 
-      {/* TO DO: da controllare quando abbiamo le UO fatte e sostituire con la cardPlace */}
       {/* Organizzato da: UO link interno */}
-      {/* {content?.organizzato_da_interno?.length > 0 && (
+      {content?.organizzato_da_interno?.length > 0 && (
         <div className="mb-5">
-          {content?.organizzato_da_interno?.map((item, index) => (
-            <Col lg={6}>
-              <CardPlace item={item} size={'small'} type={'synthetic'} />
-            </Col>
-          ))}
+          <Row>
+            {content?.organizzato_da_interno?.map((item, index) => (
+              <Col lg={6}>
+                <CardPlace item={item} size={'small'} type={'synthetic'} />
+              </Col>
+            ))}
+          </Row>
         </div>
-      )} */}
+      )}
 
       {/* Patrocinato da */}
       {richTextHasContent(content?.patrocinato_da) && (
@@ -57,7 +62,6 @@ const EventoOrganizzatoDa = ({ content }) => {
           </div>
         </div>
       )}
-
     </RichTextSection>
   ) : null;
 };
