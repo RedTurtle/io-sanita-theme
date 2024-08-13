@@ -28,9 +28,8 @@ const SiteSettingsExtras = (props) => {
     siteTitle = siteTitle + ' - ' + parentSiteTitle;
   }
 
-  // siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
+  siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
 
-  // return <Helmet titleTemplate={`%s - ${siteTitle}`} />;
-  return <></>;
+  return <Helmet titleTemplate={`%s - ${siteTitle}`} />;
 };
 export default SiteSettingsExtras;
