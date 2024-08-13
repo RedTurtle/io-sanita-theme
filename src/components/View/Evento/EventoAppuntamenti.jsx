@@ -23,7 +23,7 @@ const EventoAppuntamenti = ({ content }) => {
     >
       <Row>
         {events.map((item, i) => (
-          <Col lg={6} className="py-lg-2" key={item['@id']}>
+          <Col lg={6} className="py-lg-2" key={'appuntamenti'+item['@id']}>
             <CardImage item={item} />
           </Col>
         ))}

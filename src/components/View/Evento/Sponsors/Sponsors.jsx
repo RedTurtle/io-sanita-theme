@@ -48,14 +48,14 @@ const Sponsors = ({ sponsors }) => {
         {sponsors_logos.length > 0 && (
           <div className="sponsor-logos">
             {sponsors_logos.map((item, i) => (
-              <Sponsor key={item['@id']} item={item} />
+              <Sponsor key={'sponsor'+item['@id']} item={item} />
             ))}
           </div>
         )}
         {sponsors_no_logos.length > 0 && (
           <div className="sponsor-no-logos">
             {sponsors_no_logos.map((item, i) => (
-              <Sponsor key={item['@id']} item={item} />
+              <Sponsor key={'sponsor-no'+item['@id']} item={item} />
             ))}
           </div>
         )}

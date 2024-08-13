@@ -38,7 +38,7 @@ const EventoPartecipanti = ({ content }) => {
       {content?.persona_correlata?.length > 0 && (
         <Row>
           {content?.persona_correlata?.map((item, i) => (
-            <Col lg={6} key={item['@id']} className="py-lg-2">
+            <Col lg={6} key={'partecipanti'+item['@id']} className="py-lg-2">
               <CardPersona item={item} />
             </Col>
           ))}

@@ -43,7 +43,7 @@ const EventoOrganizzatoDa = ({ content }) => {
         <div className="mb-5">
           <Row>
             {content?.organizzato_da_interno?.map((item, index) => (
-              <Col lg={6}>
+              <Col lg={6} key={'organizzato_Da'+index}>
                 <CardPlace item={item} size={'small'} type={'synthetic'} />
               </Col>
             ))}
