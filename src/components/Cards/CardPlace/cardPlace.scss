@@ -1,3 +1,4 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
 .public-ui .card.card-place {
   .avatar {
     border-radius: 0;
@@ -27,9 +28,13 @@
 
   &.card-place-small {
     font-size: 0.889rem;
-    h5.card-title {
-      font-size: 0.889rem;
+
+    h3,h4,h5{
+      &.card-title {
+        @include rem-size(font-size, 18);
+      }
     }
+
     .category {
       font-size: 0.8rem;
     }

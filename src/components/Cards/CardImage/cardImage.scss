@@ -1,6 +1,12 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
 .public-ui .card.card-image {
   .card-body {
     .card-title {
+      &,&h3,&h4,&h5{
+        @include rem-size(font-size, 22);
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
