@@ -4,7 +4,7 @@
   .card-body {
     .card-title {
       &,&h3,&h4,&h5{
-        @include rem-size(font-size, 22);
+        @include rem-size(font-size, 24);
       }
 
       &:last-child {

@@ -10,10 +10,7 @@
     }
   }
 
-  .event-date {
-    @include rem-size(font-size, 20);
-    font-weight: $font-weight-semibold;
-  }
+
 
   .card-teaser-image {
     .card-image {
