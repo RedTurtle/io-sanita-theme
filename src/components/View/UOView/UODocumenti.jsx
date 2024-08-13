@@ -39,12 +39,14 @@ const UODocumenti = ({ content }) => {
             )}
 
             {/* ALLEGATI */}
-            <Attachments
-              content={content}
-              folder_name={'allegati'}
-              as_section={false}
-              title={intl.formatMessage(messages.attachments)}
-            />
+            {(contentFolderHasItems(content, 'allegati')) && (
+                <Attachments
+                content={content}
+                folder_name={'allegati'}
+                as_section={false}
+                title={intl.formatMessage(messages.attachments)}
+              />
+            )}
           </RichTextSection>
         )}
       </>
