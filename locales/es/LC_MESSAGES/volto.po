@@ -69,7 +69,6 @@ msgid "Clicca qui per sostituire il file"
 msgstr "Haga clic aquí para reemplazar el archivo"
 
 #. Default: "Contatti"
-#: components/View/Evento/EventoContatti
 #: components/View/UOView/UOContatti
 msgid "Contatti"
 msgstr ""
@@ -414,6 +413,11 @@ msgstr ""
 msgid "closeSearch"
 msgstr "Cerrar búsqueda"
 
+#. Default: "Come accedere"
+#: components/View/Struttura/StrutturaComeAccedere
+msgid "come_accedere"
+msgstr ""
+
 #. Default: "A chi è rivolto"
 #: components/View/ComeFarePer/ComeFarePerAChiERivolto
 msgid "come_fare_per_a_chi_si_rivolge"
@@ -422,11 +426,6 @@ msgstr ""
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
 msgid "come_fare_per_come_fare"
-msgstr ""
-
-#. Default: "Documenti"
-#: components/View/ComeFarePer/ComeFarePerDocumenti
-msgid "come_fare_per_documenti"
 msgstr ""
 
 #. Default: "Panoramica"
@@ -449,6 +448,17 @@ msgstr ""
 msgid "competenze"
 msgstr ""
 
+#. Default: "Contatti"
+#: components/View/Evento/EventoContatti
+#: components/View/Struttura/StrutturaContatti
+msgid "contatti"
+msgstr ""
+
+#. Default: "Coordinatore"
+#: components/View/Struttura/StrutturaPersonale
+msgid "coordinatore"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -466,6 +476,7 @@ msgstr "Fecha"
 
 #. Default: "Date e orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/Struttura/StrutturaDateOrari
 #: components/View/UOView/UODateOrari
 msgid "date_e_orari"
 msgstr ""
@@ -487,6 +498,7 @@ msgstr ""
 
 #. Default: "Dove"
 #: components/View/Evento/EventoDove
+#: components/View/Struttura/StrutturaDove
 #: components/View/UOView/UODove
 msgid "dove"
 msgstr ""
@@ -751,6 +763,41 @@ msgstr "Descargar archivo"
 msgid "modulo_download_in_format"
 msgstr "Descargar en"
 
+#. Default: "A cura di"
+#: components/View/NewsItem/NewsItemACuraDi
+msgid "news_item_a_cura_di"
+msgstr ""
+
+#. Default: "Contenuto"
+#: components/View/NewsItem/NewsItemTesto
+msgid "news_item_contenuto"
+msgstr ""
+
+#. Default: "Notizie correlate"
+#: components/View/NewsItem/NewsItemNotizieCorrelate
+msgid "news_item_notizie_correlate"
+msgstr ""
+
+#. Default: "Persone"
+#: components/View/NewsItem/NewsItemPersone
+msgid "news_item_persone"
+msgstr ""
+
+#. Default: "Servizi e prestazioni"
+#: components/View/NewsItem/NewsItemServiziEPrestazioni
+msgid "news_item_servizi_prestazioni"
+msgstr ""
+
+#. Default: "Strutture"
+#: components/View/NewsItem/NewsItemStrutture
+msgid "news_item_strutture"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/NewsItem/NewsItemUlterioriInformazioni
+msgid "news_item_ulteriori_informazioni"
+msgstr ""
+
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
 msgid "novita"
@@ -813,6 +860,7 @@ msgstr "Opciones"
 
 #. Default: "Orari"
 #: components/View/Evento/EventoDateOrari
+#: components/View/Struttura/StrutturaDateOrari
 #: components/View/UOView/UODateOrari
 msgid "orari"
 msgstr ""
@@ -823,6 +871,7 @@ msgid "organizzato_da"
 msgstr ""
 
 #. Default: "Ulteriori informazioni"
+#: components/View/Struttura/StrutturaUlterioriInformazioni
 #: components/View/UOView/UOUlterioriInformazioni
 msgid "other_info"
 msgstr ""
@@ -893,6 +942,7 @@ msgid "pec"
 msgstr ""
 
 #. Default: "Personale"
+#: components/View/Struttura/StrutturaPersonale
 #: components/View/UOView/UOPersonale
 msgid "personale"
 msgstr ""
@@ -928,6 +978,7 @@ msgid "removeTopic"
 msgstr "Quitar tema"
 
 #. Default: "Responsabile"
+#: components/View/Struttura/StrutturaResponsabile
 #: components/View/UOView/UOResponsabile
 msgid "responsabile"
 msgstr ""
@@ -1040,6 +1091,7 @@ msgstr ""
 
 #. Default: "Servizi"
 #: components/View/commons/RelatedItems
+#: components/View/Struttura/StrutturaServizi
 #: components/View/UOView/UOServizi
 msgid "servizi"
 msgstr ""
@@ -1147,6 +1199,31 @@ msgstr ""
 #. Default: "Dove"
 #: components/View/ComeFarePer/Steps/Steps
 msgid "steps_where"
+msgstr ""
+
+#. Default: "A chi è rivolto"
+#: components/View/Struttura/StrutturaAChiERivolto
+msgid "struttura_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Strutture correlate"
+#: components/View/Struttura/StrutturaStruttureCorrelate
+msgid "struttura_correlata"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Struttura/StrutturaCosE
+msgid "struttura_cos_e"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Struttura/StrutturaGalleria
+msgid "struttura_gallery"
+msgstr ""
+
+#. Default: "Uffici correlati"
+#: components/View/Struttura/StrutturaUfficiCorrelati
+msgid "struttura_uo_correlata"
 msgstr ""
 
 #. Default: "Successivo"

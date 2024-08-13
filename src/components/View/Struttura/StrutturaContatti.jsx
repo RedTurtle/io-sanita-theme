@@ -10,7 +10,7 @@ const messages = defineMessages({
   },
 });
 
-const EventoContatti = ({ content }) => {
+const StrutturaContatti = ({ content }) => {
   const intl = useIntl();
 
   return content?.pdc_correlato?.length > 0 ? (
@@ -27,8 +27,8 @@ const EventoContatti = ({ content }) => {
   ) : null;
 };
 
-EventoContatti.propTypes = {
+StrutturaContatti.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoContatti;
+export default StrutturaContatti;
