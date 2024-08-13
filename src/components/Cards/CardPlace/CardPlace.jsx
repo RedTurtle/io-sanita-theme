@@ -34,8 +34,11 @@ const CardPlace = ({
   showAddress = true,
   item,
   isEditMode,
+  titleTag="h3"
 }) => {
   const intl = useIntl();
+  const latLong = (item?.geolocation?.latitude!=0 || item?.geolocation?.longitude!=0) ? (item?.geolocation?.latitude + ',' + item?.geolocation?.longitude) : '';
+  const showGeolocation = latLong?.length > 0 || (item?.street!=null && (item?.zip_code!=null || item.city!=null));
 
   return (
     <Card
@@ -50,7 +53,7 @@ const CardPlace = ({
             'pe-3': size == 'small',
           })}
         >
-          <CardTitle tag="h5">
+          <CardTitle tag={titleTag}>
             {item['@id'] ? (
               <UniversalLink
                 item={!isEditMode ? item : null}
@@ -95,15 +98,13 @@ const CardPlace = ({
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
-      {(size != 'small' && type == 'complete') &&
-        (item?.geolocation?.latitude && item?.geolocation?.longitude) && (
+      {type == 'complete' && size != 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
+
           <UniversalLink
             href={`http://maps.google.com/?q=${item?.street ?? ''} ${
               item?.zip_code ?? ''
-            } ${item?.city ?? ''} ${item?.province ?? ''} ${
-              item.geolocation.latitude
-            },${item.geolocation.longitude}`}
+            } ${item?.city ?? ''} ${item?.province ?? ''} ${latLong}`}
             target="_blank"
             rel="noopener noreferrer"
           >

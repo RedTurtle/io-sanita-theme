@@ -13,7 +13,7 @@ import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import './cardFeatured.scss';
 
-const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
+const CardFeatured = ({ size = 'large', item, titleTag = 'h3', imgSrc,  isEditMode }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
@@ -29,7 +29,7 @@ const CardFeatured = ({ size = 'large', item, imgSrc, isEditMode }) => {
       wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured card-featured-${size}`}
     >
       <CardBody className="p-4">
-        <CardTitle tag="h3">
+        <CardTitle tag={titleTag}>
           <UniversalLink
             item={!isEditMode ? item : null}
             href={isEditMode ? '#' : ''}

@@ -27,7 +27,7 @@ const messages = defineMessages({
   },
 });
 
-export const CardFile = ({ item, isEditMode }) => {
+export const CardFile = ({ item, titleTag = 'h3', isEditMode }) => {
   const intl = useIntl();
   let _item = { ...item };
 
@@ -62,7 +62,7 @@ export const CardFile = ({ item, isEditMode }) => {
     <Card className="shadow rounded card-file no-after">
       <CardBody>
         <div className="card-file-content">
-          <CardTitle tag="h5" className="d-flex mb-0 align-items-center">
+          <CardTitle tag={titleTag} className="d-flex mb-0 align-items-center">
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}

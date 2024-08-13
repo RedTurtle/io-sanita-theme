@@ -1,11 +1,16 @@
 @import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+@import 'io-sanita-theme/theme/io-sanita/mixins';
 
 .card-featured.card-teaser-wrapper-equal.card-teaser-block-2 {
   display: block;
 
-  h3.card-title{
-    color: var(--bs-primary);
+  h3,h4,h5{
+    &.card-title{
+      @include rem-size(font-size, 24);
+    }
   }
+
+
 
   .card-teaser-image {
     .card-image {

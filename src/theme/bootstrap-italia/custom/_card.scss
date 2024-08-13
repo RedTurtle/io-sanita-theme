@@ -1,22 +1,31 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
 .card {
   &.rounded {
     overflow: hidden;
   }
 
-  .card-title {
-    font-size: 1.551rem;
-    line-height: 1.2;
+
+  .card-title, .card-body .card-title {
+    &,&h3,&h4,&h5{
+      @include rem-size(font-size, 20);
+      line-height: 1.2;
+      font-weight: $font-weight-semibold;
+      color: var(--bs-primary);
+    }
+  }
+
+  .event-date {
+    @include rem-size(font-size, 20);
     font-weight: $font-weight-semibold;
   }
+
   .card-body {
     .card-text {
       font-family: $font-family-sans-serif;
     }
   }
-  .event-date {
-    font-size: 1.33rem;
-    font-weight: $font-weight-semibold;
-  }
+
 
   //category bottom
   .category-bottom {

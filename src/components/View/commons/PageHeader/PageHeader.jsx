@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   PageHeaderBando,
-  PageHeaderDates,
+  PageHeaderDates,viewPageHeaderDates,
   PageHeaderEventDates,
   PageHeaderExtend,
   PageHeaderNewsItem,
@@ -17,6 +17,7 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 import config from '@plone/volto/registry';
+import { isValidElement } from 'react';
 
 const messages = defineMessages({
   reading_time: {
@@ -43,7 +44,12 @@ const PageHeader = (props) => {
   const intl = useIntl();
 
   const render_reading_time = showreadingtime && readingtime;
-  const render_dates = showdates ? <PageHeaderDates content={content} /> : null;
+  const render_dates = showdates ? viewPageHeaderDates(content) : null;
+
+
+
+
+
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -90,7 +96,7 @@ const PageHeader = (props) => {
           {(render_reading_time || render_dates) && (
             <div className="row mt-5 mb-4 readingtime-dates">
               {render_dates ? (
-                <>{render_dates}</>
+                <PageHeaderDates content={content}/>
               ) : (
                 <div className="col-6"></div>
               )}

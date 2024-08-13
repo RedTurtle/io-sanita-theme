@@ -18,12 +18,7 @@ export const ComeFarePerComeFare = loadable(
       /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerComeFare'
     ),
 );
-export const ComeFarePerDocumenti = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerDocumenti'
-    ),
-);
+
 export const ComeFarePerDescrizione = loadable(
   () =>
     import(

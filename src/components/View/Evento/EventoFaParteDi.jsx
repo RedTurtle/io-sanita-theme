@@ -8,10 +8,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 import { CardImage } from 'io-sanita-theme/components';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContent, resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { CardFeatured } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   fa_parte_di: {
@@ -22,29 +18,9 @@ const messages = defineMessages({
 
 const EventoFaParteDi = ({ content }) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
 
   const parentEvent =
     content?.parent['@type'] === 'Event' ? content?.parent : null;
-
-  const searchEvents = useSelector((state) => state.content?.subrequests);
-
-  // one request is made for parentEvent
-  useEffect(() => {
-    if (parentEvent) {
-      const url = flattenToAppURL(parentEvent['@id']);
-      const loaded =
-      searchEvents?.[url]?.loading || searchEvents?.[url]?.loaded;
-      if (!loaded) {
-        dispatch(getContent(url, null, url));
-      }
-    }
-    return () => {
-      if (parentEvent) {
-        dispatch(resetContent(flattenToAppURL(parentEvent['@id'])));
-      }
-    };
-  }, [content]);
 
   return parentEvent ? (
     <RichTextSection
@@ -53,7 +29,7 @@ const EventoFaParteDi = ({ content }) => {
     >
       <Row>
         <Col lg={6} className="py-lg-2">
-          <CardFeatured item={parentEvent} />
+          <CardImage item={parentEvent} />
         </Col>
       </Row>
     </RichTextSection>

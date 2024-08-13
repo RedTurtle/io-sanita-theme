@@ -9,10 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
-import {
-  richTextHasContent,
-  RichText,
-} from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichText } from 'io-sanita-theme/helpers';
 import {
   Accordion,
   AccordionItem,
@@ -20,8 +17,11 @@ import {
   AccordionBody,
   Button,
 } from 'design-react-kit';
-import { Icon, CardPlace, CardFile} from 'io-sanita-theme/components';
-import { ContactCard, Attachments } from 'io-sanita-theme/components/View/commons';
+import { Icon, CardPlace } from 'io-sanita-theme/components';
+import {
+  ContactCard,
+  Attachments,
+} from 'io-sanita-theme/components/View/commons';
 import './steps.scss';
 
 const messages = defineMessages({
@@ -61,7 +61,6 @@ const messages = defineMessages({
  * @returns {string} Markup of the component.
  */
 const Steps = ({ content, steps = [] }) => {
-
   const intl = useIntl();
   const dispatch = useDispatch();
   const [activeItem, setActiveItem] = useState('');
@@ -109,7 +108,7 @@ const Steps = ({ content, steps = [] }) => {
         {allOpen
           ? intl.formatMessage(messages.hide_all)
           : intl.formatMessage(messages.show_all)}{' '}
-        <Icon icon={allOpen ? "it-collapse" : "it-expand"} size="sm" />
+        <Icon icon={allOpen ? 'it-collapse' : 'it-expand'} size="sm" />
       </Button>
       <Accordion background="active">
         {steps.map((s, index) => {
@@ -123,7 +122,7 @@ const Steps = ({ content, steps = [] }) => {
           };
 
           return (
-            <AccordionItem key={"accordion" + itemIndex}>
+            <AccordionItem key={'accordion' + itemIndex}>
               <AccordionHeader
                 active={isActive()}
                 onToggle={() => toggleItem()}
@@ -140,7 +139,10 @@ const Steps = ({ content, steps = [] }) => {
                         {isActive()
                           ? intl.formatMessage(messages.hide_details)
                           : intl.formatMessage(messages.show_details)}{' '}
-                        <Icon icon={isActive() ? "it-collapse" : "it-expand"} size="sm" />
+                        <Icon
+                          icon={isActive() ? 'it-collapse' : 'it-expand'}
+                          size="sm"
+                        />
                       </Button>
                     )}
                   </div>
@@ -154,19 +156,24 @@ const Steps = ({ content, steps = [] }) => {
                 {richTextHasContent(step?.testo) && (
                   <div className="mt-4">
                     <div className="mb-5">
-                      <RichText
-                        data={step?.testo}
-                      />
+                      <RichText data={step?.testo} />
                     </div>
                   </div>
                 )}
+
+                {/* DOCUMENTI */}
+                <Attachments
+                  content={step}
+                  folder_name="documenti"
+                  title={intl.formatMessage(messages.documents)}
+                />
 
                 {/* UFFICI CORRELATI */}
                 {step?.uo_correlata?.length > 0 && (
                   <div className="mb-5">
                     <h4 className="h5">{intl.formatMessage(messages.where)}</h4>
-                    {step.uo_correlata.map(uo => {
-                      return <CardPlace item={uo} />
+                    {step.uo_correlata.map((uo) => {
+                      return <CardPlace item={uo} />;
                     })}
                   </div>
                 )}
@@ -174,20 +181,16 @@ const Steps = ({ content, steps = [] }) => {
                 {/* PDC CORRELATI */}
                 {step?.pdc_correlato?.length > 0 && (
                   <div className="mb-5">
-                    <h4 className="h5">{intl.formatMessage(messages.contacts)}</h4>
+                    <h4 className="h5">
+                      {intl.formatMessage(messages.contacts)}
+                    </h4>
                     {step.pdc_correlato.map((pdc) => (
-                      <ContactCard contact={pdc} show_title={true} key={pdc['@id']} />
+                      <ContactCard
+                        contact={pdc}
+                        show_title={true}
+                        key={pdc['@id']}
+                      />
                     ))}
-                  </div>
-                )}
-
-                {/* DOCUMENTI */}
-                {step?.items.some((e) => e.id === 'documenti') && (
-                  <div className="mb-3">
-                    <h4 className="h5">{intl.formatMessage(messages.documents)}</h4>
-                      {step.items.filter((e) => e.id === 'documenti').map((item) => (
-                        <CardFile item={item} key={item['@id']} />
-                      ))}
                   </div>
                 )}
               </AccordionBody>

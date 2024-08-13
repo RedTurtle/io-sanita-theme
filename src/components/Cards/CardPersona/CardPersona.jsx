@@ -36,6 +36,7 @@ export const CardPersona = ({
   imgSrc,
   item,
   isEditMode,
+  titleTag="h3"
 }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -53,7 +54,7 @@ export const CardPersona = ({
     <Card className="shadow rounded card-persona no-after">
       <CardBody className="d-flex">
         <div className="card-persona-content flex-grow-1 pe-5">
-          <CardTitle tag="h5" className="mb-0">
+          <CardTitle tag={titleTag} className="mb-0">
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
