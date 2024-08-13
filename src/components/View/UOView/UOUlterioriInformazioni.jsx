@@ -7,7 +7,7 @@ const UOUlterioriInformazioni = ({ content }) => {
   return richTextHasContent(content.ulteriori_informazioni) ? (
     <RichTextSection
       data={content.ulteriori_informazioni}
-      tag_id="more-info"
+      tag_id="more_info"
       title={intl.formatMessage(messages.other_info)}
       anchorOffset={true}
     />

@@ -1,13 +1,17 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-// import { Attachment } from 'design-comuni-plone-theme/components/ItaliaTheme/View';
 import { Attachments } from 'io-sanita-theme/components/View/commons';
-import { contentFolderHasItems } from 'io-sanita-theme/helpers';
-import { Row } from 'design-react-kit';
+import { CardFile } from 'io-sanita-theme/components';
+import { RichTextSection, contentFolderHasItems } from 'io-sanita-theme/helpers';
+import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   documenti: {
     id: 'uo_documenti',
+    defaultMessage: 'Documenti',
+  },
+  attachments: {
+    id: 'uo_attachments',
     defaultMessage: 'Allegati',
   },
 });
@@ -18,26 +22,32 @@ const UODocumenti = ({ content }) => {
   return (
     <>
       {(contentFolderHasItems(content, 'allegati') ||
-        content.documenti_pubblici?.length > 0) && (
-        <section id="allegati" className="it-page-section anchor-offset mb-5">
-          <h2 className="mb-3 h4" id="header-allegati">
-            {intl.formatMessage(messages.documenti)}
-          </h2>
-          <Attachments
-            content={content}
-            folder_name={'allegati'}
-            as_section={false}
-          />
+        content.documenti?.length > 0) && (
+          <RichTextSection
+            tag_id="documenti"
+            title={intl.formatMessage(messages.documenti)}
+          >
+            {/* DOCUMENTI UFFICIALI */}
+            {content.documenti?.length > 0 && (
+              <Row className="attachments mb-4">
+                {content?.documenti.map((item, _i) => (
+                  <Col lg={6} className="py-lg-2" key={item['@id']}>
+                    <CardFile item={item} />
+                  </Col>
+                ))}
+              </Row>
+            )}
 
-          {/* <Row className="card-wrapper card-teaser-wrapper documenti-pubblici">
-            {content?.documenti_pubblici?.map((dp, i) => (
-              <Attachment {...dp} download_url={dp?.['@id']} key={dp['@id']} />
-            ))}
-          </Row> */}
-          {/* TO DO: capire con che card visualizzare i documenti */}
-        </section>
-      )}
-    </>
+            {/* ALLEGATI */}
+            <Attachments
+              content={content}
+              folder_name={'allegati'}
+              as_section={false}
+              title={intl.formatMessage(messages.attachments)}
+            />
+          </RichTextSection>
+        )}
+      </>
   );
 };
 

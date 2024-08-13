@@ -24,6 +24,8 @@ const UOFaParteDi = ({ content }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
 
+  // TO DO: rimuovere la chiamata alla fullobject quando il BE passerà tutti i dati dentro a content.parent
+
   const parentUO =
     content?.parent['@type'] === 'UnitaOrganizzativa' ? content?.parent : null;
 
