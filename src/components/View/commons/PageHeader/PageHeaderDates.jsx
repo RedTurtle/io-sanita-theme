@@ -22,11 +22,16 @@ const messages = defineMessages({
   },
 });
 
+export const viewPageHeaderDates=(content={})=>{
+  const view_effective = content?.effective && content?.['@type'] !== 'Event';
+  const view_expires = content?.expires;
+  return  view_effective || view_expires;
+}
+
 const PageHeaderDates = ({ content }) => {
   const intl = useIntl();
-  const view_effective = content.effective && content['@type'] !== 'Event';
-  const view_expires = content.expires;
-  const view = view_effective || view_expires;
+
+  const view = viewPageHeaderDates(content);
 
   return view ? (
     <div className="col-6">

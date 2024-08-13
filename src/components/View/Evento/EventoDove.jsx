@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import { RichTextSection } from 'io-sanita-theme/helpers';
+import { RichTextSection, richTextHasContent, RichText } from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
@@ -24,8 +24,13 @@ const EventoDove = ({ content }) => {
     content?.city?.length > 0 ||
     content?.quartiere?.length > 0 ||
     content?.circoscrizione?.length > 0 ||
-    content?.country?.length > 0 ? (
-    <RichTextSection tag_id="luoghi" title={intl.formatMessage(messages.dove)}>
+    content?.country?.length > 0 || richTextHasContent(content?.webinar) ? (
+    <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
+      {richTextHasContent(content?.webinar) && (
+        <div className="mb-4">
+          <RichText data={content?.webinar} />
+        </div>
+      )}
       <Locations
         content={content}
         locations={content?.struttura_correlata ?? []}

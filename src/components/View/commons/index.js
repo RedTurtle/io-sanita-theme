@@ -1,4 +1,6 @@
 import loadable from '@loadable/component';
+import viewPageHeaderDates from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDates';
+export {viewPageHeaderDates};
 
 export const Attachments = loadable(
   () =>
@@ -69,6 +71,7 @@ export const PageHeaderDates = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDates'
     ),
 );
+
 export const PageHeaderDocumento = loadable(
   () =>
     import(
