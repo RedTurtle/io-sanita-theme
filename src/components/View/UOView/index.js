@@ -24,22 +24,22 @@ export const UOUlterioriInformazioni = loadable(
       /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOUlterioriInformazioni'
     ),
 );
-export const UOPeople = loadable(
+export const UOPersonale = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOPeople'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOPersonale'
     ),
 );
-export const UOServices = loadable(
+export const UOServizi = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOServices'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOServizi'
     ),
 );
-export const UOStructure = loadable(
+export const UOResponsabile = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOStructure'
+      /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOResponsabile'
     ),
 );
 export const UODove = loadable(

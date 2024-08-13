@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-08T22:21:56.541Z\n"
+"POT-Creation-Date: 2024-08-13T10:35:59.409Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -334,11 +334,6 @@ msgstr ""
 msgid "amministrazione"
 msgstr ""
 
-#. Default: "Assessore di riferimento"
-#: components/View/UOView/UOStructure
-msgid "assessore_riferimento"
-msgstr ""
-
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -622,21 +617,6 @@ msgstr ""
 msgid "index"
 msgstr ""
 
-#. Default: "Servizi o uffici di riferimento"
-#: components/View/UOView/UOStructure
-msgid "legami_altre_strutture"
-msgstr ""
-
-#. Default: "Unità organizzativa genitore"
-#: components/View/UOView/UOStructure
-msgid "legami_struttura_padre"
-msgstr ""
-
-#. Default: "Servizi o uffici interni"
-#: components/View/UOView/UOStructure
-msgid "legami_strutture_figlie"
-msgstr ""
-
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
 #: overrideTranslations
 msgid "legend_required"
@@ -907,14 +887,9 @@ msgstr ""
 msgid "pec"
 msgstr ""
 
-#. Default: "Tutte le persone che fanno parte di questo servizio"
-#: components/View/UOView/UOPeople
-msgid "persone_p_description"
-msgstr ""
-
-#. Default: "Persone"
-#: components/View/UOView/UOPeople
-msgid "persone_struttura"
+#. Default: "Personale"
+#: components/View/UOView/UOPersonale
+msgid "personale"
 msgstr ""
 
 #. Default: "Precedente"
@@ -948,7 +923,7 @@ msgid "removeTopic"
 msgstr ""
 
 #. Default: "Responsabile"
-#: components/View/UOView/UOStructure
+#: components/View/UOView/UOResponsabile
 msgid "responsabile"
 msgstr ""
 
@@ -1060,12 +1035,8 @@ msgstr ""
 
 #. Default: "Servizi"
 #: components/View/commons/RelatedItems
+#: components/View/UOView/UOServizi
 msgid "servizi"
-msgstr ""
-
-#. Default: "Servizi disponibili"
-#: components/View/UOView/UOServices
-msgid "servizi_offerti"
 msgstr ""
 
 #. Default: "Accedi al servizio"
@@ -1173,11 +1144,6 @@ msgstr ""
 msgid "steps_where"
 msgstr ""
 
-#. Default: "Struttura"
-#: components/View/UOView/UOStructure
-msgid "struttura"
-msgstr ""
-
 #. Default: "Successivo"
 #: components/Slider/NextArrow
 msgid "successivo"
@@ -1196,11 +1162,6 @@ msgstr ""
 #. Default: "Tipo evento"
 #: components/View/Evento/EventoCosE
 msgid "tipologia_evento"
-msgstr ""
-
-#. Default: "Tipologia di organizzazione"
-#: components/View/UOView/UOStructure
-msgid "tipologia_organizzazione"
 msgstr ""
 
 #. Default: "al"
@@ -1239,6 +1200,11 @@ msgid "unknownBlock"
 msgstr ""
 
 #. Default: "Allegati"
+#: components/View/UOView/UODocumenti
+msgid "uo_attachments"
+msgstr ""
+
+#. Default: "Documenti"
 #: components/View/UOView/UODocumenti
 msgid "uo_documenti"
 msgstr ""

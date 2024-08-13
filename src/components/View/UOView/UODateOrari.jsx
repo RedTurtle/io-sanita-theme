@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-
 import {
   RichText,
   richTextHasContent,
@@ -25,7 +23,7 @@ const UODateOrari = ({ content }) => {
 
   return (
     <RichTextSection
-      tag_id="date-e-orari"
+      tag_id="date_e_orari"
       title={intl.formatMessage(messages.date_e_orari)}
     >
       {richTextHasContent(content.orari) && (
