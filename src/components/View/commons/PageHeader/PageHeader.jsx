@@ -18,6 +18,7 @@ import {
 
 import config from '@plone/volto/registry';
 import { isValidElement } from 'react';
+import { commonSearchBlockMessages } from '../../../../helpers';
 
 const messages = defineMessages({
   reading_time: {
@@ -44,12 +45,6 @@ const PageHeader = (props) => {
   const intl = useIntl();
 
   const render_reading_time = showreadingtime && readingtime;
-  const render_dates = showdates ? viewPageHeaderDates(content) : null;
-
-
-
-
-
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -93,23 +88,19 @@ const PageHeader = (props) => {
 
           <PageHeaderExtend {...props} />
 
-          {(render_reading_time || render_dates) && (
+          {(render_reading_time || (showdates && viewPageHeaderDates({...content})?.view)) && (
             <div className="row mt-5 mb-4 readingtime-dates">
-              {render_dates ? (
-                <PageHeaderDates content={content}/>
-              ) : (
-                <div className="col-6"></div>
-              )}
 
-              {render_reading_time &&
-                ((
-                  <div className="col-6">
-                    <small>{intl.formatMessage(messages.reading_time)}:</small>
-                    <p className="font-monospace">
-                      {readingtime} {intl.formatMessage(messages.minutes)}
-                    </p>
-                  </div>
-                ) || <div className="col-6" />)}
+              <PageHeaderDates content={content}/>
+
+              {render_reading_time &&(
+                <div className="col-6">
+                  <small>{intl.formatMessage(messages.reading_time)}:</small>
+                  <p className="font-monospace">
+                    {readingtime} {intl.formatMessage(messages.minutes)}
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
