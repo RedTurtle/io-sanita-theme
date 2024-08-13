@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-
 import { RichTextSection } from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
 
@@ -29,6 +27,7 @@ const UODove = ({ content }) => {
       tag_id="luoghi"
       title={intl.formatMessage(messages.dove)}
     >
+      {/* INDIRIZZI E STRUTTURE */}
       <Locations
         content={content}
         locations={content?.struttura_correlata ?? []}

@@ -10,10 +10,10 @@ import {
   UOContatti,
   UODocumenti,
   UOUlterioriInformazioni,
-  UOPeople,
-  UOServices,
-  UOStructure,
+  UOPersonale,
+  UOServizi,
   UODove,
+  UOResponsabile,
   UOFaParteDi,
   UODateOrari,
   UOCompetenze,
@@ -32,12 +32,12 @@ import {
 
 export const UOViewSectionsOrder = [
   { /* COMPETENZE */ component: UOCompetenze },
-  { /* DOVE */ component: UODove },
+  { /* DOVE - STRUTTURE */ component: UODove },
   { /* DATE E ORARI */ component: UODateOrari },
   { /* FA PARTE DI */ component: UOFaParteDi },
-  { /* STRUTTURA */ component: UOStructure },
-  { /* PERSONE */ component: UOPeople },
-  { /* SERVIZI */ component: UOServices },
+  { /* RESPONSABILE */ component: UOResponsabile },
+  { /* SERVIZI */ component: UOServizi },
+  { /* PERSONE */ component: UOPersonale },
   { /* CONTATTI */ component: UOContatti },
   { /* DOCUMENTI */ component: UODocumenti },
   { /* ULTERIORI INFORMAZIONI */ component: UOUlterioriInformazioni },
@@ -93,7 +93,6 @@ const UOView = ({ content }) => {
 
 UOView.propTypes = {
   content: PropTypes.shape({
-    assessore_riferimento: PropTypes.array,
     ulteriori_informazioni: PropTypes.shape({
       data: PropTypes.string,
     }),
@@ -108,23 +107,12 @@ UOView.propTypes = {
     immagine: PropTypes.shape({
       download: PropTypes.string,
     }),
-    legami_con_altre_strutture: PropTypes.array,
-    related_news: PropTypes.array,
-    persone_struttura: PropTypes.array,
-    responsabile: PropTypes.array,
-    sedi: PropTypes.array,
-    contact_info: PropTypes.array,
-    servizi_offerti: PropTypes.array,
-    tassonomia_argomenti: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        token: PropTypes.string,
-      }),
-    ),
-    tipologia_organizzazione: PropTypes.shape({
-      title: PropTypes.string,
-      token: PropTypes.string,
-    }),
+    struttura_correlata: PropTypes.array,
+    personale_correlato: PropTypes.array,
+    responsabile_correlato: PropTypes.array,
+    pdc_correlato: PropTypes.array,
+    servizi: PropTypes.array,
+    relatedItems: PropTypes.array,
     title: PropTypes.string.isRequired,
   }),
 };

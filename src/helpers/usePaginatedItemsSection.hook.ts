@@ -59,5 +59,5 @@ export function usePaginatedItemsSection({
     return getBatches(data, bSize)[currentIndex];
   }, [data, bSize, currentPage]);
 
-  return { batches, currentPage, onPaginationChange, pageNumbers };
+  return { batches, currentPage, onPaginationChange, pageNumbers, bSize };
 }
