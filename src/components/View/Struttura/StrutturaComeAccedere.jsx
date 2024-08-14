@@ -5,7 +5,7 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   come_accedere: {
-    id: 'come_accedere',
+    id: 'struttura_come_accedere',
     defaultMessage: 'Come accedere',
   },
 });

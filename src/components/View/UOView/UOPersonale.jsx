@@ -6,7 +6,7 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   personale: {
-    id: 'personale',
+    id: 'uo_personale',
     defaultMessage: 'Personale',
   },
 });

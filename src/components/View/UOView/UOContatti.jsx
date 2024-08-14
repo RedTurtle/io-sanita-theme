@@ -5,7 +5,7 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   contatti: {
-    id: 'Contatti',
+    id: 'uo_contatti',
     defaultMessage: 'Contatti',
   },
 });

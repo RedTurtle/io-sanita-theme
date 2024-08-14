@@ -15,7 +15,7 @@ import { CardPlace } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   fa_parte_di: {
-    id: 'fa_parte_di',
+    id: 'uo_fa_parte_di',
     defaultMessage: 'Fa parte di',
   },
 });

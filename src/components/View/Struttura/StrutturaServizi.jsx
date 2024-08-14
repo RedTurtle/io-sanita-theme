@@ -9,7 +9,7 @@ import { CardSimple } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   servizi: {
-    id: 'servizi',
+    id: 'struttura_servizi',
     defaultMessage: 'Servizi',
   },
 });

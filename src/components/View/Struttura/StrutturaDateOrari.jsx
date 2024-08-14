@@ -9,11 +9,11 @@ import {
 
 const messages = defineMessages({
   date_e_orari: {
-    id: 'date_e_orari',
+    id: 'struttura_date_e_orari',
     defaultMessage: 'Date e orari',
   },
   orari: {
-    id: 'orari',
+    id: 'struttura_orari',
     defaultMessage: 'Orari',
   },
 });

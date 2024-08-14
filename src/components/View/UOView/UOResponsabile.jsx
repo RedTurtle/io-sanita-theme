@@ -6,7 +6,7 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   responsabile: {
-    id: 'responsabile',
+    id: 'uo_responsabile',
     defaultMessage: 'Responsabile',
   },
 });
@@ -22,7 +22,7 @@ const UOResponsabile = ({ content }) => {
         <Row>
           {content.responsabile_correlato.map((item) => {
             return (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <Col lg={6} className="py-lg-2" key={'responsabile_' + item['@id']}>
                 <CardPersona item={item} />
               </Col>
             );

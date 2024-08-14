@@ -9,7 +9,7 @@ import { HelpBox } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   ulteriori_informazioni: {
-    id: 'event_ulteriori_informazioni',
+    id: 'evento_ulteriori_informazioni',
     defaultMessage: 'Ulteriori informazioni',
   },
   event_url: {

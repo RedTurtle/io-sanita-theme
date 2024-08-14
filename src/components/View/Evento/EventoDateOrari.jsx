@@ -13,11 +13,11 @@ import { Dates } from 'io-sanita-theme/components/View/Evento';
 
 const messages = defineMessages({
   date_e_orari: {
-    id: 'date_e_orari',
+    id: 'evento_date_e_orari',
     defaultMessage: 'Date e orari',
   },
   orari: {
-    id: 'orari',
+    id: 'evento_orari',
     defaultMessage: 'Orari',
   },
 });
@@ -27,7 +27,7 @@ const EventoDateOrari = ({ content }) => {
 
   return (
     <RichTextSection
-      tag_id="date-e-orari"
+      tag_id="date_e_orari"
       title={intl.formatMessage(messages.date_e_orari)}
     >
       <Dates content={content} />

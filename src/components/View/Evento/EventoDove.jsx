@@ -8,7 +8,7 @@ import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   dove: {
-    id: 'dove',
+    id: 'evento_dove',
     defaultMessage: 'Dove',
   },
 });

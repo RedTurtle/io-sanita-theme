@@ -6,7 +6,7 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   responsabile: {
-    id: 'responsabile',
+    id: 'struttura_responsabile',
     defaultMessage: 'Responsabile',
   },
 });

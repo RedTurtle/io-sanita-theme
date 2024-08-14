@@ -6,11 +6,11 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   personale: {
-    id: 'personale',
+    id: 'struttura_personale',
     defaultMessage: 'Personale',
   },
   coordinatore: {
-    id: 'coordinatore',
+    id: 'struttura_coordinatore',
     defaultMessage: 'Coordinatore',
   },
 });
@@ -29,7 +29,7 @@ const UOPersonale = ({ content }) => {
           <div className="mb-5">
             <Row>
             {content.personale_correlato.map((item) => (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <Col lg={6} className="py-lg-2" key={'personale_' + item['@id']}>
                 <CardPersona item={item} />
               </Col>
             ))}
@@ -46,7 +46,7 @@ const UOPersonale = ({ content }) => {
             </h3>
             <Row>
             {content.coordinatore_correlato.map((item) => (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <Col lg={6} className="py-lg-2" key={'coordinatore_' + item['@id']}>
                 <CardPersona item={item} />
               </Col>
             ))}

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-13T20:39:08.243Z\n"
+"POT-Creation-Date: 2024-08-14T08:56:48.764Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -61,11 +61,6 @@ msgstr ""
 #. Default: "Clicca qui per sostituire il file"
 #: components/Widgets/FileWidget
 msgid "Clicca qui per sostituire il file"
-msgstr ""
-
-#. Default: "Contatti"
-#: components/View/UOView/UOContatti
-msgid "Contatti"
 msgstr ""
 
 #. Default: "Contenuto"
@@ -283,11 +278,6 @@ msgstr ""
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr ""
 
-#. Default: "A chi si rivolge"
-#: components/View/Evento/EventoAChiSiRivolge
-msgid "a_chi_si_rivolge"
-msgstr ""
-
 #. Default: "Vai alla ricerca per sezioni avanzata"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "advandedSectionsFilters"
@@ -408,11 +398,6 @@ msgstr ""
 msgid "closeSearch"
 msgstr ""
 
-#. Default: "Come accedere"
-#: components/View/Struttura/StrutturaComeAccedere
-msgid "come_accedere"
-msgstr ""
-
 #. Default: "A chi è rivolto"
 #: components/View/ComeFarePer/ComeFarePerAChiERivolto
 msgid "come_fare_per_a_chi_si_rivolge"
@@ -438,22 +423,6 @@ msgstr ""
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
-#. Default: "Competenze"
-#: components/View/UOView/UOCompetenze
-msgid "competenze"
-msgstr ""
-
-#. Default: "Contatti"
-#: components/View/Evento/EventoContatti
-#: components/View/Struttura/StrutturaContatti
-msgid "contatti"
-msgstr ""
-
-#. Default: "Coordinatore"
-#: components/View/Struttura/StrutturaPersonale
-msgid "coordinatore"
-msgstr ""
-
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -469,13 +438,6 @@ msgstr ""
 msgid "date"
 msgstr ""
 
-#. Default: "Date e orari"
-#: components/View/Evento/EventoDateOrari
-#: components/View/Struttura/StrutturaDateOrari
-#: components/View/UOView/UODateOrari
-msgid "date_e_orari"
-msgstr ""
-
 #. Default: "Non cercare nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "deselectSearchSection"
@@ -489,13 +451,6 @@ msgstr ""
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
-msgstr ""
-
-#. Default: "Dove"
-#: components/View/Evento/EventoDove
-#: components/View/Struttura/StrutturaDove
-#: components/View/UOView/UODove
-msgid "dove"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -518,34 +473,9 @@ msgstr ""
 msgid "end"
 msgstr ""
 
-#. Default: "Cos'è"
-#: components/View/Evento/EventoCosE
-msgid "event_cos_e"
-msgstr ""
-
-#. Default: "Costi"
-#: components/View/Evento/EventoCosti
-msgid "event_costi"
-msgstr ""
-
-#. Default: "Documenti"
-#: components/View/Evento/EventoDocumenti
-msgid "event_documenti"
-msgstr ""
-
 #. Default: "La data di fine deve essere successiva alla data di inizio"
 #: helpers/FormValidation/FormValidation
 msgid "event_end"
-msgstr ""
-
-#. Default: "Galleria"
-#: components/View/Evento/EventoGalleria
-msgid "event_gallery"
-msgstr ""
-
-#. Default: "Ulteriori informazioni"
-#: components/View/Evento/EventoUlterioriInformazioni
-msgid "event_ulteriori_informazioni"
 msgstr ""
 
 #. Default: "Url dell'evento"
@@ -553,9 +483,59 @@ msgstr ""
 msgid "event_url"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Evento/EventoAChiSiRivolge
+msgid "evento_a_chi_si_rivolge"
+msgstr ""
+
 #. Default: "Appuntamenti"
 #: components/View/Evento/EventoAppuntamenti
 msgid "evento_appuntamenti"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Evento/EventoContatti
+msgid "evento_contatti"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Evento/EventoCosE
+msgid "evento_cos_e"
+msgstr ""
+
+#. Default: "Costi"
+#: components/View/Evento/EventoCosti
+msgid "evento_costi"
+msgstr ""
+
+#. Default: "Date e orari"
+#: components/View/Evento/EventoDateOrari
+msgid "evento_date_e_orari"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Evento/EventoDocumenti
+msgid "evento_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Evento/EventoDove
+msgid "evento_dove"
+msgstr ""
+
+#. Default: "Fa parte di"
+#: components/View/Evento/EventoFaParteDi
+msgid "evento_fa_parte_di"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Evento/EventoGalleria
+msgid "evento_gallery"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/Evento/EventoDateOrari
+msgid "evento_orari"
 msgstr ""
 
 #. Default: "Eventi correlati"
@@ -563,15 +543,14 @@ msgstr ""
 msgid "evento_related_events"
 msgstr ""
 
+#. Default: "Ulteriori informazioni"
+#: components/View/Evento/EventoUlterioriInformazioni
+msgid "evento_ulteriori_informazioni"
+msgstr ""
+
 #. Default: "Scadenza"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "expire"
-msgstr ""
-
-#. Default: "Fa parte di"
-#: components/View/Evento/EventoFaParteDi
-#: components/View/UOView/UOFaParteDi
-msgid "fa_parte_di"
 msgstr ""
 
 #. Default: "Filtri"
@@ -853,13 +832,6 @@ msgstr ""
 msgid "options"
 msgstr ""
 
-#. Default: "Orari"
-#: components/View/Evento/EventoDateOrari
-#: components/View/Struttura/StrutturaDateOrari
-#: components/View/UOView/UODateOrari
-msgid "orari"
-msgstr ""
-
 #. Default: "Organizzato da"
 #: components/View/Evento/EventoOrganizzatoDa
 msgid "organizzato_da"
@@ -936,12 +908,6 @@ msgstr ""
 msgid "pec"
 msgstr ""
 
-#. Default: "Personale"
-#: components/View/Struttura/StrutturaPersonale
-#: components/View/UOView/UOPersonale
-msgid "personale"
-msgstr ""
-
 #. Default: "Precedente"
 #: components/Slider/PrevArrow
 msgid "precedente"
@@ -970,12 +936,6 @@ msgstr ""
 #. Default: "Rimuovi argomento"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
-msgstr ""
-
-#. Default: "Responsabile"
-#: components/View/Struttura/StrutturaResponsabile
-#: components/View/UOView/UOResponsabile
-msgid "responsabile"
 msgstr ""
 
 #. Default: "il giorno"
@@ -1086,8 +1046,6 @@ msgstr ""
 
 #. Default: "Servizi"
 #: components/View/commons/RelatedItems
-#: components/View/Struttura/StrutturaServizi
-#: components/View/UOView/UOServizi
 msgid "servizi"
 msgstr ""
 
@@ -1201,6 +1159,21 @@ msgstr ""
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Come accedere"
+#: components/View/Struttura/StrutturaComeAccedere
+msgid "struttura_come_accedere"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Struttura/StrutturaContatti
+msgid "struttura_contatti"
+msgstr ""
+
+#. Default: "Coordinatore"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_coordinatore"
+msgstr ""
+
 #. Default: "Strutture correlate"
 #: components/View/Struttura/StrutturaStruttureCorrelate
 msgid "struttura_correlata"
@@ -1211,9 +1184,39 @@ msgstr ""
 msgid "struttura_cos_e"
 msgstr ""
 
+#. Default: "Date e orari"
+#: components/View/Struttura/StrutturaDateOrari
+msgid "struttura_date_e_orari"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Struttura/StrutturaDove
+msgid "struttura_dove"
+msgstr ""
+
 #. Default: "Galleria"
 #: components/View/Struttura/StrutturaGalleria
 msgid "struttura_gallery"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/Struttura/StrutturaDateOrari
+msgid "struttura_orari"
+msgstr ""
+
+#. Default: "Personale"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_personale"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/Struttura/StrutturaResponsabile
+msgid "struttura_responsabile"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/Struttura/StrutturaServizi
+msgid "struttura_servizi"
 msgstr ""
 
 #. Default: "Uffici correlati"
@@ -1281,9 +1284,54 @@ msgstr ""
 msgid "uo_attachments"
 msgstr ""
 
+#. Default: "Competenze"
+#: components/View/UOView/UOCompetenze
+msgid "uo_competenze"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/UOView/UOContatti
+msgid "uo_contatti"
+msgstr ""
+
+#. Default: "Date e orari"
+#: components/View/UOView/UODateOrari
+msgid "uo_date_e_orari"
+msgstr ""
+
 #. Default: "Documenti"
 #: components/View/UOView/UODocumenti
 msgid "uo_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/UOView/UODove
+msgid "uo_dove"
+msgstr ""
+
+#. Default: "Fa parte di"
+#: components/View/UOView/UOFaParteDi
+msgid "uo_fa_parte_di"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/UOView/UODateOrari
+msgid "uo_orari"
+msgstr ""
+
+#. Default: "Personale"
+#: components/View/UOView/UOPersonale
+msgid "uo_personale"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/UOView/UOResponsabile
+msgid "uo_responsabile"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/UOView/UOServizi
+msgid "uo_servizi"
 msgstr ""
 
 #. Default: "Vedi su Apple Maps"
