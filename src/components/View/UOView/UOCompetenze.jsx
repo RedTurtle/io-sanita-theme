@@ -4,7 +4,7 @@ import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   competenze: {
-    id: 'competenze',
+    id: 'uo_competenze',
     defaultMessage: 'Competenze',
   },
 });

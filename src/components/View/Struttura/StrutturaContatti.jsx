@@ -5,12 +5,12 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   contatti: {
-    id: 'uo_contatti',
+    id: 'struttura_contatti',
     defaultMessage: 'Contatti',
   },
 });
 
-const UOContatti = ({ content }) => {
+const StrutturaContatti = ({ content }) => {
   const intl = useIntl();
 
   return content?.pdc_correlato?.length > 0 ? (
@@ -27,8 +27,8 @@ const UOContatti = ({ content }) => {
   ) : null;
 };
 
-UOContatti.propTypes = {
+StrutturaContatti.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default UOContatti;
+export default StrutturaContatti;

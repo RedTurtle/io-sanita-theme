@@ -11,7 +11,7 @@ import { CardImage } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   fa_parte_di: {
-    id: 'fa_parte_di',
+    id: 'evento_fa_parte_di',
     defaultMessage: 'Fa parte di',
   },
 });

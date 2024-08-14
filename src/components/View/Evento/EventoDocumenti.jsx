@@ -7,7 +7,7 @@ import { Attachments } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   documenti: {
-    id: 'event_documenti',
+    id: 'evento_documenti',
     defaultMessage: 'Documenti',
   },
 });

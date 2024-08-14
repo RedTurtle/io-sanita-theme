@@ -1,23 +1,25 @@
 /**
- * UOView view component.
- * @module components/theme/View/UOView
+ * StrutturaView component.
+ * @module components/theme/View/Struttura
  */
 
 import React, { createRef } from 'react';
-
 import PropTypes from 'prop-types';
 import {
-  UOContatti,
-  UODocumenti,
-  UOUlterioriInformazioni,
-  UOPersonale,
-  UOServizi,
-  UODove,
-  UOResponsabile,
-  UOFaParteDi,
-  UODateOrari,
-  UOCompetenze,
-} from 'io-sanita-theme/components/View/UOView';
+  StrutturaCosE,
+  StrutturaAChiERivolto,
+  StrutturaDove,
+  StrutturaComeAccedere,
+  StrutturaDateOrari,
+  StrutturaContatti,
+  StrutturaServizi,
+  StrutturaResponsabile,
+  StrutturaPersonale,
+  StrutturaGalleria,
+  StrutturaUfficiCorrelati,
+  StrutturaStruttureCorrelate,
+  StrutturaUlterioriInformazioni,
+} from 'io-sanita-theme/components/View/Struttura';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 
@@ -30,27 +32,30 @@ import {
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
 
-export const UOViewSectionsOrder = [
-  { /* COMPETENZE */ component: UOCompetenze },
-  { /* DOVE - STRUTTURE */ component: UODove },
-  { /* DATE E ORARI */ component: UODateOrari },
-  { /* FA PARTE DI */ component: UOFaParteDi },
-  { /* RESPONSABILE */ component: UOResponsabile },
-  { /* SERVIZI */ component: UOServizi },
-  { /* PERSONE */ component: UOPersonale },
-  { /* CONTATTI */ component: UOContatti },
-  { /* DOCUMENTI */ component: UODocumenti },
-  { /* ULTERIORI INFORMAZIONI */ component: UOUlterioriInformazioni },
+export const StrutturaSectionsOrder = [
+  { /* COS'è */ component: StrutturaCosE },
+  { /* A CHI è RIVOLTO */ component: StrutturaAChiERivolto },
+  { /* DOVE */ component: StrutturaDove },
+  { /* COME ACCEDERE */ component: StrutturaComeAccedere },
+  { /* DATE E ORARI */ component: StrutturaDateOrari },
+  { /* CONTATTI */ component: StrutturaContatti },
+  { /* SERVIZI */ component: StrutturaServizi },
+  { /* RESPONSABILE */ component: StrutturaResponsabile },
+  { /* PERSONALE */ component: StrutturaPersonale },
+  { /* GALLERIA */ component: StrutturaGalleria },
+  { /* UFFICIO DI APPARTENENZA */ component: StrutturaUfficiCorrelati },
+  { /* STRUTTURE CORRELATE */ component: StrutturaStruttureCorrelate },
+  { /* ULTERIORI INFORMAZIONI */ component: StrutturaUlterioriInformazioni },
   { /* METADATA */ component: Metadata },
 ];
 
 /**
- * UOView view component class.
- * @function UOView
- * @params {object} content Content object.
- * @returns {string} Markup of the component.
- */
-const UOView = ({ content }) => {
+* Struttura view component class.
+* @function Struttura
+* @params {object} content Content object.
+* @returns {string} Markup of the component.
+*/
+const StrutturaView = ({ content }) => {
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -82,7 +87,7 @@ const UOView = ({ content }) => {
             {/* SEZIONI */}
             <ContentTypeViewSections
               content={content}
-              defaultSections={UOViewSectionsOrder}
+              defaultSections={StrutturaSectionsOrder}
             />
           </section>
         </div>
@@ -92,7 +97,7 @@ const UOView = ({ content }) => {
   );
 };
 
-UOView.propTypes = {
+StrutturaView.propTypes = {
   content: PropTypes.shape({
     ulteriori_informazioni: PropTypes.shape({
       data: PropTypes.string,
@@ -118,4 +123,4 @@ UOView.propTypes = {
   }),
 };
 
-export default UOView;
+export default StrutturaView;

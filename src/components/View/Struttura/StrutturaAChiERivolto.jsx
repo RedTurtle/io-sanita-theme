@@ -10,12 +10,12 @@ import { TassonomiaUtenti } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   a_chi_si_rivolge: {
-    id: 'evento_a_chi_si_rivolge',
-    defaultMessage: 'A chi si rivolge',
+    id: 'struttura_a_chi_si_rivolge',
+    defaultMessage: 'A chi è rivolto',
   },
 });
 
-const EventoAChiSiRivolge = ({ content }) => {
+const StrutturaAChiERivolto = ({ content }) => {
   const intl = useIntl();
 
   return richTextHasContent(content?.a_chi_si_rivolge) ||
@@ -39,9 +39,9 @@ const EventoAChiSiRivolge = ({ content }) => {
   );
 };
 
-export default EventoAChiSiRivolge;
+export default StrutturaAChiERivolto;
 
-EventoAChiSiRivolge.propTypes = {
+StrutturaAChiERivolto.propTypes = {
   content: PropTypes.shape({
     a_chi_si_rivolge: PropTypes.shape({
       'content-type': PropTypes.string,

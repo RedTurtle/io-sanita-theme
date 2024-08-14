@@ -1,28 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-
 import {
   RichText,
   richTextHasContent,
   RichTextSection,
 } from 'io-sanita-theme/helpers';
 
-import { Dates } from 'io-sanita-theme/components/View/Evento';
-
 const messages = defineMessages({
   date_e_orari: {
-    id: 'evento_date_e_orari',
+    id: 'struttura_date_e_orari',
     defaultMessage: 'Date e orari',
   },
   orari: {
-    id: 'evento_orari',
+    id: 'struttura_orari',
     defaultMessage: 'Orari',
   },
 });
 
-const EventoDateOrari = ({ content }) => {
+const StrutturaDateOrari = ({ content }) => {
   const intl = useIntl();
 
   return (
@@ -30,7 +26,6 @@ const EventoDateOrari = ({ content }) => {
       tag_id="date_e_orari"
       title={intl.formatMessage(messages.date_e_orari)}
     >
-      <Dates content={content} />
       {richTextHasContent(content.orari) && (
         <RichText
           title={intl.formatMessage(messages.orari)}
@@ -41,8 +36,8 @@ const EventoDateOrari = ({ content }) => {
   );
 };
 
-EventoDateOrari.propTypes = {
+StrutturaDateOrari.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoDateOrari;
+export default StrutturaDateOrari;

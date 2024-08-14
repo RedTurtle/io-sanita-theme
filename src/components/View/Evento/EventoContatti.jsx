@@ -5,7 +5,7 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   contatti: {
-    id: 'Contatti',
+    id: 'evento_contatti',
     defaultMessage: 'Contatti',
   },
 });
@@ -18,7 +18,6 @@ const EventoContatti = ({ content }) => {
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {/* TO DO: capire come mostrare i punti di contatto */}
       {/* Punto di contatto */}
       {content?.pdc_correlato.map((item, i) => (
         <CardSimple item={item} key={'contact_' + i} />

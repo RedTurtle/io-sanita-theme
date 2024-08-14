@@ -9,7 +9,7 @@ const messages = defineMessages({
   },
 });
 
-const UOUlterioriInformazioni = ({ content }) => {
+const StrutturaUlterioriInformazioni = ({ content }) => {
   const intl = useIntl();
   return richTextHasContent(content.ulteriori_informazioni) ? (
     <RichTextSection
@@ -21,4 +21,4 @@ const UOUlterioriInformazioni = ({ content }) => {
   ) : null;
 };
 
-export default UOUlterioriInformazioni;
+export default StrutturaUlterioriInformazioni;

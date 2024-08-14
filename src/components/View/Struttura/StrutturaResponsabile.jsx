@@ -6,12 +6,12 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   responsabile: {
-    id: 'uo_responsabile',
+    id: 'struttura_responsabile',
     defaultMessage: 'Responsabile',
   },
 });
 
-const UOResponsabile = ({ content }) => {
+const StrutturaResponsabile = ({ content }) => {
   const intl = useIntl();
 
   return content?.responsabile_correlato?.length > 0 ? (
@@ -22,7 +22,7 @@ const UOResponsabile = ({ content }) => {
         <Row>
           {content.responsabile_correlato.map((item) => {
             return (
-              <Col lg={6} className="py-lg-2" key={'responsabile_' + item['@id']}>
+              <Col lg={6} className="py-lg-2" key={item['@id']}>
                 <CardPersona item={item} />
               </Col>
             );
@@ -34,4 +34,4 @@ const UOResponsabile = ({ content }) => {
   );
 };
 
-export default UOResponsabile;
+export default StrutturaResponsabile;

@@ -9,21 +9,21 @@ import { Gallery } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   gallery: {
-    id: 'evento_gallery',
+    id: 'struttura_gallery',
     defaultMessage: "Galleria",
   },
 });
 
-const EventoGalleria = ({ content }) => {
+const StrutturaGalleria = ({ content }) => {
   const intl = useIntl();
 
   return contentFolderHasItems(content, 'immagini') ||
     contentFolderHasItems(content, 'video') ? (
     <RichTextSection
-      tag_id="gallery_evento"
+      tag_id="gallery_struttura"
       title={intl.formatMessage(messages.gallery)}
     >
-      {/* Galleria evento */}
+      {/* Galleria struttura */}
       <Gallery
         content={content}
         folder_name={'immagini'}
@@ -36,8 +36,8 @@ const EventoGalleria = ({ content }) => {
   );
 };
 
-EventoGalleria.propTypes = {
+StrutturaGalleria.propTypes = {
   content: PropTypes.object.isRequired,
 };
 
-export default EventoGalleria;
+export default StrutturaGalleria;

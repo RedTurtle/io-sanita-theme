@@ -1,6 +1,7 @@
 import { PageView } from 'io-sanita-theme/components/View/Page';
 import { EventoView } from 'io-sanita-theme/components/View/Evento';
 import { UOView } from 'io-sanita-theme/components/View/UOView';
+import { StrutturaView } from 'io-sanita-theme/components/View/Struttura';
 import { ComeFarePerView } from 'io-sanita-theme/components/View/ComeFarePer';
 import StepView from 'io-sanita-theme/components/View/Step/StepView';
 import { NewsItemView } from 'io-sanita-theme/components/View/NewsItem';
@@ -11,6 +12,7 @@ const ioSanitaContentTypesViews = {
   Event: EventoView,
   'News Item': NewsItemView,
   UnitaOrganizzativa: UOView,
+  Struttura: StrutturaView,
   ComeFarePer: ComeFarePerView,
   Step: StepView,
 };

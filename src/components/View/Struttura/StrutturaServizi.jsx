@@ -9,12 +9,12 @@ import { CardSimple } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   servizi: {
-    id: 'uo_servizi',
+    id: 'struttura_servizi',
     defaultMessage: 'Servizi',
   },
 });
 
-const UOServizi = ({ content }) => {
+const StrutturaServizi = ({ content }) => {
   const intl = useIntl();
 
   const servizi = content?.servizi ?? [];
@@ -46,4 +46,4 @@ const UOServizi = ({ content }) => {
   ) : null;
 };
 
-export default UOServizi;
+export default StrutturaServizi;

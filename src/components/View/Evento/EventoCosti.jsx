@@ -9,7 +9,7 @@ import {
 
 const messages = defineMessages({
   costi: {
-    id: 'event_costi',
+    id: 'evento_costi',
     defaultMessage: 'Costi',
   },
 });

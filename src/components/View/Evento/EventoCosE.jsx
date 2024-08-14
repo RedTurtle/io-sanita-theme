@@ -5,7 +5,7 @@ import {richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   cos_e: {
-    id: 'event_cos_e',
+    id: 'evento_cos_e',
     defaultMessage: "Cos'è",
   },
   tipologia_evento: {
