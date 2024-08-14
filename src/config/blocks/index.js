@@ -5,12 +5,9 @@ import {
   BreakEdit,
   HTMLBlockSchema,
 } from 'io-sanita-theme/components/Blocks';
-
-export const cloneBlock = (blockData) => {
-  const blockID = uuid();
-  const clonedData = { ...blockData, block: blockID };
-  return [blockID, clonedData];
-};
+import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
+import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
+import { cloneBlock } from 'io-sanita-theme/helpers';
 
 const customBlocksOrder = [
   // { id: 'news', title: 'News' },
@@ -31,6 +28,18 @@ export const applyIoSanitaBlocksConfig = (config) => {
 
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
+    listing: {
+      ...config.blocks.blocksConfig.listing,
+      showLinkMore: true,
+      blockSchema: schemaListing,
+      variations: [
+        ...config.blocks.blocksConfig.listing.variations,
+        ...getIoSanitaListingVariations(config),
+      ],
+      listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
+      listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
+      getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
+    },
     maps: {
       ...config.blocks.blocksConfig.maps,
       restricted: true,
@@ -66,6 +75,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
     },
   };
+  console.log(config.blocks.blocksConfig.listing);
 
   config.blocks.groupBlocksOrder =
     config.blocks.groupBlocksOrder.concat(customBlocksOrder);

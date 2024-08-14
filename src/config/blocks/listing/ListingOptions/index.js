@@ -1,0 +1,25 @@
+export {
+  addSchemaField,
+  templatesOptions,
+  addLighthouseField,
+} from 'io-sanita-theme/config/blocks/listing/ListingOptions/utils';
+export addDefaultOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/defaultOptions';
+export addDefaultAdditionalOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/defaultAdditionalOptions';
+export addLinkMoreOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/linkMoreOptions';
+export {
+  addSimpleCardTemplateOptions,
+  SimpleCardTemplateAppearance_COMPACT,
+  SimpleCardTemplateAppearance_ONEFORROW,
+} from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleCardTemplate';
+export { addCardWithImageTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithImageTemplate';
+export { addInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/inEvidenceTemplate';
+export { addRibbonCardTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/ribbonCardTemplate';
+export { addMapTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/mapTemplate';
+export { addCompleteBlockLinksTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/completeBlockLinksTemplate';
+export { addBandiInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/bandiInEvidenceTemplate';
+export { addSliderTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/sliderTemplate';
+export { addSimpleListTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleListTemplate';
+export { addCardWithSlideUpTextTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithSlideUpTextTemplate';
+export { addPhotogalleryTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/photogalleryTemplate';
+export { addSmallBlockLinksTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/smallBlockLinksTemplate';
+export { addAttachmentCardTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/attachmentCardTemplate';
