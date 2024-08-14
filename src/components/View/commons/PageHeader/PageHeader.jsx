@@ -4,6 +4,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
+import config from '@plone/volto/registry';
 import {
   PageHeaderBando,
   PageHeaderDates,viewPageHeaderDates,
@@ -13,12 +14,9 @@ import {
   PageHeaderStatoServizio,
   PageHeaderLinkServizio,
   PageHeaderDocumento,
+  PageHeaderPersona,
   Sharing,
 } from 'io-sanita-theme/components/View/commons';
-
-import config from '@plone/volto/registry';
-import { isValidElement } from 'react';
-import { commonSearchBlockMessages } from '../../../../helpers';
 
 const messages = defineMessages({
   reading_time: {
@@ -38,13 +36,21 @@ const messages = defineMessages({
  * @params readingtime {number} reading time in minutes
  * @params showreadingtime {boolean} show or hide reading time
  * @params showdates {boolean} show or hide dates in header
+ * @params foto {boolean} if true, show image in header (eg. in PersonaView)
  * @returns {string} Markup of the component.
  */
 const PageHeader = (props) => {
-  const { content, readingtime, showdates, showreadingtime } = props;
+  const {
+    content,
+    readingtime,
+    showdates,
+    showreadingtime,
+    foto = false,
+  } = props;
   const intl = useIntl();
 
   const render_reading_time = showreadingtime && readingtime;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -60,6 +66,8 @@ const PageHeader = (props) => {
           <p className="subtitle">
             {content.sottotitolo && `${content.sottotitolo}`}
           </p>
+
+          <PageHeaderPersona content={content} />
 
           <PageHeaderEventDates content={content} />
 
@@ -105,8 +113,24 @@ const PageHeader = (props) => {
           )}
         </div>
 
+
+
         <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
+
+          {/* FOTO PERSONA */}
+          {foto && content?.image ? (
+          <div className="page-header-image mt-5">
+            <figure>
+              <Image
+                item={content}
+                alt=""
+                className="img-fluid"
+                sizes="(max-width:768px) 300px, 200px"
+              />
+            </figure>
+          </div>
+        ) : null}
         </div>
       </div>
     </div>
