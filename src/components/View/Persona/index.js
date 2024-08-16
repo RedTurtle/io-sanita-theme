@@ -42,6 +42,18 @@ export const PersonaBiografia = loadable(
       /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaBiografia'
     ),
 );
+export const PersonaDocumenti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaDocumenti'
+    ),
+);
+export const PersonaGalleria = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaGalleria'
+    ),
+);
 export const PersonaUlterioriInformazioni = loadable(
   () =>
     import(

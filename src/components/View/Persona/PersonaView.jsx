@@ -13,6 +13,8 @@ import {
   PersonaOrariRicevimento,
   PersonaContatti,
   PersonaBiografia,
+  PersonaDocumenti,
+  PersonaGalleria,
   PersonaUlterioriInformazioni,
 } from 'io-sanita-theme/components/View/Persona';
 
@@ -34,6 +36,8 @@ export const PersonaViewSectionsOrder = [
   { /* ORARI */ component: PersonaOrariRicevimento },
   { /* CONTATTI */ component: PersonaContatti },
   { /* BIOGRAFIA */ component: PersonaBiografia },
+  { /* GALLERIA */ component: PersonaGalleria },
+  { /* DOCUMENTI */ component: PersonaDocumenti },
   { /* ULTERIORI INFORMAZIONI */ component: PersonaUlterioriInformazioni },
   { /* METADATA */ component: Metadata },
 ];
