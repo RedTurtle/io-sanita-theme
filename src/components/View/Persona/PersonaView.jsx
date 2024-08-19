@@ -24,7 +24,6 @@ import {
   PageHeader,
   SkipToMainContent,
   ContentImage,
-  RelatedItems,
   useSideMenu,
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
@@ -84,7 +83,6 @@ const PersonaView = ({ content }) => {
           </section>
         </div>
       </div>
-      <RelatedItems content={content} list={content?.related_news ?? []} />
     </>
   );
 };
@@ -110,7 +108,6 @@ PersonaView.propTypes = {
     responsabile_correlato: PropTypes.array,
     pdc_correlato: PropTypes.array,
     servizi: PropTypes.array,
-    relatedItems: PropTypes.array,
     title: PropTypes.string.isRequired,
   }),
 };
