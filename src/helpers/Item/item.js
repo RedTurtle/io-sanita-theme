@@ -44,16 +44,16 @@ export const getItemListingCategory = (
   let cat = [];
 
   if (item) {
-    if (show_section) {
+    if (show_section && item.parent) {
       cat.push(item.parent?.title);
     }
     if (show_type) {
-      cat.push(item.design_italia_meta_type);
+      cat.push(item.type_title);
     }
   }
 
   if (cat.length > 0) {
-    return cat.join(' - ');
+    return cat.join(cat.length > 1 ? ' - ' : '');
   }
   return null;
 };

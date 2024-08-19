@@ -5,11 +5,17 @@ import SimpleCardTemplateDefault from 'io-sanita-theme/components/Blocks/Listing
 import SimpleCardTemplateCompact from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact';
 import SimpleCardTemplateOneForRow from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow';
 
+import SimpleCardTemplateGuide from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateGuide';
+import SimpleCardTemplateGhost from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateGhost';
+
 import {
   SimpleCardTemplateAppearance_COMPACT,
   SimpleCardTemplateAppearance_ONEFORROW,
+  SimpleCardTemplateAppearance_GUIDE,
+  SimpleCardTemplateAppearance_GHOST,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import './simpleCardTemplate.scss';
+
 const SimpleCardTemplate = (data) => {
   let content = null;
   switch (data.appearance) {
@@ -19,11 +25,21 @@ const SimpleCardTemplate = (data) => {
     case SimpleCardTemplateAppearance_ONEFORROW:
       content = <SimpleCardTemplateOneForRow {...data} />;
       break;
+    case SimpleCardTemplateAppearance_GUIDE:
+      content = <SimpleCardTemplateGuide {...data} />;
+      break;
+    case SimpleCardTemplateAppearance_GHOST:
+      content = <SimpleCardTemplateGhost {...data} />;
+      break;
     default:
       content = <SimpleCardTemplateDefault {...data} />;
   }
 
-  return <Container className="px-4">{content}</Container>;
+  return (
+    <Container className={!data.show_block_bg ? 'px-0' : ''}>
+      {content}
+    </Container>
+  );
 };
 
 SimpleCardTemplate.propTypes = {

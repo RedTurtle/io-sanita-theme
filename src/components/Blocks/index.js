@@ -14,6 +14,9 @@ export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/List
 export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
 export ListingCategory from 'io-sanita-theme/components/Blocks/Listing/commons/ListingCategory';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
+// export PathFilters, {
+//   getPathFiltersButtons,
+// } from 'io-sanita-theme/components/Blocks/Listing/commons/PathFilters';
 
 /*Edit*/
 const BreakEdit = loadable(() =>

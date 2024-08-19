@@ -20,7 +20,7 @@ import {
   getEventRecurrenceMore,
   getComponentWithFallback,
 } from 'io-sanita-theme/helpers';
-
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 import {
   ListingCategory,
   ListingText,
@@ -107,14 +107,17 @@ const SimpleCardDefault = (props) => {
           'pb-5': show_detail_link || eventRecurrenceMore,
         })}
       >
-        {(icon || category || date) && (
-          <CardCategoryTop iconName={icon} date={date}>
-            {category && (
-              <span className="text fw-bold">
-                <ListingCategory category={category} item={item} />
-              </span>
-            )}
-          </CardCategoryTop>
+        {(icon || category) && (
+          <CardCategoryTop
+            iconName={icon}
+            children={
+              category ? (
+                <span className="text fw-bold">
+                  <ListingCategory category={category} item={item} />
+                </span>
+              ) : null
+            }
+          />
         )}
         <CardTitle tag="h3">
           <UniversalLink
@@ -154,6 +157,14 @@ const SimpleCardDefault = (props) => {
         )}
         <BlockExtraTags {...props} item={item} itemIndex={index} />
         {eventRecurrenceMore}
+
+        <CardCategoryBottom
+          item={item}
+          date={date}
+          isEditMode={isEditMode}
+          show_type={false}
+        />
+
         {show_detail_link && (
           <CardReadMore
             iconName="it-arrow-right"

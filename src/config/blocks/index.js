@@ -75,7 +75,6 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
     },
   };
-  console.log(config.blocks.blocksConfig.listing);
 
   config.blocks.groupBlocksOrder =
     config.blocks.groupBlocksOrder.concat(customBlocksOrder);
@@ -88,4 +87,15 @@ export const applyIoSanitaBlocksConfig = (config) => {
     ...customRequiredBlocks,
   ];
   config.blocks.showEditBlocksInBabelView = true;
+
+  config.settings.styleClassNameExtenders.push(
+    ({ block, content, data, classNames }) => {
+      let styles = [];
+      if (data.show_block_bg) {
+        styles.push('bg-primary-lightest');
+        styles.push('full-width');
+      }
+      return [...classNames, ...styles];
+    },
+  );
 };

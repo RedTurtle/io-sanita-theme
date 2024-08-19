@@ -24,6 +24,7 @@ export const CardSimple = ({
   item,
   isEditMode,
   className,
+  titleTag = 'h5',
 }) => {
   const intl = useIntl();
   const date =
@@ -36,7 +37,7 @@ export const CardSimple = ({
     <Card className={`shadow rounded card-simple no-after ${className ?? ''}`}>
       <CardBody>
         <div className="card-simple-content">
-          <CardTitle tag="h5" className={isServizioOnline ? 'mb-0' : ''}>
+          <CardTitle tag={titleTag} className={isServizioOnline ? 'mb-0' : ''}>
             {item['@id'] ? (
               <UniversalLink
                 item={!isEditMode ? item : null}

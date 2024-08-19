@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
+import './cardCategoryTop.scss';
 
 const propTypes = {
   iconName: PropTypes.string,

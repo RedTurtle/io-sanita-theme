@@ -1,0 +1,25 @@
+.block.listing {
+  .listing-results {
+    .row {
+      --bs-gutter-y: 24px;
+    }
+  }
+
+  .template-header {
+    &.with-filters {
+      border-bottom: 1px solid $neutral-1-a2;
+      margin-bottom: 1em;
+
+      .path-filter-buttons {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+
+      h2,
+      .path-filter-buttons-wrapper {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

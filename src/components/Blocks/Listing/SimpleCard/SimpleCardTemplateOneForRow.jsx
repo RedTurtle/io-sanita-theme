@@ -55,7 +55,6 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     linkTitle,
     linkHref,
     linkAlign,
-
     show_icon = false,
     show_section = true,
     show_type,
@@ -65,24 +64,10 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     title,
     show_block_bg,
     hide_dates,
-    path_filters,
-    show_path_filters,
-    addFilters,
-    additionalFilters = [],
     id_lighthouse,
     linkmore_id_lighthouse,
     rrule,
   } = props;
-
-  let currentPathFilter = additionalFilters
-    ?.filter((f) => {
-      return f.i === 'path';
-    })
-    ?.map((f) => {
-      return f.v;
-    });
-
-  const [pathFilter, setPathFilter] = useState(currentPathFilter?.[0] || null);
 
   const getItemClass = (item) => {
     let className = null;
@@ -102,80 +87,8 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     return className;
   };
 
-  const path_filters_buttons =
-    show_path_filters && path_filters
-      ? Object.keys(path_filters)
-          .map((k) => {
-            return {
-              label: path_filters[k].label,
-              path: path_filters[k].path?.[0],
-            };
-          })
-          .filter((f) => f.path)
-      : null;
-
-  const addPathFilter = (path) => {
-    let new_path = pathFilter === path ? null : path;
-    setPathFilter(new_path);
-    let filters = [];
-    if (new_path) {
-      filters = [
-        {
-          i: 'path',
-          o: 'plone.app.querystring.operation.string.absolutePath',
-          v: new_path,
-        },
-      ];
-    }
-    addFilters(filters);
-  };
-
   return (
     <div className="simple-card-default">
-      {(title || path_filters_buttons) && (
-        <Row
-          className={cx('template-header', {
-            'with-filters': path_filters_buttons,
-          })}
-        >
-          {title && (
-            <Col md={path_filters_buttons ? 6 : 12}>
-              <h2
-                className={cx('', {
-                  'mt-5': !show_block_bg,
-                  'mb-4': !path_filters_buttons,
-                })}
-              >
-                {title}
-              </h2>
-            </Col>
-          )}
-
-          {path_filters_buttons && (
-            <Col md={title ? 6 : 12} className="path-filter-buttons">
-              <div className="path-filter-buttons-wrapper">
-                {path_filters_buttons.map((button, i) => (
-                  <Button
-                    key={i}
-                    color="primary"
-                    outline={button.path['@id'] !== pathFilter}
-                    size="xs"
-                    icon={false}
-                    tag="button"
-                    className="ms-3"
-                    onClick={(e) => {
-                      addPathFilter(button.path['@id']);
-                    }}
-                  >
-                    {button.label}
-                  </Button>
-                ))}
-              </div>
-            </Col>
-          )}
-        </Row>
-      )}
-
       <div className="card-wrapper flex-wrap mb-3">
         {items.map((item, index) => {
           const icon = show_icon ? getItemIcon(item) : null;
@@ -189,7 +102,12 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
           const listingText = show_description ? (
             <ListingText item={item} />
           ) : null;
-          const category = getCategory(item, show_type, show_section, props);
+          const category = getItemListingCategory(
+            item,
+            show_type,
+            show_section,
+            props,
+          );
           const type = item['@type'];
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',
@@ -211,13 +129,13 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
                 })}
               >
                 {(icon || category || date) && (
-                  <CardCategory iconName={icon} date={date}>
+                  <CardCategoryTop iconName={icon} date={date}>
                     {category && (
                       <span className="text fw-bold">
                         <ListingCategory category={category} item={item} />
                       </span>
                     )}
-                  </CardCategory>
+                  </CardCategoryTop>
                 )}
                 <CardTitle tag="h3">
                   <UniversalLink

@@ -21,6 +21,14 @@ const messages = defineMessages({
     id: 'simplecard_listing_appearance_compact',
     defaultMessage: 'Compatto',
   },
+  simplecard_listing_appearance_guide: {
+    id: 'simplecard_listing_appearance_guide',
+    defaultMessage: 'Collegamenti a Come fare per',
+  },
+  simplecard_listing_appearance_ghost: {
+    id: 'simplecard_listing_appearance_ghost',
+    defaultMessage: 'Collegamenti a categorie',
+  },
   simplecard_listing_appearance_oneforrow: {
     id: 'simplecard_listing_appearance_oneforrow',
     defaultMessage: 'Un elemento per riga',
@@ -30,6 +38,8 @@ const messages = defineMessages({
 /** SIMPLE CARD TEMPLATE **/
 export const SimpleCardTemplateAppearance_COMPACT = 'compact';
 export const SimpleCardTemplateAppearance_ONEFORROW = 'oneForRow';
+export const SimpleCardTemplateAppearance_GUIDE = 'guide';
+export const SimpleCardTemplateAppearance_GHOST = 'ghost';
 
 export const addSimpleCardTemplateOptions = (
   schema,
@@ -44,14 +54,23 @@ export const addSimpleCardTemplateOptions = (
       SimpleCardTemplateAppearance_COMPACT,
       intl.formatMessage(messages.simplecard_listing_appearance_compact),
     ],
+    [
+      SimpleCardTemplateAppearance_GUIDE,
+      intl.formatMessage(messages.simplecard_listing_appearance_guide),
+    ],
+    [
+      SimpleCardTemplateAppearance_GHOST,
+      intl.formatMessage(messages.simplecard_listing_appearance_ghost),
+    ],
   ];
-  if (schema.id === 'search')
+  if (schema.id === 'search') {
     choices = [
       [
         SimpleCardTemplateAppearance_ONEFORROW,
         intl.formatMessage(messages.simplecard_listing_appearance_oneforrow),
       ],
     ];
+  }
   addSchemaField(
     schema,
     'appearance',
@@ -66,7 +85,11 @@ export const addSimpleCardTemplateOptions = (
 
   pos = addDefaultOptions(schema, formData, intl, pos);
 
-  if (formData?.appearance !== SimpleCardTemplateAppearance_COMPACT) {
+  if (
+    formData?.appearance !== SimpleCardTemplateAppearance_COMPACT &&
+    formData?.appearance !== SimpleCardTemplateAppearance_GUIDE &&
+    formData?.appearance !== SimpleCardTemplateAppearance_GHOST
+  ) {
     pos = simpleCardTemplateOptions_appearance_default(
       schema,
       formData,
@@ -96,14 +119,16 @@ export const simpleCardTemplateOptions_appearance_default = (
       'show_type',
       'show_description',
       'show_detail_link',
-      'show_path_filters',
+      //  'show_path_filters',
+      //se servono i path filters, scommentare anche la riga 108 e copiare/sistemare la customizzazione di withQueryStringResults da io-comune.
+      //scommentare anche tutti i pezzi che riguarda PathFilters
     ].filter((f) => hide_fields.indexOf(f) < 0),
     {
       hide_dates: { default: false },
       show_icon: { default: false },
       show_type: { default: false },
       show_detail_link: { default: false },
-      show_path_filters: { default: false },
+      // show_path_filters: { default: false },
     },
     pos,
   );

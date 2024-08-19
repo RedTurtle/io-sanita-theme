@@ -10,6 +10,8 @@ export {
   addSimpleCardTemplateOptions,
   SimpleCardTemplateAppearance_COMPACT,
   SimpleCardTemplateAppearance_ONEFORROW,
+  SimpleCardTemplateAppearance_GUIDE,
+  SimpleCardTemplateAppearance_GHOST,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleCardTemplate';
 export { addCardWithImageTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithImageTemplate';
 export { addInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/inEvidenceTemplate';
