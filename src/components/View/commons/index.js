@@ -78,6 +78,12 @@ export const PageHeaderDocumento = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDocumento'
     ),
 );
+export const PageHeaderPersona = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderPersona'
+    ),
+);
 export const PageHeaderEventDates = loadable(
   () =>
     import(

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-14T08:56:48.764Z\n"
+"POT-Creation-Date: 2024-08-19T08:04:59.616Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -603,6 +603,11 @@ msgstr ""
 msgid "homepage"
 msgstr ""
 
+#. Default: "Incarico"
+#: components/View/commons/PageHeader/PageHeaderPersona
+msgid "incarico"
+msgstr ""
+
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
@@ -838,6 +843,7 @@ msgid "organizzato_da"
 msgstr ""
 
 #. Default: "Ulteriori informazioni"
+#: components/View/Persona/PersonaUlterioriInformazioni
 #: components/View/Struttura/StrutturaUlterioriInformazioni
 #: components/View/UOView/UOUlterioriInformazioni
 msgid "other_info"
@@ -906,6 +912,51 @@ msgstr ""
 #. Default: "PEC"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pec"
+msgstr ""
+
+#. Default: "Incarichi"
+#: components/View/Persona/PersonaIncarichi
+msgid "persona_altri_incarichi"
+msgstr ""
+
+#. Default: "Biografia"
+#: components/View/Persona/PersonaBiografia
+msgid "persona_biografia"
+msgstr ""
+
+#. Default: "Competenze"
+#: components/View/Persona/PersonaCompetenze
+msgid "persona_competenze"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Persona/PersonaContatti
+msgid "persona_contatti"
+msgstr ""
+
+#. Default: "Curriculum Vitae"
+#: components/View/Persona/PersonaDocumenti
+msgid "persona_cv"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Persona/PersonaDocumenti
+msgid "persona_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Persona/PersonaDove
+msgid "persona_dove"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Persona/PersonaGalleria
+msgid "persona_gallery"
+msgstr ""
+
+#. Default: "Orari di ricevimento"
+#: components/View/Persona/PersonaOrariRicevimento
+msgid "persona_orari_ricevimento"
 msgstr ""
 
 #. Default: "Precedente"
