@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-19T08:04:59.616Z\n"
+"POT-Creation-Date: 2024-08-20T23:37:49.395Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -443,14 +443,54 @@ msgstr ""
 msgid "deselectSearchSection"
 msgstr ""
 
+#. Default: "Autori"
+#: components/View/Documento/DocumentoAutori
+msgid "doc_autori"
+msgstr ""
+
+#. Default: "Procedura di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "doc_procedura_riferimento"
+msgstr ""
+
+#. Default: "Servizio di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "doc_servizio_riferimento"
+msgstr ""
+
 #. Default: "Documenti e dati"
 #: components/View/commons/RelatedItems
 msgid "documenti-e-dati"
 msgstr ""
 
+#. Default: "A chi è rivolto"
+#: components/View/Documento/DocumentoAChiERivolto
+msgid "documento_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Documento/DocumentoCosE
+msgid "documento_cos_e"
+msgstr ""
+
+#. Default: "Vai al documento"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_doc"
+msgstr ""
+
+#. Default: "Formati alternativi"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_formati"
+msgstr ""
+
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/Documento/DocumentoResponsabile
+msgid "documento_responsabile"
 msgstr ""
 
 #. Default: "Download and Play video"

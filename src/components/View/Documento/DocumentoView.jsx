@@ -1,58 +1,51 @@
 /**
  * UOView view component.
- * @module components/theme/View/PersonaView
+ * @module components/theme/View/DocumentoView
  */
 
 import React, { createRef } from 'react';
-
 import PropTypes from 'prop-types';
-import {
-  PersonaIncarichi,
-  PersonaCompetenze,
-  PersonaDove,
-  PersonaOrariRicevimento,
-  PersonaContatti,
-  PersonaBiografia,
-  PersonaDocumenti,
-  PersonaGalleria,
-  PersonaUlterioriInformazioni,
-} from 'io-sanita-theme/components/View/Persona';
-
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
-
 import {
   PageHeader,
   SkipToMainContent,
+  ContentImage,
   useSideMenu,
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
 
-export const PersonaViewSectionsOrder = [
-  { /* INCARICHI */ component: PersonaIncarichi },
-  { /* COMPETENZE */ component: PersonaCompetenze },
-  { /* DOVE */ component: PersonaDove },
-  { /* ORARI */ component: PersonaOrariRicevimento },
-  { /* CONTATTI */ component: PersonaContatti },
-  { /* BIOGRAFIA */ component: PersonaBiografia },
-  { /* GALLERIA */ component: PersonaGalleria },
-  { /* DOCUMENTI */ component: PersonaDocumenti },
-  { /* ULTERIORI INFORMAZIONI */ component: PersonaUlterioriInformazioni },
+import {
+  DocumentoCosE,
+  DocumentoAChiERivolto,
+  DocumentoDocumenti,
+  DocumentoServiziProcedure,
+  DocumentoResponsabile,
+  DocumentoAutori,
+} from 'io-sanita-theme/components/View/Documento';
+
+export const DocumentoViewSectionsOrder = [
+  { /* COS'è */ component: DocumentoCosE },
+  { /* DOCUMENTI */ component: DocumentoDocumenti },
+  { /* SERVIZI E PROCEDURE */ component: DocumentoServiziProcedure },
+  { /* RESPONSABILE */ component: DocumentoResponsabile },
+  { /* AUTORI */ component: DocumentoAutori },
+  { /* A CHI SI RIVOLGE */ component: DocumentoAChiERivolto },
   { /* METADATA */ component: Metadata },
 ];
 
 /**
- * PersonaView view component class.
- * @function PersonaView
- * @params {object} content Content object.
- * @returns {string} Markup of the component.
- */
-const PersonaView = ({ content }) => {
+* DocumentoView view component class.
+* @function DocumentoView
+* @params {object} content Content object.
+* @returns {string} Markup of the component.
+*/
+const DocumentoView = ({ content }) => {
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (
     <>
-      <div className="container px-4 my-4 persona-view">
+      <div className="container px-4 my-4 documento-view">
         <SkipToMainContent />
         <PageHeader
           content={content}
@@ -60,8 +53,9 @@ const PersonaView = ({ content }) => {
           showreadingtime={false}
           showdates={false}
           showtassonomiaargomenti={true}
-          foto={true}
         />
+      {/* HEADER IMAGE */}
+      <ContentImage content={content}   />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-lg-4">
@@ -77,7 +71,7 @@ const PersonaView = ({ content }) => {
             {/* SEZIONI */}
             <ContentTypeViewSections
               content={content}
-              defaultSections={PersonaViewSectionsOrder}
+              defaultSections={DocumentoViewSectionsOrder}
             />
           </section>
         </div>
@@ -86,7 +80,7 @@ const PersonaView = ({ content }) => {
   );
 };
 
-PersonaView.propTypes = {
+DocumentoView.propTypes = {
   content: PropTypes.shape({
     ulteriori_informazioni: PropTypes.shape({
       data: PropTypes.string,
@@ -111,4 +105,4 @@ PersonaView.propTypes = {
   }),
 };
 
-export default PersonaView;
+export default DocumentoView;

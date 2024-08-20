@@ -18,7 +18,12 @@ const messages = defineMessages({
   },
 });
 
-const FileIcon = ({ item, size = '2x', showLabel = false }) => {
+const FileIcon = ({
+  item,
+  size = '2x',
+  showLabel = false,
+  fileFormat = false,
+}) => {
   const intl = useIntl();
   const defaultIcon = { lib: 'far', name: 'file-lines', svg_format: false };
   let label = intl.formatMessage(messages.download_file);
@@ -26,9 +31,10 @@ const FileIcon = ({ item, size = '2x', showLabel = false }) => {
   let file = item;
   if (item['@type'] === 'File') {
     file = item.file;
-  }
-  if (item['@type'] === 'Image') {
+  } else if (item['@type'] === 'Image') {
     file = item.image;
+  } else if (fileFormat) {
+    file = item.file;
   }
 
   if (file) {
