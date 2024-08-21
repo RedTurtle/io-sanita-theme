@@ -6,7 +6,7 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   autori: {
-    id: 'doc_autori',
+    id: 'documento_autori',
     defaultMessage: 'Autori',
   },
 });

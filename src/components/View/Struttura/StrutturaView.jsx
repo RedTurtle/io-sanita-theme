@@ -68,7 +68,6 @@ const StrutturaView = ({ content }) => {
           readingtime={null}
           showreadingtime={false}
           showdates={false}
-          showtassonomiaargomenti={true}
         />
         {/* HEADER IMAGE */}
         <ContentImage content={content}   />

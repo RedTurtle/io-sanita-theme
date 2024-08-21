@@ -6,11 +6,11 @@ import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   doc_servizio_riferimento: {
-    id: 'doc_servizio_riferimento',
+    id: 'documento_servizio_riferimento',
     defaultMessage: 'Servizio di riferimento',
   },
   doc_procedura_riferimento: {
-    id: 'doc_procedura_riferimento',
+    id: 'documento_procedura_riferimento',
     defaultMessage: 'Procedura di riferimento',
   },
 });

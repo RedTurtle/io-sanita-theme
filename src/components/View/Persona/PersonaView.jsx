@@ -59,7 +59,6 @@ const PersonaView = ({ content }) => {
           readingtime={null}
           showreadingtime={false}
           showdates={false}
-          showtassonomiaargomenti={true}
           foto={true}
         />
 
