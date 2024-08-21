@@ -22,15 +22,15 @@ const UODocumenti = ({ content }) => {
   return (
     <>
       {(contentFolderHasItems(content, 'allegati') ||
-        content.documenti?.length > 0) && (
+        content.documento_correlato?.length > 0) && (
           <RichTextSection
             tag_id="documenti"
             title={intl.formatMessage(messages.documenti)}
           >
             {/* DOCUMENTI UFFICIALI */}
-            {content.documenti?.length > 0 && (
+            {content.documento_correlato?.length > 0 && (
               <Row className="attachments mb-4">
-                {content?.documenti.map((item, _i) => (
+                {content?.documento_correlato.map((item, _i) => (
                   <Col lg={6} className="py-lg-2" key={item['@id']}>
                     <CardFile item={item} />
                   </Col>
