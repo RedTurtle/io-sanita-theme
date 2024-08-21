@@ -1,9 +1,13 @@
 import { v4 as uuid } from 'uuid';
 import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
+import searchSVG from '@plone/volto/icons/zoom.svg';
 import {
   BreakView,
   BreakEdit,
   HTMLBlockSchema,
+  SearchStruttureView,
+  SearchStruttureEdit,
+  SearchStruttureSchema,
 } from 'io-sanita-theme/components/Blocks';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
@@ -59,6 +63,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
       ...config.blocks.blocksConfig.search,
       templates: ['simpleCard', 'simpleListTemplate'],
     },
+    searchStrutture: {
+      id: 'searchStrutture',
+      title: 'Cerca strutture',
+      icon: searchSVG,
+      group: 'search',
+      view: SearchStruttureView,
+      edit: SearchStruttureEdit,
+      restricted: false,
+      mostUsed: true,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      schema: SearchStruttureSchema,
+      sidebarTab: 1,
+    },
     break: {
       id: 'break',
       title: 'Interruzione di pagina',
@@ -94,6 +115,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       if (data.show_block_bg) {
         styles.push('bg-primary-lightest');
         styles.push('full-width');
+        styles.push('pb-4');
       }
       return [...classNames, ...styles];
     },
