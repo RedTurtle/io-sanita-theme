@@ -97,8 +97,6 @@ const AggregationPage = ({ match, route, location }) => {
     doSearch();
   }, [searchParams]);
 
-
-
   const doSearch = () => {
     if (!tassonomieSearch.loading) {
       dispatch(getTassonomieSearch(searchParams));
@@ -190,8 +188,8 @@ const AggregationPage = ({ match, route, location }) => {
                     const parliamo_di_metadata =
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
-                        : item.portal_type_title
-                        ? [{ title: item.portal_type_title }]
+                        : item.type_title
+                        ? [{ title: item.type_title }]
                         : [];
                     return (
                       <CardSimple

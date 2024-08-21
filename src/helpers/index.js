@@ -11,6 +11,7 @@ export {
   removeListingVariation,
   addSchemaStyles,
   DEFAULT_BG_COLORS,
+  cloneBlock,
 } from 'io-sanita-theme/helpers/blocks_config';
 export { commonSearchBlockMessages } from 'io-sanita-theme/helpers/Translations/searchBlockExtendedTranslations';
 export {
@@ -60,3 +61,11 @@ export PuntoDiContattoValue from 'io-sanita-theme/helpers/Views/PuntoDiContattoV
 //pagination
 export { usePaginatedItemsSection } from 'io-sanita-theme/helpers/usePaginatedItemsSection.hook.ts';
 
+//item
+export {
+  getItemIcon,
+  getItemListingCategory,
+} from 'io-sanita-theme/helpers/Item/item';
+
+//registry
+export { getComponentWithFallback } from 'io-sanita-theme/helpers/registry';
