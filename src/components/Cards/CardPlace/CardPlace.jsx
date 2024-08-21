@@ -17,10 +17,6 @@ import { Address } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
 const messages = defineMessages({
-  address: {
-    id: 'CardPlace: address label',
-    defaultMessage: 'Indirizzo',
-  },
   view_on_googlemaps: {
     id: 'CardPlace: view on googlemaps',
     defaultMessage: 'Apri in mappa',
@@ -29,7 +25,7 @@ const messages = defineMessages({
 
 const CardPlace = ({
   size = 'big', // 'small'
-  type = 'complete', // 'synthetic'
+  type = 'complete', // ['complete','essential','synthetic']
   showDistance = false,
   showAddress = true,
   item,
@@ -47,7 +43,7 @@ const CardPlace = ({
     latLong?.length > 0 ||
     (item?.street?.length > 0 &&
       (item?.zip_code?.length > 0 || item.city?.length > 0));
-  console.log(latLong, item.street, item.zip_code, item.city);
+
   return (
     <Card
       className={cx('shadow rounded card-place no-after', {
@@ -61,52 +57,47 @@ const CardPlace = ({
             'pe-3': size == 'small',
           })}
         >
-          <CardTitle tag={titleTag}>
-            {item['@id'] ? (
-              <UniversalLink
-                item={!isEditMode ? item : null}
-                href={isEditMode ? '#' : ''}
-                className="card-title-link"
-              >
-                {item.nome_sede || item.title}
-              </UniversalLink>
-            ) : (
-              <>{item.nome_sede || item.title}</>
-            )}
-          </CardTitle>
+          <div className="card-place-content-top">
+            <CardTitle tag={titleTag}>
+              {item['@id'] ? (
+                <UniversalLink
+                  item={!isEditMode ? item : null}
+                  href={isEditMode ? '#' : ''}
+                  className="card-title-link"
+                >
+                  {item.nome_sede || item.title}
+                </UniversalLink>
+              ) : (
+                <>{item.nome_sede || item.title}</>
+              )}
+            </CardTitle>
 
-          <CardText tag="div">
-            {size != 'small' && (
-              <>
-                {showAddress && (
-                  <p>
-                    {(item.street ||
-                      item.zip_code ||
-                      item.city ||
-                      item.province) && (
-                      <>{intl.formatMessage(messages.address)}: </>
-                    )}
-                    <Address item={item} showDistance={false} />
-                  </p>
-                )}
-                {showDistance && (
-                  <Address
-                    item={item}
-                    showAddress={false}
-                    showDistance={true}
-                  />
-                )}
-              </>
-            )}
-            {type !== 'synthetic' && (
-              <CardCategoryBottom item={item} isEditMode={isEditMode} />
-            )}
-          </CardText>
+            <CardText tag="div">
+              {size != 'small' && (
+                <>
+                  {showAddress && (
+                    <Address item={item} showDistance={false} tag="p" />
+                  )}
+                  {showDistance && (
+                    <Address
+                      item={item}
+                      showAddress={false}
+                      showDistance={true}
+                    />
+                  )}
+                </>
+              )}
+            </CardText>
+          </div>
+          {type !== 'synthetic' && (
+            <CardCategoryBottom item={item} isEditMode={isEditMode} />
+          )}
         </div>
         <AvatarIcon size={size == 'small' ? 'l' : 'xl'}>
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
+
       {type == 'complete' && size != 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
           <UniversalLink

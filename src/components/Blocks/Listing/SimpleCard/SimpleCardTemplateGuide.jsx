@@ -21,11 +21,11 @@ const SimpleCardTemplateGuide = ({
 }) => {
   const intl = useIntl();
   return (
-    <div className="simple-card-guide-template pb-4">
-      <Row>
+    <div className="simple-card-guide-template">
+      <Row className="mb-3">
         {items.map((item, index) => (
-          <Col md={6} lg={4}>
-            <CardGuide item={item} isEditMode={isEditMode} key={index} />
+          <Col md={6} lg={4} key={index}>
+            <CardGuide item={item} isEditMode={isEditMode} />
           </Col>
         ))}
       </Row>
