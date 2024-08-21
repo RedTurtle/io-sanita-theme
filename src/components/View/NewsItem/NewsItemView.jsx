@@ -70,7 +70,6 @@ import {
             readingtime={readingtime}
            showreadingtime={true}
            showdates={true}
-           showtassonomiaargomenti={true}
          />
 
          {/* HEADER IMAGE */}

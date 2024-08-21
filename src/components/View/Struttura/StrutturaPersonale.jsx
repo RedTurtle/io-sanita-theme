@@ -26,15 +26,13 @@ const UOPersonale = ({ content }) => {
       >
         {/* PERSONALE DELLA STRUTTURA */}
         {content?.personale_correlato?.length > 0 && (
-          <div className="mb-5">
-            <Row>
-            {content.personale_correlato.map((item) => (
-              <Col lg={6} className="py-lg-2" key={'personale_' + item['@id']}>
-                <CardPersona item={item} />
-              </Col>
-            ))}
-            </Row>
-          </div>
+          <Row className="mb-5">
+          {content.personale_correlato.map((item) => (
+            <Col lg={6} className="py-lg-2" key={'personale_' + item['@id']}>
+              <CardPersona item={item} />
+            </Col>
+          ))}
+          </Row>
         )}
 
 

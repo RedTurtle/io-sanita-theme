@@ -1,6 +1,10 @@
 .public-ui .card.card-persona {
   .avatar {
     background-color: var(--primary-lightest);
+
+    &.size-xl {
+      padding: 0 0.5rem;
+    }
   }
 
   .card-body {
