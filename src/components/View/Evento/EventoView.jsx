@@ -139,7 +139,6 @@ EventoView.propTypes = {
       data: PropTypes.string,
     }),
     items: PropTypes.array,
-    strutture_politiche: PropTypes.array,
     supportato_da: PropTypes.array,
     organizzato_da_interno: PropTypes.array,
     persone_amministrazione: PropTypes.array,

@@ -34,12 +34,20 @@ const CardPlace = ({
   showAddress = true,
   item,
   isEditMode,
-  titleTag="h3"
+  titleTag = 'h3',
 }) => {
   const intl = useIntl();
-  const latLong = (item?.geolocation?.latitude!=0 || item?.geolocation?.longitude!=0) ? (item?.geolocation?.latitude + ',' + item?.geolocation?.longitude) : '';
-  const showGeolocation = latLong?.length > 0 || (item?.street!=null && (item?.zip_code!=null || item.city!=null));
-
+  const latLong =
+    item?.geolocation?.latitude &&
+    item?.geolocation?.longitude &&
+    (item?.geolocation?.latitude != 0 || item?.geolocation?.longitude != 0)
+      ? item?.geolocation?.latitude + ',' + item?.geolocation?.longitude
+      : '';
+  const showGeolocation =
+    latLong?.length > 0 ||
+    (item?.street?.length > 0 &&
+      (item?.zip_code?.length > 0 || item.city?.length > 0));
+  console.log(latLong, item.street, item.zip_code, item.city);
   return (
     <Card
       className={cx('shadow rounded card-place no-after', {
@@ -72,10 +80,11 @@ const CardPlace = ({
               <>
                 {showAddress && (
                   <p>
-                    {(item.street || item.zip_code || item.city || item.province) && (
-                      <>
-                        {intl.formatMessage(messages.address)}:{' '}
-                      </>
+                    {(item.street ||
+                      item.zip_code ||
+                      item.city ||
+                      item.province) && (
+                      <>{intl.formatMessage(messages.address)}: </>
                     )}
                     <Address item={item} showDistance={false} />
                   </p>
@@ -100,7 +109,6 @@ const CardPlace = ({
       </CardBody>
       {type == 'complete' && size != 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
-
           <UniversalLink
             href={`http://maps.google.com/?q=${item?.street ?? ''} ${
               item?.zip_code ?? ''
