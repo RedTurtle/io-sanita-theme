@@ -8,6 +8,9 @@ h1.documentFirstHeading {
   h1 {
     @include rem-size(font-size, 48);
   }
+  h2 {
+    @include rem-size(font-size, 40);
+  }
 
   h5 {
     @include rem-size(font-size, 24);

@@ -12,7 +12,7 @@ import {
 
 const DefaultSkeleton = ({ isEditMode, title }) => {
   return (
-    <Container className="px-4">
+    <Container>
       <div className="skeleton-template">
         {title && (
           <Row>

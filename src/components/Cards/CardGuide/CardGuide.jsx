@@ -25,7 +25,7 @@ const messages = defineMessages({
   },
 });
 
-export const CardGuide = ({ item, isEditMode, titleTag="h3" }) => {
+export const CardGuide = ({ item, isEditMode, titleTag = 'h3' }) => {
   const intl = useIntl();
   let _item = { ...item };
 
@@ -33,7 +33,7 @@ export const CardGuide = ({ item, isEditMode, titleTag="h3" }) => {
     <Card className="shadow rounded card-guide no-after">
       <CardBody>
         <div className="card-guide-content">
-          <CardTitle tag={titleTag} className="d-flex mb-0 align-items-center">
+          <CardTitle tag={titleTag} className="d-flex my-0 align-items-center">
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
