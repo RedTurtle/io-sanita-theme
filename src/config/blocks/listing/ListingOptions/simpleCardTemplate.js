@@ -27,7 +27,11 @@ const messages = defineMessages({
   },
   simplecard_listing_appearance_ghost: {
     id: 'simplecard_listing_appearance_ghost',
-    defaultMessage: 'Collegamenti a categorie',
+    defaultMessage: 'Collegamenti a Categorie',
+  },
+  simplecard_listing_appearance_place: {
+    id: 'simplecard_listing_appearance_place',
+    defaultMessage: 'Strutture / Luoghi',
   },
   simplecard_listing_appearance_oneforrow: {
     id: 'simplecard_listing_appearance_oneforrow',
@@ -40,6 +44,7 @@ export const SimpleCardTemplateAppearance_COMPACT = 'compact';
 export const SimpleCardTemplateAppearance_ONEFORROW = 'oneForRow';
 export const SimpleCardTemplateAppearance_GUIDE = 'guide';
 export const SimpleCardTemplateAppearance_GHOST = 'ghost';
+export const SimpleCardTemplateAppearance_PLACE = 'place';
 
 export const addSimpleCardTemplateOptions = (
   schema,
@@ -61,6 +66,10 @@ export const addSimpleCardTemplateOptions = (
     [
       SimpleCardTemplateAppearance_GHOST,
       intl.formatMessage(messages.simplecard_listing_appearance_ghost),
+    ],
+    [
+      SimpleCardTemplateAppearance_PLACE,
+      intl.formatMessage(messages.simplecard_listing_appearance_place),
     ],
   ];
   if (schema.id === 'search') {
@@ -88,7 +97,8 @@ export const addSimpleCardTemplateOptions = (
   if (
     formData?.appearance !== SimpleCardTemplateAppearance_COMPACT &&
     formData?.appearance !== SimpleCardTemplateAppearance_GUIDE &&
-    formData?.appearance !== SimpleCardTemplateAppearance_GHOST
+    formData?.appearance !== SimpleCardTemplateAppearance_GHOST &&
+    formData?.appearance !== SimpleCardTemplateAppearance_PLACE
   ) {
     pos = simpleCardTemplateOptions_appearance_default(
       schema,

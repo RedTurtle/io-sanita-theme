@@ -5,10 +5,10 @@ import cx from 'classnames';
 import { UniversalLink } from '@plone/volto/components';
 import { Row, Col } from 'design-react-kit';
 
-import { CardSimple } from 'io-sanita-theme/components';
+import { CardPlace } from 'io-sanita-theme/components';
 import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
 
-const SimpleCardTemplateCompact = ({
+const SimpleCardTemplatePlace = ({
   items,
   isEditMode,
   linkTitle,
@@ -18,14 +18,16 @@ const SimpleCardTemplateCompact = ({
   id_lighthouse,
   linkAlign,
   linkmore_id_lighthouse,
+  cardType = 'essential',
 }) => {
   const intl = useIntl();
+
   return (
-    <div className="simple-card-compact-template">
+    <div className="simple-card-place-template">
       <Row className="mb-3">
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
-            <CardSimple item={item} showDescription={false} />
+            <CardPlace item={item} type={cardType} isEditMode={isEditMode} />
           </Col>
         ))}
       </Row>
@@ -41,11 +43,11 @@ const SimpleCardTemplateCompact = ({
   );
 };
 
-SimpleCardTemplateCompact.propTypes = {
+SimpleCardTemplatePlace.propTypes = {
   items: PropTypes.arrayOf(PropTypes.any).isRequired,
   isEditMode: PropTypes.bool,
   linkTitle: PropTypes.any,
   c: PropTypes.any,
 };
 
-export default SimpleCardTemplateCompact;
+export default SimpleCardTemplatePlace;

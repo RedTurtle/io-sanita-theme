@@ -61,18 +61,22 @@ const SimpleCardDefault = (props) => {
   } = props;
 
   const getItemClass = (item) => {
-    let className = null;
+    let className = '';
     switch (item['@type']) {
       case 'News Item':
         className =
           item.tipologia_notizia
-            ?.map?.((tipologia) =>
-              tipologia.token.toLowerCase().replace(' ', '_'),
-            )
+            ?.map?.((tipologia) => {
+              return (
+                typeof tiplogia === 'object' ? tipologia.token : tipologia
+              )
+                ?.toLowerCase()
+                ?.replace(' ', '_');
+            })
             .join(' ') ?? '';
         break;
       default:
-        className = null;
+        className = '';
         break;
     }
     return className;
@@ -98,8 +102,6 @@ const SimpleCardDefault = (props) => {
       className={`align-items-top rounded shadow no-after ${getItemClass(
         item,
       )} simple-card-default-item`}
-      noWrapper
-      teaser
       key={index}
     >
       <CardBody

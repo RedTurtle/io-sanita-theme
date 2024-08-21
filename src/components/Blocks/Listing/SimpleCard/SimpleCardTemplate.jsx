@@ -7,12 +7,14 @@ import SimpleCardTemplateOneForRow from 'io-sanita-theme/components/Blocks/Listi
 
 import SimpleCardTemplateGuide from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateGuide';
 import SimpleCardTemplateGhost from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateGhost';
+import SimpleCardTemplatePlace from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplatePlace';
 
 import {
   SimpleCardTemplateAppearance_COMPACT,
   SimpleCardTemplateAppearance_ONEFORROW,
   SimpleCardTemplateAppearance_GUIDE,
   SimpleCardTemplateAppearance_GHOST,
+  SimpleCardTemplateAppearance_PLACE,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import './simpleCardTemplate.scss';
 
@@ -30,6 +32,9 @@ const SimpleCardTemplate = (data) => {
       break;
     case SimpleCardTemplateAppearance_GHOST:
       content = <SimpleCardTemplateGhost {...data} />;
+      break;
+    case SimpleCardTemplateAppearance_PLACE:
+      content = <SimpleCardTemplatePlace {...data} />;
       break;
     default:
       content = <SimpleCardTemplateDefault {...data} />;

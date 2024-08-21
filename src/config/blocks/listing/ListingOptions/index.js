@@ -12,6 +12,7 @@ export {
   SimpleCardTemplateAppearance_ONEFORROW,
   SimpleCardTemplateAppearance_GUIDE,
   SimpleCardTemplateAppearance_GHOST,
+  SimpleCardTemplateAppearance_PLACE,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleCardTemplate';
 export { addCardWithImageTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithImageTemplate';
 export { addInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/inEvidenceTemplate';

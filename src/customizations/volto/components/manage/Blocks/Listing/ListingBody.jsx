@@ -48,7 +48,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
 
   return (
     (data.title || path_filters_buttons) && (
-      <Container>
+      <Container className="px-0">
         <Row
           className={cx('template-header', {
             'with-filters': path_filters_buttons,

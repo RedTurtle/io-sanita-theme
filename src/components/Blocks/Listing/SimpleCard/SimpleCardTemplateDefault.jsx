@@ -21,14 +21,13 @@ const SimpleCardTemplateDefault = (props) => {
 
   return (
     <div className="simple-card-default">
-      <div
-        className="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 mb-3"
-        id={resultsUID + '_results'}
-      >
+      <Row className="mb-3" id={resultsUID + '_results'}>
         {items.map((item, index) => (
-          <SimpleCardDefault {...props} item={item} index={index} key={index} />
+          <Col md={6} lg={4} key={index}>
+            <SimpleCardDefault {...props} item={item} index={index} />
+          </Col>
         ))}
-      </div>
+      </Row>
 
       <ListingLinkMore
         title={linkTitle}
