@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-19T08:04:59.616Z\n"
+"POT-Creation-Date: 2024-08-21T10:04:38.695Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -18,9 +18,21 @@ msgstr ""
 msgid "Accedi all'area personale"
 msgstr ""
 
+#. Default: "Aspetto"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "Aspetto"
+msgstr ""
+
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
+msgstr ""
+
+#. Default: "Vedi"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "Card detail label"
 msgstr ""
 
 #. Default: "Indirizzo"
@@ -94,6 +106,17 @@ msgstr ""
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr ""
 
+#. Default: "Dimensione della mappa"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "Dimensione della mappa"
+msgstr ""
+
+#. Default: "Etichetta"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Etichetta path filter"
+msgstr ""
+
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
 msgid "Go to content"
@@ -112,6 +135,18 @@ msgstr ""
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
+msgstr ""
+
+#. Default: "ID Lighthouse"
+#: config/blocks/listing/ListingOptions/linkMoreOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "ID Lighthouse"
+msgstr ""
+
+#. Default: "Identificativo di servizio a solo uso interno, utilizzato per le verifiche AgID inerenti al PNRR."
+#: config/blocks/listing/ListingOptions/linkMoreOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "ID Lighthouse Help Description"
 msgstr ""
 
 #. Default: "Impostazioni cookie"
@@ -155,6 +190,18 @@ msgstr ""
 msgid "Menu selezionato"
 msgstr ""
 
+#. Default: "Mostra i filtri per percorso"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Mostra i filtri per percorso"
+msgstr ""
+
+#. Default: "Mostra lo sfondo del blocco"
+#: config/blocks/listing/ListingOptions/defaultOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "Mostra lo sfondo del blocco"
+msgstr ""
+
 #. Default: "Pagina successiva"
 #: components/Pagination/PaginationItem
 msgid "Next page"
@@ -170,9 +217,21 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
+#. Default: "Filtro"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Path filter filtro"
+msgstr ""
+
 #. Default: "Seleziona per mettere in pausa lo slider"
 #: components/Slider/ButtonPlayPause
 msgid "Pause slider"
+msgstr ""
+
+#. Default: "Percorso"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Percorso path filter"
 msgstr ""
 
 #. Default: "Seleziona per riprodurre lo slider"
@@ -230,6 +289,11 @@ msgstr ""
 msgid "Tipi di contenuto"
 msgstr ""
 
+#. Default: "Titolo"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "Titolo"
+msgstr ""
+
 #. Default: "Trascina qui il file..."
 #: components/Widgets/FileWidget
 msgid "Trascina qui il file ..."
@@ -269,6 +333,7 @@ msgid "Vai alla pagina"
 msgstr ""
 
 #. Default: "Vedi tutto"
+#: components/Blocks/Listing/commons/ListingLinkMore
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr ""
@@ -303,6 +368,11 @@ msgstr ""
 msgid "aggregation_page_no_results"
 msgstr ""
 
+#. Default: "Allinea il bottone a destra"
+#: components/Blocks/Listing/schema
+msgid "alignButton"
+msgstr ""
+
 #. Default: "Tutto"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allFilters"
@@ -318,6 +388,11 @@ msgstr ""
 msgid "allTopics"
 msgstr ""
 
+#. Default: "Mostra l'immagine per tutti gli elementi"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "always_show_image"
+msgstr ""
+
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
 msgid "amministrazione"
@@ -331,6 +406,21 @@ msgstr ""
 #. Default: "Allegati"
 #: components/View/commons/Attachments/Attachments
 msgid "attachments"
+msgstr ""
+
+#. Default: "Autoplay"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay"
+msgstr ""
+
+#. Default: "Velocità autoplay"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay_speed"
+msgstr ""
+
+#. Default: "La velocità di autoplay deve essere espressa in secondi."
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay_speed_description"
 msgstr ""
 
 #. Default: "Torna alla ricerca"
@@ -358,6 +448,11 @@ msgstr ""
 msgid "bando_scheduled"
 msgstr ""
 
+#. Default: "Colore di sfondo"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "block_bg_color"
+msgstr ""
+
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "breadcrumb"
@@ -371,6 +466,11 @@ msgstr ""
 #. Default: "Slide"
 #: components/Slider/SingleSlideWrapper
 msgid "carouselSlide"
+msgstr ""
+
+#. Default: "Icona categoria"
+#: components/Cards/common/CardCategoryTop
+msgid "category_icon"
 msgstr ""
 
 #. Default: "Clear all filters"
@@ -443,14 +543,59 @@ msgstr ""
 msgid "deselectSearchSection"
 msgstr ""
 
+#. Default: "Testo per il link al dettaglio"
+#: config/blocks/listing/ListingOptions/utils
+msgid "detail_link_label"
+msgstr ""
+
 #. Default: "Documenti e dati"
 #: components/View/commons/RelatedItems
 msgid "documenti-e-dati"
 msgstr ""
 
+#. Default: "A chi è rivolto"
+#: components/View/Documento/DocumentoAChiERivolto
+msgid "documento_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Autori"
+#: components/View/Documento/DocumentoAutori
+msgid "documento_autori"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Documento/DocumentoCosE
+msgid "documento_cos_e"
+msgstr ""
+
+#. Default: "Vai al documento"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_doc"
+msgstr ""
+
+#. Default: "Formati alternativi"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_formati"
+msgstr ""
+
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
+msgstr ""
+
+#. Default: "Procedura di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "documento_procedura_riferimento"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/Documento/DocumentoResponsabile
+msgid "documento_responsabile"
+msgstr ""
+
+#. Default: "Servizio di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "documento_servizio_riferimento"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -598,6 +743,11 @@ msgstr ""
 msgid "gallery_view_prev"
 msgstr ""
 
+#. Default: "Nascondi le date"
+#: config/blocks/listing/ListingOptions/utils
+msgid "hide_dates"
+msgstr ""
+
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
@@ -626,6 +776,11 @@ msgstr ""
 #. Default: "Questo evento ha più date: vedi tutte"
 #: helpers/dates
 msgid "listing_event_recurrence_label"
+msgstr ""
+
+#. Default: "Colore dell'elemento"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "listing_items_color"
 msgstr ""
 
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
@@ -721,6 +876,21 @@ msgstr ""
 msgid "mailto"
 msgstr ""
 
+#. Default: "Grande"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_large"
+msgstr ""
+
+#. Default: "Media"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_medium"
+msgstr ""
+
+#. Default: "Piccola"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_small"
+msgstr ""
+
 #. Default: "min"
 #: components/View/commons/PageHeader/PageHeader
 msgid "minutes"
@@ -740,6 +910,11 @@ msgstr ""
 #. Default: "Scarica in formato"
 #: helpers/Files/FileIcon
 msgid "modulo_download_in_format"
+msgstr ""
+
+#. Default: "Non alterare le dimensioni naturali dell'immagine"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "natural_image_size"
 msgstr ""
 
 #. Default: "A cura di"
@@ -847,6 +1022,11 @@ msgstr ""
 #: components/View/Struttura/StrutturaUlterioriInformazioni
 #: components/View/UOView/UOUlterioriInformazioni
 msgid "other_info"
+msgstr ""
+
+#. Default: "Non mostrare l'icona di accessibilità per i link a siti esterni"
+#: config/blocks/listing/ListingOptions/smallBlockLinksTemplate
+msgid "override_links_accessibility_marker"
 msgstr ""
 
 #. Default: "PARLIAMO DI"
@@ -967,6 +1147,12 @@ msgstr ""
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
+msgstr ""
+
+#. Default: "Data di pubblicazione"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "publication_date"
 msgstr ""
 
 #. Default: "Tempo di lettura"
@@ -1115,9 +1301,125 @@ msgstr ""
 msgid "setMoreSearchOptions"
 msgstr ""
 
+#. Default: "Disponi su 4 colonne"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "set_four_columns"
+msgstr ""
+
 #. Default: "Condividi"
 #: components/View/commons/Sharing/Sharing
 msgid "share"
+msgstr ""
+
+#. Default: "Mostra la descrizione"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_description"
+msgstr ""
+
+#. Default: "Mostra il link al dettaglio"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_detail_link"
+msgstr ""
+
+#. Default: "Mostra i puntini di scorrimento"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_dots"
+msgstr ""
+
+#. Default: "Mostra l'ente"
+#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+msgid "show_ente"
+msgstr ""
+
+#. Default: "A tutta larghezza"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_full_width"
+msgstr ""
+
+#. Default: "Mostra l'icona"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_icon"
+msgstr ""
+
+#. Default: "Apri l'immagine in popup"
+#: config/blocks/listing/ListingOptions/photogalleryTemplate
+msgid "show_image_popup"
+msgstr ""
+
+#. Default: "Mostra il titolo dell'immagine"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_image_title"
+msgstr ""
+
+#. Default: "Mostra la mappa a tutta larghezza"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "show_map_full_width"
+msgstr ""
+
+#. Default: "Mostra il nastro solo sulla prima card"
+#: config/blocks/listing/ListingOptions/ribbonCardTemplate
+msgid "show_only_first_ribbon"
+msgstr ""
+
+#. Default: "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati."
+#: config/blocks/listing/ListingOptions/attachmentCardTemplate
+msgid "show_pdf_desc"
+msgstr ""
+
+#. Default: "Mostra i PDF in anteprima"
+#: config/blocks/listing/ListingOptions/attachmentCardTemplate
+msgid "show_pdf_preview"
+msgstr ""
+
+#. Default: "Mostra elenco puntato"
+#: config/blocks/listing/ListingOptions/simpleListTemplate
+msgid "show_pointer_list"
+msgstr ""
+
+#. Default: "Mostra la sezione"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_section"
+msgstr ""
+
+#. Default: "Mostra la tipologia"
+#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+msgid "show_tipologia"
+msgstr ""
+
+#. Default: "Mostra gli argomenti"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+#: config/blocks/listing/ListingOptions/inEvidenceTemplate
+msgid "show_topics"
+msgstr ""
+
+#. Default: "Mostra il tipo"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_type"
+msgstr ""
+
+#. Default: "Compatto"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_compact"
+msgstr ""
+
+#. Default: "Qui puoi selezionare, per il template 'Card semplice', un aspetto diverso da quello di default."
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_description"
+msgstr ""
+
+#. Default: "Collegamenti a categorie"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_ghost"
+msgstr ""
+
+#. Default: "Collegamenti a Come fare per"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_guide"
+msgstr ""
+
+#. Default: "Un elemento per riga"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_oneforrow"
 msgstr ""
 
 #. Default: "Skip to footer"
@@ -1138,6 +1440,26 @@ msgstr ""
 #. Default: "Skype"
 #: helpers/Views/PuntoDiContattoValue
 msgid "skype"
+msgstr ""
+
+#. Default: "Qui puoi selezionare, per il template 'Slider', un aspetto diverso da quello di default per gli elementi mostrati nello slider."
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_description"
+msgstr ""
+
+#. Default: "Card con immagine"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_imagecard"
+msgstr ""
+
+#. Default: "Card semplice"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_simplecard"
+msgstr ""
+
+#. Default: "N° slide da mostrare"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slidesToShow"
 msgstr ""
 
 #. Default: "Ordina per"
@@ -1383,6 +1705,12 @@ msgstr ""
 #. Default: "Servizi"
 #: components/View/UOView/UOServizi
 msgid "uo_servizi"
+msgstr ""
+
+#. Default: "Data di aggiornamento"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "update_date"
 msgstr ""
 
 #. Default: "Vedi su Apple Maps"
