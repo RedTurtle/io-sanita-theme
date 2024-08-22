@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon } from '@plone/volto/components';
-
 import { FontAwesomeIcon as IconFA } from 'io-sanita-theme/components';
 import { getFileViewFormat } from 'io-sanita-theme/helpers';
 
@@ -29,12 +27,13 @@ const FileIcon = ({
   let label = intl.formatMessage(messages.download_file);
   let icon = defaultIcon;
   let file = item;
-  if (item['@type'] === 'File') {
-    file = item.file;
-  } else if (item['@type'] === 'Image') {
-    file = item.image;
-  } else if (fileFormat) {
-    file = item.file;
+
+  if (!fileFormat) {
+    if (item['@type'] === 'File') {
+      file = item.file;
+    } else if (item['@type'] === 'Image') {
+      file = item.image;
+    }
   }
 
   if (file) {

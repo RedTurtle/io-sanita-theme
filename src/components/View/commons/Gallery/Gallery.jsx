@@ -26,7 +26,7 @@ import config from '@plone/volto/registry';
 const messages = defineMessages({
   gallery: {
     id: 'gallery',
-    defaultMessage: 'Galleria immagini',
+    defaultMessage: 'Immagini',
   },
   viewPreview: {
     id: 'gallery_viewPreview',

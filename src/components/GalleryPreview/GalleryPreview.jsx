@@ -5,6 +5,7 @@ import { Modal, ModalBody, Button, ModalHeader } from 'design-react-kit';
 import Image from '@plone/volto/components/theme/Image/Image';
 import { Icon } from 'io-sanita-theme/components';
 
+import './galleryPreview.scss';
 
 const messages = defineMessages({
   view_prev: {

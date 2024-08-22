@@ -25,7 +25,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { Icon } from 'io-sanita-theme/components';
-import { FileIcon, getFileViewFormat } from 'io-sanita-theme/helpers';
+import { FileIcon } from 'io-sanita-theme/helpers';
 
 import './cardFile.scss';
 
@@ -44,7 +44,7 @@ export const CardFile = ({
   file = null,
 }) => {
   const intl = useIntl();
-  let _item = { ...item };
+  let _item = null;
   let pdfFile = null;
 
   // Nel caso fosse un oggetto tipo CT
@@ -61,12 +61,12 @@ export const CardFile = ({
         _item['@id'] = item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
         break;
       default:
+        _item = { ...item };
         break;
     }
   // Nel caso fosse un oggetto MIME type
   } else {
-    const viewFormat = getFileViewFormat(file);
-    _item: file;
+    _item = file;
     pdfFile = file?.download?.includes('@@display-file');
   }
 
