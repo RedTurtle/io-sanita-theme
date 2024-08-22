@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-21T10:04:38.695Z\n"
+"POT-Creation-Date: 2024-08-22T15:10:25.358Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -43,11 +43,6 @@ msgstr ""
 #. Default: "Apri in mappa"
 #: components/Cards/CardPersona/CardPersona
 msgid "CardPersona: view on googlemaps"
-msgstr ""
-
-#. Default: "Indirizzo"
-#: components/Cards/CardPlace/CardPlace
-msgid "CardPlace: address label"
 msgstr ""
 
 #. Default: "Apri in mappa"
@@ -718,7 +713,7 @@ msgstr ""
 msgid "from"
 msgstr ""
 
-#. Default: "Galleria immagini"
+#. Default: "Immagini"
 #: components/View/commons/Gallery/Gallery
 msgid "gallery"
 msgstr ""
@@ -1407,7 +1402,7 @@ msgstr ""
 msgid "simplecard_listing_appearance_description"
 msgstr ""
 
-#. Default: "Collegamenti a categorie"
+#. Default: "Collegamenti a Categorie"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_ghost"
 msgstr ""
@@ -1420,6 +1415,11 @@ msgstr ""
 #. Default: "Un elemento per riga"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_oneforrow"
+msgstr ""
+
+#. Default: "Strutture / Luoghi"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_place"
 msgstr ""
 
 #. Default: "Skip to footer"
@@ -1527,7 +1527,7 @@ msgstr ""
 msgid "steps_where"
 msgstr ""
 
-#. Default: "A chi è rivolto"
+#. Default: "A chi è rivolta"
 #: components/View/Struttura/StrutturaAChiERivolto
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""

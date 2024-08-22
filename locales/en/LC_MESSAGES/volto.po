@@ -43,11 +43,6 @@ msgstr ""
 msgid "CardPersona: view on googlemaps"
 msgstr ""
 
-#. Default: "Indirizzo"
-#: components/Cards/CardPlace/CardPlace
-msgid "CardPlace: address label"
-msgstr ""
-
 #. Default: "Apri in mappa"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
@@ -716,7 +711,7 @@ msgstr "Restart"
 msgid "from"
 msgstr "from"
 
-#. Default: "Galleria immagini"
+#. Default: "Immagini"
 #: components/View/commons/Gallery/Gallery
 msgid "gallery"
 msgstr ""
@@ -1405,7 +1400,7 @@ msgstr ""
 msgid "simplecard_listing_appearance_description"
 msgstr ""
 
-#. Default: "Collegamenti a categorie"
+#. Default: "Collegamenti a Categorie"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_ghost"
 msgstr ""
@@ -1418,6 +1413,11 @@ msgstr ""
 #. Default: "Un elemento per riga"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_oneforrow"
+msgstr ""
+
+#. Default: "Strutture / Luoghi"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_place"
 msgstr ""
 
 #. Default: "Skip to footer"
@@ -1525,7 +1525,7 @@ msgstr "Show details"
 msgid "steps_where"
 msgstr ""
 
-#. Default: "A chi è rivolto"
+#. Default: "A chi è rivolta"
 #: components/View/Struttura/StrutturaAChiERivolto
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
