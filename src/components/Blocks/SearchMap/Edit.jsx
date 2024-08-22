@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getBaseUrl } from '@plone/volto/helpers';
-import Body from 'io-sanita-theme/components/Blocks/SearchStrutture/Body';
+import Body from 'io-sanita-theme/components/Blocks/SearchMap/Body';
 import { SidebarPortal } from '@plone/volto/components';
-import { SearchStruttureSidebar as Sidebar } from 'io-sanita-theme/components/Blocks';
+import { SearchMapSidebar as Sidebar } from 'io-sanita-theme/components/Blocks';
 
-const SearchStruttureEdit = (props) => {
+const SearchMapEdit = (props) => {
   const { data, id, block, onChangeBlock, selected, pathname } = props;
   return (
     <div className="public-ui">
@@ -28,7 +28,7 @@ const SearchStruttureEdit = (props) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-SearchStruttureEdit.propTypes = {
+SearchMapEdit.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   id: PropTypes.string.isRequired,
   block: PropTypes.string.isRequired,
@@ -36,4 +36,4 @@ SearchStruttureEdit.propTypes = {
   intl: PropTypes.any,
   onChangeBlock: PropTypes.func.isRequired,
 };
-export default SearchStruttureEdit;
+export default SearchMapEdit;

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { getBaseUrl } from '@plone/volto/helpers';
-import Body from 'io-sanita-theme/components/Blocks/SearchStrutture/Body';
+import Body from 'io-sanita-theme/components/Blocks/SearchMap/Body';
 
-const SearchStruttureView = ({ data, id, path, properties, block }) => {
+const SearchMapView = ({ data, id, path, properties, block }) => {
   return (
     <Body
       data={data}
@@ -20,9 +20,9 @@ const SearchStruttureView = ({ data, id, path, properties, block }) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-SearchStruttureView.propTypes = {
+SearchMapView.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   id: PropTypes.string.isRequired,
 };
 
-export default SearchStruttureView;
+export default SearchMapView;

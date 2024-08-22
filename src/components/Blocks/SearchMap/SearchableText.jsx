@@ -6,21 +6,24 @@ import { useDebouncedEffect } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   searchable_text_button: {
-    id: 'block-search_searchable_text_button',
+    id: 'search_map_searchable_text_button',
     defaultMessage: 'Cerca',
   },
-  searchable_text_default_label: {
-    id: 'block-search_searchable_text_default_label',
-    defaultMessage: 'Cerca strutture vicino a te',
-  },
   searchable_text_decription: {
-    id: 'block-search_searchable_text_decription',
+    id: 'search_map_searchable_text_decription',
     defaultMessage:
       '*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”',
   },
 });
 
-const SearchableText = ({ id, title, value, onChange, controls }) => {
+const SearchableText = ({
+  id,
+  title,
+  defaultTitle,
+  value,
+  onChange,
+  controls,
+}) => {
   const intl = useIntl();
   const [searchableText, setSearchableText] = useState(''); //serve solo per fare il debounce
 
@@ -36,8 +39,8 @@ const SearchableText = ({ id, title, value, onChange, controls }) => {
 
   return (
     <div className="form-group search-bar mb-3">
-      <label htmlFor={id + 'searchable-text'} className="active px-0 h4">
-        {title ?? intl.formatMessage(messages.searchable_text_default_label)}
+      <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
+        {title ?? defaultTitle}
       </label>
 
       <div className="input-group">

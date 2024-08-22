@@ -1,7 +1,11 @@
 @import 'io-sanita-theme/theme/bootstrap-italia-base-config';
 
-.iosanita-block-search {
+.iosanita-block-search-map {
   .search-top {
+    h2.h5 {
+      font-weight: $font-weight-semibold;
+    }
+
     .form-group.search-bar {
       label {
         @include font-size($h5-font-size);

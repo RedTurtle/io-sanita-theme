@@ -15,39 +15,47 @@ import {
 } from 'design-react-kit';
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
-import SearchableText from 'io-sanita-theme/components/Blocks/SearchStrutture/SearchableText';
-import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchStrutture/map-pin.svg';
-import ResultItem from 'io-sanita-theme/components/Blocks/SearchStrutture/ResultItem';
+import SearchableText from 'io-sanita-theme/components/Blocks/SearchMap/SearchableText';
+import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
+import ResultItem from 'io-sanita-theme/components/Blocks/SearchMap/ResultItem';
 
-import './block-search.scss';
+import './search-map.scss';
 
 const messages = defineMessages({
   no_results: {
-    id: 'isanita-search-no_results',
+    id: 'search_mapno_results',
     defaultMessage: 'Nessun risultato trovato',
   },
   results: {
-    id: 'isanita-search-results_found',
+    id: 'search_mapresults_found',
     defaultMessage: 'Risultati',
   },
   load_more_strutture: {
-    id: 'isanita-search-load_more_strutture',
+    id: 'search_mapload_more_strutture',
     defaultMessage: 'Mostra altre strutture',
   },
   load_more_medici: {
-    id: 'isanita-search-load_more_medici',
+    id: 'search_mapload_more_medici',
     defaultMessage: 'Mostra altri medici',
   },
+  searchable_text_default_label_strutture: {
+    id: 'search_map_searchable_text_default_label_strutture',
+    defaultMessage: 'Cerca strutture vicino a te',
+  },
+  searchable_text_default_label_medici: {
+    id: 'search_map_searchable_text_default_label_mediic',
+    defaultMessage: 'Cerca medici di base e pediatri vicino a te',
+  },
   filter_by: {
-    id: 'isanita-search-filter-by',
+    id: 'search_mapfilter-by',
     defaultMessage: 'Filtra per',
   },
   all_subjects: {
-    id: 'isanita-search-all_subjects',
+    id: 'search_mapall_subjects',
     defaultMessage: 'Tutti',
   },
   remove_all_subjects: {
-    id: 'isanita-search-remove_all_subjects',
+    id: 'search_mapremove_all_subjects',
     defaultMessage: 'Mostra tutte le categorie',
   },
 });
@@ -70,12 +78,11 @@ const LeafIcon = (options, item) => {
 /*
   La paginazione è fatta lato client, pechè serve avere tutti i risultati possibili da mostrare sulla mappa
  */
-const SearchStruttureBody = ({ data, id, path, properties, block }) => {
+const SearchMapBody = ({ data, id, path, properties, block }) => {
   const intl = useIntl();
   let history = useHistory();
   const dispatch = useDispatch();
 
-  const content_type = 'Struttura';
   const block_id = id + 'search_block';
   const b_size = 9999; //la paginazione si fa lato client perchè serve avere tutti i pin sulla mappa
   const client_page_size = 5;
@@ -103,7 +110,7 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
       {
         i: 'portal_type',
         o: 'plone.app.querystring.operation.selection.any',
-        v: [content_type],
+        v: [data.portal_type],
       },
     ];
 
@@ -221,7 +228,7 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
 
   useEffect(() => {
     doSearch();
-  }, [filters]);
+  }, [filters, data.path, data.portal_type]);
 
   const toggleSubject = (s) => {
     let new_subjects = new Set(filters.subjects);
@@ -239,7 +246,7 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
 
   const results_region_id = block_id + 'results-region';
   return (
-    <div className="iosanita-block-search">
+    <div className="iosanita-block-search-map">
       <div className="strutture-search">
         <div className="full-width bg-primary-lightest py-4">
           <Container className="px-4">
@@ -259,6 +266,15 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
                       <SearchableText
                         id={block_id}
                         title={data.title}
+                        defaultTitle={
+                          data.portal_type === 'Struttura'
+                            ? intl.formatMessage(
+                                messages.searchable_text_default_label_strutture,
+                              )
+                            : intl.formatMessage(
+                                messages.searchable_text_default_label_medici,
+                              )
+                        }
                         value={filters.searchableText}
                         onChange={(v) => {
                           setFilters({ ...filters, searchableText: v });
@@ -268,7 +284,7 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
                     </Col>
                   </Row>
                 )}
-                {subjects.size > 0 && (
+                {data.show_types && subjects.size > 0 && (
                   <div className="subjects pb-3">
                     {/*Chip 'tutti'*/}
                     <Chip
@@ -355,7 +371,7 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
                               }}
                             >
                               {intl.formatMessage(
-                                content_type == 'Struttura'
+                                data.portal_type == 'Struttura'
                                   ? messages.load_more_strutture
                                   : messages.load_more_medici,
                               )}
@@ -383,4 +399,4 @@ const SearchStruttureBody = ({ data, id, path, properties, block }) => {
   );
 };
 
-export default SearchStruttureBody;
+export default SearchMapBody;

@@ -16,8 +16,8 @@ const Sidebar = (props) => {
       <header className="header pulled">
         <h2>
           <FormattedMessage
-            id="Ricerca strutture"
-            defaultMessage="Ricerca strutture"
+            id="Ricerca con mappa"
+            defaultMessage="Ricerca con mappa"
           />
         </h2>
       </header>

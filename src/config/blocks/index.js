@@ -5,9 +5,9 @@ import {
   BreakView,
   BreakEdit,
   HTMLBlockSchema,
-  SearchStruttureView,
-  SearchStruttureEdit,
-  SearchStruttureSchema,
+  SearchMapView,
+  SearchMapEdit,
+  SearchMapSchema,
 } from 'io-sanita-theme/components/Blocks';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
@@ -63,13 +63,13 @@ export const applyIoSanitaBlocksConfig = (config) => {
       ...config.blocks.blocksConfig.search,
       templates: ['simpleCard', 'simpleListTemplate'],
     },
-    searchStrutture: {
-      id: 'searchStrutture',
-      title: 'Cerca strutture',
+    searchMap: {
+      id: 'searchMap',
+      title: 'Cerca con mappa',
       icon: searchSVG,
       group: 'search',
-      view: SearchStruttureView,
-      edit: SearchStruttureEdit,
+      view: SearchMapView,
+      edit: SearchMapEdit,
       restricted: false,
       mostUsed: true,
       cloneData: cloneBlock,
@@ -77,7 +77,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
         addPermission: [],
         view: [],
       },
-      schema: SearchStruttureSchema,
+      schema: SearchMapSchema,
       sidebarTab: 1,
     },
     break: {

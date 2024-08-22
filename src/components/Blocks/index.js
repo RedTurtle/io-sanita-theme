@@ -2,11 +2,11 @@ import loadable from '@loadable/component';
 
 /*Schema*/
 export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
-export { SearchStruttureSchema } from 'io-sanita-theme/components/Blocks/SearchStrutture/schema';
+export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
 
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
-export SearchStruttureView from 'io-sanita-theme/components/Blocks/SearchStrutture/View';
+export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
 
 /*Skeleton*/
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
@@ -31,20 +31,15 @@ const HTMLBlockSidebar = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
   ),
 );
-const SearchStruttureEdit = loadable(() =>
+const SearchMapEdit = loadable(() =>
   import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchStrutture/Edit'
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
   ),
 );
-const SearchStruttureSidebar = loadable(() =>
+const SearchMapSidebar = loadable(() =>
   import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchStrutture/Sidebar'
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
   ),
 );
 
-export {
-  BreakEdit,
-  SearchStruttureEdit,
-  SearchStruttureSidebar,
-  HTMLBlockSidebar,
-};
+export { BreakEdit, SearchMapEdit, SearchMapSidebar, HTMLBlockSidebar };
