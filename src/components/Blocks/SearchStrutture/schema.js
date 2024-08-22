@@ -1,6 +1,10 @@
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
+  title: {
+    id: 'search_strutture_title',
+    defaultMessage: 'Titolo',
+  },
   search_path: {
     id: 'search_strutture_Search path',
     defaultMessage: 'Posizione in cui cercare',
@@ -21,10 +25,13 @@ export function SearchStruttureSchema({ formData, intl }) {
       {
         id: 'default',
         title: 'Default',
-        fields: ['path', 'show_search_bar', 'show_types'],
+        fields: ['title', 'path', 'show_search_bar', 'show_types'],
       },
     ],
     properties: {
+      title: {
+        title: intl.formatMessage(messages.title),
+      },
       path: {
         title: intl.formatMessage(messages.search_path),
         widget: 'object_browser',

@@ -18,6 +18,7 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
+export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
 
 //file
 export {

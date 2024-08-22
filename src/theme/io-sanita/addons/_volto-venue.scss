@@ -1,0 +1,7 @@
+.leaflet-container {
+  .marker-cluster {
+    background-color: $accent;
+    color: $accent-text;
+    box-shadow: 0 0 1px 4px rgba($accent, 60%);
+  }
+}
