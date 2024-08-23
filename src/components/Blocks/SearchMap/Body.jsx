@@ -15,6 +15,7 @@ import {
 } from 'design-react-kit';
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
+import { hasGeolocation } from 'io-sanita-theme/helpers';
 import SearchableText from 'io-sanita-theme/components/Blocks/SearchMap/SearchableText';
 import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
 import ResultItem from 'io-sanita-theme/components/Blocks/SearchMap/ResultItem';
@@ -75,6 +76,25 @@ const LeafIcon = (options, item) => {
   };
 };
 
+const resultsReducer = (items) => {
+  const geolocated_items = [...items]
+    .map((item) => {
+      let i = { ...item };
+      //per i medici (ct 'Persona')
+      if (!hasGeolocation(item) && item.struttura_ricevimento?.length > 0) {
+        const struttura = item.struttura_ricevimento[0];
+        if (hasGeolocation(struttura)) {
+          //copia il campo geolocation della struttura dentro all'item, per poterlo mostrare come punto sulla mappa
+          i.geolocation = struttura.geolocation;
+        }
+      }
+      return i;
+    })
+    .filter((item) => hasGeolocation(item));
+
+  return geolocated_items;
+};
+
 /*
   La paginazione è fatta lato client, pechè serve avere tutti i risultati possibili da mostrare sulla mappa
  */
@@ -100,9 +120,12 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
   const querystringResults = useSelector((state) => {
     return state.querystringsearch?.subrequests?.[block_id] ?? {};
   });
-  const items = useSelector((state) => {
+
+  const resultItems = useSelector((state) => {
     return state.querystringsearch?.subrequests?.[block_id]?.items ?? [];
   });
+
+  const [items, setItems] = useState([]);
 
   const doSearch = () => {
     //default filtes
@@ -119,6 +142,15 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
         i: 'path',
         o: 'plone.app.querystring.operation.string.absolutePath',
         v: flattenToAppURL(data.path[0]['@id']),
+      });
+    }
+
+    if (data.portal_type === 'Persona') {
+      //prendi solo i medici, ovvero quelli che hanno incarico 'Professionale'.
+      query.push({
+        i: 'incarico',
+        o: 'plone.app.querystring.operation.selection.is',
+        v: ['professionale'],
       });
     }
 
@@ -143,7 +175,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          metadata_fields: ['Subject'], //'_all',
+          metadata_fields: ['Subject', 'struttura_ricevimento', 'incarico'], //'_all',
           query: query,
           b_size: b_size,
           sort_on: 'sortable_title',
@@ -156,20 +188,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
   };
 
   const calculateMarkers = () => {
-    let geolocated_items = items.filter(
-      (item) =>
-        (item.latitude &&
-          item.longitude &&
-          item.latitude !== 0 &&
-          item.longitude !== 0) ||
-        (item.geolocation && //for backward compatibility. To remove on next release.
-          item.geolocation?.latitude &&
-          item.geolocation?.longitude &&
-          item.geolocation?.latitude !== 0 &&
-          item.geolocation?.longitude !== 0),
-    );
-
-    let points = geolocated_items.map((item) => {
+    let points = items.map((item) => {
       return {
         ...item,
         ...(item.geolocation
@@ -204,6 +223,10 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       setSubjects(points_subjects);
     }
   };
+
+  useEffect(() => {
+    setItems(resultsReducer(resultItems));
+  }, [resultItems]);
 
   useEffect(() => {
     calculateMarkers();
@@ -329,66 +352,74 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
               </div>
 
               <div id={results_region_id}>
-                {items?.length > 0 && markers?.length > 0 ? (
-                  <Row className="search-results">
-                    <Col lg={8}>
-                      {/* {__CLIENT__ && ( */}
-                      <OSMMap
-                        //center={[venuesData[0].latitude, venuesData[0].longitude]}
-                        markers={markers}
-                        cluster={true}
-                        showTooltip={true}
-                        showPopup={true}
-                        mapOptions={{
-                          scrollWheelZoom: false,
-                        }}
-                      />
-                      {/* )} */}
-                    </Col>
-                    <Col lg={4}>
-                      <div className="d-flex justify-content-between">
-                        <div className="total small mb-3">
-                          <span className="fw-bold">{items.length}</span>{' '}
-                          {intl.formatMessage(messages.results)}
-                        </div>
-                        {/* per il momento non è stato implementato perchè l'unico ordinamento possibile è quello alfabetico <div>ordinamento</div> */}
-                      </div>
-                      <div className="results-items">
-                        <Row>
-                          {rendered_items.map((item, i) => (
-                            <Col xs={12} key={block_id + i} className="mb-lg-3">
-                              <ResultItem item={item} />
-                            </Col>
-                          ))}
-                        </Row>
-                        {items.length > rendered_items.length && (
-                          <div className="d-flex justify-content-center my-3">
-                            <Button
-                              color="primary"
-                              outline
-                              onClick={() => {
-                                setCurrentPage(currentPage + 1);
-                              }}
-                            >
-                              {intl.formatMessage(
-                                data.portal_type == 'Struttura'
-                                  ? messages.load_more_strutture
-                                  : messages.load_more_medici,
-                              )}
-                            </Button>
+                {querystringResults && (
+                  <>
+                    {items?.length > 0 && markers?.length > 0 ? (
+                      <Row className="search-results">
+                        <Col lg={8}>
+                          {/* {__CLIENT__ && ( */}
+                          <OSMMap
+                            //center={[venuesData[0].latitude, venuesData[0].longitude]}
+                            markers={markers}
+                            cluster={true}
+                            showTooltip={true}
+                            showPopup={true}
+                            mapOptions={{
+                              scrollWheelZoom: false,
+                            }}
+                          />
+                          {/* )} */}
+                        </Col>
+                        <Col lg={4}>
+                          <div className="d-flex justify-content-between">
+                            <div className="total small mb-3">
+                              <span className="fw-bold">{items.length}</span>{' '}
+                              {intl.formatMessage(messages.results)}
+                            </div>
+                            {/* per il momento non è stato implementato perchè l'unico ordinamento possibile è quello alfabetico <div>ordinamento</div> */}
                           </div>
-                        )}
+                          <div className="results-items">
+                            <Row>
+                              {rendered_items.map((item, i) => (
+                                <Col
+                                  xs={12}
+                                  key={block_id + i}
+                                  className="mb-lg-3"
+                                >
+                                  <ResultItem item={item} />
+                                </Col>
+                              ))}
+                            </Row>
+                            {items.length > rendered_items.length && (
+                              <div className="d-flex justify-content-center my-3">
+                                <Button
+                                  color="primary"
+                                  outline
+                                  onClick={() => {
+                                    setCurrentPage(currentPage + 1);
+                                  }}
+                                >
+                                  {intl.formatMessage(
+                                    data.portal_type == 'Struttura'
+                                      ? messages.load_more_strutture
+                                      : messages.load_more_medici,
+                                  )}
+                                </Button>
+                              </div>
+                            )}
+                          </div>
+                        </Col>
+                      </Row>
+                    ) : querystringResults?.loading ? (
+                      <div className="d-flex justify-content-center">
+                        <Spinner active />
                       </div>
-                    </Col>
-                  </Row>
-                ) : querystringResults?.loading ? (
-                  <div className="d-flex justify-content-center">
-                    <Spinner active />
-                  </div>
-                ) : querystringResults?.loaded ? (
-                  <>{intl.formatMessage(messages.no_results)}</>
-                ) : (
-                  <></>
+                    ) : querystringResults?.loaded ? (
+                      <>{intl.formatMessage(messages.no_results)}</>
+                    ) : (
+                      <></>
+                    )}
+                  </>
                 )}
               </div>
             </form>

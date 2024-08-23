@@ -12,7 +12,7 @@ import {
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { Icon } from 'io-sanita-theme/components';
-import { Address } from 'io-sanita-theme/helpers';
+import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
 import './cardPersona.scss';
 
 /*TODO:
@@ -36,7 +36,7 @@ export const CardPersona = ({
   imgSrc,
   item,
   isEditMode,
-  titleTag="h3"
+  titleTag = 'h3',
 }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -49,6 +49,9 @@ export const CardPersona = ({
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
     ) : null;
+
+  const incarico =
+    item.incarico?.length > 0 ? item.incarico[item.incarico.length - 1] : null;
 
   return (
     <Card className="shadow rounded card-persona no-after">
@@ -65,12 +68,41 @@ export const CardPersona = ({
           </CardTitle>
 
           <CardText tag="div">
-            {item.incarico_principale && <p>{item.incarico_principale}</p>}
-            {size != 'small' && item.uo && (
-              <div className="mb-2">
-                <div className="fw-bold primary-text">{item.uo.title}</div>
-                <Address item={item.uo} showDistance={showDistance} />
-              </div>
+            {incarico && (
+              <p className="mb-0">
+                {typeof incarico == 'string' ? incarico : incarico.label}
+              </p>
+            )}
+            {size != 'small' && (
+              <>
+                {item.struttura_ricevimento?.length > 0 ? (
+                  <div className="mb-2 mt-2">
+                    <div>
+                      <UniversalLink
+                        item={
+                          !isEditMode ? item.struttura_ricevimento[0] : null
+                        }
+                        href={isEditMode ? '#' : ''}
+                        className="fw-bold"
+                      >
+                        {item.struttura_ricevimento[0].title}
+                      </UniversalLink>
+                    </div>
+                    <Address
+                      item={item.struttura_ricevimento[0]}
+                      showDistance={showDistance}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    {hasGeolocation(item) && (
+                      <div className="mb-2 mt-2">
+                        <Address item={item} showDistance={showDistance} />
+                      </div>
+                    )}
+                  </>
+                )}
+              </>
             )}
           </CardText>
         </div>

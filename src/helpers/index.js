@@ -66,6 +66,7 @@ export { usePaginatedItemsSection } from 'io-sanita-theme/helpers/usePaginatedIt
 export {
   getItemIcon,
   getItemListingCategory,
+  hasGeolocation,
 } from 'io-sanita-theme/helpers/Item/item';
 
 //registry

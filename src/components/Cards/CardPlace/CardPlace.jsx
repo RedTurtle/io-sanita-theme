@@ -13,7 +13,7 @@ import {
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { Icon, CardCategoryBottom } from 'io-sanita-theme/components';
-import { Address } from 'io-sanita-theme/helpers';
+import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
 const messages = defineMessages({
@@ -33,12 +33,9 @@ const CardPlace = ({
   titleTag = 'h3',
 }) => {
   const intl = useIntl();
-  const latLong =
-    item?.geolocation?.latitude &&
-    item?.geolocation?.longitude &&
-    (item?.geolocation?.latitude != 0 || item?.geolocation?.longitude != 0)
-      ? item?.geolocation?.latitude + ',' + item?.geolocation?.longitude
-      : '';
+  const latLong = hasGeolocation(item)
+    ? item?.geolocation?.latitude + ',' + item?.geolocation?.longitude
+    : '';
   const showGeolocation =
     latLong?.length > 0 ||
     (item?.street?.length > 0 &&

@@ -42,7 +42,10 @@ export function SearchMapSchema({ formData, intl }) {
       portal_type: {
         title: intl.formatMessage(messages.portal_type),
         default: 'Struttura',
-        choices: ['Struttura', 'Medico'].map((c) => [c, c]),
+        choices: [
+          ['Struttura', 'Struttura'],
+          ['Persona', 'Medico'],
+        ],
       },
       title: {
         title: intl.formatMessage(messages.title),

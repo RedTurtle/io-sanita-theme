@@ -8,11 +8,12 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
     .map((key) => item?.[key])
     .filter(Boolean)
     .join(' - ');
+  const AddressWrapperTag = tag ?? React.Fragment;
 
   return item.street?.length > 0 || address_row_2.length ? (
     <>
       {showAddress && (
-        <React.Fragment tag={tag}>
+        <AddressWrapperTag>
           {item.street}
           {(item.zip_code || item.city || item.province) && (
             <>
@@ -20,7 +21,7 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
               {address_row_2}
             </>
           )}
-        </React.Fragment>
+        </AddressWrapperTag>
       )}
       {showDistance && (
         <div className="distance fw-semibold">
