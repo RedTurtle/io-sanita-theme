@@ -129,6 +129,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
 
   const doSearch = () => {
     //default filtes
+    setSubjects(new Set());
     let query = [
       {
         i: 'portal_type',
