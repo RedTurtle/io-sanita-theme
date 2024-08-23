@@ -15,6 +15,7 @@ import {
 } from 'design-react-kit';
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { hasGeolocation } from 'io-sanita-theme/helpers';
 import SearchableText from 'io-sanita-theme/components/Blocks/SearchMap/SearchableText';
 import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
