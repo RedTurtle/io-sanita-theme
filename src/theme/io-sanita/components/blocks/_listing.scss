@@ -22,4 +22,12 @@
       }
     }
   }
+
+  .link-more-button-wrapper {
+    a {
+      &:not(:hover):not(:active):not(:focus) {
+        text-decoration: none;
+      }
+    }
+  }
 }

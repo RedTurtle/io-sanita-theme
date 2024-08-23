@@ -127,6 +127,7 @@ const SimpleCardDefault = (props) => {
             href={isEditMode ? '#' : null}
             data-element={id_lighthouse}
             tabIndex={0}
+            className="card-title-link"
           >
             {itemTitle}
           </UniversalLink>
