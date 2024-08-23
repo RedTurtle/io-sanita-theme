@@ -1,3 +1,7 @@
+.btn {
+  --bs-btn-hover-color: $primary;
+  --bs-btn-active-color: $primary-darker;
+}
 button.btn.btn-primary,
 .btn.btn-primary {
   svg.icon {

@@ -18,6 +18,7 @@ export {
   videoUrlHelper,
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
+export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
 
 //file
 export {
@@ -65,6 +66,7 @@ export { usePaginatedItemsSection } from 'io-sanita-theme/helpers/usePaginatedIt
 export {
   getItemIcon,
   getItemListingCategory,
+  hasGeolocation,
 } from 'io-sanita-theme/helpers/Item/item';
 
 //registry

@@ -396,6 +396,15 @@ body.cms-ui {
     }
   }
 
+  .block-editor-listing {
+    //blocchi listing con sfondo, in edit non vede gli stili di pb-4 ecc perchè sono sotto cms-ui
+    &.pb-4 {
+      .block.listing {
+        padding-bottom: 0.2rem !important; //per simulare il pb-4
+      }
+    }
+  }
+
   .block-editor-title,
   .block-editor-description {
     .DraftEditor-root {

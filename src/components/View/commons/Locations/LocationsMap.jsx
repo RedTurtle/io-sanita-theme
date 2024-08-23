@@ -6,6 +6,7 @@ import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { OSMMap } from 'volto-venue';
+import { hasGeolocation } from 'io-sanita-theme/helpers';
 
 /**
  * LocationsMap view component class.
@@ -99,7 +100,7 @@ const LocationsMap = ({ center, locations }) => {
   let venuesData = venues.reduce((acc, val) => {
     let venue = fetchedLocations?.[val.key]?.data;
 
-    if (venue?.geolocation?.latitude && venue?.geolocation?.longitude) {
+    if (hasGeolocation(venue)) {
       return [
         ...acc,
         {
@@ -114,7 +115,7 @@ const LocationsMap = ({ center, locations }) => {
     return acc;
   }, []);
 
-  if (center?.geolocation?.latitude && center?.geolocation?.longitude) {
+  if (hasGeolocation(center)) {
     venuesData = [
       {
         latitude: center.geolocation.latitude,
