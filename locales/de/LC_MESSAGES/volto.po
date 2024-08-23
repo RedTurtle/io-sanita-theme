@@ -242,6 +242,11 @@ msgstr ""
 msgid "Previous page"
 msgstr "Vorherige Seite"
 
+#. Default: "Ricerca con mappa"
+#: components/Blocks/SearchMap/Sidebar
+msgid "Ricerca con mappa"
+msgstr ""
+
 #. Default: "Rimuovi il file"
 #: components/Widgets/FileWidget
 msgid "Rimuovi il file"
@@ -1254,6 +1259,86 @@ msgstr ""
 msgid "search_brdc"
 msgstr ""
 
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Search path"
+msgstr ""
+
+#. Default: "Mostra la barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show search bar"
+msgstr ""
+
+#. Default: "Mostra i filtri per tipologia"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Cerca"
+#: components/Blocks/SearchMap/SearchableText
+msgid "search_map_searchable_text_button"
+msgstr ""
+
+#. Default: "*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”"
+#: components/Blocks/SearchMap/SearchableText
+msgid "search_map_searchable_text_decription"
+msgstr ""
+
+#. Default: "Cerca medici di base e pediatri vicino a te"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_searchable_text_default_label_mediic"
+msgstr ""
+
+#. Default: "Cerca strutture vicino a te"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_searchable_text_default_label_strutture"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_title"
+msgstr ""
+
+#. Default: "Tutti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_subjects"
+msgstr ""
+
+#. Default: "Filtra per"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapfilter-by"
+msgstr ""
+
+#. Default: "Mostra altri medici"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapload_more_medici"
+msgstr ""
+
+#. Default: "Mostra altre strutture"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapload_more_strutture"
+msgstr ""
+
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapno_results"
+msgstr ""
+
+#. Default: "Mostra tutte le categorie"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapremove_all_subjects"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapresults_found"
+msgstr ""
+
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
@@ -1717,17 +1802,17 @@ msgid "update_date"
 msgstr ""
 
 #. Default: "Vedi su Apple Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_applemaps"
 msgstr ""
 
 #. Default: "Vedi su Bing Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_bingmaps"
 msgstr ""
 
 #. Default: "Vedi su Google Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_googlemaps"
 msgstr ""
 

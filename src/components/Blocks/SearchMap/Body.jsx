@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import ReactDOMServer from 'react-dom/server';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+
 import {
   Container,
   Row,
@@ -16,7 +16,7 @@ import {
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { hasGeolocation } from 'io-sanita-theme/helpers';
+import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 import SearchableText from 'io-sanita-theme/components/Blocks/SearchMap/SearchableText';
 import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
 import ResultItem from 'io-sanita-theme/components/Blocks/SearchMap/ResultItem';
@@ -101,7 +101,6 @@ const resultsReducer = (items) => {
  */
 const SearchMapBody = ({ data, id, path, properties, block }) => {
   const intl = useIntl();
-  let history = useHistory();
   const dispatch = useDispatch();
 
   const block_id = id + 'search_block';
@@ -131,6 +130,8 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
   const doSearch = () => {
     //default filtes
     setSubjects(new Set());
+    setCurrentPage(1);
+
     let query = [
       {
         i: 'portal_type',
@@ -191,14 +192,15 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
 
   const calculateMarkers = () => {
     let points = items.map((item) => {
-      return {
+      let point = {
         ...item,
         ...(item.geolocation
           ? item.geolocation
           : { latitude: item.latitude, longitude: item.longitude }),
-        onMarkerClick: (e) => {
-          history.push(item['@id']);
-        },
+      };
+
+      return {
+        ...point,
         divIcon: LeafIcon(
           {
             iconUrl: ioSanitaPin,
@@ -206,8 +208,9 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
             iconAnchor: [12.5, 20],
             className: '',
           },
-          item,
+          point,
         ),
+        popupContent: mapPinDirections(point, intl),
       };
     });
     setMarkers(points);

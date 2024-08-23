@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { OSMMap } from 'volto-venue';
-import { hasGeolocation } from 'io-sanita-theme/helpers';
+import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 
 /**
  * LocationsMap view component class.
@@ -14,21 +14,6 @@ import { hasGeolocation } from 'io-sanita-theme/helpers';
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-
-const messages = defineMessages({
-  view_on_googlemaps: {
-    id: 'view_on_googlemaps',
-    defaultMessage: 'Vedi su Google Maps',
-  },
-  view_on_bingmaps: {
-    id: 'view_on_bingmaps',
-    defaultMessage: 'Vedi su Bing Maps',
-  },
-  view_on_applemaps: {
-    id: 'view_on_applemaps',
-    defaultMessage: 'Vedi su Apple Maps',
-  },
-});
 
 const LocationsMap = ({ center, locations }) => {
   const dispatch = useDispatch();
@@ -54,49 +39,6 @@ const LocationsMap = ({ center, locations }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, locations]);
 
-  const pinContent = (item) => {
-    return (
-      <div className="map-pin-popup">
-        <div className="title">{item.title}</div>
-        <p>
-          <UniversalLink
-            href={`http://maps.google.com/?q=${item.street ?? ''} ${
-              item.zip_code ?? ''
-            } ${item.city ?? ''} ${item.province ?? ''} ${
-              item.geolocation.latitude
-            },${item.geolocation.longitude}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {intl.formatMessage(messages.view_on_googlemaps)}
-          </UniversalLink>
-        </p>
-        <p>
-          <UniversalLink
-            href={`https://bing.com/maps/default.aspx?where1=${
-              item.street ?? ''
-            } ${item.zip_code ?? ''} ${item.city ?? ''} ${item.province ?? ''}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {intl.formatMessage(messages.view_on_bingmaps)}
-          </UniversalLink>
-        </p>
-        <p>
-          <UniversalLink
-            href={`  http://maps.apple.com/?q=${item.street ?? ''} ${
-              item.zip_code ?? ''
-            } ${item.city ?? ''} ${item.province ?? ''}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {intl.formatMessage(messages.view_on_applemaps)}
-          </UniversalLink>
-        </p>
-      </div>
-    );
-  };
-
   let venuesData = venues.reduce((acc, val) => {
     let venue = fetchedLocations?.[val.key]?.data;
 
@@ -107,7 +49,7 @@ const LocationsMap = ({ center, locations }) => {
           latitude: venue.geolocation.latitude,
           longitude: venue.geolocation.longitude,
           title: venue.title,
-          popupContent: pinContent(venue),
+          popupContent: mapPinDirections(venue, intl),
         },
       ];
     }
@@ -121,7 +63,7 @@ const LocationsMap = ({ center, locations }) => {
         latitude: center.geolocation.latitude,
         longitude: center.geolocation.longitude,
         title: center.title,
-        popupContent: pinContent(center),
+        popupContent: mapPinDirections(center, intl),
       },
       ...venuesData,
     ];
