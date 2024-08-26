@@ -13,8 +13,6 @@ const messages = defineMessages({
 const ServizioProcedureCollegate = ({ content }) => {
   const intl = useIntl();
 
-  console.log('procedure_collegate_esito', content.procedure_collegate_esito);
-
   return richTextHasContent(content?.procedure_collegate_esito) ? (
     <RichTextSection
       tag_id="text-body"

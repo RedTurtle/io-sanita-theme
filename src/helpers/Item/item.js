@@ -60,10 +60,10 @@ export const getItemListingCategory = (
 
 export const hasGeolocation = (item) => {
   return (
-    item.geolocation &&
-    item.geolocation?.latitude &&
-    item.geolocation?.longitude &&
-    item.geolocation?.latitude !== 0 &&
-    item.geolocation?.longitude !== 0
+    item?.geolocation &&
+    item?.geolocation?.latitude &&
+    item?.geolocation?.longitude &&
+    item?.geolocation?.latitude !== 0 &&
+    item?.geolocation?.longitude !== 0
   );
 };
