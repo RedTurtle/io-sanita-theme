@@ -10,7 +10,7 @@ import { TassonomiaUtenti } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   a_chi_si_rivolge: {
-    id: 'struttura_a_chi_si_rivolge',
+    id: 'servizio_a_chi_si_rivolge',
     defaultMessage: 'A chi si rivolge',
   },
 });

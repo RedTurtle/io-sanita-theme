@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-26T10:06:48.003Z\n"
+"POT-Creation-Date: 2024-08-26T10:27:59.711Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1367,6 +1367,11 @@ msgstr ""
 msgid "servizi"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Servizio/ServizioAChiSiRivolge
+msgid "servizio_a_chi_si_rivolge"
+msgstr ""
+
 #. Default: "Accedi al servizio"
 #: components/View/Servizio/ServizioAccediAlServizio
 msgid "servizio_accedi_al_servizio"
@@ -1674,7 +1679,6 @@ msgid "steps_where"
 msgstr ""
 
 #. Default: "A chi si rivolge"
-#: components/View/Servizio/ServizioAChiSiRivolge
 #: components/View/Struttura/StrutturaAChiSiRivolge
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""

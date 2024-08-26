@@ -1365,6 +1365,11 @@ msgstr "Servizio attivo"
 msgid "servizi"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Servizio/ServizioAChiSiRivolge
+msgid "servizio_a_chi_si_rivolge"
+msgstr ""
+
 #. Default: "Accedi al servizio"
 #: components/View/Servizio/ServizioAccediAlServizio
 msgid "servizio_accedi_al_servizio"
@@ -1672,7 +1677,6 @@ msgid "steps_where"
 msgstr ""
 
 #. Default: "A chi si rivolge"
-#: components/View/Servizio/ServizioAChiSiRivolge
 #: components/View/Struttura/StrutturaAChiSiRivolge
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
