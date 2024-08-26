@@ -496,7 +496,7 @@ msgstr ""
 msgid "closeSearch"
 msgstr ""
 
-#. Default: "A chi è rivolto"
+#. Default: "A chi si rivolge"
 #: components/View/ComeFarePer/ComeFarePerAChiERivolto
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr ""
@@ -551,8 +551,8 @@ msgstr ""
 msgid "documenti-e-dati"
 msgstr ""
 
-#. Default: "A chi è rivolto"
-#: components/View/Documento/DocumentoAChiERivolto
+#. Default: "A chi si rivolge"
+#: components/View/Documento/DocumentoAChiSiRivolge
 msgid "documento_a_chi_si_rivolge"
 msgstr ""
 
@@ -1017,6 +1017,7 @@ msgstr ""
 
 #. Default: "Ulteriori informazioni"
 #: components/View/Persona/PersonaUlterioriInformazioni
+#: components/View/Servizio/ServizioUlterioriInformazioni
 #: components/View/Struttura/StrutturaUlterioriInformazioni
 #: components/View/UOView/UOUlterioriInformazioni
 msgid "other_info"
@@ -1285,13 +1286,73 @@ msgid "servizi"
 msgstr ""
 
 #. Default: "Accedi al servizio"
+#: components/View/Servizio/ServizioAccediAlServizio
+msgid "servizio_accedi_al_servizio"
+msgstr ""
+
+#. Default: "Accedi al servizio"
 #: components/View/commons/PageHeader/PageHeaderLinkServizio
 msgid "servizio_canale_digitale_link"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Servizio/ServizioContatti
+msgid "servizio_contatti"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Servizio/ServizioCosE
+msgid "servizio_cos_e"
+msgstr ""
+
+#. Default: "Cosa serve"
+#: components/View/Servizio/ServizioCosaServe
+msgid "servizio_cosa_serve"
+msgstr ""
+
+#. Default: "Costi"
+#: components/View/Servizio/ServizioCosti
+msgid "servizio_costi"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Servizio/ServizioDove
+msgid "servizio_dove"
 msgstr ""
 
 #. Default: "Servizio online"
 #: components/Cards/CardSimple/CardSimple
 msgid "servizio_online_chip"
+msgstr ""
+
+#. Default: "Orari del servizio"
+#: components/View/Servizio/ServizioOrari
+msgid "servizio_orari"
+msgstr ""
+
+#. Default: "Procedure collegate all'esito"
+#: components/View/Servizio/ServizioProcedureCollegate
+msgid "servizio_procedure_collegate"
+msgstr ""
+
+#. Default: "Responsabile del servizo"
+#: components/View/Servizio/ServizioResponsabile
+msgid "servizio_responsabile_servizio"
+msgstr ""
+
+#. Default: "Tempi di attesa"
+#: components/View/Servizio/ServizioTempiDiAttesa
+msgid "servizio_tempi_attesa"
+msgstr ""
+
+#. Default: "Unità operativa responsabile"
+#: components/View/Servizio/ServizioUOResponsabile
+msgid "servizio_uo_responsabile"
 msgstr ""
 
 #. Default: "Vai alle altre opzioni di ricerca"
@@ -1530,8 +1591,9 @@ msgstr ""
 msgid "steps_where"
 msgstr ""
 
-#. Default: "A chi è rivolta"
-#: components/View/Struttura/StrutturaAChiERivolto
+#. Default: "A chi si rivolge"
+#: components/View/Servizio/ServizioAChiSiRivolge
+#: components/View/Struttura/StrutturaAChiSiRivolge
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 

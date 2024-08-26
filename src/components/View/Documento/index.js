@@ -12,10 +12,10 @@ export const DocumentoCosE = loadable(
       /* webpackChunkName: "ISDocumentoView" */ 'io-sanita-theme/components/View/Documento/DocumentoCosE'
     ),
 );
-export const DocumentoAChiERivolto = loadable(
+export const DocumentoAChiSiRivolge = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISDocumentoView" */ 'io-sanita-theme/components/View/Documento/DocumentoAChiERivolto'
+      /* webpackChunkName: "ISDocumentoView" */ 'io-sanita-theme/components/View/Documento/DocumentoAChiSiRivolge'
     ),
 );
 export const DocumentoDocumenti = loadable(

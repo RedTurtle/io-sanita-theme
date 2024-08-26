@@ -7,7 +7,7 @@ import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   StrutturaCosE,
-  StrutturaAChiERivolto,
+  StrutturaAChiSiRivolge,
   StrutturaDove,
   StrutturaComeAccedere,
   StrutturaDateOrari,
@@ -34,7 +34,7 @@ import {
 
 export const StrutturaSectionsOrder = [
   { /* COS'è */ component: StrutturaCosE },
-  { /* A CHI è RIVOLTO */ component: StrutturaAChiERivolto },
+  { /* A CHI SI RIVOLGE */ component: StrutturaAChiSiRivolge },
   { /* DOVE */ component: StrutturaDove },
   { /* COME ACCEDERE */ component: StrutturaComeAccedere },
   { /* DATE E ORARI */ component: StrutturaDateOrari },
@@ -61,7 +61,7 @@ const StrutturaView = ({ content }) => {
 
   return (
     <>
-      <div className="container px-4 my-4 uo-view">
+      <div className="container px-4 my-4 struttura-view">
         <SkipToMainContent />
         <PageHeader
           content={content}

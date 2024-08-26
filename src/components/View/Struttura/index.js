@@ -12,10 +12,10 @@ export const StrutturaCosE = loadable(
       /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaCosE'
     ),
 );
-export const StrutturaAChiERivolto = loadable(
+export const StrutturaAChiSiRivolge = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaAChiERivolto'
+      /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaAChiSiRivolge'
     ),
 );
 export const StrutturaDove = loadable(

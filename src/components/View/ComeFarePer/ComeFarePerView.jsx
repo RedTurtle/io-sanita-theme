@@ -20,14 +20,14 @@ import {
 
 import {
   ComeFarePerDescrizione,
-  ComeFarePerAChiERivolto,
+  ComeFarePerAChiSiRivolge,
   ComeFarePerComeFare,
   ComeFarePerUlterioriInformazioni,
 } from 'io-sanita-theme/components/View/ComeFarePer';
 
 export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
-  { /* A CHI E' RIVOLTO */ component: ComeFarePerAChiERivolto },
+  { /* A CHI SI RIVOLGE */ component: ComeFarePerAChiSiRivolge },
   { /* COME FARE */ component: ComeFarePerComeFare },
   { /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component: ComeFarePerUlterioriInformazioni },
   { /* METADATA */ component: Metadata },

@@ -6,10 +6,10 @@ export const ComeFarePerView = loadable(
       /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerView'
     ),
 );
-export const ComeFarePerAChiERivolto = loadable(
+export const ComeFarePerAChiSiRivolge = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerAChiERivolto'
+      /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerAChiSiRivolge'
     ),
 );
 export const ComeFarePerComeFare = loadable(

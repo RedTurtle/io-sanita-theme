@@ -16,7 +16,7 @@ import {
 
 import {
   DocumentoCosE,
-  DocumentoAChiERivolto,
+  DocumentoAChiSiRivolge,
   DocumentoDocumenti,
   DocumentoServiziProcedure,
   DocumentoResponsabile,
@@ -29,7 +29,7 @@ export const DocumentoViewSectionsOrder = [
   { /* SERVIZI E PROCEDURE */ component: DocumentoServiziProcedure },
   { /* RESPONSABILE */ component: DocumentoResponsabile },
   { /* AUTORI */ component: DocumentoAutori },
-  { /* A CHI SI RIVOLGE */ component: DocumentoAChiERivolto },
+  { /* A CHI SI RIVOLGE */ component: DocumentoAChiSiRivolge },
   { /* METADATA */ component: Metadata },
 ];
 
