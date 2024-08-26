@@ -6,17 +6,16 @@ import {
   RichText,
   RichTextSection,
 } from 'io-sanita-theme/helpers';
-
 import { TassonomiaUtenti } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   a_chi_si_rivolge: {
-    id: 'come_fare_per_a_chi_si_rivolge',
-    defaultMessage: 'A chi è rivolto',
+    id: 'struttura_a_chi_si_rivolge',
+    defaultMessage: 'A chi si rivolge',
   },
 });
 
-const ComeFarePerAChiERivolto = ({ content }) => {
+const StrutturaAChiERivolto = ({ content }) => {
   const intl = useIntl();
 
   return richTextHasContent(content?.a_chi_si_rivolge) ||
@@ -40,14 +39,15 @@ const ComeFarePerAChiERivolto = ({ content }) => {
   );
 };
 
-export default ComeFarePerAChiERivolto;
+export default StrutturaAChiERivolto;
 
-ComeFarePerAChiERivolto.propTypes = {
+StrutturaAChiERivolto.propTypes = {
   content: PropTypes.shape({
     a_chi_si_rivolge: PropTypes.shape({
       'content-type': PropTypes.string,
       data: PropTypes.string,
       encoding: PropTypes.string,
     }),
+    a_chi_si_rivolge_tassonomia: PropTypes.array,
   }).isRequired,
 };

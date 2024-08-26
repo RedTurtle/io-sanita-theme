@@ -7,6 +7,7 @@ import { ComeFarePerView } from 'io-sanita-theme/components/View/ComeFarePer';
 import StepView from 'io-sanita-theme/components/View/Step/StepView';
 import { NewsItemView } from 'io-sanita-theme/components/View/NewsItem';
 import { DocumentoView } from 'io-sanita-theme/components/View/Documento';
+import { ServizioView } from 'io-sanita-theme/components/View/Servizio';
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
@@ -17,6 +18,7 @@ const ioSanitaContentTypesViews = {
   Struttura: StrutturaView,
   Persona: PersonaView,
   Documento: DocumentoView,
+  Servizio: ServizioView,
   ComeFarePer: ComeFarePerView,
   Step: StepView,
 };
