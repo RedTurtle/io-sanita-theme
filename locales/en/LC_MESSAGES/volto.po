@@ -492,7 +492,7 @@ msgid "closeSearch"
 msgstr "Close search"
 
 #. Default: "A chi si rivolge"
-#: components/View/ComeFarePer/ComeFarePerAChiERivolto
+#: components/View/ComeFarePer/ComeFarePerAChiSiRivolge
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr "Who is it for"
 
