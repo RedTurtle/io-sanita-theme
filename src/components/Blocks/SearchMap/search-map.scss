@@ -1,0 +1,39 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.iosanita-block-search-map {
+  .search-top {
+    h2.h5 {
+      font-weight: $font-weight-semibold;
+    }
+
+    .form-group.search-bar {
+      label {
+        @include font-size($h5-font-size);
+        font-weight: 600;
+        position: unset;
+        transform: none;
+      }
+    }
+
+    .subjects {
+      display: flex;
+      overflow: scroll;
+      button {
+        flex: 1 0 auto;
+      }
+      .chip.chip-primary.active {
+        background-color: var(--bs-primary);
+        color: var(--bs-primary-text);
+        > .chip-label {
+          color: var(--bs-primary-text);
+        }
+      }
+    }
+  }
+
+  #geocoded-result {
+    height: auto;
+    width: 100%; //serve per farlo quadrato
+    padding-bottom: 100%; //serve per farlo quadrato
+  }
+}

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { Icon } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   view_all: {
@@ -15,25 +16,19 @@ export const ListingLinkMore = ({
   title,
   href,
   className = '',
-  linkAlign,
   linkmoreIdLighthouse,
 }) => {
   const intl = useIntl();
   const url = href?.[0]?.['@id'];
   return url ? (
-    <div
-      className={
-        linkAlign
-          ? `link-more-button-align-right ${className}`
-          : `link-button text-center ${className}`
-      }
-    >
+    <div className={`link-more-button-wrapper text-end ${className}`}>
       <UniversalLink
         href={flattenToAppURL(url)}
-        className="btn btn-primary"
         data-element={linkmoreIdLighthouse}
+        className="text-accent fw-semibold"
       >
-        {title || intl.formatMessage(messages.view_all)}
+        {title || intl.formatMessage(messages.view_all)}{' '}
+        <Icon color="accent" icon="it-arrow-right" padding={false} />
       </UniversalLink>
     </div>
   ) : null;

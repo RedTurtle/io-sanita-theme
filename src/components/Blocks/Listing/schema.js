@@ -19,13 +19,13 @@ export const schemaListing = (props) => {
     return fieldset.id === 'linkmore';
   };
 
-  const linkMoreFieldset = baseSchema.fieldsets.find(findFieldset);
-  linkMoreFieldset.fields.push('linkAlign');
+  // const linkMoreFieldset = baseSchema.fieldsets.find(findFieldset);
+  // linkMoreFieldset.fields.push('linkAlign');
 
-  baseSchema.properties.linkAlign = {
-    title: intl.formatMessage(messages.alignButton),
-    type: 'boolean',
-  };
+  // baseSchema.properties.linkAlign = {
+  //   title: intl.formatMessage(messages.alignButton),
+  //   type: 'boolean',
+  // };
 
   return baseSchema;
 };
