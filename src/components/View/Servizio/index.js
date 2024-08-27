@@ -90,3 +90,9 @@ export const ServizioDocumenti = loadable(
       /* webpackChunkName: "ISServizioView" */ 'io-sanita-theme/components/View/Servizio/ServizioDocumenti'
     ),
 );
+export const ServizioServiziCorrelati = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISServizioView" */ 'io-sanita-theme/components/View/Servizio/ServizioServiziCorrelati'
+    ),
+);

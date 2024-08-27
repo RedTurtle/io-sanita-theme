@@ -1184,6 +1184,11 @@ msgstr ""
 msgid "precedente"
 msgstr ""
 
+#. Default: "Prenota online"
+#: components/View/commons/PageHeader/PageHeaderLinkServizio
+msgid "prenota_online_deafult_label"
+msgstr ""
+
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
@@ -1416,11 +1421,6 @@ msgstr ""
 msgid "servizio_accedi_al_servizio"
 msgstr ""
 
-#. Default: "Accedi al servizio"
-#: components/View/commons/PageHeader/PageHeaderLinkServizio
-msgid "servizio_canale_digitale_link"
-msgstr ""
-
 #. Default: "Contatti"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: components/View/Servizio/ServizioContatti
@@ -1470,6 +1470,11 @@ msgstr ""
 #. Default: "Responsabile del servizo"
 #: components/View/Servizio/ServizioResponsabile
 msgid "servizio_responsabile_servizio"
+msgstr ""
+
+#. Default: "Servizi e prestazioni correlati"
+#: components/View/Servizio/ServizioServiziCorrelati
+msgid "servizio_servizi_prestazioni"
 msgstr ""
 
 #. Default: "Tempi di attesa"
