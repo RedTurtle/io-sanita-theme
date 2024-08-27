@@ -20,13 +20,11 @@ const UOPersonale = ({ content }) => {
         title={intl.formatMessage(messages.personale)}
       >
         <Row>
-          {content.personale_correlato.map((item) => {
-            return (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
-                <CardPersona item={item} />
-              </Col>
-            );
-          })}
+          {content.personale_correlato.map((item) => (
+            <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <CardPersona item={item} />
+            </Col>
+          ))}
         </Row>
       </RichTextSection>
   ) : (

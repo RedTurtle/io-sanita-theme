@@ -8,13 +8,6 @@ export const Attachments = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Attachments/Attachments'
     ),
 );
-
-export const ContactCard = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/ContactCard/ContactCard'
-    ),
-);
 export const ContentImage = loadable(
   () =>
     import(

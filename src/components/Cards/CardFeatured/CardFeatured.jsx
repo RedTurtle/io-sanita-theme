@@ -1,3 +1,7 @@
+/*
+ Usa la Card Featured per mettere in evidenza notizie, comunicati stampa, eventi, bandi e concorsi.
+*/
+
 import React from 'react';
 import {
   Card,

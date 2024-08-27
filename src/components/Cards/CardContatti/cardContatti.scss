@@ -1,0 +1,20 @@
+.card.card-contatti {
+    .icon.icon-svg-telephone {
+        fill: none !important;
+        height: 24px !important;
+    }
+
+    .card-text {
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        flex: 1 1 100%;
+        font-size: 0.8886rem;
+      }
+
+      .pdc-type {
+        text-transform: capitalize;
+      }
+    }
+  }

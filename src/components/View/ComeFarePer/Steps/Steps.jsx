@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
-import { richTextHasContent, RichText } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichText, contentFolderHasItems } from 'io-sanita-theme/helpers';
 import {
   Accordion,
   AccordionItem,
@@ -17,11 +17,9 @@ import {
   AccordionBody,
   Button,
 } from 'design-react-kit';
-import { Icon, CardPlace } from 'io-sanita-theme/components';
-import {
-  ContactCard,
-  Attachments,
-} from 'io-sanita-theme/components/View/commons';
+import { Icon, CardPlace, CardContatti } from 'io-sanita-theme/components';
+import { Attachments } from 'io-sanita-theme/components/View/commons';
+
 import './steps.scss';
 
 const messages = defineMessages({
@@ -162,11 +160,13 @@ const Steps = ({ content, steps = [] }) => {
                 )}
 
                 {/* DOCUMENTI */}
-                <Attachments
-                  content={step}
-                  folder_name="documenti"
-                  title={intl.formatMessage(messages.documents)}
-                />
+                {(contentFolderHasItems(content, 'adocumenti')) && (
+                  <Attachments
+                    content={step}
+                    folder_name="documenti"
+                    title={intl.formatMessage(messages.documents)}
+                  />
+                )}
 
                 {/* UFFICI CORRELATI */}
                 {step?.uo_correlata?.length > 0 && (
@@ -185,8 +185,8 @@ const Steps = ({ content, steps = [] }) => {
                       {intl.formatMessage(messages.contacts)}
                     </h4>
                     {step.pdc_correlato.map((pdc) => (
-                      <ContactCard
-                        contact={pdc}
+                      <CardContatti
+                        item={pdc}
                         show_title={true}
                         key={pdc['@id']}
                       />
