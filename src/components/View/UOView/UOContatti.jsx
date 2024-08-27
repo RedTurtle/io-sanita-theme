@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { CardSimple } from 'io-sanita-theme/components';
+import { CardContatti } from 'io-sanita-theme/components';
 import { RichTextSection } from 'io-sanita-theme/helpers';
+import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   contatti: {
@@ -18,11 +19,14 @@ const UOContatti = ({ content }) => {
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {/* Punto di contatto */}
-      {content?.pdc_correlato.map((item, i) => (
-        <CardSimple item={item} key={'contact_' + i} />
-      ))}
-
+      <Row>
+        {/* Punto di contatto */}
+        {content?.pdc_correlato.map((item, i) => (
+          <Col lg={6} className="py-lg-2" key={item['@id']}>
+            <CardContatti item={item} show_title={true} />
+          </Col>
+        ))}
+      </Row>
     </RichTextSection>
   ) : null;
 };

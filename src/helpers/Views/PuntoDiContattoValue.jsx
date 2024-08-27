@@ -55,59 +55,59 @@ const messages = defineMessages({
 export const PuntoDiContattoValue = ({ value }) => {
   const intl = useIntl();
 
-  switch (value?.pdc_type) {
+  switch (value?.tipo) {
     case 'url':
     case 'account':
     case 'linkedin':
     case 'twitter':
       return (
         <UniversalLink
-          href={`${value?.pdc_value}`}
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          href={`${value?.valore}`}
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </UniversalLink>
       );
     case 'telefono':
       return (
         <a
-          href={`tel:${value?.pdc_value}`}
+          href={`tel:${value?.valore}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </a>
       );
     case 'whatsapp':
       return (
         <a
-          href={`https://wa.me/${value?.pdc_value.replace(/\D/g, '')}`}
+          href={`https://wa.me/${value?.valore.replace(/\D/g, '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </a>
       );
     case 'telegram':
       // telegram must be username not phone number
       return (
         <a
-          href={`https://t.me/${value?.pdc_value}`}
+          href={`https://t.me/${value?.valore}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </a>
       );
     case 'skype':
@@ -116,32 +116,32 @@ export const PuntoDiContattoValue = ({ value }) => {
       // https://learn.microsoft.com/en-us/skype-sdk/skypeuris/skypeuritutorial_webpages?redirectedfrom=MSDN
       return (
         <a
-          href={`skype:${value?.pdc_value}?call`}
+          href={`skype:${value?.valore}?call`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </a>
       );
     case 'email':
     case 'pec':
       return (
         <a
-          href={`mailto:${value?.pdc_value}`}
+          href={`mailto:${value?.valore}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`${intl.formatMessage(messages[value.pdc_type])}: ${
-            value?.pdc_value ?? ''
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
           }`}
         >
-          {value?.pdc_value}
+          {value?.valore}
         </a>
       );
     default:
-      return value?.pdc_value;
+      return value?.valore;
   }
 };
 
