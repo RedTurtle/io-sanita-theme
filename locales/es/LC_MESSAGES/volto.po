@@ -613,6 +613,11 @@ msgstr ""
 msgid "dropdownmenu-close-menu-button"
 msgstr "Cerrar menú"
 
+#. Default: "Email"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "email"
+msgstr ""
+
 #. Default: "YouTube Video {id}"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "embedVideo"
@@ -776,6 +781,11 @@ msgstr ""
 #. Default: "Collegamento"
 #: components/Cards/CardGuide/CardGuide
 msgid "link"
+msgstr ""
+
+#. Default: "LinkedIn"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "linkedin"
 msgstr ""
 
 #. Default: "Questo evento ha più date: vedi tutte"
@@ -1060,9 +1070,19 @@ msgstr ""
 msgid "pdc_account"
 msgstr ""
 
+#. Default: "Correlati"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_correlati"
+msgstr ""
+
 #. Default: "Email"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_email"
+msgstr ""
+
+#. Default: "Eventi"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_eventi_correlati"
 msgstr ""
 
 #. Default: "Fax"
@@ -1075,9 +1095,24 @@ msgstr ""
 msgid "pdc_linkedin"
 msgstr ""
 
+#. Default: "Persone"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_persone_correlate"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_servizi_correlati"
+msgstr ""
+
 #. Default: "Social"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_social"
+msgstr ""
+
+#. Default: "Strutture"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_strutture_correlate"
 msgstr ""
 
 #. Default: "Numero di telefono"
@@ -1090,12 +1125,18 @@ msgstr ""
 msgid "pdc_twitter"
 msgstr ""
 
+#. Default: "Unità operative"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_uo_correlata"
+msgstr ""
+
 #. Default: "Sito web"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_url"
 msgstr ""
 
 #. Default: "PEC"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "pec"
 msgstr ""
@@ -1388,6 +1429,7 @@ msgid "servizio_canale_digitale_link"
 msgstr ""
 
 #. Default: "Contatti"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: components/View/Servizio/ServizioContatti
 msgid "servizio_contatti"
 msgstr ""
@@ -1594,6 +1636,7 @@ msgid "skiplink-navigation"
 msgstr "Ir a navegación"
 
 #. Default: "Skype"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "skype"
 msgstr ""
@@ -1758,7 +1801,13 @@ msgstr ""
 msgid "successivo"
 msgstr ""
 
+#. Default: "Telefono"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "telefono"
+msgstr ""
+
 #. Default: "Telegram"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "telegram"
 msgstr ""
@@ -1797,6 +1846,11 @@ msgstr ""
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "topics"
 msgstr "Temas"
+
+#. Default: "X"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "twitter"
+msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
@@ -1869,6 +1923,11 @@ msgstr ""
 msgid "update_date"
 msgstr ""
 
+#. Default: "Sito web"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "url"
+msgstr ""
+
 #. Default: "Vedi su Apple Maps"
 #: helpers/Address/mapPin
 msgid "view_on_applemaps"
@@ -1885,6 +1944,7 @@ msgid "view_on_googlemaps"
 msgstr ""
 
 #. Default: "Whatsapp"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "whatsapp"
 msgstr ""
