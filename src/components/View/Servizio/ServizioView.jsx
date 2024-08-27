@@ -18,6 +18,7 @@
    ServizioProcedureCollegate,
    ServizioUOResponsabile,
    ServizioResponsabile,
+   ServizioServiziCorrelati,
    ServizioUlterioriInformazioni,
    ServizioDocumenti
  } from 'io-sanita-theme/components/View/Servizio';
@@ -47,6 +48,7 @@
    { /* UO RESPONSABILE */ component: ServizioUOResponsabile },
    { /* RESPONSABILE DEL SERVIZIO */ component: ServizioResponsabile },
    { /* DOCUMENTI */ component: ServizioDocumenti },
+   { /* SERVIZI E PRESTAZIONI CORRELATI */ component: ServizioServiziCorrelati },
    { /* ULTERIORI INFO */ component: ServizioUlterioriInformazioni },
    { /* METADATA */ component: Metadata },
  ];

@@ -2,9 +2,9 @@ import { defineMessages, useIntl } from 'react-intl';
 import { UniversalLink } from '@plone/volto/components';
 
 const messages = defineMessages({
-  canale_digitale_link: {
-    id: 'servizio_canale_digitale_link',
-    defaultMessage: 'Accedi al servizio',
+  prenota_online_deafult_label: {
+    id: 'prenota_online_deafult_label',
+    defaultMessage: 'Prenota online',
   },
 });
 
@@ -12,18 +12,15 @@ const PageHeaderLinkServizio = ({ content }) => {
   const intl = useIntl();
 
   return content['@type'] === 'Servizio' &&
-    content.canale_digitale_link &&
-    !content.stato_servizio ? (
+    content?.prenota_online_link ? (
     <div className="mb-4">
-      <p className="canale-digitale">
-        <UniversalLink
-          className="btn btn-primary btn-lg"
-          href={content.canale_digitale_link}
-          data-element="service-online-access"
-        >
-          {intl.formatMessage(messages.canale_digitale_link)}
-        </UniversalLink>
-      </p>
+      <UniversalLink
+        className="btn btn-primary btn-lg"
+        href={content.prenota_online_link}
+        data-element="service-online-access"
+      >
+        {content?.prenota_online_label ? content.prenota_online_label : intl.formatMessage(messages.prenota_online_deafult_label)}
+      </UniversalLink>
     </div>
   ) : null;
 };

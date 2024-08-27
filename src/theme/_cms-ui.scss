@@ -663,3 +663,15 @@ body.has-toolbar {
     }
   }
 }
+
+/* Edit form CT */
+.cms-ui #page-edit .ui.form.vertical-form fieldset {
+  .ui.grid {
+    margin-top: 0;
+
+    .ui.attached.tabular.menu {
+      margin-top: -1rem;
+      max-width: 100%;
+    }
+  }
+}
