@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-08-27T17:15:01.752Z\n"
+"POT-Creation-Date: 2024-08-28T13:15:09.708Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1115,11 +1115,6 @@ msgstr ""
 msgid "pdc_telefono"
 msgstr ""
 
-#. Default: "Twitter"
-#: helpers/Views/PuntoDiContattoValue
-msgid "pdc_twitter"
-msgstr ""
-
 #. Default: "Unità operative"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
 msgid "pdc_uo_correlata"
@@ -1128,6 +1123,11 @@ msgstr ""
 #. Default: "Sito web"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_url"
+msgstr ""
+
+#. Default: "Twitter"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_x"
 msgstr ""
 
 #. Default: "PEC"

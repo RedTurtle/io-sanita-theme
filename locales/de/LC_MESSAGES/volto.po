@@ -1118,11 +1118,6 @@ msgstr ""
 msgid "pdc_telefono"
 msgstr ""
 
-#. Default: "Twitter"
-#: helpers/Views/PuntoDiContattoValue
-msgid "pdc_twitter"
-msgstr ""
-
 #. Default: "Unità operative"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
 msgid "pdc_uo_correlata"
@@ -1131,6 +1126,11 @@ msgstr ""
 #. Default: "Sito web"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_url"
+msgstr ""
+
+#. Default: "Twitter"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_x"
 msgstr ""
 
 #. Default: "PEC"
