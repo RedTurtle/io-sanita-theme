@@ -2,5 +2,6 @@
   &.bg-primary-lightest {
     color: $text-color;
     border: 1px solid var(--primary-lighter);
+    font-size: $card-badge-size;
   }
 }

@@ -12,21 +12,17 @@ const PageHeaderServizio = ({ content }) => {
           <Chip
             tag="div"
             simple
-            color={content.stato_servizio ? 'danger' : 'primary'}
+            color={content.servizio_attivo ? 'primary' : 'danger'}
             data-element="service-status"
           >
             <ChipLabel>
-              {content.stato_servizio
-                ? intl.formatMessage(messages.service_off)
-                : intl.formatMessage(messages.service_on)}
+              {content.servizio_attivo
+                ? intl.formatMessage(messages.service_on)
+                : intl.formatMessage(messages.service_off)}
             </ChipLabel>
           </Chip>
         </li>
       </ul>
-      {content.stato_servizio &&
-        richTextHasContent(content.motivo_stato_servizio) && (
-          <RichText data={content.motivo_stato_servizio} serif={false} />
-        )}
     </>
   ) : null;
 };
