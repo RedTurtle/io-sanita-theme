@@ -3,16 +3,17 @@
 */
 import { Icon } from 'io-sanita-theme/components';
 
-const Address = ({ item, showAddress = true, showDistance }) => {
+const Address = ({ item, showAddress = true, showDistance, tag }) => {
   const address_row_2 = ['zip_code', 'city', 'province']
     .map((key) => item?.[key])
     .filter(Boolean)
     .join(' - ');
+  const AddressWrapperTag = tag ?? React.Fragment;
 
-  return item.street || address_row_2.length ? (
+  return item.street?.length > 0 || address_row_2.length ? (
     <>
       {showAddress && (
-        <>
+        <AddressWrapperTag>
           {item.street}
           {(item.zip_code || item.city || item.province) && (
             <>
@@ -20,7 +21,7 @@ const Address = ({ item, showAddress = true, showDistance }) => {
               {address_row_2}
             </>
           )}
-        </>
+        </AddressWrapperTag>
       )}
       {showDistance && (
         <div className="distance fw-semibold">

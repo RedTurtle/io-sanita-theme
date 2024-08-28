@@ -1,0 +1,15 @@
+.tertiary-menu li.nav-item {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #fff;
+
+  a {
+    font-size: 0.778em;
+
+    .external-link {
+      vertical-align: sub;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

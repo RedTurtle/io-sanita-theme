@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { ContactCard } from 'io-sanita-theme/components/View/commons';
-import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
-import EventoContattiOrganizzatoreEsterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreEsterno';
-import EventoContattiOrganizzatoreInterno from 'io-sanita-theme/components/View/Evento/EventoContattiOrganizzatoreInterno';
+import { CardContatti } from 'io-sanita-theme/components';
+import { RichTextSection } from 'io-sanita-theme/helpers';
+import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   contatti: {
-    id: 'Contatti',
+    id: 'evento_contatti',
     defaultMessage: 'Contatti',
   },
 });
@@ -15,23 +14,19 @@ const messages = defineMessages({
 const EventoContatti = ({ content }) => {
   const intl = useIntl();
 
-  return richTextHasContent(content?.organizzato_da_esterno) ||
-    content?.organizzato_da_interno?.length > 0 ||
-    content?.supportato_da?.length > 0 ||
-    content?.contact_info?.length > 0 ? (
+  return content?.pdc_correlato?.length > 0 ? (
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
     >
-      {content.contact_info.map((contact) => (
-        <ContactCard contact={contact} key={contact['@id']} />
-      ))}
-
-      {/* ---organizzato da esterno */}
-      <EventoContattiOrganizzatoreEsterno content={content} />
-
-      {/* ---contatti interno */}
-      <EventoContattiOrganizzatoreInterno content={content} />
+      <Row>
+        {/* Punto di contatto */}
+        {content?.pdc_correlato.map((item, i) => (
+          <Col lg={6} className="py-lg-2" key={item['@id']}>
+            <CardContatti item={item} show_title={true} />
+          </Col>
+        ))}
+      </Row>
     </RichTextSection>
   ) : null;
 };

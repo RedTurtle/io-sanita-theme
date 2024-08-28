@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
@@ -14,7 +14,6 @@ const messages = defineMessages({
 
 const EventoAppuntamenti = ({ content }) => {
   const intl = useIntl();
-
   const events = content?.items?.filter((el) => el['@type'] === 'Event') || [];
 
   return events.length > 0 ? (
@@ -24,8 +23,8 @@ const EventoAppuntamenti = ({ content }) => {
     >
       <Row>
         {events.map((item, i) => (
-          <Col lg={6} className="py-lg-2" key={item['@id']}>
-            <CardImage item={item} showDescription={false} titleTag="h5" />
+          <Col lg={6} className="py-lg-2" key={'appuntamenti'+item['@id']}>
+            <CardImage item={item} />
           </Col>
         ))}
       </Row>

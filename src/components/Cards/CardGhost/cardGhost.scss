@@ -1,25 +1,33 @@
 @import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+@import 'io-sanita-theme/theme/io-sanita/mixins';
 
-.card.card-ghost {
-  .card-title {
-    font-weight: $font-weight-bold;
-    color: var(--bs-link-color);
-    &.card-title-icon {
-      display: flex;
-      justify-content: space-between;
+.public-ui .card,
+.card {
+  &.card-ghost {
+    background-color: transparent;
+    .card-body {
+      .card-title {
+        font-weight: $font-weight-bold;
+        @include rem-size(font-size, 32);
 
-      .icon {
-        flex: 0 0 auto;
-        color: var(--is-accent);
-        fill:  var(--is-accent);
-        margin-left: 1rem;
+        &.card-title-icon {
+          display: flex;
+          justify-content: space-between;
+
+          .icon {
+            flex: 0 0 auto;
+            color: var(--is-accent);
+            fill: var(--is-accent);
+            margin-left: 1rem;
+          }
+        }
       }
     }
-  }
-  &.border-bottom-card {
-    &:before {
-      height: 1px;
-      background-color: $gray-border;
+    &.border-bottom-card {
+      &:before {
+        height: 1px;
+        background-color: $gray-border;
+      }
     }
   }
 }

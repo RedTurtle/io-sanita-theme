@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { defineMessages, useIntl } from 'react-intl';
-
 import { Attachments } from 'io-sanita-theme/components/View/commons';
+import { contentFolderHasItems } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   documenti: {
-    id: 'event_documenti',
+    id: 'evento_documenti',
     defaultMessage: 'Documenti',
   },
 });
@@ -15,7 +14,7 @@ const messages = defineMessages({
 const EventoDocumenti = ({ content }) => {
   const intl = useIntl();
 
-  return (
+  return contentFolderHasItems(content, 'documenti') && (
     <Attachments
       content={content}
       folder_name={'documenti'}

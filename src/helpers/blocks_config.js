@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid';
+
 export const removeListingVariation = (config, id) => {
   let indexOfVariation = -1;
   indexOfVariation =
@@ -77,4 +79,10 @@ export const addSchemaStyles = (
     ...schema.properties.styles.schema.properties,
     ...properties,
   };
+};
+
+export const cloneBlock = (blockData) => {
+  const blockID = uuid();
+  const clonedData = { ...blockData, block: blockID };
+  return [blockID, clonedData];
 };

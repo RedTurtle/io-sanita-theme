@@ -26,7 +26,7 @@ import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
 import {
   getRealEmptyField,
-  serviceFormValidationHelper,
+
   eventFormValidationHelper,
 } from 'io-sanita-theme/helpers/FormValidation/FormValidation';
 
@@ -240,7 +240,6 @@ const validateRequiredFields = (
       schema.required.slice()
     : intersection(schema.required, keys(touchedField));
 
-  serviceFormValidationHelper(schema, formData, touchedField, fields);
   eventFormValidationHelper(
     schema,
     formData,

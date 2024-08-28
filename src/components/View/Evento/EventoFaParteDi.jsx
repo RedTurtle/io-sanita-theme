@@ -1,4 +1,8 @@
-import React from 'react';
+/*
+  Viene mostrato l'item "genitore" quando l'Evento è figlio di un altro Evento
+*/
+
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
@@ -25,7 +29,7 @@ const EventoFaParteDi = ({ content }) => {
     >
       <Row>
         <Col lg={6} className="py-lg-2">
-          <CardImage item={parentEvent} showDescription={false} titleTag="h5" />
+          <CardImage item={parentEvent} />
         </Col>
       </Row>
     </RichTextSection>

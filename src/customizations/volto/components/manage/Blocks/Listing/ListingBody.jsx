@@ -4,6 +4,9 @@ CUSTOMIZATIONS:
 - display nothing if no results in view-mode
 - pass 'block' prop to listing variation
 - italia pagination
+- change Headline component to use data.title instead data.headline
+- change Headline component to to view path filters
+
 */
 import React, { createRef, useMemo } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
@@ -15,28 +18,68 @@ import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
 import { normalizeString } from '@plone/volto/helpers';
 
+import { Row, Col, Container } from 'design-react-kit';
 import { Pagination } from 'io-sanita-theme/components';
-import { DefaultSkeleton } from 'io-sanita-theme/components/Blocks';
+import {
+  DefaultSkeleton,
+  //getPathFiltersButtons,
+} from 'io-sanita-theme/components/Blocks';
 
 import config from '@plone/volto/registry';
 
 const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
+  if (!data.title) {
+    return <></>;
+  }
+
   let attr = { id };
-  const slug = Slugger.slug(normalizeString(data.headline));
+  const slug = Slugger.slug(normalizeString(data.title));
   attr.id = slug || id;
+
   const LinkedHeadline = useMemo(
     () => renderLinkElement(headlineTag),
     [headlineTag],
   );
+
+  const path_filters_buttons = null; /*getPathFiltersButtons(
+    data.show_path_filters,
+    data.path_filters,
+  );*/
+
   return (
-    <LinkedHeadline
-      mode={!isEditMode && 'view'}
-      children={data.headline}
-      attributes={attr}
-      className={cx('headline', {
-        emptyListing: !listingItems?.length > 0,
-      })}
-    />
+    (data.title || path_filters_buttons) && (
+      <Container className="px-0">
+        <Row
+          className={cx('template-header', {
+            'with-filters': path_filters_buttons,
+          })}
+        >
+          {data.title && (
+            <Col md={path_filters_buttons ? 6 : 12}>
+              <LinkedHeadline
+                mode={!isEditMode && 'view'}
+                children={data.title}
+                attributes={attr}
+                className={cx('headline', {
+                  emptyListing: !listingItems?.length > 0,
+                  'mt-5': !data.show_block_bg,
+                  'mb-4': !path_filters_buttons,
+                })}
+              />
+            </Col>
+          )}
+          {path_filters_buttons && (
+            <Col md={6}>
+              <PathFilters
+                {...data}
+                additionalFilters={additionalFilters}
+                addFilters={addFilters}
+              />
+            </Col>
+          )}
+        </Row>
+      </Container>
+    )
   );
 };
 
@@ -55,6 +98,8 @@ const ListingBody = withQuerystringResults((props) => {
     hasLoaded,
     id,
     block,
+    additionalFilters,
+    addFilters,
   } = props;
 
   let ListingBodyTemplate;
@@ -100,17 +145,20 @@ const ListingBody = withQuerystringResults((props) => {
       {
         hasLoaded && listingItems.length > 0 ? (
           <>
-            {data.headline && (
-              <Headline
-                headlineTag={HeadlineTag}
-                id={id}
-                listingItems={listingItems}
-                data={data}
-                isEditMode={isEditMode}
-              />
-            )}
-
-            <div ref={listingRef} aria-live="polite">
+            <Headline
+              headlineTag={HeadlineTag}
+              id={id}
+              listingItems={listingItems}
+              data={data}
+              isEditMode={isEditMode}
+              additionalFilters={additionalFilters}
+              addFilters={addFilters}
+            />
+            <div
+              ref={listingRef}
+              aria-live="polite"
+              className="listing-results"
+            >
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}

@@ -1,12 +1,17 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
 .public-ui .card.card-file {
   .card-body {
+    h3,h4,h5{
+      &.card-title{
+        @include rem-size(font-size, 18);
+      }
+    }
     .icon {
       height: 40px !important;
       width: auto;
+      min-width: 40px;
       font-size: 40px;
-    }
-    h5.card-title {
-      font-size: 1rem;
     }
     .card-text {
       &,

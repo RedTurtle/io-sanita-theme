@@ -59,12 +59,12 @@ class Pagination extends Component {
   handleItemClick = (e, nextActivePage) => {
     const { activePage: prevActivePage } = this.state;
     // Heads up! We need the cast to the "number" type there, as `activePage` can be a string
-    if (+prevActivePage === +nextActivePage.children) return;
+    if (+prevActivePage === +nextActivePage) return;
     this.setState({ activePage: nextActivePage.children });
 
     invoke(this.props, 'onPageChange', e, {
       ...this.props,
-      activePage: nextActivePage.children,
+      activePage: nextActivePage,
     });
   };
 

@@ -106,10 +106,7 @@ const AggregationPage = ({ match, route, location }) => {
   //all'arrivo dei risultati
   useEffect(() => {
     //setto le voci laterali
-    if (
-      result?.facets?.portal_types &&
-      sections.length <= defaultSections.length
-    ) {
+    if (result?.facets?.portal_types) {
       setSections([
         ...defaultSections,
         ...result.facets.portal_types.map((f) => {
@@ -191,8 +188,8 @@ const AggregationPage = ({ match, route, location }) => {
                     const parliamo_di_metadata =
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
-                        : item.portal_type_title
-                        ? [{ title: item.portal_type_title }]
+                        : item.type_title
+                        ? [{ title: item.type_title }]
                         : [];
                     return (
                       <CardSimple

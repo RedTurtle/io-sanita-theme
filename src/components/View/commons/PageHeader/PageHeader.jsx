@@ -4,19 +4,19 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
+import config from '@plone/volto/registry';
 import {
   PageHeaderBando,
-  PageHeaderDates,
+  PageHeaderDates,viewPageHeaderDates,
   PageHeaderEventDates,
   PageHeaderExtend,
   PageHeaderNewsItem,
   PageHeaderStatoServizio,
   PageHeaderLinkServizio,
   PageHeaderDocumento,
+  PageHeaderPersona,
   Sharing,
 } from 'io-sanita-theme/components/View/commons';
-
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   reading_time: {
@@ -36,14 +36,21 @@ const messages = defineMessages({
  * @params readingtime {number} reading time in minutes
  * @params showreadingtime {boolean} show or hide reading time
  * @params showdates {boolean} show or hide dates in header
+ * @params foto {boolean} if true, show image in header (eg. in PersonaView)
  * @returns {string} Markup of the component.
  */
 const PageHeader = (props) => {
-  const { content, readingtime, showdates, showreadingtime } = props;
+  const {
+    content,
+    readingtime,
+    showdates,
+    showreadingtime,
+    foto = false,
+  } = props;
   const intl = useIntl();
 
   const render_reading_time = showreadingtime && readingtime;
-  const render_dates = showdates ? <PageHeaderDates content={content} /> : null;
+  const Image = config.getComponent({ name: 'Image' }).component;
 
   return (
     <div className="PageHeaderWrapper mb-4">
@@ -56,10 +63,11 @@ const PageHeader = (props) => {
           >
             {content.title}
           </h1>
-          <p className="h2">
-            {content.subtitle && `${content.subtitle}`}
+          <p className="subtitle">
             {content.sottotitolo && `${content.sottotitolo}`}
           </p>
+
+          <PageHeaderPersona content={content} />
 
           <PageHeaderEventDates content={content} />
 
@@ -88,29 +96,41 @@ const PageHeader = (props) => {
 
           <PageHeaderExtend {...props} />
 
-          {(render_reading_time || render_dates) && (
+          {(render_reading_time || (showdates && viewPageHeaderDates({...content})?.view)) && (
             <div className="row mt-5 mb-4 readingtime-dates">
-              {render_dates ? (
-                <>{render_dates}</>
-              ) : (
-                <div className="col-6"></div>
-              )}
 
-              {render_reading_time &&
-                ((
-                  <div className="col-6">
-                    <small>{intl.formatMessage(messages.reading_time)}:</small>
-                    <p className="font-monospace">
-                      {readingtime} {intl.formatMessage(messages.minutes)}
-                    </p>
-                  </div>
-                ) || <div className="col-6" />)}
+              <PageHeaderDates content={content}/>
+
+              {render_reading_time &&(
+                <div className="col-6">
+                  <small>{intl.formatMessage(messages.reading_time)}:</small>
+                  <p className="font-monospace">
+                    {readingtime} {intl.formatMessage(messages.minutes)}
+                  </p>
+                </div>
+              )}
             </div>
           )}
         </div>
 
+
+
         <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
+
+          {/* FOTO PERSONA */}
+          {foto && content?.image ? (
+          <div className="page-header-image mt-5">
+            <figure>
+              <Image
+                item={content}
+                alt=""
+                className="img-fluid"
+                sizes="(max-width:768px) 300px, 200px"
+              />
+            </figure>
+          </div>
+        ) : null}
         </div>
       </div>
     </div>

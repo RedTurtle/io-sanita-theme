@@ -27,6 +27,8 @@ import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
+export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
+export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
@@ -124,6 +126,11 @@ export default function applyConfig(config) {
       footerNavigationDepth: 2, //valori possibili: [1,2]. Se impostato ad 1 non verranno mostrati nel footer i link agli elementi contenuti nelle sezioni di primo livello.
       markSpecialLinks: true, // se impostato a false, non marca con icona i link esterni
       markFooterLinks: true, // se impostato a true, viene aggiunta un'icona ai link del footer per renderli riconoscibili
+      extender: {
+        itemIcon: (item) => {
+          return null;
+        },
+      },
     },
     apiExpanders: [
       ...config.settings.apiExpanders,
@@ -191,15 +198,15 @@ export default function applyConfig(config) {
     blocksConfig: config.blocks.blocksConfig,
   };
 
-  //removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
+  removeListingVariation(config, 'default'); // removes default volto template, because it will be overrided
   removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
   removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
 
-  // // COMPONENTS
-  // config.components = {
-  //   ...config.components,
-  //   BlockExtraTags: { component: () => null },
-  // };
+  // COMPONENTS
+  config.components = {
+    ...config.components,
+    BlockExtraTags: { component: () => null },
+  };
 
   config.registerComponent({
     name: 'SiteSettingsExtras',
@@ -225,12 +232,12 @@ export default function applyConfig(config) {
       component: LoginAgid,
     },
     {
-      path: ['/argomento/:id'],
+      path: [AGGREGATION_PAGE_ARGOMENTO + ':id'],
       component: AggregationPage,
       type: 'parliamo_di',
     },
     {
-      path: ['/tipologia-utente/:id'],
+      path: [AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id'],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
     },
@@ -240,15 +247,15 @@ export default function applyConfig(config) {
     ...config.settings.nonContentRoutes.filter(
       (route) => route !== '/contact-form',
     ),
-    '/argomento/',
-    '/tipologia-utente/',
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
   config.settings.publicNonContentRoutes = [
     ...(config.settings.publicNonContentRoutes ?? []),
-    '/argomento/',
-    '/tipologia-utente/',
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
   return config;
 }

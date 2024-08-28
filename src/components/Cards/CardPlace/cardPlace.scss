@@ -1,10 +1,22 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
 .public-ui .card.card-place {
   .avatar {
     border-radius: 0;
     background-color: var(--primary-lightest);
+    &.size-xl {
+      min-width: 80px;
+    }
+    &.size-l {
+      min-width: 32px;
+    }
   }
 
   .card-body {
+    .card-place-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
     .card-text {
       &,
       p {
@@ -27,9 +39,15 @@
 
   &.card-place-small {
     font-size: 0.889rem;
-    h5.card-title {
-      font-size: 0.889rem;
+
+    h3,
+    h4,
+    h5 {
+      &.card-title {
+        @include rem-size(font-size, 18);
+      }
     }
+
     .category {
       font-size: 0.8rem;
     }

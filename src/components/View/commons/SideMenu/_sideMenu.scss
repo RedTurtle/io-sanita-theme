@@ -24,6 +24,9 @@
               padding: 0px;
               border: none;
               margin: 0;
+              text-transform: none;
+              color: $accordion-title-color;
+
               &:after {
                 content: none;
               }

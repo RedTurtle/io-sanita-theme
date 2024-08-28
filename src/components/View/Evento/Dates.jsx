@@ -149,8 +149,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       {additionalDates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.additional_dates)}</h5>
-          {additionalDates.map((additionalDate) => (
-            <div className="font-serif">
+          {additionalDates.map((additionalDate,i) => (
+            <div className="font-serif" key={i}>
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}
@@ -159,8 +159,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       {exdates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
-          {exdates.map((exDate) => (
-            <div className="font-serif">
+          {exdates.map((exDate,i) => (
+            <div className="font-serif" key={'exdate'+i}>
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}

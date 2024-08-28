@@ -23,10 +23,22 @@ msgstr ""
 msgid "Accedi all'area personale"
 msgstr "Accede a tu área personal"
 
+#. Default: "Aspetto"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "Aspetto"
+msgstr ""
+
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
 msgstr "Aviso"
+
+#. Default: "Vedi"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "Card detail label"
+msgstr ""
 
 #. Default: "Indirizzo"
 #: components/Cards/CardPersona/CardPersona
@@ -36,11 +48,6 @@ msgstr ""
 #. Default: "Apri in mappa"
 #: components/Cards/CardPersona/CardPersona
 msgid "CardPersona: view on googlemaps"
-msgstr ""
-
-#. Default: "Indirizzo"
-#: components/Cards/CardPlace/CardPlace
-msgid "CardPlace: address label"
 msgstr ""
 
 #. Default: "Apri in mappa"
@@ -67,11 +74,6 @@ msgstr ""
 #: components/Widgets/FileWidget
 msgid "Clicca qui per sostituire il file"
 msgstr "Haga clic aquí para reemplazar el archivo"
-
-#. Default: "Contatti"
-#: components/View/Evento/EventoContatti
-msgid "Contatti"
-msgstr ""
 
 #. Default: "Contenuto"
 #: components/View/AggregationPage/SideMenu
@@ -104,6 +106,17 @@ msgstr ""
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr ""
 
+#. Default: "Dimensione della mappa"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "Dimensione della mappa"
+msgstr ""
+
+#. Default: "Etichetta"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Etichetta path filter"
+msgstr ""
+
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
 msgid "Go to content"
@@ -123,6 +136,18 @@ msgstr ""
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
 msgstr "Inicio"
+
+#. Default: "ID Lighthouse"
+#: config/blocks/listing/ListingOptions/linkMoreOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "ID Lighthouse"
+msgstr ""
+
+#. Default: "Identificativo di servizio a solo uso interno, utilizzato per le verifiche AgID inerenti al PNRR."
+#: config/blocks/listing/ListingOptions/linkMoreOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "ID Lighthouse Help Description"
+msgstr ""
 
 #. Default: "Impostazioni cookie"
 #: components/layout/Footer/FooterSmall
@@ -165,6 +190,18 @@ msgstr ""
 msgid "Menu selezionato"
 msgstr "Menú seleccionado"
 
+#. Default: "Mostra i filtri per percorso"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Mostra i filtri per percorso"
+msgstr ""
+
+#. Default: "Mostra lo sfondo del blocco"
+#: config/blocks/listing/ListingOptions/defaultOptions
+#: config/blocks/listing/ListingOptions/utils
+msgid "Mostra lo sfondo del blocco"
+msgstr ""
+
 #. Default: "Pagina successiva"
 #: components/Pagination/PaginationItem
 msgid "Next page"
@@ -180,9 +217,21 @@ msgstr "- abrir en una nueva pestaña"
 msgid "Page"
 msgstr ""
 
+#. Default: "Filtro"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Path filter filtro"
+msgstr ""
+
 #. Default: "Seleziona per mettere in pausa lo slider"
 #: components/Slider/ButtonPlayPause
 msgid "Pause slider"
+msgstr ""
+
+#. Default: "Percorso"
+#: components/manage/Widgets/PathFiltersWidget
+#: config/blocks/listing/ListingOptions/utils
+msgid "Percorso path filter"
 msgstr ""
 
 #. Default: "Seleziona per riprodurre lo slider"
@@ -194,6 +243,11 @@ msgstr ""
 #: components/Pagination/PaginationItem
 msgid "Previous page"
 msgstr "Pagina anterior"
+
+#. Default: "Ricerca con mappa"
+#: components/Blocks/SearchMap/Sidebar
+msgid "Ricerca con mappa"
+msgstr ""
 
 #. Default: "Rimuovi il file"
 #: components/Widgets/FileWidget
@@ -240,6 +294,11 @@ msgstr "Gracias."
 msgid "Tipi di contenuto"
 msgstr ""
 
+#. Default: "Titolo"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "Titolo"
+msgstr ""
+
 #. Default: "Trascina qui il file..."
 #: components/Widgets/FileWidget
 msgid "Trascina qui il file ..."
@@ -279,6 +338,7 @@ msgid "Vai alla pagina"
 msgstr "Ir a la página"
 
 #. Default: "Vedi tutto"
+#: components/Blocks/Listing/commons/ListingLinkMore
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr "Ver todo"
@@ -287,11 +347,6 @@ msgstr "Ver todo"
 #: components/Unauthorized/Unauthorized
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "Está intentando acceder a un elemento protegido, por favor, haga {login} primero."
-
-#. Default: "A chi è rivolto"
-#: components/View/Evento/EventoCosE
-msgid "a_chi_rivolto"
-msgstr ""
 
 #. Default: "Vai alla ricerca per sezioni avanzata"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -318,6 +373,11 @@ msgstr ""
 msgid "aggregation_page_no_results"
 msgstr ""
 
+#. Default: "Allinea il bottone a destra"
+#: components/Blocks/Listing/schema
+msgid "alignButton"
+msgstr ""
+
 #. Default: "Tutto"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "allFilters"
@@ -333,6 +393,11 @@ msgstr "Todas las opciones"
 msgid "allTopics"
 msgstr "Todos los temas"
 
+#. Default: "Mostra l'immagine per tutti gli elementi"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "always_show_image"
+msgstr ""
+
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
 msgid "amministrazione"
@@ -346,6 +411,21 @@ msgstr ""
 #. Default: "Allegati"
 #: components/View/commons/Attachments/Attachments
 msgid "attachments"
+msgstr ""
+
+#. Default: "Autoplay"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay"
+msgstr ""
+
+#. Default: "Velocità autoplay"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay_speed"
+msgstr ""
+
+#. Default: "La velocità di autoplay deve essere espressa in secondi."
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "autoplay_speed_description"
 msgstr ""
 
 #. Default: "Torna alla ricerca"
@@ -373,6 +453,11 @@ msgstr "Activar"
 msgid "bando_scheduled"
 msgstr "Programado"
 
+#. Default: "Colore di sfondo"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "block_bg_color"
+msgstr ""
+
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "breadcrumb"
@@ -386,6 +471,11 @@ msgstr ""
 #. Default: "Slide"
 #: components/Slider/SingleSlideWrapper
 msgid "carouselSlide"
+msgstr ""
+
+#. Default: "Icona categoria"
+#: components/Cards/common/CardCategoryTop
+msgid "category_icon"
 msgstr ""
 
 #. Default: "Clear all filters"
@@ -413,6 +503,31 @@ msgstr ""
 msgid "closeSearch"
 msgstr "Cerrar búsqueda"
 
+#. Default: "A chi si rivolge"
+#: components/View/ComeFarePer/ComeFarePerAChiSiRivolge
+msgid "come_fare_per_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Come fare"
+#: components/View/ComeFarePer/ComeFarePerComeFare
+msgid "come_fare_per_come_fare"
+msgstr ""
+
+#. Default: "Panoramica"
+#: components/View/ComeFarePer/ComeFarePerDescrizione
+msgid "come_fare_per_panoramica"
+msgstr ""
+
+#. Default: "Parliamo di"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_parliamo_di"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/ComeFarePer/ComeFarePerUlterioriInformazioni
+msgid "come_fare_per_ulteriori_informazioni"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -428,24 +543,64 @@ msgstr ""
 msgid "date"
 msgstr "Fecha"
 
-#. Default: "Date e orari"
-#: components/View/Evento/EventoDateOrari
-msgid "date_e_orari"
-msgstr ""
-
 #. Default: "Non cercare nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "deselectSearchSection"
 msgstr "No busques en la sección"
+
+#. Default: "Testo per il link al dettaglio"
+#: config/blocks/listing/ListingOptions/utils
+msgid "detail_link_label"
+msgstr ""
 
 #. Default: "Documenti e dati"
 #: components/View/commons/RelatedItems
 msgid "documenti-e-dati"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Documento/DocumentoAChiSiRivolge
+msgid "documento_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Autori"
+#: components/View/Documento/DocumentoAutori
+msgid "documento_autori"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Documento/DocumentoCosE
+msgid "documento_cos_e"
+msgstr ""
+
+#. Default: "Vai al documento"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_doc"
+msgstr ""
+
+#. Default: "Formati alternativi"
+#: components/View/Documento/DocumentoDocumenti
+msgid "documento_formati"
+msgstr ""
+
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
 msgid "documento_header_protocollo"
+msgstr ""
+
+#. Default: "Procedura di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "documento_procedura_riferimento"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/Documento/DocumentoResponsabile
+msgid "documento_responsabile"
+msgstr ""
+
+#. Default: "Servizio di riferimento"
+#: components/View/Documento/DocumentoServiziProcedure
+msgid "documento_servizio_riferimento"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -458,6 +613,11 @@ msgstr ""
 msgid "dropdownmenu-close-menu-button"
 msgstr "Cerrar menú"
 
+#. Default: "Email"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "email"
+msgstr ""
+
 #. Default: "YouTube Video {id}"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "embedVideo"
@@ -468,29 +628,9 @@ msgstr ""
 msgid "end"
 msgstr ""
 
-#. Default: "Cos'è"
-#: components/View/Evento/EventoCosE
-msgid "event_cos_e"
-msgstr ""
-
-#. Default: "Costi"
-#: components/View/Evento/EventoCosti
-msgid "event_costi"
-msgstr ""
-
-#. Default: "Documenti"
-#: components/View/Evento/EventoDocumenti
-msgid "event_documenti"
-msgstr ""
-
 #. Default: "La data di fine deve essere successiva alla data di inizio"
 #: helpers/FormValidation/FormValidation
 msgid "event_end"
-msgstr ""
-
-#. Default: "Ulteriori informazioni"
-#: components/View/Evento/EventoUlterioriInformazioni
-msgid "event_ulteriori_informazioni"
 msgstr ""
 
 #. Default: "Url dell'evento"
@@ -498,14 +638,69 @@ msgstr ""
 msgid "event_url"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Evento/EventoAChiSiRivolge
+msgid "evento_a_chi_si_rivolge"
+msgstr ""
+
 #. Default: "Appuntamenti"
 #: components/View/Evento/EventoAppuntamenti
 msgid "evento_appuntamenti"
 msgstr ""
 
+#. Default: "Contatti"
+#: components/View/Evento/EventoContatti
+msgid "evento_contatti"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Evento/EventoCosE
+msgid "evento_cos_e"
+msgstr ""
+
+#. Default: "Costi"
+#: components/View/Evento/EventoCosti
+msgid "evento_costi"
+msgstr ""
+
+#. Default: "Date e orari"
+#: components/View/Evento/EventoDateOrari
+msgid "evento_date_e_orari"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Evento/EventoDocumenti
+msgid "evento_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Evento/EventoDove
+msgid "evento_dove"
+msgstr ""
+
 #. Default: "Fa parte di"
 #: components/View/Evento/EventoFaParteDi
 msgid "evento_fa_parte_di"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Evento/EventoGalleria
+msgid "evento_gallery"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/Evento/EventoDateOrari
+msgid "evento_orari"
+msgstr ""
+
+#. Default: "Eventi correlati"
+#: components/View/Evento/EventoEventiCorrelati
+msgid "evento_related_events"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/Evento/EventoUlterioriInformazioni
+msgid "evento_ulteriori_informazioni"
 msgstr ""
 
 #. Default: "Scadenza"
@@ -533,7 +728,7 @@ msgstr ""
 msgid "from"
 msgstr "desde"
 
-#. Default: "Galleria immagini"
+#. Default: "Immagini"
 #: components/View/commons/Gallery/Gallery
 msgid "gallery"
 msgstr ""
@@ -558,9 +753,19 @@ msgstr ""
 msgid "gallery_view_prev"
 msgstr ""
 
+#. Default: "Nascondi le date"
+#: config/blocks/listing/ListingOptions/utils
+msgid "hide_dates"
+msgstr ""
+
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
 msgid "homepage"
+msgstr ""
+
+#. Default: "Incarico"
+#: components/View/commons/PageHeader/PageHeaderPersona
+msgid "incarico"
 msgstr ""
 
 #. Default: "Indice della pagina"
@@ -573,10 +778,25 @@ msgstr ""
 msgid "legend_required"
 msgstr ""
 
+#. Default: "Collegamento"
+#: components/Cards/CardGuide/CardGuide
+msgid "link"
+msgstr ""
+
+#. Default: "LinkedIn"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "linkedin"
+msgstr ""
+
 #. Default: "Questo evento ha più date: vedi tutte"
 #: helpers/dates
 msgid "listing_event_recurrence_label"
 msgstr "Este evento tiene varias fechas: ver todas"
+
+#. Default: "Colore dell'elemento"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "listing_items_color"
+msgstr ""
 
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
 #: components/EmbeddedVideo/EmbeddedVideo
@@ -661,11 +881,6 @@ msgstr "Iniciar sesión con Spid"
 msgid "logo-subsite-alt"
 msgstr ""
 
-#. Default: "Luogo"
-#: components/View/Evento/EventoLuoghi
-msgid "luogo"
-msgstr ""
-
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
@@ -675,6 +890,21 @@ msgstr ""
 #: components/View/commons/Sharing/Sharing
 msgid "mailto"
 msgstr "Enviar"
+
+#. Default: "Grande"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_large"
+msgstr ""
+
+#. Default: "Media"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_medium"
+msgstr ""
+
+#. Default: "Piccola"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "map_size_small"
+msgstr ""
 
 #. Default: "min"
 #: components/View/commons/PageHeader/PageHeader
@@ -696,6 +926,46 @@ msgstr "Descargar archivo"
 #: helpers/Files/FileIcon
 msgid "modulo_download_in_format"
 msgstr "Descargar en"
+
+#. Default: "Non alterare le dimensioni naturali dell'immagine"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "natural_image_size"
+msgstr ""
+
+#. Default: "A cura di"
+#: components/View/NewsItem/NewsItemACuraDi
+msgid "news_item_a_cura_di"
+msgstr ""
+
+#. Default: "Contenuto"
+#: components/View/NewsItem/NewsItemTesto
+msgid "news_item_contenuto"
+msgstr ""
+
+#. Default: "Notizie correlate"
+#: components/View/NewsItem/NewsItemNotizieCorrelate
+msgid "news_item_notizie_correlate"
+msgstr ""
+
+#. Default: "Persone"
+#: components/View/NewsItem/NewsItemPersone
+msgid "news_item_persone"
+msgstr ""
+
+#. Default: "Servizi e prestazioni"
+#: components/View/NewsItem/NewsItemServiziEPrestazioni
+msgid "news_item_servizi_prestazioni"
+msgstr ""
+
+#. Default: "Strutture"
+#: components/View/NewsItem/NewsItemStrutture
+msgid "news_item_strutture"
+msgstr ""
+
+#. Default: "Ulteriori informazioni"
+#: components/View/NewsItem/NewsItemUlterioriInformazioni
+msgid "news_item_ulteriori_informazioni"
+msgstr ""
 
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
@@ -757,19 +1027,22 @@ msgstr "De"
 msgid "options"
 msgstr "Opciones"
 
-#. Default: "Orari"
-#: components/View/Evento/EventoDateOrari
-msgid "orari"
-msgstr ""
-
 #. Default: "Organizzato da"
-#: components/View/Evento/EventoContattiOrganizzatoreInterno
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "organizzato_da"
 msgstr ""
 
-#. Default: "Organizzatore"
-#: components/View/Evento/EventoContattiOrganizzatoreEsterno
-msgid "organizzatore"
+#. Default: "Ulteriori informazioni"
+#: components/View/Persona/PersonaUlterioriInformazioni
+#: components/View/Servizio/ServizioUlterioriInformazioni
+#: components/View/Struttura/StrutturaUlterioriInformazioni
+#: components/View/UOView/UOUlterioriInformazioni
+msgid "other_info"
+msgstr ""
+
+#. Default: "Non mostrare l'icona di accessibilità per i link a siti esterni"
+#: config/blocks/listing/ListingOptions/smallBlockLinksTemplate
+msgid "override_links_accessibility_marker"
 msgstr ""
 
 #. Default: "PARLIAMO DI"
@@ -783,13 +1056,12 @@ msgid "paginationLabel"
 msgstr ""
 
 #. Default: "Parteciperanno"
-#: components/View/Evento/EventoCosE
 #: components/View/Evento/EventoPartecipanti
 msgid "parteciperanno"
 msgstr ""
 
 #. Default: "Patrocinato da"
-#: components/View/Evento/EventoUlterioriInformazioni
+#: components/View/Evento/EventoOrganizzatoDa
 msgid "patrocinato_da"
 msgstr ""
 
@@ -798,9 +1070,19 @@ msgstr ""
 msgid "pdc_account"
 msgstr ""
 
+#. Default: "Correlati"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_correlati"
+msgstr ""
+
 #. Default: "Email"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_email"
+msgstr ""
+
+#. Default: "Eventi"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_eventi_correlati"
 msgstr ""
 
 #. Default: "Fax"
@@ -813,9 +1095,24 @@ msgstr ""
 msgid "pdc_linkedin"
 msgstr ""
 
+#. Default: "Persone"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_persone_correlate"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_servizi_correlati"
+msgstr ""
+
 #. Default: "Social"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_social"
+msgstr ""
+
+#. Default: "Strutture"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_strutture_correlate"
 msgstr ""
 
 #. Default: "Numero di telefono"
@@ -828,14 +1125,65 @@ msgstr ""
 msgid "pdc_twitter"
 msgstr ""
 
+#. Default: "Unità operative"
+#: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
+msgid "pdc_uo_correlata"
+msgstr ""
+
 #. Default: "Sito web"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_url"
 msgstr ""
 
 #. Default: "PEC"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "pec"
+msgstr ""
+
+#. Default: "Incarichi"
+#: components/View/Persona/PersonaIncarichi
+msgid "persona_altri_incarichi"
+msgstr ""
+
+#. Default: "Biografia"
+#: components/View/Persona/PersonaBiografia
+msgid "persona_biografia"
+msgstr ""
+
+#. Default: "Competenze"
+#: components/View/Persona/PersonaCompetenze
+msgid "persona_competenze"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Persona/PersonaContatti
+msgid "persona_contatti"
+msgstr ""
+
+#. Default: "Curriculum Vitae"
+#: components/View/Persona/PersonaDocumenti
+msgid "persona_cv"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Persona/PersonaDocumenti
+msgid "persona_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Persona/PersonaDove
+msgid "persona_dove"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Persona/PersonaGalleria
+msgid "persona_gallery"
+msgstr ""
+
+#. Default: "Orari di ricevimento"
+#: components/View/Persona/PersonaOrariRicevimento
+msgid "persona_orari_ricevimento"
 msgstr ""
 
 #. Default: "Precedente"
@@ -843,10 +1191,21 @@ msgstr ""
 msgid "precedente"
 msgstr ""
 
+#. Default: "Prenota online"
+#: components/View/commons/PageHeader/PageHeaderLinkServizio
+msgid "prenota_online_deafult_label"
+msgstr ""
+
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
 msgstr "Imprimir"
+
+#. Default: "Data di pubblicazione"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "publication_date"
+msgstr ""
 
 #. Default: "Tempo di lettura"
 #: components/View/commons/PageHeader/PageHeader
@@ -949,6 +1308,86 @@ msgstr "Busca en el sitio"
 msgid "search_brdc"
 msgstr ""
 
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Search path"
+msgstr ""
+
+#. Default: "Mostra la barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show search bar"
+msgstr ""
+
+#. Default: "Mostra i filtri per tipologia"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Cerca"
+#: components/Blocks/SearchMap/SearchableText
+msgid "search_map_searchable_text_button"
+msgstr ""
+
+#. Default: "*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”"
+#: components/Blocks/SearchMap/SearchableText
+msgid "search_map_searchable_text_decription"
+msgstr ""
+
+#. Default: "Cerca medici di base e pediatri vicino a te"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_searchable_text_default_label_mediic"
+msgstr ""
+
+#. Default: "Cerca strutture vicino a te"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_searchable_text_default_label_strutture"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_title"
+msgstr ""
+
+#. Default: "Tutti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_subjects"
+msgstr ""
+
+#. Default: "Filtra per"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapfilter-by"
+msgstr ""
+
+#. Default: "Mostra altri medici"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapload_more_medici"
+msgstr ""
+
+#. Default: "Mostra altre strutture"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapload_more_strutture"
+msgstr ""
+
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapno_results"
+msgstr ""
+
+#. Default: "Mostra tutte le categorie"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapremove_all_subjects"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapresults_found"
+msgstr ""
+
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
@@ -979,9 +1418,45 @@ msgstr ""
 msgid "servizi"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Servizio/ServizioAChiSiRivolge
+msgid "servizio_a_chi_si_rivolge"
+msgstr ""
+
 #. Default: "Accedi al servizio"
-#: components/View/commons/PageHeader/PageHeaderLinkServizio
-msgid "servizio_canale_digitale_link"
+#: components/View/Servizio/ServizioAccediAlServizio
+msgid "servizio_accedi_al_servizio"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+#: components/View/Servizio/ServizioContatti
+msgid "servizio_contatti"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Servizio/ServizioCosE
+msgid "servizio_cos_e"
+msgstr ""
+
+#. Default: "Cosa serve"
+#: components/View/Servizio/ServizioCosaServe
+msgid "servizio_cosa_serve"
+msgstr ""
+
+#. Default: "Costi"
+#: components/View/Servizio/ServizioCosti
+msgid "servizio_costi"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Servizio/ServizioDove
+msgid "servizio_dove"
 msgstr ""
 
 #. Default: "Servizio online"
@@ -989,15 +1464,166 @@ msgstr ""
 msgid "servizio_online_chip"
 msgstr ""
 
+#. Default: "Orari del servizio"
+#: components/View/Servizio/ServizioOrari
+msgid "servizio_orari"
+msgstr ""
+
+#. Default: "Procedure collegate all'esito"
+#: components/View/Servizio/ServizioProcedureCollegate
+msgid "servizio_procedure_collegate"
+msgstr ""
+
+#. Default: "Responsabile del servizo"
+#: components/View/Servizio/ServizioResponsabile
+msgid "servizio_responsabile_servizio"
+msgstr ""
+
+#. Default: "Servizi e prestazioni correlati"
+#: components/View/Servizio/ServizioServiziCorrelati
+msgid "servizio_servizi_prestazioni"
+msgstr ""
+
+#. Default: "Tempi di attesa"
+#: components/View/Servizio/ServizioTempiDiAttesa
+msgid "servizio_tempi_attesa"
+msgstr ""
+
+#. Default: "Unità operativa responsabile"
+#: components/View/Servizio/ServizioUOResponsabile
+msgid "servizio_uo_responsabile"
+msgstr ""
+
 #. Default: "Vai alle altre opzioni di ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "setMoreSearchOptions"
 msgstr "Ir a otras opciones de búsqueda"
 
+#. Default: "Disponi su 4 colonne"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+msgid "set_four_columns"
+msgstr ""
+
 #. Default: "Condividi"
 #: components/View/commons/Sharing/Sharing
 msgid "share"
 msgstr "Compartir"
+
+#. Default: "Mostra la descrizione"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_description"
+msgstr ""
+
+#. Default: "Mostra il link al dettaglio"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_detail_link"
+msgstr ""
+
+#. Default: "Mostra i puntini di scorrimento"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_dots"
+msgstr ""
+
+#. Default: "Mostra l'ente"
+#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+msgid "show_ente"
+msgstr ""
+
+#. Default: "A tutta larghezza"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_full_width"
+msgstr ""
+
+#. Default: "Mostra l'icona"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_icon"
+msgstr ""
+
+#. Default: "Apri l'immagine in popup"
+#: config/blocks/listing/ListingOptions/photogalleryTemplate
+msgid "show_image_popup"
+msgstr ""
+
+#. Default: "Mostra il titolo dell'immagine"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "show_image_title"
+msgstr ""
+
+#. Default: "Mostra la mappa a tutta larghezza"
+#: config/blocks/listing/ListingOptions/mapTemplate
+msgid "show_map_full_width"
+msgstr ""
+
+#. Default: "Mostra il nastro solo sulla prima card"
+#: config/blocks/listing/ListingOptions/ribbonCardTemplate
+msgid "show_only_first_ribbon"
+msgstr ""
+
+#. Default: "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati."
+#: config/blocks/listing/ListingOptions/attachmentCardTemplate
+msgid "show_pdf_desc"
+msgstr ""
+
+#. Default: "Mostra i PDF in anteprima"
+#: config/blocks/listing/ListingOptions/attachmentCardTemplate
+msgid "show_pdf_preview"
+msgstr ""
+
+#. Default: "Mostra elenco puntato"
+#: config/blocks/listing/ListingOptions/simpleListTemplate
+msgid "show_pointer_list"
+msgstr ""
+
+#. Default: "Mostra la sezione"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_section"
+msgstr ""
+
+#. Default: "Mostra la tipologia"
+#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+msgid "show_tipologia"
+msgstr ""
+
+#. Default: "Mostra gli argomenti"
+#: config/blocks/listing/ListingOptions/cardWithImageTemplate
+#: config/blocks/listing/ListingOptions/inEvidenceTemplate
+msgid "show_topics"
+msgstr ""
+
+#. Default: "Mostra il tipo"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_type"
+msgstr ""
+
+#. Default: "Compatto"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_compact"
+msgstr ""
+
+#. Default: "Qui puoi selezionare, per il template 'Card semplice', un aspetto diverso da quello di default."
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_description"
+msgstr ""
+
+#. Default: "Collegamenti a Categorie"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_ghost"
+msgstr ""
+
+#. Default: "Collegamenti a Come fare per"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_guide"
+msgstr ""
+
+#. Default: "Un elemento per riga"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_oneforrow"
+msgstr ""
+
+#. Default: "Strutture / Luoghi"
+#: config/blocks/listing/ListingOptions/simpleCardTemplate
+msgid "simplecard_listing_appearance_place"
+msgstr ""
 
 #. Default: "Skip to footer"
 #: components/SkipLinks/SkipLinks
@@ -1015,8 +1641,29 @@ msgid "skiplink-navigation"
 msgstr "Ir a navegación"
 
 #. Default: "Skype"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "skype"
+msgstr ""
+
+#. Default: "Qui puoi selezionare, per il template 'Slider', un aspetto diverso da quello di default per gli elementi mostrati nello slider."
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_description"
+msgstr ""
+
+#. Default: "Card con immagine"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_imagecard"
+msgstr ""
+
+#. Default: "Card semplice"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slider_listing_appearance_simplecard"
+msgstr ""
+
+#. Default: "N° slide da mostrare"
+#: config/blocks/listing/ListingOptions/sliderTemplate
+msgid "slidesToShow"
 msgstr ""
 
 #. Default: "Ordina per"
@@ -1040,7 +1687,7 @@ msgid "sort_relevance"
 msgstr ""
 
 #. Default: "Sponsor"
-#: components/View/Evento/Sponsors/Sponsors
+#: components/View/Evento/EventoSponsors
 msgid "sponsors"
 msgstr ""
 
@@ -1049,12 +1696,123 @@ msgstr ""
 msgid "start"
 msgstr ""
 
+#. Default: "Contatti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_contacts"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_documents"
+msgstr ""
+
+#. Default: "Nascondi tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_all"
+msgstr ""
+
+#. Default: "Nascondi dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_hide_details"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_all"
+msgstr ""
+
+#. Default: "Mostra dettagli"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_show_details"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/ComeFarePer/Steps/Steps
+msgid "steps_where"
+msgstr ""
+
+#. Default: "A chi si rivolge"
+#: components/View/Struttura/StrutturaAChiSiRivolge
+msgid "struttura_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Come accedere"
+#: components/View/Struttura/StrutturaComeAccedere
+msgid "struttura_come_accedere"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Struttura/StrutturaContatti
+msgid "struttura_contatti"
+msgstr ""
+
+#. Default: "Coordinatore"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_coordinatore"
+msgstr ""
+
+#. Default: "Strutture correlate"
+#: components/View/Struttura/StrutturaStruttureCorrelate
+msgid "struttura_correlata"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Struttura/StrutturaCosE
+msgid "struttura_cos_e"
+msgstr ""
+
+#. Default: "Date e orari"
+#: components/View/Struttura/StrutturaDateOrari
+msgid "struttura_date_e_orari"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Struttura/StrutturaDove
+msgid "struttura_dove"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/Struttura/StrutturaGalleria
+msgid "struttura_gallery"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/Struttura/StrutturaDateOrari
+msgid "struttura_orari"
+msgstr ""
+
+#. Default: "Personale"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_personale"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/Struttura/StrutturaResponsabile
+msgid "struttura_responsabile"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/Struttura/StrutturaServizi
+msgid "struttura_servizi"
+msgstr ""
+
+#. Default: "Uffici correlati"
+#: components/View/Struttura/StrutturaUfficiCorrelati
+msgid "struttura_uo_correlata"
+msgstr ""
+
 #. Default: "Successivo"
 #: components/Slider/NextArrow
 msgid "successivo"
 msgstr ""
 
+#. Default: "Telefono"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "telefono"
+msgstr ""
+
 #. Default: "Telegram"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "telegram"
 msgstr ""
@@ -1094,6 +1852,11 @@ msgstr ""
 msgid "topics"
 msgstr "Temas"
 
+#. Default: "X"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "twitter"
+msgstr ""
+
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
@@ -1104,22 +1867,89 @@ msgstr ""
 msgid "unknownBlock"
 msgstr "Bloque desconocido"
 
+#. Default: "Allegati"
+#: components/View/UOView/UODocumenti
+msgid "uo_attachments"
+msgstr ""
+
+#. Default: "Competenze"
+#: components/View/UOView/UOCompetenze
+msgid "uo_competenze"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/UOView/UOContatti
+msgid "uo_contatti"
+msgstr ""
+
+#. Default: "Date e orari"
+#: components/View/UOView/UODateOrari
+msgid "uo_date_e_orari"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/UOView/UODocumenti
+msgid "uo_documenti"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/UOView/UODove
+msgid "uo_dove"
+msgstr ""
+
+#. Default: "Fa parte di"
+#: components/View/UOView/UOFaParteDi
+msgid "uo_fa_parte_di"
+msgstr ""
+
+#. Default: "Orari"
+#: components/View/UOView/UODateOrari
+msgid "uo_orari"
+msgstr ""
+
+#. Default: "Personale"
+#: components/View/UOView/UOPersonale
+msgid "uo_personale"
+msgstr ""
+
+#. Default: "Responsabile"
+#: components/View/UOView/UOResponsabile
+msgid "uo_responsabile"
+msgstr ""
+
+#. Default: "Servizi"
+#: components/View/UOView/UOServizi
+msgid "uo_servizi"
+msgstr ""
+
+#. Default: "Data di aggiornamento"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
+#: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
+msgid "update_date"
+msgstr ""
+
+#. Default: "Sito web"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "url"
+msgstr ""
+
 #. Default: "Vedi su Apple Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_applemaps"
 msgstr ""
 
 #. Default: "Vedi su Bing Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_bingmaps"
 msgstr ""
 
 #. Default: "Vedi su Google Maps"
-#: components/View/commons/Locations/LocationsMap
+#: helpers/Address/mapPin
 msgid "view_on_googlemaps"
 msgstr ""
 
 #. Default: "Whatsapp"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "whatsapp"
 msgstr ""

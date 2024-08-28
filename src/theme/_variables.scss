@@ -29,6 +29,7 @@ $font-weight-base: 300;
 $font-size-sm: 0.777rem; //14px
 $body-color: #2f475e;
 $headings-color: #1a1a1a;
+$accordion-title-color: $body-color;
 
 //header
 $header-slim-bg-color: $primary-dark;
@@ -39,6 +40,8 @@ $footer-top-background-asl: $primary-darker; // color-ocean-10 --> $primary-a12 
 //nav
 $nav-link-font-size: 1rem;
 $nav-link-font-weight: 600;
+
+
 
 //breadcrumbs
 $breadcrumb-link-color: $primary-darker;

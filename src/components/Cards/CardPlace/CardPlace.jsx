@@ -13,29 +13,33 @@ import {
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { Icon, CardCategoryBottom } from 'io-sanita-theme/components';
-import { Address } from 'io-sanita-theme/helpers';
+import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
 const messages = defineMessages({
-  address: {
-    id: 'CardPlace: address label',
-    defaultMessage: 'Indirizzo',
-  },
   view_on_googlemaps: {
     id: 'CardPlace: view on googlemaps',
     defaultMessage: 'Apri in mappa',
   },
 });
 
-export const CardPlace = ({
-  size = 'big',
-  type = 'complete',
+const CardPlace = ({
+  size = 'big', // 'small'
+  type = 'complete', // ['complete','essential','synthetic']
   showDistance = false,
   showAddress = true,
   item,
   isEditMode,
+  titleTag = 'h3',
 }) => {
   const intl = useIntl();
+  const latLong = hasGeolocation(item)
+    ? item?.geolocation?.latitude + ',' + item?.geolocation?.longitude
+    : '';
+  const showGeolocation =
+    latLong?.length > 0 ||
+    (item?.street?.length > 0 &&
+      (item?.zip_code?.length > 0 || item.city?.length > 0));
 
   return (
     <Card
@@ -50,58 +54,53 @@ export const CardPlace = ({
             'pe-3': size == 'small',
           })}
         >
-          <CardTitle tag="h5">
-            {item['@id'] ? (
-              <UniversalLink
-                item={!isEditMode ? item : null}
-                href={isEditMode ? '#' : ''}
-                className="card-title-link"
-              >
-                {item.nome_sede || item.title}
-              </UniversalLink>
-            ) : (
-              <>{item.nome_sede || item.title}</>
-            )}
-          </CardTitle>
+          <div className="card-place-content-top">
+            <CardTitle tag={titleTag}>
+              {item['@id'] ? (
+                <UniversalLink
+                  item={!isEditMode ? item : null}
+                  href={isEditMode ? '#' : ''}
+                  className="card-title-link"
+                >
+                  {item.nome_sede || item.title}
+                </UniversalLink>
+              ) : (
+                <>{item.nome_sede || item.title}</>
+              )}
+            </CardTitle>
 
-          <CardText tag="div">
-            {size != 'small' && (
-              <>
-                {showAddress && (
-                  <p>
-                    {intl.formatMessage(messages.address)}:{' '}
-                    <Address item={item} showDistance={false} />
-                  </p>
-                )}
-                {showDistance && (
-                  <Address
-                    item={item}
-                    showAddress={false}
-                    showDistance={true}
-                  />
-                )}
-              </>
-            )}
-            {type !== 'synthetic' && (
-              <CardCategoryBottom
-                category={item.parliamo_di_metadata?.[0]}
-                isEditMode={isEditMode}
-              />
-            )}
-          </CardText>
+            <CardText tag="div">
+              {size != 'small' && (
+                <>
+                  {showAddress && (
+                    <Address item={item} showDistance={false} tag="p" />
+                  )}
+                  {showDistance && (
+                    <Address
+                      item={item}
+                      showAddress={false}
+                      showDistance={true}
+                    />
+                  )}
+                </>
+              )}
+            </CardText>
+          </div>
+          {type !== 'synthetic' && (
+            <CardCategoryBottom item={item} isEditMode={isEditMode} />
+          )}
         </div>
         <AvatarIcon size={size == 'small' ? 'l' : 'xl'}>
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
-      {size != 'small' && type == 'complete' && (
+
+      {type == 'complete' && size != 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
           <UniversalLink
-            href={`http://maps.google.com/?q=${item.street ?? ''} ${
-              item.zip_code ?? ''
-            } ${item.city ?? ''} ${item.province ?? ''} ${
-              item.geolocation.latitude
-            },${item.geolocation.longitude}`}
+            href={`http://maps.google.com/?q=${item?.street ?? ''} ${
+              item?.zip_code ?? ''
+            } ${item?.city ?? ''} ${item?.province ?? ''} ${latLong}`}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -8587,7 +8587,7 @@ __metadata:
     volto-secondarymenu: 4.1.1
     volto-site-settings: 0.4.4
     volto-slate-italia: 1.0.3
-    volto-slimheader: 0.1.2
+    volto-slimheader: 0.1.3
     volto-social-settings: 3.0.0
     volto-subfooter: 3.1.1
     volto-subsites: 4.0.2
@@ -13411,12 +13411,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-slimheader@npm:0.1.2":
-  version: 0.1.2
-  resolution: "volto-slimheader@npm:0.1.2"
+"volto-slimheader@npm:0.1.3":
+  version: 0.1.3
+  resolution: "volto-slimheader@npm:0.1.3"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: fb657c3274785f3201d7720e8fde999e1be6cec18bda98634d6ed68192a524cbbb4298b48b9758d3600549b37db1bcc69b6a2f3264193f0956bb57dcc0db0e9b
+  checksum: 2314fa185cdd5b02dbcaff172d8893e13622fee92c2ffad9f4e674ae43bb632155b70bfb827b818665c38380de1dfed3a91e5043e4e6e67da0e9e81c2f9368e0
   languageName: node
   linkType: hard
 

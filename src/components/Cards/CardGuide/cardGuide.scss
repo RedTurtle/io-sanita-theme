@@ -1,0 +1,21 @@
+.public-ui .card.card-guide {
+  .card-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .card-guide-content {
+      flex: 1 1 100%;
+    }
+    .icon.icon-svg-book {
+      height: 17px !important;
+      min-width: 21px;
+    }
+
+    .card-text {
+      &,
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

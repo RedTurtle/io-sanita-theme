@@ -1,16 +1,11 @@
 import loadable from '@loadable/component';
+import viewPageHeaderDates from 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDates';
+export {viewPageHeaderDates};
 
 export const Attachments = loadable(
   () =>
     import(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Attachments/Attachments'
-    ),
-);
-
-export const ContactCard = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/ContactCard/ContactCard'
     ),
 );
 export const ContentImage = loadable(
@@ -69,10 +64,17 @@ export const PageHeaderDates = loadable(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDates'
     ),
 );
+
 export const PageHeaderDocumento = loadable(
   () =>
     import(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderDocumento'
+    ),
+);
+export const PageHeaderPersona = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderPersona'
     ),
 );
 export const PageHeaderEventDates = loadable(
@@ -146,5 +148,11 @@ export const Topics = loadable(
   () =>
     import(
       /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/Topics'
+    ),
+);
+export const TassonomiaUtenti = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/TassonomiaUtenti'
     ),
 );
