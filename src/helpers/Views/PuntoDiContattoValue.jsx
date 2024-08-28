@@ -14,8 +14,8 @@ const messages = defineMessages({
     id: 'pdc_linkedin',
     defaultMessage: 'LinkedIn',
   },
-  twitter: {
-    id: 'pdc_twitter',
+  x: {
+    id: 'pdc_x',
     defaultMessage: 'Twitter',
   },
   telefono: {
@@ -59,7 +59,6 @@ export const PuntoDiContattoValue = ({ value }) => {
     case 'url':
     case 'account':
     case 'linkedin':
-    case 'twitter':
       return (
         <UniversalLink
           href={`${value?.valore}`}
@@ -87,6 +86,20 @@ export const PuntoDiContattoValue = ({ value }) => {
       return (
         <a
           href={`https://wa.me/${value?.valore.replace(/\D/g, '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
+            value?.valore ?? ''
+          }`}
+        >
+          {value?.valore}
+        </a>
+      );
+    case 'x':
+      // twitter x
+      return (
+        <a
+          href={`https://x.com/${value?.valore}`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
