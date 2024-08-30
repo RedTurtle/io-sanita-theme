@@ -17,7 +17,7 @@ import { EmbeddedVideo, GalleryPreview } from 'io-sanita-theme/components';
 import {
   SingleSlideWrapper,
   CarouselWrapper,
-  SliderContainer
+  SliderContainer,
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
@@ -121,7 +121,7 @@ const Gallery = ({
     return () => {
       dispatch(resetSearchContent(folder_name));
     };
-  }, [url]);
+  }, [url, folder_name, hasChildren]);
 
   const multimedia = searchResults?.[folder_name]?.items || [];
   const images = multimedia.filter((item) => item['@type'] === 'Image');
@@ -130,7 +130,7 @@ const Gallery = ({
   const default_width_image =
     images.length > 3 ? '200px' : `${650 / images.length}px`;
 
-  return !hasChildren ? null : (
+  return (
     <>
       {images?.length > 0 ? (
         <div
@@ -228,18 +228,27 @@ const Gallery = ({
               </div>
             )}
             <CarouselWrapper className="it-card-bg">
-              <Slider {...video_settings}>
-                {videos.map((item, i) => (
-                  <SingleSlideWrapper key={item['@id']} index={i}>
-                    <EmbeddedVideo
-                      title={item.title}
-                      key={item['@id'] ?? i}
-                      id={item['@id'] ?? i}
-                      video_url={item?.remoteUrl || item}
-                    />
-                  </SingleSlideWrapper>
-                ))}
-              </Slider>
+              {videos.length === 1 ? (
+                <EmbeddedVideo
+                  title={videos[0].title}
+                  key={videos[0]['@id'] ?? i}
+                  id={videos[0]['@id'] ?? i}
+                  video_url={videos[0]?.remoteUrl || videos[0]}
+                />
+              ) : (
+                <Slider {...video_settings}>
+                  {videos.map((item, i) => (
+                    <SingleSlideWrapper key={item['@id']} index={i}>
+                      <EmbeddedVideo
+                        title={item.title}
+                        key={item['@id'] ?? i}
+                        id={item['@id'] ?? i}
+                        video_url={item?.remoteUrl || item}
+                      />
+                    </SingleSlideWrapper>
+                  ))}
+                </Slider>
+              )}
             </CarouselWrapper>
           </SliderContainer>
         </div>
