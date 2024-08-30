@@ -8,7 +8,6 @@ import { resetSearchContent, searchContent } from '@plone/volto/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
@@ -21,16 +20,12 @@ import {
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
-import config from '@plone/volto/registry';
+import GalleryImage from './GalleryImage';
 
 const messages = defineMessages({
   gallery: {
     id: 'gallery',
     defaultMessage: 'Immagini',
-  },
-  viewPreview: {
-    id: 'gallery_viewPreview',
-    defaultMessage: "Vedi l'anteprima di",
   },
 });
 
@@ -53,7 +48,6 @@ const Gallery = ({
   reactSlick,
 }) => {
   const Slider = reactSlick.default;
-  const Image = config.getComponent({ name: 'Image' }).component;
 
   const getSettings = (nItems, slideToScroll) => {
     return {
@@ -154,52 +148,32 @@ const Gallery = ({
                 {title_type === 'h5' && <h5 id={title_id}>{gallery_title}</h5>}
               </div>
             </div>
-            <CarouselWrapper className="it-card-bg">
-              <Slider {...getSettings(images.length)}>
-                {images.map((item, i) => (
-                  <SingleSlideWrapper key={item['@id']} index={i}>
-                    <figure>
-                      <UniversalLink
-                        item={item}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setViewImageIndex(i);
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.keyCode === 13) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setViewImageIndex(i);
-                          }
-                        }}
-                        aria-label={`${intl.formatMessage(
-                          messages.viewPreview,
-                        )} ${item.title}`}
-                      >
-                        <Image
-                          item={item}
-                          alt={item.title}
-                          className="img-fluid"
-                          loading="lazy"
-                          sizes={`(max-width:320px) 300px, (max-width:425px) 400px, ${default_width_image}`}
-                        />
-                      </UniversalLink>
-                      <figcaption className="figure-caption mt-2">
-                        {item.title}
-                      </figcaption>
-                    </figure>
-                  </SingleSlideWrapper>
-                ))}
-              </Slider>
-
-              <GalleryPreview
-                id={`image-gallery-${folder_name}`}
-                viewIndex={viewImageIndex}
-                setViewIndex={setViewImageIndex}
-                items={images}
+            {images.length === 1 ? (
+              <GalleryImage
+                item={images[0]}
+                default_width_image={default_width_image}
               />
-            </CarouselWrapper>
+            ) : (
+              <CarouselWrapper className="it-card-bg">
+                <Slider {...getSettings(images.length)}>
+                  {images.map((item, i) => (
+                    <SingleSlideWrapper key={item['@id']} index={i}>
+                      <GalleryImage
+                        item={item}
+                        default_width_image={default_width_image}
+                      />
+                    </SingleSlideWrapper>
+                  ))}
+                </Slider>
+
+                <GalleryPreview
+                  id={`image-gallery-${folder_name}`}
+                  viewIndex={viewImageIndex}
+                  setViewIndex={setViewImageIndex}
+                  items={images}
+                />
+              </CarouselWrapper>
+            )}
           </SliderContainer>
         </div>
       ) : null}
