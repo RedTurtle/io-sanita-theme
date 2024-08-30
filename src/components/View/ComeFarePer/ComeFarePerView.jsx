@@ -28,7 +28,6 @@ export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
   { /* A CHI SI RIVOLGE */ component: ComeFarePerAChiSiRivolge },
   { /* COME FARE */ component: ComeFarePerComeFare },
-  // eslint-disable-next-line prettier/prettier
   {
     /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component:
       ComeFarePerUlterioriInformazioni,
