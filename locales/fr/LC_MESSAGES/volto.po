@@ -1501,7 +1501,7 @@ msgstr ""
 msgid "servizio_procedure_collegate"
 msgstr ""
 
-#. Default: "Responsabile del servizo"
+#. Default: "Responsabile del servizio"
 #: components/View/Servizio/ServizioResponsabile
 msgid "servizio_responsabile_servizio"
 msgstr ""
