@@ -9,7 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import PropTypes from 'prop-types';
-import { richTextHasContent, RichText, contentFolderHasItems } from 'io-sanita-theme/helpers';
+import {
+  richTextHasContent,
+  RichText,
+  contentFolderHasItems,
+} from 'io-sanita-theme/helpers';
 import {
   Accordion,
   AccordionItem,
@@ -72,25 +76,20 @@ const Steps = ({ content, steps = [] }) => {
 
   // one request is made for every step
   useEffect(() => {
-    if (steps?.length > 0) {
-      steps.forEach((item) => {
-        const url = flattenToAppURL(item['@id']);
-        const loaded =
-          searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
-        if (!loaded) {
-          dispatch(getContent(url, null, url));
-        }
-      });
-    }
+    steps.forEach((item) => {
+      const url = flattenToAppURL(item['@id']);
+      const loaded = searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
+      if (!loaded) {
+        dispatch(getContent(url, null, url));
+      }
+    });
 
     return () => {
-      if (steps?.length > 0) {
-        steps.forEach((item) => {
-          dispatch(resetContent(flattenToAppURL(item['@id'])));
-        });
-      }
+      steps.forEach((item) => {
+        dispatch(resetContent(flattenToAppURL(item['@id'])));
+      });
     };
-  }, [content]);
+  }, [content, steps]);
 
   return steps.length > 0 ? (
     <div className="steps">
@@ -98,7 +97,7 @@ const Steps = ({ content, steps = [] }) => {
         color="link"
         className="btn-link-accent no-padding"
         size="xs"
-        aria-expanded={allOpen === true}
+        aria-expanded={allOpen}
         onClick={() => {
           setAllOpen(!allOpen);
         }}
@@ -116,7 +115,7 @@ const Steps = ({ content, steps = [] }) => {
             setActiveItem(activeItem !== itemIndex ? itemIndex : '');
           };
           const isActive = () => {
-            return activeItem === itemIndex || allOpen == true;
+            return activeItem === itemIndex || allOpen;
           };
 
           return (
@@ -160,7 +159,7 @@ const Steps = ({ content, steps = [] }) => {
                 )}
 
                 {/* DOCUMENTI */}
-                {(contentFolderHasItems(content, 'adocumenti')) && (
+                {contentFolderHasItems(step, 'documenti') && (
                   <Attachments
                     content={step}
                     folder_name="documenti"
