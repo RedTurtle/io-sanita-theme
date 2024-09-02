@@ -96,8 +96,9 @@ const Attachments = ({
     </RichTextSection>
   ) : (
     <div className="mb-5 mt-3">
-      {title && <h5>{title}</h5>}
+      {title && <h4 className="h5">{title}</h4>}
       {attachments.length > 0 && attachments_view}
+      {searchResults?.[key]?.loading && !searchResults?.[key]?.loaded && <></>}
     </div>
   );
 };

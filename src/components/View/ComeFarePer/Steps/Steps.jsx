@@ -161,6 +161,7 @@ const Steps = ({ content, steps = [] }) => {
                 {/* DOCUMENTI */}
                 {contentFolderHasItems(step, 'documenti') && (
                   <Attachments
+                    as_section={false}
                     content={step}
                     folder_name="documenti"
                     title={intl.formatMessage(messages.documents)}
@@ -171,8 +172,14 @@ const Steps = ({ content, steps = [] }) => {
                 {step?.uo_correlata?.length > 0 && (
                   <div className="mb-5">
                     <h4 className="h5">{intl.formatMessage(messages.where)}</h4>
-                    {step.uo_correlata.map((uo) => {
-                      return <CardPlace item={uo} />;
+                    {step.uo_correlata.map((uo, i) => {
+                      return (
+                        <CardPlace
+                          item={uo}
+                          className="my-2"
+                          key={uo['@id'] + i}
+                        />
+                      );
                     })}
                   </div>
                 )}
@@ -183,11 +190,12 @@ const Steps = ({ content, steps = [] }) => {
                     <h4 className="h5">
                       {intl.formatMessage(messages.contacts)}
                     </h4>
-                    {step.pdc_correlato.map((pdc) => (
+                    {step.pdc_correlato.map((pdc, i) => (
                       <CardContatti
                         item={pdc}
                         show_title={true}
-                        key={pdc['@id']}
+                        key={pdc['@id'] + i}
+                        className="my-2"
                       />
                     ))}
                   </div>
