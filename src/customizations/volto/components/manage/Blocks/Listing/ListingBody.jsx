@@ -171,7 +171,16 @@ const ListingBody = withQuerystringResults((props) => {
                   <Pagination
                     activePage={currentPage}
                     totalPages={totalPages}
-                    onPageChange={onPaginationChange}
+                    onPageChange={(e, { activePage }) => {
+                      if (!isEditMode) {
+                        listingRef.current.scrollIntoView({
+                          behavior: 'smooth',
+                        });
+                      }
+                      onPaginationChange(e, {
+                        activePage: activePage.children,
+                      });
+                    }}
                   />
                 </div>
               )}

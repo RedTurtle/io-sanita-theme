@@ -59,8 +59,8 @@ class Pagination extends Component {
   handleItemClick = (e, nextActivePage) => {
     const { activePage: prevActivePage } = this.state;
     // Heads up! We need the cast to the "number" type there, as `activePage` can be a string
-    if (+prevActivePage === +nextActivePage.children) return;
-    this.setState({ activePage: nextActivePage.children });
+    if (+prevActivePage === +nextActivePage) return;
+    this.setState({ activePage: nextActivePage });
 
     // XXX: perchè si usa invoke, anzichè semplicemente this.props.onPageChange ?
     //      invoke è utile quando serve un 'path' per accedere alla funzione,
@@ -71,7 +71,7 @@ class Pagination extends Component {
     // });
     this.props.onPageChange(e, {
       ...this.props,
-      activePage: nextActivePage.children,
+      activePage: nextActivePage,
     });
   };
 
