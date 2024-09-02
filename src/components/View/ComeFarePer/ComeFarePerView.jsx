@@ -13,7 +13,6 @@ import {
   ContentImage,
   RelatedItems,
   useSideMenu,
-  Topics,
   Metadata,
   Placeholder,
 } from 'io-sanita-theme/components/View/commons';
@@ -29,7 +28,10 @@ export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
   { /* A CHI SI RIVOLGE */ component: ComeFarePerAChiSiRivolge },
   { /* COME FARE */ component: ComeFarePerComeFare },
-  { /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component: ComeFarePerUlterioriInformazioni },
+  {
+    /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component:
+      ComeFarePerUlterioriInformazioni,
+  },
   { /* METADATA */ component: Metadata },
 ];
 

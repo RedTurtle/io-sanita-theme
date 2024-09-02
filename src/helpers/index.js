@@ -12,7 +12,11 @@ export {
   addSchemaStyles,
   DEFAULT_BG_COLORS,
   cloneBlock,
-} from 'io-sanita-theme/helpers/blocks_config';
+} from 'io-sanita-theme/helpers/Blocks/blocks_config';
+export {
+  handleKeyDownOwnFocusManagement,
+  useHandleDetachedBlockFocus,
+} from 'io-sanita-theme/helpers/Blocks/focus';
 export { commonSearchBlockMessages } from 'io-sanita-theme/helpers/Translations/searchBlockExtendedTranslations';
 export {
   videoUrlHelper,

@@ -328,13 +328,13 @@ body.cms-ui {
     }
   }
 
-  .color-list-widget {
+  .color-picker-widget {
     .button {
       padding: 1rem;
       border: 1px solid $gray-border;
 
       &.active {
-        border: 2px solid $primary;
+        border: 2px solid #e40167;
       }
     }
 
@@ -354,19 +354,53 @@ body.cms-ui {
     }
 
     // Alert block
-    .button.info,
-    .button.info.active {
-      background-color: $alert-info;
+    // .button.info,
+    // .button.info.active {
+    //   background-color: $alert-info;
+    // }
+
+    // .button.warning,
+    // .button.warning.active {
+    //   background-color: $alert-warning;
+    // }
+
+    // .button.danger,
+    // .button.danger.active {
+    //   background-color: $alert-danger;
+    // }
+
+    //bs-colors
+    .button.primary,
+    .button.callout_note {
+      &,
+      &.active {
+        background-color: var(--bs-primary);
+      }
+    }
+    .button.info {
+      &,
+      &.active {
+        background-color: var(--bs-info);
+      }
+    }
+    .button.success {
+      &,
+      &.active {
+        background-color: var(--bs-success);
+      }
+    }
+    .button.warning {
+      &,
+      &.active {
+        background-color: var(--bs-warning);
+      }
     }
 
-    .button.warning,
-    .button.warning.active {
-      background-color: $alert-warning;
-    }
-
-    .button.danger,
-    .button.danger.active {
-      background-color: $alert-danger;
+    .button.danger {
+      &,
+      &.active {
+        background-color: var(--bs-danger);
+      }
     }
   }
 
@@ -401,6 +435,21 @@ body.cms-ui {
     &.pb-4 {
       .block.listing {
         padding-bottom: 0.2rem !important; //per simulare il pb-4
+      }
+    }
+  }
+
+  .simple-text-editor-widget {
+    .simple-text-input {
+      display: inline-block;
+      min-width: 1px;
+
+      &:empty:before {
+        display: block; /* For Firefox */
+        content: attr(placeholder);
+        font-weight: inherit;
+        opacity: 0.333;
+        pointer-events: none;
       }
     }
   }
@@ -554,6 +603,36 @@ body.cms-ui {
   }
 
   /*Widgets*/
+
+  .select-icon-widget {
+    .show-icon {
+      font-size: 40px;
+    }
+
+    .show-icon-italia {
+      height: 2rem;
+    }
+
+    .icon-container {
+      width: 1.5em;
+      &.italia-icon {
+        svg.icon {
+          height: 1.5em;
+        }
+      }
+    }
+
+    .label-container {
+      width: 100%;
+      margin-left: 15px;
+      text-align: left;
+      height: 1.5em;
+    }
+
+    .ms-4 {
+      margin-left: 4px;
+    }
+  }
 
   .column.color-chooser {
     padding-top: 0.5em;

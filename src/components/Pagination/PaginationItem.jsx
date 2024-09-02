@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-import _ from 'lodash';
+// import { invoke } from 'lodash';
 import keyboardKey from 'keyboard-key';
 import PropTypes from 'prop-types';
 import { Component } from 'react';
@@ -57,13 +57,13 @@ class PaginationItem extends Component {
   };
 
   handleClick = (e) => {
-    _.invoke(this.props, 'onClick', e, this.props);
+    this.props.onClick(e, this.props);
   };
 
   handleKeyDown = (e) => {
-    _.invoke(this.props, 'onKeyDown', e, this.props);
+    this.props.onKeyDown(e, this.props);
     if (keyboardKey.getCode(e) === keyboardKey.Enter)
-      _.invoke(this.props, 'onClick', e, this.props);
+      this.props.onClick(e, this.props);
   };
 
   render() {
