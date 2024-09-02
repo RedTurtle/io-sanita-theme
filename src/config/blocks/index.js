@@ -129,6 +129,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
   ];
   config.blocks.showEditBlocksInBabelView = true;
 
+  config.settings['volto-blocks-widget'] = {
+    ...config.settings['volto-blocks-widget'],
+    allowedBlocks: [
+      ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
+        (block) => block !== 'maps',
+      ),
+      'break',
+      'testo_riquadro_semplice',
+      'testo_riquadro_immagine',
+      'callout_block',
+      'rssBlock',
+      //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
+    ],
+
+    showRestricted: false,
+  };
+
   config.settings.styleClassNameExtenders.push(
     ({ block, content, data, classNames }) => {
       let styles = [];
