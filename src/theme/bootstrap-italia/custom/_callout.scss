@@ -5,3 +5,24 @@
     }
   }
 }
+div.callout {
+  max-width: none;
+  padding: 0; //override volto's style
+  border: none;
+  border-radius: unset;
+  margin: 0;
+  box-shadow: none;
+
+  &:not(.callout-highlight):not(.callout-more) {
+    .callout-title {
+      .text {
+        position: unset;
+        width: auto;
+        &:after {
+          left: unset;
+          margin-left: calc(10px + 0.7rem);
+        }
+      }
+    }
+  }
+}

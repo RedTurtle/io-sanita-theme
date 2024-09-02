@@ -6,6 +6,7 @@ export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/sch
 
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
+export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
 export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
 
 /*Skeleton*/
@@ -26,6 +27,11 @@ const BreakEdit = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Break/Edit'
   ),
 );
+const CalloutEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
+  ),
+);
 const HTMLBlockSidebar = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
@@ -42,4 +48,10 @@ const SearchMapSidebar = loadable(() =>
   ),
 );
 
-export { BreakEdit, SearchMapEdit, SearchMapSidebar, HTMLBlockSidebar };
+export {
+  BreakEdit,
+  CalloutEdit,
+  SearchMapEdit,
+  SearchMapSidebar,
+  HTMLBlockSidebar,
+};
