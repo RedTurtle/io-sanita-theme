@@ -21,7 +21,7 @@ import {
 } from 'io-sanita-theme/components';
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
 
-import { removeListingVariation } from 'io-sanita-theme/helpers';
+import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
@@ -167,6 +167,17 @@ export default function applyConfig(config) {
       FileWidgetComponent: FileWidget,
       TextEditorWidgetComponent: TextEditorWidget,
       fromHtml: fromHtml,
+    },
+    'volto-slate-italia': {
+      ...config.settings['volto-slate-italia'],
+      enhanceLinkComponent: EnhanceLink,
+      externalLinkMarker:
+        null /* import { Icon } from 'io-sanita-theme/components';
+      <Icon
+      icon="it-external-link"
+      size="xs"
+      className="ms-1 align-sub external-link"
+    />*/,
     },
     videoAllowExternalsDefault: false,
   };

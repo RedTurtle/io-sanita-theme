@@ -1,12 +1,12 @@
+export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export {
   viewDate,
   getRealStartAndEndWithRecurrence,
   getCalendarDate,
   getEventRecurrenceMore,
 } from 'io-sanita-theme/helpers/dates';
+export EnhanceLink from 'io-sanita-theme/helpers/Link/EnhanceLink';
 export SearchUtils from 'io-sanita-theme/helpers/search';
-export { getSiteProperty } from 'io-sanita-theme/helpers/config';
-
 export {
   removeListingVariation,
   addSchemaStyles,
