@@ -172,13 +172,29 @@ const ListingBody = withQuerystringResults((props) => {
                     activePage={currentPage}
                     totalPages={totalPages}
                     onPageChange={(e, { activePage }) => {
-                      if (!isEditMode) {
+                      let page = activePage.children;
+                      if (!page) {
+                        if (activePage.type == 'prevItem') {
+                          page = currentPage - 1;
+                          if (page === 0) {
+                            page = 1;
+                          }
+                        }
+                        if (activePage.type == 'nextItem') {
+                          page = currentPage + 1;
+                          if (page > totalPages) {
+                            page = totalPages;
+                          }
+                        }
+                      }
+
+                      if (!isEditMode && page != currentPage) {
                         listingRef.current.scrollIntoView({
                           behavior: 'smooth',
                         });
                       }
                       onPaginationChange(e, {
-                        activePage: activePage.children,
+                        activePage: page,
                       });
                     }}
                   />
