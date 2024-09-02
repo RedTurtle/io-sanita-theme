@@ -49,36 +49,39 @@ const Gallery = ({
 }) => {
   const Slider = reactSlick.default;
 
-  const getSettings = (nItems, slideToScroll) => {
+  const getSettings = (nItems, slidesToScroll = 3, slidesToShow = 3) => {
+    const getResponsiveSettings = (nItems, slidesToShow, slidesToScroll) => {
+      return {
+        dots: nItems > 1 && nItems > slidesToShow,
+        infinite: nItems > 1 && nItems > slidesToShow,
+        slidesToShow: nItems < slidesToShow ? nItems : slidesToShow,
+        slidesToScroll: nItems < slidesToScroll ? nItems : slidesToScroll,
+      };
+    };
     return {
-      dots: true,
-      infinite: true,
       speed: 500,
-      slidesToShow: nItems < 3 ? nItems : 3,
-      slidesToScroll: slideToScroll ?? 3,
+      ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: nItems < 3 ? nItems : 3,
-            slidesToScroll: nItems < 3 ? nItems : slideToScroll ?? 3,
-            infinite: true,
-            dots: true,
+            ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
           },
         },
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: slideToScroll < 2 ? slideToScroll : 2,
-            slidesToScroll: nItems < 2 ? nItems : slideToScroll ?? 2,
-            initialSlide: 2,
+            ...getResponsiveSettings(
+              nItems,
+              slidesToShow < 2 ? slidesToShow : 2,
+              slidesToScroll < 2 ? slidesToScroll : 2,
+            ),
           },
         },
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            ...getResponsiveSettings(nItems, 1, 1),
           },
         },
       ],
@@ -87,10 +90,6 @@ const Gallery = ({
 
   const intl = useIntl();
   const [viewImageIndex, setViewImageIndex] = useState(null);
-
-  const video_settings = {
-    ...getSettings(1, 1),
-  };
 
   const url = `${flattenToAppURL(content['@id'])}/${folder_name}`;
   const searchResults = useSelector((state) => state.search.subrequests);
@@ -148,32 +147,26 @@ const Gallery = ({
                 {title_type === 'h5' && <h5 id={title_id}>{gallery_title}</h5>}
               </div>
             </div>
-            {images.length === 1 ? (
-              <GalleryImage
-                item={images[0]}
-                default_width_image={default_width_image}
-              />
-            ) : (
-              <CarouselWrapper className="it-card-bg">
-                <Slider {...getSettings(images.length)}>
-                  {images.map((item, i) => (
-                    <SingleSlideWrapper key={item['@id']} index={i}>
-                      <GalleryImage
-                        item={item}
-                        default_width_image={default_width_image}
-                      />
-                    </SingleSlideWrapper>
-                  ))}
-                </Slider>
 
-                <GalleryPreview
-                  id={`image-gallery-${folder_name}`}
-                  viewIndex={viewImageIndex}
-                  setViewIndex={setViewImageIndex}
-                  items={images}
-                />
-              </CarouselWrapper>
-            )}
+            <CarouselWrapper className="it-card-bg">
+              <Slider {...getSettings(images.length)}>
+                {images.map((item, i) => (
+                  <SingleSlideWrapper key={item['@id']} index={i}>
+                    <GalleryImage
+                      item={item}
+                      default_width_image={default_width_image}
+                    />
+                  </SingleSlideWrapper>
+                ))}
+              </Slider>
+
+              <GalleryPreview
+                id={`image-gallery-${folder_name}`}
+                viewIndex={viewImageIndex}
+                setViewIndex={setViewImageIndex}
+                items={images}
+              />
+            </CarouselWrapper>
           </SliderContainer>
         </div>
       ) : null}
@@ -202,27 +195,18 @@ const Gallery = ({
               </div>
             )}
             <CarouselWrapper className="it-card-bg">
-              {videos.length === 1 ? (
-                <EmbeddedVideo
-                  title={videos[0].title}
-                  key={videos[0]['@id'] ?? i}
-                  id={videos[0]['@id'] ?? i}
-                  video_url={videos[0]?.remoteUrl || videos[0]}
-                />
-              ) : (
-                <Slider {...video_settings}>
-                  {videos.map((item, i) => (
-                    <SingleSlideWrapper key={item['@id']} index={i}>
-                      <EmbeddedVideo
-                        title={item.title}
-                        key={item['@id'] ?? i}
-                        id={item['@id'] ?? i}
-                        video_url={item?.remoteUrl || item}
-                      />
-                    </SingleSlideWrapper>
-                  ))}
-                </Slider>
-              )}
+              <Slider {...getSettings(videos.length, 1, 1)}>
+                {videos.map((item, i) => (
+                  <SingleSlideWrapper key={item['@id']} index={i}>
+                    <EmbeddedVideo
+                      title={item.title}
+                      key={item['@id'] ?? i}
+                      id={item['@id'] ?? i}
+                      video_url={item?.remoteUrl || item}
+                    />
+                  </SingleSlideWrapper>
+                ))}
+              </Slider>
             </CarouselWrapper>
           </SliderContainer>
         </div>
