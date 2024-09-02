@@ -8,7 +8,6 @@ import { resetSearchContent, searchContent } from '@plone/volto/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
@@ -17,20 +16,16 @@ import { EmbeddedVideo, GalleryPreview } from 'io-sanita-theme/components';
 import {
   SingleSlideWrapper,
   CarouselWrapper,
-  SliderContainer
+  SliderContainer,
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
-import config from '@plone/volto/registry';
+import GalleryImage from './GalleryImage';
 
 const messages = defineMessages({
   gallery: {
     id: 'gallery',
     defaultMessage: 'Immagini',
-  },
-  viewPreview: {
-    id: 'gallery_viewPreview',
-    defaultMessage: "Vedi l'anteprima di",
   },
 });
 
@@ -53,38 +48,40 @@ const Gallery = ({
   reactSlick,
 }) => {
   const Slider = reactSlick.default;
-  const Image = config.getComponent({ name: 'Image' }).component;
 
-  const getSettings = (nItems, slideToScroll) => {
+  const getSettings = (nItems, slidesToScroll = 3, slidesToShow = 3) => {
+    const getResponsiveSettings = (nItems, slidesToShow, slidesToScroll) => {
+      return {
+        dots: nItems > 1 && nItems > slidesToShow,
+        infinite: nItems > 1 && nItems > slidesToShow,
+        slidesToShow: nItems < slidesToShow ? nItems : slidesToShow,
+        slidesToScroll: nItems < slidesToScroll ? nItems : slidesToScroll,
+      };
+    };
     return {
-      dots: true,
-      infinite: true,
       speed: 500,
-      slidesToShow: nItems < 3 ? nItems : 3,
-      slidesToScroll: slideToScroll ?? 3,
+      ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: nItems < 3 ? nItems : 3,
-            slidesToScroll: nItems < 3 ? nItems : slideToScroll ?? 3,
-            infinite: true,
-            dots: true,
+            ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
           },
         },
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: slideToScroll < 2 ? slideToScroll : 2,
-            slidesToScroll: nItems < 2 ? nItems : slideToScroll ?? 2,
-            initialSlide: 2,
+            ...getResponsiveSettings(
+              nItems,
+              slidesToShow < 2 ? slidesToShow : 2,
+              slidesToScroll < 2 ? slidesToScroll : 2,
+            ),
           },
         },
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
+            ...getResponsiveSettings(nItems, 1, 1),
           },
         },
       ],
@@ -93,10 +90,6 @@ const Gallery = ({
 
   const intl = useIntl();
   const [viewImageIndex, setViewImageIndex] = useState(null);
-
-  const video_settings = {
-    ...getSettings(1, 1),
-  };
 
   const url = `${flattenToAppURL(content['@id'])}/${folder_name}`;
   const searchResults = useSelector((state) => state.search.subrequests);
@@ -121,7 +114,7 @@ const Gallery = ({
     return () => {
       dispatch(resetSearchContent(folder_name));
     };
-  }, [url]);
+  }, [url, folder_name, hasChildren]);
 
   const multimedia = searchResults?.[folder_name]?.items || [];
   const images = multimedia.filter((item) => item['@type'] === 'Image');
@@ -130,7 +123,7 @@ const Gallery = ({
   const default_width_image =
     images.length > 3 ? '200px' : `${650 / images.length}px`;
 
-  return !hasChildren ? null : (
+  return (
     <>
       {images?.length > 0 ? (
         <div
@@ -154,41 +147,15 @@ const Gallery = ({
                 {title_type === 'h5' && <h5 id={title_id}>{gallery_title}</h5>}
               </div>
             </div>
+
             <CarouselWrapper className="it-card-bg">
               <Slider {...getSettings(images.length)}>
                 {images.map((item, i) => (
                   <SingleSlideWrapper key={item['@id']} index={i}>
-                    <figure>
-                      <UniversalLink
-                        item={item}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          e.stopPropagation();
-                          setViewImageIndex(i);
-                        }}
-                        onKeyDown={(e) => {
-                          if (e.keyCode === 13) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setViewImageIndex(i);
-                          }
-                        }}
-                        aria-label={`${intl.formatMessage(
-                          messages.viewPreview,
-                        )} ${item.title}`}
-                      >
-                        <Image
-                          item={item}
-                          alt={item.title}
-                          className="img-fluid"
-                          loading="lazy"
-                          sizes={`(max-width:320px) 300px, (max-width:425px) 400px, ${default_width_image}`}
-                        />
-                      </UniversalLink>
-                      <figcaption className="figure-caption mt-2">
-                        {item.title}
-                      </figcaption>
-                    </figure>
+                    <GalleryImage
+                      item={item}
+                      default_width_image={default_width_image}
+                    />
                   </SingleSlideWrapper>
                 ))}
               </Slider>
@@ -228,7 +195,7 @@ const Gallery = ({
               </div>
             )}
             <CarouselWrapper className="it-card-bg">
-              <Slider {...video_settings}>
+              <Slider {...getSettings(videos.length, 1, 1)}>
                 {videos.map((item, i) => (
                   <SingleSlideWrapper key={item['@id']} index={i}>
                     <EmbeddedVideo
