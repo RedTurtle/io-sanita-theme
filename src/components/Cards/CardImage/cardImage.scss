@@ -2,8 +2,19 @@
 
 .public-ui .card.card-image {
   .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-body-main {
+      //wrapper per mantenere il contenuto della card all'inizio della card
+    }
+
     .card-title {
-      &,&h3,&h4,&h5{
+      &,
+      &h3,
+      &h4,
+      &h5 {
         @include rem-size(font-size, 24);
       }
 

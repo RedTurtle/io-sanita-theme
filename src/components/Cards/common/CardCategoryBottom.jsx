@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { UniversalLink } from '@plone/volto/components';
 import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
 
@@ -8,6 +9,7 @@ const CardCategoryBottom = ({
   date,
   isEditMode,
   show_type = true,
+  className,
 }) => {
   const defaultCategory =
     item?.parliamo_di_metadata?.[0] ??
@@ -15,7 +17,7 @@ const CardCategoryBottom = ({
   const display_category = category ?? defaultCategory;
 
   return display_category || date ? (
-    <div className="category-bottom">
+    <div className={cx('category-bottom', className)}>
       {(display_category?.token || display_category?.title) && (
         <div className="category">
           {display_category?.token ? (

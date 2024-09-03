@@ -3,23 +3,23 @@ import { defineMessages, useIntl } from 'react-intl';
 import { BackReferences } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
-  servizi: {
-    id: 'struttura_servizi',
-    defaultMessage: 'Servizi',
+  strutture: {
+    id: 'uo_strutture',
+    defaultMessage: 'Strutture',
   },
 });
 
-const StrutturaServizi = ({ content }) => {
+const UOStrutture = ({ content }) => {
   const intl = useIntl();
 
   return (
     <BackReferences
-      type="servizi"
+      type="strutture"
       content={content}
-      id={'servizi'}
-      title={intl.formatMessage(messages.servizi)}
+      id={'strutture'}
+      title={intl.formatMessage(messages.strutture)}
     />
   );
 };
 
-export default StrutturaServizi;
+export default UOStrutture;
