@@ -14,8 +14,9 @@ const messages = defineMessages({
 const BandoDate = ({ content }) => {
   const intl = useIntl();
   return content?.effective ||
-    content?.scadenza_bando ||
+    content?.apertura_bando ||
     content?.scadenza_domande_bando ||
+    content?.scadenza_bando ||
     content?.chiusura_procedimento_bando ? (
     <RichTextSection
       tag_id="tempi_e_scadenze"

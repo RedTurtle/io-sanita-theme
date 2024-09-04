@@ -34,6 +34,10 @@ const messages = defineMessages({
     id: 'attachment',
     defaultMessage: 'Allegato',
   },
+  link: {
+    id: 'link',
+    defaultMessage: 'Collegamento',
+  },
 });
 
 export const CardFile = ({
@@ -58,28 +62,38 @@ export const CardFile = ({
         _item = item.image;
         break;
       case 'Link':
-        _item['@id'] = item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
+        _item['@id'] =
+          item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
         break;
       default:
         _item = { ...item };
         break;
     }
-  // Nel caso fosse un oggetto MIME type
+    // Nel caso fosse un oggetto MIME type
   } else {
     _item = file;
     pdfFile = file?.download?.includes('@@display-file');
   }
 
   // ICON
-  const defaultIcon = (
-    <Icon
-      icon="it-document"
-      alt={intl.formatMessage(messages.attachment)}
-      title={intl.formatMessage(messages.attachment)}
-      color="accent"
-      size="lg"
-    />
-  );
+  const defaultIcon =
+    item['@type'] === 'Link' ? (
+      <Icon
+        icon="it-external-link"
+        alt={intl.formatMessage(messages.link)}
+        title={intl.formatMessage(messages.link)}
+        color="accent"
+        size="lg"
+      />
+    ) : (
+      <Icon
+        icon="it-document"
+        alt={intl.formatMessage(messages.attachment)}
+        title={intl.formatMessage(messages.attachment)}
+        color="accent"
+        size="lg"
+      />
+    );
 
   const fileIcon = <FileIcon item={_item} fileFormat={file ? true : false} />;
 
@@ -93,6 +107,8 @@ export const CardFile = ({
                 item={!isEditMode ? item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link flex-grow-1 pe-4"
+                target={item['@type'] === 'Link' ? '_blank' : '_self'}
+                rel={item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
               >
                 {item.title}
               </UniversalLink>
@@ -103,7 +119,9 @@ export const CardFile = ({
                 title={file.filename}
                 target={pdfFile ? '_blank' : '_self'}
                 rel={pdfFile ? 'noopener noreferrer' : ''}
-              > {file.filename} </a>
+              >
+                {file.filename}
+              </a>
             )}
 
             {fileIcon ?? defaultIcon}
