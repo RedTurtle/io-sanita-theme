@@ -138,6 +138,11 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
         o: 'plone.app.querystring.operation.selection.any',
         v: [data.portal_type],
       },
+      {
+        i: 'has_geolocation',
+        o: 'plone.app.querystring.operation.boolean.isTrue',
+        v: 1,
+      },
     ];
 
     if (data.path && data.path[0]) {
@@ -178,7 +183,11 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          metadata_fields: ['Subject', 'struttura_ricevimento', 'incarico'], //'_all',
+          metadata_fields: [
+            'tipologia_struttura',
+            'struttura_ricevimento',
+            'incarico',
+          ], //'_all',
           query: query,
           b_size: b_size,
           sort_on: 'sortable_title',
@@ -225,6 +234,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
           item.tipologia_struttura.forEach((s) => points_subjects.add(s));
         }
       });
+      console.log(points_subjects);
       setSubjects(points_subjects);
     }
   };
