@@ -138,6 +138,11 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
         o: 'plone.app.querystring.operation.selection.any',
         v: [data.portal_type],
       },
+      {
+        i: 'has_geolocation',
+        o: 'plone.app.querystring.operation.boolean.isTrue',
+        v: 1,
+      },
     ];
 
     if (data.path && data.path[0]) {
@@ -168,7 +173,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
 
     if (filters.subjects.size > 0) {
       query.push({
-        i: 'Subject',
+        i: 'tipologia_struttura',
         o: 'plone.app.querystring.operation.selection.any',
         v: [...filters.subjects],
       });
@@ -178,7 +183,11 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
         {
-          metadata_fields: ['Subject', 'struttura_ricevimento', 'incarico'], //'_all',
+          metadata_fields: [
+            'tipologia_struttura',
+            'struttura_ricevimento',
+            'incarico',
+          ], //'_all',
           query: query,
           b_size: b_size,
           sort_on: 'sortable_title',
@@ -221,10 +230,11 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       //per far si che i subject vengano popolati solo alla prima chiamata (quella di default)
       let points_subjects = new Set();
       items.forEach((item) => {
-        if (item.Subject?.length > 0) {
-          item.Subject.forEach((s) => points_subjects.add(s));
+        if (item.tipologia_struttura?.length > 0) {
+          item.tipologia_struttura.forEach((s) => points_subjects.add(s));
         }
       });
+      console.log(points_subjects);
       setSubjects(points_subjects);
     }
   };
