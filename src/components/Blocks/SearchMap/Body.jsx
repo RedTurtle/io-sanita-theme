@@ -168,7 +168,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
 
     if (filters.subjects.size > 0) {
       query.push({
-        i: 'Subject',
+        i: 'tipologia_struttura',
         o: 'plone.app.querystring.operation.selection.any',
         v: [...filters.subjects],
       });
@@ -221,8 +221,8 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
       //per far si che i subject vengano popolati solo alla prima chiamata (quella di default)
       let points_subjects = new Set();
       items.forEach((item) => {
-        if (item.Subject?.length > 0) {
-          item.Subject.forEach((s) => points_subjects.add(s));
+        if (item.tipologia_struttura?.length > 0) {
+          item.tipologia_struttura.forEach((s) => points_subjects.add(s));
         }
       });
       setSubjects(points_subjects);
