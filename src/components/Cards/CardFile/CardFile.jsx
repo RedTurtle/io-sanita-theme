@@ -4,6 +4,8 @@ Usa la Card File per
   - creare un collegamento a una pagina documento
   - fare il download diretto di un file
   - aprire un file pdf come anteprima di stampa se il collegamento contiene @@display-file
+  - mostrare un oggetto di tipo collegamento nelle sezioni degli Allegati.
+  - mostrare oggetti di tipo Modulo. In questo caso la card file usa il componente Modulo
 su qualsiasi pagina foglia del modello
 e sulla Pagina lista “Documenti” della sezione Organizzazione.
 
@@ -26,6 +28,7 @@ import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { Icon } from 'io-sanita-theme/components';
 import { FileIcon } from 'io-sanita-theme/helpers';
+import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
 
 import './cardFile.scss';
 
@@ -33,6 +36,10 @@ const messages = defineMessages({
   attachment: {
     id: 'attachment',
     defaultMessage: 'Allegato',
+  },
+  link: {
+    id: 'link',
+    defaultMessage: 'Collegamento',
   },
 });
 
@@ -47,6 +54,12 @@ export const CardFile = ({
   let _item = null;
   let pdfFile = null;
 
+  if (item['@type'] === 'Modulo') {
+    return (
+      <Module item={item} titleTag="h3" showDescription={showDescription} />
+    );
+  }
+
   // Nel caso fosse un oggetto tipo CT
   if (!file) {
     switch (item['@type']) {
@@ -58,13 +71,16 @@ export const CardFile = ({
         _item = item.image;
         break;
       case 'Link':
-        _item['@id'] = item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
+        _item = { ...item };
+        _item['@id'] =
+          item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
+        console.log('giulia', item, _item);
         break;
       default:
         _item = { ...item };
         break;
     }
-  // Nel caso fosse un oggetto MIME type
+    // Nel caso fosse un oggetto MIME type
   } else {
     _item = file;
     pdfFile = file?.download?.includes('@@display-file');
@@ -81,18 +97,31 @@ export const CardFile = ({
     />
   );
 
-  const fileIcon = <FileIcon item={_item} fileFormat={file ? true : false} />;
+  const itemIcon =
+    _item['@type'] === 'Link' ? (
+      <Icon
+        icon="it-external-link"
+        alt={intl.formatMessage(messages.link)}
+        title={intl.formatMessage(messages.link)}
+        color="accent"
+        size="lg"
+      />
+    ) : (
+      <FileIcon item={_item} fileFormat={file ? true : false} />
+    );
 
   return (
     <Card className="shadow rounded card-file no-after">
       <CardBody>
-        <div className="card-file-content">
+        <div className={cx('card-file-content', _item['@type'])}>
           <CardTitle tag={titleTag} className="d-flex mb-0 align-items-center">
             {!file ? (
               <UniversalLink
-                item={!isEditMode ? item : null}
+                item={!isEditMode ? _item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link flex-grow-1 pe-4"
+                target={_item['@type'] === 'Link' ? '_blank' : '_self'}
+                rel={_item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
               >
                 {item.title}
               </UniversalLink>
@@ -103,10 +132,12 @@ export const CardFile = ({
                 title={file.filename}
                 target={pdfFile ? '_blank' : '_self'}
                 rel={pdfFile ? 'noopener noreferrer' : ''}
-              > {file.filename} </a>
+              >
+                {file.filename}
+              </a>
             )}
 
-            {fileIcon ?? defaultIcon}
+            {itemIcon ?? defaultIcon}
           </CardTitle>
 
           {item.description && showDescription && (

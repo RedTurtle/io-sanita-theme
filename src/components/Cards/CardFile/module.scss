@@ -1,0 +1,12 @@
+.card.card-module {
+  .download-formats {
+    a {
+      display: flex;
+      justify-content: space-between;
+
+      .icon.external-link {
+        display: none;
+      }
+    }
+  }
+}

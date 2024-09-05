@@ -10,6 +10,7 @@ import { DocumentoView } from 'io-sanita-theme/components/View/Documento';
 import { ServizioView } from 'io-sanita-theme/components/View/Servizio';
 import { PuntoDiContattoView } from 'io-sanita-theme/components/View/PuntoDiContatto';
 import { BandoView } from 'io-sanita-theme/components/View/Bando';
+import { ModuloView } from 'io-sanita-theme/components/View/Modulo';
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
@@ -25,6 +26,7 @@ const ioSanitaContentTypesViews = {
   ComeFarePer: ComeFarePerView,
   Step: StepView,
   Bando: BandoView,
+  Modulo: ModuloView,
 };
 
 /* LAYOUT VIEWS */

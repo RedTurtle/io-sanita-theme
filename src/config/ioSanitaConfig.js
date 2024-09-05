@@ -9,7 +9,27 @@ import { Search } from '@plone/volto/components';
 import { TextEditorWidget } from 'volto-slate-italia';
 import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 
+// CTs icons
+import faFileInvoiceSVG from 'io-sanita-theme/icons/file-invoice.svg';
+import faFolderOpenSVG from 'io-sanita-theme/icons/folder-open.svg';
+import faImageSVG from 'io-sanita-theme/icons/image.svg';
+import faFileSVG from 'io-sanita-theme/icons/file.svg';
+import faLinkSVG from 'io-sanita-theme/icons/link.svg';
+import faBoxOpenSVG from 'io-sanita-theme/icons/box-open.svg';
+import faArchiveSVG from 'io-sanita-theme/icons/archive.svg';
+import faFileAltSVG from 'io-sanita-theme/icons/file-alt.svg';
+import faCalendarAltSVG from 'io-sanita-theme/icons/calendar-alt.svg';
+import faMapMarkedAltSVG from 'io-sanita-theme/icons/map-marked-alt.svg';
+import faNewspaperSVG from 'io-sanita-theme/icons/newspaper.svg';
+import faUserSVG from 'io-sanita-theme/icons/user.svg';
+import faCogSVG from 'io-sanita-theme/icons/cog.svg';
+import faSitemapSVG from 'io-sanita-theme/icons/sitemap.svg';
+import faBuildingSVG from 'io-sanita-theme/icons/building.svg';
+import faFileDownloadSVG from 'io-sanita-theme/icons/file-download.svg';
+import faQuestionSVG from 'io-sanita-theme/icons/question-solid.svg';
+import bandoSVG from 'io-sanita-theme/icons/bando.svg';
 import logSVG from 'io-sanita-theme/icons/log.svg';
+
 import reducers from 'io-sanita-theme/reducers';
 import {
   LoginAgid,
@@ -97,6 +117,28 @@ export default function applyConfig(config) {
       huge: 1600,
     },
 
+    contentIcons: {
+      ...config.settings.contentIcons,
+      Document: faFileInvoiceSVG,
+      Bando: bandoSVG,
+      Folder: faFolderOpenSVG,
+      'News Item': faNewspaperSVG,
+      Event: faCalendarAltSVG,
+      Image: faImageSVG,
+      File: faFileSVG,
+      Link: faLinkSVG,
+
+      Argomento: faBoxOpenSVG,
+      CartellaModulistica: faArchiveSVG,
+      Documento: faFileAltSVG,
+      Venue: faMapMarkedAltSVG,
+      Persona: faUserSVG,
+      Servizio: faCogSVG,
+      Subsite: faSitemapSVG,
+      UnitaOrganizzativa: faBuildingSVG,
+      Modulo: faFileDownloadSVG,
+      Faq: faQuestionSVG,
+    },
     controlPanelsIcons: {
       ...config.settings.controlPanelsIcons,
       'dropdown-menu-settings': menuSVG,
