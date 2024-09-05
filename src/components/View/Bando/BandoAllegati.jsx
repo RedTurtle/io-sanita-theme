@@ -17,51 +17,30 @@ const messages = defineMessages({
 const BandoAllegati = ({ content }) => {
   const intl = useIntl();
 
-  const getAttachment = (item, i) => {
-    console.log(item);
-    if (
-      item.type === 'File' ||
-      item.type === 'Image' ||
-      item.type === 'Link' ||
-      item.type === 'Collegamento'
-    ) {
-      return <CardFile key={item.url + i} item={item} />;
+  const BandoAttachment = ({ item }) => {
+    if (item.type === 'File' || item.type === 'Image') {
+      return <CardFile item={item} />;
     } else if (item.type === 'Modulo') {
       return (
         <CardFile
           item={{
             ...item,
+            '@type': item.type,
             '@id': item.url.replace(/\/view$/, ''),
           }}
-          key={item.url + i}
+        />
+      );
+    } else if (item.type === 'Link' || item.type === 'Collegamento') {
+      return (
+        <CardFile
+          item={{
+            ...item,
+            remoteUrl: item.remoteUrl ?? item.url,
+            '@type': 'Link',
+          }}
         />
       );
     }
-    // else if (item.type === 'Link') {
-    //   return (
-    //     <Card
-    //       className="card card-teaser shadow p-4 mt-3 rounded attachment"
-    //       noWrapper={true}
-    //       tag="div"
-    //     >
-    //       <Icon
-    //         className={undefined}
-    //         icon={'it-external-link'}
-    //         padding={false}
-    //       />
-    //       <CardBody>
-    //         <CardTitle className="title h5">
-    //           <UniversalLink
-    //             href={flattenToAppURL(item.url)}
-    //             rel="noopener noreferrer"
-    //           >
-    //             {item.title}
-    //           </UniversalLink>
-    //         </CardTitle>
-    //       </CardBody>
-    //     </Card>
-    //   );
-    // }
   };
 
   return content?.approfondimenti?.length > 0 ? (
@@ -70,10 +49,20 @@ const BandoAllegati = ({ content }) => {
         const id_split = item.url.split('/');
         const id = id_split[id_split.length - 1];
         return (
-          <RichTextSection tag_id={id} title={item.title}>
+          <RichTextSection
+            tag_id={id}
+            title={item.title}
+            key={'approfondimento_' + i}
+          >
             <Row>
               {item.children.map((inner_item, x) => (
-                <Col lg={6}>{getAttachment(inner_item, x)}</Col>
+                <Col
+                  lg={6}
+                  className="py-lg-2"
+                  key={'approfondimento_' + i + '-' + x}
+                >
+                  <BandoAttachment item={inner_item} />
+                </Col>
               ))}
             </Row>
           </RichTextSection>

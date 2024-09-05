@@ -4,6 +4,8 @@ Usa la Card File per
   - creare un collegamento a una pagina documento
   - fare il download diretto di un file
   - aprire un file pdf come anteprima di stampa se il collegamento contiene @@display-file
+  - mostrare un oggetto di tipo collegamento nelle sezioni degli Allegati.
+  - mostrare oggetti di tipo Modulo. In questo caso la card file usa il componente Modulo
 su qualsiasi pagina foglia del modello
 e sulla Pagina lista “Documenti” della sezione Organizzazione.
 
@@ -26,6 +28,7 @@ import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { Icon } from 'io-sanita-theme/components';
 import { FileIcon } from 'io-sanita-theme/helpers';
+import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
 
 import './cardFile.scss';
 
@@ -51,6 +54,12 @@ export const CardFile = ({
   let _item = null;
   let pdfFile = null;
 
+  if (item['@type'] === 'Modulo') {
+    return (
+      <Module item={item} titleTag="h3" showDescription={showDescription} />
+    );
+  }
+
   // Nel caso fosse un oggetto tipo CT
   if (!file) {
     switch (item['@type']) {
@@ -62,8 +71,10 @@ export const CardFile = ({
         _item = item.image;
         break;
       case 'Link':
+        _item = { ...item };
         _item['@id'] =
           item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
+        console.log('giulia', item, _item);
         break;
       default:
         _item = { ...item };
@@ -76,8 +87,18 @@ export const CardFile = ({
   }
 
   // ICON
-  const defaultIcon =
-    item['@type'] === 'Link' ? (
+  const defaultIcon = (
+    <Icon
+      icon="it-document"
+      alt={intl.formatMessage(messages.attachment)}
+      title={intl.formatMessage(messages.attachment)}
+      color="accent"
+      size="lg"
+    />
+  );
+
+  const itemIcon =
+    _item['@type'] === 'Link' ? (
       <Icon
         icon="it-external-link"
         alt={intl.formatMessage(messages.link)}
@@ -86,29 +107,21 @@ export const CardFile = ({
         size="lg"
       />
     ) : (
-      <Icon
-        icon="it-document"
-        alt={intl.formatMessage(messages.attachment)}
-        title={intl.formatMessage(messages.attachment)}
-        color="accent"
-        size="lg"
-      />
+      <FileIcon item={_item} fileFormat={file ? true : false} />
     );
-
-  const fileIcon = <FileIcon item={_item} fileFormat={file ? true : false} />;
 
   return (
     <Card className="shadow rounded card-file no-after">
       <CardBody>
-        <div className="card-file-content">
+        <div className={cx('card-file-content', _item['@type'])}>
           <CardTitle tag={titleTag} className="d-flex mb-0 align-items-center">
             {!file ? (
               <UniversalLink
-                item={!isEditMode ? item : null}
+                item={!isEditMode ? _item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link flex-grow-1 pe-4"
-                target={item['@type'] === 'Link' ? '_blank' : '_self'}
-                rel={item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
+                target={_item['@type'] === 'Link' ? '_blank' : '_self'}
+                rel={_item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
               >
                 {item.title}
               </UniversalLink>
@@ -124,7 +137,7 @@ export const CardFile = ({
               </a>
             )}
 
-            {fileIcon ?? defaultIcon}
+            {itemIcon ?? defaultIcon}
           </CardTitle>
 
           {item.description && showDescription && (
