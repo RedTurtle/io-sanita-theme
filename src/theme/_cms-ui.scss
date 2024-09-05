@@ -575,6 +575,14 @@ body.cms-ui {
     }
   }
 
+  /*Folder contents*/
+  .folder-contents {
+    .title-link {
+      .icon.icon-margin {
+        width: 20px !important;
+      }
+    }
+  }
   #page-contents.ui.container.folder-contents {
     @media (min-width: 992px) {
       width: 90% !important;
