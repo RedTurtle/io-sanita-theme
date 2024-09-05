@@ -65,7 +65,11 @@ export const CardFile = ({
     switch (item['@type']) {
       case 'File':
         _item = item.file;
-        _item['@id'] = `${item['@id']}/@@download/file`;
+        if (item['@id'].indexOf('/@@download/') < 0) {
+          _item['@id'] = `${item['@id']}/@@download/file`;
+        } else {
+          _item['@id'] = item['@id'];
+        }
         break;
       case 'Image':
         _item = item.image;
@@ -74,7 +78,6 @@ export const CardFile = ({
         _item = { ...item };
         _item['@id'] =
           item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
-        console.log('giulia', item, _item);
         break;
       default:
         _item = { ...item };

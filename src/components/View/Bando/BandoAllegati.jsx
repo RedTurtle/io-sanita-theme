@@ -19,7 +19,11 @@ const BandoAllegati = ({ content }) => {
 
   const BandoAttachment = ({ item }) => {
     if (item.type === 'File' || item.type === 'Image') {
-      return <CardFile item={item} />;
+      return (
+        <CardFile
+          item={{ ...item, file: item, '@type': item.type, '@id': item.url }}
+        />
+      );
     } else if (item.type === 'Modulo') {
       return (
         <CardFile
