@@ -7,7 +7,8 @@ import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import {
   PageHeaderBando,
-  PageHeaderDates,viewPageHeaderDates,
+  PageHeaderDates,
+  viewPageHeaderDates,
   PageHeaderEventDates,
   PageHeaderExtend,
   PageHeaderNewsItem,
@@ -84,7 +85,12 @@ const PageHeader = (props) => {
                   : undefined
               }
             >
-              {content.description}
+              {content.description.split('\n').map((d, i, { length }) => (
+                <>
+                  {d}
+                  {i < length - 1 && <br />}
+                </>
+              ))}
             </p>
           )}
 
@@ -96,12 +102,12 @@ const PageHeader = (props) => {
 
           <PageHeaderExtend {...props} />
 
-          {(render_reading_time || (showdates && viewPageHeaderDates({...content})?.view)) && (
+          {(render_reading_time ||
+            (showdates && viewPageHeaderDates({ ...content })?.view)) && (
             <div className="row mt-5 mb-4 readingtime-dates">
+              <PageHeaderDates content={content} />
 
-              <PageHeaderDates content={content}/>
-
-              {render_reading_time &&(
+              {render_reading_time && (
                 <div className="col-6">
                   <small>{intl.formatMessage(messages.reading_time)}:</small>
                   <p className="font-monospace">
@@ -113,24 +119,22 @@ const PageHeader = (props) => {
           )}
         </div>
 
-
-
         <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
 
           {/* FOTO PERSONA */}
           {foto && content?.image ? (
-          <div className="page-header-image mt-5">
-            <figure>
-              <Image
-                item={content}
-                alt=""
-                className="img-fluid"
-                sizes="(max-width:768px) 300px, 200px"
-              />
-            </figure>
-          </div>
-        ) : null}
+            <div className="page-header-image mt-5">
+              <figure>
+                <Image
+                  item={content}
+                  alt=""
+                  className="img-fluid"
+                  sizes="(max-width:768px) 300px, 200px"
+                />
+              </figure>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

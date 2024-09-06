@@ -1,18 +1,22 @@
+export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export {
   viewDate,
   getRealStartAndEndWithRecurrence,
   getCalendarDate,
   getEventRecurrenceMore,
 } from 'io-sanita-theme/helpers/dates';
+export EnhanceLink from 'io-sanita-theme/helpers/Link/EnhanceLink';
 export SearchUtils from 'io-sanita-theme/helpers/search';
-export { getSiteProperty } from 'io-sanita-theme/helpers/config';
-
 export {
   removeListingVariation,
   addSchemaStyles,
   DEFAULT_BG_COLORS,
   cloneBlock,
-} from 'io-sanita-theme/helpers/blocks_config';
+} from 'io-sanita-theme/helpers/Blocks/blocks_config';
+export {
+  handleKeyDownOwnFocusManagement,
+  useHandleDetachedBlockFocus,
+} from 'io-sanita-theme/helpers/Blocks/focus';
 export { commonSearchBlockMessages } from 'io-sanita-theme/helpers/Translations/searchBlockExtendedTranslations';
 export {
   videoUrlHelper,

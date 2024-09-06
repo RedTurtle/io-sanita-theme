@@ -14,7 +14,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 
 import { getSlimHeader, getItemsByPath } from 'volto-slimheader';
 
-const TertiaryMenu = () => {
+const TertiaryMenu = ({ mobile = false }) => {
   const intl = useIntl();
   const pathname = useLocation().pathname;
   const dispatch = useDispatch();
@@ -37,7 +37,13 @@ const TertiaryMenu = () => {
   const items = slimHeaderItems ?? [];
 
   return items?.length > 0 ? (
-    <Nav vertical={false} className="tertiary-menu d-none d-lg-flex">
+    <Nav
+      vertical={false}
+      className={cx('tertiary-menu', {
+        'd-lg-none navbar-nav': mobile,
+        'd-none d-lg-flex': !mobile,
+      })}
+    >
       {items.map((navitem, id) => (
         <NavItem
           tag="li"

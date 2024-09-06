@@ -31,6 +31,7 @@ const CardPlace = ({
   item,
   isEditMode,
   titleTag = 'h3',
+  className,
 }) => {
   const intl = useIntl();
   const latLong = hasGeolocation(item)
@@ -43,7 +44,7 @@ const CardPlace = ({
 
   return (
     <Card
-      className={cx('shadow rounded card-place no-after', {
+      className={cx('shadow rounded card-place no-after', className, {
         'card-place-small': size == 'small',
       })}
     >

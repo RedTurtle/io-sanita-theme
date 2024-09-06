@@ -3,7 +3,7 @@ Implementa la
 - Card basic (se è un bando, mostra la data di pubblicazione del bando)
 - Card list (mostra la descrizione)
 - Card services (se è un servizio che può essere usufruito online, viene messo il badge non cliccabile)
-del modello dei siti ASL
+del modello dei siti ASL, la prop che va a leggere è: 'servizio_attivo'
 */
 
 import React from 'react';
@@ -31,13 +31,15 @@ export const CardSimple = ({
     item['@type'] === 'Bando' && item.effective
       ? viewDate(intl.locale, item.effective, 'DD MMMM YYYY')
       : null;
+
   const isServizioOnline =
-    item['@type'] === 'Servizio' && item.canale_digitale_link;
+    item['@type'] === 'Servizio' && item?.servizio_attivo;
+
   return (
     <Card className={`shadow rounded card-simple no-after ${className ?? ''}`}>
       <CardBody>
         <div className="card-simple-content">
-          <CardTitle tag={titleTag} className={isServizioOnline ? 'mb-0' : ''}>
+          <CardTitle tag={titleTag} className={isServizioOnline ? 'mb-1' : ''}>
             {item['@id'] ? (
               <UniversalLink
                 item={!isEditMode ? item : null}
@@ -51,13 +53,15 @@ export const CardSimple = ({
             )}
           </CardTitle>
 
+          {/* Chip servizio attivo */}
           {isServizioOnline && (
-            <div className="mb-2">
+            <div className="mb-3">
               <Badge color="primary-lightest">
                 {intl.formatMessage(messages.servizioOnline)}
               </Badge>
             </div>
           )}
+
           <CardText tag="div">
             {showDescription && <>{item.description}</>}
 

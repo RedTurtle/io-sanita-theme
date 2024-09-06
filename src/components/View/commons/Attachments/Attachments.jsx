@@ -42,10 +42,9 @@ const Attachments = ({
   const searchResults = useSelector((state) => state.search.subrequests);
   const dispatch = useDispatch();
 
-  // const hasChildren = folder_name
-  //   ? contentFolderHasItems(content, folder_name)
-  //   : items?.length > 0;
-  const hasChildren = true;
+  const hasChildren = folder_name
+    ? contentFolderHasItems(content, folder_name)
+    : items?.length > 0;
 
   useEffect(() => {
     if (folder_name && hasChildren) {
@@ -96,8 +95,9 @@ const Attachments = ({
     </RichTextSection>
   ) : (
     <div className="mb-5 mt-3">
-      {title && <h5>{title}</h5>}
+      {title && <h4 className="h5">{title}</h4>}
       {attachments.length > 0 && attachments_view}
+      {searchResults?.[key]?.loading && !searchResults?.[key]?.loaded && <></>}
     </div>
   );
 };

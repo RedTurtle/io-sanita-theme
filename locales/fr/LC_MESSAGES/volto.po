@@ -403,6 +403,11 @@ msgstr ""
 msgid "amministrazione"
 msgstr ""
 
+#. Default: "Apertura del bando"
+#: components/View/Bando/Dates
+msgid "apertura_bando"
+msgstr ""
+
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -437,6 +442,11 @@ msgstr "Retour à la recherche"
 #: components/View/Bando/BandoStatus
 msgid "bando_closed"
 msgstr "Expiré"
+
+#. Default: "Data di pubblicazione"
+#: components/View/Bando/Dates
+msgid "bando_effective"
+msgstr ""
 
 #. Default: "In corso"
 #: components/View/Bando/BandoStatus
@@ -476,6 +486,11 @@ msgstr ""
 #. Default: "Icona categoria"
 #: components/Cards/common/CardCategoryTop
 msgid "category_icon"
+msgstr ""
+
+#. Default: "Chiusura del procedimento"
+#: components/View/Bando/Dates
+msgid "chiusura_procedimento_bando"
 msgstr ""
 
 #. Default: "Clear all filters"
@@ -1033,6 +1048,7 @@ msgid "organizzato_da"
 msgstr ""
 
 #. Default: "Ulteriori informazioni"
+#: components/View/Bando/BandoUlterioriInformazioni
 #: components/View/Persona/PersonaUlterioriInformazioni
 #: components/View/Servizio/ServizioUlterioriInformazioni
 #: components/View/Struttura/StrutturaUlterioriInformazioni
@@ -1120,11 +1136,6 @@ msgstr ""
 msgid "pdc_telefono"
 msgstr ""
 
-#. Default: "Twitter"
-#: helpers/Views/PuntoDiContattoValue
-msgid "pdc_twitter"
-msgstr ""
-
 #. Default: "Unità operative"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
 msgid "pdc_uo_correlata"
@@ -1133,6 +1144,11 @@ msgstr ""
 #. Default: "Sito web"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_url"
+msgstr ""
+
+#. Default: "Twitter"
+#: helpers/Views/PuntoDiContattoValue
+msgid "pdc_x"
 msgstr ""
 
 #. Default: "PEC"
@@ -1270,6 +1286,16 @@ msgstr ""
 #. Default: "giorni feriali"
 #: overrideTranslations
 msgid "rrule_weekdays"
+msgstr ""
+
+#. Default: "Scadenza dei termini per partecipare al bando"
+#: components/View/Bando/Dates
+msgid "scadenza_bando"
+msgstr ""
+
+#. Default: "Termine per le richieste di chiarimenti"
+#: components/View/Bando/Dates
+msgid "scadenza_domande_bando"
 msgstr ""
 
 #. Default: "Cerca"
@@ -1435,6 +1461,7 @@ msgid "servizio_contatti"
 msgstr ""
 
 #. Default: "Cos'è"
+#: components/View/Bando/BandoCosE
 #: components/View/Servizio/ServizioCosE
 msgid "servizio_cos_e"
 msgstr ""
@@ -1474,7 +1501,7 @@ msgstr ""
 msgid "servizio_procedure_collegate"
 msgstr ""
 
-#. Default: "Responsabile del servizo"
+#. Default: "Responsabile del servizio"
 #: components/View/Servizio/ServizioResponsabile
 msgid "servizio_responsabile_servizio"
 msgstr ""
@@ -1815,6 +1842,11 @@ msgstr ""
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "telegram"
+msgstr ""
+
+#. Default: "Tempi e scadenze"
+#: components/View/Bando/BandoDate
+msgid "tempi_e_scadenze"
 msgstr ""
 
 #. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""

@@ -2,8 +2,10 @@
 
 .public-ui .card.card-file {
   .card-body {
-    h3,h4,h5{
-      &.card-title{
+    h3,
+    h4,
+    h5 {
+      &.card-title {
         @include rem-size(font-size, 18);
       }
     }
@@ -17,6 +19,14 @@
       &,
       p {
         font-size: 1rem;
+      }
+    }
+
+    .card-file-content {
+      &.Link {
+        .card-title a .icon {
+          display: none;
+        }
       }
     }
   }

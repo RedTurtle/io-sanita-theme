@@ -1,6 +1,6 @@
-import { v4 as uuid } from 'uuid';
 import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import searchSVG from '@plone/volto/icons/zoom.svg';
+import calloutSVG from '@plone/volto/icons/megaphone.svg';
 import {
   BreakView,
   BreakEdit,
@@ -8,6 +8,8 @@ import {
   SearchMapView,
   SearchMapEdit,
   SearchMapSchema,
+  CalloutView,
+  CalloutEdit,
 } from 'io-sanita-theme/components/Blocks';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
@@ -32,6 +34,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
 
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
+
     listing: {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
@@ -43,6 +46,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
       listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
+    },
+    callout_block: {
+      id: 'callout_block',
+      title: 'Callout',
+      icon: calloutSVG,
+      group: 'text',
+      view: CalloutView,
+      edit: CalloutEdit,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
     },
     maps: {
       ...config.blocks.blocksConfig.maps,
@@ -108,6 +128,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
     ...customRequiredBlocks,
   ];
   config.blocks.showEditBlocksInBabelView = true;
+
+  config.settings['volto-blocks-widget'] = {
+    ...config.settings['volto-blocks-widget'],
+    allowedBlocks: [
+      ...(config.settings['volto-blocks-widget']?.allowedBlocks ?? []).filter(
+        (block) => block !== 'maps',
+      ),
+      'break',
+      'testo_riquadro_semplice',
+      'testo_riquadro_immagine',
+      'callout_block',
+      'rssBlock',
+      //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
+    ],
+
+    showRestricted: false,
+  };
 
   config.settings.styleClassNameExtenders.push(
     ({ block, content, data, classNames }) => {

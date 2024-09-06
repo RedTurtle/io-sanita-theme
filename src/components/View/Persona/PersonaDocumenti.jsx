@@ -20,16 +20,16 @@ const PersonaDocumenti = ({ content }) => {
   return (
     <>
       {(contentFolderHasItems(content, 'curriculum-vitae') ||
-        contentFolderHasItems(content, 'altri-documenti')) && (
+        contentFolderHasItems(content, 'documenti')) && (
           <RichTextSection
             tag_id="documenti"
             title={intl.formatMessage(messages.documenti)}
           >
             {/* ALTRI DOCUMENTI */}
-            {(contentFolderHasItems(content, 'altri-documenti')) && (
+            {(contentFolderHasItems(content, 'documenti')) && (
                 <Attachments
                 content={content}
-                folder_name={'altri-documenti'}
+                folder_name={'documenti'}
                 as_section={false}
               />
             )}

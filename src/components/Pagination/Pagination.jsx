@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-import { invoke, isNil, map } from 'lodash';
+import { isNil, map } from 'lodash';
 import { Pager } from 'design-react-kit';
 import createPaginationItems from 'io-sanita-theme/components/Pagination/createPaginationItems';
 import PaginationItem from 'io-sanita-theme/components/Pagination/PaginationItem';
@@ -60,9 +60,16 @@ class Pagination extends Component {
     const { activePage: prevActivePage } = this.state;
     // Heads up! We need the cast to the "number" type there, as `activePage` can be a string
     if (+prevActivePage === +nextActivePage) return;
-    this.setState({ activePage: nextActivePage.children });
+    this.setState({ activePage: nextActivePage });
 
-    invoke(this.props, 'onPageChange', e, {
+    // XXX: perchè si usa invoke, anzichè semplicemente this.props.onPageChange ?
+    //      invoke è utile quando serve un 'path' per accedere alla funzione,
+    //      ma in questo caso non serve, si potrebbe usare direttamente this.props.onPageChange
+    // invoke(this.props, 'onPageChange', e, {
+    //   ...this.props,
+    //   activePage: nextActivePage,
+    // });
+    this.props.onPageChange(e, {
       ...this.props,
       activePage: nextActivePage,
     });
