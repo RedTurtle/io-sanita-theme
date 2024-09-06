@@ -186,7 +186,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
           metadata_fields: [
             'tipologia_struttura',
             'struttura_ricevimento',
-            'incarico',
+            'incarico_metadata',
           ], //'_all',
           query: query,
           b_size: b_size,
@@ -234,7 +234,6 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
           item.tipologia_struttura.forEach((s) => points_subjects.add(s));
         }
       });
-      console.log(points_subjects);
       setSubjects(points_subjects);
     }
   };
