@@ -19,7 +19,7 @@ const PersonaStrutture = ({ content }) => {
 
   return (
     <BackReferences
-      type="strutture"
+      type="persona_strutture"
       content={content}
       id={'persona_strutture'}
       title={intl.formatMessage(messages.strutture)}

@@ -19,7 +19,7 @@ const PersonaUOAppartenenza = ({ content }) => {
 
   return (
     <BackReferences
-      type="uo"
+      type="persona_uo"
       content={content}
       id={'persona_uo'}
       title={intl.formatMessage(messages.uo)}

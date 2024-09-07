@@ -38,8 +38,18 @@ const BackReferencesWrapper = ({ title, id, children }) => {
 };
 
 const BackReferences = ({ id, title, content, type }) => {
-  const backreferences =
+  let backreferences =
     content?.['@components']?.['back-references']?.[type] ?? [];
+
+    switch(type){
+      case 'persona_uo':
+        backreferences = [ ...content?.['@components']?.['back-references']?.['responsabile']?.['UnitaOrganizzativa'] ?? [], ...content?.['@components']?.['back-references']?.['personale']?.['UnitaOrganizzativa'] ?? []];
+        break;
+      case 'persona_strutture':
+        backreferences = [ ...content?.['@components']?.['back-references']?.['responsabile']?.['Struttura'] ?? [], ...content?.['@components']?.['back-references']?.['personale']?.['Struttura'] ?? []];
+      default:
+        break;
+    }
 
   const { onPaginationChange, currentPage, totalPages, displayItems, ref } =
     useClientPagination({ items: backreferences });
@@ -55,15 +65,17 @@ const BackReferences = ({ id, title, content, type }) => {
           ))}
         </Row>
 
-        <div className="pagination-wrapper">
-          <Pagination
-            activePage={currentPage}
-            totalPages={totalPages}
-            onPageChange={(e, { activePage }) => {
-              onPaginationChange(activePage);
-            }}
-          />
-        </div>
+        {totalPages > 1 &&
+          <div className="pagination-wrapper">
+            <Pagination
+              activePage={currentPage}
+              totalPages={totalPages}
+              onPageChange={(e, { activePage }) => {
+                onPaginationChange(activePage);
+              }}
+            />
+          </div>
+        }
       </div>
     </BackReferencesWrapper>
   ) : (
@@ -73,7 +85,7 @@ const BackReferences = ({ id, title, content, type }) => {
 
 BackReferences.propTypes = {
   content: PropTypes.object.isRequired,
-  type: PropTypes.oneOf(['news', 'documenti', 'uo', 'servizi']),
+  type: PropTypes.string, //nome del portal type, oppure 'responsabile' o 'personale', oppure 'persona_uo' cerca tutte le uo nelle backreferences 'personale' e 'responsabile'
 };
 
 export default BackReferences;

@@ -14,7 +14,7 @@ const UOStrutture = ({ content }) => {
 
   return (
     <BackReferences
-      type="strutture"
+      type="Struttura"
       content={content}
       id={'strutture'}
       title={intl.formatMessage(messages.strutture)}
