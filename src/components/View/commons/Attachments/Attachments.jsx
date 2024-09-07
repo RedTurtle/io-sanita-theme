@@ -42,10 +42,9 @@ const Attachments = ({
   const searchResults = useSelector((state) => state.search.subrequests);
   const dispatch = useDispatch();
 
-  // const hasChildren = folder_name
-  //   ? contentFolderHasItems(content, folder_name)
-  //   : items?.length > 0;
-  const hasChildren = true;
+  const hasChildren = folder_name
+    ? contentFolderHasItems(content, folder_name)
+    : items?.length > 0;
 
   useEffect(() => {
     if (folder_name && hasChildren) {

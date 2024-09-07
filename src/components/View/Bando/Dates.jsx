@@ -62,7 +62,7 @@ const BandoDates = ({ content }) => {
       <div className="point-list-wrapper my-4 mb-5">
         {effective && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {effective.format('DD')}
               </span>
@@ -70,13 +70,9 @@ const BandoDates = ({ content }) => {
               <span className="point-month">{effective.format('Y')}</span>
             </div>
             <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow border-left-card"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
+              <Card className="card-teaser rounded shadow" noWrapper={true}>
+                <CardBody>
+                  <CardTitle tag="p" className="mb-0 h5">
                     {intl.formatMessage(messages.effective)}
                   </CardTitle>
                 </CardBody>
@@ -87,7 +83,7 @@ const BandoDates = ({ content }) => {
 
         {apertura_bando && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {apertura_bando.format('DD')}
               </span>
@@ -97,13 +93,9 @@ const BandoDates = ({ content }) => {
               <span className="point-month">{apertura_bando.format('Y')}</span>
             </div>
             <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow border-left-card"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
+              <Card className="card-teaser rounded shadow" noWrapper={true}>
+                <CardBody>
+                  <CardTitle tag="p" className="mb-0 h5">
                     {`${apertura_bando.format('HH:mm')} - `}
                     {intl.formatMessage(messages.apertura_bando)}
                   </CardTitle>
@@ -115,7 +107,7 @@ const BandoDates = ({ content }) => {
 
         {scadenza_domande_bando && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {scadenza_domande_bando.format('DD')}
               </span>
@@ -127,13 +119,9 @@ const BandoDates = ({ content }) => {
               </span>
             </div>
             <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow border-left-card"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
+              <Card className="card-teaser rounded shadow" noWrapper={true}>
+                <CardBody>
+                  <CardTitle tag="p" className="mb-0 h5">
                     {`${scadenza_domande_bando.format('HH:mm')} - `}
                     {intl.formatMessage(messages.scadenza_domande_bando)}
                   </CardTitle>
@@ -145,7 +133,7 @@ const BandoDates = ({ content }) => {
 
         {scadenza_bando && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {scadenza_bando.format('DD')}
               </span>
@@ -155,13 +143,9 @@ const BandoDates = ({ content }) => {
               <span className="point-month">{scadenza_bando.format('Y')}</span>
             </div>
             <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow border-left-card"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
+              <Card className="card-teaser rounded shadow" noWrapper={true}>
+                <CardBody>
+                  <CardTitle tag="p" className="mb-0 h5">
                     {`${scadenza_bando.format('HH:mm')} - `}
                     {intl.formatMessage(messages.scadenza_bando)}
                   </CardTitle>
@@ -173,7 +157,7 @@ const BandoDates = ({ content }) => {
 
         {chiusura_procedimento_bando && (
           <div className="point-list">
-            <div className="point-list-aside point-list-warning">
+            <div className="point-list-aside point-list-primary fw-normal">
               <span className="point-date font-monospace">
                 {chiusura_procedimento_bando.format('DD')}
               </span>
@@ -185,13 +169,9 @@ const BandoDates = ({ content }) => {
               </span>
             </div>
             <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow border-left-card"
-                noWrapper={true}
-                tag="div"
-              >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
+              <Card className="card-teaser rounded shadow" noWrapper={true}>
+                <CardBody>
+                  <CardTitle tag="p" className="mb-0 h5">
                     {intl.formatMessage(messages.chiusura_procedimento_bando)}
                   </CardTitle>
                 </CardBody>
