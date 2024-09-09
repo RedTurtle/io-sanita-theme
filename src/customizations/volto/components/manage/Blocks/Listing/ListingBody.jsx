@@ -48,7 +48,9 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
 
   return (
     (data.title || path_filters_buttons) && (
-      <Container className="px-0">
+      <Container
+        className={!data.show_block_bg || isEditMode ? 'px-0' : 'px-4'}
+      >
         <Row
           className={cx('template-header', {
             'with-filters': path_filters_buttons,
@@ -131,9 +133,14 @@ const ListingBody = withQuerystringResults((props) => {
   // Props have different locations in seachBlock
   // Also need to purge title from searchblock schema, it's the name of the listing template used
   const listingBodyProps =
-    variation?.['@type'] !== 'search'
-      ? data
-      : { ...variation, title: data.title };
+    variation?.['@type'] == 'search'
+      ? { ...variation, title: data.title }
+      : data;
+
+  // const listingBodyProps =
+  // variation?.['@type'] !== 'search'
+  //   ? { data, ...variation, title: data.title }
+  //   : { ...variation, title: data.title };
 
   return (
     <div className="public-ui">
@@ -164,7 +171,6 @@ const ListingBody = withQuerystringResults((props) => {
                 isEditMode={isEditMode}
                 block={block}
                 {...listingBodyProps}
-                {...variation}
               />
               {totalPages > 1 && (
                 <div className="pagination-wrapper">

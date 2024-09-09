@@ -74,15 +74,29 @@ const addDefaultOptions = (schema, formData = {}, intl, position = 1) => {
   }
 
   if (listing_bg_colors.length > 0) {
-    addSchemaField(
+    addSchemaStyles({
+      intl,
       schema,
-      'bg_color',
-      intl.formatMessage(messages.bg_color),
-      null,
-      { widget: 'color_list', intl: intl, colors: listing_bg_colors },
-      pos,
-      fieldset,
-    );
+      fields: ['bg_color:noprefix'],
+      properties: {
+        'bg_color:noprefix': {
+          title: 'Colore di sfondo',
+          default: 'none',
+          widget: 'color_picker',
+          colors: listing_bg_colors,
+        },
+      },
+    });
+    //vecchio modo su io-comune di impostare i colori di sfondo nello schema
+    // addSchemaField(
+    //   schema,
+    //   'bg_color',
+    //   intl.formatMessage(messages.bg_color),
+    //   null,
+    //   { widget: 'color_list', intl: intl, colors: listing_bg_colors },
+    //   pos,
+    //   fieldset,
+    // );
     pos++;
   }
 
