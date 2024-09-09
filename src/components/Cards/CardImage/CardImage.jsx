@@ -51,28 +51,29 @@ export const CardImage = ({
         </div>
       )}
       <CardBody className="p-4">
-        <CardTitle tag={titleTag}>
-          <UniversalLink
-            item={!isEditMode ? item : null}
-            href={isEditMode ? '#' : ''}
-            className="card-title-link"
-          >
-            {item.title}
-          </UniversalLink>
-        </CardTitle>
+        <div className="card-body-main">
+          <CardTitle tag={titleTag}>
+            <UniversalLink
+              item={!isEditMode ? item : null}
+              href={isEditMode ? '#' : ''}
+              className="card-title-link"
+            >
+              {item.title}
+            </UniversalLink>
+          </CardTitle>
 
-        {item['@type'] === 'Event' && date && (
-          <p className="event-date">{date}</p>
-        )}
+          {item['@type'] === 'Event' && date && (
+            <p className="event-date">{date}</p>
+          )}
 
-        {item.description && showDescription && (
-          <CardText>{item.description}</CardText>
-        )}
+          {item.description && showDescription && (
+            <CardText>{item.description}</CardText>
+          )}
 
-        {eventRecurrenceMore && (
-          <div className="py-2">{eventRecurrenceMore}</div>
-        )}
-
+          {eventRecurrenceMore && (
+            <div className="py-2">{eventRecurrenceMore}</div>
+          )}
+        </div>
         <CardCategoryBottom
           item={item}
           date={date && item['@type'] !== 'Event' ? date : null}
