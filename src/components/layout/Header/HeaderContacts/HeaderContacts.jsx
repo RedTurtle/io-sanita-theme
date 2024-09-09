@@ -13,23 +13,23 @@ const HeaderContacts = () => {
   // exemplo items - arriverà via props
   const items = [
     {
-      text_1: 'Prenota servizi e prestazioni',
-      text_2: 'CUP',
+      description: 'Prenota servizi e prestazioni',
+      tag: 'CUP',
       href: 'https://www.sitoweb.it',
     },
     {
-      text_1: 'Richiedi informazioni o fai una segnalazione',
-      text_2: 'URP',
+      description: 'Richiedi informazioni o fai una segnalazione',
+      tag: 'URP',
       href: 'tel:0532123456',
     },
     {
-      text_1: 'Prenota servizi e prestazioni',
-      text_2: 'CUP',
+      description: 'Prenota servizi e prestazioni',
+      tag: 'CUP',
       href: 'mailto:teto@prova.it',
     },
     {
-      text_1: 'Richiedi informazioni o fai una segnalazione',
-      text_2: 'URP',
+      description: 'Richiedi informazioni o fai una segnalazione',
+      tag: 'URP',
       href: 'tel:0532123456',
     },
   ];
@@ -52,8 +52,8 @@ const HeaderContacts = () => {
             {items.map((item, index) => {
               return (
                 <Col className="contact-wrapper" key={'header-contact' + index}>
-                  <span className="item-description">{item.text_1}</span>
-                  <span className="item-type">{item.text_2}</span>
+                  <span className="item-description">{item.description}</span>
+                  <span className="item-type">{item.tag}</span>
                   <UniversalLink
                     href={item.href}
                     title={getDisplayText(item.href)}
