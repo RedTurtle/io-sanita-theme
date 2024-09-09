@@ -178,7 +178,13 @@ export default function applyConfig(config) {
       ...config.settings.apiExpanders,
       {
         match: '',
-        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+        GET_CONTENT: [
+          'breadcrumbs',
+          'navigation',
+          'actions',
+          'types',
+          'back-references',
+        ],
       },
     ],
     appExtras: [

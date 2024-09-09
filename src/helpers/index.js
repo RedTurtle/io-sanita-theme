@@ -24,6 +24,9 @@ export {
 } from 'io-sanita-theme/helpers/video';
 export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
 
+//pagination
+export { useClientPagination } from 'io-sanita-theme/helpers/ClientPagination/clientPagination';
+
 //file
 export {
   getFileViewFormat,
@@ -65,9 +68,6 @@ export PuntoDiContattoValue from 'io-sanita-theme/helpers/Views/PuntoDiContattoV
 //address and maps
 export Address from 'io-sanita-theme/helpers/Address/Address';
 export { mapPinDirections } from 'io-sanita-theme/helpers/Address/mapPin';
-
-//pagination
-export { usePaginatedItemsSection } from 'io-sanita-theme/helpers/usePaginatedItemsSection.hook.ts';
 
 //item
 export {

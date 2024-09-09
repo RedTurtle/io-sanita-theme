@@ -9,9 +9,11 @@ import PropTypes from 'prop-types';
 import {
   PersonaIncarichi,
   PersonaCompetenze,
+  PersonaUOAppartenenza,
   PersonaDove,
   PersonaOrariRicevimento,
   PersonaContatti,
+  PersonaStrutture,
   PersonaBiografia,
   PersonaDocumenti,
   PersonaGalleria,
@@ -30,9 +32,11 @@ import {
 export const PersonaViewSectionsOrder = [
   { /* INCARICHI */ component: PersonaIncarichi },
   { /* COMPETENZE */ component: PersonaCompetenze },
+  { /* UO DI APPARTENENZA */ component: PersonaUOAppartenenza },
   { /* DOVE */ component: PersonaDove },
   { /* ORARI */ component: PersonaOrariRicevimento },
   { /* CONTATTI */ component: PersonaContatti },
+  { /* STRUTTURE IN CUI OPERA */ component: PersonaStrutture },
   { /* BIOGRAFIA */ component: PersonaBiografia },
   { /* GALLERIA */ component: PersonaGalleria },
   { /* DOCUMENTI */ component: PersonaDocumenti },

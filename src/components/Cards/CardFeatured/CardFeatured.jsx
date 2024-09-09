@@ -17,7 +17,13 @@ import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import './cardFeatured.scss';
 
-const CardFeatured = ({ size = 'large', item, titleTag = 'h3', imgSrc,  isEditMode }) => {
+const CardFeatured = ({
+  size = 'large',
+  item,
+  titleTag = 'h3',
+  imgSrc,
+  isEditMode,
+}) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
@@ -33,20 +39,21 @@ const CardFeatured = ({ size = 'large', item, titleTag = 'h3', imgSrc,  isEditMo
       wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured card-featured-${size}`}
     >
       <CardBody className="p-4">
-        <CardTitle tag={titleTag}>
-          <UniversalLink
-            item={!isEditMode ? item : null}
-            href={isEditMode ? '#' : ''}
-            className="card-title-link"
-          >
-            {item.title}
-          </UniversalLink>
-        </CardTitle>
+        <div className="card-body-main">
+          <CardTitle tag={titleTag}>
+            <UniversalLink
+              item={!isEditMode ? item : null}
+              href={isEditMode ? '#' : ''}
+              className="card-title-link"
+            >
+              {item.title}
+            </UniversalLink>
+          </CardTitle>
 
-        {item.description && size !== 'small' && (
-          <CardText>{item.description}</CardText>
-        )}
-
+          {item.description && size !== 'small' && (
+            <CardText>{item.description}</CardText>
+          )}
+        </div>
         <CardCategoryBottom item={item} isEditMode={isEditMode} />
       </CardBody>
 
