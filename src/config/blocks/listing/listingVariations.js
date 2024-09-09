@@ -1,4 +1,4 @@
-import SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
+import { SimpleCardTemplate, MapTemplate, MapTemplateSkeleton } from 'io-sanita-theme/components/Blocks';
 
 // import CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImageTemplate';
 // import CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithImageTemplateSkeleton';
@@ -11,9 +11,6 @@ import SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/Simple
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
-
-// import MapTemplate from 'io-sanita-theme/components/Blocks/Listing/MapTemplate';
-// import MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/MapTemplateSkeleton';
 
 // import SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinksTemplate';
 // import SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SmallBlockLinksTemplateSkeleton';
@@ -48,28 +45,24 @@ import SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/Simple
 // import AttachmentCardTemplate from 'io-sanita-theme/components/Blocks/Listing/AttachmentCardTemplate';
 
 import {
+  addLighthouseField,
+  addLinkMoreOptions,
+  addDefaultOptions,
   addSimpleCardTemplateOptions,
+  addMapTemplateOptions,
   // addCardWithImageTemplateOptions,
   // addInEvidenceTemplateOptions,
   // addRibbonCardTemplateOptions,
-  // addMapTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
-  // addDefaultOptions,
   // addSliderTemplateOptions,
   // addSimpleListTemplateOptions,
   // addCardWithSlideUpTextTemplateOptions,
   // addPhotogalleryTemplateOptions,
-  // addLinkMoreOptions,
   // addSmallBlockLinksTemplateOptions,
   // addAttachmentCardTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
-
-import {
-  addLighthouseField,
-  addLinkMoreOptions,
-} from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 
 const iosanitaListingVariations = [
   {
@@ -164,20 +157,20 @@ const iosanitaListingVariations = [
   //   },
   //   cloneData: cloneBlock,
   // },
-  // {
-  //   id: 'mapTemplate',
-  //   isDefault: false,
-  //   title: 'Mappa',
-  //   template: MapTemplate,
-  //   skeleton: MapTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addMapTemplateOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
+  {
+    id: 'mapTemplate',
+    isDefault: false,
+    title: 'Mappa',
+    template: MapTemplate,
+    skeleton: MapTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addMapTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'smallBlockLinksTemplate',
   //   isDefault: false,
