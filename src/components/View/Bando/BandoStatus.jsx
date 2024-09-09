@@ -26,7 +26,11 @@ const messages = defineMessages({
 
 const BandoStatus = ({ content }) => {
   const intl = useIntl();
-  return <>{intl.formatMessage(messages[content.bando_state[0]])}</>;
+  //se sei in view del bando, lo stato del bando  è in view-extra-data perchè è un metadato
+  const value =
+    content.bando_state?.[0] ??
+    content['@components']?.['view-extra-data']?.stato_bando?.[0];
+  return <>{intl.formatMessage(messages[value])}</>;
 };
 
 export default BandoStatus;

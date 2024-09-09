@@ -30,6 +30,8 @@ import {
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
 
+import './bando.scss';
+
 export const BandoViewSectionsOrder = [
   { /* COS'è  + tipologia + ente */ component: BandoCosE },
   { /* A CHI SI RIVOLGE */ component: BandoAChiSiRivolge },

@@ -13,49 +13,44 @@ const messages = defineMessages({
     defaultMessage: 'Documenti allegati',
   },
 });
+const BandoAttachment = ({ item }) => {
+  if (
+    item['@type'] === 'File' ||
+    item['@type'] === 'Image' ||
+    item['@type'] === 'Link' ||
+    item['@type'] === 'Modulo'
+  ) {
+    return <CardFile item={item} />;
+  }
+  //else if (item.type === 'Modulo') {
+  //   return (
+  //     <CardFile
+  //       item={{
+  //         ...item,
+  //         '@type': item.type,
+  //         '@id': item.url.replace(/\/view$/, ''),
+  //       }}
+  //     />
+  //   );
+  // }
+};
 
 const BandoAllegati = ({ content }) => {
   const intl = useIntl();
+  const approfondimenti =
+    content?.['@components']?.['view-extra-data']?.approfondimenti;
 
-  const BandoAttachment = ({ item }) => {
-    if (item.type === 'File' || item.type === 'Image') {
-      return <CardFile item={item} />;
-    } else if (item.type === 'Modulo') {
-      return (
-        <CardFile
-          item={{
-            ...item,
-            '@type': item.type,
-            '@id': item.url.replace(/\/view$/, ''),
-          }}
-        />
-      );
-    } else if (item.type === 'Link' || item.type === 'Collegamento') {
-      return (
-        <CardFile
-          item={{
-            ...item,
-            remoteUrl: item.remoteUrl ?? item.url,
-            '@type': 'Link',
-          }}
-        />
-      );
-    }
-  };
-
-  return content?.approfondimenti?.length > 0 ? (
+  return approfondimenti?.length > 0 ? (
     <>
-      {content.approfondimenti.map((item, i) => {
-        const id_split = item.url.split('/');
-        const id = id_split[id_split.length - 1];
+      {approfondimenti.map((item, i) => {
         return (
           <RichTextSection
-            tag_id={id}
+            tag_id={item.id}
             title={item.title}
             key={'approfondimento_' + i}
           >
             <Row>
-              {item.children.map((inner_item, x) => (
+              {item.items.map((inner_item, x) => (
                 <Col
                   lg={6}
                   className="py-lg-2"
