@@ -122,6 +122,8 @@ const Gallery = ({
   const gallery_title = title || intl.formatMessage(messages.gallery);
   const default_width_image =
     images.length > 3 ? '200px' : `${650 / images.length}px`;
+  console.log(folder_name,multimedia, images,videos);
+
 
   return (
     <>

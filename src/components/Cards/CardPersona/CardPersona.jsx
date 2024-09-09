@@ -50,8 +50,12 @@ export const CardPersona = ({
       <img src={imgSrc} alt="" />
     ) : null;
 
+  const incarico_field =
+    item.incarico_metadata?.length > 0 ? item.incarico_metadata : item.incarico;
   const incarico =
-    item.incarico?.length > 0 ? item.incarico[item.incarico.length - 1] : null;
+    incarico_field?.length > 0
+      ? incarico_field[incarico_field.length - 1]
+      : null;
 
   return (
     <Card className="shadow rounded card-persona no-after">
@@ -70,7 +74,7 @@ export const CardPersona = ({
           <CardText tag="div">
             {incarico && (
               <p className="mb-0">
-                {typeof incarico == 'string' ? incarico : incarico.label}
+                {typeof incarico == 'string' ? incarico : incarico.title}
               </p>
             )}
             {size != 'small' && (
