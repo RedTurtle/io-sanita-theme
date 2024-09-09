@@ -1,4 +1,5 @@
 @import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+@import 'io-sanita-theme/theme/io-sanita/components/blocks/skeleton';
 
 .block.listing .map-template {
   .leaflet-container {
@@ -41,7 +42,7 @@
   .template-skeleton {
     .map-skeleton {
       height: 300px;
-      background-color: $skeleton-bg;
+      background-color: var(---skeleton-bg);
       @extend %skeleton-animation;
     }
   }

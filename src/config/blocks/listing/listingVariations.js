@@ -1,4 +1,8 @@
-import { SimpleCardTemplate, MapTemplate, MapTemplateSkeleton } from 'io-sanita-theme/components/Blocks';
+import {
+  SimpleCardTemplate,
+  MapTemplate,
+  MapTemplateSkeleton,
+} from 'io-sanita-theme/components/Blocks';
 
 // import CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImageTemplate';
 // import CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithImageTemplateSkeleton';

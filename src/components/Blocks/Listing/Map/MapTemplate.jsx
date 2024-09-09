@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { OSMMap } from 'volto-venue';
 import { Row, Col, Container } from 'design-react-kit';
 import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
-import './mapTemplate.scss'
+import './mapTemplate.scss';
 
 const messages = defineMessages({
   default_detail_link: {
@@ -32,6 +32,7 @@ const MapTemplate = ({
   show_map_full_width,
   map_size = 'medium',
   linkmore_id_lighthouse,
+  ...rest
 }) => {
   const intl = useIntl();
   let history = useHistory();
@@ -72,18 +73,11 @@ const MapTemplate = ({
 
   return (
     <div className="map-template">
-      <Container className="px-4">
-        {title && (
-          <Row>
-            <Col>
-              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
-                {title}
-              </h2>
-            </Col>
-          </Row>
-        )}
+      <Container
+        className={!rest.show_block_bg || isEditMode ? 'px-0' : 'px-4'}
+      >
         {items?.length > 0 && markers?.length > 0 ? (
-          <Row
+          <div
             className={cx('mb-4 map-wrapper', {
               'full-width': show_map_full_width,
               ['size_' + map_size]: map_size,
@@ -98,7 +92,7 @@ const MapTemplate = ({
                 // dragging: false,
               }}
             />
-          </Row>
+          </div>
         ) : (
           intl.formatMessage(messages.no_markers)
         )}
