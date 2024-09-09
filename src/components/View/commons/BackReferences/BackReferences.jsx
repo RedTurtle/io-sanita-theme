@@ -38,23 +38,30 @@ const BackReferencesWrapper = ({ title, id, children }) => {
 };
 
 const BackReferences = ({ id, title, content, type }) => {
-  let backreferences =
-    content?.['@components']?.['back-references']?.[type] ?? [];
+  const backreferences =
+    content?.['@components']?.['view-extra-data']?.['back-references'];
+  let items = backreferences?.[type] ?? [];
 
-    switch(type){
-      case 'persona_uo':
-        backreferences = [ ...content?.['@components']?.['back-references']?.['responsabile']?.['UnitaOrganizzativa'] ?? [], ...content?.['@components']?.['back-references']?.['personale']?.['UnitaOrganizzativa'] ?? []];
-        break;
-      case 'persona_strutture':
-        backreferences = [ ...content?.['@components']?.['back-references']?.['responsabile']?.['Struttura'] ?? [], ...content?.['@components']?.['back-references']?.['personale']?.['Struttura'] ?? []];
-      default:
-        break;
-    }
+  switch (type) {
+    case 'persona_uo':
+      items = [
+        ...(backreferences?.['responsabile']?.['UnitaOrganizzativa'] ?? []),
+        ...(backreferences?.['personale']?.['UnitaOrganizzativa'] ?? []),
+      ];
+      break;
+    case 'persona_strutture':
+      items = [
+        ...(backreferences?.['responsabile']?.['Struttura'] ?? []),
+        ...(backreferences?.['personale']?.['Struttura'] ?? []),
+      ];
+    default:
+      break;
+  }
 
   const { onPaginationChange, currentPage, totalPages, displayItems, ref } =
-    useClientPagination({ items: backreferences });
+    useClientPagination({ items: items });
 
-  return backreferences.length > 0 ? (
+  return items.length > 0 ? (
     <BackReferencesWrapper title={title} id={id}>
       <div className="backreferences" ref={ref}>
         <Row>
@@ -65,7 +72,7 @@ const BackReferences = ({ id, title, content, type }) => {
           ))}
         </Row>
 
-        {totalPages > 1 &&
+        {totalPages > 1 && (
           <div className="pagination-wrapper">
             <Pagination
               activePage={currentPage}
@@ -75,7 +82,7 @@ const BackReferences = ({ id, title, content, type }) => {
               }}
             />
           </div>
-        }
+        )}
       </div>
     </BackReferencesWrapper>
   ) : (

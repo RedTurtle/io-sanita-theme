@@ -183,7 +183,7 @@ export default function applyConfig(config) {
           'navigation',
           'actions',
           'types',
-          'back-references',
+          'view-extra-data',
         ],
       },
     ],
