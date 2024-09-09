@@ -12,7 +12,7 @@ import { CardPlace } from 'io-sanita-theme/components';
 const messages = defineMessages({
   uo_correlata: {
     id: 'struttura_uo_correlata',
-    defaultMessage: 'Uffici correlati',
+    defaultMessage: 'Unità operativa',
   },
 });
 
@@ -33,13 +33,11 @@ const StrutturaUfficiCorrelati = ({ content }) => {
           ))}
         </Row>
       )}
-
     </RichTextSection>
   ) : (
     <></>
   );
 };
-
 
 StrutturaUfficiCorrelati.propTypes = {
   content: PropTypes.shape({

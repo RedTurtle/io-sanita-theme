@@ -12,6 +12,7 @@ import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 import { viewDate } from 'io-sanita-theme/helpers';
+import './cardSimple.scss';
 
 const messages = defineMessages({
   servizioOnline: {
@@ -36,9 +37,9 @@ export const CardSimple = ({
     item['@type'] === 'Servizio' && item?.servizio_attivo;
 
   return (
-    <Card className={`shadow rounded card-simple no-after ${className ?? ''}`}>
+    <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
-        <div className="card-simple-content">
+        <div className="card-body-main">
           <CardTitle tag={titleTag} className={isServizioOnline ? 'mb-1' : ''}>
             {item['@id'] ? (
               <UniversalLink
@@ -64,14 +65,9 @@ export const CardSimple = ({
 
           <CardText tag="div">
             {showDescription && <>{item.description}</>}
-
-            <CardCategoryBottom
-              item={item}
-              date={date}
-              isEditMode={isEditMode}
-            />
           </CardText>
         </div>
+        <CardCategoryBottom item={item} date={date} isEditMode={isEditMode} />
       </CardBody>
     </Card>
   );
