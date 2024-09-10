@@ -1,6 +1,12 @@
 //Fix for photo gallery alignament
 #main-content-section {
   .slider-container {
+    .it-card-bg {
+      @media (max-width: #{map-get($grid-breakpoints, md)}) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
     .slick-track {
       @media (min-width: #{map-get($grid-breakpoints, sm)}) {
         //if the gallery have more than 1 item, this rule will be applied to set alignment
