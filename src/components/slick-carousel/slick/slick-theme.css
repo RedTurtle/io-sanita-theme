@@ -16,12 +16,9 @@
   padding: 0;
   border: none;
   background: transparent;
-
   color: transparent;
-
   cursor: pointer;
-  font-size: 0;
-  line-height: 0;
+
   outline: none;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -33,7 +30,7 @@
 .slick-next:hover,
 .slick-next:focus {
   background: transparent;
-  color: transparent;
+
   outline: none;
 }
 
@@ -51,14 +48,15 @@
 
 .slick-prev:before,
 .slick-next:before {
-  color: white;
-  font-size: 20px;
+  font-size: 2em;
+  color: #000;
+  font-weight: bold;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
 
-  opacity: 0.75;
+  opacity: 1;
 }
 
 .slick-prev {
@@ -71,11 +69,11 @@
 }
 
 .slick-prev:before {
-  content: '←';
+  content: '<';
 }
 
 [dir='rtl'] .slick-prev:before {
-  content: '→';
+  content: '>';
 }
 
 .slick-next {
@@ -88,11 +86,11 @@
 }
 
 .slick-next:before {
-  content: '→';
+  content: '>';
 }
 
 [dir='rtl'] .slick-next:before {
-  content: '←';
+  content: '<';
 }
 
 /* Dots */

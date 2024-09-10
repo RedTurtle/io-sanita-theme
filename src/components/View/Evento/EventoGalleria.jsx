@@ -10,7 +10,7 @@ import { Gallery } from 'io-sanita-theme/components/View/commons';
 const messages = defineMessages({
   gallery: {
     id: 'evento_gallery',
-    defaultMessage: "Galleria",
+    defaultMessage: 'Galleria',
   },
 });
 

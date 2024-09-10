@@ -65,7 +65,7 @@ const UOView = ({ content }) => {
           showdates={false}
         />
         {/* HEADER IMAGE */}
-        <ContentImage content={content}   />
+        <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-lg-4">
