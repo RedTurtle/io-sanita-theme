@@ -15,7 +15,12 @@ import './module.scss';
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const Module = ({ item, titleTag = 'h3', showDescription = true }) => {
+const Module = ({
+  item,
+  titleTag = 'h3',
+  showDescription = true,
+  titleDataElement,
+}) => {
   const dispatch = useDispatch();
   const subrequests = useSelector((state) => state.content.subrequests);
   const url = flattenToAppURL(item['@id']);
@@ -43,7 +48,11 @@ const Module = ({ item, titleTag = 'h3', showDescription = true }) => {
             {modulo.file_principale ? (
               modulo.title ?? modulo.file_principale.filename
             ) : modulo['@type'] === 'Link' ? (
-              <UniversalLink item={modulo} title={modulo.title}>
+              <UniversalLink
+                item={modulo}
+                title={modulo.title}
+                data-element={titleDataElement}
+              >
                 {modulo.title}
               </UniversalLink>
             ) : (

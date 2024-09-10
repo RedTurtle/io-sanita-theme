@@ -1,0 +1,36 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
+.listing.inEvidenceTemplate {
+  .col-lg-12 {
+    .card {
+      h3,
+      h4,
+      h5 {
+        &.card-title {
+          @include rem-size(font-size, 32);
+        }
+      }
+    }
+  }
+
+  .card-wrapper.card-teaser-wrapper > .card-teaser {
+    margin: 0;
+  }
+
+  .card-persona {
+    h3,
+    h4,
+    h5 {
+      &.card-title {
+        @include rem-size(font-size, 24);
+      }
+    }
+
+    .card-body {
+      width: 100%;
+    }
+    .card-persona-content {
+      width: 50%;
+    }
+  }
+}

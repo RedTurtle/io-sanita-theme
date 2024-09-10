@@ -31,7 +31,6 @@ export const addInEvidenceTemplateOptions = (
     formData,
     intl,
     [
-      'show_icon',
       'show_section',
       'show_type',
       'hide_dates',
@@ -41,7 +40,6 @@ export const addInEvidenceTemplateOptions = (
     {
       hide_dates: { default: false },
       show_section: { default: false },
-      show_icon: { default: false },
       show_topics: { label: intl.formatMessage(messages.show_topics) },
     },
     pos,

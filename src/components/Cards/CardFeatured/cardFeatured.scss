@@ -20,6 +20,10 @@
     .card-body-main {
       //wrapper per mantenere il contenuto della card all'inizio della card
     }
+
+    &.no-image {
+      flex: 0 0 100% !important;
+    }
   }
 
   .card-teaser-image {
@@ -51,10 +55,10 @@
   &.card-featured-small {
     .card-teaser-image {
       .card-body {
-        flex: 0 0 79%;
+        flex: 0 0 69%;
       }
       .card-image {
-        flex: 0 0 20%;
+        flex: 0 0 30%;
       }
     }
   }

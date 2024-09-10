@@ -15,6 +15,7 @@ const SimpleCardTemplateDefault = (props) => {
     title,
     show_block_bg,
     linkmore_id_lighthouse,
+    id_lighthouse,
   } = props;
 
   const resultsUID = uuid();
@@ -24,7 +25,12 @@ const SimpleCardTemplateDefault = (props) => {
       <Row className="mb-3" id={resultsUID + '_results'}>
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
-            <SimpleCardDefault {...props} item={item} index={index} />
+            <SimpleCardDefault
+              {...props}
+              item={item}
+              index={index}
+              titleDataElement={id_lighthouse}
+            />
           </Col>
         ))}
       </Row>

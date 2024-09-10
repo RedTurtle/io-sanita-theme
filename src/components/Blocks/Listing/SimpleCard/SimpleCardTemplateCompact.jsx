@@ -25,7 +25,11 @@ const SimpleCardTemplateCompact = ({
       <Row className="mb-3">
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
-            <CardSimple item={item} showDescription={false} />
+            <CardSimple
+              item={item}
+              showDescription={false}
+              titleDataElement={id_lighthouse}
+            />
           </Col>
         ))}
       </Row>

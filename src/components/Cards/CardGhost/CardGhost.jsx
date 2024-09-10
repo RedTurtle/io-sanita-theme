@@ -1,23 +1,12 @@
 import React from 'react';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardCategory,
-} from 'design-react-kit';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 
-import {
-  getCalendarDate,
-  getEventRecurrenceMore,
-} from 'io-sanita-theme/helpers';
 import { Icon } from 'io-sanita-theme/components';
 
 import './cardGhost.scss';
 
-export const CardGhost = ({ item, isEditMode, rrule = {} }) => {
+export const CardGhost = ({ item, isEditMode, titleDataElement }) => {
   return (
     <Card className="no-after card-ghost border-bottom-card">
       <CardBody className="p-0 pb-3">
@@ -25,6 +14,7 @@ export const CardGhost = ({ item, isEditMode, rrule = {} }) => {
           item={!isEditMode ? item : null}
           href={isEditMode ? '#' : ''}
           className="card-title-link"
+          data-element={titleDataElement}
         >
           <CardTitle tag="h3" className="card-title-icon">
             {item.title}
@@ -39,4 +29,4 @@ export const CardGhost = ({ item, isEditMode, rrule = {} }) => {
   );
 };
 
-export default injectLazyLibs(['rrule'])(CardGhost);
+export default CardGhost;

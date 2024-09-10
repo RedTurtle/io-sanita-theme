@@ -4,13 +4,12 @@ import {
   MapTemplateSkeleton,
   HighlightedContentTemplate,
   HighlightedContentTemplateSkeleton,
+  InEvidenceTemplate,
+  InEvidenceTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImageTemplate';
 // import CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithImageTemplateSkeleton';
-
-// import InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidenceTemplate';
-// import InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/InEvidenceTemplateSkeleton';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
@@ -53,8 +52,8 @@ import {
   addDefaultOptions,
   addSimpleCardTemplateOptions,
   addMapTemplateOptions,
+  addInEvidenceTemplateOptions,
   // addCardWithImageTemplateOptions,
-  // addInEvidenceTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
@@ -93,19 +92,19 @@ const iosanitaListingVariations = [
   //   },
   //   cloneData: cloneBlock,
   // },
-  // {
-  //   id: 'inEvidenceTemplate',
-  //   isDefault: false,
-  //   title: 'In evidenza',
-  //   template: InEvidenceTemplate,
-  //   skeleton: InEvidenceTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     addInEvidenceTemplateOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
+  {
+    id: 'inEvidenceTemplate',
+    isDefault: false,
+    title: 'In evidenza',
+    template: InEvidenceTemplate,
+    skeleton: InEvidenceTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      addInEvidenceTemplateOptions(schema, formData, intl);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   {
     id: 'contentInEvidenceTemplate',
     isDefault: false,

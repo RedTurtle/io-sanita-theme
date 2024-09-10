@@ -24,8 +24,15 @@ import {
 import './highlightedContentTemplate.scss';
 
 const HighlightedContentTemplate = (props) => {
-  const { items, isEditMode, linkTitle, linkHref, rrule, show_block_bg } =
-    props;
+  const {
+    items,
+    isEditMode,
+    linkTitle,
+    linkHref,
+    rrule,
+    show_block_bg,
+    id_lighthouse,
+  } = props;
   const intl = useIntl();
 
   return (
@@ -52,6 +59,7 @@ const HighlightedContentTemplate = (props) => {
               item={item}
               key={item['@id']}
               titleTag="h2"
+              titleDataElement={id_lighthouse}
               isEditMode={isEditMode}
               className={cx({ 'has-link-more': readMoreHref })}
               category={

@@ -23,6 +23,7 @@ const CardFeatured = ({
   date,
   text,
   otherChildren,
+  titleDataElement,
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
@@ -38,13 +39,14 @@ const CardFeatured = ({
       teaser
       wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured card-featured-${size}`}
     >
-      <CardBody className="p-4">
+      <CardBody className={cx('p-4', { 'no-image': !img })}>
         <div className="card-body-main">
-          <CardTitle tag={titleTag} className="mb-3">
+          <CardTitle tag={titleTag} className="mb-3 mt-0">
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
               className="card-title-link"
+              data-element={titleDataElement}
             >
               {item.title}
             </UniversalLink>
