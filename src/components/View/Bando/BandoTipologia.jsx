@@ -12,10 +12,10 @@ const messages = defineMessages({
 const BandoTipologia = ({ content }) => {
   const intl = useIntl();
   return content?.tipologia_bando ? (
-    <>
+    <div className="mb-3">
       <h3 className="h5">{intl.formatMessage(messages.tipologia_bando)}</h3>
       <span>{content.tipologia_bando.title}</span>
-    </>
+    </div>
   ) : (
     <></>
   );

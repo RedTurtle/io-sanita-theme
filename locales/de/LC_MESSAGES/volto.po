@@ -32,6 +32,11 @@ msgstr ""
 msgid "Bando"
 msgstr ""
 
+#. Default: "Callout"
+#: components/Blocks/Callout/Sidebar
+msgid "Callout"
+msgstr ""
+
 #. Default: "Vedi"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
@@ -205,6 +210,11 @@ msgstr ""
 msgid "Next page"
 msgstr "Nächste Seite"
 
+#. Default: "Non ci sono punti da mostrare sulla mappa"
+#: components/Blocks/Listing/Map/MapTemplate
+msgid "Non ci sono punti da mostrare sulla mappa"
+msgstr ""
+
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
@@ -313,8 +323,14 @@ msgid "Trascina qui un file per sostituire quello esistente"
 msgstr ""
 
 #. Default: "Digita il testo…"
+#: components/Blocks/Callout/Edit
 #: helpers/Translations/overrideTranslations
 msgid "Type text…"
+msgstr ""
+
+#. Default: "Type the title…"
+#: components/Blocks/Callout/Edit
+msgid "Type the title…"
 msgstr ""
 
 #. Default: "Unauthorized"
@@ -333,6 +349,11 @@ msgstr ""
 #: components/layout/Footer/FooterNavigation
 #: components/layout/Footer/FooterSmall
 msgid "Vai alla pagina"
+msgstr ""
+
+#. Default: "Vedi"
+#: components/Blocks/Listing/Map/MapTemplate
+msgid "Vedi"
 msgstr ""
 
 #. Default: "Vedi tutto"
@@ -391,6 +412,11 @@ msgstr ""
 msgid "allTopics"
 msgstr ""
 
+#. Default: "Documenti allegati"
+#: components/View/Bando/BandoAllegati
+msgid "allegati"
+msgstr ""
+
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -436,9 +462,29 @@ msgstr ""
 msgid "backToSearch"
 msgstr ""
 
+#. Default: "A chi si rivolge"
+#: components/View/Bando/BandoAChiSiRivolge
+msgid "bando_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Area responsabile"
+#: components/View/Bando/BandoAreaResponsabile
+msgid "bando_area_responsabile"
+msgstr ""
+
 #. Default: "Scaduto"
 #: components/View/Bando/BandoStatus
 msgid "bando_closed"
+msgstr ""
+
+#. Default: "Come partecipare"
+#: components/View/Bando/BandoComePartecipare
+msgid "bando_come_partecipare"
+msgstr ""
+
+#. Default: "Cos'è"
+#: components/View/Bando/BandoCosE
+msgid "bando_cos_e"
 msgstr ""
 
 #. Default: "Data di pubblicazione"
@@ -446,9 +492,24 @@ msgstr ""
 msgid "bando_effective"
 msgstr ""
 
+#. Default: "Ente erogatore"
+#: components/View/Bando/BandoEnte
+msgid "bando_ente"
+msgstr ""
+
 #. Default: "In corso"
 #: components/View/Bando/BandoStatus
 msgid "bando_inProgress"
+msgstr ""
+
+#. Default: "Modalità di selezione"
+#: components/View/Bando/BandoModalitaSelezione
+msgid "bando_modalita_selezione"
+msgstr ""
+
+#. Default: "Note di aggiornamento"
+#: components/View/Bando/BandoNoteAggiornamento
+msgid "bando_note_aggiornamento"
 msgstr ""
 
 #. Default: "Attivo"
@@ -461,6 +522,11 @@ msgstr ""
 msgid "bando_scheduled"
 msgstr ""
 
+#. Default: "Servizi collegati"
+#: components/View/Bando/BandoServizi
+msgid "bando_servizi_collegati"
+msgstr ""
+
 #. Default: "Colore di sfondo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "block_bg_color"
@@ -469,6 +535,21 @@ msgstr ""
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "breadcrumb"
+msgstr ""
+
+#. Default: "Stile"
+#: components/Blocks/Callout/Sidebar
+msgid "callout_style"
+msgstr ""
+
+#. Default: "Base"
+#: components/Blocks/Callout/Sidebar
+msgid "callout_style_basic"
+msgstr ""
+
+#. Default: "In evidenza"
+#: components/Blocks/Callout/Sidebar
+msgid "callout_style_highlight"
 msgstr ""
 
 #. Default: "Carosello"
@@ -514,6 +595,36 @@ msgstr ""
 #. Default: "Chiudi cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "closeSearch"
+msgstr ""
+
+#. Default: "Colore"
+#: components/Blocks/Callout/Sidebar
+msgid "color"
+msgstr ""
+
+#. Default: "Danger"
+#: components/Blocks/Callout/Sidebar
+msgid "color_danger"
+msgstr ""
+
+#. Default: "Default"
+#: components/Blocks/Callout/Sidebar
+msgid "color_default"
+msgstr ""
+
+#. Default: "Note"
+#: components/Blocks/Callout/Sidebar
+msgid "color_note"
+msgstr ""
+
+#. Default: "Success"
+#: components/Blocks/Callout/Sidebar
+msgid "color_success"
+msgstr ""
+
+#. Default: "Warning"
+#: components/Blocks/Callout/Sidebar
+msgid "color_warning"
 msgstr ""
 
 #. Default: "A chi si rivolge"
@@ -741,18 +852,23 @@ msgstr ""
 msgid "from"
 msgstr ""
 
-#. Default: "Immagini"
-#: components/View/commons/Gallery/Gallery
-msgid "gallery"
-msgstr ""
-
 #. Default: "Chiudi l'anteprima"
 #: components/GalleryPreview/GalleryPreview
 msgid "gallery_close_preview"
 msgstr ""
 
-#. Default: "Vedi l'anteprima di"
+#. Default: "Immagini"
 #: components/View/commons/Gallery/Gallery
+msgid "gallery_images"
+msgstr ""
+
+#. Default: "Video"
+#: components/View/commons/Gallery/Gallery
+msgid "gallery_videos"
+msgstr ""
+
+#. Default: "Vedi l'anteprima di"
+#: components/View/commons/Gallery/GalleryImage
 msgid "gallery_viewPreview"
 msgstr ""
 
@@ -776,6 +892,11 @@ msgstr ""
 msgid "homepage"
 msgstr ""
 
+#. Default: "Icona"
+#: components/Blocks/Callout/Sidebar
+msgid "icon"
+msgstr ""
+
 #. Default: "Incarico"
 #: components/View/commons/PageHeader/PageHeaderPersona
 msgid "incarico"
@@ -792,6 +913,7 @@ msgid "legend_required"
 msgstr ""
 
 #. Default: "Collegamento"
+#: components/Cards/CardFile/CardFile
 #: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr ""
@@ -931,18 +1053,40 @@ msgid "modified"
 msgstr ""
 
 #. Default: "Scarica il file"
+#: components/View/Modulo/common/DownloadFileFormat
 #: helpers/Files/FileIcon
 msgid "modulo_download_file"
 msgstr ""
 
 #. Default: "Scarica in formato"
+#: components/View/Modulo/common/DownloadFileFormat
 #: helpers/Files/FileIcon
 msgid "modulo_download_in_format"
+msgstr ""
+
+#. Default: "File principale"
+#: components/View/Modulo/ModuloFilePrincipale
+msgid "modulo_file_principale"
+msgstr ""
+
+#. Default: "Formati alternativi"
+#: components/View/Modulo/ModuloFormatiAlternativi
+msgid "modulo_formati_alternativi"
 msgstr ""
 
 #. Default: "Non alterare le dimensioni naturali dell'immagine"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "natural_image_size"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/NewsItem/NewsItemDocumenti
+msgid "news_documenti"
+msgstr ""
+
+#. Default: "Galleria"
+#: components/View/NewsItem/NewsItemGallery
+msgid "news_gallery"
 msgstr ""
 
 #. Default: "A cura di"
@@ -978,6 +1122,11 @@ msgstr ""
 #. Default: "Ulteriori informazioni"
 #: components/View/NewsItem/NewsItemUlterioriInformazioni
 msgid "news_item_ulteriori_informazioni"
+msgstr ""
+
+#. Default: "Video"
+#: components/View/NewsItem/NewsItemGallery
+msgid "news_video_gallery"
 msgstr ""
 
 #. Default: "Novità"
@@ -1198,6 +1347,16 @@ msgstr ""
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
 msgid "persona_orari_ricevimento"
+msgstr ""
+
+#. Default: "Strutture in cui opera"
+#: components/View/Persona/PersonaStrutture
+msgid "persona_strutture"
+msgstr ""
+
+#. Default: "Unità operativa di appartenenza"
+#: components/View/Persona/PersonaUOAppartenenza
+msgid "persona_uo_appartenenza"
 msgstr ""
 
 #. Default: "Precedente"
@@ -1452,6 +1611,16 @@ msgstr ""
 msgid "servizio_accedi_al_servizio"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_allegati"
+msgstr ""
+
+#. Default: "Avvisi e notizie"
+#: components/View/Servizio/ServizioNotizie
+msgid "servizio_avvisi_e_notizie"
+msgstr ""
+
 #. Default: "Contatti"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: components/View/Servizio/ServizioContatti
@@ -1459,7 +1628,6 @@ msgid "servizio_contatti"
 msgstr ""
 
 #. Default: "Cos'è"
-#: components/View/Bando/BandoCosE
 #: components/View/Servizio/ServizioCosE
 msgid "servizio_cos_e"
 msgstr ""
@@ -1761,6 +1929,11 @@ msgstr ""
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Avvisi e notizie"
+#: components/View/Struttura/StrutturaNotizie
+msgid "struttura_avvisi_e_notizie"
+msgstr ""
+
 #. Default: "Come accedere"
 #: components/View/Struttura/StrutturaComeAccedere
 msgid "struttura_come_accedere"
@@ -1821,7 +1994,7 @@ msgstr ""
 msgid "struttura_servizi"
 msgstr ""
 
-#. Default: "Uffici correlati"
+#. Default: "Unità operativa"
 #: components/View/Struttura/StrutturaUfficiCorrelati
 msgid "struttura_uo_correlata"
 msgstr ""
@@ -1850,6 +2023,11 @@ msgstr ""
 #. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
 #: helpers/FormValidation/DataGrid
 msgid "timeline_tempi_scadenze_validation_error"
+msgstr ""
+
+#. Default: "Tipologia del bando"
+#: components/View/Bando/BandoTipologia
+msgid "tipologia_bando"
 msgstr ""
 
 #. Default: "Tipo evento"
@@ -1887,6 +2065,11 @@ msgstr ""
 msgid "twitter"
 msgstr ""
 
+#. Default: "Ufficio responsabile"
+#: components/View/Bando/BandoUfficioResponsabile
+msgid "ufficio_responsabile"
+msgstr ""
+
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
@@ -1900,6 +2083,11 @@ msgstr ""
 #. Default: "Allegati"
 #: components/View/UOView/UODocumenti
 msgid "uo_attachments"
+msgstr ""
+
+#. Default: "Avvisi e notizie"
+#: components/View/UOView/UONotizie
+msgid "uo_avvisi_e_notizie"
 msgstr ""
 
 #. Default: "Competenze"
@@ -1950,6 +2138,11 @@ msgstr ""
 #. Default: "Servizi"
 #: components/View/UOView/UOServizi
 msgid "uo_servizi"
+msgstr ""
+
+#. Default: "Strutture"
+#: components/View/UOView/UOStrutture
+msgid "uo_strutture"
 msgstr ""
 
 #. Default: "Data di aggiornamento"

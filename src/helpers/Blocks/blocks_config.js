@@ -22,7 +22,7 @@ export const DEFAULT_BG_COLORS = [
   },
 ];
 
-export const addSchemaStyles = (
+export const addSchemaStyles = ({
   intl,
   schema,
   fieldsetName = 'default',
@@ -39,7 +39,7 @@ export const addSchemaStyles = (
       type: 'boolean',
     },
   },
-) => {
+}) => {
   let fieldSet = schema.fieldsets.filter((f) => f.id == fieldsetName);
   if (fieldSet?.length == 0) {
     fieldSet = {

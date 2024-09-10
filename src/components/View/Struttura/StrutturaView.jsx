@@ -15,6 +15,7 @@ import {
   StrutturaServizi,
   StrutturaResponsabile,
   StrutturaPersonale,
+  StrutturaNotizie,
   StrutturaGalleria,
   StrutturaUfficiCorrelati,
   StrutturaStruttureCorrelate,
@@ -42,6 +43,7 @@ export const StrutturaSectionsOrder = [
   { /* SERVIZI */ component: StrutturaServizi },
   { /* RESPONSABILE */ component: StrutturaResponsabile },
   { /* PERSONALE */ component: StrutturaPersonale },
+  { /* AVVISI E NOTIZIE */ component: StrutturaNotizie },
   { /* GALLERIA */ component: StrutturaGalleria },
   { /* UFFICIO DI APPARTENENZA */ component: StrutturaUfficiCorrelati },
   { /* STRUTTURE CORRELATE */ component: StrutturaStruttureCorrelate },
@@ -50,11 +52,11 @@ export const StrutturaSectionsOrder = [
 ];
 
 /**
-* Struttura view component class.
-* @function Struttura
-* @params {object} content Content object.
-* @returns {string} Markup of the component.
-*/
+ * Struttura view component class.
+ * @function Struttura
+ * @params {object} content Content object.
+ * @returns {string} Markup of the component.
+ */
 const StrutturaView = ({ content }) => {
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
@@ -70,7 +72,7 @@ const StrutturaView = ({ content }) => {
           showdates={false}
         />
         {/* HEADER IMAGE */}
-        <ContentImage content={content}   />
+        <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-lg-4">

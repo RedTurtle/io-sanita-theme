@@ -62,9 +62,13 @@ export const CardFile = ({
 
   // Nel caso fosse un oggetto tipo CT
   if (!file) {
+    _item = { ...item };
+
     switch (item['@type']) {
       case 'File':
-        _item = item.file;
+        if (item.file) {
+          _item = item.file;
+        }
         if (item['@id'].indexOf('/@@download/') < 0) {
           _item['@id'] = `${item['@id']}/@@download/file`;
         } else {
@@ -72,15 +76,15 @@ export const CardFile = ({
         }
         break;
       case 'Image':
-        _item = item.image;
+        if (item.image) {
+          _item = item.image;
+        }
         break;
       case 'Link':
-        _item = { ...item };
         _item['@id'] =
           item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
         break;
       default:
-        _item = { ...item };
         break;
     }
     // Nel caso fosse un oggetto MIME type

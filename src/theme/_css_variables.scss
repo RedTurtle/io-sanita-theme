@@ -8,4 +8,6 @@
   --primary-lightest: #{$bg-primary-lightest};
   --primary-lighter: #{$bg-primary-lighter};
   --bs-primary-text: #{$primary-text};
+  --skeleton-bg: #{$lightgrey-c2};
+  --skeleton-item: #{darken($lightgrey-c2, 10)};
 }

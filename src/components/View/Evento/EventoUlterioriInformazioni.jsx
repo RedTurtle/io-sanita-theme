@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
 import { UniversalLink } from '@plone/volto/components';
-import { richTextHasContent, RichTextSection} from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 import { HelpBox } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({

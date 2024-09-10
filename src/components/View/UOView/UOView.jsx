@@ -17,6 +17,8 @@ import {
   UOFaParteDi,
   UODateOrari,
   UOCompetenze,
+  UOStrutture,
+  UONotizie,
 } from 'io-sanita-theme/components/View/UOView';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -37,9 +39,11 @@ export const UOViewSectionsOrder = [
   { /* FA PARTE DI */ component: UOFaParteDi },
   { /* RESPONSABILE */ component: UOResponsabile },
   { /* SERVIZI */ component: UOServizi },
+  { /* STRUTTURE */ component: UOStrutture },
   { /* PERSONE */ component: UOPersonale },
   { /* CONTATTI */ component: UOContatti },
   { /* DOCUMENTI */ component: UODocumenti },
+  { /* AVVISI E NOTIZIE */ component: UONotizie },
   { /* ULTERIORI INFORMAZIONI */ component: UOUlterioriInformazioni },
   { /* METADATA */ component: Metadata },
 ];
