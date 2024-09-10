@@ -13,7 +13,6 @@ import {
 const DefaultSkeleton = ({ isEditMode, title }) => {
   return (
     <Container>
-      default skeleton
       <div className="skeleton-template">
         {title && (
           <Row>

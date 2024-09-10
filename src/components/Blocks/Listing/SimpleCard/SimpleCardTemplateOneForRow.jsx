@@ -9,9 +9,6 @@ import {
   CardTitle,
   CardText,
   CardReadMore,
-  Button,
-  Row,
-  Col,
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';

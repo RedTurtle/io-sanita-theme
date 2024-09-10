@@ -14,45 +14,52 @@ export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/List
 export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
 export ListingCategory from 'io-sanita-theme/components/Blocks/Listing/commons/ListingCategory';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
+export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 
 /*Listing variations*/
 export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
 export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTemplate';
+export HighlightedContentTemplate from 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate';
 
 /*Skeleton*/
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
 export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
-
+export HighlightedContentTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/HighlightedContentTemplateSkeleton';
 
 // export PathFilters, {
 //   getPathFiltersButtons,
 // } from 'io-sanita-theme/components/Blocks/Listing/commons/PathFilters';
 
 /*Edit*/
-const BreakEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Break/Edit'
-  ),
+const BreakEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Break/Edit'
+    ),
 );
-const CalloutEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
-  ),
+const CalloutEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
+    ),
 );
-const HTMLBlockSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
-  ),
+const HTMLBlockSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
+    ),
 );
-const SearchMapEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
-  ),
+const SearchMapEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
+    ),
 );
-const SearchMapSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
-  ),
+const SearchMapSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
+    ),
 );
 
 export {

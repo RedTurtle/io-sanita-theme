@@ -18,7 +18,7 @@ const CardCategoryBottom = ({
 
   return display_category || date ? (
     <div className={cx('category-bottom', className)}>
-      {(display_category?.token || display_category?.title) && (
+      {display_category?.token || display_category?.title ? (
         <div className="category">
           {display_category?.token ? (
             <UniversalLink
@@ -34,6 +34,12 @@ const CardCategoryBottom = ({
             <span className="text">{display_category.title}</span>
           )}
         </div>
+      ) : (
+        display_category && (
+          <div className="category">
+            <span className="text">{category}</span>
+          </div>
+        )
       )}
       {date && <div className="data">{date}</div>}
     </div>
