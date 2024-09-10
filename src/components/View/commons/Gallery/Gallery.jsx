@@ -1,5 +1,6 @@
 import 'slick-carousel/slick/slick.css';
 import 'io-sanita-theme/components/slick-carousel/slick/slick-theme.css';
+import './gallery.scss';
 
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
