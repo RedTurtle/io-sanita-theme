@@ -17,6 +17,8 @@ import {
   SingleSlideWrapper,
   CarouselWrapper,
   SliderContainer,
+  NextArrow,
+  PrevArrow,
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
@@ -59,6 +61,8 @@ const Gallery = ({
       };
     };
     return {
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       speed: 500,
       ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
       responsive: [
