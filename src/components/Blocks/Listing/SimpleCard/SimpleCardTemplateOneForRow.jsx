@@ -99,12 +99,12 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
           const listingText = show_description ? (
             <ListingText item={item} />
           ) : null;
-          const category = getItemListingCategory(
+          const category = getItemListingCategory({
+            ...props,
             item,
             show_type,
             show_section,
-            props,
-          );
+          });
           const type = item['@type'];
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',

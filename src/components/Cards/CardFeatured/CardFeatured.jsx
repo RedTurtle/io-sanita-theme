@@ -20,6 +20,8 @@ const CardFeatured = ({
   isEditMode,
   className,
   category,
+  showDefaultCategory,
+  showDescription = true,
   date,
   text,
   otherChildren,
@@ -52,17 +54,22 @@ const CardFeatured = ({
             </UniversalLink>
           </CardTitle>
 
-          {otherChildren.afterTitle && otherChildren.afterTitle}
+          {size !== 'small' && showDescription && (
+            <>
+              {otherChildren.afterTitle && otherChildren.afterTitle}
 
-          {(text || item.description) && size !== 'small' && (
-            <CardText>{text || item.description}</CardText>
+              {(text || item.description) && (
+                <CardText>{text || item.description}</CardText>
+              )}
+
+              {otherChildren.afterText && otherChildren.afterText}
+            </>
           )}
-
-          {otherChildren.afterText && otherChildren.afterText}
         </div>
         <CardCategoryBottom
           item={item}
           category={category}
+          show_default={showDefaultCategory}
           date={date}
           isEditMode={isEditMode}
         />

@@ -89,7 +89,12 @@ const SimpleCardDefault = (props) => {
     ? null
     : getEventRecurrenceMore(item, isEditMode);
   const listingText = show_description ? <ListingText item={item} /> : null;
-  const category = getItemListingCategory(item, show_type, show_section, props);
+  const category = getItemListingCategory({
+    ...props,
+    item,
+    show_type,
+    show_section,
+  });
   const type = item['@type'];
 
   const BlockExtraTags = getComponentWithFallback({

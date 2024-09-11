@@ -32,6 +32,7 @@ const InEvidenceTemplate = (props) => {
     show_block_bg,
     show_section,
     show_type = true,
+    show_topics,
     show_description = true,
     id_lighthouse,
     hide_dates,
@@ -58,12 +59,13 @@ const InEvidenceTemplate = (props) => {
                 <ListingText item={item} />
               ) : null;
 
-              const category = getItemListingCategory(
+              const category = getItemListingCategory({
+                ...props,
                 item,
                 show_type,
                 show_section,
-                props,
-              );
+                show_topics,
+              });
 
               const isEventAppointment =
                 item?.parent?.['@type'] === 'Event' &&
@@ -97,6 +99,7 @@ const InEvidenceTemplate = (props) => {
                             <ListingCategory category={category} item={item} />
                           )
                         }
+                        showDefaultCategory={false}
                         otherChildren={{
                           afterTitle: isEventAppointment && (
                             <RassegnaInfo eventoPadre={item.parent} />
@@ -104,6 +107,7 @@ const InEvidenceTemplate = (props) => {
                           afterText: eventRecurrenceMore,
                         }}
                         text={listingText}
+                        showDescription={show_description}
                       />
                     </>
                   )}
