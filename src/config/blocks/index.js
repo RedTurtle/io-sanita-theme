@@ -8,6 +8,9 @@ import {
   SearchMapView,
   SearchMapEdit,
   SearchMapSchema,
+  SearchServiziPrestazioniView,
+  SearchServiziPrestazioniEdit,
+  SearchServiziPrestazioniSchema,
   CalloutView,
   CalloutEdit,
 } from 'io-sanita-theme/components/Blocks';
@@ -18,7 +21,7 @@ import { cloneBlock } from 'io-sanita-theme/helpers';
 const customBlocksOrder = [
   // { id: 'news', title: 'News' },
   // { id: 'homePage', title: 'Home Page' },
-  // { id: 'search', title: 'Ricerca' },
+  { id: 'search', title: 'Ricerca' },
 ];
 const customInitialBlocks = {
   // 'Pagina Argomento': ['title', 'description', 'text'],
@@ -98,6 +101,22 @@ export const applyIoSanitaBlocksConfig = (config) => {
         view: [],
       },
       schema: SearchMapSchema,
+      sidebarTab: 1,
+    },
+    searchServiziPrestazioni: {
+      id: 'searchServiziPrestazioni',
+      title: 'Cerca servizi o prestazioni',
+      icon: searchSVG,
+      group: 'search',
+      view: SearchServiziPrestazioniView,
+      edit: SearchServiziPrestazioniEdit,
+      restricted: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      schema: SearchServiziPrestazioniSchema,
       sidebarTab: 1,
     },
     break: {

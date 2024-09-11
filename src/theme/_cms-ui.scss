@@ -715,6 +715,24 @@ body.cms-ui {
       }
     }
   }
+
+  /* Edit form CT */
+  #page-edit .ui.form.vertical-form fieldset {
+    .ui.grid {
+      margin-top: 0;
+
+      .ui.attached.tabular.menu {
+        margin-top: -1rem;
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  /* Dropdown menu blocks */
+  .blocks-chooser .ui.accordion .title ~ .content {
+    display: contents;
+  }
 }
 
 /*Has toolbar*/
@@ -747,19 +765,6 @@ body.has-toolbar {
     .row.row-full-width {
       max-width: 100%;
       margin: 0;
-    }
-  }
-}
-
-/* Edit form CT */
-.cms-ui #page-edit .ui.form.vertical-form fieldset {
-  .ui.grid {
-    margin-top: 0;
-
-    .ui.attached.tabular.menu {
-      margin-top: -1rem;
-      max-width: 100%;
-      height: 100%;
     }
   }
 }
