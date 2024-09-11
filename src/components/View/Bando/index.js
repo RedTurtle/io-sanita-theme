@@ -72,18 +72,7 @@ export const BandoTipologia = loadable(
       /* webpackChunkName: "ISBandoView" */ 'io-sanita-theme/components/View/Bando/BandoTipologia'
     ),
 );
-export const BandoUfficioResponsabile = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISBandoView" */ 'io-sanita-theme/components/View/Bando/BandoUfficioResponsabile'
-    ),
-);
-export const BandoAreaResponsabile = loadable(
-  () =>
-    import(
-      /* webpackChunkName: "ISBandoView" */ 'io-sanita-theme/components/View/Bando/BandoAreaResponsabile'
-    ),
-);
+
 export const BandoAllegati = loadable(
   () =>
     import(

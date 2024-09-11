@@ -14,8 +14,6 @@ import {
   BandoComePartecipare,
   BandoModalitaSelezione,
   BandoAllegati,
-  BandoUfficioResponsabile,
-  BandoAreaResponsabile,
   BandoServizi,
   BandoUlterioriInformazioni,
   BandoMetadata,
@@ -40,8 +38,7 @@ export const BandoViewSectionsOrder = [
     /* GRADUATORIA ,ADEMPIMENTI CONSEQUENZIALI, ALTRI ALLEGATI, altre cartelle approfondimento*/ component:
       BandoAllegati,
   },
-  { /* UFFICIO */ component: BandoUfficioResponsabile },
-  { /* AREA */ component: BandoAreaResponsabile },
+
   { /* SERVIZI */ component: BandoServizi }, //potrebbe non servire. E' stato preso da io-comune per retrocompatibilità ma agid-ausl non dice che serve
   { /* ULTERIORI INFORMAZIONI  */ component: BandoUlterioriInformazioni },
 
