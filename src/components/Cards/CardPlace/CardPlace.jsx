@@ -12,7 +12,7 @@ import {
 
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
-import { Icon, CardCategoryBottom } from 'io-sanita-theme/components';
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
 import './cardPlace.scss';
 
@@ -32,6 +32,7 @@ const CardPlace = ({
   isEditMode,
   titleTag = 'h3',
   className,
+  titleDataElement,
 }) => {
   const intl = useIntl();
   const latLong = hasGeolocation(item)
@@ -45,14 +46,14 @@ const CardPlace = ({
   return (
     <Card
       className={cx('shadow rounded card-place no-after', className, {
-        'card-place-small': size == 'small',
+        'card-place-small': size === 'small',
       })}
     >
       <CardBody className="pe-3 d-flex">
         <div
           className={cx('card-place-content flex-grow-1', {
-            'pe-5': size != 'small',
-            'pe-3': size == 'small',
+            'pe-5': size !== 'small',
+            'pe-3': size === 'small',
           })}
         >
           <div className="card-place-content-top">
@@ -62,6 +63,7 @@ const CardPlace = ({
                   item={!isEditMode ? item : null}
                   href={isEditMode ? '#' : ''}
                   className="card-title-link"
+                  data-element={titleDataElement}
                 >
                   {item.nome_sede || item.title}
                 </UniversalLink>
@@ -71,7 +73,7 @@ const CardPlace = ({
             </CardTitle>
 
             <CardText tag="div">
-              {size != 'small' && (
+              {size !== 'small' && (
                 <>
                   {showAddress && (
                     <Address item={item} showDistance={false} tag="p" />
@@ -91,12 +93,12 @@ const CardPlace = ({
             <CardCategoryBottom item={item} isEditMode={isEditMode} />
           )}
         </div>
-        <AvatarIcon size={size == 'small' ? 'l' : 'xl'}>
+        <AvatarIcon size={size === 'small' ? 'l' : 'xl'}>
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
 
-      {type == 'complete' && size != 'small' && showGeolocation && (
+      {type === 'complete' && size !== 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
           <UniversalLink
             href={`http://maps.google.com/?q=${item?.street ?? ''} ${

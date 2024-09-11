@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import moment from 'moment';
@@ -9,9 +9,6 @@ import {
   CardTitle,
   CardText,
   CardReadMore,
-  Button,
-  Row,
-  Col,
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
@@ -102,12 +99,12 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
           const listingText = show_description ? (
             <ListingText item={item} />
           ) : null;
-          const category = getItemListingCategory(
+          const category = getItemListingCategory({
+            ...props,
             item,
             show_type,
             show_section,
-            props,
-          );
+          });
           const type = item['@type'];
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',

@@ -35,12 +35,13 @@ export const getItemIcon = (item) => {
   return custom_icon || icon;
 };
 
-export const getItemListingCategory = (
+export const getItemListingCategory = ({
   item,
   show_type,
   show_section,
-  props,
-) => {
+  show_topics,
+  ...other_props
+}) => {
   let cat = [];
 
   if (item) {
@@ -49,6 +50,12 @@ export const getItemListingCategory = (
     }
     if (show_type) {
       cat.push(item.type_title);
+    }
+    if (show_topics) {
+      const firstTopic = item?.parliamo_di_metadata?.[0];
+      if (firstTopic) {
+        cat.push(firstTopic?.title ?? firstTopic);
+      }
     }
   }
 

@@ -37,6 +37,8 @@ export const CardPersona = ({
   item,
   isEditMode,
   titleTag = 'h3',
+  className,
+  titleDataElement,
 }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -58,7 +60,7 @@ export const CardPersona = ({
       : null;
 
   return (
-    <Card className="shadow rounded card-persona no-after">
+    <Card className={cx('shadow rounded card-persona no-after', className)}>
       <CardBody className="d-flex">
         <div className="card-persona-content flex-grow-1 pe-5">
           <CardTitle tag={titleTag} className="mb-0">
@@ -66,6 +68,7 @@ export const CardPersona = ({
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
               className="card-title-link"
+              data-element={titleDataElement}
             >
               {item.title}
             </UniversalLink>
@@ -77,7 +80,7 @@ export const CardPersona = ({
                 {typeof incarico == 'string' ? incarico : incarico.title}
               </p>
             )}
-            {size != 'small' && (
+            {size !== 'small' && (
               <>
                 {item.struttura_ricevimento?.length > 0 ? (
                   <div className="mb-2 mt-2">
@@ -110,6 +113,7 @@ export const CardPersona = ({
             )}
           </CardText>
         </div>
+
         <AvatarIcon size="xl">
           {img ? img : <Icon icon="it-user" color="primary" />}
         </AvatarIcon>

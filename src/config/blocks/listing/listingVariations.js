@@ -2,16 +2,14 @@ import {
   SimpleCardTemplate,
   MapTemplate,
   MapTemplateSkeleton,
+  HighlightedContentTemplate,
+  HighlightedContentTemplateSkeleton,
+  InEvidenceTemplate,
+  InEvidenceTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImageTemplate';
 // import CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithImageTemplateSkeleton';
-
-// import InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidenceTemplate';
-// import InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/InEvidenceTemplateSkeleton';
-
-// import ContentInEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/ContentInEvidenceTemplate';
-// import ContentInEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/ContentInEvidenceTemplateSkeleton';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
@@ -54,8 +52,8 @@ import {
   addDefaultOptions,
   addSimpleCardTemplateOptions,
   addMapTemplateOptions,
+  addInEvidenceTemplateOptions,
   // addCardWithImageTemplateOptions,
-  // addInEvidenceTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
@@ -94,33 +92,33 @@ const iosanitaListingVariations = [
   //   },
   //   cloneData: cloneBlock,
   // },
-  // {
-  //   id: 'inEvidenceTemplate',
-  //   isDefault: false,
-  //   title: 'In evidenza',
-  //   template: InEvidenceTemplate,
-  //   skeleton: InEvidenceTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     addInEvidenceTemplateOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
-  // {
-  //   id: 'contentInEvidenceTemplate',
-  //   isDefault: false,
-  //   title: 'Contenuto in evidenza',
-  //   template: ContentInEvidenceTemplate,
-  //   skeleton: ContentInEvidenceTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addLighthouseField(schema, intl);
-  //     addDefaultOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
+  {
+    id: 'inEvidenceTemplate',
+    isDefault: false,
+    title: 'In evidenza',
+    template: InEvidenceTemplate,
+    skeleton: InEvidenceTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      addInEvidenceTemplateOptions(schema, formData, intl);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
+  {
+    id: 'contentInEvidenceTemplate',
+    isDefault: false,
+    title: 'Contenuto in evidenza',
+    template: HighlightedContentTemplate,
+    skeleton: HighlightedContentTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addLighthouseField(schema, intl);
+      addDefaultOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'ribbonCardTemplate',
   //   isDefault: false,

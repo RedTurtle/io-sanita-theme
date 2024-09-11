@@ -26,6 +26,7 @@ export const CardSimple = ({
   isEditMode,
   className,
   titleTag = 'h5',
+  titleDataElement,
 }) => {
   const intl = useIntl();
   const date =
@@ -46,6 +47,7 @@ export const CardSimple = ({
                 item={!isEditMode ? item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link"
+                data-element={titleDataElement}
               >
                 {item.title}
               </UniversalLink>

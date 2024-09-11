@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardCategory,
-} from 'design-react-kit';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
@@ -29,6 +23,7 @@ export const CardImage = ({
   isEditMode,
   titleTag = 'h3',
   rrule = {},
+  titleDataElement,
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
@@ -57,6 +52,7 @@ export const CardImage = ({
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
               className="card-title-link"
+              data-element={titleDataElement}
             >
               {item.title}
             </UniversalLink>

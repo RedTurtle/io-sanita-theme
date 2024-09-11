@@ -3,13 +3,8 @@
 */
 
 import React from 'react';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardCategory,
-} from 'design-react-kit';
+import cx from 'classnames';
+import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
@@ -23,6 +18,14 @@ const CardFeatured = ({
   titleTag = 'h3',
   imgSrc,
   isEditMode,
+  className,
+  category,
+  showDefaultCategory,
+  showDescription = true,
+  date,
+  text,
+  otherChildren,
+  titleDataElement,
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
@@ -34,27 +37,42 @@ const CardFeatured = ({
 
   return (
     <Card
-      className="shadow rounded card-teaser-image card-flex"
+      className={cx('shadow rounded card-teaser-image card-flex', className)}
       teaser
       wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured card-featured-${size}`}
     >
-      <CardBody className="p-4">
+      <CardBody className={cx('p-4', { 'no-image': !img })}>
         <div className="card-body-main">
-          <CardTitle tag={titleTag}>
+          <CardTitle tag={titleTag} className="mb-3 mt-0">
             <UniversalLink
               item={!isEditMode ? item : null}
               href={isEditMode ? '#' : ''}
               className="card-title-link"
+              data-element={titleDataElement}
             >
               {item.title}
             </UniversalLink>
           </CardTitle>
 
-          {item.description && size !== 'small' && (
-            <CardText>{item.description}</CardText>
+          {size !== 'small' && showDescription && (
+            <>
+              {otherChildren.afterTitle && otherChildren.afterTitle}
+
+              {(text || item.description) && (
+                <CardText>{text || item.description}</CardText>
+              )}
+
+              {otherChildren.afterText && otherChildren.afterText}
+            </>
           )}
         </div>
-        <CardCategoryBottom item={item} isEditMode={isEditMode} />
+        <CardCategoryBottom
+          item={item}
+          category={category}
+          show_default={showDefaultCategory}
+          date={date}
+          isEditMode={isEditMode}
+        />
       </CardBody>
 
       {img && <div className="card-image card-image-rounded">{img}</div>}
