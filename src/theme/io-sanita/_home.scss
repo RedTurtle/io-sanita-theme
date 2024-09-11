@@ -1,7 +1,8 @@
 .siteroot,
 body.public-ui.contenttype-lrf {
   .block-editor-title,
-  .documentFirstHeading {
+  .documentFirstHeading,
+  #briciole {
     display: none;
   }
 }
