@@ -235,6 +235,33 @@ body.cms-ui {
     }
   }
 
+  #page-controlpanel {
+    .objectlist-widget {
+      .accordion.styled {
+        .content {
+          .select-icon-widget {
+            display: flex;
+            & > div {
+              flex: 1;
+            }
+            .field-wrapper-ArgumentsTitle,
+            #icon-preview-widget-id {
+              svg {
+                width: 1em;
+              }
+              .wide.four {
+                display: none !important;
+              }
+              .wide.eight {
+                width: 100% !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   /*Sidebar and widgets*/
   .sidebar-container .object-listing,
   .icon-align-name {

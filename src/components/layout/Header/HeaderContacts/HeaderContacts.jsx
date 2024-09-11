@@ -18,7 +18,7 @@ const HeaderContacts = () => {
       tag: 'CUP',
       href: [
         {
-          '@id': 'tel:0601020304',
+          '@id': '0601020304',
           title: '0601020304',
         },
       ],
@@ -30,7 +30,7 @@ const HeaderContacts = () => {
       tag: 'URP',
       href: [
         {
-          '@id': 'tel:0601020304',
+          '@id': '0601020304',
           title: '0601020304',
         },
       ],
@@ -42,8 +42,8 @@ const HeaderContacts = () => {
       tag: 'CUP',
       href: [
         {
-          '@id': 'tel:0601020304',
-          title: '0601020304',
+          '@id': 'test@test.com',
+          title: 'test@test.com',
         },
       ],
       icon: 'hand-holding-heart',
