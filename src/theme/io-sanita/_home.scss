@@ -1,0 +1,17 @@
+.siteroot,
+body.public-ui.contenttype-lrf {
+  .block-editor-title,
+  .documentFirstHeading {
+    display: none;
+  }
+}
+
+body.subsite.subsite-root {
+  &,
+  .public-ui {
+    .documentFirstHeading,
+    #briciole {
+      display: none;
+    }
+  }
+}
