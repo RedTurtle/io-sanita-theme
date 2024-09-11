@@ -6,7 +6,7 @@ const schema = () => {
     fieldsets: [
       {
         id: 'contatti_testata',
-        fields: ['mainText', 'shortText', 'link', 'icon'],
+        fields: ['description', 'tag', 'href', 'icon'],
         title: 'contatti_testata',
       },
     ],

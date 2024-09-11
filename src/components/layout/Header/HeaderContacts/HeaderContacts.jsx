@@ -13,36 +13,42 @@ const HeaderContacts = () => {
   // exemplo items - arriverà via props
   const items = [
     {
+      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
       description: 'Prenota servizi e prestazioni',
       tag: 'CUP',
-      href: 'https://www.sitoweb.it',
+      href: [
+        {
+          '@id': 'tel:0601020304',
+          title: '0601020304',
+        },
+      ],
+      icon: 'hand-holding-heart',
     },
     {
+      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
       description: 'Richiedi informazioni o fai una segnalazione',
       tag: 'URP',
-      href: 'tel:0532123456',
+      href: [
+        {
+          '@id': 'tel:0601020304',
+          title: '0601020304',
+        },
+      ],
+      icon: 'baby',
     },
     {
+      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
       description: 'Prenota servizi e prestazioni',
       tag: 'CUP',
-      href: 'mailto:teto@prova.it',
-    },
-    {
-      description: 'Richiedi informazioni o fai una segnalazione',
-      tag: 'URP',
-      href: 'tel:0532123456',
+      href: [
+        {
+          '@id': 'tel:0601020304',
+          title: '0601020304',
+        },
+      ],
+      icon: 'hand-holding-heart',
     },
   ];
-
-  const getDisplayText = (link) => {
-    if (link.startsWith('tel:')) {
-      return link.replace('tel:', '');
-    } else if (link.startsWith('mailto:')) {
-      return link.replace('mailto:', '');
-    } else {
-      return link;
-    }
-  };
 
   return (
     items && (
@@ -51,26 +57,23 @@ const HeaderContacts = () => {
           <Row>
             {items.map((item, index) => {
               return (
-                <Col className="contact-wrapper" key={'header-contact' + index}>
-                  <span className="item-description">{item.description}</span>
-                  <span className="item-type">{item.tag}</span>
-                  <UniversalLink
-                    href={item.href}
-                    title={getDisplayText(item.href)}
-                  >
-                    {getDisplayText(item.href)}
-                  </UniversalLink>
-                  <Icon
-                    icon={
-                      item.href.startsWith('tel:')
-                        ? 'it-telephone'
-                        : item.href.startsWith('mailto:')
-                          ? 'it-mail'
-                          : 'it-link'
-                    }
-                    color="primary"
-                    size="sm"
-                  />
+                <Col className="contact-wrapper" key={item['@id']}>
+                  {item.description && (
+                    <span className="item-description">{item.description}</span>
+                  )}
+                  {item.tag && <span className="item-type">{item.tag}</span>}
+                  {item.href && (
+                    <UniversalLink
+                      href={item.href[0]['@id']}
+                      item={item.href[0]['@id']}
+                      title={item.href[0].title}
+                    >
+                      {item.href[0].title}
+                    </UniversalLink>
+                  )}
+                  {item.icon && (
+                    <Icon icon={item.icon} color="primary" size="sm" />
+                  )}
                 </Col>
               );
             })}

@@ -4,9 +4,8 @@ import { ObjectListWidget } from '@plone/volto/components';
 
 const ContattiTestataWidget = (props) => {
   const { id, value, onChange } = props;
-  console.log(props);
   const onChangeField = (id, value) => {
-    onChange(id, value);
+    onChange(id, JSON.stringify(value));
   };
 
   useEffect(() => {
@@ -17,9 +16,9 @@ const ContattiTestataWidget = (props) => {
 
   return (
     <ObjectListWidget
-      schema={schema()}
+      schema={schema}
       block={'contatti_testata'}
-      value={value ?? []}
+      value={JSON.parse(value) ?? []}
       onChange={onChangeField}
       id={id}
     />

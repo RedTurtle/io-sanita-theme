@@ -20,6 +20,11 @@
       align-items: center;
       column-gap: 0.5em;
 
+      .icon {
+        width: 1.2em;
+        height: 1.2em;
+      }
+
       @media (max-width: #{map-get($grid-breakpoints, md)}) {
         flex-basis: 50%;
         &:nth-child(even) {
