@@ -1,18 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { defineMessages, useIntl } from 'react-intl';
-import { Card, CardBody, CardTitle, Row, Col } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
-import { Icon, CardFile } from 'io-sanita-theme/components';
+
+import { Row, Col } from 'design-react-kit';
+import { CardFile } from 'io-sanita-theme/components';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 
-const messages = defineMessages({
-  allegati: {
-    id: 'allegati',
-    defaultMessage: 'Documenti allegati',
-  },
-});
 const BandoAttachment = ({ item }) => {
   if (
     item['@type'] === 'File' ||
@@ -22,21 +14,9 @@ const BandoAttachment = ({ item }) => {
   ) {
     return <CardFile item={item} />;
   }
-  //else if (item.type === 'Modulo') {
-  //   return (
-  //     <CardFile
-  //       item={{
-  //         ...item,
-  //         '@type': item.type,
-  //         '@id': item.url.replace(/\/view$/, ''),
-  //       }}
-  //     />
-  //   );
-  // }
 };
 
 const BandoAllegati = ({ content }) => {
-  const intl = useIntl();
   const approfondimenti =
     content?.['@components']?.['view-extra-data']?.approfondimenti;
 

@@ -28,7 +28,7 @@ const Module = ({
 
   useEffect(() => {
     if (
-      !item.file_principale &&
+      !item.file &&
       !item.formato_alternativo_1 &&
       !item.formato_alternativo_2
     ) {
@@ -45,8 +45,8 @@ const Module = ({
       <CardBody>
         <div className="card-file-content">
           <CardTitle tag={titleTag} className="mb-4">
-            {modulo.file_principale ? (
-              modulo.title ?? modulo.file_principale.filename
+            {modulo.file ? (
+              modulo.title ?? modulo.file.filename
             ) : modulo['@type'] === 'Link' ? (
               <UniversalLink
                 item={modulo}
@@ -64,9 +64,9 @@ const Module = ({
 
           <div className="download-formats">
             <DownloadFileFormat
-              file={modulo.file_principale}
+              file={modulo.file}
               showLabel={true}
-              title={modulo.title ?? modulo.file_principale.filename}
+              title={modulo.title ?? modulo.file.filename}
               hideFileFormatLabel={true}
               className={
                 modulo.formato_alternativo_1 || modulo.formato_alternativo_2
