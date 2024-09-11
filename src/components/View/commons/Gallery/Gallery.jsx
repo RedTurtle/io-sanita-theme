@@ -1,5 +1,6 @@
 import 'slick-carousel/slick/slick.css';
 import 'io-sanita-theme/components/slick-carousel/slick/slick-theme.css';
+import './gallery.scss';
 
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
@@ -17,6 +18,8 @@ import {
   SingleSlideWrapper,
   CarouselWrapper,
   SliderContainer,
+  NextArrow,
+  PrevArrow,
 } from 'io-sanita-theme/components';
 
 import { contentFolderHasItems } from 'io-sanita-theme/helpers';
@@ -63,6 +66,8 @@ const Gallery = ({
       };
     };
     return {
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       speed: 500,
       ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
       responsive: [

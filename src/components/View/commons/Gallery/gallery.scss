@@ -1,0 +1,30 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+#main-content-section {
+  .slider-container {
+    .it-card-bg {
+      @media (max-width: #{map-get($grid-breakpoints, md)}) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    .slick-track {
+      @media (min-width: #{map-get($grid-breakpoints, sm)}) {
+        //if the gallery have more than 1 item, this rule will be applied to set alignment
+        .slick-slide:not(:only-child) {
+          figure {
+            picture,
+            a {
+              height: 180px;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
