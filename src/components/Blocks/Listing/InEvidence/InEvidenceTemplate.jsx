@@ -72,20 +72,18 @@ const InEvidenceTemplate = (props) => {
                 item?.['@type'] === 'Event';
 
               return (
-                <Col lg={index > 0 ? 6 : 12}>
+                <Col lg={index > 0 ? 6 : 12} key={index}>
                   {item['@type'] === 'Persona' ? (
                     <CardPersona
                       item={item}
                       className="listing-item"
                       size={show_description ? 'big' : 'small'}
                       isEditMode={isEditMode}
-                      key={index}
                       titleDataElement={id_lighthouse}
                     />
                   ) : (
                     <>
                       <CardFeatured
-                        key={index}
                         item={item}
                         size={index > 0 ? 'small' : 'large'}
                         titleDataElement={id_lighthouse}
