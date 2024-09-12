@@ -1,4 +1,9 @@
 const defaultIconWidgetOptions = [
+  ['phone', 'Telefono'],
+  ['square-phone', 'Telefono 2'],
+  ['envelope', 'E-mail'],
+  ['at', 'Sito Web'],
+  ['globe', 'Sito Web 2'],
   ['hand-holding-heart', 'Anziano'],
   ['baby', 'Fanciullo'],
   ['child', 'Giovane'],
