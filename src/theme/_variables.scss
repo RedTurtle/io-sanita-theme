@@ -1,11 +1,10 @@
-$primary-h: 100 !default;
-$primary-s: 91 !default;
-$primary-b: 29 !default;
-$primary: hsl($primary-h, $primary-s * 1%, $primary-b * 1%) !default; //#07768d;
-$primary-dark: hsl($primary-h, $primary-s * 1%, 20%) !default;
+$primary-h: 189.85 !default;
+$primary-s: 95.04 !default;
+$primary-b: 55.29 !default;
+$primary-dark: hsl($primary-h, $primary-s, 20%) !default;
 $primary-darker: hsl(
   $primary-h,
-  $primary-s * 1%,
+  $primary-s,
   12%
 ) !default; // color-ocean-10 --> $primary-a12 --> primary-darker
 $accent: #9c0769 !default;
