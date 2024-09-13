@@ -4,51 +4,18 @@
  */
 
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
 import { Container, Row, Col } from 'design-react-kit';
 import './headerContacts.scss';
 
 const HeaderContacts = () => {
-  // exemplo items - arriverà via props
-  const items = [
-    {
-      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
-      description: 'Prenota servizi e prestazioni',
-      tag: 'CUP',
-      href: [
-        {
-          '@id': '0601020304',
-          title: '0601020304',
-        },
-      ],
-      icon: 'hand-holding-heart',
-    },
-    {
-      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
-      description: 'Richiedi informazioni o fai una segnalazione',
-      tag: 'URP',
-      href: [
-        {
-          '@id': '0601020304',
-          title: '0601020304',
-        },
-      ],
-      icon: 'baby',
-    },
-    {
-      '@id': 'ff4e6c69-d534-4de6-ba24-f239c8d03652',
-      description: 'Prenota servizi e prestazioni',
-      tag: 'CUP',
-      href: [
-        {
-          '@id': 'test@test.com',
-          title: 'test@test.com',
-        },
-      ],
-      icon: 'hand-holding-heart',
-    },
-  ];
+  const items = useSelector(
+    (state) =>
+      state?.content?.data?.['@components']?.['iosanita-settings']
+        .contatti_testata,
+  );
 
   return (
     items && (
