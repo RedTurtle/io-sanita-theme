@@ -31,9 +31,11 @@ $accordion-title-color: $body-color !default;
 
 //header
 $header-slim-bg-color: $primary-dark !default;
+$header-center-text-color: $primary-text !default;
 
 //footer
 $footer-top-background-asl: $primary-darker !default; // color-ocean-10 --> $primary-a12 //questo perchè su bootstrap-italia la variabile $footer-top-background non è definita come !default
+$footer-main-text-color: $header-center-text-color !default;
 
 //nav
 $nav-link-font-size: 1rem !default; // 18px

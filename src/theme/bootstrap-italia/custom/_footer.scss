@@ -8,12 +8,13 @@
   h5,
   .h5,
   h6,
-  .h6 {
-    color: $header-center-text-color;
+  .h6,
+  .it-brand-text {
+    color: $footer-main-text-color;
   }
 
   .icon {
-    fill: $header-center-text-color;
-    color: $header-center-text-color;
+    fill: $footer-main-text-color;
+    color: $footer-main-text-color;
   }
 }
