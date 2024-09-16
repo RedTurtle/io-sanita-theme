@@ -4,13 +4,27 @@
 .card-featured.card-teaser-wrapper-equal.card-teaser-block-2 {
   display: block;
 
-  h3,h4,h5{
-    &.card-title{
+  h3,
+  h4,
+  h5 {
+    &.card-title {
       @include rem-size(font-size, 24);
     }
   }
 
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+    .card-body-main {
+      //wrapper per mantenere il contenuto della card all'inizio della card
+    }
+
+    &.no-image {
+      flex: 0 0 100% !important;
+    }
+  }
 
   .card-teaser-image {
     .card-image {
@@ -41,10 +55,10 @@
   &.card-featured-small {
     .card-teaser-image {
       .card-body {
-        flex: 0 0 79%;
+        flex: 0 0 69%;
       }
       .card-image {
-        flex: 0 0 20%;
+        flex: 0 0 30%;
       }
     }
   }

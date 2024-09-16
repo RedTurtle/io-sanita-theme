@@ -1,6 +1,6 @@
 import React from 'react';
-import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   other_info: {
@@ -11,9 +11,9 @@ const messages = defineMessages({
 
 const BandoUlterioriInformazioni = ({ content }) => {
   const intl = useIntl();
-  return richTextHasContent(content.ulteriori_informazioni) ? (
+  return richTextHasContent(content.riferimenti_bando) ? (
     <RichTextSection
-      data={content.ulteriori_informazioni}
+      data={content.riferimenti_bando}
       tag_id="more_info"
       title={intl.formatMessage(messages.other_info)}
       anchorOffset={true}

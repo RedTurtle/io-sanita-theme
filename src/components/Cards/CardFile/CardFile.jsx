@@ -24,8 +24,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
-import config from '@plone/volto/registry';
+import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
 import { FileIcon } from 'io-sanita-theme/helpers';
 import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
@@ -49,6 +48,7 @@ export const CardFile = ({
   isEditMode,
   showDescription = true,
   file = null,
+  titleDataElement,
 }) => {
   const intl = useIntl();
   let _item = null;
@@ -56,15 +56,24 @@ export const CardFile = ({
 
   if (item['@type'] === 'Modulo') {
     return (
-      <Module item={item} titleTag="h3" showDescription={showDescription} />
+      <Module
+        item={item}
+        titleTag="h3"
+        showDescription={showDescription}
+        titleDataElement={titleDataElement}
+      />
     );
   }
 
   // Nel caso fosse un oggetto tipo CT
   if (!file) {
+    _item = { ...item };
+
     switch (item['@type']) {
       case 'File':
-        _item = item.file;
+        if (item.file) {
+          _item = item.file;
+        }
         if (item['@id'].indexOf('/@@download/') < 0) {
           _item['@id'] = `${item['@id']}/@@download/file`;
         } else {
@@ -72,15 +81,15 @@ export const CardFile = ({
         }
         break;
       case 'Image':
-        _item = item.image;
+        if (item.image) {
+          _item = item.image;
+        }
         break;
       case 'Link':
-        _item = { ...item };
         _item['@id'] =
           item.remoteUrl?.length > 0 ? item.remoteUrl : item['@id'];
         break;
       default:
-        _item = { ...item };
         break;
     }
     // Nel caso fosse un oggetto MIME type
@@ -125,6 +134,7 @@ export const CardFile = ({
                 className="card-title-link flex-grow-1 pe-4"
                 target={_item['@type'] === 'Link' ? '_blank' : '_self'}
                 rel={_item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
+                data-element={titleDataElement}
               >
                 {item.title}
               </UniversalLink>
@@ -135,6 +145,7 @@ export const CardFile = ({
                 title={file.filename}
                 target={pdfFile ? '_blank' : '_self'}
                 rel={pdfFile ? 'noopener noreferrer' : ''}
+                data-element={titleDataElement}
               >
                 {file.filename}
               </a>

@@ -1,0 +1,17 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
+.block.listing.contentInEvidenceTemplate {
+  .card {
+    .card-title {
+      @include rem-size(font-size, 32);
+    }
+
+    &.has-link-more {
+      .card-body {
+        .category-bottom {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

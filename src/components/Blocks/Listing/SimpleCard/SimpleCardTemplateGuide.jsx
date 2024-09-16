@@ -25,7 +25,11 @@ const SimpleCardTemplateGuide = ({
       <Row className="mb-3">
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
-            <CardGuide item={item} isEditMode={isEditMode} />
+            <CardGuide
+              item={item}
+              isEditMode={isEditMode}
+              titleDataElement={id_lighthouse}
+            />
           </Col>
         ))}
       </Row>

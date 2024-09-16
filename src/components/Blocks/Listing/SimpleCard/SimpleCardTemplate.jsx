@@ -41,7 +41,9 @@ const SimpleCardTemplate = (data) => {
   }
 
   return (
-    <Container className={!data.show_block_bg ? 'px-0' : ''}>
+    <Container
+      className={!data.show_block_bg || data.isEditMode ? 'px-0' : 'px-4'}
+    >
       {content}
     </Container>
   );

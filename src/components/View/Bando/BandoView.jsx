@@ -14,12 +14,9 @@ import {
   BandoComePartecipare,
   BandoModalitaSelezione,
   BandoAllegati,
-  BandoNoteAggiornamento,
-  BandoUfficioResponsabile,
-  BandoAreaResponsabile,
   BandoServizi,
-  BandoApprofondimenti,
   BandoUlterioriInformazioni,
+  BandoMetadata,
 } from 'io-sanita-theme/components/View/Bando';
 
 import {
@@ -27,8 +24,9 @@ import {
   RelatedItems,
   SkipToMainContent,
   useSideMenu,
-  Metadata,
 } from 'io-sanita-theme/components/View/commons';
+
+import './bando.scss';
 
 export const BandoViewSectionsOrder = [
   { /* COS'è  + tipologia + ente */ component: BandoCosE },
@@ -37,15 +35,14 @@ export const BandoViewSectionsOrder = [
   { /* COME PARTECIPARE */ component: BandoComePartecipare },
   { /* MODALITA DI SELEZIONE */ component: BandoModalitaSelezione },
   {
-    /* GRADUATORIA ,ADEMPIMENTI CONSEQUENZIALI, ALTRI ALLEGATI, altre cartelle approfindimento*/ component:
+    /* GRADUATORIA ,ADEMPIMENTI CONSEQUENZIALI, ALTRI ALLEGATI, altre cartelle approfondimento*/ component:
       BandoAllegati,
   },
-  { /* UFFICIO */ component: BandoUfficioResponsabile },
-  { /* AREA */ component: BandoAreaResponsabile },
+
   { /* SERVIZI */ component: BandoServizi }, //potrebbe non servire. E' stato preso da io-comune per retrocompatibilità ma agid-ausl non dice che serve
-  { /* NOTE AGGIORNAMENTO  */ component: BandoNoteAggiornamento },
   { /* ULTERIORI INFORMAZIONI  */ component: BandoUlterioriInformazioni },
-  { /* METADATA */ component: Metadata },
+
+  { /* METADATA */ component: BandoMetadata },
 ];
 /**
  * BandoView view component class.

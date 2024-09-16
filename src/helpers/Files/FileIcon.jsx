@@ -22,6 +22,7 @@ const FileIcon = ({
   showLabel = false,
   fileFormat = false,
 }) => {
+  console.log(item, fileFormat);
   const intl = useIntl();
   const defaultIcon = { lib: 'far', name: 'file-lines', svg_format: false };
   let label = intl.formatMessage(messages.download_file);
@@ -29,9 +30,9 @@ const FileIcon = ({
   let file = item;
 
   if (!fileFormat) {
-    if (item['@type'] === 'File') {
+    if (item['@type'] === 'File' && item.file) {
       file = item.file;
-    } else if (item['@type'] === 'Image') {
+    } else if (item['@type'] === 'Image' && item.image) {
       file = item.image;
     }
   }

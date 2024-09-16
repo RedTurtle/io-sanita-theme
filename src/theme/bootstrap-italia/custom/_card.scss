@@ -36,6 +36,7 @@
     align-items: center;
     margin-top: 2rem;
     font-size: $card-category-size;
+    flex-wrap: wrap-reverse;
 
     .category {
       font-weight: $font-weight-semibold;

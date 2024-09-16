@@ -10,10 +10,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-import { Portal } from 'react-portal';
+import { createPortal } from 'react-dom';
 import { injectIntl } from 'react-intl';
 import qs from 'query-string';
-import { createPortal } from 'react-dom';
 
 import loadable from '@loadable/component';
 
@@ -245,7 +244,7 @@ class View extends Component {
    */
   render() {
     const { views } = config;
-    if (this.props.error && this.props.error.code === 301) {
+    if ([301, 302].includes(this.props.error?.code)) {
       const redirect = flattenToAppURL(this.props.error.url)
         .split('?')[0]
         .replace('/++api++', '');
@@ -290,7 +289,7 @@ class View extends Component {
       this.getViewByLayout() || this.getViewByType() || this.getViewDefault();
 
     return (
-      <div id="view">
+      <div id="view" tabIndex="-1">
         <ContentMetadataTags content={this.props.content} />
         {/* Body class if displayName in component is set */}
         <BodyClass

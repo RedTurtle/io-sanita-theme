@@ -26,7 +26,11 @@ const SimpleCardTemplateGhost = ({
       <Row className="mb-3">
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
-            <CardGhost item={item} isEditMode={isEditMode} />
+            <CardGhost
+              item={item}
+              isEditMode={isEditMode}
+              titleDataElement={id_lighthouse}
+            />
           </Col>
         ))}
       </Row>

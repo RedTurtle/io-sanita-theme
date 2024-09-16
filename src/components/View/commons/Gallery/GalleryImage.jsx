@@ -9,7 +9,7 @@ const messages = defineMessages({
   },
 });
 
-const GalleryImage = ({ item, default_width_image }) => {
+const GalleryImage = ({ item, default_width_image, setViewImageIndex, i }) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
 

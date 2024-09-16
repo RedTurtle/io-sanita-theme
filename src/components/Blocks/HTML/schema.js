@@ -30,7 +30,7 @@ const HTMLBlockSchema = (props) => {
     required: [],
   };
 
-  addSchemaStyles(intl, schema);
+  addSchemaStyles({ intl, schema });
   return schema;
 };
 

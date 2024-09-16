@@ -100,14 +100,6 @@ export default function applyConfig(config) {
     defaultPageSize: 24,
     navDepth: 2,
     cookieExpires: 15552000, //6 month
-    serverConfig: {
-      ...config.settings.serverConfig,
-      //criticalCssPath: 'node_modules/io-sanita-theme/public/critical.css', //valido solo per i siti figli. Rimosso temporaneamente perchè fa un brutto effetto al caricamento della pagina
-      extractScripts: {
-        ...config.settings.serverConfig.extractScripts,
-        errorPages: true,
-      },
-    },
     querystringAdditionalFields: [],
 
     imageScales: {
@@ -186,7 +178,13 @@ export default function applyConfig(config) {
       ...config.settings.apiExpanders,
       {
         match: '',
-        GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+        GET_CONTENT: [
+          'breadcrumbs',
+          'navigation',
+          'actions',
+          'types',
+          'view-extra-data',
+        ],
       },
     ],
     appExtras: [

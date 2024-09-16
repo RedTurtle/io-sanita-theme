@@ -12,7 +12,7 @@ const messages = defineMessages({
 const BandoEnte = ({ content }) => {
   const intl = useIntl();
   return content?.ente_bando?.length > 0 ? (
-    <>
+    <div className="mb-3">
       <h3 className="h5">{intl.formatMessage(messages.ente)}</h3>
       {content.ente_bando.map((item, i) => (
         <span key={'ente_' + i}>
@@ -20,7 +20,7 @@ const BandoEnte = ({ content }) => {
           {i < content.ente_bando.length - 1 ? ', ' : ''}
         </span>
       ))}
-    </>
+    </div>
   ) : (
     <></>
   );

@@ -11,10 +11,12 @@ const messages = defineMessages({
 
 const BandoNoteAggiornamento = ({ content }) => {
   const intl = useIntl();
-  return content?.update_note ? (
+  return content?.note_aggiornamento ? (
     <div className="mb-4">
-      <h3 className="h5">{intl.formatMessage(messages.note_aggiornamento)}</h3>
-      <span>{content?.update_note}</span>
+      <h5>
+        <small>{intl.formatMessage(messages.note_aggiornamento)}</small>
+      </h5>
+      <span>{content?.note_aggiornamento}</span>
     </div>
   ) : (
     <></>
@@ -23,7 +25,7 @@ const BandoNoteAggiornamento = ({ content }) => {
 
 BandoNoteAggiornamento.propTypes = {
   content: PropTypes.shape({
-    update_note: PropTypes.shape(PropTypes.string),
+    note_aggiornamento: PropTypes.shape(PropTypes.string),
   }).isRequired,
 };
 export default BandoNoteAggiornamento;
