@@ -173,6 +173,15 @@ body.cms-ui {
     }
   }
 
+  //slate
+  .editor-link {
+    &.input-anchorlink-theme {
+      input {
+        font-size: 0.8rem;
+        padding: 0 0.3rem;
+      }
+    }
+  }
   /*Date picker*/
   .SingleDatePicker {
     z-index: unset;
