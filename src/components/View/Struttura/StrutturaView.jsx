@@ -20,6 +20,7 @@ import {
   StrutturaUfficiCorrelati,
   StrutturaStruttureCorrelate,
   StrutturaUlterioriInformazioni,
+  StrutturaAllegati,
 } from 'io-sanita-theme/components/View/Struttura';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -47,6 +48,7 @@ export const StrutturaSectionsOrder = [
   { /* GALLERIA */ component: StrutturaGalleria },
   { /* UFFICIO DI APPARTENENZA */ component: StrutturaUfficiCorrelati },
   { /* STRUTTURE CORRELATE */ component: StrutturaStruttureCorrelate },
+  { /* ALLEGATI */ component: StrutturaAllegati },
   { /* ULTERIORI INFORMAZIONI */ component: StrutturaUlterioriInformazioni },
   { /* METADATA */ component: Metadata },
 ];
