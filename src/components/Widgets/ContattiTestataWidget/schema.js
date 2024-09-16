@@ -6,7 +6,7 @@ const schema = () => {
     fieldsets: [
       {
         id: 'contatti_testata',
-        fields: ['description', 'tag', 'href', 'icon'],
+        fields: ['description', 'tag', 'value_link', 'icon'],
         title: 'contatti_testata',
       },
     ],
@@ -17,11 +17,12 @@ const schema = () => {
       tag: {
         title: 'Etichetta',
       },
-      href: {
-        title: 'link',
-        widget: 'object_browser',
-        mode: 'link',
-        allowExternals: true,
+      value_link: {
+        title: 'Link',
+        widget: 'richtext',
+        type: 'string',
+        description:
+          "Campo link: Accetta link interni ed esterni, email o numeri di telefono. Devono essere creati utilizzando lo strumento di collegamento dell'editor del campo",
       },
       icon: {
         title: 'Escolha um ícone',

@@ -6,6 +6,8 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
 import { IconPreviewWidget } from 'io-sanita-theme/components/Widgets';
 
+import './iconWidget.scss';
+
 const messages = defineMessages({
   icon: {
     id: 'icon',
