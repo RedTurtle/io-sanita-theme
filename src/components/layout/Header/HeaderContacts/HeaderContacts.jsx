@@ -23,7 +23,6 @@ const HeaderContacts = () => {
         <Container>
           <Row>
             {items.map((item, index) => {
-              console.log(item);
               return (
                 <Col className="contact-wrapper" key={item['@id']}>
                   {item.description && (
