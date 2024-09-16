@@ -14,7 +14,7 @@ const UOServizi = ({ content }) => {
 
   return (
     <BackReferences
-      type="servizi"
+      type="Servizio"
       content={content}
       id={'servizi'}
       title={intl.formatMessage(messages.servizi)}
