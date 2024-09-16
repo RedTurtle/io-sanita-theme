@@ -148,7 +148,7 @@ body.cms-ui {
     }
   }
 
-  &:not(.section-search):not(.section-sitemap) {
+  &:not(.section-search):not(.section-sitemap):not(.section-argomento) {
     .it-footer {
       display: none;
     }
