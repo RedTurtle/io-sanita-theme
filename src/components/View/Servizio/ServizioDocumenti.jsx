@@ -12,6 +12,7 @@ const messages = defineMessages({
     id: 'servizio_allegati',
     defaultMessage: 'Allegati',
   },
+  modulistica: { id: 'servizio_modulistica', defaultMessage: 'Modulistica' },
   documenti: {
     id: 'servizio_documenti',
     defaultMessage: 'Documenti',
@@ -23,16 +24,23 @@ const ServizioDocumenti = ({ content }) => {
 
   return (
     <>
-      {contentFolderHasItems(content, 'documenti') && (
+      {contentFolderHasItems(content, 'modulistica') && (
         <Attachments
           content={content}
-          folder_name={'documenti'}
+          folder_name={'modulistica'}
+          title={intl.formatMessage(messages.modulistica)}
+        />
+      )}
+      {contentFolderHasItems(content, 'allegati') && (
+        <Attachments
+          content={content}
+          folder_name={'allegati'}
           title={intl.formatMessage(messages.allegati)}
         />
       )}
 
       <BackReferences
-        type="documenti"
+        type="Documento"
         content={content}
         id={'documenti_correlati'}
         title={intl.formatMessage(messages.documenti)}
