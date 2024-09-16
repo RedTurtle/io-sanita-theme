@@ -59,7 +59,6 @@ export const CardFile = ({
   const intl = useIntl();
   let _item = null;
   let pdfFile = null;
-  console.log(showModified);
 
   if (item['@type'] === 'Modulo') {
     return (
