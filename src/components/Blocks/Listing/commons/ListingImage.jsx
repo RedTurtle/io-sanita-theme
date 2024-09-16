@@ -3,6 +3,8 @@ import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/defau
 import { flattenToAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
+/*TODO: SE NON VIENE USATO, TOGLIERLO*/
+
 const ListingImage = ({
   item = {},
   loading = 'lazy',
