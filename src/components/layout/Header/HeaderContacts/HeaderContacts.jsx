@@ -23,13 +23,14 @@ const HeaderContacts = () => {
         <Container>
           <Row>
             {items.map((item, index) => {
+              console.log(item);
               return (
                 <Col className="contact-wrapper" key={item['@id']}>
                   {item.description && (
                     <span className="item-description">{item.description}</span>
                   )}
                   {item.tag && <span className="item-type">{item.tag}</span>}
-                  {item.href && (
+                  {item.link_value && (
                     <UniversalLink
                       href={item.href[0]['@id']}
                       item={item.href[0]['@id']}
