@@ -360,6 +360,7 @@ msgstr ""
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/commons/ListingLinkMore
+#: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr "Voir tout"
@@ -414,11 +415,6 @@ msgstr "Toutes les options"
 msgid "allTopics"
 msgstr "Tous les sujets"
 
-#. Default: "Documenti allegati"
-#: components/View/Bando/BandoAllegati
-msgid "allegati"
-msgstr ""
-
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -467,11 +463,6 @@ msgstr "Retour à la recherche"
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
-msgstr ""
-
-#. Default: "Area responsabile"
-#: components/View/Bando/BandoAreaResponsabile
-msgid "bando_area_responsabile"
 msgstr ""
 
 #. Default: "Scaduto"
@@ -909,6 +900,11 @@ msgstr ""
 msgid "index"
 msgstr ""
 
+#. Default: "Ultimo agg.to:"
+#: components/Cards/CardFile/CardFile
+msgid "last_update"
+msgstr ""
+
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
 #: overrideTranslations
 msgid "legend_required"
@@ -916,7 +912,6 @@ msgstr "Les champs marqués d'une (*) sont obligatoires."
 
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
-#: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr ""
 
@@ -1380,6 +1375,11 @@ msgstr "Imprimer"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "publication_date"
+msgstr ""
+
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
 msgstr ""
 
 #. Default: "Tempo di lettura"
@@ -2065,11 +2065,6 @@ msgstr "Sujets"
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
-
-#. Default: "Ufficio responsabile"
-#: components/View/Bando/BandoUfficioResponsabile
-msgid "ufficio_responsabile"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."
