@@ -30,13 +30,10 @@ const HeaderContacts = () => {
                   )}
                   {item.tag && <span className="item-type">{item.tag}</span>}
                   {item.link_value && (
-                    <UniversalLink
-                      href={item.href[0]['@id']}
-                      item={item.href[0]['@id']}
-                      title={item.href[0].title}
-                    >
-                      {item.href[0].title}
-                    </UniversalLink>
+                    <div
+                      className="link-value"
+                      dangerouslySetInnerHTML={{ __html: item.link_value.data }}
+                    />
                   )}
                   {item.icon && (
                     <Icon icon={item.icon} color="primary" size="sm" />
