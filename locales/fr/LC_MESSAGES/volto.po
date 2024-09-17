@@ -360,6 +360,7 @@ msgstr ""
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/commons/ListingLinkMore
+#: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr "Voir tout"
@@ -414,11 +415,6 @@ msgstr "Toutes les options"
 msgid "allTopics"
 msgstr "Tous les sujets"
 
-#. Default: "Documenti allegati"
-#: components/View/Bando/BandoAllegati
-msgid "allegati"
-msgstr ""
-
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -432,6 +428,11 @@ msgstr ""
 #. Default: "Apertura del bando"
 #: components/View/Bando/Dates
 msgid "apertura_bando"
+msgstr ""
+
+#. Default: "Area territoriale"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "area_territoriale"
 msgstr ""
 
 #. Default: "Allegato"
@@ -467,11 +468,6 @@ msgstr "Retour à la recherche"
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
-msgstr ""
-
-#. Default: "Area responsabile"
-#: components/View/Bando/BandoAreaResponsabile
-msgid "bando_area_responsabile"
 msgstr ""
 
 #. Default: "Scaduto"
@@ -574,6 +570,11 @@ msgstr ""
 msgid "chiusura_procedimento_bando"
 msgstr ""
 
+#. Default: "Circoscrizione"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "circoscrizione"
+msgstr ""
+
 #. Default: "Clear all filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearAllFilters"
@@ -654,6 +655,16 @@ msgstr ""
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
+#. Default: "Comune"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "comune"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
+msgid "contatti"
+msgstr ""
+
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -727,6 +738,11 @@ msgstr ""
 #. Default: "Servizio di riferimento"
 #: components/View/Documento/DocumentoServiziProcedure
 msgid "documento_servizio_riferimento"
+msgstr ""
+
+#. Default: "Dove"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "dove"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -834,6 +850,21 @@ msgstr ""
 msgid "expire"
 msgstr "Expiration"
 
+#. Default: "Ferie"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
+msgid "ferie"
+msgstr ""
+
+#. Default: "Dal"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
+msgid "ferie_from"
+msgstr ""
+
+#. Default: "Al"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
+msgid "ferie_to"
+msgstr ""
+
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
@@ -916,7 +947,6 @@ msgstr "Les champs marqués d'une (*) sont obligatoires."
 
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
-#: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr ""
 
@@ -938,6 +968,11 @@ msgstr ""
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "loadVideo"
+msgstr ""
+
+#. Default: "Località"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "localita"
 msgstr ""
 
 #. Default: "log in"
@@ -1382,6 +1417,16 @@ msgstr "Imprimer"
 msgid "publication_date"
 msgstr ""
 
+#. Default: "Quartiere"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
+msgid "quartiere"
+msgstr ""
+
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
+msgstr ""
+
 #. Default: "Tempo di lettura"
 #: components/View/commons/PageHeader/PageHeader
 msgid "reading_time"
@@ -1401,6 +1446,16 @@ msgstr "Supprimer l'option"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
 msgstr "Supprimer le sujet"
+
+#. Default: "Telefono"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
+msgid "riferimento_telefonico_farmacia"
+msgstr ""
+
+#. Default: "Telefono turno"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
+msgid "riferimento_telefonico_turno_farmacia"
+msgstr ""
 
 #. Default: "il giorno"
 #: overrideTranslations
@@ -1652,6 +1707,11 @@ msgstr ""
 #. Default: "Dove"
 #: components/View/Servizio/ServizioDove
 msgid "servizio_dove"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
 msgstr ""
 
 #. Default: "Servizio online"
@@ -1931,6 +1991,11 @@ msgstr ""
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
+msgstr ""
+
 #. Default: "Avvisi e notizie"
 #: components/View/Struttura/StrutturaNotizie
 msgid "struttura_avvisi_e_notizie"
@@ -2062,14 +2127,24 @@ msgstr ""
 msgid "topics"
 msgstr "Sujets"
 
+#. Default: "Turni"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
+msgid "turni"
+msgstr ""
+
+#. Default: "Dal"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
+msgid "turni_from"
+msgstr ""
+
+#. Default: "Al"
+#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
+msgid "turni_to"
+msgstr ""
+
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
-
-#. Default: "Ufficio responsabile"
-#: components/View/Bando/BandoUfficioResponsabile
-msgid "ufficio_responsabile"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."
