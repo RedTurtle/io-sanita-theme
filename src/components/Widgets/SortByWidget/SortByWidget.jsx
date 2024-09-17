@@ -1,7 +1,6 @@
 import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import { Icon } from 'io-sanita-theme/components';
 import {
   UncontrolledDropdown,
   DropdownToggle,
@@ -10,8 +9,9 @@ import {
   LinkListItem,
   Button,
 } from 'design-react-kit';
-import { Icon } from 'io-sanita-theme/components';
-import './_sort_by.scss';
+
+/* STYLE */
+import './_sortByWidget.scss';
 
 /**
  * Dropdown view component class.
@@ -38,13 +38,13 @@ const messages = defineMessages({
   },
 });
 
-const SortBy = ({ order, action }) => {
+const SortByWidget = ({ order, action }) => {
   const intl = useIntl();
 
   const options = [
     {
-      sort_on: null,
-      sort_order: null,
+      sort_on: 'relevance',
+      sort_order: 'ascending',
       title: intl.formatMessage(messages.sort_relevance),
     },
     {
@@ -73,7 +73,7 @@ const SortBy = ({ order, action }) => {
   };
 
   return (
-    <UncontrolledDropdown className="sort_results">
+    <UncontrolledDropdown className="sort-by-widget">
       <DropdownToggle color="primary" outline caret>
         <small>{intl.formatMessage(messages.sort)}</small>{' '}
         <Icon color="primary" icon="it-expand" padding={false} size="sm" />
@@ -88,7 +88,7 @@ const SortBy = ({ order, action }) => {
               tabIndex={-1}
               onKeyDown={handleKeyDown}
               aria-controls="main-content-section"
-              active={order.sort_on === item.sort_on}
+              active={order?.sort_on === item.sort_on}
             >
               <Button
                 title={item.title}
@@ -112,4 +112,4 @@ const SortBy = ({ order, action }) => {
     </UncontrolledDropdown>
   );
 };
-export default SortBy;
+export default SortByWidget;

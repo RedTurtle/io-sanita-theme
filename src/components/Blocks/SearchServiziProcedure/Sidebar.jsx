@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, FormattedMessage } from 'react-intl';
-
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
 const Sidebar = (props) => {
@@ -16,8 +15,8 @@ const Sidebar = (props) => {
       <header className="header pulled">
         <h2>
           <FormattedMessage
-            id="Ricerca servizi o prestazioni"
-            defaultMessage="Ricerca servizi o prestazioni"
+            id="Ricerca servizi o procedure"
+            defaultMessage="Ricerca servizi o procedure"
           />
         </h2>
       </header>

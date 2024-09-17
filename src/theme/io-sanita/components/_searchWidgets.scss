@@ -1,0 +1,9 @@
+/* SEARCH BAR */
+.form-group.search-bar-widget {
+    label.active {
+        @include font-size($h5-font-size);
+        font-weight: 600;
+        position: unset;
+        transform: none;
+    }
+}

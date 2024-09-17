@@ -6,26 +6,23 @@
 import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Spinner } from 'design-react-kit';
+import config from '@plone/volto/registry';
+import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
+import { getTassonomieSearch } from 'io-sanita-theme/actions';
 import {
   PageHeader,
   SkipToMainContent,
 } from 'io-sanita-theme/components/View/commons';
 import {
-  SideMenu,
-  SortBy,
-} from 'io-sanita-theme/components/View/AggregationPage';
-import {
   RemoveBodyClass,
   CardSimple,
   Pagination,
+  SortByWidget,
 } from 'io-sanita-theme/components';
 
-import { getTassonomieSearch } from 'io-sanita-theme/actions';
-
-import config from '@plone/volto/registry';
+/* STYLE */
 import './_aggregationPage.scss';
 
 const messages = defineMessages({
@@ -164,7 +161,7 @@ const AggregationPage = ({ match, route, location }) => {
             aria-live="polite"
           >
             <div className="d-flex justify-content-end mb-4">
-              <SortBy
+              <SortByWidget
                 order={searchParams.order}
                 action={(sortby) => {
                   setSearchParams({ ...searchParams, order: sortby });
@@ -189,8 +186,8 @@ const AggregationPage = ({ match, route, location }) => {
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
                         : item.type_title
-                        ? [{ title: item.type_title }]
-                        : [];
+                          ? [{ title: item.type_title }]
+                          : [];
                     return (
                       <CardSimple
                         key={i + 'result'}

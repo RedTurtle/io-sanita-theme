@@ -3,13 +3,13 @@ import loadable from '@loadable/component';
 /*Schema*/
 export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
 export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
-export { SearchServiziPrestazioniSchema } from 'io-sanita-theme/components/Blocks/SearchServiziPrestazioni/schema';
+export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
 
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
 export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
 export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
-export SearchServiziPrestazioniView from 'io-sanita-theme/components/Blocks/SearchServiziPrestazioni/View';
+export SearchServiziProcedureView from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View';
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
@@ -56,14 +56,14 @@ const SearchMapSidebar = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
   ),
 );
-const SearchServiziPrestazioniEdit = loadable(() =>
+const SearchServiziProcedureEdit = loadable(() =>
   import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziPrestazioni/Edit'
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Edit'
   ),
 );
-const SearchServiziPrestazioniSidebar = loadable(() =>
+const SearchServiziProcedureSidebar = loadable(() =>
   import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziPrestazioni/Sidebar'
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Sidebar'
   ),
 );
 
@@ -72,7 +72,7 @@ export {
   CalloutEdit,
   SearchMapEdit,
   SearchMapSidebar,
-  SearchServiziPrestazioniEdit,
-  SearchServiziPrestazioniSidebar,
+  SearchServiziProcedureEdit,
+  SearchServiziProcedureSidebar,
   HTMLBlockSidebar,
 };

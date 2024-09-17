@@ -8,9 +8,9 @@ import {
   SearchMapView,
   SearchMapEdit,
   SearchMapSchema,
-  SearchServiziPrestazioniView,
-  SearchServiziPrestazioniEdit,
-  SearchServiziPrestazioniSchema,
+  SearchServiziProcedureView,
+  SearchServiziProcedureEdit,
+  SearchServiziProcedureSchema,
   CalloutView,
   CalloutEdit,
 } from 'io-sanita-theme/components/Blocks';
@@ -103,20 +103,20 @@ export const applyIoSanitaBlocksConfig = (config) => {
       schema: SearchMapSchema,
       sidebarTab: 1,
     },
-    searchServiziPrestazioni: {
-      id: 'searchServiziPrestazioni',
+    SearchServiziProcedure: {
+      id: 'SearchServiziProcedure',
       title: 'Cerca servizi o prestazioni',
       icon: searchSVG,
       group: 'search',
-      view: SearchServiziPrestazioniView,
-      edit: SearchServiziPrestazioniEdit,
+      view: SearchServiziProcedureView,
+      edit: SearchServiziProcedureEdit,
       restricted: false,
       cloneData: cloneBlock,
       security: {
         addPermission: [],
         view: [],
       },
-      schema: SearchServiziPrestazioniSchema,
+      schema: SearchServiziProcedureSchema,
       sidebarTab: 1,
     },
     break: {

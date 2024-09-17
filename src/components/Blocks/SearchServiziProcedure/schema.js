@@ -15,26 +15,23 @@ const messages = defineMessages({
   },
 });
 
-export function SearchServiziPrestazioniSchema({ formData, intl }) {
+export function SearchServiziProcedureSchema({ formData, intl }) {
   return {
     fieldsets: [
       {
         id: 'default',
         title: 'Default',
-        fields: [
-          'title',
-          'path',
-          'portal_type',
-        ],
+        fields: ['title', 'path', 'portal_type'],
       },
     ],
     properties: {
       portal_type: {
         title: intl.formatMessage(messages.portal_type),
-        default: 'Servizi',
+        default: 'Servizio',
+        //isClearable: false, non funziona
         choices: [
-          ['Servizi', 'Servizi'],
-          ['Prestazioni', 'Prestazioni'],
+          ['Servizio', 'Servizi e prestazioni'],
+          ['ComeFarePer', 'Procedure'],
         ],
       },
       title: {
