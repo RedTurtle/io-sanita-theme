@@ -11,6 +11,7 @@ import { ServizioView } from 'io-sanita-theme/components/View/Servizio';
 import { PuntoDiContattoView } from 'io-sanita-theme/components/View/PuntoDiContatto';
 import { BandoView } from 'io-sanita-theme/components/View/Bando';
 import { ModuloView } from 'io-sanita-theme/components/View/Modulo';
+import { FarmaciaView } from 'io-sanita-theme/components/View/Farmacia';
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
@@ -27,6 +28,8 @@ const ioSanitaContentTypesViews = {
   Step: StepView,
   Bando: BandoView,
   Modulo: ModuloView,
+  // Farmacie
+  Farmacia: FarmaciaView,
 };
 
 /* LAYOUT VIEWS */
