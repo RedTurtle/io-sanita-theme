@@ -1,5 +1,4 @@
 import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
 /**
@@ -9,21 +8,14 @@ import PropTypes from 'prop-types';
  * @returns {string} Markup of the component.
  */
 
-const messages = defineMessages({
-  incarico: {
-    id: 'incarico',
-    defaultMessage: 'Incarico',
-  },
-});
-
 const PageHeaderPersona = ({ content }) => {
-  const intl = useIntl();
+  const lastRoleName = content.incarico.title.split('»').pop().trim();
 
   return content['@type'] === 'Persona' ? (
     <>
       {content?.incarico?.title && (
         <p className="subtitle">
-          <strong>{content.incarico.title}</strong>
+          <strong>{lastRoleName}</strong>
         </p>
       )}
     </>
