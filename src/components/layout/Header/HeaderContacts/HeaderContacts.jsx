@@ -3,9 +3,7 @@
  * @module components/ItaliaTheme/Header/HeaderContacts/HeaderContacts
  */
 
-import React from 'react';
 import { useSelector } from 'react-redux';
-import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
 import { Container, Row, Col } from 'design-react-kit';
 import './headerContacts.scss';

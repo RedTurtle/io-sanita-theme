@@ -358,6 +358,7 @@ msgstr ""
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/commons/ListingLinkMore
+#: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr ""
@@ -412,11 +413,6 @@ msgstr ""
 msgid "allTopics"
 msgstr ""
 
-#. Default: "Documenti allegati"
-#: components/View/Bando/BandoAllegati
-msgid "allegati"
-msgstr ""
-
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -465,11 +461,6 @@ msgstr ""
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
-msgstr ""
-
-#. Default: "Area responsabile"
-#: components/View/Bando/BandoAreaResponsabile
-msgid "bando_area_responsabile"
 msgstr ""
 
 #. Default: "Scaduto"
@@ -894,7 +885,13 @@ msgstr ""
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
+#: components/Widgets/IconWidget/IconWidget
 msgid "icon"
+msgstr ""
+
+#. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
+#: components/Widgets/IconWidget/IconWidget
+msgid "iconDescription"
 msgstr ""
 
 #. Default: "Incarico"
@@ -914,7 +911,6 @@ msgstr ""
 
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
-#: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr ""
 
@@ -1369,6 +1365,11 @@ msgstr ""
 msgid "prenota_online_deafult_label"
 msgstr ""
 
+#. Default: "Anteprima dell'icona scelta"
+#: components/Widgets/IconWidget/IconPreviewWidget
+msgid "previewIconSelected"
+msgstr ""
+
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
@@ -1378,6 +1379,11 @@ msgstr ""
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "publication_date"
+msgstr ""
+
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
 msgstr ""
 
 #. Default: "Tempo di lettura"
@@ -1650,6 +1656,11 @@ msgstr ""
 #. Default: "Dove"
 #: components/View/Servizio/ServizioDove
 msgid "servizio_dove"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
 msgstr ""
 
 #. Default: "Servizio online"
@@ -1929,6 +1940,11 @@ msgstr ""
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
+msgstr ""
+
 #. Default: "Avvisi e notizie"
 #: components/View/Struttura/StrutturaNotizie
 msgid "struttura_avvisi_e_notizie"
@@ -2063,11 +2079,6 @@ msgstr ""
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
-
-#. Default: "Ufficio responsabile"
-#: components/View/Bando/BandoUfficioResponsabile
-msgid "ufficio_responsabile"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."

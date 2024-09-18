@@ -22,11 +22,11 @@ const schema = () => {
         description:
           "Campo link: Accetta link interni ed esterni, email o numeri di telefono. Devono essere creati utilizzando lo strumento di collegamento dell'editor del campo",
         type: 'string',
-        widget: 'richtext',
+        widget: 'slate',
       },
       icon: {
-        title: 'Escolha um ícone',
-        description: 'Selecione ou insira um ícone de FontAwesome.',
+        title: "Seleziona un'icona",
+        description: "Seleziona o inserisci un'icona di FontAwesome.",
         widget: 'iconWidget',
         defaultOptions: defaultIconWidgetOptions,
       },
