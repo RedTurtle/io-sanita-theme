@@ -165,7 +165,7 @@ export const CardFile = ({
               <p>{item.description}</p>
             </CardText>
           )}
-          {showModified && item?.modified && item?.['@type'] === 'File' && (
+          {showModified && item?.modified && (
             <p>
               {intl.formatMessage(messages.last_update)}{' '}
               {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
