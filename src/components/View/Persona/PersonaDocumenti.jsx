@@ -29,7 +29,7 @@ const PersonaDocumenti = ({ content }) => {
           title={intl.formatMessage(messages.documenti)}
         >
           {/* ALTRI DOCUMENTI */}
-          {contentFolderHasItems(content, 'documenti') && (
+          {contentFolderHasItems(content, 'allegati') && (
             <Attachments
               content={content}
               folder_name={'allegati'}
