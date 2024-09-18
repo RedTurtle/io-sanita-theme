@@ -171,6 +171,8 @@ const Gallery = ({
                     <GalleryImage
                       item={item}
                       default_width_image={default_width_image}
+                      setViewImageIndex={setViewImageIndex}
+                      i={i}
                     />
                   </SingleSlideWrapper>
                 ))}

@@ -75,3 +75,8 @@ export const StrutturaUlterioriInformazioni = loadable(() =>
     /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaUlterioriInformazioni'
   ),
 );
+export const StrutturaAllegati = loadable(() =>
+  import(
+    /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaAllegati'
+  ),
+);

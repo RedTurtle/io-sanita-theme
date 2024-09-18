@@ -1,0 +1,21 @@
+.subsite-footer {
+  //default bg color as main site
+  padding: 2rem 0;
+  background-color: $footer-top-background-asl;
+  color: $white;
+  border-bottom: $footer-borders;
+
+  &,
+  p,
+  ul {
+    font-size: $footer-font-size;
+  }
+
+  a {
+    color: $white;
+
+    &:hover:not(.disabled) {
+      text-decoration: underline;
+    }
+  }
+}

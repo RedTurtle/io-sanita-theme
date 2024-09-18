@@ -148,7 +148,7 @@ body.cms-ui {
     }
   }
 
-  &:not(.section-search):not(.section-sitemap) {
+  &:not(.section-search):not(.section-sitemap):not(.section-argomento) {
     .it-footer {
       display: none;
     }
@@ -173,6 +173,15 @@ body.cms-ui {
     }
   }
 
+  //slate
+  .editor-link {
+    &.input-anchorlink-theme {
+      input {
+        font-size: 0.8rem;
+        padding: 0 0.3rem;
+      }
+    }
+  }
   /*Date picker*/
   .SingleDatePicker {
     z-index: unset;
@@ -258,6 +267,8 @@ body.cms-ui {
 
         a.section {
           position: relative;
+          overflow: hidden;
+          text-overflow: ellipsis; //fix per breadcrumb troppo lunghi
 
           &:not(:last-of-type) {
             max-width: 33.33%;
