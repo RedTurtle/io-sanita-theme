@@ -14,12 +14,14 @@ const messages = defineMessages({
 const EventoDocumenti = ({ content }) => {
   const intl = useIntl();
 
-  return contentFolderHasItems(content, 'documenti') && (
-    <Attachments
-      content={content}
-      folder_name={'documenti'}
-      title={intl.formatMessage(messages.documenti)}
-    />
+  return (
+    contentFolderHasItems(content, 'allegati') && (
+      <Attachments
+        content={content}
+        folder_name={'allegati'}
+        title={intl.formatMessage(messages.documenti)}
+      />
+    )
   );
 };
 

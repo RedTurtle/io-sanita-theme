@@ -1,7 +1,10 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Attachments } from 'io-sanita-theme/components/View/commons';
-import { RichTextSection, contentFolderHasItems } from 'io-sanita-theme/helpers';
+import {
+  RichTextSection,
+  contentFolderHasItems,
+} from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   documenti: {
@@ -20,32 +23,32 @@ const PersonaDocumenti = ({ content }) => {
   return (
     <>
       {(contentFolderHasItems(content, 'curriculum-vitae') ||
-        contentFolderHasItems(content, 'documenti')) && (
-          <RichTextSection
-            tag_id="documenti"
-            title={intl.formatMessage(messages.documenti)}
-          >
-            {/* ALTRI DOCUMENTI */}
-            {(contentFolderHasItems(content, 'documenti')) && (
-                <Attachments
-                content={content}
-                folder_name={'documenti'}
-                as_section={false}
-              />
-            )}
+        contentFolderHasItems(content, 'allegati')) && (
+        <RichTextSection
+          tag_id="documenti"
+          title={intl.formatMessage(messages.documenti)}
+        >
+          {/* ALTRI DOCUMENTI */}
+          {contentFolderHasItems(content, 'documenti') && (
+            <Attachments
+              content={content}
+              folder_name={'allegati'}
+              as_section={false}
+            />
+          )}
 
-            {/* CURRICULUM VITAE */}
-            {(contentFolderHasItems(content, 'curriculum-vitae')) && (
-                <Attachments
-                content={content}
-                folder_name={'curriculum-vitae'}
-                as_section={false}
-                title={intl.formatMessage(messages.cv)}
-              />
-            )}
-          </RichTextSection>
-        )}
-      </>
+          {/* CURRICULUM VITAE */}
+          {contentFolderHasItems(content, 'curriculum-vitae') && (
+            <Attachments
+              content={content}
+              folder_name={'curriculum-vitae'}
+              as_section={false}
+              title={intl.formatMessage(messages.cv)}
+            />
+          )}
+        </RichTextSection>
+      )}
+    </>
   );
 };
 
