@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-// import { RichTextArticle } from '@italia/components/ItaliaTheme/View';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
@@ -35,8 +34,8 @@ const FarmaciaShifts = ({ content }) => {
           </tr>
         </thead>
         <tbody>
-          {content.turni.map((shift) => (
-            <tr>
+          {content.turni.map((shift, index) => (
+            <tr key={index}>
               <td>{shift.dal}</td>
               <td>{shift.al}</td>
             </tr>

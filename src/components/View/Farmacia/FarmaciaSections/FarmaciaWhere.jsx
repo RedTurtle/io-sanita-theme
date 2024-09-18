@@ -47,40 +47,32 @@ const FarmaciaWhere = ({ content }) => {
     content.comune ||
     content.localita ? (
     <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
-      <Card className="card card-teaser shadow mt-3 rounded mb-4">
+      <Card className="card card-teaser shadow mt-3 rounded mb-4" tag="div">
         <Icon icon={'it-pin'} />
         <CardBody>
-          <CardTitle>
-            <h5 className="card-title">{content.title}</h5>
+          <CardTitle tag="h5" className="card-title">
+            {content.title}
           </CardTitle>
-          <CardText>
+          <CardText tag="div">
             {content.area_territoriale && (
-              <>
-                <p>
-                  <strong>
-                    {intl.formatMessage(messages.area_territoriale)}:{' '}
-                  </strong>
-                  {content.area_territoriale.title}
-                </p>
-              </>
+              <p>
+                <strong>{`${intl.formatMessage(messages.area_territoriale)}: `}</strong>
+                {content.area_territoriale.title}
+              </p>
             )}
 
             {content.comune && (
-              <>
-                <p>
-                  <strong>{intl.formatMessage(messages.comune)}: </strong>
-                  {content.comune}
-                </p>
-              </>
+              <p>
+                <strong>{`${intl.formatMessage(messages.comune)}: `}</strong>
+                {content.comune}
+              </p>
             )}
 
             {content.localita && (
-              <>
-                <p>
-                  <strong>{intl.formatMessage(messages.localita)}: </strong>
-                  {content.localita}
-                </p>
-              </>
+              <p>
+                <strong>{`${intl.formatMessage(messages.localita)}: `}</strong>
+                {content.localita}
+              </p>
             )}
 
             <p>
@@ -103,25 +95,23 @@ const FarmaciaWhere = ({ content }) => {
         </CardBody>
       </Card>
       {__CLIENT__ &&
-      content.geolocation?.latitude &&
-      content.geolocation?.longitude ? (
-        <OSMMap
-          markers={[
-            {
-              latitude: content.geolocation.latitude,
-              longitude: content.geolocation.longitude,
-              title: content.title,
-            },
-          ]}
-          mapOptions={{
-            scrollWheelZoom: false,
-            // tap: false,
-            // dragging: false,
-          }}
-        />
-      ) : (
-        <></>
-      )}
+        content.geolocation?.latitude &&
+        content.geolocation?.longitude && (
+          <OSMMap
+            markers={[
+              {
+                latitude: content.geolocation.latitude,
+                longitude: content.geolocation.longitude,
+                title: content.title,
+              },
+            ]}
+            mapOptions={{
+              scrollWheelZoom: false,
+              // tap: false,
+              // dragging: false,
+            }}
+          />
+        )}
       {content.circoscrizione && (
         <div className="circoscrizione">
           <h5 className="mt-3">

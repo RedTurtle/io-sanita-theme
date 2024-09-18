@@ -40,17 +40,20 @@ const FarmaciaContacts = ({ content }) => {
           <CardBody tag="div" className={'card-body pr-3'}>
             {content.telefono && (
               <p className="card-text mt-3">
-                {intl.formatMessage(messages.riferimento_telefonico_farmacia)}
-                : <PuntoDiContattoValue value={{ tel: content.telefono }} />
+                {`${intl.formatMessage(messages.riferimento_telefonico_farmacia)}: `}
+                <PuntoDiContattoValue
+                  value={{ tipo: 'telefono', valore: content.telefono }}
+                />
               </p>
             )}
             {content.telefono_turno && (
               <p className="card-text mt-3">
-                {intl.formatMessage(
+                {`${intl.formatMessage(
                   messages.riferimento_telefonico_turno_farmacia,
-                )}
-                :{' '}
-                <PuntoDiContattoValue value={{ tel: content.telefono_turno }} />
+                )}: `}
+                <PuntoDiContattoValue
+                  value={{ tipo: 'telefono', valore: content.telefono_turno }}
+                />
               </p>
             )}
           </CardBody>
