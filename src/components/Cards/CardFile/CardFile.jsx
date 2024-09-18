@@ -13,6 +13,7 @@ Gli elementi della card sono
   - titolo del documento,
   - icona,
   - descrizione (opzionale tramite la prop 'showDescription')
+  - data di modifica/creazione (opzionale tramite la prop 'showModified')
 
 Il click sulla card può generare un download diretto del file o indirizzare l’utente a una pagina foglia di tipologia Documento.
 Il link può essere applicato all’intera card oppure solo al titolo e icona.
@@ -67,6 +68,7 @@ export const CardFile = ({
         titleTag="h3"
         showDescription={showDescription}
         titleDataElement={titleDataElement}
+        showModified={showModified}
       />
     );
   }
@@ -165,7 +167,7 @@ export const CardFile = ({
               <p>{item.description}</p>
             </CardText>
           )}
-          {showModified && item?.modified && (
+          {showModified && item?.modified && item?.['@type'] === 'File' && (
             <p>
               {intl.formatMessage(messages.last_update)}{' '}
               {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
