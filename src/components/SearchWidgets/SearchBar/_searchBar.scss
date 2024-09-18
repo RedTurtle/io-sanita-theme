@@ -1,0 +1,13 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+/* SEARCH BAR */
+.public-ui {
+    .form-group.search-bar-widget {
+        label.active {
+            @include font-size($h5-font-size);
+            font-weight: 600;
+            position: unset;
+            transform: none;
+        }
+    }
+}

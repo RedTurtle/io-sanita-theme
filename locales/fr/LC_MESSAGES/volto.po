@@ -259,6 +259,11 @@ msgstr "Page précédente"
 msgid "Ricerca con mappa"
 msgstr ""
 
+#. Default: "Ricerca servizi o procedure"
+#: components/Blocks/SearchServiziProcedure/Sidebar
+msgid "Ricerca servizi o procedure"
+msgstr ""
+
 #. Default: "Rimuovi il file"
 #: components/Widgets/FileWidget
 msgid "Rimuovi il file"
@@ -1548,6 +1553,31 @@ msgstr "Rechercher sur le site"
 msgid "search_brdc"
 msgstr ""
 
+#. Default: "{filterNumber} filtri attivati"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_active_filters"
+msgstr ""
+
+#. Default: "argomenti"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_default_title"
+msgstr ""
+
+#. Default: "Nascondi"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_hide_all"
+msgstr ""
+
+#. Default: "Cerca per"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_search_to"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_show_all"
+msgstr ""
+
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Search path"
@@ -1569,12 +1599,12 @@ msgid "search_map_ct"
 msgstr ""
 
 #. Default: "Cerca"
-#: components/Blocks/SearchMap/SearchableText
+#: components/SearchWidgets/SearchBar/SearchBar
 msgid "search_map_searchable_text_button"
 msgstr ""
 
 #. Default: "*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”"
-#: components/Blocks/SearchMap/SearchableText
+#: components/Blocks/SearchMap/Body
 msgid "search_map_searchable_text_decription"
 msgstr ""
 
@@ -1626,6 +1656,71 @@ msgstr ""
 #. Default: "Risultati"
 #: components/Blocks/SearchMap/Body
 msgid "search_mapresults_found"
+msgstr ""
+
+#. Default: "Filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_btn_filters_label"
+msgstr ""
+
+#. Default: "utenti"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_label_utenti"
+msgstr ""
+
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_no_results"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_portal_type"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_results"
+msgstr ""
+
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_search_path"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Richiedere esenzioni”"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_description_procedura"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Risonanza magnetica”"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_description_servizi"
+msgstr ""
+
+#. Default: "Cerca una procedura"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_text_default_label_procedura"
+msgstr ""
+
+#. Default: "Cerca un servizio o una prestazione"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_text_default_label_servizi"
+msgstr ""
+
+#. Default: "Seleziona filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_show_filters"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_title"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
+#: components/SearchWidgets/SearchBar/SearchBar
+msgid "search_text_searchable_text_decription"
 msgstr ""
 
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
@@ -1922,22 +2017,22 @@ msgid "slidesToShow"
 msgstr ""
 
 #. Default: "Ordina per"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_by"
 msgstr ""
 
 #. Default: "Data (prima i più recenti)"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_data_desc"
 msgstr ""
 
 #. Default: "Alfabeticamente"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_name"
 msgstr ""
 
 #. Default: "Rilevanza"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_relevance"
 msgstr ""
 

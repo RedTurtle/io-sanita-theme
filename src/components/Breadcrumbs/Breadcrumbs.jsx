@@ -118,7 +118,9 @@ const Breadcrumbs = ({ pathname }) => {
               {items.map((item, index, items) => (
                 <BreadcrumbItem tag="li" key={item.url}>
                   {index < items.length - 1 && (
-                    <UniversalLink href={item.url}>{item.title}</UniversalLink>
+                    <UniversalLink href={item.url} title={item.title}>
+                      {item.title}
+                    </UniversalLink>
                   )}
                   {index === items.length - 1 && <span>{item.title}</span>}
                   {index < items.length - 1 && (
