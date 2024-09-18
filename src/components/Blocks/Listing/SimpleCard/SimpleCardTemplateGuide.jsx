@@ -1,8 +1,7 @@
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { UniversalLink } from '@plone/volto/components';
+
 import { Row, Col } from 'design-react-kit';
 
 import { CardGuide } from 'io-sanita-theme/components';
@@ -19,7 +18,6 @@ const SimpleCardTemplateGuide = ({
   linkAlign,
   linkmore_id_lighthouse,
 }) => {
-  const intl = useIntl();
   return (
     <div className="simple-card-guide-template">
       <Row className="mb-3">

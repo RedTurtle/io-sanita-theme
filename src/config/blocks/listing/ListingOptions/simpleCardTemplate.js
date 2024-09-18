@@ -125,7 +125,7 @@ export const simpleCardTemplateOptions_appearance_default = (
     [
       'show_icon',
       'hide_dates',
-      'show_section',
+      //'show_section', //in io-sanita non lo usiamo
       'show_type',
       'show_description',
       'show_detail_link',

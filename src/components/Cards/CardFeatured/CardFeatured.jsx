@@ -4,12 +4,16 @@
 
 import React from 'react';
 import cx from 'classnames';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
-
+import {
+  getCalendarDate,
+  getEventRecurrenceMore,
+} from 'io-sanita-theme/helpers';
 import './cardFeatured.scss';
 
 const CardFeatured = ({
@@ -22,10 +26,12 @@ const CardFeatured = ({
   category,
   showDefaultCategory,
   showDescription = true,
-  date,
   text,
   otherChildren,
   titleDataElement,
+  show_dates = true,
+  date,
+  rrule,
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   const img =
@@ -34,6 +40,10 @@ const CardFeatured = ({
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
     ) : null;
+
+  const eventRecurrenceMore =
+    show_dates && getEventRecurrenceMore(item, isEditMode);
+  const _date = show_dates && (date ?? getCalendarDate(item, rrule.rrulestr));
 
   return (
     <Card
@@ -65,12 +75,16 @@ const CardFeatured = ({
               {otherChildren.afterText && otherChildren.afterText}
             </>
           )}
+
+          {eventRecurrenceMore && (
+            <div className="py-2">{eventRecurrenceMore}</div>
+          )}
         </div>
         <CardCategoryBottom
           item={item}
           category={category}
           show_default={showDefaultCategory}
-          date={date}
+          date={_date}
           isEditMode={isEditMode}
         />
       </CardBody>
@@ -80,4 +94,4 @@ const CardFeatured = ({
   );
 };
 
-export default CardFeatured;
+export default injectLazyLibs(['rrule'])(CardFeatured);

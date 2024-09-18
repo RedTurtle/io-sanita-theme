@@ -93,7 +93,6 @@ const SimpleCardDefault = (props) => {
     ...props,
     item,
     show_type,
-    show_section,
   });
   const type = item['@type'];
 
