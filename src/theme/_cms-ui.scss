@@ -114,10 +114,6 @@ body.cms-ui {
       text-decoration: $link-decoration;
     }
   }
- //listing block
- .block.listing .delete-button{
-  z-index: 9;
- }
 
   &.contenttype-document,
   &.contenttype-argomento,
