@@ -9,6 +9,7 @@
 
   .row {
     row-gap: 0.5rem;
+    column-gap: 1em;
     @media (max-width: #{map-get($grid-breakpoints,md)}) {
       justify-content: space-between;
     }
@@ -19,7 +20,6 @@
       width: auto;
       align-items: center;
       column-gap: 0.5em;
-      padding-right: 1rem;
 
       .icon {
         width: 1.2em;
