@@ -3,6 +3,9 @@ import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 import { useDebouncedEffect } from 'io-sanita-theme/helpers';
 
+/* STYLE */
+import './_searchBar.scss';
+
 const messages = defineMessages({
   searchable_text_button: {
     id: 'search_map_searchable_text_button',

@@ -2,15 +2,15 @@ import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   title: {
-    id: 'search_map_title',
+    id: 'search_sp_title',
     defaultMessage: 'Titolo',
   },
   search_path: {
-    id: 'search_map_Search path',
+    id: 'search_sp_search_path',
     defaultMessage: 'Posizione in cui cercare',
   },
   portal_type: {
-    id: 'search_map_ct',
+    id: 'search_sp_portal_type',
     defaultMessage: 'Tipo di contenuto',
   },
 });

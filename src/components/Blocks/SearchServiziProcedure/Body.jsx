@@ -17,41 +17,41 @@ import {
 
 const messages = defineMessages({
   results: {
-    id: 'search_servizi_procedure_results_found',
+    id: 'search_sp_results',
     defaultMessage: 'Risultati',
   },
+  no_results: {
+    id: 'search_sp_no_results',
+    defaultMessage: 'Nessun risultato trovato',
+  },
   label_utenti: {
-    id: 'search_servizi_procedure_label_utenti',
+    id: 'search_sp_label_utenti',
     defaultMessage: 'utenti',
   },
   searchable_text_default_label_servizi: {
-    id: 'searchable_text_default_label_servizi',
+    id: 'search_sp_searchable_text_default_label_servizi',
     defaultMessage: 'Cerca un servizio o una prestazione',
   },
   searchable_text_default_label_procedura: {
-    id: 'searchable_text_default_label_procedura',
+    id: 'search_sp_searchable_text_default_label_procedura',
     defaultMessage: 'Cerca una procedura',
   },
   searchable_description_servizi: {
-    id: 'searchable_description_servizi',
+    id: 'search_sp_searchable_description_servizi',
     defaultMessage:
       '*Inserisci parole chiave, ad esempio “Risonanza magnetica”',
   },
   searchable_description_procedura: {
-    id: 'searchable_description_procedura',
+    id: 'search_sp_searchable_description_procedura',
     defaultMessage:
       '*Inserisci parole chiave, ad esempio “Richiedere esenzioni”',
   },
-  no_results: {
-    id: 'search_servizi_procedure_no_results',
-    defaultMessage: 'Nessun risultato trovato',
-  },
   btn_filters_label: {
-    id: 'search_btn_filters_label',
+    id: 'search_sp_btn_filters_label',
     defaultMessage: 'Filtri',
   },
   show_filters: {
-    id: 'search_show_filters',
+    id: 'search_sp_show_filters',
     defaultMessage: 'Seleziona filtri',
   },
 });
@@ -125,7 +125,7 @@ const Body = ({ data, id, path, properties, block }) => {
       query.push({
         i: 'parliamo_di',
         o: 'plone.app.querystring.operation.selection.is',
-        v: [...filters.topics], // qui vuole un array di token ["donna", "uomini"]
+        v: filters.topics, // qui vuole un array di token ["donna", "uomini"]
       });
     }
 
@@ -133,7 +133,7 @@ const Body = ({ data, id, path, properties, block }) => {
       query.push({
         i: 'a_chi_si_rivolge_tassonomia',
         o: 'plone.app.querystring.operation.selection.is',
-        v: [...filters.users], // qui vuole un array di token ["donna", "uomini"]
+        v: filters.users, // qui vuole un array di token ["donna", "uomini"]
       });
     }
 
@@ -155,18 +155,21 @@ const Body = ({ data, id, path, properties, block }) => {
 
   // Chiamate alle tassonomie utenti e argomenti
   useEffect(() => {
-    dispatch(
-      getVocabulary({
-        vocabNameOrURL: vocTopics,
-      }),
-    );
+    if (taxonomyTopics?.length === 0) {
+      dispatch(
+        getVocabulary({
+          vocabNameOrURL: vocTopics,
+        }),
+      );
+    }
 
-    dispatch(
-      getVocabulary({
-        vocabNameOrURL: vocUsers,
-      }),
-    );
-
+    if (taxonomyUsers?.length === 0) {
+      dispatch(
+        getVocabulary({
+          vocabNameOrURL: vocUsers,
+        }),
+      );
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -197,11 +200,10 @@ const Body = ({ data, id, path, properties, block }) => {
         {taxonomyUsers?.length > 0 && (
           <div className="column-filters mt-2">
             <SearchCheckbox
-              key="taxonomy-users"
-              topics={taxonomyUsers}
+              options={taxonomyUsers}
               setFilters={setFilters}
               filters={filters}
-              filterKey={'users'}
+              filterKey="users"
               sectionTitle={intl.formatMessage(messages.label_utenti)}
               collapsable={true}
             />
@@ -212,11 +214,10 @@ const Body = ({ data, id, path, properties, block }) => {
         {taxonomyTopics?.length > 0 && (
           <div className="column-filters mt-5">
             <SearchCheckbox
-              key="taxonomy-topics"
-              topics={taxonomyTopics}
+              options={taxonomyTopics}
               setFilters={setFilters}
               filters={filters}
-              filterKey={'topics'}
+              filterKey="topics"
               collapsable={true}
             />
           </div>

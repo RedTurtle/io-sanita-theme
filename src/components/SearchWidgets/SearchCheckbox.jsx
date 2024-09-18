@@ -9,36 +9,36 @@ import { values } from 'lodash';
 import cx from 'classnames';
 
 const messages = defineMessages({
-  showAll: {
-    id: 'search_topic_show_all',
+  show_all: {
+    id: 'search_checkbox_show_all',
     defaultMessage: 'Mostra tutto',
   },
-  hideAll: {
-    id: 'search_topic_hide_all',
+  hide_all: {
+    id: 'search_checkbox_hide_all',
     defaultMessage: 'Nascondi',
   },
-  searchTo: {
-    id: 'search_topic_search_to',
+  search_to: {
+    id: 'search_checkbox_search_to',
     defaultMessage: 'Cerca per',
   },
-  defaultTitle: {
-    id: 'search_topic_default_title',
+  default_title: {
+    id: 'search_checkbox_default_title',
     defaultMessage: 'argomenti',
   },
   active_filters: {
-    id: 'search_topic_active_filters',
+    id: 'search_checkbox_active_filters',
     defaultMessage: '{filterNumber} filtri attivati',
   },
 });
 
 const SearchCheckbox = ({
   setFilters,
-  filters, // topics selected
+  filters, // options selected
   filterKey, // for example 'users'
-  topics, // list of topics
-  sectionTitle = null, // anche tutto minuscolo
+  options, // options list
+  sectionTitle = null, // (anche tutto minuscolo)
   collapsable = false,
-  showActiveTopics = false, // number of checkbox selected
+  showActiveOptions = false, // show number of checkbox selected
 }) => {
   const intl = useIntl();
 
@@ -46,9 +46,9 @@ const SearchCheckbox = ({
 
   const title = sectionTitle
     ? sectionTitle
-    : intl.formatMessage(messages.defaultTitle);
+    : intl.formatMessage(messages.default_title);
 
-  let activeTopics = values(topics).filter((t) => t.value).length;
+  let activeOptions = values(options).filter((t) => t.value).length;
 
   const onChangeField = (value, checked) => {
     let array = [...filters[filterKey]];
@@ -61,54 +61,52 @@ const SearchCheckbox = ({
     setFilters({ ...filters, [filterKey]: array });
   };
 
-  const getTopicChunks = (topics) => {
-    const size = Object.keys(topics).length;
+  const getOptionsChunks = (options) => {
+    const size = Object.keys(options).length;
     if (size > 10) {
-      let visibleTopics = [];
-      let hidedTopics = [];
-      const keys_visible = Object.keys(topics).slice(0, 10);
-      const keys_hide = Object.keys(topics).slice(10, size);
+      let visibleOptions = [];
+      let hidedOptions = [];
+      const keys_visible = Object.keys(options).slice(0, 10);
+      const keys_hide = Object.keys(options).slice(10, size);
 
       keys_visible.forEach((key) => {
-        visibleTopics.push(topics[key]);
+        visibleOptions.push(options[key]);
       });
 
       keys_hide.forEach((key) => {
-        hidedTopics.push(topics[key]);
+        hidedOptions.push(options[key]);
       });
 
-      return [visibleTopics, hidedTopics];
+      return [visibleOptions, hidedOptions];
     }
-    return [topics];
+    return [options];
   };
 
-  const topic_chunks = getTopicChunks(topics);
+  const optionChunks = getOptionsChunks(options);
 
-  const drawTopics = (topics) => (
+  const drawOptions = (options) => (
     <>
-      {topics.map((item, topicId) => (
-        <div key={topicId}>
-          <FormGroup check tag="div">
-            <Input
-              id={`search-${sectionTitle}-${topicId}`}
-              type="checkbox"
-              checked={filters[filterKey].indexOf(item.value) >= 0}
-              onChange={(e) =>
-                onChangeField(item.value, e.currentTarget.checked)
-              }
-              aria-controls={'search-results-region-' + sectionTitle}
-              aria-label={`${intl.formatMessage(messages.searchTo)} ${title} ${item.label}`}
-            />
-            <Label
-              check
-              for={`search-${sectionTitle}-${topicId}`}
-              tag="label"
-              widths={['xs', 'sm', 'md', 'lg', 'xl']}
-            >
-              {item.label}
-            </Label>
-          </FormGroup>
-        </div>
+      {options.map((item, index) => (
+        <FormGroup check tag="div" key={item.value + index}>
+          <Input
+            id={item.value + index}
+            type="checkbox"
+            checked={filters[filterKey].indexOf(item.value) >= 0}
+            onChange={(e) => onChangeField(item.value, e.currentTarget.checked)}
+            aria-controls={'search-results-region-' + sectionTitle}
+            aria-label={`${intl.formatMessage(messages.search_to)} ${title} ${
+              item.label
+            }`}
+          />
+          <Label
+            check
+            for={item.value + index}
+            tag="label"
+            widths={['xs', 'sm', 'md', 'lg', 'xl']}
+          >
+            {item.label}
+          </Label>
+        </FormGroup>
       ))}
     </>
   );
@@ -120,17 +118,17 @@ const SearchCheckbox = ({
         {title}
 
         {/* NUMBER OF CHECKBOX SELECTED */}
-        {showActiveTopics && (
+        {showActiveOptions && (
           <span
             className={cx('badge bg-secondary ms-3', {
-              'visually-hidden': activeTopics === 0,
+              'visually-hidden': activeOptions === 0,
             })}
             aria-live="polite"
             aria-label={intl.formatMessage(messages.active_filters, {
-              filterNumber: activeTopics,
+              filterNumber: activeOptions,
             })}
           >
-            {activeTopics}
+            {activeOptions}
           </span>
         )}
       </h6>
@@ -138,11 +136,11 @@ const SearchCheckbox = ({
         {/* TO DO: se serve, attivare anche il 'seleziona tutto' */}
 
         {/* CHECKBOX */}
-        {drawTopics(topic_chunks[0])}
-        {collapsable && topic_chunks[1] && (
+        {drawOptions(optionChunks[0])}
+        {collapsable && optionChunks[1] && (
           <>
-            <Collapse isOpen={!collapse} id="collapseTopics">
-              {drawTopics(topic_chunks[1])}
+            <Collapse isOpen={!collapse} id="collapseOptions">
+              {drawOptions(optionChunks[1])}
             </Collapse>
             <div className="mt-4">
               <a
@@ -152,16 +150,16 @@ const SearchCheckbox = ({
                 }}
                 className="fw-bold"
                 data-toggle="collapse"
-                href="#collapseTopics"
+                href="#collapseOptions"
                 role="button"
                 aria-expanded="false"
                 aria-controls="collapseList"
                 aria-label={intl.formatMessage(
-                  collapse ? messages.showAll : messages.hideAll,
+                  collapse ? messages.show_all : messages.hide_all,
                 )}
               >
                 {intl.formatMessage(
-                  collapse ? messages.showAll : messages.hideAll,
+                  collapse ? messages.show_all : messages.hide_all,
                 )}
               </a>
             </div>

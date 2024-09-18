@@ -62,7 +62,7 @@ const AggregationPage = ({ match, route, location }) => {
     type: type,
     id: id,
     portalType: null, //per filtrare su un tipo di conteneuto specifico (click dal menu laterale)
-    order: { sort_on: null, sort_order: null },
+    order: { sort_on: 'relevance', sort_order: 'ascending' },
     currentPage: 1,
   });
   const tassonomieSearch = useSelector((state) => state.tassonomieSearch);
@@ -92,6 +92,8 @@ const AggregationPage = ({ match, route, location }) => {
   //carico i dati iniziali
   useEffect(() => {
     doSearch();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const doSearch = () => {
@@ -118,11 +120,13 @@ const AggregationPage = ({ match, route, location }) => {
     setTotalPages(
       result?.items_total > 0 ? Math.ceil(result.items_total / b_size) : 0,
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
   //paginazione
   useEffect(() => {
     setSearchParams({ ...searchParams, currentPage: 1 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams.portalType, searchParams.order]);
 
   const onPaginationChange = (e, { activePage }) => {
@@ -186,8 +190,8 @@ const AggregationPage = ({ match, route, location }) => {
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
                         : item.type_title
-                          ? [{ title: item.type_title }]
-                          : [];
+                        ? [{ title: item.type_title }]
+                        : [];
                     return (
                       <CardSimple
                         key={i + 'result'}

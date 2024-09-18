@@ -1496,14 +1496,33 @@ msgstr ""
 msgid "search_brdc"
 msgstr ""
 
-#. Default: "Filtri"
-#: components/Blocks/SearchServiziProcedure/Body
-msgid "search_btn_filters_label"
+#. Default: "{filterNumber} filtri attivati"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_active_filters"
+msgstr ""
+
+#. Default: "argomenti"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_default_title"
+msgstr ""
+
+#. Default: "Nascondi"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_hide_all"
+msgstr ""
+
+#. Default: "Cerca per"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_search_to"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_show_all"
 msgstr ""
 
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
-#: components/Blocks/SearchServiziProcedure/schema
 msgid "search_map_Search path"
 msgstr ""
 
@@ -1519,12 +1538,11 @@ msgstr ""
 
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
-#: components/Blocks/SearchServiziProcedure/schema
 msgid "search_map_ct"
 msgstr ""
 
 #. Default: "Cerca"
-#: components/SearchWidgets/SearchBar
+#: components/SearchWidgets/SearchBar/SearchBar
 msgid "search_map_searchable_text_button"
 msgstr ""
 
@@ -1545,7 +1563,6 @@ msgstr ""
 
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
-#: components/Blocks/SearchServiziProcedure/schema
 msgid "search_map_title"
 msgstr ""
 
@@ -1584,74 +1601,69 @@ msgstr ""
 msgid "search_mapresults_found"
 msgstr ""
 
+#. Default: "Filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_btn_filters_label"
+msgstr ""
+
 #. Default: "utenti"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "search_servizi_procedure_label_utenti"
+msgid "search_sp_label_utenti"
 msgstr ""
 
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "search_servizi_procedure_no_results"
+msgid "search_sp_no_results"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_portal_type"
 msgstr ""
 
 #. Default: "Risultati"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "search_servizi_procedure_results_found"
+msgid "search_sp_results"
 msgstr ""
 
-#. Default: "Seleziona filtri"
-#: components/Blocks/SearchServiziProcedure/Body
-msgid "search_show_filters"
-msgstr ""
-
-#. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
-#: components/SearchWidgets/SearchBar
-msgid "search_text_searchable_text_decription"
-msgstr ""
-
-#. Default: "{filterNumber} filtri attivati"
-#: components/SearchWidgets/SearchCheckbox
-msgid "search_topic_active_filters"
-msgstr ""
-
-#. Default: "argomenti"
-#: components/SearchWidgets/SearchCheckbox
-msgid "search_topic_default_title"
-msgstr ""
-
-#. Default: "Nascondi"
-#: components/SearchWidgets/SearchCheckbox
-msgid "search_topic_hide_all"
-msgstr ""
-
-#. Default: "Cerca per"
-#: components/SearchWidgets/SearchCheckbox
-msgid "search_topic_search_to"
-msgstr ""
-
-#. Default: "Mostra tutto"
-#: components/SearchWidgets/SearchCheckbox
-msgid "search_topic_show_all"
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_search_path"
 msgstr ""
 
 #. Default: "*Inserisci parole chiave, ad esempio “Richiedere esenzioni”"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "searchable_description_procedura"
+msgid "search_sp_searchable_description_procedura"
 msgstr ""
 
 #. Default: "*Inserisci parole chiave, ad esempio “Risonanza magnetica”"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "searchable_description_servizi"
+msgid "search_sp_searchable_description_servizi"
 msgstr ""
 
 #. Default: "Cerca una procedura"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "searchable_text_default_label_procedura"
+msgid "search_sp_searchable_text_default_label_procedura"
 msgstr ""
 
 #. Default: "Cerca un servizio o una prestazione"
 #: components/Blocks/SearchServiziProcedure/Body
-msgid "searchable_text_default_label_servizi"
+msgid "search_sp_searchable_text_default_label_servizi"
+msgstr ""
+
+#. Default: "Seleziona filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_show_filters"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_title"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
+#: components/SearchWidgets/SearchBar/SearchBar
+msgid "search_text_searchable_text_decription"
 msgstr ""
 
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
