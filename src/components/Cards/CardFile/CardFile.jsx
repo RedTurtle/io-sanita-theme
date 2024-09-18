@@ -42,7 +42,7 @@ const messages = defineMessages({
     defaultMessage: 'Collegamento',
   },
   last_update: {
-    id: 'last_update',
+    id: 'card_file_last_update',
     defaultMessage: 'Ultimo agg.to:',
   },
 });

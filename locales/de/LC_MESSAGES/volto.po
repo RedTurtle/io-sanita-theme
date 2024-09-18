@@ -543,6 +543,11 @@ msgstr ""
 msgid "callout_style_highlight"
 msgstr ""
 
+#. Default: "Ultimo agg.to:"
+#: components/Cards/CardFile/CardFile
+msgid "card_file_last_update"
+msgstr ""
+
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
 msgid "carousel"
@@ -896,11 +901,6 @@ msgstr ""
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
-msgstr ""
-
-#. Default: "Ultimo agg.to:"
-#: components/Cards/CardFile/CardFile
-msgid "last_update"
 msgstr ""
 
 #. Default: "I campi contrassegnati da (*) sono obbligatori."
