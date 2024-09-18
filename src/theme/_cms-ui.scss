@@ -271,6 +271,8 @@ body.cms-ui {
 
         a.section {
           position: relative;
+          overflow: hidden;
+          text-overflow: ellipsis; //fix per breadcrumb troppo lunghi
 
           &:not(:last-of-type) {
             max-width: 33.33%;
