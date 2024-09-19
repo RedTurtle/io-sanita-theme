@@ -1,0 +1,63 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
+.header-contacts {
+  @include rem-size(font-size, 14);
+  background-color: var(--primary-lightest);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--primary-lighter);
+
+  .row {
+    row-gap: 0.5rem;
+    column-gap: 1em;
+
+    @media (max-width: #{map-get($grid-breakpoints, md)}) {
+      row-gap: 0.5rem;
+      column-gap: 0;
+    }
+    .col.contact-wrapper {
+      display: flex;
+      flex-grow: 0;
+      flex-basis: auto;
+      width: auto;
+      align-items: center;
+      column-gap: 0.5em;
+
+      .icon {
+        width: 1.2em;
+        height: 1.2em;
+      }
+      .link-value {
+        p {
+          @include rem-size(font-size, 14);
+          margin: 0;
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      @media (max-width: #{map-get($grid-breakpoints, md)}) {
+        flex-basis: 50%;
+        &:nth-child(even) {
+          justify-content: flex-end;
+        }
+      }
+      .item-description {
+        @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+          display: none;
+        }
+      }
+
+      .item-type {
+        font-weight: 700;
+      }
+      a {
+        color: var(--is-accent);
+        .icon.external-link {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -27,6 +27,7 @@ export const CardSimple = ({
   className,
   titleTag = 'h5',
   titleDataElement,
+  showDeafaultCategory,
 }) => {
   const intl = useIntl();
   const date =
@@ -58,18 +59,25 @@ export const CardSimple = ({
 
           {/* Chip servizio attivo */}
           {isServizioOnline && (
-            <div className="mb-3">
+            <div className={showDescription ? 'mb-3' : ''}>
               <Badge color="primary-lightest">
                 {intl.formatMessage(messages.servizioOnline)}
               </Badge>
             </div>
           )}
 
-          <CardText tag="div">
-            {showDescription && <>{item.description}</>}
-          </CardText>
+          {showDescription && (
+            <CardText tag="div">
+              <>{item.description}</>
+            </CardText>
+          )}
         </div>
-        <CardCategoryBottom item={item} date={date} isEditMode={isEditMode} />
+        <CardCategoryBottom
+          item={item}
+          date={date}
+          isEditMode={isEditMode}
+          show_default={showDeafaultCategory}
+        />
       </CardBody>
     </Card>
   );

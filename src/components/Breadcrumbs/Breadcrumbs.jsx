@@ -5,12 +5,13 @@
 
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import { matchPath } from 'react-router';
 
 import { useLocation } from 'react-router-dom';
-import { isEqual, isEmpty } from 'lodash';
+import { isEqual } from 'lodash';
 import { getBreadcrumbs } from '@plone/volto/actions';
 import {
   getBaseUrl,
@@ -34,7 +35,7 @@ const messages = defineMessages({
   },
 });
 
-const Breadcrumbs = ({ pathname }) => {
+const Breadcrumbs = ({ pathname, match }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const location = useLocation();
@@ -50,28 +51,56 @@ const Breadcrumbs = ({ pathname }) => {
 
   // Funzione per fare match di routes
   const getMatchingRoute = (p) =>
-    matchPath(location.pathname, p) !== null ||
-    matchPath(location.pathname, p.replace('**/', '')) !== null;
+    matchPath(location.pathname, p) ||
+    matchPath(location.pathname, p.replace('**/', '').replace(':id', ''));
 
   // Funzione per riconoscere se siamo in una route statica
   const getCurrentPathFromAddonRoutes = () =>
     config.addonRoutes.find((route) => {
       const paths = typeof route.path === 'string' ? [route.path] : route.path;
+
       return paths.find(getMatchingRoute);
     }) || {};
 
+  const getBRDCTitle = (route, params) => {
+    if (route.breadcrumbs_title === ':id') {
+      const id = params.id ?? ' ';
+      return id.charAt(0).toUpperCase() + id.slice(1);
+    }
+
+    return intl.formatMessage(route.breadcrumbs_title);
+  };
+
   // Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
   const route = getCurrentPathFromAddonRoutes();
+
+  // if (
+  //   (!(items === null || isEmpty(route)) &&
+  //     items.length > 0 &&
+  //     route.breadcrumbs_title &&
+  //     items[items.length - 1].url !== location.pathname) ||
+  //   (items.length === 0 && bcLoaded && route.breadcrumbs_title)
+  // )
   if (
-    (!(items === null || isEmpty(route)) &&
-      items.length > 0 &&
-      route.breadcrumbs_title &&
-      items[items.length - 1].url !== location.pathname) ||
-    (items.length === 0 && bcLoaded && route.breadcrumbs_title)
+    route?.breadcrumbs_title &&
+    (!items ||
+      (items?.length === 0 && bcLoaded) ||
+      items?.[items?.length - 1]?.url !== location.pathname)
   ) {
+    let matchingRoute = null;
+    route.path.forEach((p) => {
+      const mr = getMatchingRoute(p);
+      if (mr) {
+        matchingRoute = mr;
+      }
+    });
+
+    if (matchingRoute?.isExact) {
+      items = [];
+    }
     items.push({
       url: location.pathname,
-      title: intl.formatMessage(route.breadcrumbs_title),
+      title: getBRDCTitle(route, matchingRoute.params),
     });
   }
   /** fine della gestione delle rotte statiche */

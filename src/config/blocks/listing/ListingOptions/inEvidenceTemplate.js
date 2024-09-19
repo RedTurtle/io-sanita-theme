@@ -1,4 +1,4 @@
-import { defineMessages } from 'react-intl';
+//import { defineMessages } from 'react-intl';
 
 import {
   templatesOptions,
@@ -7,12 +7,12 @@ import {
 
 import { addLighthouseField } from 'io-sanita-theme/config/blocks/listing/ListingOptions/utils';
 
-const messages = defineMessages({
-  show_topics: {
-    id: 'show_topics',
-    defaultMessage: 'Mostra gli argomenti',
-  },
-});
+// const messages = defineMessages({
+//   show_topics: {
+//     id: 'show_topics',
+//     defaultMessage: 'Mostra gli argomenti',
+//   },
+// });
 
 export const addInEvidenceTemplateOptions = (
   schema,
@@ -31,16 +31,16 @@ export const addInEvidenceTemplateOptions = (
     formData,
     intl,
     [
-      'show_section',
+      //'show_section', //non serve su io-sanita
       'show_type',
       'hide_dates',
       'show_description',
-      'show_topics',
+      //'show_topics', //non serve su io-sanita
     ],
     {
       hide_dates: { default: false },
-      show_section: { default: false },
-      show_topics: { label: intl.formatMessage(messages.show_topics) },
+      //show_section: { default: false },
+      //show_topics: { label: intl.formatMessage(messages.show_topics) },
     },
     pos,
   );

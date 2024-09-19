@@ -38,16 +38,6 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
-#. Default: "Indirizzo"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: address label"
-msgstr ""
-
-#. Default: "Apri in mappa"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: view on googlemaps"
-msgstr ""
-
 #. Default: "Apri in mappa"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
@@ -548,6 +538,11 @@ msgstr ""
 msgid "callout_style_highlight"
 msgstr ""
 
+#. Default: "Ultimo agg.to:"
+#: components/Cards/CardFile/CardFile
+msgid "card_file_last_update"
+msgstr ""
+
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
 msgid "carousel"
@@ -925,7 +920,13 @@ msgstr "Home page"
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
+#: components/Widgets/IconWidget/IconWidget
 msgid "icon"
+msgstr ""
+
+#. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
+#: components/Widgets/IconWidget/IconWidget
+msgid "iconDescription"
 msgstr ""
 
 #. Default: "Incarico"
@@ -1404,6 +1405,11 @@ msgstr ""
 msgid "prenota_online_deafult_label"
 msgstr ""
 
+#. Default: "Anteprima dell'icona scelta"
+#: components/Widgets/IconWidget/IconPreviewWidget
+msgid "previewIconSelected"
+msgstr ""
+
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
@@ -1803,6 +1809,7 @@ msgid "servizio_modulistica"
 msgstr ""
 
 #. Default: "Servizio online"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Cards/CardSimple/CardSimple
 msgid "servizio_online_chip"
 msgstr ""
@@ -1929,7 +1936,6 @@ msgstr ""
 
 #. Default: "Mostra gli argomenti"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
-#: config/blocks/listing/ListingOptions/inEvidenceTemplate
 msgid "show_topics"
 msgstr ""
 

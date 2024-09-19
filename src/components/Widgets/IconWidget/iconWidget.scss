@@ -1,0 +1,29 @@
+#page-controlpanel {
+  .objectlist-widget {
+    .accordion.styled {
+      .content {
+        .select-icon-widget {
+          display: flex;
+          & > div {
+            flex: 1;
+          }
+          .field-wrapper-ArgumentsTitle,
+          .field.help {
+            .help {
+              font-size: 0.8rem;
+            }
+            svg {
+              height: 1em;
+            }
+            .wide.four {
+              display: none !important;
+            }
+            .wide.eight {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
