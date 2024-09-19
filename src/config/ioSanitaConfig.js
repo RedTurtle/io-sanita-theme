@@ -47,6 +47,11 @@ import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
+import {
+  HeaderContactsWidget,
+  IconWidget,
+} from 'io-sanita-theme/components/Widgets/';
+
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 const messages = defineMessages({
@@ -61,9 +66,12 @@ export default function applyConfig(config) {
    * SETTINGS
    ******************************************************************************/
   const voltoSentryOptions = config.settings.sentryOptions;
+  config.widgets.id.contatti_testata = HeaderContactsWidget;
+  config.widgets.widget.iconWidget = IconWidget;
 
   config.settings = {
     ...config.settings,
+
     openExternalLinkInNewTab: true,
     sentryOptions: (libraries) => ({
       ...voltoSentryOptions(libraries),

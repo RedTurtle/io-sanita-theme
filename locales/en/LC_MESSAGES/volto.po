@@ -880,7 +880,13 @@ msgstr "Home page"
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
+#: components/Widgets/IconWidget/IconWidget
 msgid "icon"
+msgstr ""
+
+#. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
+#: components/Widgets/IconWidget/IconWidget
+msgid "iconDescription"
 msgstr ""
 
 #. Default: "Incarico"
@@ -1354,6 +1360,11 @@ msgstr "Previous"
 msgid "prenota_online_deafult_label"
 msgstr "Book online"
 
+#. Default: "Anteprima dell'icona scelta"
+#: components/Widgets/IconWidget/IconPreviewWidget
+msgid "previewIconSelected"
+msgstr ""
+
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
 msgid "print"
@@ -1369,6 +1380,11 @@ msgstr "Publication date"
 #: components/Blocks/Listing/commons/RassegnaInfo
 msgid "rassegna_label"
 msgstr "Review:"
+
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
+msgstr ""
 
 #. Default: "Rassegna:"
 #: components/Blocks/Listing/commons/RassegnaInfo
@@ -1742,6 +1758,11 @@ msgstr "Where"
 msgid "servizio_modulistica"
 msgstr "Forms"
 
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
+msgstr ""
+
 #. Default: "Servizio online"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Cards/CardSimple/CardSimple
@@ -2023,6 +2044,11 @@ msgstr "Who is it aimed at"
 #: components/View/Struttura/StrutturaAllegati
 msgid "struttura_allegati"
 msgstr "Attachments"
+
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
+msgstr ""
 
 #. Default: "Avvisi e notizie"
 #: components/View/Struttura/StrutturaNotizie

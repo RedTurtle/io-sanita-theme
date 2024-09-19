@@ -63,7 +63,7 @@ const messages = defineMessages({
   facetsHelper: {
     id: 'facetsHelper',
     defaultMessage:
-      'Filtri di ricerca aggiuntivi, configurabili e riordinabili, con la possibilità di utilizzare i seguenti widget: Menu a tendina (selezione singola o multipla), Checkbox (selezione singola o multipla), Selettore date, Toggle. Se aggiunti, verranno mostrati nella colonna (sinistra o destra a seconda della variazione scelta). Nel caso siano compilati i campi testuali da mostrare nella colonna, verranno mostrati sotto i suddetti.',
+      'Filtri di ricerca aggiuntivi, configurabili e riordinabili, con la possibilità di utilizzare i seguenti  Menu a tendina (selezione singola o multipla), Checkbox (selezione singola o multipla), Selettore date, Toggle. Se aggiunti, verranno mostrati nella colonna (sinistra o destra a seconda della variazione scelta). Nel caso siano compilati i campi testuali da mostrare nella colonna, verranno mostrati sotto i suddetti.',
   },
   textColumn: {
     id: 'textColumn',
