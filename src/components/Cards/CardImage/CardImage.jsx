@@ -22,8 +22,9 @@ export const CardImage = ({
   item,
   description, //to override default description
   showDescription = true,
-  showImage = true,
+  show_image = true,
   show_dates = true,
+  show_type = true,
   imgSrc,
   isEditMode,
   titleTag = 'h3',
@@ -32,10 +33,8 @@ export const CardImage = ({
   otherChildren,
   className,
 }) => {
-  //const Image = config.getComponent({ name: 'Image' }).component;
-  const img = showImage ? (
+  const img = show_image ? (
     item.image_field && item.image_scales?.[item.image_field] ? (
-      //<Image item={item} alt="" />
       ListingImage({ item, showTitleAttr: false })
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
@@ -68,7 +67,11 @@ export const CardImage = ({
             </UniversalLink>
           </CardTitle>
 
-          {date && <p className="item-date">{date}</p>}
+          {date &&
+            item['@type'] ===
+              'Event' /*Solo per gli eventi la data viene visualizzata qui. Per tutti gli altri tipi di contenuto viene mostrata nel category bottom*/ && (
+              <p className="item-date">{date}</p>
+            )}
 
           {showDescription && (
             <>
@@ -91,6 +94,8 @@ export const CardImage = ({
         </div>
         <CardCategoryBottom
           item={item}
+          show_type={show_type}
+          show_default={false}
           date={date && item['@type'] !== 'Event' ? date : null}
           isEditMode={isEditMode}
         />

@@ -26,6 +26,7 @@ const SimpleCardTemplateCompact = ({
               item={item}
               showDescription={false}
               titleDataElement={id_lighthouse}
+              showDeafaultCategory={false}
             />
           </Col>
         ))}

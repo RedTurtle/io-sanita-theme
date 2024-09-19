@@ -9,6 +9,7 @@ import {
   CardTitle,
   CardText,
   CardReadMore,
+  Badge,
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
@@ -37,6 +38,10 @@ const messages = defineMessages({
   update_date: {
     id: 'update_date',
     defaultMessage: 'Data di aggiornamento',
+  },
+  servizioOnline: {
+    id: 'servizio_online_chip',
+    defaultMessage: 'Servizio online',
   },
 });
 
@@ -95,6 +100,8 @@ const SimpleCardDefault = (props) => {
     show_type,
   });
   const type = item['@type'];
+  const isServizioOnline =
+    item['@type'] === 'Servizio' && item?.servizio_attivo;
 
   const BlockExtraTags = getComponentWithFallback({
     name: 'BlockExtraTags',
@@ -137,6 +144,14 @@ const SimpleCardDefault = (props) => {
           </UniversalLink>
         </CardTitle>
 
+        {/* Chip servizio attivo */}
+        {isServizioOnline && (
+          <div className="mb-3">
+            <Badge color="primary-lightest">
+              {intl.formatMessage(messages.servizioOnline)}
+            </Badge>
+          </div>
+        )}
         {listingText && (
           <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
             {listingText}

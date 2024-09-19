@@ -20,9 +20,9 @@ const CardWithImageDefault = (props) => {
     always_show_image = false,
     set_four_columns = false,
     show_type = true,
-    show_section,
-    show_icon = true,
-    show_topics = true,
+    // show_section,
+    // show_icon = true,
+    // show_topics = true,
     show_description = true,
     hide_dates = false,
     natural_image_size = false,
@@ -56,9 +56,7 @@ const CardWithImageDefault = (props) => {
       {item['@type'] === 'Persona' ? (
         <CardPersona
           item={item}
-          //showImage={showImage}
-          //icon={icon}
-          //type={category}
+          show_image={showImage}
           className={cx({ 'natural-image-size': natural_image_size })}
           size={show_description ? 'big' : 'small'}
           isEditMode={isEditMode}
@@ -68,7 +66,7 @@ const CardWithImageDefault = (props) => {
         <>
           <CardImage
             item={item}
-            showImage={showImage}
+            show_image={showImage}
             showDescription={listingText != null}
             description={listingText}
             className={cx({
@@ -86,18 +84,16 @@ const CardWithImageDefault = (props) => {
               ),
             }}
             show_dates={!hide_dates}
+            show_type={show_type}
             titleDataElement={id_lighthouse}
           />
 
-          {/* {(icon || category) && (
-                <CardCategoryTop iconName={icon}>
-                  {category && (
+          {/* {category && (
                     <span className="text fw-bold">
                       <ListingCategory category={category} item={item} />
                     </span>
                   )}
-                </CardCategoryTop>
-              )} */}
+              */}
         </>
       )}
     </>

@@ -3,10 +3,8 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Container, Row, Col } from 'design-react-kit';
 import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
-
 import CardWithImageDefault from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
 
 const CardWithImageTemplate = (props) => {
@@ -32,7 +30,7 @@ const CardWithImageTemplate = (props) => {
               <Col
                 md={6}
                 xl={layoutSelected}
-                lg={item['@type'] === 'Persona' ? 6 : layoutSelected}
+                lg={layoutSelected}
                 key={item['@id']}
               >
                 <CardWithImageDefault {...props} item={item} index={index} />

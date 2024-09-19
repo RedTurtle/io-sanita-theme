@@ -8,7 +8,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 
 import { UniversalLink } from '@plone/volto/components';
-import config from '@plone/volto/registry';
+import { ListingImage } from 'io-sanita-theme/components/Blocks';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 import {
   getCalendarDate,
@@ -33,10 +33,9 @@ const CardFeatured = ({
   date,
   rrule,
 }) => {
-  const Image = config.getComponent({ name: 'Image' }).component;
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
-      <Image item={item} alt="" />
+      ListingImage({ item, showTitleAttr: false })
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
     ) : null;

@@ -3,15 +3,7 @@
   Utilizza questa CardContatti per mostrare la correlazione coi Punti di contatto
 */
 import cx from 'classnames';
-import {
-  Card,
-  CardBody,
-  CardCategory,
-  CardText,
-  CardTitle,
-  Icon,
-} from 'design-react-kit';
-import { useIntl } from 'react-intl';
+import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
 import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 
@@ -25,7 +17,6 @@ const CardContatti = ({
   className,
   ...rest
 }) => {
-  const intl = useIntl();
   const contactUrl = item['@id'];
 
   return (

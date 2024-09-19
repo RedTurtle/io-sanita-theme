@@ -44,7 +44,6 @@ export const getItemListingCategory = ({
   ...other_props
 }) => {
   let cat = [];
-  console.log(other_props);
   if (item) {
     // if (show_section && item.parent) {
     //   cat.push(item.parent?.title);

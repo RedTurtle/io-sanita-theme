@@ -13,6 +13,8 @@ import {
   Chip,
 } from 'design-react-kit';
 
+import './cardWithImageTemplateSkeleton.scss';
+
 const CardWithImageTemplateSkeleton = ({
   isEditMode,
   title,
@@ -21,25 +23,24 @@ const CardWithImageTemplateSkeleton = ({
   always_show_image = false,
   hide_dates = false,
   full_width = true,
+  set_four_columns = false,
 }) => {
+  const layoutSelected = set_four_columns ? '3' : '4';
   return (
     <div className="card-with-image-template">
-      <Container className="px-4">
+      <Container className={!show_block_bg || isEditMode ? 'px-0' : 'px-4'}>
         <div className="skeleton-template">
-          {title && (
-            <Row>
-              <Col>
-                <h2 className={cx('mb-4', { 'mt-5': !show_block_bg })}>
-                  {title}
-                </h2>
-              </Col>
-            </Row>
-          )}
-          <Row className="items">
-            {[0, 1, 2, 3, 4, 5].map((i) => {
+          <Row className="items mb-3">
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => {
               return (
-                <Col lg="4" key={i} className="col-item mb-3">
-                  <Card className={cx('listing-item card-bg')}>
+                <Col
+                  md={6}
+                  xl={layoutSelected}
+                  lg={layoutSelected}
+                  key={i}
+                  className="col-item mb-3"
+                >
+                  <Card className={cx('listing-item card-bg no-after')}>
                     {/* wrapperClassName="card-overlapping" */}
                     {(i < 3 || always_show_image) && (
                       <div className="img-responsive-wrapper">
@@ -49,7 +50,7 @@ const CardWithImageTemplateSkeleton = ({
                       </div>
                     )}
                     <CardBody className="px-4">
-                      <CardTitle tag="h4">-</CardTitle>
+                      <CardTitle tag="h4"> </CardTitle>
                       <CardText className="mb-3"></CardText>
                       <div>
                         {[0, 1].map((argument) => (
