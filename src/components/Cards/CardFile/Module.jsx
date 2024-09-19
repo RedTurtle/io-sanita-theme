@@ -50,7 +50,6 @@ const Module = ({
   }, [key]);
 
   let modulo = subrequests?.[key]?.data ?? item;
-  console.log(modulo);
   return modulo ? (
     <Card className="shadow rounded card-module no-after">
       <CardBody>
