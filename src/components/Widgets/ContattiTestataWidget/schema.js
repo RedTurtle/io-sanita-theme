@@ -21,7 +21,6 @@ const schema = () => {
         title: 'Link',
         description:
           "Campo link: Accetta link interni ed esterni, email o numeri di telefono. Devono essere creati utilizzando lo strumento di collegamento dell'editor del campo",
-        type: 'string',
         widget: 'slate',
       },
       icon: {

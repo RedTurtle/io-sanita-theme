@@ -6,6 +6,9 @@
 import { useSelector } from 'react-redux';
 import { Icon } from 'io-sanita-theme/components';
 import { Container, Row, Col } from 'design-react-kit';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import { richTextHasContent } from 'io-sanita-theme/helpers';
+
 import './headerContacts.scss';
 
 const HeaderContacts = () => {
@@ -21,6 +24,7 @@ const HeaderContacts = () => {
         <Container>
           <Row>
             {items.map((item, index) => {
+              console.log(item.link_value);
               return (
                 <Col className="contact-wrapper" key={item['@id']}>
                   {item.description && (
@@ -33,6 +37,12 @@ const HeaderContacts = () => {
                       dangerouslySetInnerHTML={{ __html: item.link_value.data }}
                     />
                   )}
+                  {item.link_value && (
+                    <div className="link-value">
+                      <TextBlockView data={{ value: item.link_value }} />
+                    </div>
+                  )}
+
                   {item.icon && (
                     <Icon icon={item.icon} color="primary" size="sm" />
                   )}
