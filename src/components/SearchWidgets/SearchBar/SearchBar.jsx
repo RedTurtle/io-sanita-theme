@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { Button } from 'design-react-kit';
 import { Icon } from 'io-sanita-theme/components';
 import { useDebouncedEffect } from 'io-sanita-theme/helpers';
+
+/* STYLE */
+import './_searchBar.scss';
 
 const messages = defineMessages({
   searchable_text_button: {
@@ -10,16 +12,16 @@ const messages = defineMessages({
     defaultMessage: 'Cerca',
   },
   searchable_text_decription: {
-    id: 'search_map_searchable_text_decription',
-    defaultMessage:
-      '*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”',
+    id: 'search_text_searchable_text_decription',
+    defaultMessage: '*Inserisci parole chiave, ad esempio “Vaccinazioni”',
   },
 });
 
-const SearchableText = ({
+const SearchBar = ({
   id,
   title,
   defaultTitle,
+  textDescription,
   value,
   onChange,
   controls,
@@ -38,7 +40,7 @@ const SearchableText = ({
   );
 
   return (
-    <div className="form-group search-bar mb-3">
+    <div className="form-group search-bar-widget mb-3">
       <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
         {title ?? defaultTitle}
       </label>
@@ -63,10 +65,12 @@ const SearchableText = ({
         </div> */}
       </div>
       <small className="form-text" id={id + 'searchable-text-description'}>
-        {intl.formatMessage(messages.searchable_text_decription)}
+        {textDescription
+          ? textDescription
+          : intl.formatMessage(messages.searchable_text_decription)}
       </small>
     </div>
   );
 };
 
-export default SearchableText;
+export default SearchBar;
