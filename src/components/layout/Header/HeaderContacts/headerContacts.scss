@@ -10,10 +10,12 @@
   .row {
     row-gap: 0.5rem;
     column-gap: 1em;
-    @media (max-width: #{map-get($grid-breakpoints,md)}) {
-      justify-content: space-between;
+
+    @media (max-width: #{map-get($grid-breakpoints, md)}) {
+      row-gap: 0.5rem;
+      column-gap: 0;
     }
-    .contact-wrapper {
+    .col.contact-wrapper {
       display: flex;
       flex-grow: 0;
       flex-basis: auto;

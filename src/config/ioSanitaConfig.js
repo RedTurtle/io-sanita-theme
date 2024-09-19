@@ -48,7 +48,7 @@ import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 
 import {
-  ContattiTestataWidget,
+  HeaderContactsWidget,
   IconWidget,
 } from 'io-sanita-theme/components/Widgets/';
 
@@ -66,7 +66,7 @@ export default function applyConfig(config) {
    * SETTINGS
    ******************************************************************************/
   const voltoSentryOptions = config.settings.sentryOptions;
-  config.widgets.id.contatti_testata = ContattiTestataWidget;
+  config.widgets.id.contatti_testata = HeaderContactsWidget;
   config.widgets.widget.iconWidget = IconWidget;
 
   config.settings = {

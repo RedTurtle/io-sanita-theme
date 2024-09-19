@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import schema from './schema.js';
 import { ObjectListWidget } from '@plone/volto/components';
 
-const ContattiTestataWidget = (props) => {
+const HeaderContactsWidget = (props) => {
   const { id, value, onChange } = props;
   const onChangeField = (id, value) => {
     onChange(id, JSON.stringify(value));
@@ -25,4 +25,4 @@ const ContattiTestataWidget = (props) => {
   );
 };
 
-export default ContattiTestataWidget;
+export default HeaderContactsWidget;

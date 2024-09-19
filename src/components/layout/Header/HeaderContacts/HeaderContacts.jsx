@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import { Icon } from 'io-sanita-theme/components';
 import { Container, Row, Col } from 'design-react-kit';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { richTextHasContent } from 'io-sanita-theme/helpers';
 
 import './headerContacts.scss';
 
@@ -22,21 +21,19 @@ const HeaderContacts = () => {
     items && (
       <div className="header-contacts">
         <Container>
-          <Row>
+          <Row role="list">
             {items.map((item, index) => {
-              console.log(item.link_value);
               return (
-                <Col className="contact-wrapper" key={item['@id']}>
+                <Col
+                  className="contact-wrapper"
+                  key={item['@id']}
+                  role="listitem"
+                  tabIndex="0"
+                >
                   {item.description && (
                     <span className="item-description">{item.description}</span>
                   )}
-                  {item.tag && <span className="item-type">{item.tag}</span>}
-                  {item.link_value && (
-                    <div
-                      className="link-value"
-                      dangerouslySetInnerHTML={{ __html: item.link_value.data }}
-                    />
-                  )}
+                  {item.tag && <div className="item-type">{item.tag}</div>}
                   {item.link_value && (
                     <div className="link-value">
                       <TextBlockView data={{ value: item.link_value }} />
