@@ -30,7 +30,8 @@
     .card-image {
       overflow: hidden;
       position: relative;
-      img {
+      img,
+      > .img-wrapper {
         position: absolute;
         min-width: 100%;
         min-height: 100%;

@@ -58,8 +58,7 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     show_description = true,
     show_detail_link,
     detail_link_label,
-    title,
-    show_block_bg,
+
     hide_dates,
     id_lighthouse,
     linkmore_id_lighthouse,

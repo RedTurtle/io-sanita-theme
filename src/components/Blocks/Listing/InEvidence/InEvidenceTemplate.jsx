@@ -6,13 +6,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Container, Row, Col } from 'design-react-kit';
 
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-
-import {
-  getCalendarDate,
-  getEventRecurrenceMore,
-  getItemListingCategory,
-} from 'io-sanita-theme/helpers';
+import { getItemListingCategory } from 'io-sanita-theme/helpers';
 
 import { CardPersona, CardFeatured } from 'io-sanita-theme/components';
 
@@ -30,9 +24,6 @@ const InEvidenceTemplate = (props) => {
     items,
     isEditMode,
     show_block_bg,
-    show_section,
-    show_type = true,
-    show_topics,
     show_description = true,
     id_lighthouse,
     hide_dates,
@@ -40,7 +31,6 @@ const InEvidenceTemplate = (props) => {
     linkTitle,
     linkHref,
     linkmore_id_lighthouse,
-    rrule,
   } = props;
 
   return (
@@ -49,12 +39,6 @@ const InEvidenceTemplate = (props) => {
         <div className="in-evidence-cards-wrapper mb-5">
           <Row>
             {items.map((item, index) => {
-              const date = hide_dates
-                ? null
-                : getCalendarDate(item, rrule.rrulestr);
-              const eventRecurrenceMore = hide_dates
-                ? null
-                : getEventRecurrenceMore(item, isEditMode);
               const listingText = show_description ? (
                 <ListingText item={item} />
               ) : null;
@@ -62,9 +46,6 @@ const InEvidenceTemplate = (props) => {
               const category = getItemListingCategory({
                 ...props,
                 item,
-                show_type,
-                show_section,
-                show_topics,
               });
 
               const isEventAppointment =
@@ -91,7 +72,7 @@ const InEvidenceTemplate = (props) => {
                         className={cx('listing-item', {
                           'rassegna-appointment': isEventAppointment,
                         })}
-                        date={date}
+                        show_dates={!hide_dates}
                         category={
                           category && (
                             <ListingCategory category={category} item={item} />
@@ -102,7 +83,6 @@ const InEvidenceTemplate = (props) => {
                           afterTitle: isEventAppointment && (
                             <RassegnaInfo eventoPadre={item.parent} />
                           ),
-                          afterText: eventRecurrenceMore,
                         }}
                         text={listingText}
                         showDescription={show_description}
@@ -134,4 +114,4 @@ InEvidenceTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-export default injectLazyLibs(['rrule'])(InEvidenceTemplate);
+export default InEvidenceTemplate;

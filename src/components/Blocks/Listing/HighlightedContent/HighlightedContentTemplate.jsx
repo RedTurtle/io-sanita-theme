@@ -6,14 +6,10 @@ import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { Container, CardReadMore } from 'design-react-kit';
 import cx from 'classnames';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+
 import { UniversalLink } from '@plone/volto/components';
 
-import {
-  getCalendarDate,
-  getEventRecurrenceMore,
-  getComponentWithFallback,
-} from 'io-sanita-theme/helpers';
+import { getComponentWithFallback } from 'io-sanita-theme/helpers';
 
 import { CardFeatured } from 'io-sanita-theme/components';
 import {
@@ -29,7 +25,6 @@ const HighlightedContentTemplate = (props) => {
     isEditMode,
     linkTitle,
     linkHref,
-    rrule,
     show_block_bg,
     id_lighthouse,
   } = props;
@@ -38,8 +33,6 @@ const HighlightedContentTemplate = (props) => {
   return (
     <Container className={!show_block_bg || isEditMode ? 'px-0' : 'px-4'}>
       {items.map((item, index) => {
-        const date = getCalendarDate(item, rrule.rrulestr);
-        const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
         const listingText = <ListingText item={item} />;
 
         const category = item.parent?.title;
@@ -67,7 +60,6 @@ const HighlightedContentTemplate = (props) => {
                   <ListingCategory category={category} item={item} />
                 ) : null
               }
-              date={date}
               otherChildren={{
                 afterTitle: isEventAppointment ? (
                   <RassegnaInfo eventoPadre={item.parent} />
@@ -75,7 +67,7 @@ const HighlightedContentTemplate = (props) => {
                 afterText: (
                   <>
                     <BlockExtraTags {...props} item={item} itemIndex={index} />
-                    {eventRecurrenceMore}
+
                     {readMoreHref && (
                       <CardReadMore
                         tag={UniversalLink}
@@ -106,7 +98,7 @@ HighlightedContentTemplate.propTypes = {
   title: PropTypes.string,
 };
 
-export default injectLazyLibs(['rrule'])(HighlightedContentTemplate);
+export default HighlightedContentTemplate;
 
 const messages = defineMessages({
   view_all: {

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { getContent, resetContent } from '@plone/volto/actions';
+import { useIntl, defineMessages } from 'react-intl';
+import { viewDate } from 'io-sanita-theme/helpers';
 
 import { Card, CardBody, CardTitle } from 'design-react-kit';
 
@@ -20,11 +22,20 @@ const Module = ({
   titleTag = 'h3',
   showDescription = true,
   titleDataElement,
+  showModified,
 }) => {
   const dispatch = useDispatch();
+  const intl = useIntl();
   const subrequests = useSelector((state) => state.content.subrequests);
   const url = flattenToAppURL(item['@id']);
   const key = 'module_' + url;
+
+  const messages = defineMessages({
+    last_update: {
+      id: 'card_file_last_update',
+      defaultMessage: 'Ultimo agg.to:',
+    },
+  });
 
   useEffect(() => {
     if (
@@ -39,7 +50,6 @@ const Module = ({
   }, [key]);
 
   let modulo = subrequests?.[key]?.data ?? item;
-
   return modulo ? (
     <Card className="shadow rounded card-module no-after">
       <CardBody>
@@ -87,6 +97,12 @@ const Module = ({
               title={modulo.title ?? modulo.formato_alternativo_2.filename}
               hideFileFormatLabel={true}
             />
+            {showModified && modulo?.modified && (
+              <p>
+                {intl.formatMessage(messages.last_update)}{' '}
+                {viewDate(intl.locale, modulo?.modified, 'DD-MM-Y HH:MM')}
+              </p>
+            )}
           </div>
         </div>
       </CardBody>

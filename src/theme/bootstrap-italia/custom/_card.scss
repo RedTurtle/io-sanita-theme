@@ -18,7 +18,8 @@
     }
   }
 
-  .event-date {
+  .event-date,
+  .item-date {
     @include rem-size(font-size, 20);
     font-weight: $font-weight-semibold;
   }

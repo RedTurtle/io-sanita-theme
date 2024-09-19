@@ -1,5 +1,5 @@
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import cx from 'classnames';
 import {
   Card,
@@ -19,16 +19,16 @@ import './cardPersona.scss';
 - capire da dove deve essere preso eventualmente l'indirizzo
 */
 
-const messages = defineMessages({
-  address: {
-    id: 'CardPersona: address label',
-    defaultMessage: 'Indirizzo',
-  },
-  view_on_googlemaps: {
-    id: 'CardPersona: view on googlemaps',
-    defaultMessage: 'Apri in mappa',
-  },
-});
+// const messages = defineMessages({
+//   address: {
+//     id: 'CardPersona: address label',
+//     defaultMessage: 'Indirizzo',
+//   },
+//   view_on_googlemaps: {
+//     id: 'CardPersona: view on googlemaps',
+//     defaultMessage: 'Apri in mappa',
+//   },
+// });
 
 export const CardPersona = ({
   showDistance = false,
@@ -39,18 +39,21 @@ export const CardPersona = ({
   titleTag = 'h3',
   className,
   titleDataElement,
+  show_image = true,
 }) => {
-  const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
 
-  const img =
-    item.image_field &&
-    item.image_scales?.[item.image_field]?.filter((i) => i != null)?.length >
-      0 ? (
-      <Image item={item} alt="" />
-    ) : imgSrc ? (
-      <img src={imgSrc} alt="" />
-    ) : null;
+  let img = null;
+  if (show_image) {
+    img =
+      item.image_field &&
+      item.image_scales?.[item.image_field]?.filter((i) => i != null)?.length >
+        0 ? (
+        <Image item={item} alt="" />
+      ) : imgSrc ? (
+        <img src={imgSrc} alt="" />
+      ) : null;
+  }
 
   const incarico_field =
     item.incarico_metadata?.length > 0 ? item.incarico_metadata : item.incarico;
@@ -62,7 +65,7 @@ export const CardPersona = ({
   return (
     <Card className={cx('shadow rounded card-persona no-after', className)}>
       <CardBody className="d-flex">
-        <div className="card-persona-content flex-grow-1 pe-5">
+        <div className="card-persona-content flex-grow-1 pe-2 pe-lg-5">
           <CardTitle tag={titleTag} className="mb-0">
             <UniversalLink
               item={!isEditMode ? item : null}

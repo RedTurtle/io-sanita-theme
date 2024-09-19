@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
@@ -9,7 +10,8 @@ import {
   getEventRecurrenceMore,
 } from 'io-sanita-theme/helpers';
 
-import config from '@plone/volto/registry';
+import { ListingImage } from 'io-sanita-theme/components/Blocks';
+
 import './cardImage.scss';
 
 /*
@@ -18,26 +20,33 @@ import './cardImage.scss';
  */
 export const CardImage = ({
   item,
+  description, //to override default description
   showDescription = true,
+  show_image = true,
+  show_dates = true,
+  show_type = true,
   imgSrc,
   isEditMode,
   titleTag = 'h3',
   rrule = {},
   titleDataElement,
+  otherChildren,
+  className,
 }) => {
-  const Image = config.getComponent({ name: 'Image' }).component;
-  const img =
+  const img = show_image ? (
     item.image_field && item.image_scales?.[item.image_field] ? (
-      <Image item={item} alt="" />
+      ListingImage({ item, showTitleAttr: false })
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
-    ) : null;
+    ) : null
+  ) : null;
 
-  const date = getCalendarDate(item, rrule.rrulestr);
-  const eventRecurrenceMore = getEventRecurrenceMore(item, isEditMode);
+  const date = show_dates && getCalendarDate(item, rrule.rrulestr);
+  const eventRecurrenceMore =
+    show_dates && getEventRecurrenceMore(item, isEditMode);
 
   return (
-    <Card className="shadow rounded no-after card-image">
+    <Card className={cx('shadow rounded no-after card-image', className)}>
       {img && (
         <div className="img-responsive-wrapper">
           <div className="img-responsive img-responsive-panoramic">
@@ -58,12 +67,25 @@ export const CardImage = ({
             </UniversalLink>
           </CardTitle>
 
-          {item['@type'] === 'Event' && date && (
-            <p className="event-date">{date}</p>
-          )}
+          {date &&
+            item['@type'] ===
+              'Event' /*Solo per gli eventi la data viene visualizzata qui. Per tutti gli altri tipi di contenuto viene mostrata nel category bottom*/ && (
+              <p className="item-date">{date}</p>
+            )}
 
-          {item.description && showDescription && (
-            <CardText>{item.description}</CardText>
+          {showDescription && (
+            <>
+              {otherChildren.afterTitle && otherChildren.afterTitle}
+
+              {description ? (
+                <CardText>{description}</CardText>
+              ) : item.description ? (
+                <CardText>{item.description}</CardText>
+              ) : (
+                <></>
+              )}
+              {otherChildren.afterText && otherChildren.afterText}
+            </>
           )}
 
           {eventRecurrenceMore && (
@@ -72,6 +94,8 @@ export const CardImage = ({
         </div>
         <CardCategoryBottom
           item={item}
+          show_type={show_type}
+          show_default={false}
           date={date && item['@type'] !== 'Event' ? date : null}
           isEditMode={isEditMode}
         />

@@ -12,7 +12,7 @@ const BandoAttachment = ({ item }) => {
     item['@type'] === 'Link' ||
     item['@type'] === 'Modulo'
   ) {
-    return <CardFile item={item} />;
+    return <CardFile item={item} showModified={true} />;
   }
 };
 

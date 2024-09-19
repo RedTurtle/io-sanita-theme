@@ -58,6 +58,12 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 //Widgets
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
 export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
+export SortByWidget from 'io-sanita-theme/components/Widgets/SortByWidget/SortByWidget';
+
+//Search Widgets
+export SearchBar from 'io-sanita-theme/components/SearchWidgets/SearchBar/SearchBar';
+export SearchCheckbox from 'io-sanita-theme/components/SearchWidgets/SearchCheckbox';
+export SearchResultItem from 'io-sanita-theme/components/SearchWidgets/SearchResultItem';
 
 //Cards
 export CardCategoryTop from 'io-sanita-theme/components/Cards/common/CardCategoryTop';

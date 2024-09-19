@@ -32,12 +32,10 @@ const FooterMain = () => {
             <Col sm={12} tag="div" widths={['xs', 'sm', 'md', 'lg', 'xl']}>
               <div className="it-brand-wrapper">
                 {footerTopContent ?? (
-                  <>
-                    <UniversalLink href="/">
-                      <LogoFooter />
-                      <BrandTextFooter />
-                    </UniversalLink>
-                  </>
+                  <UniversalLink href="/">
+                    <LogoFooter />
+                    <BrandTextFooter />
+                  </UniversalLink>
                 )}
               </div>
             </Col>

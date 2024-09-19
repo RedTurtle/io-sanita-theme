@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { Button, Row, Col } from 'design-react-kit';
+
+import { Row, Col } from 'design-react-kit';
 import { v4 as uuid } from 'uuid';
 import SimpleCardDefault from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';

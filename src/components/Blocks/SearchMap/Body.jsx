@@ -17,10 +17,10 @@ import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
-import SearchableText from 'io-sanita-theme/components/Blocks/SearchMap/SearchableText';
-import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
-import ResultItem from 'io-sanita-theme/components/Blocks/SearchMap/ResultItem';
+import { SearchBar, SearchResultItem } from 'io-sanita-theme/components';
+import ioSanitaPin from 'io-sanita-theme/icons/map-pin.svg';
 
+/* Style */
 import './search-map.scss';
 
 const messages = defineMessages({
@@ -47,6 +47,11 @@ const messages = defineMessages({
   searchable_text_default_label_medici: {
     id: 'search_map_searchable_text_default_label_mediic',
     defaultMessage: 'Cerca medici di base e pediatri vicino a te',
+  },
+  searchable_text_decription: {
+    id: 'search_map_searchable_text_decription',
+    defaultMessage:
+      '*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”',
   },
   filter_by: {
     id: 'search_mapfilter-by',
@@ -283,7 +288,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
 
   const results_region_id = block_id + 'results-region';
   return (
-    <div className="iosanita-block-search-map">
+    <div className="iosanita-block-search map">
       <div className="strutture-search">
         <div className="full-width bg-primary-lightest py-4">
           <Container className="px-4">
@@ -300,7 +305,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
                 {data.show_search_bar && (
                   <Row>
                     <Col lg={8}>
-                      <SearchableText
+                      <SearchBar
                         id={block_id}
                         title={data.title}
                         defaultTitle={
@@ -312,6 +317,9 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
                                 messages.searchable_text_default_label_medici,
                               )
                         }
+                        textDescription={intl.formatMessage(
+                          messages.searchable_text_decription,
+                        )}
                         value={filters.searchableText}
                         onChange={(v) => {
                           setFilters({ ...filters, searchableText: v });
@@ -400,7 +408,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
                                   key={block_id + i}
                                   className="mb-lg-3"
                                 >
-                                  <ResultItem item={item} />
+                                  <SearchResultItem item={item} />
                                 </Col>
                               ))}
                             </Row>
