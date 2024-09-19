@@ -365,6 +365,7 @@ msgstr ""
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/commons/ListingLinkMore
+#: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr "Ver todo"
@@ -419,11 +420,6 @@ msgstr "Todas las opciones"
 msgid "allTopics"
 msgstr "Todos los temas"
 
-#. Default: "Documenti allegati"
-#: components/View/Bando/BandoAllegati
-msgid "allegati"
-msgstr ""
-
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -472,11 +468,6 @@ msgstr "Volver a la búsqueda"
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
-msgstr ""
-
-#. Default: "Area responsabile"
-#: components/View/Bando/BandoAreaResponsabile
-msgid "bando_area_responsabile"
 msgstr ""
 
 #. Default: "Scaduto"
@@ -557,6 +548,11 @@ msgstr ""
 #. Default: "In evidenza"
 #: components/Blocks/Callout/Sidebar
 msgid "callout_style_highlight"
+msgstr ""
+
+#. Default: "Ultimo agg.to:"
+#: components/Cards/CardFile/CardFile
+msgid "card_file_last_update"
 msgstr ""
 
 #. Default: "Carosello"
@@ -921,7 +917,6 @@ msgstr ""
 
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
-#: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr ""
 
@@ -1385,6 +1380,11 @@ msgstr "Imprimir"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "publication_date"
+msgstr ""
+
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
 msgstr ""
 
 #. Default: "Tempo di lettura"
@@ -2160,11 +2160,6 @@ msgstr "Temas"
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
-
-#. Default: "Ufficio responsabile"
-#: components/View/Bando/BandoUfficioResponsabile
-msgid "ufficio_responsabile"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."

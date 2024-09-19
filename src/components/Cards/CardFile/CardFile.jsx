@@ -13,6 +13,7 @@ Gli elementi della card sono
   - titolo del documento,
   - icona,
   - descrizione (opzionale tramite la prop 'showDescription')
+  - data di modifica/creazione (opzionale tramite la prop 'showModified')
 
 Il click sulla card può generare un download diretto del file o indirizzare l’utente a una pagina foglia di tipologia Documento.
 Il link può essere applicato all’intera card oppure solo al titolo e icona.
@@ -25,6 +26,7 @@ import cx from 'classnames';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
+import { viewDate } from 'io-sanita-theme/helpers';
 import { Icon } from 'io-sanita-theme/components';
 import { FileIcon } from 'io-sanita-theme/helpers';
 import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
@@ -40,6 +42,10 @@ const messages = defineMessages({
     id: 'link',
     defaultMessage: 'Collegamento',
   },
+  last_update: {
+    id: 'card_file_last_update',
+    defaultMessage: 'Ultimo agg.to:',
+  },
 });
 
 export const CardFile = ({
@@ -49,6 +55,7 @@ export const CardFile = ({
   showDescription = true,
   file = null,
   titleDataElement,
+  showModified = false,
 }) => {
   const intl = useIntl();
   let _item = null;
@@ -61,6 +68,7 @@ export const CardFile = ({
         titleTag="h3"
         showDescription={showDescription}
         titleDataElement={titleDataElement}
+        showModified={showModified}
       />
     );
   }
@@ -158,6 +166,12 @@ export const CardFile = ({
             <CardText tag="div" className="mt-2">
               <p>{item.description}</p>
             </CardText>
+          )}
+          {showModified && item?.modified && item?.['@type'] === 'File' && (
+            <p>
+              {intl.formatMessage(messages.last_update)}{' '}
+              {viewDate(intl.locale, item?.modified, 'DD-MM-Y HH:MM')}
+            </p>
           )}
         </div>
       </CardBody>
