@@ -8,9 +8,12 @@
             flex: 1;
           }
           .field-wrapper-ArgumentsTitle,
-          #icon-preview-widget-id {
+          .field.help {
+            .help {
+              font-size: 0.8rem;
+            }
             svg {
-              width: 1em;
+              height: 1em;
             }
             .wide.four {
               display: none !important;

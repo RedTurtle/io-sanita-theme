@@ -21,6 +21,7 @@ const HeaderContactsWidget = (props) => {
       value={JSON.parse(value) ?? []}
       onChange={onChangeField}
       id={id}
+      title="Contatti in testata"
     />
   );
 };

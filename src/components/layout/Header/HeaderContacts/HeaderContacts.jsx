@@ -18,7 +18,7 @@ const HeaderContacts = () => {
   );
 
   return (
-    items && (
+    items?.length > 0 && (
       <div className="header-contacts">
         <Container>
           <Row role="list">
