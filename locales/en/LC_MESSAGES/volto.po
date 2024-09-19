@@ -38,16 +38,6 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
-#. Default: "Indirizzo"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: address label"
-msgstr ""
-
-#. Default: "Apri in mappa"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: view on googlemaps"
-msgstr ""
-
 #. Default: "Apri in mappa"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
@@ -353,6 +343,7 @@ msgstr ""
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/commons/ListingLinkMore
+#: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "Vedi tutto"
 msgstr "View all"
@@ -407,11 +398,6 @@ msgstr "All options"
 msgid "allTopics"
 msgstr "All topics"
 
-#. Default: "Documenti allegati"
-#: components/View/Bando/BandoAllegati
-msgid "allegati"
-msgstr ""
-
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
@@ -460,11 +446,6 @@ msgstr "Back to search"
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
-msgstr ""
-
-#. Default: "Area responsabile"
-#: components/View/Bando/BandoAreaResponsabile
-msgid "bando_area_responsabile"
 msgstr ""
 
 #. Default: "Scaduto"
@@ -909,7 +890,6 @@ msgstr "Fields marked with (*) are required."
 
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
-#: components/Cards/CardGuide/CardGuide
 msgid "link"
 msgstr "Link"
 
@@ -1375,6 +1355,11 @@ msgstr "Print"
 msgid "publication_date"
 msgstr ""
 
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
+msgstr ""
+
 #. Default: "Tempo di lettura"
 #: components/View/commons/PageHeader/PageHeader
 msgid "reading_time"
@@ -1647,7 +1632,13 @@ msgstr ""
 msgid "servizio_dove"
 msgstr ""
 
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
+msgstr ""
+
 #. Default: "Servizio online"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Cards/CardSimple/CardSimple
 msgid "servizio_online_chip"
 msgstr ""
@@ -1774,7 +1765,6 @@ msgstr ""
 
 #. Default: "Mostra gli argomenti"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
-#: config/blocks/listing/ListingOptions/inEvidenceTemplate
 msgid "show_topics"
 msgstr ""
 
@@ -1924,6 +1914,11 @@ msgstr ""
 msgid "struttura_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
+msgstr ""
+
 #. Default: "Avvisi e notizie"
 #: components/View/Struttura/StrutturaNotizie
 msgid "struttura_avvisi_e_notizie"
@@ -2058,11 +2053,6 @@ msgstr "Topics"
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
-
-#. Default: "Ufficio responsabile"
-#: components/View/Bando/BandoUfficioResponsabile
-msgid "ufficio_responsabile"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please login first."
