@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
 import { RichTextSection } from 'io-sanita-theme/helpers';
-import { CardImage } from 'io-sanita-theme/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContent, resetContent } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -35,8 +34,7 @@ const UOFaParteDi = ({ content }) => {
   useEffect(() => {
     if (parentUO) {
       const url = flattenToAppURL(parentUO['@id']);
-      const loaded =
-      searchUO?.[url]?.loading || searchUO?.[url]?.loaded;
+      const loaded = searchUO?.[url]?.loading || searchUO?.[url]?.loaded;
       if (!loaded) {
         dispatch(getContent(url, null, url));
       }

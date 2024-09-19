@@ -294,11 +294,13 @@ export default function applyConfig(config) {
       path: [AGGREGATION_PAGE_ARGOMENTO + ':id'],
       component: AggregationPage,
       type: 'parliamo_di',
+      breadcrumbs_title: ':id',
     },
     {
       path: [AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id'],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
+      breadcrumbs_title: ':id',
     },
   ];
 

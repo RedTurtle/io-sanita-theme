@@ -6,8 +6,9 @@
 import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Spinner } from 'design-react-kit';
+import { Helmet, BodyClass } from '@plone/volto/helpers';
+import { resetContent } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
 import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
 import { getTassonomieSearch } from 'io-sanita-theme/actions';
@@ -132,6 +133,10 @@ const AggregationPage = ({ match, route, location }) => {
   const onPaginationChange = (e, { activePage }) => {
     setSearchParams({ ...searchParams, currentPage: activePage });
   };
+
+  useEffect(() => {
+    dispatch(resetContent());
+  }, []);
 
   return (
     <>
