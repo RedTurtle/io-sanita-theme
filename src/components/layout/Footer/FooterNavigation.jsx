@@ -3,7 +3,6 @@
  * @module components/layout/Footer/FooterNavigation
  */
 
-import { Link } from 'react-router-dom';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';

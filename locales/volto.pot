@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-18T09:57:42.754Z\n"
+"POT-Creation-Date: 2024-09-19T09:59:44.217Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -38,16 +38,6 @@ msgstr ""
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "Card detail label"
-msgstr ""
-
-#. Default: "Indirizzo"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: address label"
-msgstr ""
-
-#. Default: "Apri in mappa"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: view on googlemaps"
 msgstr ""
 
 #. Default: "Apri in mappa"
@@ -1744,7 +1734,13 @@ msgstr ""
 msgid "servizio_dove"
 msgstr ""
 
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
+msgstr ""
+
 #. Default: "Servizio online"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Cards/CardSimple/CardSimple
 msgid "servizio_online_chip"
 msgstr ""
@@ -1871,7 +1867,6 @@ msgstr ""
 
 #. Default: "Mostra gli argomenti"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
-#: config/blocks/listing/ListingOptions/inEvidenceTemplate
 msgid "show_topics"
 msgstr ""
 
@@ -2019,6 +2014,11 @@ msgstr ""
 #. Default: "A chi si rivolge"
 #: components/View/Struttura/StrutturaAChiSiRivolge
 msgid "struttura_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
 msgstr ""
 
 #. Default: "Avvisi e notizie"

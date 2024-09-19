@@ -1,8 +1,6 @@
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import { UniversalLink } from '@plone/volto/components';
+
 import { Row, Col } from 'design-react-kit';
 
 import { CardSimple } from 'io-sanita-theme/components';
@@ -19,7 +17,6 @@ const SimpleCardTemplateCompact = ({
   linkAlign,
   linkmore_id_lighthouse,
 }) => {
-  const intl = useIntl();
   return (
     <div className="simple-card-compact-template">
       <Row className="mb-3">
@@ -29,6 +26,7 @@ const SimpleCardTemplateCompact = ({
               item={item}
               showDescription={false}
               titleDataElement={id_lighthouse}
+              showDeafaultCategory={false}
             />
           </Col>
         ))}

@@ -6,10 +6,9 @@ import {
   HighlightedContentTemplateSkeleton,
   InEvidenceTemplate,
   InEvidenceTemplateSkeleton,
+  CardWithImageTemplate,
+  CardWithImageTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
-
-// import CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImageTemplate';
-// import CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithImageTemplateSkeleton';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
@@ -53,7 +52,7 @@ import {
   addSimpleCardTemplateOptions,
   addMapTemplateOptions,
   addInEvidenceTemplateOptions,
-  // addCardWithImageTemplateOptions,
+  addCardWithImageTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
@@ -79,19 +78,19 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
-  // {
-  //   id: 'cardWithImageTemplate',
-  //   isDefault: false,
-  //   title: 'Card con immagine',
-  //   template: CardWithImageTemplate,
-  //   skeleton: CardWithImageTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     addCardWithImageTemplateOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
+  {
+    id: 'cardWithImageTemplate',
+    isDefault: false,
+    title: 'Card con immagine',
+    template: CardWithImageTemplate,
+    skeleton: CardWithImageTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      addCardWithImageTemplateOptions(schema, formData, intl);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   {
     id: 'inEvidenceTemplate',
     isDefault: false,

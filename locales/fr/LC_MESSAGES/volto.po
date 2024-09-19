@@ -45,16 +45,6 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
-#. Default: "Indirizzo"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: address label"
-msgstr ""
-
-#. Default: "Apri in mappa"
-#: components/Cards/CardPersona/CardPersona
-msgid "CardPersona: view on googlemaps"
-msgstr ""
-
 #. Default: "Apri in mappa"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
@@ -1749,7 +1739,13 @@ msgstr ""
 msgid "servizio_dove"
 msgstr ""
 
+#. Default: "Modulistica"
+#: components/View/Servizio/ServizioDocumenti
+msgid "servizio_modulistica"
+msgstr ""
+
 #. Default: "Servizio online"
+#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Cards/CardSimple/CardSimple
 msgid "servizio_online_chip"
 msgstr ""
@@ -1876,7 +1872,6 @@ msgstr ""
 
 #. Default: "Mostra gli argomenti"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
-#: config/blocks/listing/ListingOptions/inEvidenceTemplate
 msgid "show_topics"
 msgstr ""
 
@@ -2024,6 +2019,11 @@ msgstr ""
 #. Default: "A chi si rivolge"
 #: components/View/Struttura/StrutturaAChiSiRivolge
 msgid "struttura_a_chi_si_rivolge"
+msgstr ""
+
+#. Default: "Allegati"
+#: components/View/Struttura/StrutturaAllegati
+msgid "struttura_allegati"
 msgstr ""
 
 #. Default: "Avvisi e notizie"

@@ -99,6 +99,15 @@ export const getCalendarDate = (item, rrulestr) => {
         // so fallback to displaying the original info
         realStart = recurrenceDates.recurrenceStart || item.start;
         realEnd = recurrenceDates.recurrenceEnd || item.end;
+
+        if (typeof realStart === 'object') {
+          //moment date
+          realStart = realStart.toISOString();
+        }
+        if (typeof realEnd === 'object') {
+          //moment date
+          realEnd = realEnd.toISOString();
+        }
       }
       if (item.start || item.end) {
         ret = (

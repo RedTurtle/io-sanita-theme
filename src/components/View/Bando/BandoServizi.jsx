@@ -25,7 +25,7 @@ const BandoServizi = ({ content }) => {
       <div className="mb-5 mt-3">
         <Row>
           {content?.servizi_correlati?.map((item, i) => (
-            <Col lg={6} key={'servizi_correlati' + index} className="py-lg-2">
+            <Col lg={6} key={'servizi_correlati' + i} className="py-lg-2">
               <CardSimple item={item} />
             </Col>
           ))}
