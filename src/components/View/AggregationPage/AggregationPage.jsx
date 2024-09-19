@@ -6,26 +6,23 @@
 import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Helmet, BodyClass } from '@plone/volto/helpers';
 import { Spinner } from 'design-react-kit';
+import config from '@plone/volto/registry';
+import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
+import { getTassonomieSearch } from 'io-sanita-theme/actions';
 import {
   PageHeader,
   SkipToMainContent,
 } from 'io-sanita-theme/components/View/commons';
 import {
-  SideMenu,
-  SortBy,
-} from 'io-sanita-theme/components/View/AggregationPage';
-import {
   RemoveBodyClass,
   CardSimple,
   Pagination,
+  SortByWidget,
 } from 'io-sanita-theme/components';
 
-import { getTassonomieSearch } from 'io-sanita-theme/actions';
-
-import config from '@plone/volto/registry';
+/* STYLE */
 import './_aggregationPage.scss';
 
 const messages = defineMessages({
@@ -65,7 +62,7 @@ const AggregationPage = ({ match, route, location }) => {
     type: type,
     id: id,
     portalType: null, //per filtrare su un tipo di conteneuto specifico (click dal menu laterale)
-    order: { sort_on: null, sort_order: null },
+    order: { sort_on: 'relevance', sort_order: 'ascending' },
     currentPage: 1,
   });
   const tassonomieSearch = useSelector((state) => state.tassonomieSearch);
@@ -95,6 +92,8 @@ const AggregationPage = ({ match, route, location }) => {
   //carico i dati iniziali
   useEffect(() => {
     doSearch();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const doSearch = () => {
@@ -121,11 +120,13 @@ const AggregationPage = ({ match, route, location }) => {
     setTotalPages(
       result?.items_total > 0 ? Math.ceil(result.items_total / b_size) : 0,
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [result]);
 
   //paginazione
   useEffect(() => {
     setSearchParams({ ...searchParams, currentPage: 1 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams.portalType, searchParams.order]);
 
   const onPaginationChange = (e, { activePage }) => {
@@ -164,7 +165,7 @@ const AggregationPage = ({ match, route, location }) => {
             aria-live="polite"
           >
             <div className="d-flex justify-content-end mb-4">
-              <SortBy
+              <SortByWidget
                 order={searchParams.order}
                 action={(sortby) => {
                   setSearchParams({ ...searchParams, order: sortby });

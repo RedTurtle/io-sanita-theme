@@ -242,6 +242,11 @@ msgstr "Previous page"
 msgid "Ricerca con mappa"
 msgstr ""
 
+#. Default: "Ricerca servizi o procedure"
+#: components/Blocks/SearchServiziProcedure/Sidebar
+msgid "Ricerca servizi o procedure"
+msgstr ""
+
 #. Default: "Rimuovi il file"
 #: components/Widgets/FileWidget
 msgid "Rimuovi il file"
@@ -526,6 +531,11 @@ msgstr ""
 #. Default: "In evidenza"
 #: components/Blocks/Callout/Sidebar
 msgid "callout_style_highlight"
+msgstr ""
+
+#. Default: "Ultimo agg.to:"
+#: components/Cards/CardFile/CardFile
+msgid "card_file_last_update"
 msgstr ""
 
 #. Default: "Carosello"
@@ -1360,6 +1370,11 @@ msgstr "Publication date"
 msgid "rassegna_label"
 msgstr "Review:"
 
+#. Default: "Rassegna:"
+#: components/Blocks/Listing/commons/RassegnaInfo
+msgid "rassegna_label"
+msgstr ""
+
 #. Default: "Tempo di lettura"
 #: components/View/commons/PageHeader/PageHeader
 msgid "reading_time"
@@ -1471,6 +1486,31 @@ msgstr "Search site"
 msgid "search_brdc"
 msgstr "Search"
 
+#. Default: "{filterNumber} filtri attivati"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_active_filters"
+msgstr ""
+
+#. Default: "argomenti"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_default_title"
+msgstr ""
+
+#. Default: "Nascondi"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_hide_all"
+msgstr ""
+
+#. Default: "Cerca per"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_search_to"
+msgstr ""
+
+#. Default: "Mostra tutto"
+#: components/SearchWidgets/SearchCheckbox
+msgid "search_checkbox_show_all"
+msgstr ""
+
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Search path"
@@ -1492,12 +1532,12 @@ msgid "search_map_ct"
 msgstr ""
 
 #. Default: "Cerca"
-#: components/Blocks/SearchMap/SearchableText
+#: components/SearchWidgets/SearchBar/SearchBar
 msgid "search_map_searchable_text_button"
 msgstr "Search"
 
 #. Default: "*Inserisci un indirizzo, ad esempio “Viale G. Carducci 15, Roma”"
-#: components/Blocks/SearchMap/SearchableText
+#: components/Blocks/SearchMap/Body
 msgid "search_map_searchable_text_decription"
 msgstr "Insert an address, for example “Viale G. Carducci 15, Roma”"
 
@@ -1550,6 +1590,71 @@ msgstr "Show all categories"
 #: components/Blocks/SearchMap/Body
 msgid "search_mapresults_found"
 msgstr "Results"
+
+#. Default: "Filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_btn_filters_label"
+msgstr ""
+
+#. Default: "utenti"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_label_utenti"
+msgstr ""
+
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_no_results"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_portal_type"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_results"
+msgstr ""
+
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_search_path"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Richiedere esenzioni”"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_description_procedura"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Risonanza magnetica”"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_description_servizi"
+msgstr ""
+
+#. Default: "Cerca una procedura"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_text_default_label_procedura"
+msgstr ""
+
+#. Default: "Cerca un servizio o una prestazione"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_searchable_text_default_label_servizi"
+msgstr ""
+
+#. Default: "Seleziona filtri"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_show_filters"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_title"
+msgstr ""
+
+#. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
+#: components/SearchWidgets/SearchBar/SearchBar
+msgid "search_text_searchable_text_decription"
+msgstr ""
 
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
@@ -1845,22 +1950,22 @@ msgid "slidesToShow"
 msgstr ""
 
 #. Default: "Ordina per"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_by"
 msgstr "Order by"
 
 #. Default: "Data (prima i più recenti)"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_data_desc"
 msgstr "Date (newest first)"
 
 #. Default: "Alfabeticamente"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_name"
 msgstr "Alphabetically"
 
 #. Default: "Rilevanza"
-#: components/View/AggregationPage/SortBy/SortBy
+#: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_relevance"
 msgstr "Relevance"
 

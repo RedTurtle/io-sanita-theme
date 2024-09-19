@@ -17,7 +17,7 @@ const NewsItemDocumenti = ({ content }) => {
   return (
     <Attachments
       content={content}
-      folder_name={'documenti'}
+      folder_name={'allegati'}
       title={intl.formatMessage(messages.documenti)}
     />
   );
