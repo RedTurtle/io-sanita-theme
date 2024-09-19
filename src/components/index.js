@@ -59,6 +59,7 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
 export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
 export SortByWidget from 'io-sanita-theme/components/Widgets/SortByWidget/SortByWidget';
+export SelectInput from 'io-sanita-theme/components/Widgets/SelectInput/SelectInput';
 
 //Search Widgets
 export SearchBar from 'io-sanita-theme/components/SearchWidgets/SearchBar/SearchBar';

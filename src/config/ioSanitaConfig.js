@@ -46,6 +46,7 @@ import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
+import { applyFarmacieConfig } from './farmacie';
 
 import {
   HeaderContactsWidget,
@@ -247,6 +248,11 @@ export default function applyConfig(config) {
   //   ...config.widgets,
   //   ...getItaliaWidgets(config),
   // };
+
+  // /******************************************************************************
+  //  * FARMACIE (VIEWS+BLOCKS)
+  //  ******************************************************************************/
+  applyFarmacieConfig(config);
 
   // /******************************************************************************
   //  * BLOCKS

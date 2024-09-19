@@ -24,40 +24,46 @@ const messages = defineMessages({
     id: 'sort_by',
     defaultMessage: 'Ordina per',
   },
-  sort_title: {
+  sortable_title: {
     id: 'sort_name',
     defaultMessage: 'Alfabeticamente',
   },
-  sort_relevance: {
+  relevance: {
     id: 'sort_relevance',
     defaultMessage: 'Rilevanza',
   },
-  sort_date: {
+  created: {
     id: 'sort_data_desc',
     defaultMessage: 'Data (prima i più recenti)',
   },
 });
 
-const SortByWidget = ({ order, action }) => {
-  const intl = useIntl();
-
-  const options = [
+const SortByWidget = ({
+  order,
+  action,
+  options = [
     {
       sort_on: 'relevance',
       sort_order: 'ascending',
-      title: intl.formatMessage(messages.sort_relevance),
     },
     {
       sort_on: 'sortable_title',
       sort_order: 'ascending',
-      title: intl.formatMessage(messages.sort_title),
     },
     {
       sort_on: 'created',
       sort_order: 'descending',
-      title: intl.formatMessage(messages.sort_date),
     },
-  ];
+  ],
+}) => {
+  const intl = useIntl();
+
+  // default titles
+  options.forEach((item, index) => {
+    if (!item.title && messages[item.sort_on]) {
+      options[index].title = intl.formatMessage(messages[item.sort_on]);
+    }
+  });
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.code === 'Space') {

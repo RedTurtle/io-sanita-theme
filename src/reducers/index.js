@@ -14,6 +14,8 @@ import { searchFiltersReducer } from './searchFiltersReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
 import { tassonomieSearchReducer } from './tassonomieSearchReducer';
+import { farmaciaReducer } from './farmaciaReducer';
+
 /**
  * Root reducer.
  * @function
@@ -33,6 +35,7 @@ const reducers = {
   // originalQuery: originalQueryReducer,
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
+  farmacia: farmaciaReducer,
 };
 
 export default reducers;
