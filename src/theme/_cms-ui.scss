@@ -728,14 +728,17 @@ body.cms-ui {
   }
 
   /* Edit form CT */
-  #page-edit .ui.form.vertical-form fieldset {
-    .ui.grid {
-      margin-top: 0;
+  #page-edit,
+  #page-add {
+    .ui.form.vertical-form fieldset {
+      .ui.grid {
+        margin-top: 0;
 
-      .ui.attached.tabular.menu {
-        margin-top: -1rem;
-        max-width: 100%;
-        height: 100%;
+        .ui.attached.tabular.menu {
+          margin-top: -1rem;
+          max-width: 100%;
+          height: 100%;
+        }
       }
     }
   }
