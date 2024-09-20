@@ -4,7 +4,7 @@
 */
 import cx from 'classnames';
 import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
-import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
+import { ConditionalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 
 import telephoneIcon from 'io-sanita-theme/icons/telephone_icon.svg';
@@ -31,9 +31,13 @@ const CardContatti = ({
               className="me-2 icon-sm icon-svg-telephone"
               name={telephoneIcon}
             />
-            <UniversalLink href={contactUrl} className="text-decoration-none">
+            <ConditionalLink
+              to={contactUrl}
+              condition={contactUrl != null}
+              className="text-decoration-none"
+            >
               {item.title}
-            </UniversalLink>
+            </ConditionalLink>
           </CardTitle>
         )}
         {item?.contatti?.length > 0 && (
