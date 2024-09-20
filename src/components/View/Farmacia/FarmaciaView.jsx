@@ -40,13 +40,7 @@ const FarmaciaView = ({ content }) => {
   const documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
-  // useEffect(() => {
-  //   if (documentBody.current) {
-  //     if (__CLIENT__) {
-  //       setSideMenuElements(documentBody.current);
-  //     }
-  //   }
-  // }, [documentBody]);
+ 
 
   useEffect(() => {
     if (
