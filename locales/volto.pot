@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-20T12:45:47.383Z\n"
+"POT-Creation-Date: 2024-09-20T12:49:45.728Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1390,7 +1390,7 @@ msgstr ""
 msgid "quicksearchwidget-delete-rootpath"
 msgstr ""
 
-#. Default: "Delete section item"
+#. Default: "Rimuovi"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-deleteitem-button"
 msgstr ""
@@ -1425,7 +1425,7 @@ msgstr ""
 msgid "quicksearchwidget-rootpath"
 msgstr ""
 
-#. Default: "Title"
+#. Default: "Titolo"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-title"
 msgstr ""

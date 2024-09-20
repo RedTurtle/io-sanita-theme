@@ -11,11 +11,11 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 const messages = defineMessages({
   title: {
     id: 'quicksearchwidget-title',
-    defaultMessage: 'Title',
+    defaultMessage: 'Titolo',
   },
   deleteButton: {
     id: 'quicksearchwidget-deleteitem-button',
-    defaultMessage: 'Delete section item',
+    defaultMessage: 'Rimuovi',
   },
 });
 

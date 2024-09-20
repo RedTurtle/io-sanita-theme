@@ -1388,7 +1388,7 @@ msgstr ""
 msgid "quicksearchwidget-delete-rootpath"
 msgstr ""
 
-#. Default: "Delete section item"
+#. Default: "Rimuovi"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-deleteitem-button"
 msgstr ""
@@ -1423,7 +1423,7 @@ msgstr ""
 msgid "quicksearchwidget-rootpath"
 msgstr ""
 
-#. Default: "Title"
+#. Default: "Titolo"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-title"
 msgstr ""
