@@ -63,7 +63,7 @@ const FarmaciaView = ({ content }) => {
           showtassonomiaargomenti={true}
         />
         {/* HEADER IMAGE */}
-        <ContentImage content={content} position="afterHeader" />
+        <ContentImage content={content}  />
 
         <div className="row border-top row-column-border row-column-menu-left">
           <aside className="col-lg-4">
