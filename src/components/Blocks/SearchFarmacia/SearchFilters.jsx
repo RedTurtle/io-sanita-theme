@@ -84,6 +84,7 @@ const SearchFilters = ({
       </Col>
 
       {searchType === 'shifts' && (
+      <>
         <Col lg="3">
           <DatetimeWidget
             id="date_farmacie"
@@ -98,9 +99,7 @@ const SearchFilters = ({
             }}
           />
         </Col>
-      )}
-
-      {searchType === 'shifts' && (
+      
         <Col lg="3">
           <SelectInput
             id="area_territoriale"
@@ -114,6 +113,7 @@ const SearchFilters = ({
             isSearchable={true}
           />
         </Col>
+        </>
       )}
 
       {searchType === 'vacations' && (
