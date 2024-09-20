@@ -12,45 +12,45 @@ import {
 import { TextWidget } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
-import SearchSectionsConfigurationForm from 'io-sanita-theme/components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm';
-import './SearchSectionsConfigurationWidget.scss';
+import QuickSearchConfigurationForm from 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm';
+import './QuickSearchConfigurationWidget.scss';
 
 const messages = defineMessages({
   rootItemsHeader: {
-    id: 'searchsectionswidget-items-header',
-    defaultMessage: 'Sections',
+    id: 'quicksearchwidget-items-header',
+    defaultMessage: 'Scorciatoie',
   },
   addRootPath: {
-    id: 'searchsectionswidget-add-rootpath',
-    defaultMessage: 'Add path',
+    id: 'quicksearchwidget-add-rootpath',
+    defaultMessage: 'Aggiungi radice di navigazione',
   },
   deleteRootPath: {
-    id: 'searchsectionswidget-delete-rootpath',
-    defaultMessage: 'Delete path',
+    id: 'quicksearchwidget-delete-rootpath',
+    defaultMessage: 'Rimuovi radice di navigazione',
   },
   root_path: {
-    id: 'searchsectionswidget-rootpath',
-    defaultMessage: 'Root path',
+    id: 'quicksearchwidget-rootpath',
+    defaultMessage: 'Radice di navigazione',
   },
   addItem: {
-    id: 'searchsectionswidget-additem',
-    defaultMessage: 'Add item',
+    id: 'quicksearchwidget-additem',
+    defaultMessage: 'Aggiungi scorciatoia',
   },
   moveItemUp: {
-    id: 'searchsectionswidget-move-item-up',
-    defaultMessage: 'Move item up',
+    id: 'quicksearchwidget-move-item-up',
+    defaultMessage: 'Sposta prima',
   },
   moveItemDown: {
-    id: 'searchsectionswidget-move-item-down',
-    defaultMessage: 'Move item down',
+    id: 'quicksearchwidget-move-item-down',
+    defaultMessage: 'Sposta dopo',
   },
   emptyActiveRootPath: {
-    id: 'searchsectionswidget-emptyActiveRootPath',
-    defaultMessage: 'Select a path',
+    id: 'quicksearchwidget-emptyActiveRootPath',
+    defaultMessage: 'Seleziona un percorso',
   },
   emptyActiveItem: {
-    id: 'searchsectionswidget-emptyActiveItem',
-    defaultMessage: 'Add a new section, or select one.',
+    id: 'quicksearchwidget-emptyActiveItem',
+    defaultMessage: 'Acciunti una nuova scorciatoia, oppure selezionane una',
   },
 });
 
@@ -66,7 +66,7 @@ const defaultRootConfiguration = (title) => ({
 
 const defaultConfiguration = [defaultRootConfiguration()];
 
-const SearchSectionsConfigurationWidget = ({
+const QuickSearchConfigurationWidget = ({
   value,
   id,
   onChange,
@@ -174,20 +174,20 @@ const SearchSectionsConfigurationWidget = ({
   };
 
   return (
-    <div className="search-sections-configuration-widget">
+    <div className="quick-search-configuration-widget">
       <Form.Field inline id={id}>
         <Grid>
           <Grid.Row>
             <Grid.Column width="4">
               <div className="wrapper">
-                <label htmlFor="search-sections-configuration">{title}</label>
+                <label htmlFor="quick-search-configuration">{title}</label>
               </div>
             </Grid.Column>
             <Grid.Column
               width="8"
-              className="search-sections-configuration-widget"
+              className="quick-search-configuration-widget"
             >
-              <div id="search-sections-configuration">
+              <div id="quick-search-configuration">
                 <Menu pointing secondary className="rootpath-menu">
                   {configuration.map((root, idx) => (
                     <Menu.Item
@@ -218,7 +218,7 @@ const SearchSectionsConfigurationWidget = ({
                       <Grid className="root-path-configuration">
                         <Grid.Column
                           width={12}
-                          className="search-sections-rootpath-segment"
+                          className="quick-search-rootpath-segment"
                         >
                           <TextWidget
                             id="rootPath"
@@ -260,10 +260,7 @@ const SearchSectionsConfigurationWidget = ({
 
                       <Grid>
                         <Grid.Column width={4}>
-                          <Header
-                            as="h5"
-                            className="search-sections-items-header"
-                          >
+                          <Header as="h5" className="quick-search-items-header">
                             {intl.formatMessage(messages.rootItemsHeader)}
                           </Header>
                           <Menu
@@ -327,7 +324,7 @@ const SearchSectionsConfigurationWidget = ({
                           {activeItem > -1 &&
                           activeItem <
                             configuration[activeRoot].items?.length ? (
-                            <SearchSectionsConfigurationForm
+                            <QuickSearchConfigurationForm
                               id={`${activeRoot}-${activeItem}`}
                               item={configuration[activeRoot].items[activeItem]}
                               onChange={(root) =>
@@ -367,4 +364,4 @@ const SearchSectionsConfigurationWidget = ({
   );
 };
 
-export default SearchSectionsConfigurationWidget;
+export default QuickSearchConfigurationWidget;

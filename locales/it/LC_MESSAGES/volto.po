@@ -1368,6 +1368,66 @@ msgstr "Stampa"
 msgid "publication_date"
 msgstr ""
 
+#. Default: "Ricerca rapida"
+#: components/Search/common/QuickSearchSections
+msgid "quick-search-title"
+msgstr ""
+
+#. Default: "Aggiungi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-add-rootpath"
+msgstr ""
+
+#. Default: "Aggiungi scorciatoia"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-additem"
+msgstr ""
+
+#. Default: "Rimuovi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Delete section item"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Acciunti una nuova scorciatoia, oppure selezionane una"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Seleziona un percorso"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Scorciatoie"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-items-header"
+msgstr ""
+
+#. Default: "Sposta dopo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-down"
+msgstr ""
+
+#. Default: "Sposta prima"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-up"
+msgstr ""
+
+#. Default: "Radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-rootpath"
+msgstr ""
+
+#. Default: "Title"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-title"
+msgstr ""
+
 #. Default: "Rassegna:"
 #: components/Blocks/Listing/commons/RassegnaInfo
 msgid "rassegna_label"
@@ -1658,71 +1718,6 @@ msgstr ""
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
 msgstr "Ricerca per: <em>{searchedtext}</em>."
-
-#. Default: "Add path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-add-rootpath"
-msgstr "Aggiungi una radice di navigazione"
-
-#. Default: "Add item"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-additem"
-msgstr "Aggiungi una percorso rapido"
-
-#. Default: "Delete path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-delete-rootpath"
-msgstr "Rimuovi questa radice di navigazione"
-
-#. Default: "Delete section item"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-deleteitem-button"
-msgstr "Rimuovi percorso rapido"
-
-#. Default: "Add a new section, or select one."
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-emptyActiveItem"
-msgstr "Aggiungi un nuovo percorso rapido, oppure selezionane uno"
-
-#. Default: "Select a path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-emptyActiveRootPath"
-msgstr "Scegli una radice di navigazione"
-
-#. Default: "Sections"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-items-header"
-msgstr "Percorsi di ricerca rapida"
-
-#. Default: "Link"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-linkUrl"
-msgstr ""
-
-#. Default: "Select an internal url clicking on the right button. If section is empty (has no children), it will not be displayed."
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-linkUrl_description"
-msgstr "Seleziona un percorso interno cliccando sul bottone a destra. Se un percorso è vuoto (non ha elementi al suo interno), non verrà mostrato."
-
-#. Default: "Move item down"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-move-item-down"
-msgstr "Sposta dopo"
-
-#. Default: "Move item up"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-move-item-up"
-msgstr "Sposta prima"
-
-#. Default: "Root path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-rootpath"
-msgstr "Radice di navigazione"
-
-#. Default: "Title"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-title"
-msgstr "Titolo"
 
 #. Default: "Sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal

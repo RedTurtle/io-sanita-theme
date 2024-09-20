@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  SearchSectionsConfigurationWidget,
+  QuickSearchConfigurationWidget,
   HeaderContactsWidget,
   IconWidget,
 } from 'io-sanita-theme/components/manage/Widgets';
@@ -12,7 +12,7 @@ const getIoSanitaWidgets = (config) => {
       // title: CharCounterTextWidget,
       // description: CharCounterTextareaWidget,
       contatti_testata: HeaderContactsWidget,
-      search_sections: SearchSectionsConfigurationWidget,
+      search_sections: QuickSearchConfigurationWidget,
     },
     widget: {
       ...config.widgets.widget,

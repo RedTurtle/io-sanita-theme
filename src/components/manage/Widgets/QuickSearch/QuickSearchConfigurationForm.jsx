@@ -10,25 +10,16 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 
 const messages = defineMessages({
   title: {
-    id: 'searchsectionswidget-title',
+    id: 'quicksearchwidget-title',
     defaultMessage: 'Title',
   },
-  linkUrl: {
-    id: 'searchsectionswidget-linkUrl',
-    defaultMessage: 'Link',
-  },
-  linkUrl_description: {
-    id: 'searchsectionswidget-linkUrl_description',
-    defaultMessage:
-      'Select an internal url clicking on the right button. If section is empty (has no children), it will not be displayed.',
-  },
   deleteButton: {
-    id: 'searchsectionswidget-deleteitem-button',
+    id: 'quicksearchwidget-deleteitem-button',
     defaultMessage: 'Delete section item',
   },
 });
 
-const SearchSectionsConfigurationForm = ({
+const QuickSearchConfigurationForm = ({
   id,
   item,
   onChange,
@@ -71,7 +62,7 @@ const SearchSectionsConfigurationForm = ({
     onChange({ ...item, [id]: value });
   };
 
-  const url = item.linkUrl?.[0]?.['@id'] ?? item.href ?? null;
+  //const url = item.linkUrl?.[0]?.['@id'] ?? item.href ?? null;
 
   return (
     <>
@@ -83,17 +74,8 @@ const SearchSectionsConfigurationForm = ({
         value={item.title}
         onChange={(id, value) => onChangeFormData('title', value)}
       />
-      {/* <ObjectBrowserWidget
-        id={`${id}-linkUrl`}
-        title={intl.formatMessage(messages.linkUrl)}
-        description=""
-        required={true}
-        mode="link"
-        value={item.linkUrl ?? []}
-        onChange={(id, value) => onChangeFormData('linkUrl', value)}
-      /> */}
 
-      <TextWidget
+      {/* <TextWidget
         id={`${id}-linkUrl`}
         title={intl.formatMessage(messages.linkUrl)}
         description={intl.formatMessage(messages.linkUrl_description)}
@@ -114,7 +96,7 @@ const SearchSectionsConfigurationForm = ({
                 })
         }
         onChange={(id, value) => onChangeFormData('href', value)}
-      />
+      /> */}
 
       <Form.Field inline className="delete wide" id="item-delete">
         <Grid>
@@ -137,5 +119,5 @@ const SearchSectionsConfigurationForm = ({
 };
 
 export default React.memo(
-  compose(withObjectBrowser)(SearchSectionsConfigurationForm),
+  compose(withObjectBrowser)(QuickSearchConfigurationForm),
 );

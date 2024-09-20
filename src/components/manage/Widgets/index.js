@@ -5,8 +5,8 @@ export IconWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/Ico
 export IconPreviewWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconPreviewWidget';
 export defaultIconWidgetOptions from 'io-sanita-theme/components/manage/Widgets/IconWidget/defaultIconWidgetOptions';
 
-export const SearchSectionsConfigurationWidget = loadable(() =>
+export const QuickSearchConfigurationWidget = loadable(() =>
   import(
-    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget'
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
   ),
 );

@@ -1375,6 +1375,66 @@ msgstr "Imprimer"
 msgid "publication_date"
 msgstr ""
 
+#. Default: "Ricerca rapida"
+#: components/Search/common/QuickSearchSections
+msgid "quick-search-title"
+msgstr ""
+
+#. Default: "Aggiungi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-add-rootpath"
+msgstr ""
+
+#. Default: "Aggiungi scorciatoia"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-additem"
+msgstr ""
+
+#. Default: "Rimuovi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Delete section item"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Acciunti una nuova scorciatoia, oppure selezionane una"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Seleziona un percorso"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Scorciatoie"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-items-header"
+msgstr ""
+
+#. Default: "Sposta dopo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-down"
+msgstr ""
+
+#. Default: "Sposta prima"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-up"
+msgstr ""
+
+#. Default: "Radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-rootpath"
+msgstr ""
+
+#. Default: "Title"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-title"
+msgstr ""
+
 #. Default: "Rassegna:"
 #: components/Blocks/Listing/commons/RassegnaInfo
 msgid "rassegna_label"
@@ -1664,71 +1724,6 @@ msgstr ""
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
-msgstr ""
-
-#. Default: "Add path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-add-rootpath"
-msgstr ""
-
-#. Default: "Add item"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-additem"
-msgstr ""
-
-#. Default: "Delete path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-delete-rootpath"
-msgstr ""
-
-#. Default: "Delete section item"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-deleteitem-button"
-msgstr ""
-
-#. Default: "Add a new section, or select one."
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-emptyActiveItem"
-msgstr ""
-
-#. Default: "Select a path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-emptyActiveRootPath"
-msgstr ""
-
-#. Default: "Sections"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-items-header"
-msgstr ""
-
-#. Default: "Link"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-linkUrl"
-msgstr ""
-
-#. Default: "Select an internal url clicking on the right button. If section is empty (has no children), it will not be displayed."
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-linkUrl_description"
-msgstr ""
-
-#. Default: "Move item down"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-move-item-down"
-msgstr ""
-
-#. Default: "Move item up"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-move-item-up"
-msgstr ""
-
-#. Default: "Root path"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-rootpath"
-msgstr ""
-
-#. Default: "Title"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
-msgid "searchsectionswidget-title"
 msgstr ""
 
 #. Default: "Sezioni"
