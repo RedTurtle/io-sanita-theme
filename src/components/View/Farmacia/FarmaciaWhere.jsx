@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
-import { Icon } from 'io-sanita-theme/components';
+import { CardPlace, Icon } from 'io-sanita-theme/components';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 import { OSMMap } from 'volto-venue';
 
@@ -47,6 +47,20 @@ const FarmaciaWhere = ({ content }) => {
     content.comune ||
     content.localita ? (
     <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
+      <CardPlace
+        item={{
+          ...content,
+          city: content.comune,
+          province: content.provincia,
+          area_territoriale: content.area_territoriale?.title,
+          street: `${content.street} - ${content.localita}`,
+        }}
+        showDistance={false}
+        showMap={true}
+      />
+
+      {/* -- codice originale versione auslfe
+        
       <Card className="card card-teaser shadow mt-3 rounded mb-4" tag="div">
         <Icon icon={'it-pin'} />
         <CardBody>
@@ -125,7 +139,7 @@ const FarmaciaWhere = ({ content }) => {
           <h5 className="mt-3">{intl.formatMessage(messages.quartiere)}:</h5>
           <div className="text-serif">{content.quartiere}</div>
         </div>
-      )}
+      )} */}
     </RichTextSection>
   ) : (
     <></>

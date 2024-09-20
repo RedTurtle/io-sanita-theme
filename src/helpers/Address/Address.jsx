@@ -15,6 +15,12 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
       {showAddress && (
         <AddressWrapperTag>
           {item.street}
+          {item.area_territoriale && (
+            <>
+              <br />
+              {item.area_territoriale}
+            </>
+          )}
           {(item.zip_code || item.city || item.province) && (
             <>
               <br />
