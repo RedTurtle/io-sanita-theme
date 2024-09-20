@@ -117,6 +117,7 @@ const SearchFilters = ({
       )}
 
       {searchType === 'vacations' && (
+      <>
         <Col lg="3">
           <SelectInput
             id="comune"
@@ -136,9 +137,7 @@ const SearchFilters = ({
             isSearchable={true}
           />
         </Col>
-      )}
-
-      {searchType === 'vacations' && (
+     
         <Col lg="3">
           <SelectInput
             id="localita"
@@ -157,6 +156,7 @@ const SearchFilters = ({
             isSearchable={true}
           />
         </Col>
+        </>
       )}
     </>
   );
