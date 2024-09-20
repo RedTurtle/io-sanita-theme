@@ -419,6 +419,7 @@ msgid "apertura_bando"
 msgstr "Opening date"
 
 #. Default: "Area territoriale"
+#: components/Blocks/SearchFarmacia/SearchFilters
 #: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
 msgid "area_territoriale"
 msgstr ""
@@ -941,11 +942,6 @@ msgstr "Other informations"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "expire"
 msgstr "Expire"
-
-#. Default: "Area territoriale"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "farmacia_area_territoriale"
-msgstr ""
 
 #. Default: "Seleziona il giorno"
 #: components/Blocks/SearchFarmacia/SearchFilters

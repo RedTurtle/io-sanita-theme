@@ -14,7 +14,7 @@ import {
   FarmaciaShifts,
   FarmaciaVacations,
   FarmaciaWhere,
-} from './FarmaciaSections';
+} from 'io-sanita-theme/components/View/Farmacia';
 
 export const FarmaciaViewSectionsOrder = [
   {

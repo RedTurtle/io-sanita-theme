@@ -9,7 +9,7 @@ const messages = defineMessages({
     defaultMessage: 'Cerca per parola chiave',
   },
   area_territoriale: {
-    id: 'farmacia_area_territoriale',
+    id: 'area_territoriale',
     defaultMessage: 'Area territoriale',
   },
   date: {
