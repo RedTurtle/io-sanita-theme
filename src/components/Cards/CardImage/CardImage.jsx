@@ -75,7 +75,7 @@ export const CardImage = ({
 
           {showDescription && (
             <>
-              {otherChildren.afterTitle && otherChildren.afterTitle}
+              {otherChildren?.afterTitle && otherChildren.afterTitle}
 
               {description ? (
                 <CardText>{description}</CardText>
@@ -84,7 +84,7 @@ export const CardImage = ({
               ) : (
                 <></>
               )}
-              {otherChildren.afterText && otherChildren.afterText}
+              {otherChildren?.afterText && otherChildren.afterText}
             </>
           )}
 
