@@ -13,7 +13,7 @@ const messages = defineMessages({
     defaultMessage: 'Pharmacy name',
   },
   comune: {
-    id: 'farmacia_table_comune',
+    id: 'comune',
     defaultMessage: 'Comune',
   },
   comune_en: {
@@ -21,7 +21,7 @@ const messages = defineMessages({
     defaultMessage: 'Municipality',
   },
   localita: {
-    id: 'farmacia_table_localita',
+    id: 'localita',
     defaultMessage: 'Località',
   },
   localita_en: {

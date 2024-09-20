@@ -1,10 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { Segment } from 'semantic-ui-react';
-import { FormattedMessage, injectIntl } from 'react-intl';
-import { defineMessages, useIntl } from 'react-intl';
 import { SelectWidget } from '@plone/volto/components';
+import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  useIntl,
+} from 'react-intl';
+import { Segment } from 'semantic-ui-react';
 
 const messages = defineMessages({
   search_type_help: {

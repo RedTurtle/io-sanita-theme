@@ -1,32 +1,8 @@
-// TODO: eliminare
-
-import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
-// import { SelectInput } from '@italia/components';
-// import { TextFilter } from '@italia/components/ItaliaTheme/Blocks/Common/SearchFilters';
 import { DatetimeWidget } from '@plone/volto/components';
-import {
-  Pagination,
-  SearchBar,
-  SearchCheckbox,
-  SearchResultItem,
-  SortByWidget,
-  SelectInput,
-} from 'io-sanita-theme/components';
-import {
-  Col,
-  Container,
-  UncontrolledDropdown,
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  LinkList,
-  LinkListItem,
-  Row,
-  Spinner,
-  Button,
-  Select,
-} from 'design-react-kit';
+import { Col } from 'design-react-kit';
+import { SearchBar, SelectInput } from 'io-sanita-theme/components';
+import { defineMessages, useIntl } from 'react-intl';
+
 const messages = defineMessages({
   search_keyword: {
     id: 'farmacia_search_keyword',
@@ -41,7 +17,7 @@ const messages = defineMessages({
     defaultMessage: 'Seleziona il giorno',
   },
   comune: {
-    id: 'farmacia_comune',
+    id: 'comune',
     defaultMessage: 'Comune',
   },
   localita: {
@@ -63,7 +39,7 @@ const SearchFilters = ({
   filters,
   setFilters,
   options,
-  doSearch,
+  // doSearch,
   // checkClearComune,
   // isEditMode,
 }) => {

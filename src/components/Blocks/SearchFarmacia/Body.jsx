@@ -1,41 +1,12 @@
 import cx from 'classnames';
-import { debounce, set } from 'lodash';
-import React, { createRef, useCallback, useEffect, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Spinner } from 'design-react-kit/dist/design-react-kit';
-// import { Pagination } from '@italia/components/ItaliaTheme';
 import { getFarmacia } from 'io-sanita-theme/actions';
-
-// import SearchBar from './SearchBar';
-import {
-  Pagination,
-  // SearchBar,
-  SearchCheckbox,
-  SearchResultItem,
-  SortByWidget,
-  SelectInput,
-} from 'io-sanita-theme/components';
-// import SearchSorting from './SearchSorting';
+import { Pagination, SortByWidget } from 'io-sanita-theme/components';
 import config from '@plone/volto/registry';
-import {
-  Col,
-  Container,
-  UncontrolledDropdown,
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  LinkList,
-  LinkListItem,
-  Row,
-  Spinner,
-  Button,
-  Select,
-} from 'design-react-kit';
-import { useDebouncedEffect } from 'io-sanita-theme/helpers';
-import { title } from 'process';
+import { Col, Row, Spinner } from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
 import Results from './Results';
-import { Link } from 'react-router-dom';
 import SearchFilters from './SearchFilters';
 
 const messages = defineMessages({
@@ -47,6 +18,18 @@ const messages = defineMessages({
     id: 'search_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
+  nome: {
+    id: 'farmacia_table_nome',
+    defaultMessage: 'Denominazione Farmacia',
+  },
+  comune: {
+    id: 'comune',
+    defaultMessage: 'Comune',
+  },
+  localita: {
+    id: 'localita',
+    defaultMessage: 'Località',
+  },
 });
 
 const Body = ({ isEditMode, data }) => {
@@ -56,15 +39,11 @@ const Body = ({ isEditMode, data }) => {
   const searchType = data?.search_type; // type of search, Ferie o Turni ('shifts' or 'vacations')
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
-
-  // const [sorting, setSorting] = useState();
-  // const [filters, setFilters] = useState({});
   const [filters, setFilters] = useState({
     searchableText: null,
     date: new Date().toISOString(),
     area_territoriale: null,
     comune: null,
-    // lista_localita: [],
     order: { sort_on: 'title', sort_order: 'ascending' },
   });
   const [filtersOptions, setFiltersOptions] = useState({
@@ -182,74 +161,18 @@ const Body = ({ isEditMode, data }) => {
       );
     }
 
-    // set sorting
+    // sorting
     const asc = filters.order.sort_order === 'ascending' ? 1 : -1;
     newResults = newResults.sort((a, b) =>
       a[filters.order.sort_on] >= b[filters.order.sort_on] ? asc : -asc,
     );
+
     // set results
     setResults([...newResults]);
     // setResults(newResults);
     setCurrentPage(1);
   };
 
-  // const doDebouncedFilter = useCallback(
-  //   () => debounce(doFilter, 400),
-  //   [doFilter],
-  // );
-
-  // check if select Comune is empty or not
-  // const checkClearComune = (inputComune) => {
-  //   if (searchFarmacia.items?.length > 0) {
-  //     let resultsByComune = searchFarmacia.items;
-  //     let options = { comuni: [], lista_localita: [] };
-  //     let localitaOptions = [];
-
-  //     if (inputComune === null) {
-  //       localitaOptions = [
-  //         ...new Set(searchFarmacia.items.map((item) => item.localita).sort()),
-  //       ];
-  //       createSelectOptions(localitaOptions, options.lista_localita);
-  //       setFiltersOptions({
-  //         ...filtersOptions,
-  //         lista_localita: options.lista_localita,
-  //       });
-  //     } else {
-  //       resultsByComune = resultsByComune.filter(
-  //         (item) =>
-  //           item.comune.toLowerCase() === inputComune.value.toLowerCase(),
-  //       );
-  //       localitaOptions = [
-  //         ...new Set(resultsByComune.map((item) => item.localita).sort()),
-  //       ];
-  //       createSelectOptions(localitaOptions, options.lista_localita);
-  //       setFiltersOptions({
-  //         ...filtersOptions,
-  //         lista_localita: options.lista_localita,
-  //       });
-  //     }
-  //   }
-  // };
-
-  // function to create object select options
-  // function createSelectOptions(arrayOptions, selectOptions) {
-  //   // eslint-disable-next-line no-unused-expressions
-  //   arrayOptions?.forEach((option) => {
-  //     selectOptions.push({
-  //       value: option.toLowerCase(),
-  //       label: option,
-  //     });
-  //   });
-  // }
-
-  // trigger for filters
-  // useEffect(() => {
-  //   console.log('filters', filters);
-  //   console.log('searchFarmacia', searchFarmacia);
-  //   if (searchFarmacia?.items) {
-  //     doDebouncedFilter(filters, searchFarmacia.items, searchType);
-  //   }
-  // }, [filters]);
   const doSearch = () => {
     doFilter(filters, searchFarmacia.items, searchType);
   };
@@ -337,17 +260,17 @@ const Body = ({ isEditMode, data }) => {
                         {
                           sort_on: 'title',
                           sort_order: 'ascending',
-                          title: 'Denominazione',
+                          title: intl.formatMessage(messages.nome),
                         },
                         {
                           sort_on: 'comune',
                           sort_order: 'ascending',
-                          title: 'Comune',
+                          title: intl.formatMessage(messages.comune),
                         },
                         {
                           sort_on: 'localita',
                           sort_order: 'ascending',
-                          title: 'Località',
+                          title: intl.formatMessage(messages.localita),
                         },
                       ]}
                     />

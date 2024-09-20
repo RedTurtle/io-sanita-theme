@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-19T09:59:44.217Z\n"
+"POT-Creation-Date: 2024-09-20T12:28:58.648Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -450,6 +450,96 @@ msgstr ""
 msgid "autoplay_speed_description"
 msgstr ""
 
+#. Default: "Usa le frecce Su e Giu per scegliere un'opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_Use Up and Down to choose options"
+msgstr ""
+
+#. Default: "Annulla"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select cancel"
+msgstr ""
+
+#. Default: "deselezionata"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select deselected"
+msgstr ""
+
+#. Default: "disabilitato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select disabled"
+msgstr ""
+
+#. Default: "evidenziato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select focused"
+msgstr ""
+
+#. Default: "per la ricerca"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select for search term"
+msgstr ""
+
+#. Default: "è disabilitata. Seleziona un'altra opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select is disabled. Select another option."
+msgstr ""
+
+#. Default: "opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select option"
+msgstr ""
+
+#. Default: "selezionata"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select selected"
+msgstr ""
+
+#. Default: "valore"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select value"
+msgstr ""
+
+#. Default: "Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
+msgstr ""
+
+#. Default: "premi Tab per selezionare l'opzione e uscire dal menu"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select__press Tab to select the option and exit the menu"
+msgstr ""
+
+#. Default: "digita per filtrare la lista"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select__type to refine list"
+msgstr ""
+
+#. Default: "è selezionato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_is_focused"
+msgstr ""
+
+#. Default: "premi freccia giu per aprire il menu, premi Backspace per rimuovere il valore selezionato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_press Down to open the menu"
+msgstr ""
+
+#. Default: "premi Invio per selezionare l'opzione corrente"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_press Enter to select the currently focused option"
+msgstr ""
+
+#. Default: "premi Esc per uscire dal menu"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_press Escape to exit the menu"
+msgstr ""
+
+#. Default: "premi la freccia a sinistra per evidenziare i valori selezionati"
+#: components/Widgets/SelectInput/SelectInput
+msgid "ay11_select_press left to focus selected values"
+msgstr ""
+
 #. Default: "Torna alla ricerca"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "backToSearch"
@@ -542,6 +632,7 @@ msgstr ""
 
 #. Default: "Ultimo agg.to:"
 #: components/Cards/CardFile/CardFile
+#: components/Cards/CardFile/Module
 msgid "card_file_last_update"
 msgstr ""
 
@@ -651,6 +742,9 @@ msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
 #. Default: "Comune"
+#: components/Blocks/SearchFarmacia/Body
+#: components/Blocks/SearchFarmacia/Results
+#: components/Blocks/SearchFarmacia/SearchFilters
 #: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
 msgid "comune"
 msgstr ""
@@ -743,6 +837,11 @@ msgstr ""
 #. Default: "Download and Play video"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "downloadPlayVideo"
+msgstr ""
+
+#. Default: "Apri il menu"
+#: components/Widgets/SelectInput/SelectInput
+msgid "dropdown_indicator"
 msgstr ""
 
 #. Default: "Close menu"
@@ -845,6 +944,97 @@ msgstr ""
 msgid "expire"
 msgstr ""
 
+#. Default: "Area territoriale"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "farmacia_area_territoriale"
+msgstr ""
+
+#. Default: "Seleziona il giorno"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "farmacia_data"
+msgstr ""
+
+#. Default: "Località"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "farmacia_localita"
+msgstr ""
+
+#. Default: "Cerca per parola chiave"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "farmacia_search_keyword"
+msgstr ""
+
+#. Default: "Municipality"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_comune_en"
+msgstr ""
+
+#. Default: "Periodi di Ferie"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_ferie"
+msgstr ""
+
+#. Default: "Vacations"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_ferie_en"
+msgstr ""
+
+#. Default: "Indirizzo"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_indirizzo"
+msgstr ""
+
+#. Default: "Address"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_indirizzo_en"
+msgstr ""
+
+#. Default: "Locality"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_localita_en"
+msgstr ""
+
+#. Default: "Denominazione Farmacia"
+#: components/Blocks/SearchFarmacia/Body
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_nome"
+msgstr ""
+
+#. Default: "Pharmacy name"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_nome_en"
+msgstr ""
+
+#. Default: "Recapiti"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_recapiti"
+msgstr ""
+
+#. Default: "Contact numbers"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_recapiti_en"
+msgstr ""
+
+#. Default: "Telefono"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_telefono"
+msgstr ""
+
+#. Default: "Telefono turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_telefono_turno"
+msgstr ""
+
+#. Default: "Periodi di Turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_turni"
+msgstr ""
+
+#. Default: "Shifts periods"
+#: components/Blocks/SearchFarmacia/Results
+msgid "farmacia_table_turni_en"
+msgstr ""
+
 #. Default: "Ferie"
 #: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
 msgid "ferie"
@@ -863,6 +1053,11 @@ msgstr ""
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
+msgstr ""
+
+#. Default: "Cerca"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "find"
 msgstr ""
 
 #. Default: "Annulla"
@@ -931,11 +1126,6 @@ msgstr ""
 msgid "iconDescription"
 msgstr ""
 
-#. Default: "Incarico"
-#: components/View/commons/PageHeader/PageHeaderPersona
-msgid "incarico"
-msgstr ""
-
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
@@ -972,6 +1162,8 @@ msgid "loadVideo"
 msgstr ""
 
 #. Default: "Località"
+#: components/Blocks/SearchFarmacia/Body
+#: components/Blocks/SearchFarmacia/Results
 #: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
 msgid "localita"
 msgstr ""
@@ -1167,6 +1359,11 @@ msgstr ""
 msgid "news_video_gallery"
 msgstr ""
 
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchFarmacia/Results
+msgid "noResult"
+msgstr ""
+
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
 msgid "novita"
@@ -1340,6 +1537,16 @@ msgstr ""
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "pec"
+msgstr ""
+
+#. Default: "Dal"
+#: components/Blocks/SearchFarmacia/Results
+msgid "period_from"
+msgstr ""
+
+#. Default: "al"
+#: components/Blocks/SearchFarmacia/Results
+msgid "period_to"
 msgstr ""
 
 #. Default: "Incarichi"
@@ -1539,6 +1746,11 @@ msgstr ""
 msgid "searchContentIn"
 msgstr ""
 
+#. Default: "Ricerca farmacie"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "searchFarmacia"
+msgstr ""
+
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchInSection"
@@ -1659,6 +1871,21 @@ msgstr ""
 msgid "search_mapresults_found"
 msgstr ""
 
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_no_results"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_results"
+msgstr ""
+
+#. Default: "Turni"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "search_shifts"
+msgstr ""
+
 #. Default: "Filtri"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_btn_filters_label"
@@ -1724,6 +1951,26 @@ msgstr ""
 msgid "search_text_searchable_text_decription"
 msgstr ""
 
+#. Default: "Ricerca per"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "search_type"
+msgstr ""
+
+#. Default: "Seleziona il tipo di ricerca da effettuare"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "search_type_help"
+msgstr ""
+
+#. Default: "Ferie"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "search_vacations"
+msgstr ""
+
+#. Default: "Inserisci il nome della farmacia"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "searchable_text_description"
+msgstr ""
+
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
@@ -1737,6 +1984,21 @@ msgstr ""
 #. Default: "Seleziona gli argomenti che vuoi cercare"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "selectTopicFilters"
+msgstr ""
+
+#. Default: "Nessuna opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "select_noOptionsMessage"
+msgstr ""
+
+#. Default: "risultati"
+#: components/Widgets/SelectInput/SelectInput
+msgid "select_risultati"
+msgstr ""
+
+#. Default: "risultato"
+#: components/Widgets/SelectInput/SelectInput
+msgid "select_risultato"
 msgstr ""
 
 #. Default: "Servizio non attivo"
