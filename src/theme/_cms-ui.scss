@@ -448,6 +448,20 @@ body.cms-ui {
         padding-bottom: 0.2rem !important; //per simulare il pb-4
       }
     }
+    &.full-width {
+      .drag.handle.wrapper {
+        left: 20%;
+        @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+          left: 10%;
+        }
+      }
+      .ui.delete-button {
+        right: 20%;
+        @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+          right: 10%;
+        }
+      }
+    }
   }
 
   .simple-text-editor-widget {
