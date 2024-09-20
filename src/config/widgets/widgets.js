@@ -12,7 +12,7 @@ const getIoSanitaWidgets = (config) => {
       // title: CharCounterTextWidget,
       // description: CharCounterTextareaWidget,
       contatti_testata: HeaderContactsWidget,
-      search_sections: QuickSearchConfigurationWidget,
+      quick_search: QuickSearchConfigurationWidget,
     },
     widget: {
       ...config.widgets.widget,
