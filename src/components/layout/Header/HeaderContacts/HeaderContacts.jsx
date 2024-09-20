@@ -14,7 +14,7 @@ const HeaderContacts = () => {
   const items = useSelector(
     (state) =>
       state?.content?.data?.['@components']?.['iosanita-settings']
-        .contatti_testata,
+        ?.contatti_testata,
   );
 
   return (
