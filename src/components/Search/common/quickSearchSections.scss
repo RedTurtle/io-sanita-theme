@@ -1,0 +1,27 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.quick-search-sections {
+  h3.title {
+    color: var(--bs-body-color-rgb);
+  }
+  .quick-search-items {
+    column-gap: 1.5rem;
+
+    @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+      &.scroll-on-mobile.flex-wrap {
+        overflow-x: scroll;
+        flex-wrap: nowrap !important;
+
+        > .btn.quick-item {
+          text-wrap: nowrap;
+        }
+      }
+      &:not(.scroll-on-mobile) {
+        > .btn.quick-item {
+          flex: 1 1 100%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,8 @@ import {
   SearchServiziProcedureSchema,
   CalloutView,
   CalloutEdit,
+  QuickSearchEdit,
+  QuickSearchView,
 } from 'io-sanita-theme/components/Blocks';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
@@ -133,6 +135,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
         addPermission: [],
         view: [],
       },
+    },
+
+    quickSearch: {
+      id: 'quickSearch',
+      title: 'Ricerca rapida',
+      icon: searchSVG,
+      group: 'search',
+      view: QuickSearchView,
+      edit: QuickSearchEdit,
+      restricted: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      //  schema: SearchServiziProcedureSchema,
+      sidebarTab: 1,
     },
   };
 

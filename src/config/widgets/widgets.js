@@ -1,5 +1,9 @@
 import React from 'react';
-//import { PathFiltersWidget } from 'io-sanita-theme/components/manage/Widgets';
+import {
+  SearchSectionsConfigurationWidget,
+  HeaderContactsWidget,
+  IconWidget,
+} from 'io-sanita-theme/components/manage/Widgets';
 
 const getIoSanitaWidgets = (config) => {
   return {
@@ -7,10 +11,12 @@ const getIoSanitaWidgets = (config) => {
       ...config.widgets.id,
       // title: CharCounterTextWidget,
       // description: CharCounterTextareaWidget,
+      contatti_testata: HeaderContactsWidget,
+      search_sections: SearchSectionsConfigurationWidget,
     },
     widget: {
       ...config.widgets.widget,
-      //path_filters: PathFiltersWidget,
+      icon: IconWidget,
     },
   };
 };

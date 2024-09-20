@@ -1,13 +1,29 @@
 /**
- * Search tassonomie action
- * @module src/actions/getTassonomieSearch
+ * Search actions
+ * @module src/actions/search
  */
 import config from '@plone/volto/registry';
 
 export const GET_TASSONOMIE_SEARCH = 'GET_TASSONOMIE_SEARCH';
+export const GET_SEARCH_FILTERS = 'GET_SEARCH_FILTERS';
 
 /**
  * Get search filters.
+ * @function getSearchFilters
+ * @returns {Object} Get search filters action.
+ */
+export function getSearchFilters() {
+  return {
+    type: GET_SEARCH_FILTERS,
+    request: {
+      op: 'get',
+      path: '/@search-filters',
+    },
+  };
+}
+
+/**
+ * Get tassonomie search.
  * @function getTassonomieSearch
  * @returns {Object} Get search filters action.
  */

@@ -100,7 +100,6 @@ msgid "Dimensione della mappa"
 msgstr ""
 
 #. Default: "Etichetta"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"
 msgstr ""
@@ -179,7 +178,6 @@ msgid "Menu selezionato"
 msgstr "Menu selezionato"
 
 #. Default: "Mostra i filtri per percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra i filtri per percorso"
 msgstr ""
@@ -211,7 +209,6 @@ msgid "Page"
 msgstr ""
 
 #. Default: "Filtro"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Path filter filtro"
 msgstr ""
@@ -222,7 +219,6 @@ msgid "Pause slider"
 msgstr ""
 
 #. Default: "Percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Percorso path filter"
 msgstr ""
@@ -535,6 +531,7 @@ msgstr ""
 
 #. Default: "Ultimo agg.to:"
 #: components/Cards/CardFile/CardFile
+#: components/Cards/CardFile/Module
 msgid "card_file_last_update"
 msgstr ""
 
@@ -880,18 +877,13 @@ msgstr "Home page"
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "icon"
 msgstr ""
 
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
-msgstr ""
-
-#. Default: "Incarico"
-#: components/View/commons/PageHeader/PageHeaderPersona
-msgid "incarico"
 msgstr ""
 
 #. Default: "Indice della pagina"
@@ -1361,7 +1353,7 @@ msgid "prenota_online_deafult_label"
 msgstr ""
 
 #. Default: "Anteprima dell'icona scelta"
-#: components/Widgets/IconWidget/IconPreviewWidget
+#: components/manage/Widgets/IconWidget/IconPreviewWidget
 msgid "previewIconSelected"
 msgstr ""
 
@@ -1666,6 +1658,71 @@ msgstr ""
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "searchedFor"
 msgstr "Ricerca per: <em>{searchedtext}</em>."
+
+#. Default: "Add path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-add-rootpath"
+msgstr "Aggiungi una radice di navigazione"
+
+#. Default: "Add item"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-additem"
+msgstr "Aggiungi una percorso rapido"
+
+#. Default: "Delete path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-delete-rootpath"
+msgstr "Rimuovi questa radice di navigazione"
+
+#. Default: "Delete section item"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-deleteitem-button"
+msgstr "Rimuovi percorso rapido"
+
+#. Default: "Add a new section, or select one."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveItem"
+msgstr "Aggiungi un nuovo percorso rapido, oppure selezionane uno"
+
+#. Default: "Select a path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveRootPath"
+msgstr "Scegli una radice di navigazione"
+
+#. Default: "Sections"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-items-header"
+msgstr "Percorsi di ricerca rapida"
+
+#. Default: "Link"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl"
+msgstr ""
+
+#. Default: "Select an internal url clicking on the right button. If section is empty (has no children), it will not be displayed."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl_description"
+msgstr "Seleziona un percorso interno cliccando sul bottone a destra. Se un percorso è vuoto (non ha elementi al suo interno), non verrà mostrato."
+
+#. Default: "Move item down"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-down"
+msgstr "Sposta dopo"
+
+#. Default: "Move item up"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-up"
+msgstr "Sposta prima"
+
+#. Default: "Root path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-rootpath"
+msgstr "Radice di navigazione"
+
+#. Default: "Title"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-title"
+msgstr "Titolo"
 
 #. Default: "Sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -2170,11 +2227,6 @@ msgstr ""
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
 msgstr "Stai provando ad accedere ad una risorsa protetta, per favore accedi al sito."
-
-#. Default: "Blocco sconosciuto"
-#: helpers/Blocks/RenderBlocks
-msgid "unknownBlock"
-msgstr "Blocco sconosciuto"
 
 #. Default: "Allegati"
 #: components/View/UOView/UODocumenti

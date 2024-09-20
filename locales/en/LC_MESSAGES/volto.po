@@ -100,7 +100,6 @@ msgid "Dimensione della mappa"
 msgstr ""
 
 #. Default: "Etichetta"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"
 msgstr ""
@@ -179,7 +178,6 @@ msgid "Menu selezionato"
 msgstr "Menu selected"
 
 #. Default: "Mostra i filtri per percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra i filtri per percorso"
 msgstr ""
@@ -211,7 +209,6 @@ msgid "Page"
 msgstr "Page"
 
 #. Default: "Filtro"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Path filter filtro"
 msgstr "Filter"
@@ -222,7 +219,6 @@ msgid "Pause slider"
 msgstr "Pause"
 
 #. Default: "Percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Percorso path filter"
 msgstr ""
@@ -535,6 +531,7 @@ msgstr ""
 
 #. Default: "Ultimo agg.to:"
 #: components/Cards/CardFile/CardFile
+#: components/Cards/CardFile/Module
 msgid "card_file_last_update"
 msgstr ""
 
@@ -880,19 +877,14 @@ msgstr "Home page"
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "icon"
 msgstr ""
 
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
 msgstr ""
-
-#. Default: "Incarico"
-#: components/View/commons/PageHeader/PageHeaderPersona
-msgid "incarico"
-msgstr "assignment"
 
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
@@ -1361,7 +1353,7 @@ msgid "prenota_online_deafult_label"
 msgstr "Book online"
 
 #. Default: "Anteprima dell'icona scelta"
-#: components/Widgets/IconWidget/IconPreviewWidget
+#: components/manage/Widgets/IconWidget/IconPreviewWidget
 msgid "previewIconSelected"
 msgstr ""
 
@@ -1380,16 +1372,6 @@ msgstr "Publication date"
 #: components/Blocks/Listing/commons/RassegnaInfo
 msgid "rassegna_label"
 msgstr "Review:"
-
-#. Default: "Rassegna:"
-#: components/Blocks/Listing/commons/RassegnaInfo
-msgid "rassegna_label"
-msgstr ""
-
-#. Default: "Rassegna:"
-#: components/Blocks/Listing/commons/RassegnaInfo
-msgid "rassegna_label"
-msgstr ""
 
 #. Default: "Tempo di lettura"
 #: components/View/commons/PageHeader/PageHeader
@@ -1677,6 +1659,71 @@ msgstr ""
 msgid "searchedFor"
 msgstr "Searched for: <em>{searchedtext}</em>"
 
+#. Default: "Add path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-add-rootpath"
+msgstr ""
+
+#. Default: "Add item"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-additem"
+msgstr ""
+
+#. Default: "Delete path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Delete section item"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Add a new section, or select one."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Select a path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Sections"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-items-header"
+msgstr ""
+
+#. Default: "Link"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl"
+msgstr ""
+
+#. Default: "Select an internal url clicking on the right button. If section is empty (has no children), it will not be displayed."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl_description"
+msgstr ""
+
+#. Default: "Move item down"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-down"
+msgstr ""
+
+#. Default: "Move item up"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-up"
+msgstr ""
+
+#. Default: "Root path"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-rootpath"
+msgstr ""
+
+#. Default: "Title"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-title"
+msgstr ""
+
 #. Default: "Sezioni"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "sections"
@@ -1757,11 +1804,6 @@ msgstr "Where"
 #: components/View/Servizio/ServizioDocumenti
 msgid "servizio_modulistica"
 msgstr "Forms"
-
-#. Default: "Modulistica"
-#: components/View/Servizio/ServizioDocumenti
-msgid "servizio_modulistica"
-msgstr ""
 
 #. Default: "Servizio online"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
@@ -2045,11 +2087,6 @@ msgstr "Who is it aimed at"
 msgid "struttura_allegati"
 msgstr "Attachments"
 
-#. Default: "Allegati"
-#: components/View/Struttura/StrutturaAllegati
-msgid "struttura_allegati"
-msgstr ""
-
 #. Default: "Avvisi e notizie"
 #: components/View/Struttura/StrutturaNotizie
 msgid "struttura_avvisi_e_notizie"
@@ -2190,11 +2227,6 @@ msgstr ""
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
 msgstr ""
-
-#. Default: "Blocco sconosciuto"
-#: helpers/Blocks/RenderBlocks
-msgid "unknownBlock"
-msgstr "Unknown block"
 
 #. Default: "Allegati"
 #: components/View/UOView/UODocumenti

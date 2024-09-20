@@ -1,7 +1,12 @@
 import loadable from '@loadable/component';
 
-// export const PathFiltersWidget = loadable(() =>
-//   import(
-//     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/PathFiltersWidget'
-//   ),
-// );
+export HeaderContactsWidget from 'io-sanita-theme/components/manage/Widgets/HeaderContactsWidget/HeaderContactsWidget';
+export IconWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget';
+export IconPreviewWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconPreviewWidget';
+export defaultIconWidgetOptions from 'io-sanita-theme/components/manage/Widgets/IconWidget/defaultIconWidgetOptions';
+
+export const SearchSectionsConfigurationWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget'
+  ),
+);

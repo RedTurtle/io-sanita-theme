@@ -4,7 +4,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { TextWidget, SelectWidget } from '@plone/volto/components';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
-import { IconPreviewWidget } from 'io-sanita-theme/components/Widgets';
+import { IconPreviewWidget } from 'io-sanita-theme/components/manage/Widgets';
 
 import './iconWidget.scss';
 
