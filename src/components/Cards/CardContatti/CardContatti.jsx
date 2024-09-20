@@ -40,7 +40,7 @@ const CardContatti = ({
           <CardText tag="div">
             {item?.contatti?.map((pdc, index) => (
               <span key={index}>
-                <span className="pdc-type">{pdc.tipo}</span>
+                <span className="pdc-type">{pdc.tipo_label || pdc.tipo}</span>
                 {/* <span className="pdc-desc">
                 {pdc.descrizione ? ` - ${pdc.descrizione}` : ''}:{' '}
               </span> */}
