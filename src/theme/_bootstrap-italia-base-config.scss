@@ -11,6 +11,13 @@
 // variables
 @import 'bootstrap-italia/src/scss/variables';
 
+$theme-colors: map-merge(
+  (
+    'accent': $accent,
+  ),
+  $theme-colors
+);
+
 // classi colore
 @import 'bootstrap-italia/src/scss/utilities/colors';
 

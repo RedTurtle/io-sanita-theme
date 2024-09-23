@@ -17,14 +17,6 @@ $accent: #9c0769 !default;
 $primary-text: #fff !default;
 $accent-text: #fff !default;
 
-$theme-colors: () !default;
-$theme-colors: map-merge(
-  (
-    'accent': $accent,
-  ),
-  $theme-colors
-) !default;
-
 $bg-primary-lightest: hsl($primary-h, 50%, 97%) !default; //#F4FAFB;
 $bg-primary-lighter: hsl($primary-h, 50%, 87%) !default; //#CDE9EE;
 
