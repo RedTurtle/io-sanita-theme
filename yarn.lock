@@ -8025,6 +8025,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"highlight-words-core@npm:^1.2.0":
+  version: 1.2.2
+  resolution: "highlight-words-core@npm:1.2.2"
+  checksum: 737758a8a572c82919552b031df300016164b7d0db6a819d24bc6c7ca2279d3cd6d03497728930d6402423c7a3fc2f42c628a9b01b025c704a0b56a635377511
+  languageName: node
+  linkType: hard
+
 "hoist-non-react-statics@npm:^2.3.1, hoist-non-react-statics@npm:^2.5.0":
   version: 2.5.5
   resolution: "hoist-non-react-statics@npm:2.5.5"
@@ -8327,6 +8334,7 @@ __metadata:
     postcss-scss: 4.0.8
     prettier: 3.0.3
     react-focus-lock: 2.12.1
+    react-highlight-words: 0.20.0
     react-slick: 0.30.2
     release-it: ^16.1.5
     slick-carousel: 1.8.1
@@ -9409,6 +9417,13 @@ __metadata:
   version: 2.0.30
   resolution: "mdn-data@npm:2.0.30"
   checksum: d6ac5ac7439a1607df44b22738ecf83f48e66a0874e4482d6424a61c52da5cde5750f1d1229b6f5fa1b80a492be89465390da685b11f97d62b8adcc6e88189aa
+  languageName: node
+  linkType: hard
+
+"memoize-one@npm:^4.0.0":
+  version: 4.0.3
+  resolution: "memoize-one@npm:4.0.3"
+  checksum: addd18c046542f57440ba70bf8ebd48663d17626cade681f777522ef70900a87ec72c5041bed8ece4f6d40a2cb58803bae388b50a4b740d64f36bcda20c147b7
   languageName: node
   linkType: hard
 
@@ -10922,6 +10937,19 @@ __metadata:
     react: ^16.3 || ^17.0 || ^18.0
     react-dom: ^17.0 || ^18.0
   checksum: b5ffe0bc0b13ad9ab2fa7b7acd979c7ff9d4f9d698412eaf8721167883a2ace2b4f3f5386c4b70f59f1cab9f062c368c360dbaa1b2cad4f1645795f3dbdf9355
+  languageName: node
+  linkType: hard
+
+"react-highlight-words@npm:0.20.0":
+  version: 0.20.0
+  resolution: "react-highlight-words@npm:0.20.0"
+  dependencies:
+    highlight-words-core: ^1.2.0
+    memoize-one: ^4.0.0
+    prop-types: ^15.5.8
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0-0 || ^17.0.0-0 || ^18.0.0-0
+  checksum: 6794b6fe409ee81390e342ccdb951696e06354d8591b4cac050a6d64dbc77dfc7bb636fee0aabcfda841e57778aa5108fe351e7c1dc27b28abedd36aec8141e7
   languageName: node
   linkType: hard
 
