@@ -3,7 +3,10 @@
  * @module reducers/root
  */
 
-import { searchFiltersReducer } from './searchFiltersReducer';
+import {
+  searchFiltersReducer,
+  tassonomieSearchReducer,
+} from './searchReducers';
 // import { searchResultsReducer } from './searchResultsReducer';
 // import { calendarSearchReducer } from './calendarSearchReducer';
 // import { calendarDaySearchReducer } from './calendarDaySearchReducer';
@@ -13,7 +16,7 @@ import { searchFiltersReducer } from './searchFiltersReducer';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
-import { tassonomieSearchReducer } from './tassonomieSearchReducer';
+
 /**
  * Root reducer.
  * @function

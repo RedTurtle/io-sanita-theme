@@ -8,6 +8,7 @@ export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
 export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
+export QuickSearchView from 'io-sanita-theme/components/Blocks/QuickSearch/View';
 export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
 export SearchServiziProcedureView from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View';
 
@@ -52,6 +53,11 @@ const HTMLBlockSidebar = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
   ),
 );
+const QuickSearchEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/QuickSearch/Edit'
+  ),
+);
 const SearchMapEdit = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
@@ -76,9 +82,10 @@ const SearchServiziProcedureSidebar = loadable(() =>
 export {
   BreakEdit,
   CalloutEdit,
+  HTMLBlockSidebar,
+  QuickSearchEdit,
   SearchMapEdit,
   SearchMapSidebar,
   SearchServiziProcedureEdit,
   SearchServiziProcedureSidebar,
-  HTMLBlockSidebar,
 };
