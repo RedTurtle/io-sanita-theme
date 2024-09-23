@@ -17,6 +17,7 @@ import {
   PageHeader,
   SkipToMainContent,
   RelatedItems,
+  Placeholder,
   useSideMenu,
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
@@ -31,14 +32,14 @@ export const PuntoDiContattoSectionsOrder = [
 ];
 
 /**
-* Component to display the default view.
-* @function DefaultView
-* @param {Object} content Content object.
-* @returns {string} Markup of the component.
-*/
+ * Component to display the default view.
+ * @function DefaultView
+ * @param {Object} content Content object.
+ * @returns {string} Markup of the component.
+ */
 const PuntoDiContattoView = ({ content }) => {
-let documentBody = createRef();
-const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
+  let documentBody = createRef();
+  const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
   return (
     <>
@@ -55,29 +56,31 @@ const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
           </aside>
-        <section
-          ref={documentBody}
-          id="main-content-section"
-          className="col-lg-8 it-page-sections-container border-light"
-        >
-          {/* SEZIONI */}
-          <ContentTypeViewSections
-            content={content}
-            defaultSections={PuntoDiContattoSectionsOrder}
-          />
-        </section>
+          <section
+            ref={documentBody}
+            id="main-content-section"
+            className="col-lg-8 it-page-sections-container border-light"
+          >
+            {/* SEZIONI */}
+            <ContentTypeViewSections
+              content={content}
+              defaultSections={PuntoDiContattoSectionsOrder}
+            />
+          </section>
+        </div>
       </div>
-      </div>
+      <Placeholder position="afterContent" content={content} />
       <RelatedItems list={content?.relatedItems} />
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };
 
 /**
-* Property types.
-* @property {Object} propTypes Property types.
-* @static
-*/
+ * Property types.
+ * @property {Object} propTypes Property types.
+ * @static
+ */
 PuntoDiContattoView.propTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,

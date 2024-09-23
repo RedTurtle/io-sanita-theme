@@ -12,6 +12,8 @@ import {
   ContentImage,
   useSideMenu,
   Metadata,
+  RealatedItems,
+  Placeholder,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -34,11 +36,11 @@ export const DocumentoViewSectionsOrder = [
 ];
 
 /**
-* DocumentoView view component class.
-* @function DocumentoView
-* @params {object} content Content object.
-* @returns {string} Markup of the component.
-*/
+ * DocumentoView view component class.
+ * @function DocumentoView
+ * @params {object} content Content object.
+ * @returns {string} Markup of the component.
+ */
 const DocumentoView = ({ content }) => {
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
@@ -53,8 +55,8 @@ const DocumentoView = ({ content }) => {
           showreadingtime={false}
           showdates={false}
         />
-      {/* HEADER IMAGE */}
-      <ContentImage content={content}   />
+        {/* HEADER IMAGE */}
+        <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
           <aside className="col-lg-4">
@@ -75,6 +77,9 @@ const DocumentoView = ({ content }) => {
           </section>
         </div>
       </div>
+      <Placeholder position="afterContent" content={content} />
+      <RelatedItems content={content} />
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };

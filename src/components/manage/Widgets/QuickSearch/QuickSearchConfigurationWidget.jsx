@@ -13,7 +13,7 @@ import { TextWidget } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import QuickSearchConfigurationForm from 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm';
-import './QuickSearchConfigurationWidget.scss';
+import './quickSearchConfigurationWidget.scss';
 
 const messages = defineMessages({
   rootItemsHeader: {

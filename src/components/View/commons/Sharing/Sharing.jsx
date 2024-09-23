@@ -146,7 +146,7 @@ const Sharing = ({ url, title }) => {
                   id={item.id}
                   onClick={handlePrint}
                   color="link"
-                  className="px-0"
+                  className="p-0"
                 >
                   <Icon
                     className={undefined}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
+import { Button } from 'design-react-kit';
 import { useDebouncedEffect } from 'io-sanita-theme/helpers';
 
 /* STYLE */
@@ -25,14 +26,21 @@ const SearchBar = ({
   value = '',
   onChange,
   controls,
+  showSubmit = false,
 }) => {
   const intl = useIntl();
   const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
 
+  const submit = () => {
+    onChange(searchableText);
+  };
+
   useDebouncedEffect(
     () => {
-      if (searchableText != value) {
-        onChange(searchableText);
+      if (!showSubmit) {
+        if (searchableText != value) {
+          submit();
+        }
       }
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     600,
@@ -64,11 +72,13 @@ const SearchBar = ({
           aria-controls={controls}
           onChange={(e) => setSearchableText(e.currentTarget.value)}
         />
-        {/* <div className="input-group-append">
-          <Button color="accent">
-            {intl.formatMessage(messages.searchable_text_button)}
-          </Button>
-        </div> */}
+        {showSubmit && (
+          <div className="input-group-append">
+            <Button color="accent" onClick={() => submit()}>
+              {intl.formatMessage(messages.searchable_text_button)}
+            </Button>
+          </div>
+        )}
       </div>
       <small className="form-text" id={id + 'searchable-text-description'}>
         {textDescription

@@ -42,6 +42,7 @@ const Body = ({ data, id }) => {
               onChange={(v) => {
                 setSearchableText(v);
               }}
+              showSubmit={true}
             />
           </Col>
         </Row>

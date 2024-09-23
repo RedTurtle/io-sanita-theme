@@ -28,6 +28,7 @@ import {
   SkipToMainContent,
   ContentImage,
   RelatedItems,
+  Placeholder,
   useSideMenu,
   Metadata,
 } from 'io-sanita-theme/components/View/commons';
@@ -90,7 +91,9 @@ const UOView = ({ content }) => {
           </section>
         </div>
       </div>
+      <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} list={content?.related_news ?? []} />
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };
