@@ -50,7 +50,7 @@ const messages = defineMessages({
   },
   emptyActiveItem: {
     id: 'quicksearchwidget-emptyActiveItem',
-    defaultMessage: 'Acciunti una nuova scorciatoia, oppure selezionane una',
+    defaultMessage: 'Aggiungi una nuova scorciatoia, oppure selezionane una',
   },
 });
 

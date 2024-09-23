@@ -1373,8 +1373,18 @@ msgstr ""
 msgid "publication_date"
 msgstr ""
 
+#. Default: "Effettua una ricerca per "{quick}""
+#: components/Search/common/QuickSearch
+msgid "quick-search-item"
+msgstr ""
+
+#. Default: "Cerca nel sito"
+#: components/Blocks/QuickSearch/Body
+msgid "quick-search-search_site"
+msgstr ""
+
 #. Default: "Ricerca rapida"
-#: components/Search/common/QuickSearchSections
+#: components/Search/common/QuickSearch
 msgid "quick-search-title"
 msgstr ""
 

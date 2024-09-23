@@ -1368,10 +1368,20 @@ msgstr "Print"
 msgid "publication_date"
 msgstr "Publication date"
 
+#. Default: "Effettua una ricerca per "{quick}""
+#: components/Search/common/QuickSearch
+msgid "quick-search-item"
+msgstr "Search for {quick}"
+
+#. Default: "Cerca nel sito"
+#: components/Blocks/QuickSearch/Body
+msgid "quick-search-search_site"
+msgstr "Search site"
+
 #. Default: "Ricerca rapida"
-#: components/Search/common/QuickSearchSections
+#: components/Search/common/QuickSearch
 msgid "quick-search-title"
-msgstr ""
+msgstr "Quick search"
 
 #. Default: "Aggiungi radice di navigazione"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
