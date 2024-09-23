@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-20T12:36:57.003Z\n"
+"POT-Creation-Date: 2024-09-23T10:37:03.902Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -102,7 +102,6 @@ msgid "Dimensione della mappa"
 msgstr ""
 
 #. Default: "Etichetta"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"
 msgstr ""
@@ -181,7 +180,6 @@ msgid "Menu selezionato"
 msgstr ""
 
 #. Default: "Mostra i filtri per percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra i filtri per percorso"
 msgstr ""
@@ -213,7 +211,6 @@ msgid "Page"
 msgstr ""
 
 #. Default: "Filtro"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Path filter filtro"
 msgstr ""
@@ -224,7 +221,6 @@ msgid "Pause slider"
 msgstr ""
 
 #. Default: "Percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Percorso path filter"
 msgstr ""
@@ -1113,12 +1109,12 @@ msgstr ""
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "icon"
 msgstr ""
 
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
 msgstr ""
 
@@ -1611,7 +1607,7 @@ msgid "prenota_online_deafult_label"
 msgstr ""
 
 #. Default: "Anteprima dell'icona scelta"
-#: components/Widgets/IconWidget/IconPreviewWidget
+#: components/manage/Widgets/IconWidget/IconPreviewWidget
 msgid "previewIconSelected"
 msgstr ""
 
@@ -1629,6 +1625,76 @@ msgstr ""
 #. Default: "Quartiere"
 #: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
 msgid "quartiere"
+msgstr ""
+
+#. Default: "Effettua una ricerca per "{quick}""
+#: components/Search/common/QuickSearch
+msgid "quick-search-item"
+msgstr ""
+
+#. Default: "Cerca nel sito"
+#: components/Blocks/QuickSearch/Body
+msgid "quick-search-search_site"
+msgstr ""
+
+#. Default: "Ricerca rapida"
+#: components/Search/common/QuickSearch
+msgid "quick-search-title"
+msgstr ""
+
+#. Default: "Aggiungi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-add-rootpath"
+msgstr ""
+
+#. Default: "Aggiungi scorciatoia"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-additem"
+msgstr ""
+
+#. Default: "Rimuovi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Rimuovi"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Acciunti una nuova scorciatoia, oppure selezionane una"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Seleziona un percorso"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Scorciatoie"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-items-header"
+msgstr ""
+
+#. Default: "Sposta dopo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-down"
+msgstr ""
+
+#. Default: "Sposta prima"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-up"
+msgstr ""
+
+#. Default: "Radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-rootpath"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-title"
 msgstr ""
 
 #. Default: "Rassegna:"
@@ -2504,11 +2570,6 @@ msgstr ""
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
-msgstr ""
-
-#. Default: "Blocco sconosciuto"
-#: helpers/Blocks/RenderBlocks
-msgid "unknownBlock"
 msgstr ""
 
 #. Default: "Allegati"

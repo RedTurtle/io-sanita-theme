@@ -1,4 +1,4 @@
-import { defaultIconWidgetOptions } from 'io-sanita-theme/components/Widgets';
+import { defaultIconWidgetOptions } from 'io-sanita-theme/components/manage/Widgets';
 
 const schema = () => {
   return {
@@ -25,8 +25,9 @@ const schema = () => {
       },
       icon: {
         title: "Seleziona un'icona",
-        description: "Seleziona o inserisci un'icona di FontAwesome.",
-        widget: 'iconWidget',
+        description:
+          "Seleziona o inserisci il nome di un'icona di FontAwesome.",
+        widget: 'icon',
         defaultOptions: defaultIconWidgetOptions,
       },
     },

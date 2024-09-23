@@ -10,7 +10,11 @@ const defaultOptions = {
   dateEnd: undefined,
 };
 
-export const getItemsByPath = (items, pathname, defaultRootPath = true) => {
+export const getItemsByPath = (
+  items = [],
+  pathname = '/',
+  defaultRootPath = true,
+) => {
   let rootPathConfig = null;
   const itemsByPath = items?.reduce((acc, val) => {
     if (val.rootPath === '/') {
@@ -54,64 +58,6 @@ const updateGroupCheckedStatus = (group, checked) =>
     ...filter,
     value: checked,
   }));
-
-const setSectionFilterChecked = (groupId, filterId, checked, setSections) => {
-  setSections((prevSections) => ({
-    ...prevSections,
-    [groupId]: {
-      ...prevSections[groupId],
-      items: {
-        ...prevSections[groupId].items,
-        [filterId]: {
-          ...prevSections[groupId].items[filterId],
-          value: checked,
-        },
-      },
-    },
-  }));
-};
-
-const setGroupChecked = (groupId, checked, setSections) => {
-  setSections((prevSections) => ({
-    ...prevSections,
-    [groupId]: {
-      ...prevSections[groupId],
-      items: updateGroupCheckedStatus(prevSections[groupId], checked),
-    },
-  }));
-};
-
-const parseFetchedSections = (fetchedSections, location, subsite) => {
-  const qsSections = qs.parse(location?.search ?? '')['path.query'] ?? [];
-
-  const pathname = location?.pathname?.length ? location.pathname : '/';
-
-  const sections = getItemsByPath(fetchedSections, pathname, !subsite);
-
-  return Object.keys(sections).reduce((acc, sec) => {
-    let id = sections[sec].id;
-    let sectionItems = sections[sec].items;
-    if (sectionItems) {
-      acc[id] = {
-        path: flattenToAppURL(sections[sec]['@id']),
-        title: sections[sec].title,
-        items:
-          sectionItems &&
-          sectionItems.reduce((itemsAcc, subSec) => {
-            let subSectionUrl = flattenToAppURL(subSec['@id']);
-            itemsAcc[subSectionUrl] = {
-              value: qsSections.indexOf(subSectionUrl) > -1,
-              label: subSec.title,
-            };
-
-            return itemsAcc;
-          }, {}),
-      };
-    }
-
-    return acc;
-  }, {});
-};
 
 const parseFetchedTopics = (topics, location) => {
   const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
@@ -182,19 +128,18 @@ const parseFetchedOptions = (options, location) => {
 //   return customPath;
 // };
 
-const getSearchParamsURL = (
+const getSearchParamsURL = ({
   searchableText,
-  sections,
-  topics,
-  options,
-  portalTypes,
+  topics = {},
+  options = {},
+  portalTypes = {},
   sortOn = {},
   currentPage,
   customPath,
   subsite,
   currentLang,
   getObject = false,
-) => {
+}) => {
   let baseUrl = subsite
     ? flattenToAppURL(subsite['@id'])
     : config.settings.isMultilingual
@@ -203,17 +148,6 @@ const getSearchParamsURL = (
   const b_start = currentPage
     ? (currentPage - 1) * config.settings.defaultPageSize
     : 0;
-  const activeSections = Object.keys(sections).reduce((secAcc, secKey) => {
-    const sec =
-      sections[secKey].items &&
-      Object.keys(sections[secKey].items).reduce((acc, section) => {
-        if (sections[secKey].items[section].value) return [...acc, section];
-        return acc;
-      }, []);
-
-    if (sec?.length > 0) return [...secAcc, ...sec];
-    return secAcc;
-  }, []);
 
   const activeTopics = Object.keys(topics).reduce((acc, topic) => {
     if (topics[topic].value) return [...acc, topics[topic].label];
@@ -240,9 +174,7 @@ const getSearchParamsURL = (
   }
 
   let pathQuery = null;
-  if (activeSections.length > 0) {
-    pathQuery = { 'path.query': activeSections };
-  } else if (customPath?.length > 0) {
+  if (customPath?.length > 0) {
     pathQuery = { 'path.query': customPath };
   } else if (baseUrl?.length > 0) {
     pathQuery = {
@@ -300,13 +232,11 @@ const SearchUtils = {
   isGroupChecked,
   isGroupIndeterminate,
   updateGroupCheckedStatus,
-  parseFetchedSections,
   parseFetchedTopics,
   parseFetchedPortalTypes,
   parseFetchedOptions,
   getSearchParamsURL,
-  setSectionFilterChecked,
-  setGroupChecked,
+  getItemsByPath,
 };
 
 export default SearchUtils;

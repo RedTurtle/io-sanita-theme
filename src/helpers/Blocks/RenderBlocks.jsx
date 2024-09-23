@@ -1,30 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { map } from 'lodash';
+
 import { useLocation } from 'react-router-dom';
-import { defineMessages, useIntl } from 'react-intl';
+
 import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
-  getBaseUrl,
   hasBlocksData,
 } from '@plone/volto/helpers';
 import { RenderBlocks as VoltoRenderBlocks } from '@plone/volto/components';
-import config from '@plone/volto/registry';
 
-const messages = defineMessages({
-  unknownBlock: {
-    id: 'unknownBlock',
-    defaultMessage: 'Blocco sconosciuto',
-  },
-});
-const Wrapper = ({ block, id, children }) => {
-  return block['@type'] === 'listing' && block.variation === 'slider' ? (
-    <div id={`outside-slider-${id}`}>{children}</div>
-  ) : (
-    <>{children}</>
-  );
-};
 /**
  * RenderBlocks view component class.
  * @function RenderBlocks
@@ -33,10 +18,9 @@ const Wrapper = ({ block, id, children }) => {
  */
 const RenderBlocks = ({ content, exclude = ['title', 'description'] }) => {
   /* Render text or blocks in view, skip title and description blocks by default*/
-  const blockContent =  content;
+  const blockContent = content;
   const blocksFieldname = getBlocksFieldname(blockContent);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(blockContent);
-  const intl = useIntl();
   const location = useLocation();
 
   let blocksLayoutFiltered = [];

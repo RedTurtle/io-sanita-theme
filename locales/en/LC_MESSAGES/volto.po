@@ -100,7 +100,6 @@ msgid "Dimensione della mappa"
 msgstr ""
 
 #. Default: "Etichetta"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"
 msgstr ""
@@ -179,7 +178,6 @@ msgid "Menu selezionato"
 msgstr "Menu selected"
 
 #. Default: "Mostra i filtri per percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra i filtri per percorso"
 msgstr ""
@@ -211,7 +209,6 @@ msgid "Page"
 msgstr "Page"
 
 #. Default: "Filtro"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Path filter filtro"
 msgstr "Filter"
@@ -222,7 +219,6 @@ msgid "Pause slider"
 msgstr "Pause"
 
 #. Default: "Percorso"
-#: components/manage/Widgets/PathFiltersWidget
 #: config/blocks/listing/ListingOptions/utils
 msgid "Percorso path filter"
 msgstr ""
@@ -1111,12 +1107,12 @@ msgstr "Home page"
 
 #. Default: "Icona"
 #: components/Blocks/Callout/Sidebar
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "icon"
 msgstr ""
 
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
-#: components/Widgets/IconWidget/IconWidget
+#: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
 msgstr ""
 
@@ -1609,7 +1605,7 @@ msgid "prenota_online_deafult_label"
 msgstr "Book online"
 
 #. Default: "Anteprima dell'icona scelta"
-#: components/Widgets/IconWidget/IconPreviewWidget
+#: components/manage/Widgets/IconWidget/IconPreviewWidget
 msgid "previewIconSelected"
 msgstr ""
 
@@ -1627,6 +1623,76 @@ msgstr "Publication date"
 #. Default: "Quartiere"
 #: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
 msgid "quartiere"
+msgstr ""
+
+#. Default: "Effettua una ricerca per "{quick}""
+#: components/Search/common/QuickSearch
+msgid "quick-search-item"
+msgstr "Search for {quick}"
+
+#. Default: "Cerca nel sito"
+#: components/Blocks/QuickSearch/Body
+msgid "quick-search-search_site"
+msgstr "Search site"
+
+#. Default: "Ricerca rapida"
+#: components/Search/common/QuickSearch
+msgid "quick-search-title"
+msgstr "Quick search"
+
+#. Default: "Aggiungi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-add-rootpath"
+msgstr ""
+
+#. Default: "Aggiungi scorciatoia"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-additem"
+msgstr ""
+
+#. Default: "Rimuovi radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Rimuovi"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Acciunti una nuova scorciatoia, oppure selezionane una"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Seleziona un percorso"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Scorciatoie"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-items-header"
+msgstr ""
+
+#. Default: "Sposta dopo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-down"
+msgstr ""
+
+#. Default: "Sposta prima"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-move-item-up"
+msgstr ""
+
+#. Default: "Radice di navigazione"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+msgid "quicksearchwidget-rootpath"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
+msgid "quicksearchwidget-title"
 msgstr ""
 
 #. Default: "Rassegna:"
@@ -2503,11 +2569,6 @@ msgstr ""
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
 msgstr ""
-
-#. Default: "Blocco sconosciuto"
-#: helpers/Blocks/RenderBlocks
-msgid "unknownBlock"
-msgstr "Unknown block"
 
 #. Default: "Allegati"
 #: components/View/UOView/UODocumenti

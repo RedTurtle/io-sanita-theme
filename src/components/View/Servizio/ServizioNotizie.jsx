@@ -19,7 +19,7 @@ const ServizioNotizie = ({ content }) => {
 
   return (
     <BackReferences
-      type="news"
+      type="News Item"
       content={content}
       id={'notizie_correlate'}
       title={intl.formatMessage(messages.avvisi_e_notizie)}

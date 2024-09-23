@@ -65,13 +65,13 @@ const CardFeatured = ({
 
           {size !== 'small' && showDescription && (
             <>
-              {otherChildren.afterTitle && otherChildren.afterTitle}
+              {otherChildren?.afterTitle && otherChildren.afterTitle}
 
               {(text || item.description) && (
                 <CardText>{text || item.description}</CardText>
               )}
 
-              {otherChildren.afterText && otherChildren.afterText}
+              {otherChildren?.afterText && otherChildren.afterText}
             </>
           )}
 

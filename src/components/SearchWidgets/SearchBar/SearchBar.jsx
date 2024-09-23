@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 import { useDebouncedEffect } from 'io-sanita-theme/helpers';
@@ -22,12 +22,12 @@ const SearchBar = ({
   title,
   defaultTitle,
   textDescription,
-  value,
+  value = '',
   onChange,
   controls,
 }) => {
   const intl = useIntl();
-  const [searchableText, setSearchableText] = useState(''); //serve solo per fare il debounce
+  const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
 
   useDebouncedEffect(
     () => {
@@ -38,6 +38,12 @@ const SearchBar = ({
     600,
     [searchableText],
   );
+
+  useEffect(() => {
+    if (value != searchableText) {
+      setSearchableText(value);
+    }
+  }, [value]);
 
   return (
     <div className="form-group search-bar-widget mb-3">

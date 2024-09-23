@@ -4,6 +4,9 @@
     background-color: transparent;
     border-color: var(--is-accent);
     color: var(--is-accent);
+    .icon {
+      fill: var(--is-accent);
+    }
 
     & > .chip-label {
       color: var(--is-accent);

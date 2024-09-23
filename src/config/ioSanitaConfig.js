@@ -48,10 +48,7 @@ import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 import { applyFarmacieConfig } from './farmacie';
 
-import {
-  HeaderContactsWidget,
-  IconWidget,
-} from 'io-sanita-theme/components/Widgets/';
+import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
@@ -67,8 +64,6 @@ export default function applyConfig(config) {
    * SETTINGS
    ******************************************************************************/
   const voltoSentryOptions = config.settings.sentryOptions;
-  config.widgets.id.contatti_testata = HeaderContactsWidget;
-  config.widgets.widget.iconWidget = IconWidget;
 
   config.settings = {
     ...config.settings,
@@ -244,10 +239,10 @@ export default function applyConfig(config) {
   // /******************************************************************************
   //  * WIDGETS
   //  ******************************************************************************/
-  // config.widgets = {
-  //   ...config.widgets,
-  //   ...getItaliaWidgets(config),
-  // };
+  config.widgets = {
+    ...config.widgets,
+    ...getIoSanitaWidgets(config),
+  };
 
   // /******************************************************************************
   //  * FARMACIE (VIEWS+BLOCKS)
