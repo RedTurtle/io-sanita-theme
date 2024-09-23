@@ -74,8 +74,6 @@ const PageHeader = (props) => {
 
           <PageHeaderEventDates content={content} />
 
-          <PageHeaderStatoServizio content={content} />
-
           <PageHeaderDocumento content={content} />
 
           {content.description && (
@@ -95,6 +93,8 @@ const PageHeader = (props) => {
               ))}
             </p>
           )}
+
+          <PageHeaderStatoServizio content={content} />
 
           <PageHeaderBando content={content} />
 
