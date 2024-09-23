@@ -27,6 +27,8 @@ import {
   SkipToMainContent,
   useSideMenu,
   Metadata,
+  RelatedItems,
+  Placeholder,
 } from 'io-sanita-theme/components/View/commons';
 
 export const PersonaViewSectionsOrder = [
@@ -85,6 +87,9 @@ const PersonaView = ({ content }) => {
           </section>
         </div>
       </div>
+      <Placeholder position="afterContent" content={content} />
+      <RelatedItems content={content} />
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };

@@ -24,6 +24,7 @@ import {
   RelatedItems,
   SkipToMainContent,
   useSideMenu,
+  Placeholder,
 } from 'io-sanita-theme/components/View/commons';
 
 import './bando.scss';
@@ -84,7 +85,9 @@ const BandoView = ({ content, location }) => {
           </section>
         </div>
       </div>
+      <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} />
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };
