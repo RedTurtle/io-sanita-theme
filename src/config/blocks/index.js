@@ -150,8 +150,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
         addPermission: [],
         view: [],
       },
-      //  schema: SearchServiziProcedureSchema,
-      sidebarTab: 1,
+      sidebarTab: 0,
     },
   };
 

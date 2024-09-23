@@ -56,7 +56,7 @@ export BrandText from 'io-sanita-theme/components/BrandText/BrandText';
 export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 
 //Search
-export QuickSearchSections from 'io-sanita-theme/components/Search/common/QuickSearchSections';
+export QuickSearch from 'io-sanita-theme/components/Search/common/QuickSearch';
 
 //Widgets
 export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';

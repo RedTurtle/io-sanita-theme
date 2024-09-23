@@ -57,19 +57,12 @@ const SearchSectionForm = ({ content }) => {
       if (__CLIENT__)
         window.location.href =
           window.location.origin +
-          getSearchParamsURL(
+          getSearchParamsURL({
             searchableText,
-            {},
-            {},
-            {},
-            {},
-            null,
-            null,
-            customPath.length > 0 ? customPath : null,
+            customPath,
             subsite,
-            intl.locale,
-            false,
-          ) +
+            currentLang: intl.locale,
+          }) +
           (customPath.length === 0
             ? `&custom_path=${flattenToAppURL(path)}`
             : '');

@@ -42,12 +42,10 @@ const {
   isGroupChecked,
   isGroupIndeterminate,
   updateGroupCheckedStatus,
-  parseFetchedSections,
+
   parseFetchedTopics,
   parseFetchedOptions,
   getSearchParamsURL,
-  setSectionFilterChecked,
-  setGroupChecked,
 } = SearchUtils;
 
 const messages = defineMessages({
@@ -193,9 +191,10 @@ const SearchModal = ({ closeModal, show }) => {
   });
 
   const searchFilters = useSelector((state) => state.searchFilters.result);
+  const searchFiltersReq = useSelector((state) => state.searchFilters);
 
   useEffect(() => {
-    if (!searchFilters || Object.keys(searchFilters).length === 0)
+    if (!searchFiltersReq?.loaded && !searchFiltersReq.loading)
       dispatch(getSearchFilters());
   }, []);
 
@@ -243,12 +242,6 @@ const SearchModal = ({ closeModal, show }) => {
   }, [show, inputRef]);
 
   useEffect(() => {
-    if (Object.keys(searchFilters?.sections ?? {}).length > 0) {
-      let pfs = parseFetchedSections(searchFilters.sections, location, subsite);
-
-      setSections(pfs);
-    }
-
     if (searchFilters?.topics?.length > 0) {
       setTopics(parseFetchedTopics(searchFilters.topics, location));
     }
@@ -257,22 +250,9 @@ const SearchModal = ({ closeModal, show }) => {
   }, [searchFilters, location, subsite]);
 
   // The "all" filter is checked if all groups are unchecked
-  const allSectionsChecked = Object.keys(checkedGroups).reduce(
-    (checked, groupId) => checked && !checkedGroups[groupId],
-    true,
-  );
   const allTopicsChecked = Object.keys(selectedTopics).length === 0;
   const allOptionsSet =
     !options.activeContent && !options.dateStart && !options.dateEnd;
-
-  const resetSections = () => {
-    setSections((prevSections) =>
-      mapValues(prevSections, (group) => ({
-        ...group,
-        items: updateGroupCheckedStatus(group, false),
-      })),
-    );
-  };
 
   const resetTopics = () => {
     setTopics((prevTopics) =>
@@ -312,18 +292,13 @@ const SearchModal = ({ closeModal, show }) => {
       if (__CLIENT__) {
         window.location.href =
           window.location.origin +
-          getSearchParamsURL(
+          getSearchParamsURL({
             searchableText,
-            sections,
             topics,
             options,
-            {},
-            null,
-            null,
-            null,
             subsite,
-            intl.locale,
-          );
+            currentLang: intl.locale,
+          });
       }
     }
   };
@@ -364,19 +339,13 @@ const SearchModal = ({ closeModal, show }) => {
             </p>
 
             <a
-              href={getSearchParamsURL(
+              href={getSearchParamsURL({
                 searchableText,
-                sections,
                 topics,
                 options,
-                {},
-                null,
-                null,
-                null,
                 subsite,
-                intl.locale,
-                false,
-              )}
+                currentLang: intl.locale,
+              })}
               className="ms-auto btn btn-outline-primary text-capitalize"
               style={{ visibility: advancedSearch ? 'visible' : 'hidden' }}
               onClick={submitSearch}
@@ -406,19 +375,13 @@ const SearchModal = ({ closeModal, show }) => {
                       ref={inputRef}
                     />
                     <a
-                      href={getSearchParamsURL(
+                      href={getSearchParamsURL({
                         searchableText,
-                        sections,
                         topics,
                         options,
-                        {},
-                        null,
-                        null,
-                        null,
                         subsite,
-                        intl.locale,
-                        false,
-                      )}
+                        currentLang: intl.locale,
+                      })}
                       onClick={submitSearch}
                       className="btn btn-link rounded-0 py-0"
                       title={intl.formatMessage(messages.search)}
@@ -430,67 +393,6 @@ const SearchModal = ({ closeModal, show }) => {
                 </div>
               </div>
 
-              {Object.keys(sections)?.length > 0 && (
-                <div className="search-filters search-filters-section">
-                  <div className="h6">
-                    {intl.formatMessage(messages.sections)}
-                  </div>
-                  <ButtonToolbar className="mb-3">
-                    <Button
-                      color="primary"
-                      outline={!allSectionsChecked}
-                      onClick={resetSections}
-                      size="sm"
-                      className="me-2 mb-2"
-                      aria-label={intl.formatMessage(
-                        messages.searchAllSections,
-                      )}
-                    >
-                      {intl.formatMessage(messages.allFilters)}
-                    </Button>
-                    {Object.keys(sections).map((groupId) => (
-                      <Button
-                        key={groupId}
-                        color="primary"
-                        outline={!checkedGroups[groupId]}
-                        size="sm"
-                        className="me-2 mb-2"
-                        aria-label={
-                          (!checkedGroups[groupId]
-                            ? intl.formatMessage(messages.searchInSection)
-                            : intl.formatMessage(messages.deselectSection)) +
-                          ' ' +
-                          sections[groupId].title
-                        }
-                        onClick={() =>
-                          setGroupChecked(
-                            groupId,
-                            !checkedGroups[groupId],
-                            setSections,
-                          )
-                        }
-                      >
-                        {sections[groupId].title}
-                      </Button>
-                    ))}
-                    <Button
-                      color="primary"
-                      outline
-                      size="sm"
-                      className="mb-2"
-                      onClick={() => {
-                        setAdvancedTab('sections');
-                        setAdvancedSearch(true);
-                      }}
-                      aria-label={intl.formatMessage(
-                        messages.advandedSectionsFilters,
-                      )}
-                    >
-                      ...
-                    </Button>
-                  </ButtonToolbar>
-                </div>
-              )}
               <div className="search-filters search-filters-topics">
                 <div className="h6">{intl.formatMessage(messages.topics)}</div>
                 <button
@@ -633,19 +535,13 @@ const SearchModal = ({ closeModal, show }) => {
               </div>
               <div className="search-filters text-center">
                 <a
-                  href={getSearchParamsURL(
+                  href={getSearchParamsURL({
                     searchableText,
-                    sections,
                     topics,
                     options,
-                    {},
-                    null,
-                    null,
-                    null,
                     subsite,
-                    intl.locale,
-                    false,
-                  )}
+                    currentLang: intl.locale,
+                  })}
                   onClick={submitSearch}
                   className="btn-icon btn btn-primary"
                   title={intl.formatMessage(messages.search)}
@@ -661,28 +557,6 @@ const SearchModal = ({ closeModal, show }) => {
           {advancedSearch && (
             <div>
               <Nav tabs className="mb-3 nav-fill" role="tablist">
-                {Object.keys(sections)?.length > 0 && (
-                  <NavItem
-                    role="tab"
-                    aria-controls="sections-tab"
-                    aria-selected={advancedTab === 'sections'}
-                  >
-                    <NavLink
-                      href="#"
-                      active={advancedTab === 'sections'}
-                      onClick={() => setAdvancedTab('sections')}
-                      id={'sections'}
-                    >
-                      <span>{intl.formatMessage(messages.sections)}</span>
-                      {advancedTab === 'sections' && (
-                        <span className="visually-hidden">
-                          {' '}
-                          {intl.formatMessage(messages.current)}
-                        </span>
-                      )}
-                    </NavLink>
-                  </NavItem>
-                )}
                 <NavItem
                   role="tab"
                   aria-controls="topics-tab"
@@ -726,105 +600,6 @@ const SearchModal = ({ closeModal, show }) => {
               </Nav>
 
               <TabContent activeTab={advancedTab}>
-                {Object.keys(sections)?.length > 0 && (
-                  <TabPane
-                    className="p-3"
-                    tabId="sections"
-                    role="tabpanel"
-                    id="sections-tab"
-                    aria-expanded={advancedTab === 'sections'}
-                    hidden={!(advancedTab === 'sections')}
-                  >
-                    <Row>
-                      <div className="offset-lg-2 col-lg-8 offset-md-1 col-md-10 col-sm-12">
-                        <Row>
-                          {Object.keys(sections).map((groupId) => (
-                            <Col sm={6} key={groupId} className="group-col">
-                              <div role="tablist">
-                                <FormGroup check tag="div">
-                                  <Checkbox
-                                    id={`modal-search-${groupId}`}
-                                    indeterminate={isGroupIndeterminate(
-                                      sections[groupId],
-                                      checkedGroups[groupId],
-                                    )}
-                                    checked={checkedGroups[groupId]}
-                                    onChange={(e) =>
-                                      setGroupChecked(
-                                        groupId,
-                                        e.currentTarget.checked,
-                                        setSections,
-                                      )
-                                    }
-                                    role="tab"
-                                    aria-controls={groupId + '-section'}
-                                    aria-selected={checkedGroups[groupId]}
-                                  />
-                                  <Label
-                                    check
-                                    for={`modal-search-${groupId}`}
-                                    tag="label"
-                                    className={cx(
-                                      'group-head fw-bold text-primary',
-                                      {
-                                        indeterminate: isGroupIndeterminate(
-                                          sections[groupId],
-                                          checkedGroups[groupId],
-                                        ),
-                                      },
-                                    )}
-                                    widths={['xs', 'sm', 'md', 'lg', 'xl']}
-                                  >
-                                    {sections[groupId].title}
-                                  </Label>
-                                </FormGroup>
-                                {Object.keys(sections[groupId].items).map(
-                                  (filterId) => (
-                                    <FormGroup
-                                      check
-                                      tag="div"
-                                      key={filterId}
-                                      role="tabpanel"
-                                      id={groupId + '-section'}
-                                      aria-label={sections[groupId].title}
-                                    >
-                                      <Checkbox
-                                        id={`modal-search-${filterId}`}
-                                        checked={
-                                          sections[groupId].items[filterId]
-                                            .value
-                                        }
-                                        onChange={(e) =>
-                                          setSectionFilterChecked(
-                                            groupId,
-                                            filterId,
-                                            e.currentTarget.checked,
-                                            setSections,
-                                          )
-                                        }
-                                      />
-                                      <Label
-                                        check
-                                        for={`modal-search-${filterId}`}
-                                        tag="label"
-                                        widths={['xs', 'sm', 'md', 'lg', 'xl']}
-                                      >
-                                        {
-                                          sections[groupId].items[filterId]
-                                            .label
-                                        }
-                                      </Label>
-                                    </FormGroup>
-                                  ),
-                                )}
-                              </div>
-                            </Col>
-                          ))}
-                        </Row>
-                      </div>
-                    </Row>
-                  </TabPane>
-                )}
                 <TabPane
                   className="p-3"
                   tabId="topics"

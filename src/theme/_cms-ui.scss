@@ -21,37 +21,63 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h1-font-size);
       font-weight: 700 !important;
+      @include media-breakpoint-up(sm) {
+        font-size: 3rem;
+        line-height: 3.5rem;
+      }
     }
 
     h2 {
       @extend %heading;
       @include font-size($h2-font-size);
-      font-weight: 700 !important;
+      &:not(.h3):not(.h4):not(.h5):not(.h6) {
+        font-weight: 700 !important;
+      }
+      @include media-breakpoint-up(sm) {
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
     }
 
     h3 {
       @extend %heading;
       @include font-size($h3-font-size);
       font-weight: 700 !important;
+      @include media-breakpoint-up(sm) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
     }
 
     h4 {
       @extend %heading;
       @include font-size($h4-font-size);
       font-weight: 600;
+      @include media-breakpoint-up(sm) {
+        font-size: 1.75rem;
+        line-height: 2rem;
+      }
     }
 
     h5 {
       @extend %heading;
       @include font-size($h5-font-size);
       font-weight: 600;
+      @include media-breakpoint-up(sm) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
     }
 
     h6 {
       @extend %heading;
       @include font-size($h6-font-size);
       font-weight: 600;
+      @include media-breakpoint-up(sm) {
+        font-size: 1.125rem;
+      }
     }
+
     .block:not(.inner)::before {
       top: -0.3rem;
       height: calc(100% + 0.6rem);
