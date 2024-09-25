@@ -12,7 +12,7 @@ import {
 // import { calendarDaySearchReducer } from './calendarDaySearchReducer';
 // import { amministrazioneTrasparenteTree } from './amministrazioneTrasparenteTree';
 // import { dettagliProcedimento } from './dettagliProcedimento';
-// import { modulisticaItems } from './modulisticaItems';
+import { modulisticaItems } from './modulistica';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
@@ -32,7 +32,7 @@ const reducers = {
   // calendarDaySearch: calendarDaySearchReducer,
   // amministrazioneTrasparenteTree: amministrazioneTrasparenteTree,
   // dettagliProcedimento: dettagliProcedimento,
-  // modulisticaItems,
+  modulisticaItems,
   // originalQuery: originalQueryReducer,
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,

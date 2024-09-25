@@ -5,72 +5,35 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
-  documento_doc: {
-    id: 'documento_doc',
-    defaultMessage: 'Vai al documento',
-  },
-  documento_formati: {
-    id: 'documento_formati',
-    defaultMessage: 'Formati alternativi',
+  documenti: {
+    id: 'documento_documenti',
+    defaultMessage: 'File e collegamenti',
   },
 });
 
 const DocumentoDocumenti = ({ content }) => {
   const intl = useIntl();
+  const moduli = content.items?.filter((item) => item.id !== 'immagini') ?? [];
 
   return (
     <>
-      {(content?.file ||
-       content?.formato_alternativo_1 ||
-       content?.formato_alternativo_2) && (
-          <RichTextSection
-            tag_id="documenti"
-            title={intl.formatMessage(messages.documento_doc)}
-          >
-            <div className="attachments mb-5">
-              {/* DOCUMENTO PRINCIPALE */}
-              {content?.file && (
-                <Row className="mb-4">
-                  <Col lg={6} className="py-lg-2">
-                    <CardFile item={content} file={content.file} />
-                  </Col>
-                </Row>
-              )}
-
-            {/* FORMATI ALTERNATIVI */}
-            {(content?.formato_alternativo_1 ||
-              content?.formato_alternativo_2) && (
-              <>
-                <h3 className="h5 mb-2">
-                  {intl.formatMessage(messages.documento_formati)}
-                </h3>
-                <Row>
-                  {content?.formato_alternativo_1 && (
-                    <Col lg={6} className="py-lg-2">
-                      <CardFile
-                        item={content}
-                        file={content.formato_alternativo_1}
-                        showDescription={false}
-                      />
-                    </Col>
-                  )}
-
-                  {content?.formato_alternativo_2 && (
-                    <Col lg={6} className="py-lg-2">
-                      <CardFile
-                        item={content}
-                        file={content.formato_alternativo_2}
-                        showDescription={false}
-                      />
-                    </Col>
-                  )}
-                </Row>
-              </>
-            )}
-            </div>
-          </RichTextSection>
-        )}
-      </>
+      {moduli.length > 0 && (
+        <RichTextSection
+          tag_id="elenco_documenti"
+          title={intl.formatMessage(messages.documenti)}
+        >
+          <div className="attachments mb-5">
+            <Row className="mb-4">
+              {moduli.map((modulo) => (
+                <Col lg={6} className="py-lg-2" key={modulo['@id']}>
+                  <CardFile item={modulo} />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </RichTextSection>
+      )}
+    </>
   );
 };
 

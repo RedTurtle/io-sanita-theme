@@ -124,7 +124,7 @@ const PageHeader = (props) => {
         <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
 
-          {/* FOTO PERSONA */}
+          {/* FOTO PERSONA o altri ct che vogliono mostrare l'immagine piccola nell'header */}
           {foto && content?.image ? (
             <div className="page-header-image mt-5">
               <figure>

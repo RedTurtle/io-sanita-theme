@@ -1,10 +1,11 @@
 .sort-by-widget {
   .link-list-wrapper ul li a.active {
     background-color: var(--bs-primary);
-    &,
-    &:hover,
-    &:active,
-    &:focus {
+
+    button,
+    button:hover,
+    button:active,
+    button:focus {
       span {
         color: var(--bs-primary-text);
       }
