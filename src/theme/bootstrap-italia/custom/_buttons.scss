@@ -2,6 +2,20 @@
   --bs-btn-hover-color: $primary;
   --bs-btn-active-color: $primary-darker;
 }
+.btn.btn-link {
+  color: $link-color;
+  .icon {
+    fill: $link-color;
+  }
+}
+.btn-icon {
+  .icon {
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
 button.btn.btn-primary,
 .btn.btn-primary {
   svg.icon {

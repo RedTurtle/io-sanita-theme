@@ -18,75 +18,89 @@ const messages = defineMessages({
   },
 });
 
-const SearchBar = ({
-  id,
-  title,
-  defaultTitle,
-  textDescription,
-  value = '',
-  onChange,
-  controls,
-  showSubmit = false,
-}) => {
-  const intl = useIntl();
-  const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
+const SearchBar = React.forwardRef(
+  (
+    {
+      id,
+      title,
+      defaultTitle,
+      textDescription,
+      value = '',
+      onChange,
+      controls,
+      showSubmit = false,
+    },
+    ref,
+  ) => {
+    console.log('..inputRef', ref);
+    const intl = useIntl();
+    const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
 
-  const submit = () => {
-    onChange(searchableText);
-  };
+    const submit = () => {
+      onChange(searchableText);
+    };
 
-  useDebouncedEffect(
-    () => {
-      if (!showSubmit) {
-        if (searchableText != value) {
-          submit();
-        }
+    const onKeyDown = (e) => {
+      if (e.key === 'Enter' && showSubmit) {
+        submit();
       }
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    600,
-    [searchableText],
-  );
+    };
 
-  useEffect(() => {
-    if (value != searchableText) {
-      setSearchableText(value);
-    }
-  }, [value]);
+    useDebouncedEffect(
+      () => {
+        if (!showSubmit) {
+          if (searchableText != value) {
+            submit();
+          }
+        }
+      }, // eslint-disable-next-line react-hooks/exhaustive-deps
+      600,
+      [searchableText],
+    );
 
-  return (
-    <div className="form-group search-bar-widget mb-3">
-      <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
-        {title ?? defaultTitle}
-      </label>
+    useEffect(() => {
+      if (value != searchableText) {
+        setSearchableText(value);
+      }
+    }, [value]);
 
-      <div className="input-group">
-        <span className="input-group-text">
-          <Icon aria-hidden color="primary" icon="it-search" size="sm" />
-        </span>
-        <input
-          type="text"
-          aria-describedby={id + 'searchable-text-description'}
-          id={id + 'searchable-text'}
-          className="form-control"
-          value={searchableText}
-          aria-controls={controls}
-          onChange={(e) => setSearchableText(e.currentTarget.value)}
-        />
-        {showSubmit && (
-          <div className="input-group-append">
-            <Button color="accent" onClick={() => submit()}>
-              {intl.formatMessage(messages.searchable_text_button)}
-            </Button>
-          </div>
-        )}
+    return (
+      <div className="form-group search-bar-widget mb-3">
+        <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
+          {title ?? defaultTitle}
+        </label>
+
+        <div className="input-group">
+          <span className="input-group-text">
+            <Icon aria-hidden color="primary" icon="it-search" size="sm" />
+          </span>
+          <input
+            type="text"
+            aria-describedby={id + 'searchable-text-description'}
+            id={id + 'searchable-text'}
+            className="form-control"
+            value={searchableText}
+            aria-controls={controls}
+            onChange={(e) => setSearchableText(e.currentTarget.value)}
+            onKeyDown={onKeyDown}
+            ref={ref}
+          />
+          {showSubmit && (
+            <div className="input-group-append">
+              <Button color="accent" onClick={() => submit()}>
+                {intl.formatMessage(messages.searchable_text_button)}
+              </Button>
+            </div>
+          )}
+        </div>
+        <small className="form-text" id={id + 'searchable-text-description'}>
+          {textDescription
+            ? textDescription
+            : intl.formatMessage(messages.searchable_text_decription)}
+        </small>
       </div>
-      <small className="form-text" id={id + 'searchable-text-description'}>
-        {textDescription
-          ? textDescription
-          : intl.formatMessage(messages.searchable_text_decription)}
-      </small>
-    </div>
-  );
-};
+    );
+  },
+);
 
 export default SearchBar;

@@ -88,7 +88,13 @@ const Breadcrumbs = ({ pathname, match }) => {
       items?.[items?.length - 1]?.url !== location.pathname)
   ) {
     let matchingRoute = null;
-    route.path.forEach((p) => {
+    console.log(route);
+    const routePaths = route
+      ? typeof route.path == 'string'
+        ? [route.path]
+        : route.path
+      : [];
+    routePaths.forEach((p) => {
       const mr = getMatchingRoute(p);
       if (mr) {
         matchingRoute = mr;
