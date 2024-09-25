@@ -6,6 +6,7 @@
 import {
   searchFiltersReducer,
   tassonomieSearchReducer,
+  searchResultsReducer,
 } from './searchReducers';
 // import { searchResultsReducer } from './searchResultsReducer';
 // import { calendarSearchReducer } from './calendarSearchReducer';
@@ -27,7 +28,7 @@ import { modulisticaItems } from './modulistica';
 const reducers = {
   searchFilters: searchFiltersReducer,
   tassonomieSearch: tassonomieSearchReducer,
-  // searchResults: searchResultsReducer,
+  searchResults: searchResultsReducer,
   // calendarSearch: calendarSearchReducer,
   // calendarDaySearch: calendarDaySearchReducer,
   // amministrazioneTrasparenteTree: amministrazioneTrasparenteTree,

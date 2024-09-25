@@ -59,6 +59,38 @@ const updateGroupCheckedStatus = (group, checked) =>
     value: checked,
   }));
 
+const parseFetchedSections = (fetchedSections, location, subsite) => {
+  const pathname = location?.pathname?.length ? location.pathname : '/';
+
+  const qsSections = qs.parse(location?.search ?? '')['path.query'] ?? [];
+
+  const sections = getItemsByPath(fetchedSections, pathname, !subsite);
+
+  return Object.keys(sections).reduce((acc, sec) => {
+    let id = sections[sec].id;
+    let sectionItems = sections[sec].items;
+    if (sectionItems) {
+      acc[id] = {
+        path: flattenToAppURL(sections[sec]['@id']),
+        title: sections[sec].title,
+        items:
+          sectionItems &&
+          sectionItems.reduce((itemsAcc, subSec) => {
+            let subSectionUrl = flattenToAppURL(subSec['@id']);
+            itemsAcc[subSectionUrl] = {
+              value: qsSections.indexOf(subSectionUrl) > -1,
+              label: subSec.title,
+            };
+
+            return itemsAcc;
+          }, {}),
+      };
+    }
+
+    return acc;
+  }, {});
+};
+
 const parseFetchedTopics = (topics, location) => {
   const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
 
@@ -86,39 +118,6 @@ const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
   }, {});
 };
 
-const parseFetchedOptions = (options, location) => {
-  const qsOptions = qs.parse(location?.search ?? '');
-  const opts = JSON.parse(JSON.stringify(options));
-
-  if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'min:max'
-  ) {
-    opts.dateStart = qsOptions['effective.query:list:date'][0] ?? null;
-    opts.dateEnd = qsOptions['effective.query:list:date'][1] ?? null;
-  } else if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'min'
-  ) {
-    opts.dateStart = qsOptions['effective.query:list:date'] ?? null;
-  } else if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'max'
-  ) {
-    opts.dateEnd = qsOptions['effective.query:list:date'] ?? null;
-  }
-
-  if (
-    qsOptions['expires.range'] &&
-    qsOptions['expires.range'] === 'min' &&
-    qsOptions['expires.query:list:date']
-  ) {
-    opts.activeContent = true;
-  }
-
-  return opts;
-};
-
 // const parseCustomPath = (location) => {
 //   const qsOptions = qs.parse(location?.search ?? '');
 //   let customPath = null;
@@ -132,8 +131,8 @@ const getSearchParamsURL = ({
   searchableText,
   topics = {},
   options = {},
-  portalTypes = {},
-  sortOn = {},
+  portal_types = {},
+  order = { sort_on: null, sort_order: null },
   currentPage,
   customPath,
   subsite,
@@ -182,8 +181,8 @@ const getSearchParamsURL = ({
     };
   }
 
-  const activePortalTypes = Object.keys(portalTypes).reduce((acc, ct) => {
-    if (portalTypes[ct].value) return [...acc, ct];
+  const activePortalTypes = Object.keys(portal_types).reduce((acc, ct) => {
+    if (portal_types[ct].value) return [...acc, ct];
     return acc;
   }, []);
   let portal_type =
@@ -199,7 +198,7 @@ const getSearchParamsURL = ({
       ...(pathQuery ?? {}),
       parliamo_di: activeTopics,
       ...optionsQuery,
-      ...sortOn,
+      ...order,
       ...portal_type,
       skipNull: true,
       b_start: b_start,
@@ -218,7 +217,7 @@ const getSearchParamsURL = ({
         ...(pathQuery ?? {}),
         parliamo_di: activeTopics,
         ...optionsQuery,
-        ...sortOn,
+        ...order,
         ...portal_type,
       },
       { skipNull: true },
@@ -232,9 +231,9 @@ const SearchUtils = {
   isGroupChecked,
   isGroupIndeterminate,
   updateGroupCheckedStatus,
+  parseFetchedSections,
   parseFetchedTopics,
   parseFetchedPortalTypes,
-  parseFetchedOptions,
   getSearchParamsURL,
   getItemsByPath,
 };

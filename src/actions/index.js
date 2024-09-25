@@ -14,6 +14,8 @@
 import {
   getSearchFilters,
   GET_SEARCH_FILTERS,
+  getSearchResults,
+  GET_SEARCH_RESULTS,
   getTassonomieSearch,
   GET_TASSONOMIE_SEARCH,
 } from './search';
@@ -28,6 +30,8 @@ import {
 export {
   getSearchFilters,
   GET_SEARCH_FILTERS,
+  getSearchResults,
+  GET_SEARCH_RESULTS,
   getTassonomieSearch,
   GET_TASSONOMIE_SEARCH,
   getModulisticaItems,

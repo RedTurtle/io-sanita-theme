@@ -6,6 +6,7 @@
 import {
   GET_SEARCH_FILTERS,
   GET_TASSONOMIE_SEARCH,
+  GET_SEARCH_RESULTS,
 } from 'io-sanita-theme/actions';
 
 const initialState = {
@@ -40,6 +41,34 @@ export const searchFiltersReducer = (state = initialState, action = {}) => {
         hasError: true,
         loadingResults: false,
         loaded: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export const searchResultsReducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case `${GET_SEARCH_RESULTS}_PENDING`:
+      return {
+        ...state,
+        loadingResults: true,
+      };
+
+    case `${GET_SEARCH_RESULTS}_SUCCESS`:
+      return {
+        ...state,
+        result: action.result,
+        loadingResults: false,
+      };
+
+    case `${GET_SEARCH_RESULTS}_FAIL`:
+      return {
+        ...state,
+        error: action.error,
+        hasError: true,
+        loadingResults: false,
       };
 
     default:

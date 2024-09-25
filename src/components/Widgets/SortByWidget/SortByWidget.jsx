@@ -53,7 +53,7 @@ const SortByWidget = ({ order, action }) => {
       title: intl.formatMessage(messages.sort_title),
     },
     {
-      sort_on: 'created',
+      sort_on: 'Date',
       sort_order: 'descending',
       title: intl.formatMessage(messages.sort_date),
     },
