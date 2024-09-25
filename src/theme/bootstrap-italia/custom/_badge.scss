@@ -1,0 +1,22 @@
+.badge {
+  font-size: $badge-font-size;
+
+  &.bg-info,
+  &.bg-danger,
+  &.bg-warning {
+    color: $text-color;
+  }
+
+  &.bg-info {
+    background-color: rgba(var(--bs-info-rgb), 0.1) !important;
+    border: 1px solid rgba(var(--bs-info-rgb), 0.25);
+  }
+  &.bg-danger {
+    background-color: rgba(var(--bs-danger-rgb), 0.1) !important;
+    border: 1px solid rgba(var(--bs-danger-rgb), 0.25);
+  }
+  &.bg-warning {
+    background-color: rgba(var(--bs-warning-rgb), 0.1) !important;
+    border: 1px solid rgba(var(--bs-warning-rgb), 0.25);
+  }
+}

@@ -18,6 +18,8 @@
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 
+@import './variables'; //io-sanita-theme variables - imported twice to override no !default defined variables in bs-italia
+
 @import 'bootstrap/scss/mixins';
 // mixins custom
 @import 'bootstrap-italia/src/scss/custom/mixins/buttons';

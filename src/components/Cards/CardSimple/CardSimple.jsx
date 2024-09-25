@@ -60,7 +60,7 @@ export const CardSimple = ({
           {/* Chip servizio attivo */}
           {isServizioOnline && (
             <div className={showDescription ? 'mb-3' : ''}>
-              <Badge color="primary-lightest">
+              <Badge color="info">
                 {intl.formatMessage(messages.servizioOnline)}
               </Badge>
             </div>

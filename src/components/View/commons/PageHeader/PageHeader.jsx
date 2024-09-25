@@ -86,10 +86,10 @@ const PageHeader = (props) => {
               }
             >
               {content.description.split('\n').map((d, i, { length }) => (
-                <>
+                <React.Fragment key={i}>
                   {d}
                   {i < length - 1 && <br />}
-                </>
+                </React.Fragment>
               ))}
             </p>
           )}
