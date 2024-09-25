@@ -3,11 +3,13 @@
   --is-accent: #{$accent};
   --is-accent-text: #{$accent-text};
   --is-accent-text: #{$accent-text};
+  --is-highlight-search: #{$highlight-search};
   --primary-darker: #{$primary-darker};
   --primary-dark: #{$primary-dark};
   --primary-lightest: #{$bg-primary-lightest};
   --primary-lighter: #{$bg-primary-lighter};
   --bs-primary-text: #{$primary-text};
+  --bs-neutral-1-a2: #{$neutral-1-a2};
   --skeleton-bg: #{$lightgrey-c2};
   --skeleton-item: #{darken($lightgrey-c2, 10)};
 }
