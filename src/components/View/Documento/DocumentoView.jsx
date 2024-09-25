@@ -12,7 +12,7 @@ import {
   ContentImage,
   useSideMenu,
   Metadata,
-  RealatedItems,
+  RelatedItems,
   Placeholder,
 } from 'io-sanita-theme/components/View/commons';
 
