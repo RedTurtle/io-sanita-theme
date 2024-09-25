@@ -74,8 +74,6 @@ const PageHeader = (props) => {
 
           <PageHeaderEventDates content={content} />
 
-          <PageHeaderStatoServizio content={content} />
-
           <PageHeaderDocumento content={content} />
 
           {content.description && (
@@ -88,13 +86,15 @@ const PageHeader = (props) => {
               }
             >
               {content.description.split('\n').map((d, i, { length }) => (
-                <>
+                <React.Fragment key={i}>
                   {d}
                   {i < length - 1 && <br />}
-                </>
+                </React.Fragment>
               ))}
             </p>
           )}
+
+          <PageHeaderStatoServizio content={content} />
 
           <PageHeaderBando content={content} />
 
