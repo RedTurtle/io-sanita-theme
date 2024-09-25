@@ -79,9 +79,16 @@ const CartellaModulisticaView = ({ content }) => {
   };
 
   const filterModulistica = (section) => {
+    const searchable = (searchableText ?? '').toLowerCase();
     if (section['@type'] === 'Document' || section['@type'] === 'Documento') {
       if (searchableText?.length > 0) {
-        return (section?.items ?? []).filter(filterDocumento).length > 0;
+        if (section?.items?.length > 0) {
+          return (section?.items).filter(filterDocumento).length > 0;
+        } else if (section['@type'] === 'Documento') {
+          return section.title
+            ? section.title.toLowerCase().indexOf(searchable) >= 0
+            : false;
+        }
       }
       return true;
     } else if (
@@ -90,9 +97,7 @@ const CartellaModulisticaView = ({ content }) => {
       section['@type'] === 'Image'
     ) {
       return section.title
-        ? section.title
-            .toLowerCase()
-            .indexOf((searchableText ?? '').toLowerCase()) >= 0
+        ? section.title.toLowerCase().indexOf(searchable) >= 0
         : true;
     } else {
       return (section?.items ?? []).filter(filterItemsFN)?.length > 0;

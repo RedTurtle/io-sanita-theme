@@ -34,7 +34,7 @@ const Downloads = ({ item, titleDoc, filteredWords }) => {
         </div>
       )}
       <div className="downloads">
-        <DownloadFileFormat file={item?.file_principale} />
+        <DownloadFileFormat file={item?.file} />
         <DownloadFileFormat file={item?.formato_alternativo_1} />
         <DownloadFileFormat file={item?.formato_alternativo_2} />
       </div>
