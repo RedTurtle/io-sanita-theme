@@ -88,10 +88,6 @@ const messages = defineMessages({
     id: 'Sono occorsi degli errori',
     defaultMessage: 'Sono occorsi degli errori',
   },
-  no_results: {
-    id: 'Nessun risultato ottenuto',
-    defaultMessage: 'Nessun risultato ottenuto',
-  },
 });
 
 const Search = () => {
@@ -449,11 +445,7 @@ const Search = () => {
                     {intl.formatMessage(messages.errors_occured)}
                   </Alert>
                 ) : (
-                  !searchResults?.hasError &&
-                  !isEmpty(searchResults?.result) &&
-                  searchResults.result?.items.length === 0 && (
-                    <p>{intl.formatMessage(messages.no_results)}</p>
-                  )
+                  <></>
                 )}
               </div>
             </Col>
