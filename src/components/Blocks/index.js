@@ -8,9 +8,22 @@ export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
 export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
-export QuickSearchView from 'io-sanita-theme/components/Blocks/QuickSearch/View';
-export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
-export SearchServiziProcedureView from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View';
+
+export const QuickSearchView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockSearchMap" */ 'io-sanita-theme/components/Blocks/QuickSearch/View'
+  ),
+);
+export const SearchMapView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockSearchMap" */ 'io-sanita-theme/components/Blocks/SearchMap/View'
+  ),
+);
+export const SearchServiziProcedureView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockSearchServiziProcedure" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View'
+  ),
+);
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';

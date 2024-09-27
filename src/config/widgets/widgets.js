@@ -1,9 +1,21 @@
 import React from 'react';
-import {
-  QuickSearchConfigurationWidget,
-  HeaderContactsWidget,
-  IconWidget,
-} from 'io-sanita-theme/components/manage/Widgets';
+import loadable from '@loadable/component';
+
+const QuickSearchConfigurationWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
+  ),
+);
+const HeaderContactsWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/HeaderContactsWidget/HeaderContactsWidget'
+  ),
+);
+const IconWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget'
+  ),
+);
 
 const getIoSanitaWidgets = (config) => {
   return {
