@@ -8,6 +8,7 @@ del modello dei siti ASL, la prop che va a leggere è: 'servizio_attivo'
 
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
+import Highlighter from 'react-highlight-words';
 import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
@@ -28,6 +29,7 @@ export const CardSimple = ({
   titleTag = 'h5',
   titleDataElement,
   showDeafaultCategory,
+  highlight, //se si vuole evidenziare un testo, ad esempio nei risultati delle ricerche
 }) => {
   const intl = useIntl();
   const date =
@@ -38,6 +40,27 @@ export const CardSimple = ({
   const isServizioOnline =
     item['@type'] === 'Servizio' && item?.servizio_attivo;
 
+  const title = highlight ? (
+    <Highlighter
+      highlightClassName="highlighted-text"
+      searchWords={highlight.split(' ')}
+      autoEscape={true}
+      textToHighlight={item.title}
+    />
+  ) : (
+    item.title
+  );
+
+  const description = highlight ? (
+    <Highlighter
+      highlightClassName="highlighted-text"
+      searchWords={highlight.split(' ')}
+      autoEscape={true}
+      textToHighlight={item.description}
+    />
+  ) : (
+    item.description
+  );
   return (
     <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
@@ -50,10 +73,10 @@ export const CardSimple = ({
                 className="card-title-link"
                 data-element={titleDataElement}
               >
-                {item.title}
+                {title}
               </UniversalLink>
             ) : (
-              <>{item.title}</>
+              <>{title}</>
             )}
           </CardTitle>
 
@@ -68,7 +91,7 @@ export const CardSimple = ({
 
           {showDescription && (
             <CardText tag="div">
-              <>{item.description}</>
+              <>{description}</>
             </CardText>
           )}
         </div>

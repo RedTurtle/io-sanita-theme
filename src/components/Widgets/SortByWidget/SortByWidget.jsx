@@ -38,7 +38,7 @@ const messages = defineMessages({
   },
 });
 
-const SortByWidget = ({ order, action }) => {
+const SortByWidget = ({ order, action, ariaControls }) => {
   const intl = useIntl();
 
   const options = [
@@ -74,7 +74,7 @@ const SortByWidget = ({ order, action }) => {
 
   return (
     <UncontrolledDropdown className="sort-by-widget">
-      <DropdownToggle color="primary" outline caret>
+      <DropdownToggle color="primary" outline caret className="px-3 px-lg-4">
         <small>{intl.formatMessage(messages.sort)}</small>{' '}
         <Icon color="primary" icon="it-expand" padding={false} size="sm" />
       </DropdownToggle>
@@ -87,7 +87,7 @@ const SortByWidget = ({ order, action }) => {
               role="menuitem"
               tabIndex={-1}
               onKeyDown={handleKeyDown}
-              aria-controls="main-content-section"
+              aria-controls={ariaControls}
               active={order?.sort_on === item.sort_on}
             >
               <Button
@@ -99,7 +99,7 @@ const SortByWidget = ({ order, action }) => {
                 onClick={() => {
                   action(item);
                 }}
-                aria-controls="main-content-section"
+                aria-controls={ariaControls}
                 color="link"
                 className="px-0 text-start"
               >

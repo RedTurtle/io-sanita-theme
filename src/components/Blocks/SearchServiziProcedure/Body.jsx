@@ -273,7 +273,7 @@ const Body = ({ data, id, path, properties, block }) => {
                   onChange={(v) => {
                     setFilters({ ...filters, searchableText: v });
                   }}
-                  controls={results_region_id}
+                  ariaControls={results_region_id}
                 />
 
                 <Row className="my-4">
@@ -308,6 +308,7 @@ const Body = ({ data, id, path, properties, block }) => {
                       action={(sortby) => {
                         setFilters({ ...filters, order: sortby });
                       }}
+                      ariaControls={results_region_id}
                     />
                   </Col>
 
@@ -316,15 +317,16 @@ const Body = ({ data, id, path, properties, block }) => {
 
                   <Col lg={12} className="mt-3">
                     {/* RESULTS */}
-                    <div id={results_region_id} aria-live="polite">
+                    <div
+                      id={results_region_id}
+                      aria-live="polite"
+                      role="region"
+                      ref={resultsRef}
+                    >
                       {querystringResults && (
                         <>
                           {resultItems?.length > 0 ? (
-                            <div
-                              className="results-items"
-                              ref={resultsRef}
-                              aria-live="polite"
-                            >
+                            <div className="results-items">
                               <Row>
                                 {resultItems.map((item, i) => (
                                   <Col

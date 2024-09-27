@@ -27,12 +27,11 @@ const SearchBar = React.forwardRef(
       textDescription,
       value = '',
       onChange,
-      controls,
+      ariaControls,
       showSubmit = false,
     },
     ref,
   ) => {
-    console.log('..inputRef', ref);
     const intl = useIntl();
     const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
 
@@ -80,7 +79,7 @@ const SearchBar = React.forwardRef(
             id={id + 'searchable-text'}
             className="form-control"
             value={searchableText}
-            aria-controls={controls}
+            aria-controls={ariaControls}
             onChange={(e) => setSearchableText(e.currentTarget.value)}
             onKeyDown={onKeyDown}
             ref={ref}

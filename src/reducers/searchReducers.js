@@ -2,7 +2,7 @@
  * Search filters reducer
  * @module src/reducers/getSearchFiltersReducer
  */
-
+import { parliamo_di, a_chi_si_rivolge_tassonomia } from './_mock_search';
 import {
   GET_SEARCH_FILTERS,
   GET_TASSONOMIE_SEARCH,
@@ -29,7 +29,16 @@ export const searchFiltersReducer = (state = initialState, action = {}) => {
     case `${GET_SEARCH_FILTERS}_SUCCESS`:
       return {
         ...state,
-        result: action.result,
+        //todo: rimuovere il mock dei dati
+        result: {
+          parliamo_di: parliamo_di.map((i) => {
+            return { label: i.title, value: i.token };
+          }),
+          a_chi_si_rivolge_tassonomia: a_chi_si_rivolge_tassonomia.map((i) => {
+            return { label: i.title, value: i.token };
+          }),
+          ...action.result,
+        },
         loadingResults: false,
         loaded: true,
       };

@@ -1,26 +1,46 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 import qs from 'query-string';
 import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { useLocation, useHistory } from 'react-router-dom';
 import { isEmpty, omit } from 'lodash';
-import { Container, Row, Col, Skiplink, SkiplinkItem } from 'design-react-kit';
+import {
+  Container,
+  Row,
+  Col,
+  Skiplink,
+  SkiplinkItem,
+  Collapse,
+  Button,
+  Spinner,
+  Alert,
+} from 'design-react-kit';
 
 import { Helmet, flattenToAppURL } from '@plone/volto/helpers';
 import { getSearchFilters, getSearchResults } from 'io-sanita-theme/actions';
-import { SearchBar, SortByWidget } from 'io-sanita-theme/components';
+import {
+  SearchBar,
+  SortByWidget,
+  SearchCheckbox,
+  Icon,
+  Pagination,
+} from 'io-sanita-theme/components';
 import { SearchUtils, useDebouncedEffect } from 'io-sanita-theme/helpers';
-
+import SearchResultItem from 'io-sanita-theme/components/Search/ResultItem';
+import config from '@plone/volto/registry';
+import './search.scss';
 const {
   parseFetchedSections,
   parseFetchedTopics,
+  parseFetchedUsers,
   parseFetchedPortalTypes,
   getSearchParamsURL,
 } = SearchUtils;
 
 const messages = defineMessages({
   searchResults: {
-    id: 'Search results',
+    id: 'search_Search results',
     defaultMessage: 'Risultati ricerca “{searchableText}“',
   },
   skipToSearchResults: {
@@ -39,6 +59,39 @@ const messages = defineMessages({
     id: 'order_by',
     defaultMessage: 'Ordina per',
   },
+  filtersCollapse: {
+    id: 'filtersCollapse',
+    defaultMessage: 'Filtri',
+  },
+  label_utenti: {
+    id: 'search_label_utenti',
+    defaultMessage: 'Utenti',
+  },
+  label_parliamo_di: {
+    id: 'search_label_parliamo_di',
+    defaultMessage: 'Argomenti',
+  },
+  closeFilters: {
+    id: 'search_close_filters',
+    defaultMessage: 'Chiudi',
+  },
+  removeAllFilters: {
+    id: 'search_remove_all_filters',
+    defaultMessage: 'Rimuovi tutti i filtri',
+  },
+  show_results_close_filters: {
+    id: 'search_show_results_close_filters',
+    defaultMessage: 'Mostra i risultati',
+  },
+  attenzione: { id: 'Attenzione!', defaultMessage: 'Attenzione!' },
+  errors_occured: {
+    id: 'Sono occorsi degli errori',
+    defaultMessage: 'Sono occorsi degli errori',
+  },
+  no_results: {
+    id: 'Nessun risultato ottenuto',
+    defaultMessage: 'Nessun risultato ottenuto',
+  },
 });
 
 const Search = () => {
@@ -48,6 +101,7 @@ const Search = () => {
   const history = useHistory();
 
   const [customPath] = useState(qs.parse(location.search)?.custom_path ?? '');
+  const [collapseFilters, _setCollapseFilters] = useState(true);
 
   const subsite = useSelector((state) => state.subsite?.data);
   const searchFilters = useSelector((state) => state.searchFilters.result);
@@ -97,8 +151,17 @@ const Search = () => {
         );
       }
 
-      if (searchFilters.topics?.length > 0) {
-        new_filters.topics = parseFetchedTopics(searchFilters.topics, location);
+      if (searchFilters.parliamo_di?.length > 0) {
+        new_filters.topics = parseFetchedTopics(
+          searchFilters.parliamo_di,
+          location,
+        );
+      }
+      if (searchFilters.a_chi_si_rivolge_tassonomia?.length > 0) {
+        new_filters.topics = parseFetchedUsers(
+          searchFilters.a_chi_si_rivolge_tassonomia,
+          location,
+        );
       }
 
       if (searchFilters.portal_types?.length > 0) {
@@ -125,8 +188,6 @@ const Search = () => {
   const doSearch = () => {
     const q = {
       ...filters,
-      searchableText:
-        filters.searchableText?.length > 0 ? `${filters.searchableText}*` : '',
       currentPage,
       customPath,
       subsite,
@@ -146,21 +207,56 @@ const Search = () => {
         }),
       );
 
-    dispatch(getSearchResults(queryString));
+    dispatch(
+      getSearchResults({
+        ...queryString,
+        searchableText:
+          filters.searchableText?.length > 0
+            ? `${filters.searchableText}*`
+            : '',
+      }),
+    );
+  };
+
+  const setCollapseFilters = (collapse) => {
+    _setCollapseFilters(collapse);
+    if (window?.innerWidth <= 991 && collapse)
+      setTimeout(
+        () =>
+          document
+            .querySelector('main')
+            ?.scrollIntoView?.({ behavior: 'smooth' }),
+        100,
+      );
+  };
+
+  const clearFilters = () => {
+    setFilters({
+      ...filters,
+      topics: [],
+      users: [],
+      sections: [],
+      portal_types: [],
+    });
+  };
+
+  const handleQueryPaginationChange = (_e, { activePage }) => {
+    window.scrollTo(0, 0);
+    setCurrentPage(activePage?.children ?? 1);
   };
 
   return (
     <>
       <Helmet
         title={intl.formatMessage(messages.searchResults, {
-          searchableText: filters.searchableText,
+          searchableText: filters.searchableText?.trim(),
         })}
       />
       <div className="public-ui search-view" id="view">
-        <Container className="px-4 my-4">
+        <Container className="px-4 mb-4">
           <h1>
             {intl.formatMessage(messages.searchResults, {
-              searchableText: filters.searchableText,
+              searchableText: filters.searchableText?.trim(),
             })}
           </h1>
 
@@ -169,9 +265,94 @@ const Search = () => {
               {intl.formatMessage(messages.skipToSearchResults)}
             </SkiplinkItem>
           </Skiplink>
+
           <Row>
             {/* Colonna filtri */}
-            <Col tag="aside" lg={3} className="py-lg-5"></Col>
+            <Col tag="aside" lg={3} className="py-lg-5">
+              <Collapse
+                isOpen={!collapseFilters}
+                className="d-lg-block d-xl-block"
+                id="filtersCollapse"
+              >
+                {/* chiudi e rimuovi tutti i filtri (solo per mobile) */}
+                <div className="mobile-filters-header d-flex d-lg-none d-xl-none justify-content-between py-2">
+                  <Button
+                    color="link"
+                    className="px-0"
+                    onClick={() => clearFilters()}
+                    aria-controls="search-results-region"
+                  >
+                    {intl.formatMessage(messages.removeAllFilters)}
+                  </Button>
+
+                  <Button
+                    color="link"
+                    className="px-0"
+                    onClick={() => setCollapseFilters((prev) => !prev)}
+                    data-toggle="collapse"
+                    aria-expanded={!collapseFilters}
+                    aria-controls="filtersCollapse"
+                  >
+                    {intl.formatMessage(messages.closeFilters)}
+                    <Icon
+                      icon="it-close"
+                      color="primary"
+                      padding={false}
+                      size=""
+                    />
+                  </Button>
+                </div>
+
+                {/* Filtri */}
+                {searchFilters?.a_chi_si_rivolge_tassonomia?.length > 0 && (
+                  <div className="column-filters mt-2 mb-4">
+                    <SearchCheckbox
+                      options={searchFilters.a_chi_si_rivolge_tassonomia}
+                      setFilters={setFilters}
+                      filters={filters}
+                      filterKey="users"
+                      sectionTitle={intl.formatMessage(messages.label_utenti)}
+                      collapsable={true}
+                      ariaControls="search-results-region"
+                    />
+                  </div>
+                )}
+                <div className="column-filters mt-2 mb-4">
+                  ---qui ci vanno i filtri delle sections---
+                </div>
+                {searchFilters?.parliamo_di?.length > 0 && (
+                  <div className="column-filters mt-2 mb-4">
+                    <SearchCheckbox
+                      options={searchFilters.parliamo_di}
+                      setFilters={setFilters}
+                      filters={filters}
+                      filterKey="topics"
+                      sectionTitle={intl.formatMessage(
+                        messages.label_parliamo_di,
+                      )}
+                      collapsable={true}
+                      ariaControls="search-results-region"
+                    />
+                  </div>
+                )}
+
+                {/* chiudi popup filtri su mobile*/}
+                <div className="mobile-filters-header d-flex d-lg-none d-xl-none justify-content-center py-2">
+                  <Button
+                    color="primary"
+                    onClick={() => setCollapseFilters((prev) => !prev)}
+                    data-toggle="collapse"
+                    aria-expanded={!collapseFilters}
+                    aria-controls="filtersCollapse"
+                  >
+                    {intl.formatMessage(messages.show_results_close_filters)}{' '}
+                    {searchResults?.result?.items_total > 0 && (
+                      <>({searchResults?.result?.items_total})</>
+                    )}
+                  </Button>
+                </div>
+              </Collapse>
+            </Col>
             {/* Colonna risultati */}
             <Col lg={9} tag="section" className="py-lg-5">
               <div
@@ -187,18 +368,37 @@ const Search = () => {
                     setFilters({ ...filters, searchableText: v });
                   }}
                   showSubmit={true}
-                  aria-controls="search-results-region"
+                  ariaControls="search-results-region"
                 />
 
+                {/* Filtri e Ordinamento */}
                 <Row className="pb-3">
-                  <Col xs={6} className="align-self-center">
+                  <Col xs={4} className="align-self-center">
                     <p aria-live="polite">
                       {intl.formatMessage(messages.foundNResults, {
                         total: searchResults?.result?.items_total || 0,
                       })}
                     </p>
                   </Col>
-                  <Col xs={6} className="text-end">
+                  <Col
+                    xs={8}
+                    className="d-flex justify-content-end align-items-center"
+                  >
+                    {/* Bottone per collassare i filtri visibile solo su mobile*/}
+                    <a
+                      onClick={() => setCollapseFilters((prev) => !prev)}
+                      href="#filtersCollapse"
+                      role="button"
+                      className={cx('d-lg-none d-xl-none btn btn-sm me-2', {
+                        'btn-outline-primary': collapseFilters,
+                        'btn-primary': !collapseFilters,
+                      })}
+                      data-toggle="collapse"
+                      aria-expanded={!collapseFilters}
+                      aria-controls="filtersCollapse"
+                    >
+                      {intl.formatMessage(messages.filtersCollapse)}
+                    </a>
                     {/* ORDER BY */}
                     <SortByWidget
                       order={filters.order}
@@ -208,9 +408,53 @@ const Search = () => {
                           order: omit(sortby, ['title']),
                         });
                       }}
+                      ariaControls="search-results-region"
                     />
                   </Col>
                 </Row>
+
+                {/* Risultati */}
+                {searchResults.loadingResults ||
+                (!searchResults.hasError && isEmpty(searchResults.result)) ? (
+                  <div className="d-flex justify-content-center p-4">
+                    <Spinner active />
+                  </div>
+                ) : searchResults?.result?.items_total > 0 ? (
+                  <>
+                    <Row>
+                      {searchResults?.result?.items?.map((item, index) => (
+                        <Col lg={6} key={item['@id']} className="py-2">
+                          <SearchResultItem
+                            item={item}
+                            index={index}
+                            searchableText={filters.searchableText}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                    {searchResults?.result?.batching && (
+                      <Pagination
+                        activePage={currentPage}
+                        totalPages={Math.ceil(
+                          (searchResults?.result?.items_total ?? 0) /
+                            config.settings.defaultPageSize,
+                        )}
+                        onPageChange={handleQueryPaginationChange}
+                      />
+                    )}
+                  </>
+                ) : searchResults.error ? (
+                  <Alert color="danger">
+                    <strong>{intl.formatMessage(messages.attenzione)}</strong>{' '}
+                    {intl.formatMessage(messages.errors_occured)}
+                  </Alert>
+                ) : (
+                  !searchResults?.hasError &&
+                  !isEmpty(searchResults?.result) &&
+                  searchResults.result?.items.length === 0 && (
+                    <p>{intl.formatMessage(messages.no_results)}</p>
+                  )
+                )}
               </div>
             </Col>
           </Row>

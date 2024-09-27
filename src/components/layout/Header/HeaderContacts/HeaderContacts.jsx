@@ -20,7 +20,7 @@ const HeaderContacts = () => {
   return (
     items?.length > 0 && (
       <div className="header-contacts">
-        <Container>
+        <Container className="px-lg-4">
           <Row role="list">
             {items.map((item, index) => {
               return (

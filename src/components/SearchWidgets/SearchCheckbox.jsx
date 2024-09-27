@@ -3,6 +3,7 @@
  * o anche passando un Array di oggetti {label: 'Test 1', value: 'test1'}
  */
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import { defineMessages, useIntl } from 'react-intl';
 import { Input, FormGroup, Label, Collapse } from 'design-react-kit';
 import { values } from 'lodash';
@@ -33,14 +34,16 @@ const messages = defineMessages({
 
 const SearchCheckbox = ({
   setFilters,
-  filters, // options selected
+  filters = {}, // options selected
   filterKey, // for example 'users'
   options, // options list
   sectionTitle = null, // (anche tutto minuscolo)
   collapsable = false,
   showActiveOptions = false, // show number of checkbox selected
+  ariaControls,
 }) => {
   const intl = useIntl();
+  const uid = uuid();
 
   const [collapse, setCollapse] = useState(true);
 
@@ -91,9 +94,11 @@ const SearchCheckbox = ({
           <Input
             id={item.value + index}
             type="checkbox"
-            checked={filters[filterKey].indexOf(item.value) >= 0}
+            checked={filters?.[filterKey]?.indexOf(item.value) >= 0}
             onChange={(e) => onChangeField(item.value, e.currentTarget.checked)}
-            aria-controls={'search-results-region-' + sectionTitle}
+            aria-controls={
+              ariaControls ?? 'search-results-region-' + sectionTitle
+            }
             aria-label={`${intl.formatMessage(messages.search_to)} ${title} ${
               item.label
             }`}
@@ -139,10 +144,10 @@ const SearchCheckbox = ({
         {drawOptions(optionChunks[0])}
         {collapsable && optionChunks[1] && (
           <>
-            <Collapse isOpen={!collapse} id="collapseOptions">
+            <Collapse isOpen={!collapse} id={'collapseList-' + uid}>
               {drawOptions(optionChunks[1])}
             </Collapse>
-            <div className="mt-4">
+            <div className="mt-2">
               <a
                 onClick={(e) => {
                   e.preventDefault();
@@ -150,10 +155,10 @@ const SearchCheckbox = ({
                 }}
                 className="fw-bold"
                 data-toggle="collapse"
-                href="#collapseOptions"
+                href={'#collapseList-' + uid}
                 role="button"
                 aria-expanded="false"
-                aria-controls="collapseList"
+                aria-controls={'collapseList-' + uid}
                 aria-label={intl.formatMessage(
                   collapse ? messages.show_all : messages.hide_all,
                 )}

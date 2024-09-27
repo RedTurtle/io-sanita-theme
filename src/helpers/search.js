@@ -94,14 +94,21 @@ const parseFetchedSections = (fetchedSections, location, subsite) => {
 const parseFetchedTopics = (topics, location) => {
   const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
 
-  return topics.reduce((acc, topic) => {
-    acc[flattenToAppURL(topic['@id'])] = {
-      value: qsTopics.indexOf(topic.title) > -1,
-      label: topic.title,
-    };
+  return topics
+    .filter((topic) => qsTopics.indexOf(topic.value) > -1)
+    .reduce((acc, t) => {
+      acc.push(t.value);
+    }, []);
+};
+const parseFetchedUsers = (users, location) => {
+  const qsTopics =
+    qs.parse(location?.search ?? '')?.a_chi_si_rivolge_tassonomia ?? [];
 
-    return acc;
-  }, {});
+  return users
+    .filter((u) => qsTopics.indexOf(u.value) > -1)
+    .reduce((acc, uu) => {
+      acc.push(uu.value);
+    }, []);
 };
 
 const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
@@ -128,8 +135,9 @@ const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
 // };
 
 const getSearchParamsURL = ({
-  searchableText,
+  searchableText = '',
   topics = {},
+  users = {},
   options = {},
   portal_types = {},
   order = { sort_on: null, sort_order: null },
@@ -148,11 +156,7 @@ const getSearchParamsURL = ({
     ? (currentPage - 1) * config.settings.defaultPageSize
     : 0;
 
-  const activeTopics = Object.keys(topics).reduce((acc, topic) => {
-    if (topics[topic].value) return [...acc, topics[topic].label];
-    return acc;
-  }, []);
-
+  //options
   const optionsQuery = {};
   if (options.activeContent) {
     optionsQuery['expires.range'] = 'min';
@@ -172,6 +176,7 @@ const getSearchParamsURL = ({
     optionsQuery['effective.query:list:date'] = options.dateEnd;
   }
 
+  //path
   let pathQuery = null;
   if (customPath?.length > 0) {
     pathQuery = { 'path.query': customPath };
@@ -181,6 +186,7 @@ const getSearchParamsURL = ({
     };
   }
 
+  //portal types
   const activePortalTypes = Object.keys(portal_types).reduce((acc, ct) => {
     if (portal_types[ct].value) return [...acc, ct];
     return acc;
@@ -188,40 +194,32 @@ const getSearchParamsURL = ({
   let portal_type =
     activePortalTypes?.length > 0 ? { portal_type: activePortalTypes } : null;
 
+  //searchable text
   let text = searchableText ? { SearchableText: searchableText } : null;
-
+  console.log('text', text);
   baseUrl += '/search';
 
-  if (getObject) {
-    let obj = {
-      ...(text ?? {}),
-      ...(pathQuery ?? {}),
-      parliamo_di: activeTopics,
-      ...optionsQuery,
-      ...order,
-      ...portal_type,
-      skipNull: true,
-      b_start: b_start,
-      use_site_search_settings: true,
-    };
+  let obj = {
+    ...(text ?? {}),
+    ...(pathQuery ?? {}),
+    parliamo_di: topics,
+    a_chi_si_rivolge_tassonomia: users,
+    ...optionsQuery,
+    ...order,
+    ...portal_type,
+    skipNull: true,
+  };
 
+  if (getObject) {
+    obj.b_start = b_start;
+    obj.use_site_search_settings = true;
     return obj;
   }
 
   return (
     baseUrl +
     '?' +
-    qs.stringify(
-      {
-        ...(text ?? {}),
-        ...(pathQuery ?? {}),
-        parliamo_di: activeTopics,
-        ...optionsQuery,
-        ...order,
-        ...portal_type,
-      },
-      { skipNull: true },
-    ) +
+    qs.stringify(obj) +
     (b_start > 0 ? `&b_start=${b_start}` : '')
   );
 };
@@ -236,6 +234,7 @@ const SearchUtils = {
   parseFetchedPortalTypes,
   getSearchParamsURL,
   getItemsByPath,
+  parseFetchedUsers,
 };
 
 export default SearchUtils;

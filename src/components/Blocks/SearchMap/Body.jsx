@@ -324,7 +324,7 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
                         onChange={(v) => {
                           setFilters({ ...filters, searchableText: v });
                         }}
-                        controls={results_region_id}
+                        ariaControls={results_region_id}
                       />
                     </Col>
                   </Row>
