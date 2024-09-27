@@ -1,12 +1,16 @@
 import loadable from '@loadable/component';
 
-export HeaderContactsWidget from 'io-sanita-theme/components/manage/Widgets/HeaderContactsWidget/HeaderContactsWidget';
-export IconWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget';
-export IconPreviewWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconPreviewWidget';
-export defaultIconWidgetOptions from 'io-sanita-theme/components/manage/Widgets/IconWidget/defaultIconWidgetOptions';
+//esportare in questo file solamente i widget che potrebbero essere riutilizzati da addon figli.
+// I widget che serve usarli solo nel config, importarli loadable direttamente da la
 
-export const QuickSearchConfigurationWidget = loadable(() =>
+export const IconWidget = loadable(() =>
   import(
-    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget'
   ),
 );
+export const IconPreviewWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/IconWidget/IconPreviewWidget'
+  ),
+);
+export defaultIconWidgetOptions from 'io-sanita-theme/components/manage/Widgets/IconWidget/defaultIconWidgetOptions';
