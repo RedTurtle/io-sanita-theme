@@ -1,8 +1,14 @@
+import loadable from '@loadable/component';
+
 /**
  * Search component.
  * @module components/theme/Search/Search
  */
 
-import Search from 'io-sanita-theme/components/Search/Search';
+const Search = loadable(() =>
+  import(
+    /* webpackChunkName: "Search" */ 'io-sanita-theme/components/Search/Search'
+  ),
+);
 
 export default Search;
