@@ -17,6 +17,7 @@ import { modulisticaItems } from './modulistica';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
+import { iosanita_settings } from './settings';
 
 /**
  * Root reducer.
@@ -37,6 +38,7 @@ const reducers = {
   // originalQuery: originalQueryReducer,
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
+  iosanita_settings,
 };
 
 export default reducers;

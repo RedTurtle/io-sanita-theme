@@ -27,6 +27,8 @@ import {
   RESET_MODULISTICA_ITEMS,
 } from './modulistica';
 
+import { getIoSanitaSettings, GET_IO_SANITA_SETTINGS } from './settings';
+
 export {
   getSearchFilters,
   GET_SEARCH_FILTERS,
@@ -38,4 +40,6 @@ export {
   GET_MODULISTICA_ITEMS,
   resetModulisticaItems,
   RESET_MODULISTICA_ITEMS,
+  getIoSanitaSettings,
+  GET_IO_SANITA_SETTINGS,
 };
