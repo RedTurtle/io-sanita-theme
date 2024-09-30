@@ -6,6 +6,11 @@ const QuickSearchConfigurationWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
   ),
 );
+const SearchSectionsConfigurationWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget'
+  ),
+);
 const HeaderContactsWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/HeaderContactsWidget/HeaderContactsWidget'
@@ -25,6 +30,7 @@ const getIoSanitaWidgets = (config) => {
       // description: CharCounterTextareaWidget,
       contatti_testata: HeaderContactsWidget,
       quick_search: QuickSearchConfigurationWidget,
+      search_sections: SearchSectionsConfigurationWidget,
     },
     widget: {
       ...config.widgets.widget,
