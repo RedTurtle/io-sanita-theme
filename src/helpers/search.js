@@ -91,38 +91,14 @@ const parseFetchedSections = (fetchedSections, location, subsite) => {
   }, {});
 };
 
-const parseFetchedTopics = (topics, location) => {
-  const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
-
-  return topics
-    .filter((topic) => qsTopics.indexOf(topic.value) > -1)
+const parseFilters = (paramName, list, location) => {
+  const qs_filters = qs.parse(location?.search ?? '')?.[paramName] ?? [];
+  return list
+    .filter((el) => qs_filters.indexOf(el.value) > -1)
     .reduce((acc, t) => {
       acc.push(t.value);
+      return acc;
     }, []);
-};
-const parseFetchedUsers = (users, location) => {
-  const qsTopics =
-    qs.parse(location?.search ?? '')?.a_chi_si_rivolge_tassonomia ?? [];
-
-  return users
-    .filter((u) => qsTopics.indexOf(u.value) > -1)
-    .reduce((acc, uu) => {
-      acc.push(uu.value);
-    }, []);
-};
-
-const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
-  const qsCTs = qs.parse(location?.search ?? '')?.['portal_type'] ?? [];
-
-  return portalTypes.reduce((acc, ct) => {
-    acc[ct.id] = {
-      value: qsCTs.includes(ct.id) || !defaultExcludedCT.includes(ct.id),
-      label: ct.label,
-      defaultChecked: !defaultExcludedCT.includes(ct.id),
-    };
-
-    return acc;
-  }, {});
 };
 
 // const parseCustomPath = (location) => {
@@ -136,10 +112,10 @@ const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
 
 const getSearchParamsURL = ({
   searchableText = '',
-  topics = {},
-  users = {},
+  parliamo_di = [],
+  a_chi_si_rivolge_tassonomia = [],
   options = {},
-  portal_types = {},
+  portal_types = [],
   order = { sort_on: null, sort_order: null },
   currentPage,
   customPath,
@@ -186,31 +162,21 @@ const getSearchParamsURL = ({
     };
   }
 
-  //portal types
-  const activePortalTypes = Object.keys(portal_types).reduce((acc, ct) => {
-    if (portal_types[ct].value) return [...acc, ct];
-    return acc;
-  }, []);
-  let portal_type =
-    activePortalTypes?.length > 0 ? { portal_type: activePortalTypes } : null;
-
-  //searchable text
-  let text = searchableText ? { SearchableText: searchableText } : null;
-  console.log('text', text);
   baseUrl += '/search';
 
   let obj = {
-    ...(text ?? {}),
+    ...(searchableText ? { SearchableText: searchableText } : {}),
     ...(pathQuery ?? {}),
-    parliamo_di: topics,
-    a_chi_si_rivolge_tassonomia: users,
+    parliamo_di,
+    a_chi_si_rivolge_tassonomia,
     ...optionsQuery,
     ...order,
-    ...portal_type,
-    skipNull: true,
   };
 
   if (getObject) {
+    if (portal_types) {
+      obj.portal_type = portal_types;
+    }
     obj.b_start = b_start;
     obj.use_site_search_settings = true;
     return obj;
@@ -229,12 +195,10 @@ const SearchUtils = {
   isGroupChecked,
   isGroupIndeterminate,
   updateGroupCheckedStatus,
+  parseFilters,
   parseFetchedSections,
-  parseFetchedTopics,
-  parseFetchedPortalTypes,
   getSearchParamsURL,
   getItemsByPath,
-  parseFetchedUsers,
 };
 
 export default SearchUtils;

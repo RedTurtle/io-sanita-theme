@@ -30,13 +30,8 @@ import { SearchUtils, useDebouncedEffect } from 'io-sanita-theme/helpers';
 import SearchResultItem from 'io-sanita-theme/components/Search/ResultItem';
 import config from '@plone/volto/registry';
 import './search.scss';
-const {
-  parseFetchedSections,
-  parseFetchedTopics,
-  parseFetchedUsers,
-  parseFetchedPortalTypes,
-  getSearchParamsURL,
-} = SearchUtils;
+
+const { parseFetchedSections, parseFilters, getSearchParamsURL } = SearchUtils;
 
 const messages = defineMessages({
   searchResults: {
@@ -70,6 +65,18 @@ const messages = defineMessages({
   label_parliamo_di: {
     id: 'search_label_parliamo_di',
     defaultMessage: 'Argomenti',
+  },
+  label_portal_types: {
+    id: 'search_label_portal_types',
+    defaultMessage: 'Tipologia',
+  },
+  advFilters: {
+    id: 'search_adv_filters',
+    defaultMessage: 'Filtri avanzati',
+  },
+  select_all_cts: {
+    id: 'Select all content types or none',
+    defaultMessage: 'Seleziona tutti i tipi di contenuti o nessuno',
   },
   closeFilters: {
     id: 'search_close_filters',
@@ -105,12 +112,13 @@ const Search = () => {
 
   const [filters, setFilters] = useState({
     searchableText: qs.parse(location.search)?.SearchableText ?? '',
-    topics: [],
-    users: [],
+    parliamo_di: [],
+    a_chi_si_rivolge_tassonomia: [],
     sections: [],
     portal_types: [],
     order: { sort_on: 'relevance', sort_order: 'ascending' },
   });
+  const [advFiltersOpen, setAdvFiltersOpen] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(
     qs.parse(location.search)?.b_start
@@ -148,22 +156,24 @@ const Search = () => {
       }
 
       if (searchFilters.parliamo_di?.length > 0) {
-        new_filters.topics = parseFetchedTopics(
+        new_filters.parliamo_di = parseFilters(
+          'parliamo_di',
           searchFilters.parliamo_di,
           location,
         );
       }
       if (searchFilters.a_chi_si_rivolge_tassonomia?.length > 0) {
-        new_filters.topics = parseFetchedUsers(
+        new_filters.a_chi_si_rivolge_tassonomia = parseFilters(
+          'a_chi_si_rivolge_tassonomia',
           searchFilters.a_chi_si_rivolge_tassonomia,
           location,
         );
       }
 
       if (searchFilters.portal_types?.length > 0) {
-        new_filters.portal_types = parseFetchedPortalTypes(
+        new_filters.portal_types = parseFilters(
+          'portal_type',
           searchFilters.portal_types,
-          config.settings.defaultExcludedFromSearch?.portalTypes,
           location,
         );
       }
@@ -174,17 +184,18 @@ const Search = () => {
 
   useDebouncedEffect(
     () => {
-      doSearch();
+      setCurrentPage(1);
+      doSearch(1);
     },
     600,
-    [dispatch, filters, currentPage],
+    [dispatch, filters],
   );
 
   /*Do real site search and updated current location params*/
-  const doSearch = () => {
+  const doSearch = (page = currentPage) => {
     const q = {
       ...filters,
-      currentPage,
+      currentPage: page, //currentPage,
       customPath,
       subsite,
       currentLang: intl.locale,
@@ -229,8 +240,8 @@ const Search = () => {
   const clearFilters = () => {
     setFilters({
       ...filters,
-      topics: [],
-      users: [],
+      parliamo_di: [],
+      a_chi_si_rivolge_tassonomia: [],
       sections: [],
       portal_types: [],
     });
@@ -238,7 +249,9 @@ const Search = () => {
 
   const handleQueryPaginationChange = (_e, { activePage }) => {
     window.scrollTo(0, 0);
-    setCurrentPage(activePage?.children ?? 1);
+    const page = activePage?.children ?? 1;
+    setCurrentPage(page);
+    doSearch(page);
   };
 
   return (
@@ -306,7 +319,7 @@ const Search = () => {
                       options={searchFilters.a_chi_si_rivolge_tassonomia}
                       setFilters={setFilters}
                       filters={filters}
-                      filterKey="users"
+                      filterKey="a_chi_si_rivolge_tassonomia"
                       sectionTitle={intl.formatMessage(messages.label_utenti)}
                       collapsable={true}
                       ariaControls="search-results-region"
@@ -322,13 +335,51 @@ const Search = () => {
                       options={searchFilters.parliamo_di}
                       setFilters={setFilters}
                       filters={filters}
-                      filterKey="topics"
+                      filterKey="parliamo_di"
                       sectionTitle={intl.formatMessage(
                         messages.label_parliamo_di,
                       )}
                       collapsable={true}
                       ariaControls="search-results-region"
                     />
+                  </div>
+                )}
+                {searchFilters?.portal_types?.length > 0 && (
+                  <div className="column-filters mt-2 mb-4">
+                    <Button
+                      color="primary"
+                      outline
+                      icon
+                      size="small"
+                      onClick={() => setAdvFiltersOpen(!advFiltersOpen)}
+                      className="justify-content-start w-100 ps-2"
+                      aria-expanded={advFiltersOpen}
+                    >
+                      <Icon
+                        icon={advFiltersOpen ? 'it-minus' : 'it-plus'}
+                        padding
+                      />
+                      {intl.formatMessage(messages.advFilters)}
+                    </Button>
+                    <Collapse isOpen={advFiltersOpen} id="advFilters">
+                      <div className="p-3 shadow-sm bg-white">
+                        <SearchCheckbox
+                          options={searchFilters.portal_types}
+                          setFilters={setFilters}
+                          filters={filters}
+                          filterKey="portal_types"
+                          sectionTitle={intl.formatMessage(
+                            messages.label_portal_types,
+                          )}
+                          collapsable={true}
+                          toggleAll={true}
+                          toggleAll_aria={intl.formatMessage(
+                            messages.select_all_cts,
+                          )}
+                          ariaControls="search-results-region"
+                        />
+                      </div>
+                    </Collapse>
                   </div>
                 )}
 

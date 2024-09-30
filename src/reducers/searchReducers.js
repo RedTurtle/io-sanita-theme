@@ -2,12 +2,14 @@
  * Search filters reducer
  * @module src/reducers/getSearchFiltersReducer
  */
-import { parliamo_di, a_chi_si_rivolge_tassonomia } from './_mock_search';
+
 import {
   GET_SEARCH_FILTERS,
   GET_TASSONOMIE_SEARCH,
   GET_SEARCH_RESULTS,
 } from 'io-sanita-theme/actions';
+
+import config from '@plone/volto/registry';
 
 const initialState = {
   error: null,
@@ -29,15 +31,15 @@ export const searchFiltersReducer = (state = initialState, action = {}) => {
     case `${GET_SEARCH_FILTERS}_SUCCESS`:
       return {
         ...state,
-        //todo: rimuovere il mock dei dati
         result: {
-          parliamo_di: parliamo_di.map((i) => {
-            return { label: i.title, value: i.token };
-          }),
-          a_chi_si_rivolge_tassonomia: a_chi_si_rivolge_tassonomia.map((i) => {
-            return { label: i.title, value: i.token };
-          }),
           ...action.result,
+          portal_types:
+            action.result.portal_types?.filter(
+              (p) =>
+                !config.settings.defaultExcludedFromSearch?.portalTypes.includes(
+                  p.value,
+                ),
+            ) ?? [],
         },
         loadingResults: false,
         loaded: true,
