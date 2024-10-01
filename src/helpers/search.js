@@ -170,7 +170,7 @@ const getSearchParamsURL = ({
     parliamo_di,
     a_chi_si_rivolge_tassonomia,
     ...optionsQuery,
-    ...order,
+    ...(order?.sort_on || order?.sort_order ? order : {}),
   };
 
   if (getObject) {

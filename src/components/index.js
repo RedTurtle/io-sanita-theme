@@ -69,6 +69,11 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 //Search
 export QuickSearch from 'io-sanita-theme/components/Search/common/QuickSearch';
 
+export const SearchResultItem = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Search/common/SearchResultItem'
+  ),
+);
 //Widgets
 export const Checkbox = loadable(() =>
   import('io-sanita-theme/components/Widgets/Checkbox'),
@@ -76,27 +81,25 @@ export const Checkbox = loadable(() =>
 export const FileWidget = loadable(() =>
   import('io-sanita-theme/components/Widgets/FileWidget'),
 );
-export const SortByWidget = loadable(() =>
-  import('io-sanita-theme/components/Widgets/SortByWidget/SortByWidget'),
-);
+
 export const SelectInput = loadable(() =>
   import('io-sanita-theme/components/Widgets/SelectInput/SelectInput'),
 );
 
-//Search Widgets
+//Search widgets
+export const SortByWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SortByWidget/SortByWidget'
+  ),
+);
 export const SearchBar = loadable(() =>
   import(
-    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchBar/SearchBar'
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchBar/SearchBar'
   ),
 );
 export const SearchCheckbox = loadable(() =>
   import(
-    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchCheckbox'
-  ),
-);
-export const SearchResultItem = loadable(() =>
-  import(
-    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchResultItem'
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchCheckbox'
   ),
 );
 
