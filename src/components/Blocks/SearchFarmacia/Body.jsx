@@ -1,38 +1,40 @@
-import cx from 'classnames';
 import { createRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { defineMessages, useIntl } from 'react-intl';
+import config from '@plone/volto/registry';
 import { getFarmacia } from 'io-sanita-theme/actions';
 import { Pagination, SortByWidget } from 'io-sanita-theme/components';
-import config from '@plone/volto/registry';
-import { Col, Row, Spinner } from 'design-react-kit';
-import { defineMessages, useIntl } from 'react-intl';
+import { Container, Col, Row, Spinner } from 'design-react-kit';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
 
+/* Style */
+import './search-farmacia.scss';
+
 const messages = defineMessages({
   results: {
-    id: 'search_results',
+    id: 'search_farmacia_results',
     defaultMessage: 'Risultati',
   },
   no_results: {
-    id: 'search_no_results',
+    id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
   nome: {
-    id: 'farmacia_table_nome',
+    id: 'search_farmacia_sort_nome',
     defaultMessage: 'Denominazione Farmacia',
   },
   comune: {
-    id: 'comune',
+    id: 'search_farmacia_sort_comune',
     defaultMessage: 'Comune',
   },
   localita: {
-    id: 'localita',
+    id: 'search_farmacia_sort_localita',
     defaultMessage: 'Località',
   },
 });
 
-const Body = ({ isEditMode, data }) => {
+const Body = ({ isEditMode, data, id }) => {
   const dispatch = useDispatch();
   const intl = useIntl();
   const resultsRef = createRef();
@@ -214,91 +216,91 @@ const Body = ({ isEditMode, data }) => {
   }, [currentPage, results]);
 
   return (
-    <div
-      className={cx('', {
-        'public-ui': isEditMode,
-      })}
-    >
-      {!loading ? (
-        <>
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              doSearch();
-            }}
-          >
-            <Row className="search-wrapper-row">
-              <Col lg={12}>
-                <Row lg={8}>
+    <div className="iosanita-block-search farmacia">
+      <div className="full-width bg-primary-lightest">
+        {!loading ? (
+          <Container className="py-4">
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                doSearch();
+              }}
+            >
+              {data?.title && <h2 className="h5">{data.title}</h2>}
+              <Row className="search-wrapper-row">
+                <Col lg={12}>
+                  {/* Search filters */}
                   <SearchFilters
-                    isEditMode={isEditMode}
+                    block_id={id}
                     setFilters={setFilters}
                     searchType={searchType}
                     filters={filters}
                     options={filtersOptions}
-                    doSearch={doSearch}
+                    // isEditMode={isEditMode}
+                    // doSearch={doSearch}
                     // checkClearComune={checkClearComune}
                   />
-                </Row>
+                </Col>
 
-                <Row lg={4}>
-                  <Col xs={3} lg={6} className="align-self-center">
-                    {results?.length && (
-                      <div className="total-result small" aria-live="polite">
-                        <span className="fw-bold">{results?.length}</span>{' '}
-                        {intl.formatMessage(messages.results)}
-                      </div>
-                    )}
-                  </Col>
-                  <Col xs={9} lg={6} className="d-flex justify-content-end">
-                    <SortByWidget
-                      order={filters.order}
-                      action={(sortby) => {
-                        setFilters({ ...filters, order: sortby });
-                      }}
-                      options={[
-                        {
-                          sort_on: 'title',
-                          sort_order: 'ascending',
-                          title: intl.formatMessage(messages.nome),
-                        },
-                        {
-                          sort_on: 'comune',
-                          sort_order: 'ascending',
-                          title: intl.formatMessage(messages.comune),
-                        },
-                        {
-                          sort_on: 'localita',
-                          sort_order: 'ascending',
-                          title: intl.formatMessage(messages.localita),
-                        },
-                      ]}
-                    />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </form>
+                {/* Total number of results */}
+                <Col xs={3} lg={6} className="align-self-center">
+                  {results && results?.length > 0 && (
+                    <div className="total-result small" aria-live="polite">
+                      <span className="fw-bold">{results.length}</span>{' '}
+                      {intl.formatMessage(messages.results)}
+                    </div>
+                  )}
+                </Col>
 
-          <Results
-            items={resultsPage}
-            isEditMode={isEditMode}
-            searchType={searchType}
-            resRef={resultsRef}
-          />
-          {results && results.length > b_size && (
-            <Pagination
-              activePage={currentPage}
-              totalPages={Math.ceil(results.length / b_size)}
-              onPageChange={handleQueryPaginationChange}
+                {/* Sort by */}
+                <Col xs={9} lg={6} className="d-flex justify-content-end">
+                  <SortByWidget
+                    order={filters.order}
+                    action={(sortby) => {
+                      setFilters({ ...filters, order: sortby });
+                    }}
+                    options={[
+                      {
+                        sort_on: 'title',
+                        sort_order: 'ascending',
+                        title: intl.formatMessage(messages.nome),
+                      },
+                      {
+                        sort_on: 'comune',
+                        sort_order: 'ascending',
+                        title: intl.formatMessage(messages.comune),
+                      },
+                      {
+                        sort_on: 'localita',
+                        sort_order: 'ascending',
+                        title: intl.formatMessage(messages.localita),
+                      },
+                    ]}
+                  />
+                </Col>
+              </Row>
+            </form>
+
+            <Results
+              items={resultsPage}
+              isEditMode={isEditMode}
+              searchType={searchType}
+              resRef={resultsRef}
             />
-          )}
-        </>
-      ) : (
-        <div className="d-flex justify-content-center mt-3">
-          <Spinner active />
-        </div>
-      )}
+            {results && results.length > b_size && (
+              <Pagination
+                activePage={currentPage}
+                totalPages={Math.ceil(results.length / b_size)}
+                onPageChange={handleQueryPaginationChange}
+              />
+            )}
+          </Container>
+        ) : (
+          <Container className="d-flex justify-content-center mt-3">
+            <Spinner active />
+          </Container>
+        )}
+      </div>
     </div>
   );
 };

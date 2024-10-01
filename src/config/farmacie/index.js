@@ -2,7 +2,8 @@ import farmacieSVG from '@plone/volto/icons/first-aids.svg';
 import {
   SearchFarmaciaView,
   SearchFarmaciaEdit,
-} from 'io-sanita-theme/components/Blocks/SearchFarmacia';
+  SearchFarmaciaSchema,
+} from 'io-sanita-theme/components/Blocks';
 import { FarmaciaView } from 'io-sanita-theme/components/View/Farmacia';
 
 export const applyFarmacieConfig = (config) => {
@@ -19,6 +20,7 @@ export const applyFarmacieConfig = (config) => {
       addPermission: [],
       view: [],
     },
+    schema: SearchFarmaciaSchema,
     sidebarTab: 1,
   };
 

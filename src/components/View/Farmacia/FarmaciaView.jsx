@@ -4,30 +4,26 @@ import {
   RelatedItems,
   SkipToMainContent,
   useSideMenu,
+  Metadata,
 } from 'io-sanita-theme/components/View/commons';
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 import PropTypes from 'prop-types';
 import { createRef, useEffect } from 'react';
 import {
-  FarmaciaContacts,
-  FarmaciaMoreInfos,
-  FarmaciaShifts,
-  FarmaciaVacations,
-  FarmaciaWhere,
+  FarmaciaContatti,
+  FarmaciaUlterioriInformazioni,
+  FarmaciaTurni,
+  FarmaciaFerie,
+  FarmaciaDove,
 } from 'io-sanita-theme/components/View/Farmacia';
 
 export const FarmaciaViewSectionsOrder = [
-  {
-    /* HEADER IMAGE */
-
-    component: ContentImage,
-    props: { position: 'documentBody' },
-  },
-  { /* MAPPA */ component: FarmaciaWhere },
-  { /* TURNI */ component: FarmaciaShifts },
-  { /* FERIE */ component: FarmaciaVacations },
-  { /* CONTATTI */ component: FarmaciaContacts },
-  { /* ULTERIORI INFORMAZIONI */ component: FarmaciaMoreInfos },
+  { /* MAPPA */ component: FarmaciaDove },
+  { /* TURNI */ component: FarmaciaTurni },
+  { /* FERIE */ component: FarmaciaFerie },
+  { /* CONTATTI */ component: FarmaciaContatti },
+  { /* ULTERIORI INFORMAZIONI */ component: FarmaciaUlterioriInformazioni },
+  { /* METADATA */ component: Metadata },
 ];
 
 /**
@@ -40,8 +36,6 @@ const FarmaciaView = ({ content }) => {
   const documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
- 
-
   useEffect(() => {
     if (
       content.nome_alternativo &&
@@ -53,7 +47,7 @@ const FarmaciaView = ({ content }) => {
 
   return (
     <>
-      <div className="container px-4 my-4 luogo-view">
+      <div className="container px-4 my-4 farmacia-view">
         <SkipToMainContent />
         <PageHeader
           content={content}
@@ -63,7 +57,7 @@ const FarmaciaView = ({ content }) => {
           showtassonomiaargomenti={true}
         />
         {/* HEADER IMAGE */}
-        <ContentImage content={content}  />
+        <ContentImage content={content} />
 
         <div className="row border-top row-column-border row-column-menu-left">
           <aside className="col-lg-4">
@@ -72,7 +66,7 @@ const FarmaciaView = ({ content }) => {
             )}
           </aside>
           <section
-            className="col-lg-8 it-page-sections-container"
+            className="col-lg-8 it-page-sections-container border-light"
             id="main-content-section"
             ref={documentBody}
           >

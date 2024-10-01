@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-09-23T10:37:03.902Z\n"
+"POT-Creation-Date: 2024-10-01T07:35:31.434Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
-#. Default: "Apri in mappa"
+#. Default: "Apri in Google Maps"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
 msgstr ""
@@ -240,6 +240,11 @@ msgstr ""
 msgid "Ricerca con mappa"
 msgstr ""
 
+#. Default: "Ricerca farmacie"
+#: components/Blocks/SearchFarmacia/Sidebar
+msgid "Ricerca farmacie"
+msgstr ""
+
 #. Default: "Ricerca servizi o procedure"
 #: components/Blocks/SearchServiziProcedure/Sidebar
 msgid "Ricerca servizi o procedure"
@@ -414,12 +419,6 @@ msgstr ""
 #. Default: "Apertura del bando"
 #: components/View/Bando/Dates
 msgid "apertura_bando"
-msgstr ""
-
-#. Default: "Area territoriale"
-#: components/Blocks/SearchFarmacia/SearchFilters
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "area_territoriale"
 msgstr ""
 
 #. Default: "Allegato"
@@ -653,11 +652,6 @@ msgstr ""
 msgid "chiusura_procedimento_bando"
 msgstr ""
 
-#. Default: "Circoscrizione"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "circoscrizione"
-msgstr ""
-
 #. Default: "Clear all filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearAllFilters"
@@ -738,19 +732,6 @@ msgstr ""
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
-#. Default: "Comune"
-#: components/Blocks/SearchFarmacia/Body
-#: components/Blocks/SearchFarmacia/Results
-#: components/Blocks/SearchFarmacia/SearchFilters
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "comune"
-msgstr ""
-
-#. Default: "Contatti"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
-msgid "contatti"
-msgstr ""
-
 #. Default: "attivo"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "currentActive"
@@ -824,11 +805,6 @@ msgstr ""
 #. Default: "Servizio di riferimento"
 #: components/View/Documento/DocumentoServiziProcedure
 msgid "documento_servizio_riferimento"
-msgstr ""
-
-#. Default: "Dove"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "dove"
 msgstr ""
 
 #. Default: "Download and Play video"
@@ -941,115 +917,84 @@ msgstr ""
 msgid "expire"
 msgstr ""
 
-#. Default: "Seleziona il giorno"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "farmacia_data"
+#. Default: "Area territoriale"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_area_territoriale"
 msgstr ""
 
-#. Default: "Località"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "farmacia_localita"
+#. Default: "Circoscrizione"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_circoscrizione"
 msgstr ""
 
-#. Default: "Cerca per parola chiave"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "farmacia_search_keyword"
+#. Default: "Comune"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_comune"
 msgstr ""
 
-#. Default: "Municipality"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_comune_en"
+#. Default: "Contatti"
+#: components/View/Farmacia/FarmaciaContatti
+msgid "farmacia_contatti"
 msgstr ""
 
-#. Default: "Periodi di Ferie"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_ferie"
-msgstr ""
-
-#. Default: "Vacations"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_ferie_en"
-msgstr ""
-
-#. Default: "Indirizzo"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_indirizzo"
-msgstr ""
-
-#. Default: "Address"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_indirizzo_en"
-msgstr ""
-
-#. Default: "Locality"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_localita_en"
-msgstr ""
-
-#. Default: "Denominazione Farmacia"
-#: components/Blocks/SearchFarmacia/Body
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_nome"
-msgstr ""
-
-#. Default: "Pharmacy name"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_nome_en"
-msgstr ""
-
-#. Default: "Recapiti"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_recapiti"
-msgstr ""
-
-#. Default: "Contact numbers"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_recapiti_en"
-msgstr ""
-
-#. Default: "Telefono"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_telefono"
-msgstr ""
-
-#. Default: "Telefono turno"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_telefono_turno"
-msgstr ""
-
-#. Default: "Periodi di Turno"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_turni"
-msgstr ""
-
-#. Default: "Shifts periods"
-#: components/Blocks/SearchFarmacia/Results
-msgid "farmacia_table_turni_en"
+#. Default: "Dove"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_dove"
 msgstr ""
 
 #. Default: "Ferie"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
-msgid "ferie"
+#: components/View/Farmacia/FarmaciaFerie
+msgid "farmacia_ferie"
 msgstr ""
 
 #. Default: "Dal"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
-msgid "ferie_from"
+#: components/View/Farmacia/FarmaciaFerie
+msgid "farmacia_ferie_from"
 msgstr ""
 
 #. Default: "Al"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaVacations
-msgid "ferie_to"
+#: components/View/Farmacia/FarmaciaFerie
+msgid "farmacia_ferie_to"
+msgstr ""
+
+#. Default: "Località"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_localita"
+msgstr ""
+
+#. Default: "Quartiere"
+#: components/View/Farmacia/FarmaciaDove
+msgid "farmacia_quartiere"
+msgstr ""
+
+#. Default: "Telefono"
+#: components/View/Farmacia/FarmaciaContatti
+msgid "farmacia_riferimento_telefonico"
+msgstr ""
+
+#. Default: "Telefono turno"
+#: components/View/Farmacia/FarmaciaContatti
+msgid "farmacia_riferimento_telefonico_turno"
+msgstr ""
+
+#. Default: "Turni"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni"
+msgstr ""
+
+#. Default: "Dal"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni_from"
+msgstr ""
+
+#. Default: "Al"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni_to"
 msgstr ""
 
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
-msgstr ""
-
-#. Default: "Cerca"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "find"
 msgstr ""
 
 #. Default: "Annulla"
@@ -1151,13 +1096,6 @@ msgstr ""
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "loadVideo"
-msgstr ""
-
-#. Default: "Località"
-#: components/Blocks/SearchFarmacia/Body
-#: components/Blocks/SearchFarmacia/Results
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "localita"
 msgstr ""
 
 #. Default: "log in"
@@ -1351,11 +1289,6 @@ msgstr ""
 msgid "news_video_gallery"
 msgstr ""
 
-#. Default: "Nessun risultato trovato"
-#: components/Blocks/SearchFarmacia/Results
-msgid "noResult"
-msgstr ""
-
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
 msgid "novita"
@@ -1423,6 +1356,7 @@ msgstr ""
 
 #. Default: "Ulteriori informazioni"
 #: components/View/Bando/BandoUlterioriInformazioni
+#: components/View/Farmacia/FarmaciaUlterioriInformazioni
 #: components/View/Persona/PersonaUlterioriInformazioni
 #: components/View/Servizio/ServizioUlterioriInformazioni
 #: components/View/Struttura/StrutturaUlterioriInformazioni
@@ -1531,16 +1465,6 @@ msgstr ""
 msgid "pec"
 msgstr ""
 
-#. Default: "Dal"
-#: components/Blocks/SearchFarmacia/Results
-msgid "period_from"
-msgstr ""
-
-#. Default: "al"
-#: components/Blocks/SearchFarmacia/Results
-msgid "period_to"
-msgstr ""
-
 #. Default: "Incarichi"
 #: components/View/Persona/PersonaIncarichi
 msgid "persona_altri_incarichi"
@@ -1622,11 +1546,6 @@ msgstr ""
 msgid "publication_date"
 msgstr ""
 
-#. Default: "Quartiere"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaWhere
-msgid "quartiere"
-msgstr ""
-
 #. Default: "Effettua una ricerca per "{quick}""
 #: components/Search/common/QuickSearch
 msgid "quick-search-item"
@@ -1662,7 +1581,7 @@ msgstr ""
 msgid "quicksearchwidget-deleteitem-button"
 msgstr ""
 
-#. Default: "Acciunti una nuova scorciatoia, oppure selezionane una"
+#. Default: "Aggiungi una nuova scorciatoia, oppure selezionane una"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-emptyActiveItem"
 msgstr ""
@@ -1720,16 +1639,6 @@ msgstr ""
 #. Default: "Rimuovi argomento"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "removeTopic"
-msgstr ""
-
-#. Default: "Telefono"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
-msgid "riferimento_telefonico_farmacia"
-msgstr ""
-
-#. Default: "Telefono turno"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaContacts
-msgid "riferimento_telefonico_turno_farmacia"
 msgstr ""
 
 #. Default: "il giorno"
@@ -1808,11 +1717,6 @@ msgstr ""
 msgid "searchContentIn"
 msgstr ""
 
-#. Default: "Ricerca farmacie"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "searchFarmacia"
-msgstr ""
-
 #. Default: "Cerca nella sezione"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchInSection"
@@ -1851,6 +1755,162 @@ msgstr ""
 #. Default: "Mostra tutto"
 #: components/SearchWidgets/SearchCheckbox
 msgid "search_checkbox_show_all"
+msgstr ""
+
+#. Default: "Area territoriale"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_area_territoriale"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_comune"
+msgstr ""
+
+#. Default: "Seleziona il giorno"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_date"
+msgstr ""
+
+#. Default: "Località"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_localita"
+msgstr ""
+
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchFarmacia/Body
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_no_results"
+msgstr ""
+
+#. Default: "Dal"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_period_from"
+msgstr ""
+
+#. Default: "al"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_period_to"
+msgstr ""
+
+#. Default: "Risultati"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_results"
+msgstr ""
+
+#. Default: "Cerca per parola chiave"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_search_keyword"
+msgstr ""
+
+#. Default: "Tipologia di ricerca"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_search_type_help"
+msgstr ""
+
+#. Default: "Inserisci il nome della farmacia"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_searchable_text_description"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_sort_comune"
+msgstr ""
+
+#. Default: "Località"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_sort_localita"
+msgstr ""
+
+#. Default: "Denominazione Farmacia"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_sort_nome"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_comune"
+msgstr ""
+
+#. Default: "Municipality"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_comune_en"
+msgstr ""
+
+#. Default: "Periodi di Ferie"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_ferie"
+msgstr ""
+
+#. Default: "Vacations"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_ferie_en"
+msgstr ""
+
+#. Default: "Indirizzo"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_indirizzo"
+msgstr ""
+
+#. Default: "Address"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_indirizzo_en"
+msgstr ""
+
+#. Default: "Località"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_localita"
+msgstr ""
+
+#. Default: "Locality"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_localita_en"
+msgstr ""
+
+#. Default: "Denominazione Farmacia"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_nome"
+msgstr ""
+
+#. Default: "Pharmacy name"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_nome_en"
+msgstr ""
+
+#. Default: "Recapiti"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_recapiti"
+msgstr ""
+
+#. Default: "Contact numbers"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_recapiti_en"
+msgstr ""
+
+#. Default: "Periodi di Turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni"
+msgstr ""
+
+#. Default: "Shifts periods"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni_en"
+msgstr ""
+
+#. Default: "Telefono"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_telefono"
+msgstr ""
+
+#. Default: "Telefono turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_telefono_turno"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_title"
 msgstr ""
 
 #. Default: "Posizione in cui cercare"
@@ -1933,21 +1993,6 @@ msgstr ""
 msgid "search_mapresults_found"
 msgstr ""
 
-#. Default: "Nessun risultato trovato"
-#: components/Blocks/SearchFarmacia/Body
-msgid "search_no_results"
-msgstr ""
-
-#. Default: "Risultati"
-#: components/Blocks/SearchFarmacia/Body
-msgid "search_results"
-msgstr ""
-
-#. Default: "Turni"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "search_shifts"
-msgstr ""
-
 #. Default: "Filtri"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_btn_filters_label"
@@ -2011,26 +2056,6 @@ msgstr ""
 #. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
 #: components/SearchWidgets/SearchBar/SearchBar
 msgid "search_text_searchable_text_decription"
-msgstr ""
-
-#. Default: "Ricerca per"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "search_type"
-msgstr ""
-
-#. Default: "Seleziona il tipo di ricerca da effettuare"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "search_type_help"
-msgstr ""
-
-#. Default: "Ferie"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "search_vacations"
-msgstr ""
-
-#. Default: "Inserisci il nome della farmacia"
-#: components/Blocks/SearchFarmacia/SearchFilters
-msgid "searchable_text_description"
 msgstr ""
 
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
@@ -2545,21 +2570,6 @@ msgstr ""
 #. Default: "Argomenti"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "topics"
-msgstr ""
-
-#. Default: "Turni"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
-msgid "turni"
-msgstr ""
-
-#. Default: "Dal"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
-msgid "turni_from"
-msgstr ""
-
-#. Default: "Al"
-#: components/View/Farmacia/FarmaciaSections/FarmaciaShifts
-msgid "turni_to"
 msgstr ""
 
 #. Default: "X"

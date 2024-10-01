@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 import { useIntl, FormattedMessage } from 'react-intl';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
-const Sidebar = (props) => {
-  const { blocksConfig, data, block, onChangeBlock, navRoot, contentType } =
-    props;
+const Sidebar = ({
+  blocksConfig,
+  data,
+  block,
+  onChangeBlock,
+  navRoot,
+  contentType,
+}) => {
   const intl = useIntl();
 
   const schema = blocksConfig[data['@type']].schema({ intl, formData: data });

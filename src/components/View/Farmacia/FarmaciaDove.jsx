@@ -1,38 +1,37 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
-import { CardPlace, Icon } from 'io-sanita-theme/components';
+// import { CardPlace } from 'io-sanita-theme/components';
 import { RichTextSection } from 'io-sanita-theme/helpers';
-import { OSMMap } from 'volto-venue';
+import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
   dove: {
-    id: 'dove',
+    id: 'farmacia_dove',
     defaultMessage: 'Dove',
   },
   area_territoriale: {
-    id: 'area_territoriale',
+    id: 'farmacia_area_territoriale',
     defaultMessage: 'Area territoriale',
   },
   comune: {
-    id: 'comune',
+    id: 'farmacia_comune',
     defaultMessage: 'Comune',
   },
   localita: {
-    id: 'localita',
+    id: 'farmacia_localita',
     defaultMessage: 'Località',
   },
   circoscrizione: {
-    id: 'circoscrizione',
+    id: 'farmacia_circoscrizione',
     defaultMessage: 'Circoscrizione',
   },
   quartiere: {
-    id: 'quartiere',
+    id: 'farmacia_quartiere',
     defaultMessage: 'Quartiere',
   },
 });
 
-const FarmaciaWhere = ({ content }) => {
+const FarmaciaDove = ({ content }) => {
   const intl = useIntl();
 
   return (content.geolocation?.latitude && content.geolocation?.longitude) ||
@@ -47,7 +46,7 @@ const FarmaciaWhere = ({ content }) => {
     content.comune ||
     content.localita ? (
     <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
-      <CardPlace
+      {/* <CardPlace
         item={{
           ...content,
           city: content.comune,
@@ -57,10 +56,12 @@ const FarmaciaWhere = ({ content }) => {
         }}
         showDistance={false}
         showMap={true}
-      />
+      /> */}
+
+      <Locations content={content} />
 
       {/* -- codice originale versione auslfe
-        
+
       <Card className="card card-teaser shadow mt-3 rounded mb-4" tag="div">
         <Icon icon={'it-pin'} />
         <CardBody>
@@ -146,20 +147,10 @@ const FarmaciaWhere = ({ content }) => {
   );
 };
 
-FarmaciaWhere.propTypes = {
+FarmaciaDove.propTypes = {
   content: PropTypes.shape({
     geolocation: PropTypes.object,
-    street: PropTypes.string,
-    zip_code: PropTypes.string,
-    city: PropTypes.string,
-    country: PropTypes.string,
-    circoscrizione: PropTypes.string,
-    quartiere: PropTypes.string,
-    area_territoriale: PropTypes.object,
-    comune: PropTypes.string,
-    provincia: PropTypes.string,
-    localita: PropTypes.string,
   }).isRequired,
 };
 
-export default FarmaciaWhere;
+export default FarmaciaDove;

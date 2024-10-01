@@ -5,79 +5,79 @@ import { Table } from 'semantic-ui-react';
 
 const messages = defineMessages({
   nome: {
-    id: 'farmacia_table_nome',
+    id: 'search_farmacia_table_nome',
     defaultMessage: 'Denominazione Farmacia',
   },
   nome_en: {
-    id: 'farmacia_table_nome_en',
+    id: 'search_farmacia_table_nome_en',
     defaultMessage: 'Pharmacy name',
   },
   comune: {
-    id: 'comune',
+    id: 'search_farmacia_table_comune',
     defaultMessage: 'Comune',
   },
   comune_en: {
-    id: 'farmacia_table_comune_en',
+    id: 'search_farmacia_table_comune_en',
     defaultMessage: 'Municipality',
   },
   localita: {
-    id: 'localita',
+    id: 'search_farmacia_table_localita',
     defaultMessage: 'Località',
   },
   localita_en: {
-    id: 'farmacia_table_localita_en',
+    id: 'search_farmacia_table_localita_en',
     defaultMessage: 'Locality',
   },
   indirizzo: {
-    id: 'farmacia_table_indirizzo',
+    id: 'search_farmacia_table_indirizzo',
     defaultMessage: 'Indirizzo',
   },
   indirizzo_en: {
-    id: 'farmacia_table_indirizzo_en',
+    id: 'search_farmacia_table_indirizzo_en',
     defaultMessage: 'Address',
   },
   recapiti: {
-    id: 'farmacia_table_recapiti',
+    id: 'search_farmacia_table_recapiti',
     defaultMessage: 'Recapiti',
   },
   recapiti_en: {
-    id: 'farmacia_table_recapiti_en',
+    id: 'search_farmacia_table_recapiti_en',
     defaultMessage: 'Contact numbers',
   },
   turni: {
-    id: 'farmacia_table_turni',
+    id: 'search_farmacia_table_turni',
     defaultMessage: 'Periodi di Turno',
   },
   turni_en: {
-    id: 'farmacia_table_turni_en',
+    id: 'search_farmacia_table_turni_en',
     defaultMessage: 'Shifts periods',
   },
   ferie: {
-    id: 'farmacia_table_ferie',
+    id: 'search_farmacia_table_ferie',
     defaultMessage: 'Periodi di Ferie',
   },
   ferie_en: {
-    id: 'farmacia_table_ferie_en',
+    id: 'search_farmacia_table_ferie_en',
     defaultMessage: 'Vacations',
   },
   period_from: {
-    id: 'period_from',
+    id: 'search_farmacia_period_from',
     defaultMessage: 'Dal',
   },
   period_to: {
-    id: 'period_to',
+    id: 'search_farmacia_period_to',
     defaultMessage: 'al',
   },
   telefono: {
-    id: 'farmacia_table_telefono',
+    id: 'search_farmacia_telefono',
     defaultMessage: 'Telefono',
   },
   telefono_turno: {
-    id: 'farmacia_table_telefono_turno',
+    id: 'search_farmacia_telefono_turno',
     defaultMessage: 'Telefono turno',
   },
-  noResult: {
-    id: 'noResult',
+  no_results: {
+    id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
 });
@@ -115,14 +115,14 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         </div>
 
         {item?.street || item?.zip_code || item?.localita || item?.provincia ? (
-          <div>
+          <p>
             {item?.street && item.street}
             {item?.street && item?.zip_code && <br />}
             {item?.zip_code && item.zip_code}
             {item?.zip_code && item?.localita && <> </>}
             {item?.localita && item.localita}
             {item?.provincia && <> ({item.provincia}) </>}
-          </div>
+          </p>
         ) : (
           <> - </>
         )}
@@ -157,7 +157,7 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
 const PeriodsStructure = ({ periods }) => {
   const intl = useIntl();
   return (
-    <>
+    <p>
       {periods?.length > 0 ? (
         periods.map((pd, i) => (
           <span key={i}>
@@ -175,7 +175,7 @@ const PeriodsStructure = ({ periods }) => {
       ) : (
         <>-</>
       )}
-    </>
+    </p>
   );
 };
 
@@ -186,15 +186,14 @@ const Results = ({ items, isEditMode, resRef, searchType }) => {
     <>
       {items?.length > 0 ? (
         <div
-          id="farmacie-results"
-          className="shadow"
+          className="farmacie-results shadow"
           role="region"
           aria-live="polite"
           ref={resRef}
         >
           <Table>
             <Table.Header>
-              <Table.Row className="d-none d-lg-table-row">
+              <Table.Row>
                 <Table.HeaderCell>
                   {intl.formatMessage(messages.nome)} <br />
                   {intl.formatMessage(messages.nome_en)}
@@ -241,12 +240,14 @@ const Results = ({ items, isEditMode, resRef, searchType }) => {
                 <tr key={i}>
                   <td className="nome">
                     {item['@id'] && (
-                      <UniversalLink
-                        item={!isEditMode ? item : null}
-                        href={isEditMode ? '#' : null}
-                      >
-                        {item.title}
-                      </UniversalLink>
+                      <p>
+                        <UniversalLink
+                          item={!isEditMode ? item : null}
+                          href={isEditMode ? '#' : null}
+                        >
+                          {item.title}
+                        </UniversalLink>
+                      </p>
                     )}
                   </td>
                   <ContactColumns
@@ -285,7 +286,7 @@ const Results = ({ items, isEditMode, resRef, searchType }) => {
         </div>
       ) : (
         <div className="message px-4">
-          {intl.formatMessage(messages.noResult)}
+          {intl.formatMessage(messages.no_results)}
         </div>
       )}
     </>

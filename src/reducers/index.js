@@ -16,7 +16,6 @@ import {
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
-import { tassonomieSearchReducer } from './tassonomieSearchReducer';
 import { farmaciaReducer } from './farmaciaReducer';
 
 /**

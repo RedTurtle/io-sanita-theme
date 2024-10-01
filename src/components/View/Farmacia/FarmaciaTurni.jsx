@@ -4,20 +4,20 @@ import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   turni: {
-    id: 'turni',
+    id: 'farmacia_turni',
     defaultMessage: 'Turni',
   },
   turni_from: {
-    id: 'turni_from',
+    id: 'farmacia_turni_from',
     defaultMessage: 'Dal',
   },
   turni_to: {
-    id: 'turni_to',
+    id: 'farmacia_turni_to',
     defaultMessage: 'Al',
   },
 });
 
-const FarmaciaShifts = ({ content }) => {
+const FarmaciaTurni = ({ content }) => {
   const intl = useIntl();
 
   return content?.turni?.length > 0 ? (
@@ -48,10 +48,10 @@ const FarmaciaShifts = ({ content }) => {
   );
 };
 
-FarmaciaShifts.propTypes = {
+FarmaciaTurni.propTypes = {
   content: PropTypes.shape({
     turni: PropTypes.array,
   }).isRequired,
 };
 
-export default FarmaciaShifts;
+export default FarmaciaTurni;

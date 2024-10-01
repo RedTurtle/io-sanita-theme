@@ -4,20 +4,20 @@ import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
   ferie: {
-    id: 'ferie',
+    id: 'farmacia_ferie',
     defaultMessage: 'Ferie',
   },
   ferie_from: {
-    id: 'ferie_from',
+    id: 'farmacia_ferie_from',
     defaultMessage: 'Dal',
   },
   ferie_to: {
-    id: 'ferie_to',
+    id: 'farmacia_ferie_to',
     defaultMessage: 'Al',
   },
 });
 
-const FarmaciaVacations = ({ content }) => {
+const FarmaciaFerie = ({ content }) => {
   const intl = useIntl();
 
   return content?.ferie?.length > 0 ? (
@@ -48,10 +48,10 @@ const FarmaciaVacations = ({ content }) => {
   );
 };
 
-FarmaciaVacations.propTypes = {
+FarmaciaFerie.propTypes = {
   content: PropTypes.shape({
     ferie: PropTypes.array,
   }).isRequired,
 };
 
-export default FarmaciaVacations;
+export default FarmaciaFerie;

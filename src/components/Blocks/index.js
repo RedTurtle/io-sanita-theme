@@ -3,6 +3,7 @@ import loadable from '@loadable/component';
 /*Schema*/
 export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
 export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
+export { SearchFarmaciaSchema } from 'io-sanita-theme/components/Blocks/SearchFarmacia/schema';
 export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
 
 /*View*/
@@ -10,6 +11,7 @@ export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
 export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
 export QuickSearchView from 'io-sanita-theme/components/Blocks/QuickSearch/View';
 export SearchMapView from 'io-sanita-theme/components/Blocks/SearchMap/View';
+export SearchFarmaciaView from 'io-sanita-theme/components/Blocks/SearchFarmacia/View';
 export SearchServiziProcedureView from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View';
 
 /*Listing commons*/
@@ -38,45 +40,67 @@ export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Lis
 // } from 'io-sanita-theme/components/Blocks/Listing/commons/PathFilters';
 
 /*Edit*/
-const BreakEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Break/Edit'
-  ),
+const BreakEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Break/Edit'
+    ),
 );
-const CalloutEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
-  ),
+const CalloutEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
+    ),
 );
-const HTMLBlockSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
-  ),
+const QuickSearchEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/QuickSearch/Edit'
+    ),
 );
-const QuickSearchEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/QuickSearch/Edit'
-  ),
+const SearchMapEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
+    ),
 );
-const SearchMapEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Edit'
-  ),
+const SearchFarmaciaEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/Edit'
+    ),
 );
-const SearchMapSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
-  ),
+const SearchServiziProcedureEdit = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Edit'
+    ),
 );
-const SearchServiziProcedureEdit = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Edit'
-  ),
+
+/*Sidebar*/
+const HTMLBlockSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
+    ),
 );
-const SearchServiziProcedureSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Sidebar'
-  ),
+const SearchMapSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchMap/Sidebar'
+    ),
+);
+const SearchFarmaciaSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/Sidebar'
+    ),
+);
+const SearchServiziProcedureSidebar = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Sidebar'
+    ),
 );
 
 export {
@@ -86,6 +110,8 @@ export {
   QuickSearchEdit,
   SearchMapEdit,
   SearchMapSidebar,
+  SearchFarmaciaEdit,
+  SearchFarmaciaSidebar,
   SearchServiziProcedureEdit,
   SearchServiziProcedureSidebar,
 };
