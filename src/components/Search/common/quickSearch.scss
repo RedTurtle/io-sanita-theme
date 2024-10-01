@@ -3,8 +3,11 @@
 
 .quick-search {
   > .title {
-    color: var(--bs-body-color-rgb) !important;
-    @include rem-size(font-size, 18);
+    &,
+    &.h6 {
+      color: var(--bs-body-color) !important;
+      @include rem-size(font-size, 18);
+    }
   }
   .quick-search-items {
     column-gap: 1.5rem;

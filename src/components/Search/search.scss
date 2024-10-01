@@ -1,0 +1,33 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.search-view {
+  @media (min-width: 576px) {
+    .column-filters .form-check [type='checkbox'] + label {
+      font-size: 1rem;
+      font-weight: $font-weight-semibold;
+      color: var(--bs-body-color-rgb);
+    }
+  }
+
+  @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    #filtersCollapse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      z-index: 99999;
+      overflow: scroll;
+
+      .column-filters,
+      .mobile-filters-header {
+        padding: 0 1rem;
+      }
+
+      .mobile-filters-header {
+        border-bottom: 1px solid var(--primary-lighter);
+      }
+    }
+  }
+}

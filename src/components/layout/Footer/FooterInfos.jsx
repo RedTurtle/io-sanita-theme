@@ -36,12 +36,15 @@ const FooterInfos = () => {
   const location = useLocation();
   const dispatch = useDispatch();
 
+  const req = useSelector((state) => state.editableFooterColumns);
   const footerConfiguration = useSelector(
     (state) => state.editableFooterColumns?.result,
   );
 
   useEffect(() => {
-    dispatch(getEditableFooterColumns());
+    if (!req.loadingResults) {
+      dispatch(getEditableFooterColumns());
+    }
   }, [dispatch, location]);
 
   //filter rootpaths

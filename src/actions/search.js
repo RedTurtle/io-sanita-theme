@@ -6,6 +6,7 @@ import config from '@plone/volto/registry';
 
 export const GET_TASSONOMIE_SEARCH = 'GET_TASSONOMIE_SEARCH';
 export const GET_SEARCH_FILTERS = 'GET_SEARCH_FILTERS';
+export const GET_SEARCH_RESULTS = 'GET_SEARCH_RESULTS';
 
 /**
  * Get search filters.
@@ -18,6 +19,22 @@ export function getSearchFilters() {
     request: {
       op: 'get',
       path: '/@search-filters',
+    },
+  };
+}
+
+/**
+ * Get search results.
+ * @function searchResults
+ * @returns {Object} Get search results action.
+ */
+export function getSearchResults(params) {
+  return {
+    type: GET_SEARCH_RESULTS,
+    request: {
+      op: 'get',
+      path: `/@search`,
+      params: params,
     },
   };
 }

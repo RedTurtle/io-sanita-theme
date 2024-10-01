@@ -135,7 +135,7 @@ const Navigation = ({ pathname = '/' }) => {
                 {/* Headerslim Menu - main site */}
                 {!subsite && <TertiaryMenu mobile={true} />}
                 {/* Social Links */}
-                <SocialHeader />
+                <SocialHeader mobile={true} />
                 {/* Headerslim Menu - parent site (if subsite) */}
                 {subsite && <ParentSiteMenu />}
               </div>

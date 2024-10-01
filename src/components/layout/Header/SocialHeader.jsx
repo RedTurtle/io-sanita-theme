@@ -23,7 +23,7 @@ const messages = defineMessages({
   },
 });
 
-const SocialHeader = () => {
+const SocialHeader = ({ mobile }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const socialSettings = useSelector((state) => state?.socialSettings); //useSelector((state) => state?.socialSettings?.results);
@@ -32,7 +32,7 @@ const SocialHeader = () => {
   const items = isEmpty(socialSettings.results) ? [] : socialSettings.results;
 
   useEffect(() => {
-    if (!socialSettings?.loadingResults && items.length === 0) {
+    if (!mobile && !socialSettings?.loadingResults && items.length === 0) {
       dispatch(getSocialSettings());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

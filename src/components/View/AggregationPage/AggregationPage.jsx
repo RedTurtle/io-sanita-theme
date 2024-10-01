@@ -175,9 +175,15 @@ const AggregationPage = ({ match, route, location }) => {
                 action={(sortby) => {
                   setSearchParams({ ...searchParams, order: sortby });
                 }}
+                ariaControls="aggregation-page-results"
               />
             </div>
-            <div className="results">
+            <div
+              className="results"
+              id="aggregation-page-results"
+              role="region"
+              aria-live="polite"
+            >
               {tassonomieSearch?.loading ? (
                 <div className="d-flex my-4 justify-content-center">
                   <Spinner active />

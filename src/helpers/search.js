@@ -36,19 +36,27 @@ export const getItemsByPath = (
   else return [];
 };
 
+// A section is checked if is in value
+const isSectionChecked = (s, value) => {
+  return value.indexOf(s['@id']) > -1;
+};
+
 // A group is checked if at least one filter is checked
-const isGroupChecked = (group) => {
-  return Object.keys(group.items || {}).reduce(
-    (checked, filterId) => checked || group.items[filterId].value,
-    false,
+const isGroupChecked = (group, value) => {
+  return (
+    isSectionChecked(group, value) ||
+    (group.items || []).reduce(
+      (checked, item) => checked || isSectionChecked(item, value),
+      false,
+    )
   );
 };
 
 // A group is indeterminate if at least one of its filters is checked, but not all of them
-const isGroupIndeterminate = (group, groupIsChecked) =>
+const isGroupIndeterminate = (group, groupIsChecked, value) =>
   groupIsChecked &&
-  Object.keys(group.items).reduce(
-    (indet, filterId) => indet || !group.items[filterId].value,
+  group.items.reduce(
+    (indet, item) => indet || value.indexOf(item['@id']) < 0,
     false,
   );
 
@@ -59,64 +67,39 @@ const updateGroupCheckedStatus = (group, checked) =>
     value: checked,
   }));
 
-const parseFetchedTopics = (topics, location) => {
-  const qsTopics = qs.parse(location?.search ?? '')?.parliamo_di ?? [];
-
-  return topics.reduce((acc, topic) => {
-    acc[flattenToAppURL(topic['@id'])] = {
-      value: qsTopics.indexOf(topic.title) > -1,
-      label: topic.title,
-    };
-
-    return acc;
-  }, {});
+const getSections = (fetchedSections, location, subsite) => {
+  const pathname = location?.pathname?.length ? location.pathname : '/';
+  let items = getItemsByPath(fetchedSections, pathname, !subsite);
+  items.map((item) => {
+    item['@id'] = flattenToAppURL(item['@id']);
+    item.items.map((i) => (i['@id'] = flattenToAppURL(i['@id'])));
+  });
+  return items;
 };
 
-const parseFetchedPortalTypes = (portalTypes, defaultExcludedCT, location) => {
-  const qsCTs = qs.parse(location?.search ?? '')?.['portal_type'] ?? [];
+const parseFetchedSections = (sections, location) => {
+  const qsSections = qs.parse(location?.search ?? '')['path.query'] ?? [];
 
-  return portalTypes.reduce((acc, ct) => {
-    acc[ct.id] = {
-      value: qsCTs.includes(ct.id) || !defaultExcludedCT.includes(ct.id),
-      label: ct.label,
-      defaultChecked: !defaultExcludedCT.includes(ct.id),
-    };
-
+  return sections.reduce((acc, sec) => {
+    let sectionItems = sec.items ?? [];
+    sectionItems.forEach((item) => {
+      let sUrl = flattenToAppURL(item['@id']);
+      if (qsSections.indexOf(sUrl) > -1) {
+        acc.push(sUrl);
+      }
+    });
     return acc;
-  }, {});
+  }, []);
 };
 
-const parseFetchedOptions = (options, location) => {
-  const qsOptions = qs.parse(location?.search ?? '');
-  const opts = JSON.parse(JSON.stringify(options));
-
-  if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'min:max'
-  ) {
-    opts.dateStart = qsOptions['effective.query:list:date'][0] ?? null;
-    opts.dateEnd = qsOptions['effective.query:list:date'][1] ?? null;
-  } else if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'min'
-  ) {
-    opts.dateStart = qsOptions['effective.query:list:date'] ?? null;
-  } else if (
-    qsOptions['effective.range'] &&
-    qsOptions['effective.range'] === 'max'
-  ) {
-    opts.dateEnd = qsOptions['effective.query:list:date'] ?? null;
-  }
-
-  if (
-    qsOptions['expires.range'] &&
-    qsOptions['expires.range'] === 'min' &&
-    qsOptions['expires.query:list:date']
-  ) {
-    opts.activeContent = true;
-  }
-
-  return opts;
+const parseFilters = (paramName, list, location) => {
+  const qs_filters = qs.parse(location?.search ?? '')?.[paramName] ?? [];
+  return list
+    .filter((el) => qs_filters.indexOf(el.value) > -1)
+    .reduce((acc, t) => {
+      acc.push(t.value);
+      return acc;
+    }, []);
 };
 
 // const parseCustomPath = (location) => {
@@ -129,11 +112,13 @@ const parseFetchedOptions = (options, location) => {
 // };
 
 const getSearchParamsURL = ({
-  searchableText,
-  topics = {},
+  searchableText = '',
+  parliamo_di = [],
+  a_chi_si_rivolge_tassonomia = [],
   options = {},
-  portalTypes = {},
-  sortOn = {},
+  portal_types = [],
+  sections,
+  order = { sort_on: null, sort_order: null },
   currentPage,
   customPath,
   subsite,
@@ -149,11 +134,7 @@ const getSearchParamsURL = ({
     ? (currentPage - 1) * config.settings.defaultPageSize
     : 0;
 
-  const activeTopics = Object.keys(topics).reduce((acc, topic) => {
-    if (topics[topic].value) return [...acc, topics[topic].label];
-    return acc;
-  }, []);
-
+  //options
   const optionsQuery = {};
   if (options.activeContent) {
     optionsQuery['expires.range'] = 'min';
@@ -173,8 +154,11 @@ const getSearchParamsURL = ({
     optionsQuery['effective.query:list:date'] = options.dateEnd;
   }
 
+  //path
   let pathQuery = null;
-  if (customPath?.length > 0) {
+  if (sections.length > 0) {
+    pathQuery = { 'path.query': sections };
+  } else if (customPath?.length > 0) {
     pathQuery = { 'path.query': customPath };
   } else if (baseUrl?.length > 0) {
     pathQuery = {
@@ -182,47 +166,30 @@ const getSearchParamsURL = ({
     };
   }
 
-  const activePortalTypes = Object.keys(portalTypes).reduce((acc, ct) => {
-    if (portalTypes[ct].value) return [...acc, ct];
-    return acc;
-  }, []);
-  let portal_type =
-    activePortalTypes?.length > 0 ? { portal_type: activePortalTypes } : null;
-
-  let text = searchableText ? { SearchableText: searchableText } : null;
-
   baseUrl += '/search';
 
-  if (getObject) {
-    let obj = {
-      ...(text ?? {}),
-      ...(pathQuery ?? {}),
-      parliamo_di: activeTopics,
-      ...optionsQuery,
-      ...sortOn,
-      ...portal_type,
-      skipNull: true,
-      b_start: b_start,
-      use_site_search_settings: true,
-    };
+  let obj = {
+    ...(searchableText ? { SearchableText: searchableText } : {}),
+    ...(pathQuery ?? {}),
+    parliamo_di,
+    a_chi_si_rivolge_tassonomia,
+    ...optionsQuery,
+    ...(order?.sort_on || order?.sort_order ? order : {}),
+  };
 
+  if (getObject) {
+    if (portal_types) {
+      obj.portal_type = portal_types;
+    }
+    obj.b_start = b_start;
+    obj.use_site_search_settings = true;
     return obj;
   }
 
   return (
     baseUrl +
     '?' +
-    qs.stringify(
-      {
-        ...(text ?? {}),
-        ...(pathQuery ?? {}),
-        parliamo_di: activeTopics,
-        ...optionsQuery,
-        ...sortOn,
-        ...portal_type,
-      },
-      { skipNull: true },
-    ) +
+    qs.stringify(obj) +
     (b_start > 0 ? `&b_start=${b_start}` : '')
   );
 };
@@ -232,11 +199,12 @@ const SearchUtils = {
   isGroupChecked,
   isGroupIndeterminate,
   updateGroupCheckedStatus,
-  parseFetchedTopics,
-  parseFetchedPortalTypes,
-  parseFetchedOptions,
+  parseFilters,
+  parseFetchedSections,
   getSearchParamsURL,
   getItemsByPath,
+  getSections,
+  isSectionChecked,
 };
 
 export default SearchUtils;

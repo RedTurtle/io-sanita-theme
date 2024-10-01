@@ -6,6 +6,7 @@
 import {
   searchFiltersReducer,
   tassonomieSearchReducer,
+  searchResultsReducer,
 } from './searchReducers';
 // import { searchResultsReducer } from './searchResultsReducer';
 // import { calendarSearchReducer } from './calendarSearchReducer';
@@ -16,6 +17,7 @@ import { modulisticaItems } from './modulistica';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
+import { iosanita_settings } from './settings';
 import { farmaciaReducer } from './farmaciaReducer';
 
 /**
@@ -28,7 +30,7 @@ import { farmaciaReducer } from './farmaciaReducer';
 const reducers = {
   searchFilters: searchFiltersReducer,
   tassonomieSearch: tassonomieSearchReducer,
-  // searchResults: searchResultsReducer,
+  searchResults: searchResultsReducer,
   // calendarSearch: calendarSearchReducer,
   // calendarDaySearch: calendarDaySearchReducer,
   // amministrazioneTrasparenteTree: amministrazioneTrasparenteTree,
@@ -37,6 +39,7 @@ const reducers = {
   // originalQuery: originalQueryReducer,
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
+  iosanita_settings,
   farmacia: farmaciaReducer,
 };
 

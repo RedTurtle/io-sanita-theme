@@ -32,8 +32,8 @@ const messages = defineMessages({
     id: 'sort_relevance',
     defaultMessage: 'Rilevanza',
   },
-  created: {
-    id: 'sort_data_desc',
+  Date: {
+    id: 'sort_Date',
     defaultMessage: 'Data (prima i più recenti)',
   },
 });
@@ -41,6 +41,7 @@ const messages = defineMessages({
 const SortByWidget = ({
   order,
   action,
+  ariaControls,
   options = [
     {
       sort_on: 'relevance',
@@ -51,7 +52,7 @@ const SortByWidget = ({
       sort_order: 'ascending',
     },
     {
-      sort_on: 'created',
+      sort_on: 'Date',
       sort_order: 'descending',
     },
   ],
@@ -60,8 +61,12 @@ const SortByWidget = ({
 
   // default titles
   options.forEach((item, index) => {
-    if (!item.title && messages[item.sort_on]) {
-      options[index].title = intl.formatMessage(messages[item.sort_on]);
+    if (!item.title) {
+      if (messages[item.sort_on]) {
+        options[index].title = intl.formatMessage(messages[item.sort_on]);
+      } else {
+        options[index].title = item.sort_on;
+      }
     }
   });
 
@@ -80,7 +85,7 @@ const SortByWidget = ({
 
   return (
     <UncontrolledDropdown className="sort-by-widget">
-      <DropdownToggle color="primary" outline caret>
+      <DropdownToggle color="primary" outline caret className="px-3 px-lg-4">
         <small>{intl.formatMessage(messages.sort)}</small>{' '}
         <Icon color="primary" icon="it-expand" padding={false} size="sm" />
       </DropdownToggle>
@@ -93,7 +98,7 @@ const SortByWidget = ({
               role="menuitem"
               tabIndex={-1}
               onKeyDown={handleKeyDown}
-              aria-controls="main-content-section"
+              aria-controls={ariaControls}
               active={order?.sort_on === item.sort_on}
             >
               <Button
@@ -105,7 +110,7 @@ const SortByWidget = ({
                 onClick={() => {
                   action(item);
                 }}
-                aria-controls="main-content-section"
+                aria-controls={ariaControls}
                 color="link"
                 className="px-0 text-start"
               >
