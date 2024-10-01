@@ -26,7 +26,7 @@ const InEvidenceTemplateSkeleton = ({
             <Row>
               {[0, 1, 2, 3, 4].map((i) => {
                 return (
-                  <Col lg={i > 0 ? 6 : 12}>
+                  <Col lg={i > 0 ? 6 : 12} key={i}>
                     <Card
                       teaser
                       key={i}

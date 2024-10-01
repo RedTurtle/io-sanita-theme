@@ -1,0 +1,77 @@
+.iosanita-block-search.farmacia {
+    .search-bar-widget,
+    .field-wrapper-date_farmacie,
+    .field-wrapper-date_farmacie .DateInput,
+    .bootstrap-select-wrapper {
+        margin-bottom: 0;
+        width: 100%;
+    }
+    .search-bar-widget {
+        border-top: 4px solid #FFF;
+
+        label.active {
+            display: none;
+        }
+    }
+    .field-wrapper-date_farmacie {
+        border-top: 7px solid #FFF;
+
+        .wrapper label,
+        .four.wide.column:has(.wrapper) {
+            display: none !important;
+        }
+        .ui.grid .stretched.row {
+            padding: 0 0.65rem;
+        }
+        .ui.grid > .row > [class*="eight wide"].column {
+            width: 100% !important;
+            padding: 0;
+        }
+        .DateInput input {
+            font-family: var(--bs-font-sans-serif);
+            font-weight: 300;
+        }
+        .DayPicker_weekHeader ul {
+            padding-left: 0;
+        }
+    }
+    .farmacie-results {
+        table.ui.table {
+            background-color: #fff;
+            margin: 2rem 0 3rem;
+
+            tbody tr:last-child td {
+                border: 0;
+            }
+        }
+    }
+}
+
+.cms-ui {
+    .iosanita-block-search.farmacia {
+        .farmacie-results {
+            table.ui.table {
+                border: 0;
+
+                thead th {
+                    background-color: #FFF;
+                    text-transform: inherit;
+                    font-size: 1.125rem;
+                    font-weight: bold;
+                    color: var(--bs-table-color);
+                }
+
+                td {
+                    border-color: var(--bs-table-border-color);
+                }
+            }
+        }
+
+        .field-wrapper-date_farmacie {
+            .ui.grid {
+                margin-right: -1.3rem;
+                margin-left: 0;
+            }
+        }
+    }
+}

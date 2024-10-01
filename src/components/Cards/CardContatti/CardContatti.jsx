@@ -42,15 +42,19 @@ const CardContatti = ({
         )}
         {item?.contatti?.length > 0 && (
           <CardText tag="div">
-            {item?.contatti?.map((pdc, index) => (
-              <span key={index}>
-                <span className="pdc-type">{pdc.tipo}</span>
-                {/* <span className="pdc-desc">
-                {pdc.descrizione ? ` - ${pdc.descrizione}` : ''}:{' '}
-              </span> */}
-                : <PuntoDiContattoValue value={pdc} />
-              </span>
-            )) ?? null}
+            {item?.contatti?.map((pdc, index) => {
+              return pdc.valore ? (
+                <span key={index}>
+                  <span className="pdc-type">{pdc.tipo_label || pdc.tipo}</span>
+                  {/* <span className="pdc-desc">
+                    {pdc.descrizione ? ` - ${pdc.descrizione}` : ''}:{' '}
+                  </span> */}
+                  : <PuntoDiContattoValue value={pdc} />
+                </span>
+              ) : (
+                <></>
+              );
+            })}
           </CardText>
         )}
       </CardBody>

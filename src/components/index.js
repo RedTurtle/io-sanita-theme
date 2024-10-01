@@ -79,6 +79,9 @@ export const FileWidget = loadable(() =>
 export const SortByWidget = loadable(() =>
   import('io-sanita-theme/components/Widgets/SortByWidget/SortByWidget'),
 );
+export const SelectInput = loadable(() =>
+  import('io-sanita-theme/components/Widgets/SelectInput/SelectInput'),
+);
 
 //Search Widgets
 export const SearchBar = loadable(() =>
