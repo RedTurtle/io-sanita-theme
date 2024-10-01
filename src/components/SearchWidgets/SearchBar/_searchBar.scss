@@ -2,12 +2,27 @@
 
 /* SEARCH BAR */
 .public-ui {
-    .form-group.search-bar-widget {
-        label.active {
-            @include font-size($h5-font-size);
-            font-weight: 600;
-            position: unset;
-            transform: none;
-        }
+  .form-group.search-bar-widget {
+    label.active {
+      @include font-size($h5-font-size);
+      font-weight: 600;
+      position: unset;
+      transform: none;
     }
+    .input-group-append {
+      .btn {
+        border-bottom: none;
+      }
+    }
+
+    .input-group {
+      &.shadow {
+        .input-group-text,
+        .form-control,
+        .input-group-append {
+          border-bottom: none;
+        }
+      }
+    }
+  }
 }

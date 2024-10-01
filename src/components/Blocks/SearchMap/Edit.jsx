@@ -6,7 +6,7 @@ import { SidebarPortal } from '@plone/volto/components';
 import { SearchMapSidebar as Sidebar } from 'io-sanita-theme/components/Blocks';
 
 const SearchMapEdit = (props) => {
-  const { data, id, block, onChangeBlock, selected, pathname } = props;
+  const { data, id, onChangeBlock, selected, pathname } = props;
   return (
     <div className="public-ui">
       <Body
@@ -31,7 +31,6 @@ const SearchMapEdit = (props) => {
 SearchMapEdit.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   id: PropTypes.string.isRequired,
-  block: PropTypes.string.isRequired,
   selected: PropTypes.any,
   intl: PropTypes.any,
   onChangeBlock: PropTypes.func.isRequired,

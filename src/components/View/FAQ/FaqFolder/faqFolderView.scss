@@ -1,0 +1,66 @@
+.public-ui.contenttype-faqfolder {
+  .accordion-header .accordion-button {
+    font-size: 1.4rem;
+  }
+  .faq-tree {
+    .faq-folder {
+      &.level-0,
+      &.level-1 {
+        padding-left: 0;
+      }
+
+      .folder-title {
+        a {
+          color: var(--bs-text-color);
+          text-decoration: none;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: var(--bs-link-color);
+            text-decoration: underline;
+          }
+        }
+
+        .icon {
+          width: auto;
+          height: 0.75em;
+          margin-right: 1.5rem;
+          vertical-align: baseline;
+        }
+      }
+
+      .folder-description {
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .accordion {
+        margin-bottom: 3rem;
+
+        .accordion-header {
+          .accordion-button:after {
+            width: 2rem;
+          }
+        }
+
+        .faq-description {
+          margin-bottom: 1rem;
+          font-size: 0.85rem;
+        }
+
+        .faq-text {
+          .full-width {
+            position: static;
+
+            left: auto !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ import {
   QuickSearchEdit,
   QuickSearchView,
 } from 'io-sanita-theme/components/Blocks';
+
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
 import { cloneBlock } from 'io-sanita-theme/helpers';

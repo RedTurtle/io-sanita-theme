@@ -18,7 +18,7 @@ import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 import { SearchBar, SearchResultItem } from 'io-sanita-theme/components';
-import ioSanitaPin from 'io-sanita-theme/icons/map-pin.svg';
+import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
 
 /* Style */
 import './search-map.scss';

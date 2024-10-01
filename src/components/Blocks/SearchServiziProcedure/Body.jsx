@@ -175,7 +175,7 @@ const Body = ({ data, id, path, properties, block }) => {
 
   useEffect(() => {
     // Initialize currentPage and doSearch
-    handleQueryPaginationChange(null, { activePage: { children: 1 } }, false);
+    handleQueryPaginationChange(null, { activePage: 1 }, false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters, data.path, data.portal_type]);
 
@@ -187,7 +187,7 @@ const Body = ({ data, id, path, properties, block }) => {
     if (resultsRef.current && activeScroll) {
       resultsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-    const current = (activePage && activePage?.children) ?? 1;
+    const current = activePage ?? 1;
     setCurrentPage(current);
     doSearch(current);
   };

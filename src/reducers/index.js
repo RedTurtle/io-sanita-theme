@@ -18,6 +18,7 @@ import { modulisticaItems } from './modulistica';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
 import { iosanita_settings } from './settings';
+import { farmaciaReducer } from './farmaciaReducer';
 
 /**
  * Root reducer.
@@ -39,6 +40,7 @@ const reducers = {
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
   iosanita_settings,
+  farmacia: farmaciaReducer,
 };
 
 export default reducers;

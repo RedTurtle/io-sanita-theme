@@ -20,6 +20,7 @@ import {
   GET_TASSONOMIE_SEARCH,
 } from './search';
 
+import { getFarmacia, GET_FARMACIA } from './getFarmacia';
 import {
   getModulisticaItems,
   GET_MODULISTICA_ITEMS,
@@ -36,6 +37,8 @@ export {
   GET_SEARCH_RESULTS,
   getTassonomieSearch,
   GET_TASSONOMIE_SEARCH,
+  getFarmacia,
+  GET_FARMACIA,
   getModulisticaItems,
   GET_MODULISTICA_ITEMS,
   resetModulisticaItems,

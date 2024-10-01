@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 import { Button } from 'design-react-kit';
@@ -29,6 +30,7 @@ const SearchBar = React.forwardRef(
       onChange,
       ariaControls,
       showSubmit = false,
+      shadow = false,
     },
     ref,
   ) => {
@@ -69,7 +71,7 @@ const SearchBar = React.forwardRef(
           {title ?? defaultTitle}
         </label>
 
-        <div className="input-group">
+        <div className={cx('input-group', { shadow: shadow })}>
           <span className="input-group-text">
             <Icon aria-hidden color="primary" icon="it-search" size="sm" />
           </span>

@@ -1,29 +1,17 @@
-#page-controlpanel {
-  .objectlist-widget {
-    .accordion.styled {
-      .content {
-        .select-icon-widget {
-          display: flex;
-          & > div {
-            flex: 1;
-          }
-          .field-wrapper-ArgumentsTitle,
-          .field.help {
-            .help {
-              font-size: 0.8rem;
-            }
-            svg {
-              height: 1em;
-            }
-            .wide.four {
-              display: none !important;
-            }
-            .wide.eight {
-              width: 100% !important;
-            }
-          }
-        }
-      }
+.select-icon-widget {
+  .wdg {
+    display: flex;
+    & > div {
+      flex: 1;
+    }
+  }
+
+  p.help-icon-widget {
+    font-size: 0.8rem !important;
+    padding: 0 1rem;
+    margin-bottom: 2rem !important;
+    svg {
+      height: 1em;
     }
   }
 }
