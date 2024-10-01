@@ -1,16 +1,76 @@
-import { PageView } from 'io-sanita-theme/components/View/Page';
-import { EventoView } from 'io-sanita-theme/components/View/Evento';
-import { UOView } from 'io-sanita-theme/components/View/UOView';
-import { StrutturaView } from 'io-sanita-theme/components/View/Struttura';
-import { PersonaView } from 'io-sanita-theme/components/View/Persona';
-import { ComeFarePerView } from 'io-sanita-theme/components/View/ComeFarePer';
-import StepView from 'io-sanita-theme/components/View/Step/StepView';
-import { NewsItemView } from 'io-sanita-theme/components/View/NewsItem';
-import { DocumentoView } from 'io-sanita-theme/components/View/Documento';
-import { ServizioView } from 'io-sanita-theme/components/View/Servizio';
-import { PuntoDiContattoView } from 'io-sanita-theme/components/View/PuntoDiContatto';
-import { BandoView } from 'io-sanita-theme/components/View/Bando';
-import { ModuloView } from 'io-sanita-theme/components/View/Modulo';
+import loadable from '@loadable/component';
+const PageView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Page/PageView'
+  ),
+);
+
+const EventoView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoView'
+  ),
+);
+const UOView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOView'
+  ),
+);
+const StrutturaView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaView'
+  ),
+);
+const PersonaView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaView'
+  ),
+);
+const ComeFarePerView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerView'
+  ),
+);
+const StepView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISStepView" */ 'io-sanita-theme/components/View/Step/StepView'
+  ),
+);
+
+const NewsItemView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISNewsItemView" */ 'io-sanita-theme/components/View/NewsItem/NewsItemView'
+  ),
+);
+const DocumentoView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISDocumentoView" */ 'io-sanita-theme/components/View/Documento/DocumentoView'
+  ),
+);
+const ServizioView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISServizioView" */ 'io-sanita-theme/components/View/Servizio/ServizioView'
+  ),
+);
+const PuntoDiContattoView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISPuntoDiContattoView" */ 'io-sanita-theme/components/View/PuntoDiContatto/PuntoDiContattoView'
+  ),
+);
+const BandoView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBandoView" */ 'io-sanita-theme/components/View/Bando/BandoView'
+  ),
+);
+const ModuloView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISModuloView" */ 'io-sanita-theme/components/View/Modulo/ModuloView'
+  ),
+);
+const CartellaModulisticaView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISCartellaModulisticaView" */ 'io-sanita-theme/components/View/CartellaModulistica/CartellaModulisticaView'
+  ),
+);
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
@@ -27,6 +87,7 @@ const ioSanitaContentTypesViews = {
   Step: StepView,
   Bando: BandoView,
   Modulo: ModuloView,
+  CartellaModulistica: CartellaModulisticaView,
 };
 
 /* LAYOUT VIEWS */

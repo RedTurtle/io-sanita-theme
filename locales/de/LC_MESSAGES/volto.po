@@ -645,6 +645,16 @@ msgstr ""
 msgid "carouselSlide"
 msgstr ""
 
+#. Default: "Formati scaricabili"
+#: components/View/CartellaModulistica/CartellaModulisticaView
+msgid "cartellamodulistica_formati_scaricabili"
+msgstr ""
+
+#. Default: "Type in a keyword to find modules"
+#: components/View/CartellaModulistica/SearchBar
+msgid "cartellamodulistica_search"
+msgstr ""
+
 #. Default: "Icona categoria"
 #: components/Cards/common/CardCategoryTop
 msgid "category_icon"
@@ -780,14 +790,9 @@ msgstr ""
 msgid "documento_cos_e"
 msgstr ""
 
-#. Default: "Vai al documento"
+#. Default: "File e collegamenti"
 #: components/View/Documento/DocumentoDocumenti
-msgid "documento_doc"
-msgstr ""
-
-#. Default: "Formati alternativi"
-#: components/View/Documento/DocumentoDocumenti
-msgid "documento_formati"
+msgid "documento_documenti"
 msgstr ""
 
 #. Default: "Protocollo {protocollo} del {data_protocollo}"

@@ -74,8 +74,6 @@ const PageHeader = (props) => {
 
           <PageHeaderEventDates content={content} />
 
-          <PageHeaderStatoServizio content={content} />
-
           <PageHeaderDocumento content={content} />
 
           {content.description && (
@@ -88,13 +86,15 @@ const PageHeader = (props) => {
               }
             >
               {content.description.split('\n').map((d, i, { length }) => (
-                <>
+                <React.Fragment key={i}>
                   {d}
                   {i < length - 1 && <br />}
-                </>
+                </React.Fragment>
               ))}
             </p>
           )}
+
+          <PageHeaderStatoServizio content={content} />
 
           <PageHeaderBando content={content} />
 
@@ -124,7 +124,7 @@ const PageHeader = (props) => {
         <div className={'page-header-right py-lg-4 col-lg-2 text-end'}>
           <Sharing url={content['@id']} title={content.title} />
 
-          {/* FOTO PERSONA */}
+          {/* FOTO PERSONA o altri ct che vogliono mostrare l'immagine piccola nell'header */}
           {foto && content?.image ? (
             <div className="page-header-image mt-5">
               <figure>

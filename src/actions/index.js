@@ -19,6 +19,12 @@ import {
 } from './search';
 
 import { getFarmacia, GET_FARMACIA } from './getFarmacia';
+import {
+  getModulisticaItems,
+  GET_MODULISTICA_ITEMS,
+  resetModulisticaItems,
+  RESET_MODULISTICA_ITEMS,
+} from './modulistica';
 
 export {
   getSearchFilters,
@@ -27,4 +33,8 @@ export {
   GET_TASSONOMIE_SEARCH,
   getFarmacia,
   GET_FARMACIA,
+  getModulisticaItems,
+  GET_MODULISTICA_ITEMS,
+  resetModulisticaItems,
+  RESET_MODULISTICA_ITEMS,
 };

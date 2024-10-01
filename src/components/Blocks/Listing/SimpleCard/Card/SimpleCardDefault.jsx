@@ -147,7 +147,7 @@ const SimpleCardDefault = (props) => {
         {/* Chip servizio attivo */}
         {isServizioOnline && (
           <div className="mb-3">
-            <Badge color="primary-lightest">
+            <Badge color="info">
               {intl.formatMessage(messages.servizioOnline)}
             </Badge>
           </div>

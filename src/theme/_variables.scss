@@ -14,11 +14,20 @@ $primary-darker: hsl(
 ) !default; // color-ocean-10 --> $primary-a12 --> primary-darker
 $accent: #9c0769 !default;
 
+$info: hsl(189, 47%, 54%) !default;
+
 $primary-text: #fff !default;
 $accent-text: #fff !default;
-
 $bg-primary-lightest: hsl($primary-h, 50%, 97%) !default; //#F4FAFB;
 $bg-primary-lighter: hsl($primary-h, 50%, 87%) !default; //#CDE9EE;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    'accent': $accent,
+  ),
+  $theme-colors
+) !default;
 
 //font
 $font-weight-base: 300 !default;
@@ -49,11 +58,17 @@ $card-link-color: $accent !default;
 $card-color: $body-color !default;
 $card-p-color: $body-color !default;
 $card-category-size: 0.875rem !default; // 15.75px
-$card-badge-size: 0.778rem !default; // 14px
 
 //chips
 $color-text-secondary: $accent !default;
 $color-border-subtle: $accent !default;
+
+//badge
+$badge-padding-x: 1rem;
+$badge-font-size: 0.778rem !default; // 14px
+
+//search
+$highlight-search: #ff0;
 
 //$color-text-base: #2f475e !default;;
 

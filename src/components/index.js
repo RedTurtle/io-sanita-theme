@@ -1,14 +1,25 @@
+import loadable from '@loadable/component';
+
 export Icon from 'io-sanita-theme/components/Icon/Icon';
 export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
 
 //commons
 export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
-export Unauthorized from 'io-sanita-theme/components/Unauthorized/Unauthorized';
+export const Unauthorized = loadable(() =>
+  import('io-sanita-theme/components/Unauthorized/Unauthorized'),
+);
 
 //Login
-export LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
-export LoginAgidButtons from 'io-sanita-theme/components/LoginAgid/LoginAgidButtons';
-
+export const LoginAgid = loadable(() =>
+  import(
+    /* webpackChunkName: "is-login" */ 'io-sanita-theme/components/LoginAgid/LoginAgid'
+  ),
+);
+export const LoginAgidButtons = loadable(() =>
+  import(
+    /* webpackChunkName: "is-login" */ 'io-sanita-theme/components/LoginAgid/LoginAgidButtons'
+  ),
+);
 //layout
 export SkipLinks from 'io-sanita-theme/components/SkipLinks/SkipLinks';
 export Breadcrumbs from 'io-sanita-theme/components/Breadcrumbs/Breadcrumbs';
@@ -59,15 +70,35 @@ export BrandWrapper from 'io-sanita-theme/components/BrandWrapper/BrandWrapper';
 export QuickSearch from 'io-sanita-theme/components/Search/common/QuickSearch';
 
 //Widgets
-export Checkbox from 'io-sanita-theme/components/Widgets/Checkbox';
-export FileWidget from 'io-sanita-theme/components/Widgets/FileWidget';
-export SortByWidget from 'io-sanita-theme/components/Widgets/SortByWidget/SortByWidget';
-export SelectInput from 'io-sanita-theme/components/Widgets/SelectInput/SelectInput';
+export const Checkbox = loadable(() =>
+  import('io-sanita-theme/components/Widgets/Checkbox'),
+);
+export const FileWidget = loadable(() =>
+  import('io-sanita-theme/components/Widgets/FileWidget'),
+);
+export const SortByWidget = loadable(() =>
+  import('io-sanita-theme/components/Widgets/SortByWidget/SortByWidget'),
+);
+export const SelectInput = loadable(() =>
+  import('io-sanita-theme/components/Widgets/SelectInput/SelectInput'),
+);
 
 //Search Widgets
-export SearchBar from 'io-sanita-theme/components/SearchWidgets/SearchBar/SearchBar';
-export SearchCheckbox from 'io-sanita-theme/components/SearchWidgets/SearchCheckbox';
-export SearchResultItem from 'io-sanita-theme/components/SearchWidgets/SearchResultItem';
+export const SearchBar = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchBar/SearchBar'
+  ),
+);
+export const SearchCheckbox = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchCheckbox'
+  ),
+);
+export const SearchResultItem = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-widgets" */ 'io-sanita-theme/components/SearchWidgets/SearchResultItem'
+  ),
+);
 
 //Cards
 export CardCategoryTop from 'io-sanita-theme/components/Cards/common/CardCategoryTop';
@@ -86,14 +117,46 @@ export CardContatti from 'io-sanita-theme/components/Cards/CardContatti/CardCont
 export Pagination from 'io-sanita-theme/components/Pagination/Pagination';
 
 //Gallery e Slider
-export GalleryPreview from 'io-sanita-theme/components/GalleryPreview/GalleryPreview';
-export ButtonPlayPause from 'io-sanita-theme/components/Slider/ButtonPlayPause';
-export CarouselWrapper from 'io-sanita-theme/components/Slider/CarouselWrapper';
-export NextArrow from 'io-sanita-theme/components/Slider/NextArrow';
-export PrevArrow from 'io-sanita-theme/components/Slider/PrevArrow';
-export SingleSlideWrapper from 'io-sanita-theme/components/Slider/SingleSlideWrapper';
+export const GalleryPreview = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/GalleryPreview/GalleryPreview'
+  ),
+);
+export const ButtonPlayPause = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/ButtonPlayPause'
+  ),
+);
+export const CarouselWrapper = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/CarouselWrapper'
+  ),
+);
+export const NextArrow = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/NextArrow'
+  ),
+);
+export const PrevArrow = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/PrevArrow'
+  ),
+);
+export const SingleSlideWrapper = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/SingleSlideWrapper'
+  ),
+);
+export const SliderContainer = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search-gallery" */ 'io-sanita-theme/components/Slider/SliderContainer'
+  ),
+);
 export { useSlider } from 'io-sanita-theme/components/Slider/slider';
-export SliderContainer from 'io-sanita-theme/components/Slider/SliderContainer';
 
 //Commons
-export EmbeddedVideo from 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo';
+export const EmbeddedVideo = loadable(() =>
+  import(
+    /* webpackChunkName: "is-video" */ 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo'
+  ),
+);
