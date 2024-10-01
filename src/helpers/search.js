@@ -117,7 +117,7 @@ const getSearchParamsURL = ({
   a_chi_si_rivolge_tassonomia = [],
   options = {},
   portal_types = [],
-  sections,
+  sections = [],
   order = { sort_on: null, sort_order: null },
   currentPage,
   customPath,
