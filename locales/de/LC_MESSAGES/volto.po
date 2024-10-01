@@ -109,6 +109,11 @@ msgstr ""
 msgid "Etichetta path filter"
 msgstr ""
 
+#. Default: "Non ho trovato la risposta che cercavi"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "Faq Folder: Nessun risultato trovato"
+msgstr ""
+
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
 msgid "Go to content"
@@ -281,6 +286,11 @@ msgstr ""
 #. Default: "Seleziona un file"
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
+msgstr ""
+
+#. Default: "Servizio disponibile e prenotabile"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "Service available"
 msgstr ""
 
 #. Default: "Iscriviti"
@@ -650,9 +660,14 @@ msgstr ""
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr ""
 
-#. Default: "Type in a keyword to find modules"
+#. Default: "Inserisci una parola chiave, ad esempio 'Modulo'"
 #: components/View/CartellaModulistica/SearchBar
-msgid "cartellamodulistica_search"
+msgid "cartellamodulistica_search_description"
+msgstr ""
+
+#. Default: "Cerca un modulo"
+#: components/View/CartellaModulistica/SearchBar
+msgid "cartellamodulistica_search_title"
 msgstr ""
 
 #. Default: "Icona categoria"
@@ -925,6 +940,11 @@ msgstr ""
 msgid "expire"
 msgstr ""
 
+#. Default: "Type in a keyword to find answers"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "faq_search"
+msgstr ""
+
 #. Default: "Area territoriale"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_area_territoriale"
@@ -1013,6 +1033,11 @@ msgstr ""
 #. Default: "Ricomincia"
 #: overrideTranslations
 msgid "form_reset"
+msgstr ""
+
+#. Default: "Trovati {total} risultati."
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "found_n_results"
 msgstr ""
 
 #. Default: "dal"

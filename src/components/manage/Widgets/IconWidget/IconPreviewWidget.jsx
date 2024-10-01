@@ -10,20 +10,33 @@ const messages = defineMessages({
   },
 });
 
-const IconPreviewWidget = ({ icon, onEdit, title, description, children }) => {
+const IconPreviewWidget = ({
+  icon,
+  onEdit,
+  title,
+  description,
+  children,
+  wrapped = true,
+}) => {
   const intl = useIntl();
   const parts = icon?.split(' ') ?? [];
 
   return (
-    <Form.Field inline className="help" id="icon-preview-widget-id">
+    <Form.Field
+      inline
+      className="help icon-preview-widget"
+      id="icon-preview-widget-id"
+    >
       <Grid>
         <Grid.Row stretched>
-          <Grid.Column width="4">
-            <div className="wrapper">
-              <label htmlFor="icon-preview-widget-id">{title}</label>
-            </div>
-          </Grid.Column>
-          <Grid.Column width={8}>
+          {wrapped && (
+            <Grid.Column width="4">
+              <div className="wrapper">
+                <label htmlFor="icon-preview-widget-id">{title}</label>
+              </div>
+            </Grid.Column>
+          )}
+          <Grid.Column width={wrapped ? 8 : 12}>
             <div className="ui input flex-center">
               <p className="help">
                 {icon ? (
