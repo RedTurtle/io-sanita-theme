@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 import { Button } from 'design-react-kit';
@@ -27,6 +28,7 @@ const SearchBar = ({
   onChange,
   controls,
   showSubmit = false,
+  shadow = false,
 }) => {
   const intl = useIntl();
   const [searchableText, setSearchableText] = useState(value); //serve solo per fare il debounce
@@ -59,7 +61,7 @@ const SearchBar = ({
         {title ?? defaultTitle}
       </label>
 
-      <div className="input-group">
+      <div className={cx('input-group', { shadow: shadow })}>
         <span className="input-group-text">
           <Icon aria-hidden color="primary" icon="it-search" size="sm" />
         </span>

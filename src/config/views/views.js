@@ -71,6 +71,16 @@ const CartellaModulisticaView = loadable(() =>
     /* webpackChunkName: "ISCartellaModulisticaView" */ 'io-sanita-theme/components/View/CartellaModulistica/CartellaModulisticaView'
   ),
 );
+const FaqFolderView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISFaqFolderView" */ 'io-sanita-theme/components/View/FAQ/FaqFolder/FaqFolderView'
+  ),
+);
+const FaqView = loadable(() =>
+  import(
+    /* webpackChunkName: "FaqView" */ 'io-sanita-theme/components/View/FAQ/Faq/FaqView'
+  ),
+);
 
 /*  CONTENT TYPES VIEWS */
 const ioSanitaContentTypesViews = {
@@ -88,6 +98,8 @@ const ioSanitaContentTypesViews = {
   Bando: BandoView,
   Modulo: ModuloView,
   CartellaModulistica: CartellaModulisticaView,
+  FaqFolder: FaqFolderView,
+  Faq: FaqView,
 };
 
 /* LAYOUT VIEWS */

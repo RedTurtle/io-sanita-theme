@@ -104,6 +104,11 @@ msgstr ""
 msgid "Etichetta path filter"
 msgstr ""
 
+#. Default: "Non ho trovato la risposta che cercavi"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "Faq Folder: Nessun risultato trovato"
+msgstr ""
+
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
 msgid "Go to content"
@@ -272,6 +277,11 @@ msgstr "Seguici su"
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
 msgstr "Seleziona un file"
+
+#. Default: "Servizio disponibile e prenotabile"
+#: components/View/commons/PageHeader/PageHeaderStatoServizio
+msgid "Service available"
+msgstr ""
 
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
@@ -550,10 +560,15 @@ msgstr ""
 msgid "cartellamodulistica_formati_scaricabili"
 msgstr ""
 
-#. Default: "Type in a keyword to find modules"
+#. Default: "Inserisci una parola chiave, ad esempio 'Modulo'"
 #: components/View/CartellaModulistica/SearchBar
-msgid "cartellamodulistica_search"
-msgstr "Inserisci una parola chiave per cerca i moduli"
+msgid "cartellamodulistica_search_description"
+msgstr ""
+
+#. Default: "Cerca un modulo"
+#: components/View/CartellaModulistica/SearchBar
+msgid "cartellamodulistica_search_title"
+msgstr ""
 
 #. Default: "Icona categoria"
 #: components/Cards/common/CardCategoryTop
@@ -820,6 +835,11 @@ msgstr ""
 msgid "expire"
 msgstr "Scadenza"
 
+#. Default: "Type in a keyword to find answers"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "faq_search"
+msgstr "Digita una parola chiave per trovare le risposte"
+
 #. Default: "Filtri"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "filters"
@@ -834,6 +854,11 @@ msgstr "Annulla"
 #: overrideTranslations
 msgid "form_reset"
 msgstr "Ricomincia"
+
+#. Default: "Trovati {total} risultati."
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "found_n_results"
+msgstr ""
 
 #. Default: "dal"
 #: helpers/dates
