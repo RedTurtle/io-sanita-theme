@@ -16,6 +16,7 @@ import { modulisticaItems } from './modulistica';
 // import { originalQueryReducer } from './originalQueryReducer';
 // import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
+import { farmaciaReducer } from './farmaciaReducer';
 
 /**
  * Root reducer.
@@ -36,6 +37,7 @@ const reducers = {
   // originalQuery: originalQueryReducer,
   // searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
+  farmacia: farmaciaReducer,
 };
 
 export default reducers;

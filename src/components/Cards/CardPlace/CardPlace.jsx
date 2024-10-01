@@ -14,12 +14,13 @@ import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
+import { OSMMap } from 'volto-venue';
 import './cardPlace.scss';
 
 const messages = defineMessages({
   view_on_googlemaps: {
     id: 'CardPlace: view on googlemaps',
-    defaultMessage: 'Apri in mappa',
+    defaultMessage: 'Apri in Google Maps',
   },
 });
 
@@ -28,6 +29,7 @@ const CardPlace = ({
   type = 'complete', // ['complete','essential','synthetic']
   showDistance = false,
   showAddress = true,
+  showMap = false,
   item,
   isEditMode,
   titleTag = 'h3',
@@ -100,6 +102,25 @@ const CardPlace = ({
 
       {type === 'complete' && size !== 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
+          {__CLIENT__ &&
+            showMap &&
+            item.geolocation?.latitude &&
+            item.geolocation?.longitude && (
+              <OSMMap
+                markers={[
+                  {
+                    latitude: item.geolocation.latitude,
+                    longitude: item.geolocation.longitude,
+                    title: item.title,
+                  },
+                ]}
+                mapOptions={{
+                  scrollWheelZoom: false,
+                  // tap: false,
+                  // dragging: false,
+                }}
+              />
+            )}
           <UniversalLink
             href={`http://maps.google.com/?q=${item?.street ?? ''} ${
               item?.zip_code ?? ''

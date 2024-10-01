@@ -46,6 +46,7 @@ import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
+import { applyFarmacieConfig } from './farmacie';
 
 import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 
@@ -242,6 +243,11 @@ export default function applyConfig(config) {
     ...config.widgets,
     ...getIoSanitaWidgets(config),
   };
+
+  // /******************************************************************************
+  //  * FARMACIE (VIEWS+BLOCKS)
+  //  ******************************************************************************/
+  applyFarmacieConfig(config);
 
   // /******************************************************************************
   //  * BLOCKS

@@ -178,7 +178,7 @@ const ListingBody = withQuerystringResults((props) => {
                     activePage={currentPage}
                     totalPages={totalPages}
                     onPageChange={(e, { activePage }) => {
-                      let page = activePage.children;
+                      let page = activePage;
                       if (!page) {
                         if (activePage.type == 'prevItem') {
                           page = currentPage - 1;
