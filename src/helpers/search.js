@@ -36,19 +36,27 @@ export const getItemsByPath = (
   else return [];
 };
 
+// A section is checked if is in value
+const isSectionChecked = (s, value) => {
+  return value.indexOf(s['@id']) > -1;
+};
+
 // A group is checked if at least one filter is checked
-const isGroupChecked = (group) => {
-  return Object.keys(group.items || {}).reduce(
-    (checked, filterId) => checked || group.items[filterId].value,
-    false,
+const isGroupChecked = (group, value) => {
+  return (
+    isSectionChecked(group, value) ||
+    (group.items || []).reduce(
+      (checked, item) => checked || isSectionChecked(item, value),
+      false,
+    )
   );
 };
 
 // A group is indeterminate if at least one of its filters is checked, but not all of them
-const isGroupIndeterminate = (group, groupIsChecked) =>
+const isGroupIndeterminate = (group, groupIsChecked, value) =>
   groupIsChecked &&
-  Object.keys(group.items).reduce(
-    (indet, filterId) => indet || !group.items[filterId].value,
+  group.items.reduce(
+    (indet, item) => indet || value.indexOf(item['@id']) < 0,
     false,
   );
 
@@ -59,36 +67,29 @@ const updateGroupCheckedStatus = (group, checked) =>
     value: checked,
   }));
 
-const parseFetchedSections = (fetchedSections, location, subsite) => {
+const getSections = (fetchedSections, location, subsite) => {
   const pathname = location?.pathname?.length ? location.pathname : '/';
+  let items = getItemsByPath(fetchedSections, pathname, !subsite);
+  items.map((item) => {
+    item['@id'] = flattenToAppURL(item['@id']);
+    item.items.map((i) => (i['@id'] = flattenToAppURL(i['@id'])));
+  });
+  return items;
+};
 
+const parseFetchedSections = (sections, location) => {
   const qsSections = qs.parse(location?.search ?? '')['path.query'] ?? [];
 
-  const sections = getItemsByPath(fetchedSections, pathname, !subsite);
-
-  return Object.keys(sections).reduce((acc, sec) => {
-    let id = sections[sec].id;
-    let sectionItems = sections[sec].items;
-    if (sectionItems) {
-      acc[id] = {
-        path: flattenToAppURL(sections[sec]['@id']),
-        title: sections[sec].title,
-        items:
-          sectionItems &&
-          sectionItems.reduce((itemsAcc, subSec) => {
-            let subSectionUrl = flattenToAppURL(subSec['@id']);
-            itemsAcc[subSectionUrl] = {
-              value: qsSections.indexOf(subSectionUrl) > -1,
-              label: subSec.title,
-            };
-
-            return itemsAcc;
-          }, {}),
-      };
-    }
-
+  return sections.reduce((acc, sec) => {
+    let sectionItems = sec.items ?? [];
+    sectionItems.forEach((item) => {
+      let sUrl = flattenToAppURL(item['@id']);
+      if (qsSections.indexOf(sUrl) > -1) {
+        acc.push(sUrl);
+      }
+    });
     return acc;
-  }, {});
+  }, []);
 };
 
 const parseFilters = (paramName, list, location) => {
@@ -116,6 +117,7 @@ const getSearchParamsURL = ({
   a_chi_si_rivolge_tassonomia = [],
   options = {},
   portal_types = [],
+  sections,
   order = { sort_on: null, sort_order: null },
   currentPage,
   customPath,
@@ -154,7 +156,9 @@ const getSearchParamsURL = ({
 
   //path
   let pathQuery = null;
-  if (customPath?.length > 0) {
+  if (sections.length > 0) {
+    pathQuery = { 'path.query': sections };
+  } else if (customPath?.length > 0) {
     pathQuery = { 'path.query': customPath };
   } else if (baseUrl?.length > 0) {
     pathQuery = {
@@ -199,6 +203,8 @@ const SearchUtils = {
   parseFetchedSections,
   getSearchParamsURL,
   getItemsByPath,
+  getSections,
+  isSectionChecked,
 };
 
 export default SearchUtils;

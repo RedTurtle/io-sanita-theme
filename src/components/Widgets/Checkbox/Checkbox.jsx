@@ -4,6 +4,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import './checkbox.scss';
+
 export default function Checkbox({ indeterminate = false, ...otherProps }) {
   const setCheckboxRef = (checkbox) => {
     if (checkbox) {

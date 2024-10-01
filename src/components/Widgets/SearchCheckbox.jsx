@@ -47,6 +47,7 @@ const SearchCheckbox = ({
   toggleAll_aria,
   showActiveOptions = false, // show number of checkbox selected
   ariaControls,
+  collapsableAfter = 10,
 }) => {
   const intl = useIntl();
   const uid = uuid();
@@ -93,9 +94,9 @@ const SearchCheckbox = ({
 
   const getOptionsChunks = (options) => {
     const size = options.length;
-    if (size > 10) {
-      let visibleOptions = options.slice(0, 10);
-      let hidedOptions = options.slice(10, size);
+    if (size > collapsableAfter) {
+      let visibleOptions = options.slice(0, collapsableAfter);
+      let hidedOptions = options.slice(collapsableAfter, size);
 
       return [visibleOptions, hidedOptions];
     }
@@ -158,7 +159,7 @@ const SearchCheckbox = ({
           </span>
         )}
       </h6>
-      <div className="form-check mt-4">
+      <div className="form-check mt-3">
         {/* TODO: se serve, attivare anche il 'seleziona tutto' */}
         {toggleAll && (
           <Button

@@ -88,7 +88,7 @@ const Breadcrumbs = ({ pathname, match }) => {
       items?.[items?.length - 1]?.url !== location.pathname)
   ) {
     let matchingRoute = null;
-    console.log(route);
+
     const routePaths = route
       ? typeof route.path == 'string'
         ? [route.path]

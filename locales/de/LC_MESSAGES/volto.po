@@ -27,6 +27,11 @@ msgstr ""
 msgid "Aspetto"
 msgstr ""
 
+#. Default: "Attenzione!"
+#: components/Search/Search
+msgid "Attenzione!"
+msgstr ""
+
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
@@ -283,6 +288,11 @@ msgstr ""
 msgid "Seguici su"
 msgstr ""
 
+#. Default: "Seleziona tutti i tipi di contenuti o nessuno"
+#: components/Search/Search
+msgid "Select all content types or none"
+msgstr ""
+
 #. Default: "Seleziona un file"
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
@@ -291,6 +301,11 @@ msgstr ""
 #. Default: "Servizio disponibile e prenotabile"
 #: components/View/commons/PageHeader/PageHeaderStatoServizio
 msgid "Service available"
+msgstr ""
+
+#. Default: "Sono occorsi degli errori"
+#: components/Search/Search
+msgid "Sono occorsi degli errori"
 msgstr ""
 
 #. Default: "Iscriviti"
@@ -374,11 +389,6 @@ msgstr ""
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr ""
 
-#. Default: "Vai alla ricerca per sezioni avanzata"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "advandedSectionsFilters"
-msgstr ""
-
 #. Default: "Tutti"
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_all"
@@ -402,21 +412,6 @@ msgstr ""
 #. Default: "Allinea il bottone a destra"
 #: components/Blocks/Listing/schema
 msgid "alignButton"
-msgstr ""
-
-#. Default: "Tutto"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "allFilters"
-msgstr ""
-
-#. Default: "Tutte le date"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "allOptions"
-msgstr ""
-
-#. Default: "Tutti gli argomenti"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "allTopics"
 msgstr ""
 
 #. Default: "Mostra l'immagine per tutti gli elementi"
@@ -547,11 +542,6 @@ msgstr ""
 #. Default: "premi la freccia a sinistra per evidenziare i valori selezionati"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_press left to focus selected values"
-msgstr ""
-
-#. Default: "Torna alla ricerca"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "backToSearch"
 msgstr ""
 
 #. Default: "A chi si rivolge"
@@ -705,6 +695,11 @@ msgstr ""
 msgid "closeSearch"
 msgstr ""
 
+#. Default: "Indietro"
+#: components/layout/Header/HeaderSearch/SearchModal
+msgid "closeSearchBack"
+msgstr ""
+
 #. Default: "Colore"
 #: components/Blocks/Callout/Sidebar
 msgid "color"
@@ -760,11 +755,6 @@ msgstr ""
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr ""
 
-#. Default: "attivo"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "currentActive"
-msgstr ""
-
 #. Default: "dal {dateStart} fino a conclusione"
 #: components/View/commons/PageHeader/PageHeaderEventDates
 msgid "dal {dateStart} fino a conclusione"
@@ -773,11 +763,6 @@ msgstr ""
 #. Default: "Data"
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "date"
-msgstr ""
-
-#. Default: "Non cercare nella sezione"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "deselectSearchSection"
 msgstr ""
 
 #. Default: "Testo per il link al dettaglio"
@@ -1021,8 +1006,8 @@ msgid "farmacia_turni_to"
 msgstr ""
 
 #. Default: "Filtri"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "filters"
+#: components/Search/Search
+msgid "filtersCollapse"
 msgstr ""
 
 #. Default: "Annulla"
@@ -1035,7 +1020,8 @@ msgstr ""
 msgid "form_reset"
 msgstr ""
 
-#. Default: "Trovati {total} risultati."
+#. Default: "{total} risultati."
+#: components/Search/Search
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "found_n_results"
 msgstr ""
@@ -1337,49 +1323,9 @@ msgstr ""
 msgid "open_end"
 msgstr ""
 
-#. Default: "Contenuto attivo"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionActiveContentButton"
-msgstr ""
-
-#. Default: "Verranno esclusi dalla ricerca i contenuti archiviati e non più validi come gli eventi terminati o i bandi scaduti."
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionActiveContentInfo"
-msgstr ""
-
-#. Default: "Cerca solo tra i contenuti attivi"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionActiveContentLabel"
-msgstr ""
-
-#. Default: "Data fine"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionDateEnd"
-msgstr ""
-
-#. Default: "Al"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionDateEndButton"
-msgstr ""
-
-#. Default: "inserisci la data in formato gg/mm/aaaa"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionDatePlaceholder"
-msgstr ""
-
-#. Default: "Data inizio"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionDateStart"
-msgstr ""
-
-#. Default: "Dal"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "optionDateStartButton"
-msgstr ""
-
-#. Default: "Opzioni"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "options"
+#. Default: "Ordina per"
+#: components/Search/Search
+msgid "order_by"
 msgstr ""
 
 #. Default: "Organizzato da"
@@ -1664,16 +1610,6 @@ msgstr ""
 msgid "related_items"
 msgstr ""
 
-#. Default: "Rimuovi opzione"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "removeOption"
-msgstr ""
-
-#. Default: "Rimuovi argomento"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "removeTopic"
-msgstr ""
-
 #. Default: "il giorno"
 #: overrideTranslations
 msgid "rrule_in"
@@ -1735,29 +1671,24 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#. Default: "Cerca in tutte le sezioni"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "searchAllSections"
-msgstr ""
-
-#. Default: "Cerca tutti gli argomenti"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "searchAllTopics"
-msgstr ""
-
 #. Default: "Cerca contenuti in"
 #: components/View/commons/PageHeader/SearchSectionForm
 msgid "searchContentIn"
 msgstr ""
 
-#. Default: "Cerca nella sezione"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "searchInSection"
-msgstr ""
-
 #. Default: "Cerca nel sito"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
+msgstr ""
+
+#. Default: "Risultati ricerca “{searchableText}“"
+#: components/Search/Search
+msgid "search_Search results"
+msgstr ""
+
+#. Default: "Filtri avanzati"
+#: components/Search/Search
+msgid "search_adv_filters"
 msgstr ""
 
 #. Default: "Ricerca"
@@ -1766,28 +1697,38 @@ msgid "search_brdc"
 msgstr ""
 
 #. Default: "{filterNumber} filtri attivati"
-#: components/SearchWidgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox
 msgid "search_checkbox_active_filters"
 msgstr ""
 
 #. Default: "argomenti"
-#: components/SearchWidgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox
 msgid "search_checkbox_default_title"
 msgstr ""
 
 #. Default: "Nascondi"
-#: components/SearchWidgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox
 msgid "search_checkbox_hide_all"
 msgstr ""
 
 #. Default: "Cerca per"
-#: components/SearchWidgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox
 msgid "search_checkbox_search_to"
 msgstr ""
 
+#. Default: "Seleziona tutti o nessuno"
+#: components/Widgets/SearchCheckbox
+msgid "search_checkbox_select_all"
+msgstr ""
+
 #. Default: "Mostra tutto"
-#: components/SearchWidgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox
 msgid "search_checkbox_show_all"
+msgstr ""
+
+#. Default: "Chiudi"
+#: components/Search/Search
+msgid "search_close_filters"
 msgstr ""
 
 #. Default: "Area territoriale"
@@ -1946,6 +1887,26 @@ msgstr ""
 msgid "search_farmacia_title"
 msgstr ""
 
+#. Default: "Cerca nel sito"
+#: components/Search/Search
+msgid "search_input_title"
+msgstr ""
+
+#. Default: "Argomenti"
+#: components/Search/Search
+msgid "search_label_parliamo_di"
+msgstr ""
+
+#. Default: "Tipologia"
+#: components/Search/Search
+msgid "search_label_portal_types"
+msgstr ""
+
+#. Default: "Utenti"
+#: components/Search/Search
+msgid "search_label_utenti"
+msgstr ""
+
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Search path"
@@ -1967,7 +1928,7 @@ msgid "search_map_ct"
 msgstr ""
 
 #. Default: "Cerca"
-#: components/SearchWidgets/SearchBar/SearchBar
+#: components/Widgets/SearchBar/SearchBar
 msgid "search_map_searchable_text_button"
 msgstr ""
 
@@ -2024,6 +1985,21 @@ msgstr ""
 #. Default: "Risultati"
 #: components/Blocks/SearchMap/Body
 msgid "search_mapresults_found"
+msgstr ""
+
+#. Default: "Rimuovi tutti i filtri"
+#: components/Search/Search
+msgid "search_remove_all_filters"
+msgstr ""
+
+#. Default: "Mostra i risultati"
+#: components/Search/Search
+msgid "search_show_results_close_filters"
+msgstr ""
+
+#. Default: "Vai ai risultati di ricerca"
+#: components/Search/Search
+msgid "search_skip_to_search_results"
 msgstr ""
 
 #. Default: "Filtri"
@@ -2087,7 +2063,7 @@ msgid "search_sp_title"
 msgstr ""
 
 #. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
-#: components/SearchWidgets/SearchBar/SearchBar
+#: components/Widgets/SearchBar/SearchBar
 msgid "search_text_searchable_text_decription"
 msgstr ""
 
@@ -2096,14 +2072,74 @@ msgstr ""
 msgid "searchedFor"
 msgstr ""
 
-#. Default: "Sezioni"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "sections"
+#. Default: "Aggiungi radice di navigazione"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-add-rootpath"
 msgstr ""
 
-#. Default: "Seleziona gli argomenti che vuoi cercare"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "selectTopicFilters"
+#. Default: "Aggiungi elemento"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-additem"
+msgstr ""
+
+#. Default: "Rimuovi radice di navigazione"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-delete-rootpath"
+msgstr ""
+
+#. Default: "Rimuovi sezione"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-deleteitem-button"
+msgstr ""
+
+#. Default: "Aggiungi una nuova sezione, o selezionane una."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveItem"
+msgstr ""
+
+#. Default: "Seleziona un percorso"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-emptyActiveRootPath"
+msgstr ""
+
+#. Default: "Mostra le sezioni figlie"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-expand_children"
+msgstr ""
+
+#. Default: "Sezioni"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-items-header"
+msgstr ""
+
+#. Default: "Link"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl"
+msgstr ""
+
+#. Default: "Seleziona un url interno cliccando sl bottone a destra. Se la sezione è vuota (non ha figli), non verrà mostrata."
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-linkUrl_description"
+msgstr ""
+
+#. Default: "Sposta dopo"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-down"
+msgstr ""
+
+#. Default: "Sposta prima"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-move-item-up"
+msgstr ""
+
+#. Default: "Radice di navigazione"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
+msgid "searchsectionswidget-rootpath"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
+msgid "searchsectionswidget-title"
 msgstr ""
 
 #. Default: "Nessuna opzione"
@@ -2226,11 +2262,6 @@ msgstr ""
 #. Default: "Unità operativa responsabile"
 #: components/View/Servizio/ServizioUOResponsabile
 msgid "servizio_uo_responsabile"
-msgstr ""
-
-#. Default: "Vai alle altre opzioni di ricerca"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "setMoreSearchOptions"
 msgstr ""
 
 #. Default: "Disponi su 4 colonne"
@@ -2598,11 +2629,6 @@ msgstr ""
 #. Default: "Apri"
 #: overrideTranslations
 msgid "toggleMenu_open"
-msgstr ""
-
-#. Default: "Argomenti"
-#: components/layout/Header/HeaderSearch/SearchModal
-msgid "topics"
 msgstr ""
 
 #. Default: "X"

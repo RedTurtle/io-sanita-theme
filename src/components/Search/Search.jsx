@@ -23,6 +23,7 @@ import {
   SearchBar,
   SortByWidget,
   SearchCheckbox,
+  SearchSections,
   Icon,
   Pagination,
 } from 'io-sanita-theme/components';
@@ -31,12 +32,13 @@ import SearchResultItem from 'io-sanita-theme/components/Search/ResultItem';
 import config from '@plone/volto/registry';
 import './search.scss';
 
-const { parseFetchedSections, parseFilters, getSearchParamsURL } = SearchUtils;
+const { parseFetchedSections, parseFilters, getSearchParamsURL, getSections } =
+  SearchUtils;
 
 const messages = defineMessages({
   searchResults: {
     id: 'search_Search results',
-    defaultMessage: 'Risultati ricerca “{searchableText}“',
+    defaultMessage: 'Risultati ricerca {searchableText}',
   },
   skipToSearchResults: {
     id: 'search_skip_to_search_results',
@@ -95,6 +97,10 @@ const messages = defineMessages({
     id: 'Sono occorsi degli errori',
     defaultMessage: 'Sono occorsi degli errori',
   },
+  categories: {
+    id: 'search_sections',
+    defaultMessage: 'Categorie',
+  },
 });
 
 const Search = () => {
@@ -109,6 +115,7 @@ const Search = () => {
   const subsite = useSelector((state) => state.subsite?.data);
   const searchFilters = useSelector((state) => state.searchFilters.result);
   const searchResults = useSelector((state) => state.searchResults);
+  const [sections, setSections] = useState([]);
 
   const [filters, setFilters] = useState({
     searchableText: qs.parse(location.search)?.SearchableText ?? '',
@@ -147,12 +154,14 @@ const Search = () => {
   useEffect(() => {
     if (searchFilters) {
       let new_filters = { ...filters };
-      if (Object.keys(searchFilters.sections ?? {}).length > 0) {
-        new_filters.sections = parseFetchedSections(
+      if (searchFilters.sections?.length > 0) {
+        const _sections = getSections(
           searchFilters.sections,
           location,
           subsite,
         );
+        setSections(_sections);
+        new_filters.sections = parseFetchedSections(_sections, location);
       }
 
       if (searchFilters.parliamo_di?.length > 0) {
@@ -254,18 +263,22 @@ const Search = () => {
     doSearch(page);
   };
 
+  const titleSearchableText =
+    filters.searchableText?.trim()?.length > 0
+      ? '“' + filters.searchableText?.trim() + '“'
+      : '';
   return (
     <>
       <Helmet
         title={intl.formatMessage(messages.searchResults, {
-          searchableText: filters.searchableText?.trim(),
+          searchableText: titleSearchableText,
         })}
       />
       <div className="public-ui search-view" id="view">
         <Container className="px-4 mb-4">
           <h1>
             {intl.formatMessage(messages.searchResults, {
-              searchableText: filters.searchableText?.trim(),
+              searchableText: titleSearchableText,
             })}
           </h1>
 
@@ -314,7 +327,7 @@ const Search = () => {
 
                 {/* Filtri */}
                 {searchFilters?.a_chi_si_rivolge_tassonomia?.length > 0 && (
-                  <div className="column-filters mt-2 mb-4">
+                  <div className="column-filters mt-2 mb-5">
                     <SearchCheckbox
                       options={searchFilters.a_chi_si_rivolge_tassonomia}
                       setFilters={setFilters}
@@ -322,15 +335,24 @@ const Search = () => {
                       filterKey="a_chi_si_rivolge_tassonomia"
                       sectionTitle={intl.formatMessage(messages.label_utenti)}
                       collapsable={true}
+                      collapsableAfter={8}
                       ariaControls="search-results-region"
                     />
                   </div>
                 )}
-                <div className="column-filters mt-2 mb-4">
-                  ---qui ci vanno i filtri delle sections---
+                <div className="column-filters mt-2 mb-5">
+                  <SearchSections
+                    title={intl.formatMessage(messages.categories)}
+                    sections={sections}
+                    toggleGroups={true}
+                    value={filters.sections}
+                    setValue={(v) => {
+                      setFilters({ ...filters, sections: v });
+                    }}
+                  />
                 </div>
                 {searchFilters?.parliamo_di?.length > 0 && (
-                  <div className="column-filters mt-2 mb-4">
+                  <div className="column-filters mt-2 mb-5">
                     <SearchCheckbox
                       options={searchFilters.parliamo_di}
                       setFilters={setFilters}
@@ -340,12 +362,13 @@ const Search = () => {
                         messages.label_parliamo_di,
                       )}
                       collapsable={true}
+                      collapsableAfter={8}
                       ariaControls="search-results-region"
                     />
                   </div>
                 )}
                 {searchFilters?.portal_types?.length > 0 && (
-                  <div className="column-filters mt-2 mb-4">
+                  <div className="column-filters mt-2 mb-5">
                     <Button
                       color="primary"
                       outline
@@ -372,6 +395,7 @@ const Search = () => {
                             messages.label_portal_types,
                           )}
                           collapsable={true}
+                          collapsableAfter={8}
                           toggleAll={true}
                           toggleAll_aria={intl.formatMessage(
                             messages.select_all_cts,

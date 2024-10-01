@@ -38,7 +38,7 @@ const messages = defineMessages({
   },
   search_faq: {
     id: 'faq_search',
-    defaultMessage: 'Type in a keyword to find answers',
+    defaultMessage: 'Inserisci una parola chiave per trovare una risposta',
   },
 });
 

@@ -76,7 +76,7 @@ export const SearchResultItem = loadable(() =>
 );
 //Widgets
 export const Checkbox = loadable(() =>
-  import('io-sanita-theme/components/Widgets/Checkbox'),
+  import('io-sanita-theme/components/Widgets/Checkbox/Checkbox'),
 );
 export const FileWidget = loadable(() =>
   import('io-sanita-theme/components/Widgets/FileWidget'),
@@ -100,6 +100,11 @@ export const SearchBar = loadable(() =>
 export const SearchCheckbox = loadable(() =>
   import(
     /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchCheckbox'
+  ),
+);
+export const SearchSections = loadable(() =>
+  import(
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchSections/SearchSections'
   ),
 );
 

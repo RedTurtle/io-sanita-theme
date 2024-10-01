@@ -32,8 +32,8 @@ const messages = defineMessages({
     id: 'sort_relevance',
     defaultMessage: 'Rilevanza',
   },
-  created: {
-    id: 'sort_data_desc',
+  Date: {
+    id: 'sort_Date',
     defaultMessage: 'Data (prima i più recenti)',
   },
 });
@@ -61,8 +61,12 @@ const SortByWidget = ({
 
   // default titles
   options.forEach((item, index) => {
-    if (!item.title && messages[item.sort_on]) {
-      options[index].title = intl.formatMessage(messages[item.sort_on]);
+    if (!item.title) {
+      if (messages[item.sort_on]) {
+        options[index].title = intl.formatMessage(messages[item.sort_on]);
+      } else {
+        options[index].title = item.sort_on;
+      }
     }
   });
 
