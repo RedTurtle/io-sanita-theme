@@ -318,8 +318,8 @@ export default function applyConfig(config) {
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
-  config.settings.publicNonContentRoutes = [
-    ...(config.settings.publicNonContentRoutes ?? []),
+  config.settings.nonContentRoutesPublic = [
+    ...(config.settings.nonContentRoutesPublic ?? []),
     AGGREGATION_PAGE_ARGOMENTO,
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
