@@ -69,7 +69,8 @@
       .card.card-flex {
         flex-direction: column-reverse;
         .card-image {
-          aspect-ratio: 21/9;
+          flex: unset;
+          aspect-ratio: 21/11;
         }
       }
     }
