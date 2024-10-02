@@ -1,17 +1,13 @@
 /**
  * Customizzazione:
  * - test empty fields like dataGrid and blocks field (getRealEmptyField)
- * - validazione del ct Evento
  * - Supporto alla validazione dei campi DataGridField
  */
 import { map, uniq, keys, intersection, isEmpty } from 'lodash';
 import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';
-import {
-  getRealEmptyField,
-  eventFormValidationHelper,
-} from 'io-sanita-theme/helpers/FormValidation/FormValidation';
+import { getRealEmptyField } from 'io-sanita-theme/helpers/FormValidation/FormValidation';
 
 import config from '@plone/volto/registry';
 
@@ -68,16 +64,6 @@ const validateRequiredFields = (
       // per poterlo modificare tre righe più giù
       schema.required.slice()
     : intersection(schema.required, keys(touchedField));
-
-  //Custom: validazione del ct Evento
-  eventFormValidationHelper(
-    schema,
-    formData,
-    touchedField,
-    fields,
-    errors,
-    formatMessage,
-  );
 
   const uniqueFields = uniq(fields);
 

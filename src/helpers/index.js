@@ -40,7 +40,6 @@ export DownloadFileFormat from 'io-sanita-theme/helpers/Files/DownloadFileFormat
 export {
   blocksFieldIsEmpty,
   getRealEmptyField,
-  eventFormValidationHelper,
 } from 'io-sanita-theme/helpers/FormValidation/FormValidation';
 
 //richtext

@@ -109,6 +109,16 @@ msgstr ""
 msgid "Etichetta path filter"
 msgstr ""
 
+#. Default: "Event end date must be on or after {startDateValueOrStartFieldName}"
+#: helpers/Translations/overrideTranslations
+msgid "Event end date must be on or after {startDateValueOrStartFieldName}"
+msgstr ""
+
+#. Default: "Event start date must be on or before {endDateValueOrEndFieldName}"
+#: helpers/Translations/overrideTranslations
+msgid "Event start date must be on or before {endDateValueOrEndFieldName}"
+msgstr ""
+
 #. Default: "Non ho trovato la risposta che cercavi"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "Faq Folder: Nessun risultato trovato"
@@ -920,7 +930,7 @@ msgstr "Other informations"
 msgid "expire"
 msgstr "Expire"
 
-#. Default: "Type in a keyword to find answers"
+#. Default: "Inserisci una parola chiave per trovare una risposta"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "faq_search"
 msgstr "Type in a keyword to find answers"
@@ -1671,12 +1681,17 @@ msgstr "Search"
 msgid "searchContentIn"
 msgstr "Search contents in"
 
+#. Default: "Cerca nella sezione"
+#: components/Widgets/SearchSections/SearchSections
+msgid "searchInSection"
+msgstr ""
+
 #. Default: "Cerca nel sito"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
 msgstr "Search site"
 
-#. Default: "Risultati ricerca “{searchableText}“"
+#. Default: "Risultati ricerca {searchableText}"
 #: components/Search/Search
 msgid "search_Search results"
 msgstr ""
@@ -1985,6 +2000,11 @@ msgstr "Results"
 #. Default: "Rimuovi tutti i filtri"
 #: components/Search/Search
 msgid "search_remove_all_filters"
+msgstr ""
+
+#. Default: "Categorie"
+#: components/Search/Search
+msgid "search_sections"
 msgstr ""
 
 #. Default: "Mostra i risultati"
@@ -2425,15 +2445,15 @@ msgstr ""
 msgid "slidesToShow"
 msgstr ""
 
+#. Default: "Data (prima i più recenti)"
+#: components/Widgets/SortByWidget/SortByWidget
+msgid "sort_Date"
+msgstr ""
+
 #. Default: "Ordina per"
 #: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_by"
 msgstr "Order by"
-
-#. Default: "Data (prima i più recenti)"
-#: components/Widgets/SortByWidget/SortByWidget
-msgid "sort_data_desc"
-msgstr "Date (newest first)"
 
 #. Default: "Alfabeticamente"
 #: components/Widgets/SortByWidget/SortByWidget
@@ -2590,11 +2610,6 @@ msgstr ""
 #: components/View/Bando/BandoDate
 msgid "tempi_e_scadenze"
 msgstr "Times and deadlines"
-
-#. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
-#: helpers/FormValidation/DataGrid
-msgid "timeline_tempi_scadenze_validation_error"
-msgstr ""
 
 #. Default: "Tipologia del bando"
 #: components/View/Bando/BandoTipologia
