@@ -10,7 +10,7 @@
       display: flex;
       overflow: scroll;
       button {
-        flex: 1 0 auto;
+        flex: 0 0 auto;
       }
       .chip.chip-primary.active {
         background-color: var(--bs-primary);
