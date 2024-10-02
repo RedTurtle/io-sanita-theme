@@ -169,7 +169,7 @@ body.cms-ui {
   }
 
   .public-ui:not(:has(.it-header-wrapper)) {
-    a:not(.btn):not(.card a) {
+    a:not(.btn):not(.card a):not(.read-more) {
       color: $link-color;
     }
   }

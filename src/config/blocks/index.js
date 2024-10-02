@@ -1,6 +1,7 @@
 import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
+import heroSVG from '@plone/volto/icons/hero.svg';
 import {
   BreakView,
   BreakEdit,
@@ -15,6 +16,8 @@ import {
   CalloutEdit,
   QuickSearchEdit,
   QuickSearchView,
+  HeroView,
+  HeroEdit,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -52,6 +55,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
       listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
+    },
+    hero: {
+      id: 'hero',
+      title: 'Hero',
+      icon: heroSVG,
+      group: 'text',
+      view: HeroView,
+      edit: HeroEdit,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
     },
     callout_block: {
       id: 'callout_block',
