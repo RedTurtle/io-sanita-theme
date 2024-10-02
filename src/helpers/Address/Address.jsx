@@ -1,6 +1,7 @@
 /*TODO:
 - implementare il calcolo della distanza
 */
+import React from 'react';
 import { Icon } from 'io-sanita-theme/components';
 
 const Address = ({ item, showAddress = true, showDistance, tag }) => {
@@ -9,13 +10,18 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
     .filter(Boolean)
     .join(' - ');
   const AddressWrapperTag = tag ?? React.Fragment;
+  // BBB: area_territoriale is an object or a string ... so we need to check
+  const area_territoriale =
+    typeof item.area_territoriale === 'object'
+      ? item.area_territoriale.value
+      : item.area_territoriale;
 
   return item.street?.length > 0 || address_row_2.length ? (
     <>
       {showAddress && (
         <AddressWrapperTag>
           {item.street}
-          {item.area_territoriale && (
+          {area_territoriale && (
             <>
               <br />
               {item.area_territoriale}
