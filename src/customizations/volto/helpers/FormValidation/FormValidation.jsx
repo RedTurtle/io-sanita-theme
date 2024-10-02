@@ -339,6 +339,8 @@ class FormValidation {
   }
 }
 
+export default FormValidation;
+
 /**
  * Check if a file upload is within the maximum size limit.
  * @param {File} file
@@ -365,4 +367,12 @@ export const validateFileUploadSize = (file, intlFunc) => {
   return isValid;
 };
 
-export default FormValidation;
+/**
+ * Extract invariant errors given an array of errors.
+ * @param {Array} erros
+ */
+export const extractInvariantErrors = (erros) => {
+  return erros
+    .filter((errorItem) => !('field' in errorItem))
+    .map((errorItem) => errorItem['message']);
+};
