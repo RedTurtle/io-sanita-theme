@@ -13,7 +13,7 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
   // BBB: area_territoriale is an object or a string ... so we need to check
   const area_territoriale =
     typeof item.area_territoriale === 'object'
-      ? item.area_territoriale.value
+      ? item.area_territoriale && item.area_territoriale.value
       : item.area_territoriale;
 
   return item.street?.length > 0 || address_row_2.length ? (
