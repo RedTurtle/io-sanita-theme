@@ -35,6 +35,7 @@ const SearchBlockEdit = (props) => {
     intl,
     onTriggerSearch,
     querystring = {},
+    blocksErrors,
   } = props;
   const { sortable_indexes = {} } = querystring;
 
@@ -92,6 +93,7 @@ const SearchBlockEdit = (props) => {
           }}
           onChangeBlock={onChangeBlock}
           formData={data}
+          errors={blocksErrors}
         />
       </SidebarPortal>
     </>

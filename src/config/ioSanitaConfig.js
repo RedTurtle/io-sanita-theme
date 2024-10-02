@@ -40,6 +40,7 @@ import {
   FileWidget,
 } from 'io-sanita-theme/components';
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
+import { registerIOSanitaValidators } from 'io-sanita-theme/config/validators';
 
 import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
 
@@ -278,6 +279,9 @@ export default function applyConfig(config) {
     ...config.addonReducers,
     ...reducers,
   };
+
+  // VALIDATORS
+  registerIOSanitaValidators(config);
 
   // ROUTES
   config.addonRoutes = [

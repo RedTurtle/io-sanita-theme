@@ -43,12 +43,6 @@ export {
   eventFormValidationHelper,
 } from 'io-sanita-theme/helpers/FormValidation/FormValidation';
 
-export {
-  CUSTOM_DGFIELD_VALIDATION,
-  realWidgetType,
-  getSpecificDataGridFieldValidation,
-} from 'io-sanita-theme/helpers/FormValidation/DataGrid';
-
 //richtext
 export RichText from 'io-sanita-theme/helpers/RichText/RichText';
 export RichTextRender from 'io-sanita-theme/helpers/RichText/RichTextRender';
