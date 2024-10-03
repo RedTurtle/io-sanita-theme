@@ -32,6 +32,11 @@ msgstr ""
 msgid "Bando"
 msgstr "Bando"
 
+#. Default: "Browse"
+#: components/Blocks/Hero/Edit
+msgid "Browse"
+msgstr ""
+
 #. Default: "Callout"
 #: components/Blocks/Callout/Sidebar
 msgid "Callout"
@@ -99,6 +104,11 @@ msgstr "Dal {start}"
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Dal {start} al {end}"
 
+#. Default: "Description"
+#: components/Blocks/Hero/Edit
+msgid "Description"
+msgstr ""
+
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
@@ -139,6 +149,11 @@ msgstr ""
 msgid "Headline"
 msgstr ""
 
+#. Default: "Hero"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Hero"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
@@ -154,6 +169,11 @@ msgstr ""
 #: config/blocks/listing/ListingOptions/linkMoreOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "ID Lighthouse Help Description"
+msgstr ""
+
+#. Default: "Image"
+#: components/Blocks/Hero/Edit
+msgid "Image"
 msgstr ""
 
 #. Default: "Impostazioni cookie"
@@ -181,6 +201,21 @@ msgstr "Iscriviti per ricevere la newsletter"
 msgid "L'evento non si terrà nelle seguenti date"
 msgstr ""
 
+#. Default: "Link a"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Link to"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "LinkMore"
+msgstr ""
+
+#. Default: "Testo per il link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Linkto title"
+msgstr ""
+
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader
 msgid "Loading page..."
@@ -203,6 +238,7 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #. Default: "Mostra lo sfondo del blocco"
+#: components/Blocks/Hero/HeroSidebar
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra lo sfondo del blocco"
@@ -222,6 +258,11 @@ msgstr ""
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
 msgstr "- apri in nuova scheda"
+
+#. Default: "Apri in un nuovo tab"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Open in a new tab"
+msgstr ""
 
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
@@ -328,6 +369,11 @@ msgstr "Grazie."
 msgid "Tipi di contenuto"
 msgstr ""
 
+#. Default: "Title"
+#: components/Blocks/Hero/Edit
+msgid "Title"
+msgstr ""
+
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "Titolo"
@@ -368,6 +414,16 @@ msgstr "Non autorizzato"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Upload a new image"
+#: components/Blocks/Hero/Edit
+msgid "Upload a new image"
+msgstr ""
+
+#. Default: "Uploading image"
+#: components/Blocks/Hero/Edit
+msgid "Uploading image"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -432,6 +488,11 @@ msgstr ""
 #. Default: "Apertura del bando"
 #: components/View/Bando/Dates
 msgid "apertura_bando"
+msgstr ""
+
+#. Default: "APPStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "appStoreLink"
 msgstr ""
 
 #. Default: "Allegato"
@@ -1102,6 +1163,11 @@ msgstr "I campi contrassegnati da (*) sono obbligatori."
 msgid "link"
 msgstr ""
 
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/StoresButtons
+msgid "linkMore"
+msgstr ""
+
 #. Default: "LinkedIn"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "linkedin"
@@ -1502,6 +1568,11 @@ msgstr ""
 #. Default: "Unità operativa di appartenenza"
 #: components/View/Persona/PersonaUOAppartenenza
 msgid "persona_uo_appartenenza"
+msgstr ""
+
+#. Default: "PlayStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "playStoreLink"
 msgstr ""
 
 #. Default: "Precedente"
@@ -2714,6 +2785,11 @@ msgstr ""
 #. Default: "Strutture"
 #: components/View/UOView/UOStrutture
 msgid "uo_strutture"
+msgstr ""
+
+#. Default: "Servizi o uffici interni"
+#: components/View/UOView/UOUfficiInterni
+msgid "uo_uffici_interni"
 msgstr ""
 
 #. Default: "Data di aggiornamento"

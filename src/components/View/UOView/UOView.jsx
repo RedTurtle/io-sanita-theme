@@ -19,6 +19,7 @@ import {
   UOCompetenze,
   UOStrutture,
   UONotizie,
+  UOUfficiInterni,
 } from 'io-sanita-theme/components/View/UOView';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -38,6 +39,7 @@ export const UOViewSectionsOrder = [
   { /* DOVE - STRUTTURE */ component: UODove },
   { /* DATE E ORARI */ component: UODateOrari },
   { /* FA PARTE DI */ component: UOFaParteDi },
+  { /* SERVIZI O UFFICI INTERNI*/ component: UOUfficiInterni },
   { /* RESPONSABILE */ component: UOResponsabile },
   { /* SERVIZI */ component: UOServizi },
   { /* STRUTTURE */ component: UOStrutture },

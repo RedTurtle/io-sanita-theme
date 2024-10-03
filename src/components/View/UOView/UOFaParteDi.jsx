@@ -7,9 +7,6 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
 import { RichTextSection } from 'io-sanita-theme/helpers';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContent, resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import { CardPlace } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
@@ -21,30 +18,9 @@ const messages = defineMessages({
 
 const UOFaParteDi = ({ content }) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
-
-  // TO DO: rimuovere la chiamata alla fullobject quando il BE passerà tutti i dati dentro a content.parent
 
   const parentUO =
     content?.parent['@type'] === 'UnitaOrganizzativa' ? content?.parent : null;
-
-  const searchUO = useSelector((state) => state.content?.subrequests);
-
-  // one request is made for parentUO
-  useEffect(() => {
-    if (parentUO) {
-      const url = flattenToAppURL(parentUO['@id']);
-      const loaded = searchUO?.[url]?.loading || searchUO?.[url]?.loaded;
-      if (!loaded) {
-        dispatch(getContent(url, null, url));
-      }
-    }
-    return () => {
-      if (parentUO) {
-        dispatch(resetContent(flattenToAppURL(parentUO['@id'])));
-      }
-    };
-  }, [content]);
 
   return parentUO ? (
     <RichTextSection
@@ -53,7 +29,7 @@ const UOFaParteDi = ({ content }) => {
     >
       <Row>
         <Col lg={6} className="py-lg-2">
-          <CardPlace item={parentUO} />
+          <CardPlace item={parentUO} type="synthetic" />
         </Col>
       </Row>
     </RichTextSection>

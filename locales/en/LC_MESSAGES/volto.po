@@ -25,12 +25,17 @@ msgstr ""
 #. Default: "Attenzione!"
 #: components/Search/Search
 msgid "Attenzione!"
-msgstr ""
+msgstr "Attention!"
 
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
 msgstr "Notice"
+
+#. Default: "Browse"
+#: components/Blocks/Hero/Edit
+msgid "Browse"
+msgstr ""
 
 #. Default: "Callout"
 #: components/Blocks/Callout/Sidebar
@@ -56,12 +61,12 @@ msgstr "Search"
 #. Default: "Pulisci i campi"
 #: overrideTranslations
 msgid "Clear dates"
-msgstr ""
+msgstr "Clear dates"
 
 #. Default: "Clear filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Clear filters"
-msgstr ""
+msgstr "Clear filters"
 
 #. Default: "Clicca qui per sostituire il file"
 #: components/Widgets/FileWidget
@@ -99,6 +104,11 @@ msgstr "Starting from {start}"
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Between {start} and {end}"
 
+#. Default: "Description"
+#: components/Blocks/Hero/Edit
+msgid "Description"
+msgstr ""
+
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
@@ -122,7 +132,7 @@ msgstr ""
 #. Default: "Non ho trovato la risposta che cercavi"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "Faq Folder: Nessun risultato trovato"
-msgstr ""
+msgstr "I didn't find the answer you were looking for"
 
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
@@ -137,6 +147,11 @@ msgstr ""
 #. Default: "Headline"
 #: components/Blocks/HTML/schema
 msgid "Headline"
+msgstr ""
+
+#. Default: "Hero"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Hero"
 msgstr ""
 
 #. Default: "Home"
@@ -154,6 +169,11 @@ msgstr ""
 #: config/blocks/listing/ListingOptions/linkMoreOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "ID Lighthouse Help Description"
+msgstr ""
+
+#. Default: "Image"
+#: components/Blocks/Hero/Edit
+msgid "Image"
 msgstr ""
 
 #. Default: "Impostazioni cookie"
@@ -181,6 +201,21 @@ msgstr "Subscribe to receive newsletter"
 msgid "L'evento non si terrà nelle seguenti date"
 msgstr "The event will not be held on the following dates"
 
+#. Default: "Link a"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Link to"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "LinkMore"
+msgstr ""
+
+#. Default: "Testo per il link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Linkto title"
+msgstr ""
+
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader
 msgid "Loading page..."
@@ -203,6 +238,7 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #. Default: "Mostra lo sfondo del blocco"
+#: components/Blocks/Hero/HeroSidebar
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra lo sfondo del blocco"
@@ -222,6 +258,11 @@ msgstr "There are no points to show on the map"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
 msgstr "- open in a new tab"
+
+#. Default: "Apri in un nuovo tab"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Open in a new tab"
+msgstr "Open in a new tab"
 
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
@@ -246,7 +287,7 @@ msgstr ""
 #. Default: "Seleziona per riprodurre lo slider"
 #: components/Slider/ButtonPlayPause
 msgid "Play slider"
-msgstr ""
+msgstr "Select to play slider"
 
 #. Default: "Pagina precedente"
 #: components/Pagination/PaginationItem
@@ -306,12 +347,12 @@ msgstr "Select a file"
 #. Default: "Servizio disponibile e prenotabile"
 #: components/View/commons/PageHeader/PageHeaderStatoServizio
 msgid "Service available"
-msgstr ""
+msgstr "Available and bookable service"
 
 #. Default: "Sono occorsi degli errori"
 #: components/Search/Search
 msgid "Sono occorsi degli errori"
-msgstr ""
+msgstr "Some errors occurued"
 
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
@@ -326,6 +367,11 @@ msgstr ""
 #. Default: "Tipi di contenuto"
 #: components/View/AggregationPage/SideMenu
 msgid "Tipi di contenuto"
+msgstr ""
+
+#. Default: "Title"
+#: components/Blocks/Hero/Edit
+msgid "Title"
 msgstr ""
 
 #. Default: "Titolo"
@@ -368,6 +414,16 @@ msgstr ""
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Upload a new image"
+#: components/Blocks/Hero/Edit
+msgid "Upload a new image"
+msgstr ""
+
+#. Default: "Uploading image"
+#: components/Blocks/Hero/Edit
+msgid "Uploading image"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -434,6 +490,11 @@ msgstr "Government"
 msgid "apertura_bando"
 msgstr "Opening date"
 
+#. Default: "APPStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "appStoreLink"
+msgstr ""
+
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -462,92 +523,92 @@ msgstr ""
 #. Default: "Usa le frecce Su e Giu per scegliere un'opzione"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_Use Up and Down to choose options"
-msgstr ""
+msgstr "Use up and down buttons to select an option"
 
 #. Default: "Annulla"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select cancel"
-msgstr ""
+msgstr "Cancel"
 
 #. Default: "deselezionata"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select deselected"
-msgstr ""
+msgstr "deselected"
 
 #. Default: "disabilitato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select disabled"
-msgstr ""
+msgstr "disabled"
 
 #. Default: "evidenziato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select focused"
-msgstr ""
+msgstr "focused"
 
 #. Default: "per la ricerca"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select for search term"
-msgstr ""
+msgstr "to search term"
 
 #. Default: "è disabilitata. Seleziona un'altra opzione"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select is disabled. Select another option."
-msgstr ""
+msgstr "is disabled. Select another option."
 
 #. Default: "opzione"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select option"
-msgstr ""
+msgstr "option"
 
 #. Default: "selezionata"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select selected"
-msgstr ""
+msgstr "selected"
 
 #. Default: "valore"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select value"
-msgstr ""
+msgstr "value"
 
 #. Default: "Usa le frecce destra e sinistra per attivare o disattivare i valori evidenziati, premi Backspace per rimuovere il valore corrente evidenziato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
-msgstr ""
+msgstr "Use left and right to toggle between focused values, press Backspace to remove the currently focused value"
 
 #. Default: "premi Tab per selezionare l'opzione e uscire dal menu"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select__press Tab to select the option and exit the menu"
-msgstr ""
+msgstr "press Tab to select the option and exit the menu"
 
 #. Default: "digita per filtrare la lista"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select__type to refine list"
-msgstr ""
+msgstr "type to refine list"
 
 #. Default: "è selezionato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_is_focused"
-msgstr ""
+msgstr "is focused"
 
 #. Default: "premi freccia giu per aprire il menu, premi Backspace per rimuovere il valore selezionato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_press Down to open the menu"
-msgstr ""
+msgstr "press Down to open the menu"
 
 #. Default: "premi Invio per selezionare l'opzione corrente"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_press Enter to select the currently focused option"
-msgstr ""
+msgstr "press Enter to select the currently focused option"
 
 #. Default: "premi Esc per uscire dal menu"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_press Escape to exit the menu"
-msgstr ""
+msgstr "press Escape to exit the menu"
 
 #. Default: "premi la freccia a sinistra per evidenziare i valori selezionati"
 #: components/Widgets/SelectInput/SelectInput
 msgid "ay11_select_press left to focus selected values"
-msgstr ""
+msgstr "press left to focus selected values"
 
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
@@ -638,7 +699,7 @@ msgstr ""
 #: components/Cards/CardFile/CardFile
 #: components/Cards/CardFile/Module
 msgid "card_file_last_update"
-msgstr ""
+msgstr "Last update:"
 
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
@@ -653,17 +714,17 @@ msgstr "Slide"
 #. Default: "Formati scaricabili"
 #: components/View/CartellaModulistica/CartellaModulisticaView
 msgid "cartellamodulistica_formati_scaricabili"
-msgstr ""
+msgstr "Downloadable formats"
 
 #. Default: "Inserisci una parola chiave, ad esempio 'Modulo'"
 #: components/View/CartellaModulistica/SearchBar
 msgid "cartellamodulistica_search_description"
-msgstr ""
+msgstr "Enter a keyword, such as 'Module'"
 
 #. Default: "Cerca un modulo"
 #: components/View/CartellaModulistica/SearchBar
 msgid "cartellamodulistica_search_title"
-msgstr ""
+msgstr "Search a module"
 
 #. Default: "Icona categoria"
 #: components/Cards/common/CardCategoryTop
@@ -693,7 +754,7 @@ msgstr ""
 #. Default: "Chiudi menu"
 #: components/layout/Navigation/CollapseNavigation
 msgid "close-menu"
-msgstr ""
+msgstr "Close menu"
 
 #. Default: "Chiudi cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -703,7 +764,7 @@ msgstr "Close search"
 #. Default: "Indietro"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "closeSearchBack"
-msgstr ""
+msgstr "Back"
 
 #. Default: "Colore"
 #: components/Blocks/Callout/Sidebar
@@ -798,7 +859,7 @@ msgstr "What is it"
 #. Default: "File e collegamenti"
 #: components/View/Documento/DocumentoDocumenti
 msgid "documento_documenti"
-msgstr ""
+msgstr "Files and documents"
 
 #. Default: "Protocollo {protocollo} del {data_protocollo}"
 #: components/View/commons/PageHeader/PageHeaderDocumento
@@ -828,7 +889,7 @@ msgstr ""
 #. Default: "Apri il menu"
 #: components/Widgets/SelectInput/SelectInput
 msgid "dropdown_indicator"
-msgstr ""
+msgstr "Open menu"
 
 #. Default: "Close menu"
 #: components/layout/Navigation/MegaMenu/MegaMenu
@@ -938,82 +999,82 @@ msgstr "Type in a keyword to find answers"
 #. Default: "Area territoriale"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_area_territoriale"
-msgstr ""
+msgstr "Territorial area"
 
 #. Default: "Circoscrizione"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_circoscrizione"
-msgstr ""
+msgstr "Constituency"
 
 #. Default: "Comune"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_comune"
-msgstr ""
+msgstr "Municipality"
 
 #. Default: "Contatti"
 #: components/View/Farmacia/FarmaciaContatti
 msgid "farmacia_contatti"
-msgstr ""
+msgstr "Contacts"
 
 #. Default: "Dove"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_dove"
-msgstr ""
+msgstr "Where"
 
 #. Default: "Ferie"
 #: components/View/Farmacia/FarmaciaFerie
 msgid "farmacia_ferie"
-msgstr ""
+msgstr "Holidays"
 
 #. Default: "Dal"
 #: components/View/Farmacia/FarmaciaFerie
 msgid "farmacia_ferie_from"
-msgstr ""
+msgstr "From"
 
 #. Default: "Al"
 #: components/View/Farmacia/FarmaciaFerie
 msgid "farmacia_ferie_to"
-msgstr ""
+msgstr "To"
 
 #. Default: "Località"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_localita"
-msgstr ""
+msgstr "Location"
 
 #. Default: "Quartiere"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_quartiere"
-msgstr ""
+msgstr "Neighborhood"
 
 #. Default: "Telefono"
 #: components/View/Farmacia/FarmaciaContatti
 msgid "farmacia_riferimento_telefonico"
-msgstr ""
+msgstr "Phone"
 
 #. Default: "Telefono turno"
 #: components/View/Farmacia/FarmaciaContatti
 msgid "farmacia_riferimento_telefonico_turno"
-msgstr ""
+msgstr "Shift phone"
 
 #. Default: "Turni"
 #: components/View/Farmacia/FarmaciaTurni
 msgid "farmacia_turni"
-msgstr ""
+msgstr "Shifts"
 
 #. Default: "Dal"
 #: components/View/Farmacia/FarmaciaTurni
 msgid "farmacia_turni_from"
-msgstr ""
+msgstr "From"
 
 #. Default: "Al"
 #: components/View/Farmacia/FarmaciaTurni
 msgid "farmacia_turni_to"
-msgstr ""
+msgstr "To"
 
 #. Default: "Filtri"
 #: components/Search/Search
 msgid "filtersCollapse"
-msgstr ""
+msgstr "Filters"
 
 #. Default: "Annulla"
 #: overrideTranslations
@@ -1029,7 +1090,7 @@ msgstr "Restart"
 #: components/Search/Search
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "found_n_results"
-msgstr ""
+msgstr "{total} results."
 
 #. Default: "dal"
 #: helpers/dates
@@ -1101,6 +1162,11 @@ msgstr "Fields marked with (*) are required."
 #: components/Cards/CardFile/CardFile
 msgid "link"
 msgstr "Link"
+
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/StoresButtons
+msgid "linkMore"
+msgstr ""
 
 #. Default: "LinkedIn"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
@@ -1331,7 +1397,7 @@ msgstr "This event has an open/variable end date."
 #. Default: "Ordina per"
 #: components/Search/Search
 msgid "order_by"
-msgstr ""
+msgstr "Order by"
 
 #. Default: "Organizzato da"
 #: components/View/Evento/EventoOrganizzatoDa
@@ -1503,6 +1569,11 @@ msgstr "Structures in which it operates"
 #: components/View/Persona/PersonaUOAppartenenza
 msgid "persona_uo_appartenenza"
 msgstr "Operational unit to which you belong"
+
+#. Default: "PlayStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "playStoreLink"
+msgstr ""
 
 #. Default: "Precedente"
 #: components/Slider/PrevArrow
@@ -1699,7 +1770,7 @@ msgstr ""
 #. Default: "Filtri avanzati"
 #: components/Search/Search
 msgid "search_adv_filters"
-msgstr ""
+msgstr "Advanced filters"
 
 #. Default: "Ricerca"
 #: config/ioSanitaConfig
@@ -1709,83 +1780,83 @@ msgstr "Search"
 #. Default: "{filterNumber} filtri attivati"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_active_filters"
-msgstr ""
+msgstr "{filterNumber} active filters"
 
 #. Default: "argomenti"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_default_title"
-msgstr ""
+msgstr "arguments"
 
 #. Default: "Nascondi"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_hide_all"
-msgstr ""
+msgstr "Hide"
 
 #. Default: "Cerca per"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_search_to"
-msgstr ""
+msgstr "Search for"
 
 #. Default: "Seleziona tutti o nessuno"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_select_all"
-msgstr ""
+msgstr "Select all or none"
 
 #. Default: "Mostra tutto"
 #: components/Widgets/SearchCheckbox
 msgid "search_checkbox_show_all"
-msgstr ""
+msgstr "Show all"
 
 #. Default: "Chiudi"
 #: components/Search/Search
 msgid "search_close_filters"
-msgstr ""
+msgstr "Close"
 
 #. Default: "Area territoriale"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_area_territoriale"
-msgstr ""
+msgstr "Territorial area"
 
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_comune"
-msgstr ""
+msgstr "Municipality"
 
 #. Default: "Seleziona il giorno"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_date"
-msgstr ""
+msgstr "Select day"
 
 #. Default: "Località"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_localita"
-msgstr ""
+msgstr "Location"
 
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchFarmacia/Body
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_no_results"
-msgstr ""
+msgstr "No results found"
 
 #. Default: "Dal"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_period_from"
-msgstr ""
+msgstr "From"
 
 #. Default: "al"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_period_to"
-msgstr ""
+msgstr "to"
 
 #. Default: "Risultati"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_results"
-msgstr ""
+msgstr "Results"
 
 #. Default: "Cerca per parola chiave"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_search_keyword"
-msgstr ""
+msgstr "Search by keyword"
 
 #. Default: "Tipologia di ricerca"
 #: components/Blocks/SearchFarmacia/schema
@@ -1795,27 +1866,27 @@ msgstr ""
 #. Default: "Inserisci il nome della farmacia"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_searchable_text_description"
-msgstr ""
+msgstr "Enter the name of the pharmacy"
 
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_comune"
-msgstr ""
+msgstr "Municipality"
 
 #. Default: "Località"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_localita"
-msgstr ""
+msgstr "Location"
 
 #. Default: "Denominazione Farmacia"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_nome"
-msgstr ""
+msgstr "Pharmacy name"
 
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_comune"
-msgstr ""
+msgstr "Municipality"
 
 #. Default: "Municipality"
 #: components/Blocks/SearchFarmacia/Results
@@ -1825,7 +1896,7 @@ msgstr ""
 #. Default: "Periodi di Ferie"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_ferie"
-msgstr ""
+msgstr "Holiday periods"
 
 #. Default: "Vacations"
 #: components/Blocks/SearchFarmacia/Results
@@ -1835,7 +1906,7 @@ msgstr ""
 #. Default: "Indirizzo"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_indirizzo"
-msgstr ""
+msgstr "Address"
 
 #. Default: "Address"
 #: components/Blocks/SearchFarmacia/Results
@@ -1845,7 +1916,7 @@ msgstr ""
 #. Default: "Località"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_localita"
-msgstr ""
+msgstr "Location"
 
 #. Default: "Locality"
 #: components/Blocks/SearchFarmacia/Results
@@ -1855,7 +1926,7 @@ msgstr ""
 #. Default: "Denominazione Farmacia"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_nome"
-msgstr ""
+msgstr "Pharmacy name"
 
 #. Default: "Pharmacy name"
 #: components/Blocks/SearchFarmacia/Results
@@ -1865,7 +1936,7 @@ msgstr ""
 #. Default: "Recapiti"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti"
-msgstr ""
+msgstr "Contact numbers"
 
 #. Default: "Contact numbers"
 #: components/Blocks/SearchFarmacia/Results
@@ -1875,7 +1946,7 @@ msgstr ""
 #. Default: "Periodi di Turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni"
-msgstr ""
+msgstr "Shifts periods"
 
 #. Default: "Shifts periods"
 #: components/Blocks/SearchFarmacia/Results
@@ -1885,12 +1956,12 @@ msgstr ""
 #. Default: "Telefono"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_telefono"
-msgstr ""
+msgstr "Phone"
 
 #. Default: "Telefono turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_telefono_turno"
-msgstr ""
+msgstr "Shift phone"
 
 #. Default: "Titolo"
 #: components/Blocks/SearchFarmacia/schema
@@ -1900,22 +1971,22 @@ msgstr ""
 #. Default: "Cerca nel sito"
 #: components/Search/Search
 msgid "search_input_title"
-msgstr ""
+msgstr "Search site"
 
 #. Default: "Argomenti"
 #: components/Search/Search
 msgid "search_label_parliamo_di"
-msgstr ""
+msgstr "Let's talk about"
 
 #. Default: "Tipologia"
 #: components/Search/Search
 msgid "search_label_portal_types"
-msgstr ""
+msgstr "Type"
 
 #. Default: "Utenti"
 #: components/Search/Search
 msgid "search_label_utenti"
-msgstr ""
+msgstr "Users"
 
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
@@ -2005,42 +2076,42 @@ msgstr ""
 #. Default: "Categorie"
 #: components/Search/Search
 msgid "search_sections"
-msgstr ""
+msgstr "Categories"
 
 #. Default: "Mostra i risultati"
 #: components/Search/Search
 msgid "search_show_results_close_filters"
-msgstr ""
+msgstr "Show results"
 
 #. Default: "Vai ai risultati di ricerca"
 #: components/Search/Search
 msgid "search_skip_to_search_results"
-msgstr ""
+msgstr "Go to search results"
 
 #. Default: "Filtri"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_btn_filters_label"
-msgstr ""
+msgstr "Filters"
 
 #. Default: "utenti"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_label_utenti"
-msgstr ""
+msgstr "users"
 
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_no_results"
-msgstr ""
+msgstr "No results found"
 
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchServiziProcedure/schema
 msgid "search_sp_portal_type"
-msgstr ""
+msgstr "Type"
 
 #. Default: "Risultati"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_results"
-msgstr ""
+msgstr "Results"
 
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchServiziProcedure/schema
@@ -2050,27 +2121,27 @@ msgstr ""
 #. Default: "*Inserisci parole chiave, ad esempio “Richiedere esenzioni”"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_searchable_description_procedura"
-msgstr ""
+msgstr "*Enter keywords, for example “Request exemptions”"
 
 #. Default: "*Inserisci parole chiave, ad esempio “Risonanza magnetica”"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_searchable_description_servizi"
-msgstr ""
+msgstr "*Enter keywords, for example “Magnetic Resonance Imaging”"
 
 #. Default: "Cerca una procedura"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_searchable_text_default_label_procedura"
-msgstr ""
+msgstr "Look for a procedure"
 
 #. Default: "Cerca un servizio o una prestazione"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_searchable_text_default_label_servizi"
-msgstr ""
+msgstr "Search for a service or benefit"
 
 #. Default: "Seleziona filtri"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_show_filters"
-msgstr ""
+msgstr "Select filters"
 
 #. Default: "Titolo"
 #: components/Blocks/SearchServiziProcedure/schema
@@ -2080,7 +2151,7 @@ msgstr ""
 #. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
 #: components/Widgets/SearchBar/SearchBar
 msgid "search_text_searchable_text_decription"
-msgstr ""
+msgstr "*Enter keywords, for example “Vaccinations”"
 
 #. Default: "Ricerca per: <em>{searchedtext}</em>."
 #: helpers/Translations/searchBlockExtendedTranslations
@@ -2160,17 +2231,17 @@ msgstr ""
 #. Default: "Nessuna opzione"
 #: components/Widgets/SelectInput/SelectInput
 msgid "select_noOptionsMessage"
-msgstr ""
+msgstr "No options"
 
 #. Default: "risultati"
 #: components/Widgets/SelectInput/SelectInput
 msgid "select_risultati"
-msgstr ""
+msgstr "results"
 
 #. Default: "risultato"
 #: components/Widgets/SelectInput/SelectInput
 msgid "select_risultato"
-msgstr ""
+msgstr "result"
 
 #. Default: "Servizio non attivo"
 #: components/View/commons/PageHeader/PageHeaderStatoServizio
@@ -2715,6 +2786,11 @@ msgstr "Services"
 #: components/View/UOView/UOStrutture
 msgid "uo_strutture"
 msgstr "Structures"
+
+#. Default: "Servizi o uffici interni"
+#: components/View/UOView/UOUfficiInterni
+msgid "uo_uffici_interni"
+msgstr "Services or internal offices"
 
 #. Default: "Data di aggiornamento"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault

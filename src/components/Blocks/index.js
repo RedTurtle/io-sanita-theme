@@ -30,6 +30,11 @@ export const SearchFarmaciaView = loadable(() =>
     /* webpackChunkName: "ISBlockSearchFarmacia" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/View'
   ),
 );
+export const HeroView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockHero" */ 'io-sanita-theme/components/Blocks/Hero/View'
+  ),
+);
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
@@ -87,6 +92,11 @@ const SearchServiziProcedureEdit = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Edit'
   ),
 );
+const HeroEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Hero/Edit'
+  ),
+);
 
 /*Sidebar*/
 const HTMLBlockSidebar = loadable(() =>
@@ -113,6 +123,7 @@ const SearchServiziProcedureSidebar = loadable(() =>
 export {
   BreakEdit,
   CalloutEdit,
+  HeroEdit,
   HTMLBlockSidebar,
   QuickSearchEdit,
   SearchMapEdit,

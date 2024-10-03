@@ -158,12 +158,12 @@ const Steps = ({ content, steps = [] }) => {
                   </div>
                 )}
 
-                {/* DOCUMENTI */}
-                {contentFolderHasItems(step, 'documenti') && (
+                {/* ALLEGATI */}
+                {contentFolderHasItems(step, 'allegati') && (
                   <Attachments
                     as_section={false}
                     content={step}
-                    folder_name="documenti"
+                    folder_name="allegati"
                     title={intl.formatMessage(messages.documents)}
                   />
                 )}
