@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { readAsDataURL } from 'promise-file-reader';
+import { Container } from 'design-react-kit';
 import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
 import { isEqual } from 'lodash';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -249,11 +250,7 @@ class EditComponent extends Component {
           }
         }}
       >
-        <div
-          className={cx('block hero', {
-            selected: this.props.selected,
-          })}
-        >
+        <Container>
           {this.props.selected &&
             this.props.editable &&
             !!this.props.data.url && (
@@ -332,7 +329,9 @@ class EditComponent extends Component {
                       this.setState(() => ({ currentFocused: f }));
                     }}
                     focusNextField={() => {
-                      this.setState(() => ({ currentFocused: 'description' }));
+                      this.setState(() => ({
+                        currentFocused: 'description',
+                      }));
                     }}
                   />
                 </h1>
@@ -360,7 +359,7 @@ class EditComponent extends Component {
               <StoresButtons data={this.props.data} />
             </div>
           </div>
-        </div>
+        </Container>
         <SidebarPortal selected={this.props.selected}>
           <HeroSidebar {...this.props} />
         </SidebarPortal>
