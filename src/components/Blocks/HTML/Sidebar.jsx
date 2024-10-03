@@ -2,8 +2,15 @@ import { useIntl } from 'react-intl';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
 
 const HTMLSidebar = (props) => {
-  const { block, blocksConfig, data, onChangeBlock, navRoot, contentType } =
-    props;
+  const {
+    block,
+    blocksConfig,
+    data,
+    onChangeBlock,
+    navRoot,
+    contentType,
+    blocksErrors,
+  } = props;
   const intl = useIntl();
 
   const schema = blocksConfig[data['@type']].schema({ intl });
@@ -30,6 +37,7 @@ const HTMLSidebar = (props) => {
       blocksConfig={blocksConfig}
       navRoot={navRoot}
       contentType={contentType}
+      errors={blocksErrors}
     />
   );
 };

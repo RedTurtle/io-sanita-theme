@@ -121,6 +121,16 @@ msgstr ""
 msgid "Etichetta path filter"
 msgstr ""
 
+#. Default: "Event end date must be on or after {startDateValueOrStartFieldName}"
+#: helpers/Translations/overrideTranslations
+msgid "Event end date must be on or after {startDateValueOrStartFieldName}"
+msgstr ""
+
+#. Default: "Event start date must be on or before {endDateValueOrEndFieldName}"
+#: helpers/Translations/overrideTranslations
+msgid "Event start date must be on or before {endDateValueOrEndFieldName}"
+msgstr ""
+
 #. Default: "Non ho trovato la risposta che cercavi"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "Faq Folder: Nessun risultato trovato"
@@ -2672,11 +2682,6 @@ msgstr ""
 #. Default: "Tempi e scadenze"
 #: components/View/Bando/BandoDate
 msgid "tempi_e_scadenze"
-msgstr ""
-
-#. Default: "Impossibile aggiungere un elemento alla timeline senza aver compilato il campo "Titolo""
-#: helpers/FormValidation/DataGrid
-msgid "timeline_tempi_scadenze_validation_error"
 msgstr ""
 
 #. Default: "Tipologia del bando"

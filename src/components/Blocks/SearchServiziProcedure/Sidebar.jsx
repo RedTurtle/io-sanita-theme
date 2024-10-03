@@ -10,6 +10,7 @@ const Sidebar = ({
   onChangeBlock,
   navRoot,
   contentType,
+  blocksErrors,
 }) => {
   const intl = useIntl();
 
@@ -40,6 +41,7 @@ const Sidebar = ({
         blocksConfig={blocksConfig}
         navRoot={navRoot}
         contentType={contentType}
+        errors={blocksErrors}
       />
     </>
   );

@@ -1,14 +1,6 @@
 import { isEmpty, filter } from 'lodash';
 import { defineMessages } from 'react-intl';
 
-const customValidationMessages = defineMessages({
-  event_end: {
-    id: 'event_end',
-    defaultMessage:
-      'La data di fine deve essere successiva alla data di inizio',
-  },
-});
-
 export const blocksFieldIsEmpty = (field) => {
   return (
     filter(field?.blocks, (block) => {
@@ -36,14 +28,6 @@ export const blocksFieldIsEmpty = (field) => {
     })?.length === 0
   );
 };
-
-const removeRequiredField = (fields, fieldId) =>
-  fields?.splice(
-    fields?.findIndex((f) => f === fieldId),
-    1,
-  );
-
-const fieldIsRequired = (fields, fieldId) => fields?.some((f) => f === fieldId);
 
 /**
  * Get if field is really empty or not.
@@ -85,38 +69,4 @@ export const getRealEmptyField = (
   } else {
     return isEmpty(formData[field]);
   }
-};
-
-
-/**
- * Validates form of Event CT
- * @param {object} schema schema
- * @param {object} formData formData values
- * @param {object} touchedField contains info on touched fields
- * @param {Array} fields required fields reference to update
- * @param {object} errors errors reference to update
- */
-export const eventFormValidationHelper = (
-  schema,
-  formData,
-  touchedField,
-  fields,
-  errors,
-  formatMessage,
-) => {
-  if (schema.title !== 'Evento') return;
-
-  if ('end' in touchedField && !isEmpty(formData.start)) {
-    if (new Date(touchedField.end) < new Date(formData.start)) {
-      errors['end'] = [];
-      errors['end'].push(formatMessage(customValidationMessages.event_end));
-    }
-  } else {
-    // check del form data
-    if (new Date(formData.end) < new Date(formData.start)) {
-      errors['end'] = [];
-      errors['end'].push(formatMessage(customValidationMessages.event_end));
-    }
-  }
-
 };

@@ -9,10 +9,10 @@ import { defineMessages, useIntl } from 'react-intl';
 import { withRouter, useLocation } from 'react-router-dom';
 import { Row, Col, Container, Button } from 'design-react-kit';
 
-import { Helmet, BodyClass, getBaseUrl } from '@plone/volto/helpers';
+import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { Login } from '@plone/volto/components';
 
-import { RemoveBodyClass, LoginAgidButtons } from 'io-sanita-theme/components';
+import { LoginAgidButtons } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   login: {
@@ -66,8 +66,7 @@ const LoginAgid = (props) => {
       ) : (
         <div id="page-login">
           <Helmet title={intl.formatMessage(messages.login)} />
-          <BodyClass className="public-ui" />
-          <RemoveBodyClass className="cms-ui" />
+
           <Container className="view-wrapper py-5">
             <Row className="view-container">
               <Col xs={12} lg={{ size: 10, offset: 1 }}>

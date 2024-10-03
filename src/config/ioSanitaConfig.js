@@ -40,6 +40,7 @@ import {
   FileWidget,
 } from 'io-sanita-theme/components';
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
+import { registerIOSanitaValidators } from 'io-sanita-theme/config/validators';
 
 import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
 
@@ -279,6 +280,9 @@ export default function applyConfig(config) {
     ...reducers,
   };
 
+  // VALIDATORS
+  registerIOSanitaValidators(config);
+
   // ROUTES
   config.addonRoutes = [
     ...config.addonRoutes,
@@ -314,8 +318,8 @@ export default function applyConfig(config) {
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
-  config.settings.publicNonContentRoutes = [
-    ...(config.settings.publicNonContentRoutes ?? []),
+  config.settings.nonContentRoutesPublic = [
+    ...(config.settings.nonContentRoutesPublic ?? []),
     AGGREGATION_PAGE_ARGOMENTO,
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
