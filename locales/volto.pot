@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-10-01T09:56:55.260Z\n"
+"POT-Creation-Date: 2024-10-03T09:41:32.823Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -32,6 +32,11 @@ msgstr ""
 #. Default: "Bando"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
+msgstr ""
+
+#. Default: "Browse"
+#: components/Blocks/Hero/Edit
+msgid "Browse"
 msgstr ""
 
 #. Default: "Callout"
@@ -101,6 +106,11 @@ msgstr ""
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr ""
 
+#. Default: "Description"
+#: components/Blocks/Hero/Edit
+msgid "Description"
+msgstr ""
+
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
@@ -131,6 +141,11 @@ msgstr ""
 msgid "Headline"
 msgstr ""
 
+#. Default: "Hero"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Hero"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
@@ -146,6 +161,11 @@ msgstr ""
 #: config/blocks/listing/ListingOptions/linkMoreOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "ID Lighthouse Help Description"
+msgstr ""
+
+#. Default: "Image"
+#: components/Blocks/Hero/Edit
+msgid "Image"
 msgstr ""
 
 #. Default: "Impostazioni cookie"
@@ -173,6 +193,21 @@ msgstr ""
 msgid "L'evento non si terrà nelle seguenti date"
 msgstr ""
 
+#. Default: "Link a"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Link to"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "LinkMore"
+msgstr ""
+
+#. Default: "Testo per il link ad altro"
+#: components/Blocks/Hero/HeroSidebar
+msgid "Linkto title"
+msgstr ""
+
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader
 msgid "Loading page..."
@@ -195,6 +230,7 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #. Default: "Mostra lo sfondo del blocco"
+#: components/Blocks/Hero/HeroSidebar
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra lo sfondo del blocco"
@@ -213,6 +249,11 @@ msgstr ""
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
+msgstr ""
+
+#. Default: "Apri in un nuovo tab"
+#: components/manage/Widgets/LinkToWidget/LinkToWidget
+msgid "Open in a new tab"
 msgstr ""
 
 #. Default: "Pagina"
@@ -320,6 +361,11 @@ msgstr ""
 msgid "Tipi di contenuto"
 msgstr ""
 
+#. Default: "Title"
+#: components/Blocks/Hero/Edit
+msgid "Title"
+msgstr ""
+
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "Titolo"
@@ -360,6 +406,16 @@ msgstr ""
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
+msgstr ""
+
+#. Default: "Upload a new image"
+#: components/Blocks/Hero/Edit
+msgid "Upload a new image"
+msgstr ""
+
+#. Default: "Uploading image"
+#: components/Blocks/Hero/Edit
+msgid "Uploading image"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -424,6 +480,11 @@ msgstr ""
 #. Default: "Apertura del bando"
 #: components/View/Bando/Dates
 msgid "apertura_bando"
+msgstr ""
+
+#. Default: "APPStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "appStoreLink"
 msgstr ""
 
 #. Default: "Allegato"
@@ -922,7 +983,7 @@ msgstr ""
 msgid "expire"
 msgstr ""
 
-#. Default: "Type in a keyword to find answers"
+#. Default: "Inserisci una parola chiave per trovare una risposta"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "faq_search"
 msgstr ""
@@ -1092,6 +1153,11 @@ msgstr ""
 #. Default: "Collegamento"
 #: components/Cards/CardFile/CardFile
 msgid "link"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Hero/StoresButtons
+msgid "linkMore"
 msgstr ""
 
 #. Default: "LinkedIn"
@@ -1496,6 +1562,11 @@ msgstr ""
 msgid "persona_uo_appartenenza"
 msgstr ""
 
+#. Default: "PlayStore Link"
+#: components/Blocks/Hero/HeroSidebar
+msgid "playStoreLink"
+msgstr ""
+
 #. Default: "Precedente"
 #: components/Slider/PrevArrow
 msgid "precedente"
@@ -1673,12 +1744,17 @@ msgstr ""
 msgid "searchContentIn"
 msgstr ""
 
+#. Default: "Cerca nella sezione"
+#: components/Widgets/SearchSections/SearchSections
+msgid "searchInSection"
+msgstr ""
+
 #. Default: "Cerca nel sito"
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
 msgstr ""
 
-#. Default: "Risultati ricerca “{searchableText}“"
+#. Default: "Risultati ricerca {searchableText}"
 #: components/Search/Search
 msgid "search_Search results"
 msgstr ""
@@ -1987,6 +2063,11 @@ msgstr ""
 #. Default: "Rimuovi tutti i filtri"
 #: components/Search/Search
 msgid "search_remove_all_filters"
+msgstr ""
+
+#. Default: "Categorie"
+#: components/Search/Search
+msgid "search_sections"
 msgstr ""
 
 #. Default: "Mostra i risultati"
@@ -2427,14 +2508,14 @@ msgstr ""
 msgid "slidesToShow"
 msgstr ""
 
+#. Default: "Data (prima i più recenti)"
+#: components/Widgets/SortByWidget/SortByWidget
+msgid "sort_Date"
+msgstr ""
+
 #. Default: "Ordina per"
 #: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_by"
-msgstr ""
-
-#. Default: "Data (prima i più recenti)"
-#: components/Widgets/SortByWidget/SortByWidget
-msgid "sort_data_desc"
 msgstr ""
 
 #. Default: "Alfabeticamente"
@@ -2701,6 +2782,11 @@ msgstr ""
 #. Default: "Strutture"
 #: components/View/UOView/UOStrutture
 msgid "uo_strutture"
+msgstr ""
+
+#. Default: "Servizi o uffici interni"
+#: components/View/UOView/UOUfficiInterni
+msgid "uo_uffici_interni"
 msgstr ""
 
 #. Default: "Data di aggiornamento"
