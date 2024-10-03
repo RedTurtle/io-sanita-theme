@@ -60,6 +60,11 @@ export const UOStrutture = loadable(() =>
     /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOStrutture'
   ),
 );
+export const UOUfficiInterni = loadable(() =>
+  import(
+    /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UOUfficiInterni'
+  ),
+);
 export const UONotizie = loadable(() =>
   import(
     /* webpackChunkName: "ISUOView" */ 'io-sanita-theme/components/View/UOView/UONotizie'
