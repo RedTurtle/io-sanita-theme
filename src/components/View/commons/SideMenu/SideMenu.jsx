@@ -108,7 +108,7 @@ const SideMenu = ({ data, content_uid }) => {
         setActiveSection(extractedHeaders[0].id);
       }
     }
-  }, [data, content_uid]);
+  }, [data?.children, content_uid]);
 
   useEffect(() => {
     if (headers.length > 0)
@@ -154,7 +154,7 @@ const SideMenu = ({ data, content_uid }) => {
   return headers?.length > 0 ? (
     <div className="navbar-wrapper page-side-menu affix-top ">
       <nav className="navbar it-navscroll-wrapper navbar-expand-lg">
-        <div className="menu-wrapper">
+        <div className="menu-wrapper py-0">
           <div className="link-list-wrapper menu-link-list">
             <div className="accordion-wrapper">
               <Accordion>
@@ -212,9 +212,10 @@ export default SideMenu;
 export const useSideMenu = (content, documentBody) => {
   const [sideMenuElements, setSideMenuElements] = useState(null);
   const [observer, setObserver] = useState(null);
-  const updateSideMenuOnLoadingBlocks =
-    config.views?.ioSanitaContentTypesViewsConfig?.[content['@type']]
-      ?.updateSideMenuOnLoadingBlocks ?? false;
+  const updateSideMenuOnLoadingBlocks = true;
+  //forzato a true, perchè se è false, non funziona il render lato client
+  // config.views?.ioSanitaContentTypesViewsConfig?.[content['@type']]
+  //   ?.updateSideMenuOnLoadingBlocks ?? false;
   const SideMenuComponent =
     config.views?.ioSanitaContentTypesViewsConfig?.[content['@type']]
       ?.sideMenu ?? SideMenu;

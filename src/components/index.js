@@ -4,7 +4,6 @@ export Icon from 'io-sanita-theme/components/Icon/Icon';
 export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
 
 //commons
-export RemoveBodyClass from 'io-sanita-theme/components/layout/RemoveBodyClass';
 export const Unauthorized = loadable(() =>
   import('io-sanita-theme/components/Unauthorized/Unauthorized'),
 );

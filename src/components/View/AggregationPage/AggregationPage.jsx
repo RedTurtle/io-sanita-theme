@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'design-react-kit';
-import { Helmet, BodyClass } from '@plone/volto/helpers';
+import { Helmet } from '@plone/volto/helpers';
 import { resetContent } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
 import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
@@ -17,7 +17,6 @@ import {
   SkipToMainContent,
 } from 'io-sanita-theme/components/View/commons';
 import {
-  RemoveBodyClass,
   CardSimple,
   Pagination,
   SortByWidget,
@@ -141,8 +140,6 @@ const AggregationPage = ({ match, route, location }) => {
   return (
     <>
       <Helmet title={title} />
-      <BodyClass className="public-ui" />
-      <RemoveBodyClass className="cms-ui" />
 
       <div className="container px-4 my-4 aggregation-page-view public-ui">
         <SkipToMainContent />
@@ -166,7 +163,7 @@ const AggregationPage = ({ match, route, location }) => {
           </aside>
           <section
             id="main-content-section"
-            className="col-lg-8 aggregation-page-results border-light pt-4 pt-lg-0"
+            className="col-lg-8 aggregation-page-results border-light pt-4 pt-lg-0 pe-lg-0"
             aria-live="polite"
           >
             <div className="d-flex justify-content-end mb-4">

@@ -9,9 +9,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Row, Col, Container } from 'design-react-kit';
 import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
-import { getBaseUrl, BodyClass } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import { LoginAgidButtons, RemoveBodyClass } from 'io-sanita-theme/components';
+import { LoginAgidButtons } from 'io-sanita-theme/components';
 
 /**
  * unauthorized function.
@@ -52,9 +52,6 @@ const Unauthorized = (props) => {
 
   return (
     <div id="unauthorized-agid" className="view-wrapper">
-      <BodyClass className="public-ui" />
-      <RemoveBodyClass className="cms-ui" />
-
       <Container className="view-wrapper py-5">
         {spidLoginUrl || spidLogin ? (
           <>

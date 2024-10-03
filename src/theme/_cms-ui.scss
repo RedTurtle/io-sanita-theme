@@ -791,10 +791,17 @@ body.cms-ui {
 
 /*Has toolbar*/
 body.has-toolbar {
-  #toolbar .toolbar-content.show {
-    z-index: 9;
+  #toolbar {
+    .toolbar-content.show {
+      z-index: 9;
+    }
+    .personal-tools {
+      .avatar {
+        width: 220px;
+        margin: 1rem auto;
+      }
+    }
   }
-
   &.public-ui #toolbar {
     .toolbar {
       &:before {
