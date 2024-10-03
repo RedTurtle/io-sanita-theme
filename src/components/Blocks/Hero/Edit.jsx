@@ -31,6 +31,7 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import { TextEditorWidget } from 'volto-slate-italia';
 import StoresButtons from 'io-sanita-theme/components/Blocks/Hero/StoresButtons';
 import HeroSidebar from 'io-sanita-theme/components/Blocks/Hero/HeroSidebar';
+
 import './hero.scss';
 
 const messages = defineMessages({

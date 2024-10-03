@@ -118,11 +118,10 @@
 .block-editor-hero {
   .block.hero {
     .hero-image {
-      width: 450px;
-      max-height: 650px;
+      width: unset;
 
       img {
-        object-fit: contain;
+        min-width: 100%;
       }
     }
   }
