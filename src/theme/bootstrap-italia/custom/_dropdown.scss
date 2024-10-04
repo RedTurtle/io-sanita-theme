@@ -1,0 +1,11 @@
+.dropdown-item,
+.form-control:disabled + label.dropdown-item,
+.form-control[readonly] + label.dropdown-item {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: var(--bs-dropdown-link-active-bg);
+    color: var(--bs-dropdown-link-active-color);
+  }
+}

@@ -5,6 +5,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
+  DropdownItem,
   LinkList,
   LinkListItem,
   Button,
@@ -90,35 +91,28 @@ const SortByWidget = ({
         <Icon color="primary" icon="it-expand" padding={false} size="sm" />
       </DropdownToggle>
       <DropdownMenu>
-        <LinkList>
-          {options.map((item, i) => (
-            <LinkListItem
-              key={item.sort_on}
-              target="_target"
-              role="menuitem"
-              tabIndex={-1}
-              onKeyDown={handleKeyDown}
-              aria-controls={ariaControls}
-              active={order?.sort_on === item.sort_on}
-            >
-              <Button
-                title={item.title}
-                alt={item.title}
-                aria-label={item.title}
-                tag="button"
-                id={item.sort_on}
-                onClick={() => {
-                  action(item);
-                }}
-                aria-controls={ariaControls}
-                color="link"
-                className="px-0 text-start"
-              >
-                <span>{item.title}</span>
-              </Button>
-            </LinkListItem>
-          ))}
-        </LinkList>
+        {/* <LinkList> */}
+        {options.map((item, i) => (
+          <DropdownItem
+            key={item.sort_on}
+            target="_target"
+            role="menuitem"
+            //tabIndex={-1}
+            aria-controls={ariaControls}
+            aria-label={item.title}
+            active={order?.sort_on === item.sort_on}
+            title={item.title}
+            alt={item.title}
+            id={item.sort_on}
+            onKeyDown={handleKeyDown}
+            onClick={() => {
+              action(item);
+            }}
+          >
+            <span>{item.title}</span>
+          </DropdownItem>
+        ))}
+        {/* </LinkList> */}
       </DropdownMenu>
     </UncontrolledDropdown>
   );
