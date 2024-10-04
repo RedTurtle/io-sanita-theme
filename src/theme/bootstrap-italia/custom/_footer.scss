@@ -24,6 +24,15 @@
         width: 1rem;
         height: 1rem;
       }
+      .it-brand-text {
+        .it-brand-title {
+          @include rem-size(font-size, 24);
+          font-weight: $font-weight-semibold;
+        }
+        .it-brand-tagline {
+          font-size: 0.875rem;
+        }
+      }
     }
   }
 }
