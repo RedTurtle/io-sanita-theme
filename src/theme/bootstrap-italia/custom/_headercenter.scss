@@ -1,10 +1,29 @@
-.it-header-center-wrapper {
-  .it-header-center-content-wrapper {
-    .it-brand-wrapper {
-      a {
-        h2,
-        h3 {
-          color: $header-center-text-color;
+.it-nav-wrapper {
+  .it-header-center-wrapper {
+    .it-header-center-content-wrapper {
+      .it-brand-wrapper {
+        a {
+          h2,
+          h3 {
+            color: $header-center-text-color;
+          }
+        }
+      }
+      .it-brand-wrapper a {
+        .it-brand-text {
+          color: $primary;
+        }
+      }
+      .it-right-zone {
+        .it-search-wrapper a.rounded-icon {
+          width: 44px;
+          height: 44px;
+          background-color: #fff;
+          border-radius: 50%;
+
+          svg {
+            fill: $textDefault;
+          }
         }
       }
     }
