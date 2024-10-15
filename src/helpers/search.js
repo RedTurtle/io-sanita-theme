@@ -130,9 +130,8 @@ const getSearchParamsURL = ({
     : config.settings.isMultilingual
     ? '/' + currentLang
     : '';
-  const b_start = currentPage
-    ? (currentPage - 1) * config.settings.defaultPageSize
-    : 0;
+  const b_size = config.settings.defaultPageSize;
+  const b_start = currentPage ? (currentPage - 1) * b_size : 0;
 
   //options
   const optionsQuery = {};
@@ -182,6 +181,7 @@ const getSearchParamsURL = ({
       obj.portal_type = portal_types;
     }
     obj.b_start = b_start;
+    obj.b_size = b_size;
     obj.use_site_search_settings = true;
     return obj;
   }

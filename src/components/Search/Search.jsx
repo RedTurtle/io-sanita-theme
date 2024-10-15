@@ -258,7 +258,7 @@ const Search = () => {
 
   const handleQueryPaginationChange = (_e, { activePage }) => {
     window.scrollTo(0, 0);
-    const page = activePage?.children ?? 1;
+    const page = activePage ?? 1;
     setCurrentPage(page);
     doSearch(page);
   };
