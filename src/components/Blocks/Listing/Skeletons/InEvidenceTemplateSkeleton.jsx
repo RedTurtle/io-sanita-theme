@@ -31,7 +31,7 @@ const InEvidenceTemplateSkeleton = ({
                       teaser
                       key={i}
                       className={cx(
-                        'shadow rounded card-teaser-image card-flex',
+                        'shadow rounded card-teaser-image card-flex mb-3',
                       )}
                       wrapperClassName={cx(
                         'card-teaser-wrapper-equal card-teaser-block-2 card-featured',

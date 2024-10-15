@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  richTextHasContent,
-  RichTextSection,
-  RichText,
-} from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 import {
   BandoTipologia,

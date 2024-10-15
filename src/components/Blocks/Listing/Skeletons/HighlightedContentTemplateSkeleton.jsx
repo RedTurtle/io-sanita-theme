@@ -24,7 +24,7 @@ const HighlightedContentTemplateSkeleton = ({
           return (
             <Card
               teaser
-              className="shadow rounded card-teaser-image card-flex"
+              className="shadow rounded card-teaser-image card-flex mb-3"
               wrapperClassName={`card-teaser-wrapper-equal card-teaser-block-2 card-featured`}
               key={i}
             >

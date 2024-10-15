@@ -11,7 +11,6 @@ const initialState = {
 export const farmaciaReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case `${GET_FARMACIA}_PENDING`:
-      console.log('GET_FARMACIA_PENDING');
       return {
         ...state,
         loading: true,
@@ -19,7 +18,6 @@ export const farmaciaReducer = (state = initialState, action = {}) => {
       };
 
     case `${GET_FARMACIA}_SUCCESS`:
-      console.log('GET_FARMACIA_SUCCESS');
       return {
         ...state,
         result: action.result,
@@ -28,7 +26,6 @@ export const farmaciaReducer = (state = initialState, action = {}) => {
       };
 
     case `${GET_FARMACIA}_FAIL`:
-      console.log('GET_FARMACIA_FAIL');
       return {
         ...state,
         error: action.error,

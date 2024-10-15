@@ -1,4 +1,6 @@
 .public-ui .card.card-guide {
+  border: 1px solid var(--primary-lighter);
+
   .card-body {
     display: flex;
     align-items: center;

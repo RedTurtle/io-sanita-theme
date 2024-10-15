@@ -33,11 +33,21 @@ const getIoSanitaWidgets = (config) => {
       quick_search: QuickSearchConfigurationWidget,
       search_sections: SearchSectionsConfigurationWidget,
       icona: (props) => (
-        <IconWidget {...props} defaultOptions={defaultIconWidgetOptions} />
+        <IconWidget
+          {...props}
+          wrapped={false}
+          defaultOptions={defaultIconWidgetOptions}
+        />
       ),
       icon: (
         props, //per il content-type FaqFolder
-      ) => <IconWidget {...props} defaultOptions={defaultIconWidgetOptions} />,
+      ) => (
+        <IconWidget
+          {...props}
+          wrapped={false}
+          defaultOptions={defaultIconWidgetOptions}
+        />
+      ),
     },
     widget: {
       ...config.widgets.widget,

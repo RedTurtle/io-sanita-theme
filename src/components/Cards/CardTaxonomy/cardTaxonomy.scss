@@ -1,0 +1,21 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.public-ui .card.card-taxonomy {
+  border: 1px solid var(--primary-lighter);
+  border-bottom-width: 8px;
+
+  .card-taxonomy-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .card-title {
+      flex: 0 1 80%;
+    }
+
+    @include media-breakpoint-down(lg) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+}

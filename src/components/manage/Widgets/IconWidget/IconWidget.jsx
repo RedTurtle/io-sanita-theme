@@ -6,6 +6,7 @@ import { TextWidget, SelectWidget } from '@plone/volto/components';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
 import { IconPreviewWidget } from 'io-sanita-theme/components/manage/Widgets';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 
 import './iconWidget.scss';
 
@@ -21,7 +22,8 @@ const messages = defineMessages({
   },
 });
 
-const IconWidget = ({ id, value, defaultOptions, onChange, reactSelect }) => {
+const IconWidget = (props) => {
+  const { id, value, defaultOptions, onChange, reactSelect } = props;
   const intl = useIntl();
   const [iconString, setIconString] = useState(value);
   const [selectValue, setSelectValue] = useState(value);
@@ -41,8 +43,8 @@ const IconWidget = ({ id, value, defaultOptions, onChange, reactSelect }) => {
   };
 
   return (
-    <div className="select-icon-widget">
-      <div className="wdg">
+    <FormFieldWrapper {...props} className="select-icon-widget">
+      <div className={'wdg ' + props.wrapped == false ? '' : 'wrapped'}>
         {defaultOptions && defaultOptions.length > 0 && (
           <SelectWidget
             id="selectIcon"
@@ -85,7 +87,7 @@ const IconWidget = ({ id, value, defaultOptions, onChange, reactSelect }) => {
           </a>
         </span>
       </p>
-    </div>
+    </FormFieldWrapper>
   );
 };
 /**

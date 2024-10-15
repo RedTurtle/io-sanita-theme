@@ -2,6 +2,7 @@ import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
+import userSVG from '@plone/volto/icons/user.svg';
 import {
   BreakView,
   BreakEdit,
@@ -18,6 +19,9 @@ import {
   QuickSearchView,
   HeroView,
   HeroEdit,
+  TopicsListView,
+  TopicsListEdit,
+  TopicsListSchema,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -172,6 +176,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
         view: [],
       },
       sidebarTab: 0,
+    },
+    topics_list: {
+      id: 'topics_list',
+      title: 'Tutto per',
+      description: 'Lista delle tassonomie',
+      icon: userSVG,
+      group: 'common',
+      view: TopicsListView,
+      edit: TopicsListEdit,
+      schema: TopicsListSchema,
+      restricted: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
     },
   };
 
