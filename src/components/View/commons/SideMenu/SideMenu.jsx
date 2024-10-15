@@ -148,7 +148,9 @@ const SideMenu = ({ data, content_uid }) => {
 
   const progressValue = useMemo(() => {
     if (!isClient) return 0;
-    return (scrollY - yCountEnd.offsetTop) / yCountEnd.offsetHeight || 0;
+    return yCountEnd
+      ? (scrollY - (yCountEnd.offsetTop ?? 0)) / (yCountEnd.offsetHeight ?? 0)
+      : 0;
   }, [scrollY, isClient]);
 
   return headers?.length > 0 ? (
