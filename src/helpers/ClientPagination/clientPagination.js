@@ -14,21 +14,7 @@ export const useClientPagination = ({ items, b_size = 4 }) => {
   const totalPages = Math.ceil(items.length / b_size);
 
   const onPaginationChange = (activePage) => {
-    let page = activePage.children;
-    if (!page) {
-      if (activePage.type == 'prevItem') {
-        page = currentPage - 1;
-        if (page === 0) {
-          page = 1;
-        }
-      }
-      if (activePage.type == 'nextItem') {
-        page = currentPage + 1;
-        if (page > totalPages) {
-          page = totalPages;
-        }
-      }
-    }
+    let page = activePage;
     if (page != currentPage && ref?.current) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
