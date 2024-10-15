@@ -65,7 +65,7 @@ const Breadcrumbs = ({ pathname, match }) => {
   const getBRDCTitle = (route, params) => {
     if (route.breadcrumbs_title === ':id') {
       const id = params.id ?? ' ';
-      return id.charAt(0).toUpperCase() + id.slice(1);
+      return id.charAt(0).toUpperCase() + id.slice(1).replaceAll('-', ' ');
     }
 
     return intl.formatMessage(route.breadcrumbs_title);
