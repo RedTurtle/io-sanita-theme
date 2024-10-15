@@ -71,7 +71,8 @@ const AggregationPage = ({ match, route, location }) => {
 
   //page title and description
   const title =
-    result?.infos?.[0]?.title ?? id.charAt(0).toUpperCase() + id.slice(1);
+    result?.infos?.[0]?.title ??
+    (id.charAt(0).toUpperCase() + id.slice(1)).replaceAll('-', ' ');
   const description = intl.formatMessage(
     type === 'a_chi_si_rivolge_tassonomia'
       ? messages.description_tipologia_utente
