@@ -87,6 +87,7 @@ const AggregationPage = ({ match, route, location }) => {
       type: null,
     },
   ];
+  const noSectionFor = ['Document', 'Link'];
   const [sections, setSections] = useState(defaultSections);
 
   //carico i dati iniziali
@@ -108,12 +109,14 @@ const AggregationPage = ({ match, route, location }) => {
     if (result?.facets?.portal_types) {
       setSections([
         ...defaultSections,
-        ...result.facets.portal_types.map((f) => {
-          return {
-            title: f.title,
-            type: f.token,
-          };
-        }),
+        ...result.facets.portal_types
+          .filter((f) => !noSectionFor.includes(f.token))
+          .map((f) => {
+            return {
+              title: f.title,
+              type: f.token,
+            };
+          }),
       ]);
     }
     //setto la paginazione
