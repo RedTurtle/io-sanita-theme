@@ -70,7 +70,8 @@ const AggregationPage = ({ match, route, location }) => {
   const [totalPages, setTotalPages] = useState(0);
 
   //page title and description
-  const title = id.charAt(0).toUpperCase() + id.slice(1);
+  const title =
+    result?.infos?.[0]?.title ?? id.charAt(0).toUpperCase() + id.slice(1);
   const description = intl.formatMessage(
     type === 'a_chi_si_rivolge_tassonomia'
       ? messages.description_tipologia_utente
