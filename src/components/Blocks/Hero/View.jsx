@@ -8,13 +8,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import StoresButtons from 'io-sanita-theme/components/Blocks/Hero/StoresButtons';
+import { LinkedHeadline } from 'io-sanita-theme/components';
 import './hero.scss';
 /**
  * View image block class.
  * @class View
  * @extends Component
  */
-const View = ({ data }) => {
+const View = ({ data, id }) => {
   const show_bg = data.show_block_bg === undefined ? true : data.show_block_bg;
 
   return (
@@ -37,7 +38,8 @@ const View = ({ data }) => {
               'bg-primary-lightest': show_bg,
             })}
           >
-            {data.title && <h1>{data.title}</h1>}
+            {data.title && <LinkedHeadline title={data.title} id={id} />}
+
             {data.description && <p>{data.description}</p>}
             <StoresButtons data={data} />
           </div>

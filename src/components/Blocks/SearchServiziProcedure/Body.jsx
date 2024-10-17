@@ -13,6 +13,7 @@ import {
   SearchResultItem,
   Pagination,
   SortByWidget,
+  LinkedHeadline,
 } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
@@ -56,7 +57,7 @@ const messages = defineMessages({
   },
 });
 
-const Body = ({ data, id, path, properties, block }) => {
+const Body = ({ data, id, path, properties, block, inEditMode }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const subsite = useSelector((state) => state.subsite?.data);
@@ -231,8 +232,13 @@ const Body = ({ data, id, path, properties, block }) => {
       <div className="full-width bg-primary-lightest py-4">
         <Container className="px-4">
           {/* TITOLO DEL BLOCCO */}
-          {data.title && (
-            <h2 className="search-section-title mb-4">{data.title}</h2>
+          {data?.title && (
+            <LinkedHeadline
+              isEditMode={inEditMode}
+              title={data.title}
+              id={id}
+              className="search-section-title mb-4"
+            />
           )}
           <form
             onSubmit={(event) => {

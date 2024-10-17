@@ -3,7 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import { getFarmacia } from 'io-sanita-theme/actions';
-import { Pagination, SortByWidget } from 'io-sanita-theme/components';
+import {
+  Pagination,
+  SortByWidget,
+  LinkedHeadline,
+} from 'io-sanita-theme/components';
 import { Container, Col, Row, Spinner } from 'design-react-kit';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
@@ -226,7 +230,14 @@ const Body = ({ isEditMode, data, id }) => {
                 doSearch();
               }}
             >
-              {data?.title && <h2 className="h5">{data.title}</h2>}
+              {data?.title && (
+                <LinkedHeadline
+                  isEditMode={isEditMode}
+                  title={data.title}
+                  id={id}
+                  className="h5"
+                />
+              )}
               <Row className="search-wrapper-row">
                 <Col lg={12}>
                   {/* Search filters */}

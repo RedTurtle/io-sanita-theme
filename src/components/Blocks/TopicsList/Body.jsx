@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Col, Row } from 'design-react-kit';
 import { getVocabulary } from '@plone/volto/actions';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { CardTaxonomy } from 'io-sanita-theme/components';
+import { CardTaxonomy, LinkedHeadline } from 'io-sanita-theme/components';
 
 /* Style */
 import './topics-list.scss';
@@ -41,7 +41,9 @@ const Body = ({ isEditMode, data, id }) => {
 
   return (
     <div className="iosanita-block-topics-list">
-      {data?.title && <h2 className="h5">{data.title}</h2>}
+      {data?.title && (
+        <LinkedHeadline isEditMode={isEditMode} title={data.title} id={id} />
+      )}
 
       {data?.description && (
         <div className="mb-2">

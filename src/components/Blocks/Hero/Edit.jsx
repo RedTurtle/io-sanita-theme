@@ -317,7 +317,7 @@ class EditComponent extends Component {
               })}
             >
               <div className="edit-title">
-                <h1>
+                <h2>
                   <TextEditorWidget
                     {...this.props}
                     showToolbar={false}
@@ -334,7 +334,7 @@ class EditComponent extends Component {
                       }));
                     }}
                   />
-                </h1>
+                </h2>
               </div>
 
               <p>

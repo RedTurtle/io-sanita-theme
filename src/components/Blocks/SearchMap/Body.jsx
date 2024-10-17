@@ -17,7 +17,11 @@ import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
-import { SearchBar, SearchResultItem } from 'io-sanita-theme/components';
+import {
+  SearchBar,
+  SearchResultItem,
+  LinkedHeadline,
+} from 'io-sanita-theme/components';
 import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
 
 /* Style */
@@ -104,7 +108,7 @@ const resultsReducer = (items) => {
 /*
   La paginazione è fatta lato client, pechè serve avere tutti i risultati possibili da mostrare sulla mappa
  */
-const SearchMapBody = ({ data, id, path, properties, block }) => {
+const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
 
@@ -300,7 +304,12 @@ const SearchMapBody = ({ data, id, path, properties, block }) => {
             >
               <div className="search-top">
                 {data.title && !data.show_search_bar && (
-                  <h2 className="h5">{data.title}</h2>
+                  <LinkedHeadline
+                    isEditMode={inEditMode}
+                    title={data.title}
+                    id={id}
+                    className="h5"
+                  />
                 )}
                 {data.show_search_bar && (
                   <Row>
