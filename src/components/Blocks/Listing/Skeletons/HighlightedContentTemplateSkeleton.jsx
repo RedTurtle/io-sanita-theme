@@ -1,24 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  Chip,
-  Container,
-} from 'design-react-kit';
+import { Card, CardBody, CardTitle, CardText, Chip } from 'design-react-kit';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
 import 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/highlightedContentTemplate.scss';
 
-const HighlightedContentTemplateSkeleton = ({
-  title,
-  isEditMode,
-  show_block_bg,
-  linkHref,
-}) => {
+const HighlightedContentTemplateSkeleton = (props) => {
+  const { title, isEditMode, show_block_bg, linkHref } = props;
   return (
-    <Container>
+    <ListingContainer data={props} isEditMode={isEditMode}>
       <div className="skeleton-template">
         {[0].map((i) => {
           return (
@@ -55,7 +45,7 @@ const HighlightedContentTemplateSkeleton = ({
         })}
       </div>
       {linkHref && <div className="link-button text-center"></div>}
-    </Container>
+    </ListingContainer>
   );
 };
 

@@ -6,8 +6,11 @@ import { useHistory } from 'react-router-dom';
 import moment from 'moment';
 import cx from 'classnames';
 import { OSMMap } from 'volto-venue';
-import { Row, Col, Container } from 'design-react-kit';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
+import { Row, Col } from 'design-react-kit';
+import {
+  ListingLinkMore,
+  ListingContainer,
+} from 'io-sanita-theme/components/Blocks';
 import './mapTemplate.scss';
 
 const messages = defineMessages({
@@ -21,19 +24,20 @@ const messages = defineMessages({
   },
 });
 
-const MapTemplate = ({
-  items,
-  isEditMode,
-  linkAlign,
-  linkTitle,
-  linkHref,
-  title,
-  titleLine,
-  show_map_full_width,
-  map_size = 'medium',
-  linkmore_id_lighthouse,
-  ...rest
-}) => {
+const MapTemplate = (props) => {
+  const {
+    items,
+    isEditMode,
+    linkAlign,
+    linkTitle,
+    linkHref,
+    title,
+    titleLine,
+    show_map_full_width,
+    map_size = 'medium',
+    linkmore_id_lighthouse,
+  } = props;
+
   const intl = useIntl();
   let history = useHistory();
 
@@ -73,9 +77,7 @@ const MapTemplate = ({
 
   return (
     <div className="map-template">
-      <Container
-        className={!rest.show_block_bg || isEditMode ? 'px-0' : 'px-4'}
-      >
+      <ListingContainer data={props} isEditMode={isEditMode}>
         {items?.length > 0 && markers?.length > 0 ? (
           <div
             className={cx('mb-4 map-wrapper', {
@@ -104,7 +106,7 @@ const MapTemplate = ({
           className="my-5"
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

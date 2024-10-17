@@ -3,8 +3,11 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Row, Col } from 'design-react-kit';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
+import { Row, Col } from 'design-react-kit';
+import {
+  ListingLinkMore,
+  ListingContainer,
+} from 'io-sanita-theme/components/Blocks';
 import CardWithImageDefault from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
 
 const CardWithImageTemplate = (props) => {
@@ -21,7 +24,7 @@ const CardWithImageTemplate = (props) => {
 
   return (
     <div className="card-with-image-template">
-      <Container className={!show_block_bg || isEditMode ? 'px-0' : 'px-4'}>
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <Row className="mb-3">
           {items.map((item, index) => {
             const layoutSelected = set_four_columns ? '3' : '4';
@@ -45,7 +48,7 @@ const CardWithImageTemplate = (props) => {
           linkAlign={linkAlign}
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

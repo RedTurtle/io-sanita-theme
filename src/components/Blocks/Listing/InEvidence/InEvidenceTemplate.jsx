@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Container, Row, Col } from 'design-react-kit';
+import { Row, Col } from 'design-react-kit';
 
 import { getItemListingCategory } from 'io-sanita-theme/helpers';
 
@@ -14,6 +14,7 @@ import {
   ListingCategory,
   ListingText,
   ListingLinkMore,
+  ListingContainer,
   RassegnaInfo,
 } from 'io-sanita-theme/components/Blocks';
 
@@ -35,7 +36,7 @@ const InEvidenceTemplate = (props) => {
 
   return (
     <div className="in-evidence">
-      <Container className={!show_block_bg || isEditMode ? 'px-0' : 'px-4'}>
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="in-evidence-cards-wrapper mb-5">
           <Row>
             {items.map((item, index) => {
@@ -101,7 +102,7 @@ const InEvidenceTemplate = (props) => {
           className="my-4"
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

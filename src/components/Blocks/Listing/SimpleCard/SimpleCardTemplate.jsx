@@ -1,6 +1,7 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
-import { Container } from 'design-react-kit';
+
 import SimpleCardTemplateDefault from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateDefault';
 import SimpleCardTemplateCompact from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateCompact';
 import SimpleCardTemplateOneForRow from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow';
@@ -16,6 +17,8 @@ import {
   SimpleCardTemplateAppearance_GHOST,
   SimpleCardTemplateAppearance_PLACE,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import './simpleCardTemplate.scss';
 
 const SimpleCardTemplate = (data) => {
@@ -41,11 +44,9 @@ const SimpleCardTemplate = (data) => {
   }
 
   return (
-    <Container
-      className={!data.show_block_bg || data.isEditMode ? 'px-0' : 'px-4'}
-    >
+    <ListingContainer data={data} isEditMode={data.isEditMode}>
       {content}
-    </Container>
+    </ListingContainer>
   );
 };
 

@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from 'design-react-kit';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
-const MapTemplateSkeleton = ({
-  isEditMode,
-  linkHref,
-  title,
-  show_only_first_ribbon,
-  show_detail_link,
-  detail_link_label,
-  show_block_bg,
-  hide_dates,
-}) => {
+const MapTemplateSkeleton = (props) => {
+  const {
+    isEditMode,
+    linkHref,
+    title,
+    show_only_first_ribbon,
+    show_detail_link,
+    detail_link_label,
+    show_block_bg,
+    hide_dates,
+  } = props;
+
   return (
     <div className="map-template">
-      <Container className="px-4">
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="template-skeleton">
           {title && <h2 className="mb-4">{title}</h2>}
 
@@ -24,7 +26,7 @@ const MapTemplateSkeleton = ({
           </div>
           {linkHref && <div className="link-button text-center my-5"></div>}
         </div>
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

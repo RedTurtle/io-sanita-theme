@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  Container,
   Card,
   CardBody,
   CardTitle,
@@ -9,10 +8,12 @@ import {
   Row,
   Col,
 } from 'design-react-kit';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
-const DefaultSkeleton = ({ isEditMode, title }) => {
+const DefaultSkeleton = (props) => {
+  const { isEditMode, title } = props;
   return (
-    <Container>
+    <ListingContainer data={props} isEditMode={isEditMode}>
       <div className="skeleton-template">
         {title && (
           <Row>
@@ -37,7 +38,7 @@ const DefaultSkeleton = ({ isEditMode, title }) => {
           ))}
         </div>
       </div>
-    </Container>
+    </ListingContainer>
   );
 };
 

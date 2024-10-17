@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import {
-  Container,
   Card,
   CardBody,
   CardTitle,
@@ -11,16 +10,13 @@ import {
   Row,
   Col,
 } from 'design-react-kit';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
-const InEvidenceTemplateSkeleton = ({
-  title,
-  isEditMode,
-  show_block_bg,
-  linkHref,
-}) => {
+const InEvidenceTemplateSkeleton = (props) => {
+  const { title, isEditMode, show_block_bg, linkHref } = props;
   return (
     <div className="in-evidence">
-      <Container className="px-4">
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
           <div className="in-evidence-cards-wrapper mb-5">
             <Row>
@@ -71,7 +67,7 @@ const InEvidenceTemplateSkeleton = ({
           </div>
           {linkHref && <div className="link-button text-center"></div>}
         </div>
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

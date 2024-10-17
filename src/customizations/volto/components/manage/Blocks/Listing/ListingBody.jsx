@@ -22,6 +22,7 @@ import { Row, Col, Container } from 'design-react-kit';
 import { Pagination } from 'io-sanita-theme/components';
 import {
   DefaultSkeleton,
+  ListingContainer,
   //getPathFiltersButtons,
 } from 'io-sanita-theme/components/Blocks';
 
@@ -48,9 +49,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
 
   return (
     (data.title || path_filters_buttons) && (
-      <Container
-        className={!data.show_block_bg || isEditMode ? 'px-0' : 'px-4'}
-      >
+      <ListingContainer data={data} isEditMode={isEditMode}>
         <Row
           className={cx('template-header', {
             'with-filters': path_filters_buttons,
@@ -80,7 +79,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
             </Col>
           )}
         </Row>
-      </Container>
+      </ListingContainer>
     )
   );
 };

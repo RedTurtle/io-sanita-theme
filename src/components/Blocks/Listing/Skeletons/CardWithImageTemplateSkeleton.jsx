@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import {
-  Container,
   Row,
   Col,
   Card,
@@ -12,23 +11,26 @@ import {
   CardText,
   Chip,
 } from 'design-react-kit';
-
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import './cardWithImageTemplateSkeleton.scss';
 
-const CardWithImageTemplateSkeleton = ({
-  isEditMode,
-  title,
-  linkHref,
-  show_block_bg = false,
-  always_show_image = false,
-  hide_dates = false,
-  full_width = true,
-  set_four_columns = false,
-}) => {
+const CardWithImageTemplateSkeleton = (props) => {
+  const {
+    isEditMode,
+    title,
+    linkHref,
+    show_block_bg = false,
+    always_show_image = false,
+    hide_dates = false,
+    full_width = true,
+    set_four_columns = false,
+  } = props;
+
   const layoutSelected = set_four_columns ? '3' : '4';
+
   return (
     <div className="card-with-image-template">
-      <Container className={!show_block_bg || isEditMode ? 'px-0' : 'px-4'}>
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
           <Row className="items mb-3">
             {[0, 1, 2, 3, 4, 5, 6].map((i) => {
@@ -72,7 +74,7 @@ const CardWithImageTemplateSkeleton = ({
           </Row>
           {linkHref && <div className="link-button text-center"></div>}
         </div>
-      </Container>
+      </ListingContainer>
     </div>
   );
 };
