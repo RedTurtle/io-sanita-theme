@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { omit } from 'lodash';
 import { Row, Col } from 'design-react-kit';
 import { LocationsMap } from 'io-sanita-theme/components/View/commons';
 import { CardPlace } from 'io-sanita-theme/components';
@@ -20,7 +21,7 @@ const Locations = ({ content = {}, locations = [] }) => {
     content.quartiere ||
     content.circoscrizione
   ) {
-    location_items.push(content);
+    location_items.push(omit(content, ['@id']));
   }
 
   location_items = [...location_items, ...locations];
