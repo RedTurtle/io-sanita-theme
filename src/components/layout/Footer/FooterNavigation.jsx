@@ -57,7 +57,7 @@ const FooterNavigation = () => {
               widths={['xs', 'sm', 'md', 'lg', 'xl']}
               key={item.url}
             >
-              <h4>
+              <h2 class="h4">
                 <UniversalLink
                   href={item.url}
                   title={
@@ -67,7 +67,7 @@ const FooterNavigation = () => {
                 >
                   {item.title}
                 </UniversalLink>
-              </h4>
+              </h2>
 
               {footerNavigationDepth > 1 && item.items && (
                 <LinkList className="footer-list clearfix" tag="div">

@@ -78,6 +78,10 @@ const SideMenu = ({ data, content_uid }) => {
     setIsClient(true);
   }, []);
 
+  const activeItemTitle = headers.find(
+    (item) => item.id === activeSection,
+  )?.title;
+
   const handleScroll = useCallback(() => {
     const scrollOffset = 0.1 * window.innerHeight;
     setScrollY(window.scrollY);
@@ -173,6 +177,7 @@ const SideMenu = ({ data, content_uid }) => {
                 <Progress
                   value={progressValue > 0 ? 100 * progressValue : 0}
                   role="progressbar"
+                  aria-labelledby={activeItemTitle}
                 />
 
                 <AccordionBody
@@ -192,7 +197,7 @@ const SideMenu = ({ data, content_uid }) => {
                             onClick={handleClickAnchor(item.id)}
                             id={`item-${item.id}`}
                           >
-                            <span>{item.title}</span>
+                            <span id={item.title}>{item.title}</span>
                           </a>
                         </li>
                       );
