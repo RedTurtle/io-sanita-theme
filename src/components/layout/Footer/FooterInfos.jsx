@@ -82,7 +82,7 @@ const FooterInfos = () => {
           widths={['xs', 'sm', 'md', 'lg', 'xl']}
           key={index}
         >
-          <h2 class="h4">
+          <h2 className="h4">
             {column?.title && (
               <ConditionalLink
                 condition={column.titleLink?.length > 0}

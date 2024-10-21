@@ -57,7 +57,7 @@ const FooterNavigation = () => {
               widths={['xs', 'sm', 'md', 'lg', 'xl']}
               key={item.url}
             >
-              <h2 class="h4">
+              <h2 className="h4">
                 <UniversalLink
                   href={item.url}
                   title={

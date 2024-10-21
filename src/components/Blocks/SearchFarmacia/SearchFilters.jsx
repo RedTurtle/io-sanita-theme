@@ -43,7 +43,7 @@ const SearchFilters = ({
   const intl = useIntl();
 
   return (
-    <Row class="search-filters">
+    <Row className="search-filters">
       <Col lg="6" className="d-flex align-center">
         <SearchBar
           id={block_id + '_'}
