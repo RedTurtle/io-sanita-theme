@@ -24,8 +24,8 @@ const EventoEventiCorrelati = ({ content }) => {
     >
       <Row>
         {events.map((item, i) => (
-          <Col lg={6} className="py-lg-2" key={'related-items'+item['@id']}>
-            <CardImage item={item} showDescription={false} titleTag="h5" />
+          <Col lg={6} className="py-lg-2" key={'related-items' + item['@id']}>
+            <CardImage item={item} showDescription={false} titleTag="h2" />
           </Col>
         ))}
       </Row>
