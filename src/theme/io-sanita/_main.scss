@@ -78,6 +78,7 @@ iframe {
   }
 }
 
+/* SLATE */
 .slate-editor-link {
   clear: both;
 
@@ -104,6 +105,11 @@ iframe {
       }
     }
   }
+}
+
+.text-larger {
+  //stile applicabile da editor Slate
+  font-size: 1.75em;
 }
 
 /*icone*/
