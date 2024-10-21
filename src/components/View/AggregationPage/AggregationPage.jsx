@@ -203,8 +203,8 @@ const AggregationPage = ({ match, route, location }) => {
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
                         : item.type_title
-                        ? [{ title: item.type_title }]
-                        : [];
+                          ? [{ title: item.type_title }]
+                          : [];
                     return (
                       <CardSimple
                         key={i + 'result'}
@@ -213,6 +213,7 @@ const AggregationPage = ({ match, route, location }) => {
                           parliamo_di_metadata: parliamo_di_metadata,
                         }}
                         className="mb-3"
+                        titleTag="h2"
                       />
                     );
                   })}

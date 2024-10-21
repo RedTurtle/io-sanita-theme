@@ -26,7 +26,7 @@ export const CardSimple = ({
   item,
   isEditMode,
   className,
-  titleTag = 'h2',
+  titleTag = 'h5',
   titleDataElement,
   showDeafaultCategory,
   highlight, //se si vuole evidenziare un testo, ad esempio nei risultati delle ricerche

@@ -22,7 +22,7 @@ export const CardTaxonomy = ({
   item,
   isEditMode,
   className,
-  titleTag = 'h2',
+  titleTag = 'h5',
   titleDataElement,
   type = 'topics', //topics,users
 }) => {

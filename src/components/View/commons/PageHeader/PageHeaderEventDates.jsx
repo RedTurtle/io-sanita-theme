@@ -49,7 +49,7 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
     }
   }
   return content['@type'] === 'Event' ? (
-    <h4 className="py-2">
+    <h2 className="py-2 h4">
       {!wholeDay &&
         !openEnd &&
         !renderOnlyStart &&
@@ -66,7 +66,7 @@ const PageHeaderEventDates = ({ content, moment, rrule }) => {
       {eventRecurrenceText && (
         <div className="recurrence small">{eventRecurrenceText}</div>
       )}
-    </h4>
+    </h2>
   ) : null;
 };
 
