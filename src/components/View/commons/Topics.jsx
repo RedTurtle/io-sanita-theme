@@ -26,9 +26,9 @@ const Topics = ({ content }) => {
 
   return list?.length > 0 ? (
     <div className="mt-4 mb-5 page-topics">
-      <h2 clasName="h5">
+      <h3 clasName="h5">
         <small>{intl.formatMessage(messages.topics)}</small>
-      </h2>
+      </h3>
       {list.map((item, i) => (
         <UniversalLink
           href={AGGREGATION_PAGE_ARGOMENTO + item.token}
