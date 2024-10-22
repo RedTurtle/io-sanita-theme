@@ -69,6 +69,7 @@ const Body = ({ isEditMode, data, id }) => {
                 showIcon={data.show_icon}
                 icon={obj.icon}
                 isEditMode={isEditMode}
+                titleTag={!data.title ? 'h2' : 'h3'}
               />
             </Col>
           ) : (
