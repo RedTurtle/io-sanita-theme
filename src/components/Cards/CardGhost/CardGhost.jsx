@@ -10,18 +10,18 @@ export const CardGhost = ({ item, isEditMode, titleDataElement }) => {
   return (
     <Card className="no-after card-ghost border-bottom-card">
       <CardBody className="p-0 pb-3">
-        <UniversalLink
-          item={!isEditMode ? item : null}
-          href={isEditMode ? '#' : ''}
-          className="card-title-link"
-          data-element={titleDataElement}
-        >
-          <CardTitle tag="h3" className="card-title-icon">
+        <CardTitle tag="h3" className="card-title-icon">
+          <UniversalLink
+            item={!isEditMode ? item : null}
+            href={isEditMode ? '#' : ''}
+            className="card-title-link"
+            data-element={titleDataElement}
+          >
             {item.title}
 
             <Icon icon="it-chevron-right" />
-          </CardTitle>
-        </UniversalLink>
+          </UniversalLink>
+        </CardTitle>
 
         {item.description && <CardText>{item.description}</CardText>}
       </CardBody>
