@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 
 import {
@@ -15,6 +16,7 @@ import {
 import { FeedbackForm } from 'volto-feedback-italia';
 
 import config from '@plone/volto/registry';
+
 /**
  * Footer component class.
  * @class Footer
@@ -22,8 +24,13 @@ import config from '@plone/volto/registry';
  */
 
 const Footer = ({ intl }) => {
+  const location = useLocation();
   const currentContent = useSelector((state) => state.content?.data);
   let contentType = currentContent?.['@type'];
+
+  if (config.settings.nonContentRoutesPublic?.includes(location.pathname)) {
+    contentType = null;
+  }
 
   const NoFeedbackFormFor = []; //['Plone Site', 'LRF', 'Subsite'];
   const feedbackFormEnabled =
