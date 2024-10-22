@@ -8,6 +8,8 @@ import {
   InEvidenceTemplateSkeleton,
   CardWithImageTemplate,
   CardWithImageTemplateSkeleton,
+  SimpleListTemplate,
+  SimpleListTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
@@ -53,11 +55,11 @@ import {
   addMapTemplateOptions,
   addInEvidenceTemplateOptions,
   addCardWithImageTemplateOptions,
+  addSimpleListTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
   // addSliderTemplateOptions,
-  // addSimpleListTemplateOptions,
   // addCardWithSlideUpTextTemplateOptions,
   // addPhotogalleryTemplateOptions,
   // addSmallBlockLinksTemplateOptions,
@@ -113,6 +115,20 @@ const iosanitaListingVariations = [
     schemaEnhancer: ({ schema, formData, intl }) => {
       let pos = addLighthouseField(schema, intl);
       addDefaultOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
+  {
+    id: 'simpleListTemplate',
+    isDefault: false,
+    title: 'Lista semplice',
+    template: SimpleListTemplate,
+    skeleton: SimpleListTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addSimpleListTemplateOptions(schema, formData, intl, pos);
       addLinkMoreOptions(schema, formData, intl);
       return schema;
     },
