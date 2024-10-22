@@ -54,7 +54,6 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     linkAlign,
     show_icon = false,
     show_section = true,
-    show_type,
     show_description = true,
     show_detail_link,
     detail_link_label,
@@ -101,8 +100,6 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
           const category = getItemListingCategory({
             ...props,
             item,
-            show_type,
-            show_section,
           });
           const type = item['@type'];
           const BlockExtraTags = getComponentWithFallback({

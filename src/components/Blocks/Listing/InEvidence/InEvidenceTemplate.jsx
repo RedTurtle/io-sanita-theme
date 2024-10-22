@@ -79,7 +79,7 @@ const InEvidenceTemplate = (props) => {
                             <ListingCategory category={category} item={item} />
                           )
                         }
-                        showDefaultCategory={false}
+                        showCategory={false}
                         otherChildren={{
                           afterTitle: isEventAppointment && (
                             <RassegnaInfo eventoPadre={item.parent} />

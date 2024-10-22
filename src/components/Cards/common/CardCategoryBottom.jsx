@@ -5,18 +5,16 @@ import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfi
 
 const CardCategoryBottom = ({
   item,
-  category,
   date,
   isEditMode,
-  show_type = true,
-  show_topics = true,
-  show_default = true,
   className,
+  //
+  category,
+  showCategory = true,
 }) => {
-  const defaultCategory =
-    (show_topics && item?.parliamo_di_metadata?.[0]) ??
-    (show_type && item?.type_title ? { title: item.type_title } : null);
-  const display_category = category ?? (show_default && defaultCategory);
+  const defaultCategory = item?.type_title ? { title: item.type_title } : null;
+  //TODO: calcolare la categoria come scritto nel ticket
+  const display_category = showCategory ? category ?? defaultCategory : null;
 
   return display_category || date ? (
     <div className={cx('category-bottom', className)}>

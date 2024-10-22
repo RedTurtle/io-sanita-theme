@@ -54,8 +54,6 @@ const SimpleCardDefault = (props) => {
     item,
     isEditMode,
     show_icon = false,
-    show_section = true,
-    show_type,
     show_description = true,
     show_detail_link,
     detail_link_label,
@@ -97,7 +95,6 @@ const SimpleCardDefault = (props) => {
   const category = getItemListingCategory({
     ...props,
     item,
-    show_type,
   });
   const type = item['@type'];
   const isServizioOnline =
@@ -180,12 +177,7 @@ const SimpleCardDefault = (props) => {
         <BlockExtraTags {...props} item={item} itemIndex={index} />
         {eventRecurrenceMore}
 
-        <CardCategoryBottom
-          item={item}
-          date={date}
-          isEditMode={isEditMode}
-          show_type={false}
-        />
+        <CardCategoryBottom item={item} date={date} isEditMode={isEditMode} />
 
         {show_detail_link && (
           <CardReadMore

@@ -35,27 +35,14 @@ export const getItemIcon = (item) => {
   return custom_icon || icon;
 };
 
-export const getItemListingCategory = ({
-  item,
-  show_type,
-  show_section,
-  //show_topics, //nei listing di io-sanita non vengono piu mostrati gli argomenti nella categoria di un elemento
-  variation,
-  ...other_props
-}) => {
+export const getItemListingCategory = ({ item, variation, ...other_props }) => {
   let cat = [];
   if (item) {
-    // if (show_section && item.parent) {
+    // if (other_props.show_section && item.parent) {
     //   cat.push(item.parent?.title);
     // }
-    if (show_type) {
-      cat.push(item.type_title);
-    }
-    // if (show_topics) {
-    //   const firstTopic = item?.parliamo_di_metadata?.[0];
-    //   if (firstTopic) {
-    //     cat.push(firstTopic?.title ?? firstTopic);
-    //   }
+    // if (other_props.show_type) {
+    //   cat.push(item.type_title);
     // }
   }
 

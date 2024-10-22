@@ -24,7 +24,6 @@ export const CardImage = ({
   showDescription = true,
   show_image = true,
   show_dates = true,
-  show_type = true,
   imgSrc,
   isEditMode,
   titleTag = 'h3',
@@ -94,8 +93,6 @@ export const CardImage = ({
         </div>
         <CardCategoryBottom
           item={item}
-          show_type={show_type}
-          show_default={false}
           date={date && item['@type'] !== 'Event' ? date : null}
           isEditMode={isEditMode}
         />

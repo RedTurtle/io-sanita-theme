@@ -23,12 +23,12 @@ const messages = defineMessages({
 });
 export const CardSimple = ({
   showDescription = true,
+  showCategory = true,
   item,
   isEditMode,
   className,
   titleTag = 'h5',
   titleDataElement,
-  showDeafaultCategory,
   highlight, //se si vuole evidenziare un testo, ad esempio nei risultati delle ricerche
 }) => {
   const intl = useIntl();
@@ -99,7 +99,7 @@ export const CardSimple = ({
           item={item}
           date={date}
           isEditMode={isEditMode}
-          show_default={showDeafaultCategory}
+          showCategory={showCategory}
         />
       </CardBody>
     </Card>

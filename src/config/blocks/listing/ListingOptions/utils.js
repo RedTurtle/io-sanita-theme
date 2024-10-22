@@ -13,10 +13,6 @@ const messages = defineMessages({
     id: 'show_section',
     defaultMessage: 'Mostra la sezione',
   },
-  show_type: {
-    id: 'show_type',
-    defaultMessage: 'Mostra il tipo',
-  },
   show_description: {
     id: 'show_description',
     defaultMessage: 'Mostra la descrizione',

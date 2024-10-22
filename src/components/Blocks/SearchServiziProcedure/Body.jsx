@@ -27,7 +27,7 @@ const messages = defineMessages({
   },
   label_utenti: {
     id: 'search_sp_label_utenti',
-    defaultMessage: 'utenti',
+    defaultMessage: 'Rivolto a',
   },
   searchable_text_default_label_servizi: {
     id: 'search_sp_searchable_text_default_label_servizi',

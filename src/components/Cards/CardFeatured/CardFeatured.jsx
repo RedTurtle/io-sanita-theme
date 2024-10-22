@@ -24,7 +24,7 @@ const CardFeatured = ({
   isEditMode,
   className,
   category,
-  showDefaultCategory,
+  showCategory,
   showDescription = true,
   text,
   otherChildren,
@@ -82,7 +82,7 @@ const CardFeatured = ({
         <CardCategoryBottom
           item={item}
           category={category}
-          show_default={showDefaultCategory}
+          showCategory={showCategory}
           date={_date}
           isEditMode={isEditMode}
         />

@@ -16,10 +16,6 @@ const messages = defineMessages({
     id: 'natural_image_size',
     defaultMessage: "Non alterare le dimensioni naturali dell'immagine",
   },
-  show_topics: {
-    id: 'show_topics',
-    defaultMessage: 'Mostra gli argomenti',
-  },
   set_four_columns: {
     id: 'set_four_columns',
     defaultMessage: 'Disponi su 4 colonne',
@@ -63,12 +59,8 @@ export const imageCardTemplateOptions = (
       'always_show_image',
       'natural_image_size',
       'set_four_columns',
-      //'show_icon',
-      //'show_section',
-      'show_type',
       'hide_dates',
       'show_description',
-      //'show_topics',
     ].filter((f) => hide_fields.indexOf(f) < 0),
     {
       always_show_image: {
@@ -83,10 +75,7 @@ export const imageCardTemplateOptions = (
         default: false,
         label: intl.formatMessage(messages.set_four_columns),
       },
-      //show_section: { default: false },
-      //show_icon: { default: false },
       hide_dates: { default: false },
-      //show_topics: { label: intl.formatMessage(messages.show_topics) },
     },
     pos,
   );
