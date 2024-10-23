@@ -61,6 +61,7 @@ export const imageCardTemplateOptions = (
       'set_four_columns',
       'hide_dates',
       'show_description',
+      'show_category',
     ].filter((f) => hide_fields.indexOf(f) < 0),
     {
       always_show_image: {
@@ -76,6 +77,7 @@ export const imageCardTemplateOptions = (
         label: intl.formatMessage(messages.set_four_columns),
       },
       hide_dates: { default: false },
+      show_category: { default: true },
     },
     pos,
   );

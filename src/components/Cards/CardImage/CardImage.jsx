@@ -22,8 +22,9 @@ export const CardImage = ({
   item,
   description, //to override default description
   showDescription = true,
-  show_image = true,
-  show_dates = true,
+  showImage = true,
+  showDates = true,
+  showCategory,
   imgSrc,
   isEditMode,
   titleTag = 'h3',
@@ -32,17 +33,17 @@ export const CardImage = ({
   otherChildren,
   className,
 }) => {
-  const img = show_image ? (
+  const img = showImage ? (
     item.image_field && item.image_scales?.[item.image_field] ? (
-      ListingImage({ item, showTitleAttr: false })
+      ListingImage({ item, showTitleAttr: false, isEditMode })
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
     ) : null
   ) : null;
 
-  const date = show_dates && getCalendarDate(item, rrule.rrulestr);
+  const date = showDates && getCalendarDate(item, rrule.rrulestr);
   const eventRecurrenceMore =
-    show_dates && getEventRecurrenceMore(item, isEditMode);
+    showDates && getEventRecurrenceMore(item, isEditMode);
 
   return (
     <Card className={cx('shadow rounded no-after card-image', className)}>
@@ -95,6 +96,7 @@ export const CardImage = ({
           item={item}
           date={date && item['@type'] !== 'Event' ? date : null}
           isEditMode={isEditMode}
+          showCategory={showCategory}
         />
       </CardBody>
     </Card>

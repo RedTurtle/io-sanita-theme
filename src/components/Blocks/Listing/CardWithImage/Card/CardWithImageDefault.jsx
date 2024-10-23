@@ -20,6 +20,7 @@ const CardWithImageDefault = (props) => {
     always_show_image = false,
     set_four_columns = false,
     show_description = true,
+    show_category,
     hide_dates = false,
     natural_image_size = false,
     id_lighthouse,
@@ -51,13 +52,15 @@ const CardWithImageDefault = (props) => {
           size={show_description ? 'big' : 'small'}
           isEditMode={isEditMode}
           titleDataElement={id_lighthouse}
+          showCategory={show_category}
         />
       ) : (
         <>
           <CardImage
             item={item}
-            show_image={showImage}
+            showImage={showImage}
             showDescription={listingText != null}
+            showCategory={show_category}
             description={listingText}
             className={cx({
               'rassegna-appointment': isEventAppointment,
@@ -73,7 +76,7 @@ const CardWithImageDefault = (props) => {
                 </>
               ),
             }}
-            show_dates={!hide_dates}
+            showDates={!hide_dates}
             titleDataElement={id_lighthouse}
           />
         </>

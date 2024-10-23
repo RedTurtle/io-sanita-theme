@@ -24,25 +24,25 @@ const CardFeatured = ({
   isEditMode,
   className,
   category,
-  showCategory,
-  showDescription = true,
   text,
   otherChildren,
   titleDataElement,
-  show_dates = true,
   date,
+  showCategory,
+  showDescription = true,
+  showDates = true,
   rrule,
 }) => {
   const img =
     item.image_field && item.image_scales?.[item.image_field] ? (
-      ListingImage({ item, showTitleAttr: false })
+      ListingImage({ item, showTitleAttr: false, isEditMode })
     ) : imgSrc ? (
       <img src={imgSrc} alt="" />
     ) : null;
 
   const eventRecurrenceMore =
-    show_dates && getEventRecurrenceMore(item, isEditMode);
-  const _date = show_dates && (date ?? getCalendarDate(item, rrule.rrulestr));
+    showDates && getEventRecurrenceMore(item, isEditMode);
+  const _date = showDates && (date ?? getCalendarDate(item, rrule.rrulestr));
 
   return (
     <Card
@@ -81,7 +81,6 @@ const CardFeatured = ({
         </div>
         <CardCategoryBottom
           item={item}
-          category={category}
           showCategory={showCategory}
           date={_date}
           isEditMode={isEditMode}

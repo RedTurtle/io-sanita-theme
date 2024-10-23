@@ -21,9 +21,10 @@ export const addInEvidenceTemplateOptions = (
     schema,
     formData,
     intl,
-    ['hide_dates', 'show_description'],
+    ['hide_dates', 'show_description', 'show_category'],
     {
       hide_dates: { default: false },
+      show_category: { default: true },
     },
     pos,
   );

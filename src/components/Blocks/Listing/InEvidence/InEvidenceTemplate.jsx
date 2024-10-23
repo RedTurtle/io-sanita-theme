@@ -26,6 +26,7 @@ const InEvidenceTemplate = (props) => {
     isEditMode,
     show_block_bg,
     show_description = true,
+    show_category = true,
     id_lighthouse,
     hide_dates,
     linkAlign,
@@ -62,6 +63,7 @@ const InEvidenceTemplate = (props) => {
                       size={show_description ? 'big' : 'small'}
                       isEditMode={isEditMode}
                       titleDataElement={id_lighthouse}
+                      showCategory={show_category}
                     />
                   ) : (
                     <>
@@ -73,13 +75,13 @@ const InEvidenceTemplate = (props) => {
                         className={cx('listing-item', {
                           'rassegna-appointment': isEventAppointment,
                         })}
-                        show_dates={!hide_dates}
+                        showDates={!hide_dates}
+                        showCategory={show_category}
                         category={
                           category && (
                             <ListingCategory category={category} item={item} />
                           )
                         }
-                        showCategory={false}
                         otherChildren={{
                           afterTitle: isEventAppointment && (
                             <RassegnaInfo eventoPadre={item.parent} />
