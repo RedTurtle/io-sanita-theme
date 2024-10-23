@@ -59,6 +59,12 @@ export const applyIoSanitaBlocksConfig = (config) => {
       listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
+      defaultAdditionalOptions:
+        null /*(schema, formData, intl, position = 0) => {
+        let pos = position;
+
+        return pos;
+      };*/,
     },
     hero: {
       id: 'hero',
