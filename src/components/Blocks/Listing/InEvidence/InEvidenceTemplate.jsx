@@ -35,7 +35,7 @@ const InEvidenceTemplate = (props) => {
   return (
     <div className="in-evidence">
       <ListingContainer data={props} isEditMode={isEditMode}>
-        <div className="in-evidence-cards-wrapper mb-5">
+        <div className="in-evidence-cards-wrapper mb-4">
           <Row>
             {items.map((item, index) => {
               const listingText = show_description ? (
@@ -102,7 +102,7 @@ const InEvidenceTemplate = (props) => {
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}
-          className="my-4"
+          className={show_block_bg ? 'mt-4' : 'my-4'}
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
       </ListingContainer>

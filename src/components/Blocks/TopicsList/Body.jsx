@@ -46,11 +46,11 @@ const Body = ({ isEditMode, data, id }) => {
       )}
 
       {data?.description && (
-        <div className="mb-2">
+        <div className="mb-4 is-block-description">
           <TextBlockView data={{ value: data?.description }} />
         </div>
       )}
-      <Row>
+      <Row className="mb-3">
         {data?.taxonomies?.map((obj, i) => {
           const t = obj.user || obj.topic;
           const _taxUser = taxonomyUsers.filter((tt) => tt.value === t);

@@ -8,6 +8,10 @@ const messages = defineMessages({
     id: 'Titolo',
     defaultMessage: 'Titolo',
   },
+  description: {
+    id: 'listing_Descrizione',
+    defaultMessage: 'Descrizione',
+  },
   show_block_bg: {
     id: 'Mostra lo sfondo del blocco',
     defaultMessage: 'Mostra lo sfondo del blocco',
@@ -39,6 +43,16 @@ const addDefaultOptions = (schema, formData = {}, intl, position = 1) => {
       intl.formatMessage(messages.title),
       null,
       null,
+      pos,
+      fieldset,
+    );
+    pos++;
+    addSchemaField(
+      schema,
+      'description',
+      intl.formatMessage(messages.description),
+      null,
+      { widget: 'slate' },
       pos,
       fieldset,
     );

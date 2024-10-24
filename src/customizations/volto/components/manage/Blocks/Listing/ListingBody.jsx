@@ -6,19 +6,20 @@ CUSTOMIZATIONS:
 - italia pagination
 - change Headline component to use data.title instead data.headline
 - change Headline component to to view path filters
+- added data.description to Headline
 
 */
 import React, { createRef, useMemo } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import cx from 'classnames';
-
+import { Row, Col, Container } from 'design-react-kit';
 import Slugger from 'github-slugger';
 
 import { renderLinkElement } from '@plone/volto-slate/editor/render';
+import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
 import { normalizeString } from '@plone/volto/helpers';
 
-import { Row, Col, Container } from 'design-react-kit';
 import { Pagination } from 'io-sanita-theme/components';
 import {
   DefaultSkeleton,
@@ -29,12 +30,12 @@ import {
 import config from '@plone/volto/registry';
 
 const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
-  if (!data.title) {
+  if (!data.title && !data.description) {
     return <></>;
   }
 
   let attr = { id };
-  const slug = Slugger.slug(normalizeString(data.title));
+  const slug = Slugger.slug(normalizeString(data.title ?? ''));
   attr.id = slug || id;
 
   const LinkedHeadline = useMemo(
@@ -48,25 +49,33 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
   );*/
 
   return (
-    (data.title || path_filters_buttons) && (
+    (data.title || data.description || path_filters_buttons) && (
       <ListingContainer data={data} isEditMode={isEditMode}>
         <Row
           className={cx('template-header', {
             'with-filters': path_filters_buttons,
           })}
         >
-          {data.title && (
+          {(data.title || data.description) && (
             <Col md={path_filters_buttons ? 6 : 12}>
-              <LinkedHeadline
-                mode={!isEditMode && 'view'}
-                children={data.title}
-                attributes={attr}
-                className={cx('headline', {
-                  emptyListing: !listingItems?.length > 0,
-                  'mt-5': !data.show_block_bg,
-                  'mb-4': !path_filters_buttons,
-                })}
-              />
+              {data.title && (
+                <LinkedHeadline
+                  mode={!isEditMode && 'view'}
+                  children={data.title}
+                  attributes={attr}
+                  className={cx('headline', {
+                    emptyListing: !listingItems?.length > 0,
+                    'mt-5': !data.show_block_bg,
+                    'mt-4': data.show_block_bg,
+                    'mb-4': !path_filters_buttons && !data.description,
+                  })}
+                />
+              )}
+              {data?.description && (
+                <div className="mb-4 is-block-description">
+                  <TextBlockView data={{ value: data?.description }} />
+                </div>
+              )}
             </Col>
           )}
           {path_filters_buttons && (

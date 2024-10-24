@@ -1,0 +1,11 @@
+.public-ui {
+  .is-block-description {
+    &,
+    p {
+      @include rem-size(font-size, 24);
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
