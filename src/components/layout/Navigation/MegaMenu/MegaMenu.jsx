@@ -60,12 +60,11 @@ const isActive = (item, pathname) => {
     paths.push(item.linkUrl[0]);
   }
 
-  return paths.reduce(
-    (acc, path) =>
-      acc ||
-      flattenToAppURL(pathname).indexOf(flattenToAppURL(path['@id'])) > -1,
-    false,
-  );
+  return paths.reduce((acc, path) => {
+    const p = flattenToAppURL(path['@id']);
+    const pname = flattenToAppURL(pathname);
+    return acc || pname == p || pname.indexOf(p + '/') > -1;
+  }, false);
 };
 
 const isChildActive = (itemUrl, pathname, exact = false) => {

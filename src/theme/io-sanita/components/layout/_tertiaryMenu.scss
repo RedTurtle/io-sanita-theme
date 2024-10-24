@@ -2,7 +2,9 @@
   li.nav-item {
     display: flex;
     align-items: center;
-    border-right: 1px solid #fff;
+    &:not(:last-of-type) {
+      border-right: 1px solid #fff;
+    }
 
     a {
       @media (min-width: #{map-get($grid-breakpoints, lg)}) {
