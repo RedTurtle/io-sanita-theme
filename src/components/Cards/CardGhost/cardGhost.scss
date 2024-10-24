@@ -23,6 +23,10 @@
             }
           }
         }
+
+        &:last-child {
+          margin-top: 0;
+        }
       }
     }
     &.border-bottom-card {
