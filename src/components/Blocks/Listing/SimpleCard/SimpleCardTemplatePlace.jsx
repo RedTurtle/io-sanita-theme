@@ -13,6 +13,7 @@ const SimpleCardTemplatePlace = ({
   linkTitle,
   linkHref,
   show_block_bg,
+  show_category,
   title,
   id_lighthouse,
   linkAlign,
@@ -29,6 +30,7 @@ const SimpleCardTemplatePlace = ({
               type={cardType}
               titleDataElement={id_lighthouse}
               isEditMode={isEditMode}
+              showCategory={show_category}
             />
           </Col>
         ))}

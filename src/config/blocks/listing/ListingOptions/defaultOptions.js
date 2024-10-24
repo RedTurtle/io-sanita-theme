@@ -1,8 +1,5 @@
 import { defineMessages } from 'react-intl';
-import {
-  addSchemaField,
-  addDefaultAdditionalOptions,
-} from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+import { addSchemaField } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 
 import config from '@plone/volto/registry';
 
@@ -100,8 +97,11 @@ const addDefaultOptions = (schema, formData = {}, intl, position = 1) => {
     pos++;
   }
 
-  pos = addDefaultAdditionalOptions(schema, formData, intl, pos);
-
+  const defaultAdditionalOptions =
+    config.blocks.blocksConfig.listing.defaultAdditionalOptions;
+  if (defaultAdditionalOptions) {
+    pos = defaultAdditionalOptions(schema, formData, intl, pos);
+  }
   return pos;
 };
 

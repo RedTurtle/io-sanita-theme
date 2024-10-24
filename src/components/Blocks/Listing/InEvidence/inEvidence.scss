@@ -33,4 +33,10 @@
       width: 50%;
     }
   }
+
+  .card-featured {
+    .card-image {
+      aspect-ratio: 16/9;
+    }
+  }
 }

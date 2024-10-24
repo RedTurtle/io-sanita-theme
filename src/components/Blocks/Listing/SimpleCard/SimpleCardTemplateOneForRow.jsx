@@ -13,15 +13,12 @@ import {
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
 
-import { getItemIcon, getItemListingCategory } from 'io-sanita-theme/helpers';
+import { getItemIcon } from 'io-sanita-theme/helpers';
 
 import { CardCategoryTop } from 'io-sanita-theme/components';
 import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
 
-import {
-  ListingCategory,
-  ListingText,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingText } from 'io-sanita-theme/components/Blocks';
 
 import {
   getCalendarDate,
@@ -54,7 +51,6 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
     linkAlign,
     show_icon = false,
     show_section = true,
-    show_type,
     show_description = true,
     show_detail_link,
     detail_link_label,
@@ -98,12 +94,7 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
           const listingText = show_description ? (
             <ListingText item={item} />
           ) : null;
-          const category = getItemListingCategory({
-            ...props,
-            item,
-            show_type,
-            show_section,
-          });
+
           const type = item['@type'];
           const BlockExtraTags = getComponentWithFallback({
             name: 'BlockExtraTags',
@@ -124,14 +115,8 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
                   'pb-5': show_detail_link || eventRecurrenceMore,
                 })}
               >
-                {(icon || category || date) && (
-                  <CardCategoryTop iconName={icon} date={date}>
-                    {category && (
-                      <span className="text fw-bold">
-                        <ListingCategory category={category} item={item} />
-                      </span>
-                    )}
-                  </CardCategoryTop>
+                {(icon || date) && (
+                  <CardCategoryTop iconName={icon} date={date} />
                 )}
                 <CardTitle tag="h3">
                   <UniversalLink

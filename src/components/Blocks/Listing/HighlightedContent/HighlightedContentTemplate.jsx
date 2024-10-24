@@ -1,5 +1,5 @@
 /*
- * Contenuto in evidenza
+ * Contenuto in evidenza: serve per mostrare uno o più contenuti in evidenza a tutta larghezza e con tutte le info necesarie
  */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -14,7 +14,6 @@ import { getComponentWithFallback } from 'io-sanita-theme/helpers';
 import { CardFeatured } from 'io-sanita-theme/components';
 import {
   ListingContainer,
-  ListingCategory,
   ListingText,
   RassegnaInfo,
 } from 'io-sanita-theme/components/Blocks';
@@ -36,15 +35,13 @@ const HighlightedContentTemplate = (props) => {
       {items.map((item, index) => {
         const listingText = <ListingText item={item} />;
 
-        const category = item.parent?.title;
+        const isEventAppointment =
+          item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
         const BlockExtraTags = getComponentWithFallback({
           name: 'BlockExtraTags',
           dependencies: ['HighlightedContentTemplate', item['@type']],
         }).component;
-
-        const isEventAppointment =
-          item?.parent?.['@type'] === 'Event' && item?.['@type'] === 'Event';
 
         const readMoreHref = linkHref?.[0]?.['@id'];
         return (
@@ -56,11 +53,6 @@ const HighlightedContentTemplate = (props) => {
               titleDataElement={id_lighthouse}
               isEditMode={isEditMode}
               className={cx({ 'has-link-more': readMoreHref })}
-              category={
-                category ? (
-                  <ListingCategory category={category} item={item} />
-                ) : null
-              }
               otherChildren={{
                 afterTitle: isEventAppointment ? (
                   <RassegnaInfo eventoPadre={item.parent} />

@@ -14,6 +14,7 @@ const ListingImage = ({
   showTitleAttr = true,
   sizes = '(max-width:320px) 200px, (max-width:425px) 300px, (max-width:767px) 500px, 410px',
   noWrapLink = false,
+  isEditMode = false,
   ...imageProps
 }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -39,7 +40,11 @@ const ListingImage = ({
   if (image === null && !showDefault) return null;
 
   return !noWrapLink ? (
-    <UniversalLink item={item} className="img-wrapper">
+    <UniversalLink
+      className="img-wrapper"
+      item={!isEditMode ? item : null}
+      href={isEditMode ? '#' : ''}
+    >
       {image ?? defaultImage}
     </UniversalLink>
   ) : (

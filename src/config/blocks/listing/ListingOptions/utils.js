@@ -13,9 +13,9 @@ const messages = defineMessages({
     id: 'show_section',
     defaultMessage: 'Mostra la sezione',
   },
-  show_type: {
-    id: 'show_type',
-    defaultMessage: 'Mostra il tipo',
+  show_category: {
+    id: 'show_category',
+    defaultMessage: 'Mostra la categoria',
   },
   show_description: {
     id: 'show_description',

@@ -30,6 +30,7 @@ const CardPlace = ({
   showDistance = false,
   showAddress = true,
   showMap = false,
+  showCategory,
   item,
   isEditMode,
   titleTag = 'h3',
@@ -92,7 +93,11 @@ const CardPlace = ({
             </CardText>
           </div>
           {type !== 'synthetic' && (
-            <CardCategoryBottom item={item} isEditMode={isEditMode} />
+            <CardCategoryBottom
+              item={item}
+              isEditMode={isEditMode}
+              showCategory={showCategory}
+            />
           )}
         </div>
         <AvatarIcon size={size === 'small' ? 'l' : 'xl'}>
