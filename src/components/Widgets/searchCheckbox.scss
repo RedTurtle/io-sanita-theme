@@ -1,0 +1,10 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.search-checkbox {
+  .form-check [type='checkbox'] + label {
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-weight: $font-weight-semibold;
+    color: var(--bs-body-color-rgb);
+  }
+}
