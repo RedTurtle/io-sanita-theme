@@ -16,16 +16,12 @@ import { UniversalLink } from '@plone/volto/components';
 
 import {
   getItemIcon,
-  getItemListingCategory,
   getCalendarDate,
   getEventRecurrenceMore,
   getComponentWithFallback,
 } from 'io-sanita-theme/helpers';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
-import {
-  ListingCategory,
-  ListingText,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingText } from 'io-sanita-theme/components/Blocks';
 
 import { CardCategoryTop } from 'io-sanita-theme/components';
 import 'io-sanita-theme/components/Cards/CardSimple/cardSimple.scss';
@@ -94,10 +90,7 @@ const SimpleCardDefault = (props) => {
     ? null
     : getEventRecurrenceMore(item, isEditMode);
   const listingText = show_description ? <ListingText item={item} /> : null;
-  const category = getItemListingCategory({
-    ...props,
-    item,
-  });
+
   const type = item['@type'];
   const isServizioOnline =
     item['@type'] === 'Servizio' && item?.servizio_attivo;
@@ -120,18 +113,7 @@ const SimpleCardDefault = (props) => {
         })}
       >
         <div className="card-body-main">
-          {(icon || category) && (
-            <CardCategoryTop
-              iconName={icon}
-              children={
-                category ? (
-                  <span className="text fw-bold">
-                    <ListingCategory category={category} item={item} />
-                  </span>
-                ) : null
-              }
-            />
-          )}
+          {icon && <CardCategoryTop iconName={icon} />}
           <CardTitle tag="h3">
             <UniversalLink
               item={!isEditMode ? item : null}

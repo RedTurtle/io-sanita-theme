@@ -35,23 +35,6 @@ export const getItemIcon = (item) => {
   return custom_icon || icon;
 };
 
-export const getItemListingCategory = ({ item, variation, ...other_props }) => {
-  let cat = [];
-  if (item) {
-    // if (other_props.show_section && item.parent) {
-    //   cat.push(item.parent?.title);
-    // }
-    // if (other_props.show_type) {
-    //   cat.push(item.type_title);
-    // }
-  }
-
-  if (cat.length > 0) {
-    return cat.join(cat.length > 1 ? ' - ' : '');
-  }
-  return null;
-};
-
 export const hasGeolocation = (item) => {
   return (
     item?.geolocation &&

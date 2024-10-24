@@ -23,7 +23,6 @@ const CardFeatured = ({
   imgSrc,
   isEditMode,
   className,
-  category,
   text,
   otherChildren,
   titleDataElement,
