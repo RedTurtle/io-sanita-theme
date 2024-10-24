@@ -26,6 +26,9 @@
               margin: 0;
               text-transform: none;
               color: $accordion-title-color;
+              font-size: 1rem;
+              font-weight: $font-weight-semibold;
+              line-height: 2;
 
               &:after {
                 content: none;
