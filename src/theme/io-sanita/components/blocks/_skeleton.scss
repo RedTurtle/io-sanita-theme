@@ -108,7 +108,9 @@
   }
 
   .skeleton-item-title {
+    @extend %skeleton-animation;
     background-color: var(--skeleton-bg);
+    min-height: 0.5em;
   }
 
   .slick-slider {
