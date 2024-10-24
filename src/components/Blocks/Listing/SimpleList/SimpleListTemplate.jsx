@@ -1,35 +1,34 @@
 /* Variation Lista Semplice of Listing block */
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import { ConditionalLink } from '@plone/volto/components';
-import { Container, Row, Col } from 'design-react-kit';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
+import { Row, Col } from 'design-react-kit';
+import {
+  ListingLinkMore,
+  ListingContainer,
+} from 'io-sanita-theme/components/Blocks';
 
-const SimpleListTemplate = ({
-  items,
-  title,
-  isEditMode,
-  linkAlign,
-  linkTitle,
-  linkHref,
-  show_block_bg,
-  show_pointer_list,
-  titleLine,
-  linkmore_id_lighthouse,
-}) => {
+import './simpleListTemplate.scss';
+
+import SimpleListTemplateSkeleton from '../Skeletons/SimpleListTemplateSkeleton';
+import CardWithImageTemplateSkeleton from '../Skeletons/CardWithImageTemplateSkeleton';
+
+const SimpleListTemplate = (props) => {
+  const {
+    items,
+    title,
+    isEditMode,
+    linkAlign,
+    linkTitle,
+    linkHref,
+    show_block_bg,
+    show_pointer_list,
+    titleLine,
+    linkmore_id_lighthouse,
+  } = props;
   return (
     <div className="simple-list-template">
-      <Container className="px-4">
-        {/* {title && (
-          <Row>
-            <Col>
-              <h2 className={cx('mb-4', { 'title-bottom-line': titleLine })}>
-                {title}
-              </h2>
-            </Col>
-          </Row>
-        )} */}
+      <ListingContainer data={props} isEditMode={isEditMode} className="px-4">
         {items.length > 0 && (
           <Row>
             <Col>
@@ -54,7 +53,7 @@ const SimpleListTemplate = ({
           className="my-4"
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

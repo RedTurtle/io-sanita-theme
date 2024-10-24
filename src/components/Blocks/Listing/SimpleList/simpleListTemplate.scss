@@ -1,3 +1,5 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
 .simpleListTemplate {
   .simple-list-template,
   .simple-list-skeleton-template {
@@ -23,7 +25,6 @@
       }
     }
   }
-
   .simple-list-skeleton-template {
     min-height: 7em;
   }

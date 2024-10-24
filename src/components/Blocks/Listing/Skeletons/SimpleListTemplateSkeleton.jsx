@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalLink } from '@plone/volto/components';
-import { Container, Row, Col } from 'design-react-kit';
+import { Row, Col } from 'design-react-kit';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
-const SimpleListTemplateSkeleton = ({
-  isEditMode,
-  title,
-  linkHref,
-  show_block_bg,
-  show_pointer_list,
-}) => {
+const SimpleListTemplateSkeleton = (props) => {
+  const { isEditMode, title, linkHref, show_block_bg, show_pointer_list } =
+    props;
   return (
-    <div>
-      <Container className="px-4">
-        <div className="simple-list-skeleton-template">
+    <div className="simple-list-skeleton-template">
+      <ListingContainer data={props} isEditMode={isEditMode}>
+        <div className="skeleton-template">
           {title && (
             <Row>
               <Col>
@@ -33,7 +30,7 @@ const SimpleListTemplateSkeleton = ({
           </ul>
           {linkHref && <div className="link-button text-center my-5"></div>}
         </div>
-      </Container>
+      </ListingContainer>
     </div>
   );
 };
