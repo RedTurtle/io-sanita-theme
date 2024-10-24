@@ -8,4 +8,11 @@
       margin-bottom: 0;
     }
   }
+
+  .block {
+    margin-bottom: 1.5rem;
+  }
+  .block[class*='bg-']:has(+ .block[class*='bg-']) {
+    margin-bottom: 0;
+  }
 }

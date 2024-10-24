@@ -42,7 +42,7 @@ const Header = ({ pathname }) => {
         style={{ paddingTop: mini ? '50px' : '120px' }}
       /> */}
         {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-        <Headers>
+        <Headers sticky={true}>
           <HeaderSlim />
 
           <div className="it-nav-wrapper">

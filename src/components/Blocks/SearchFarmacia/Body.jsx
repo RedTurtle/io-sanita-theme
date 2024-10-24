@@ -220,7 +220,7 @@ const Body = ({ isEditMode, data, id }) => {
   }, [currentPage, results]);
 
   return (
-    <div className="iosanita-block-search farmacia">
+    <div className="block iosanita-block-search farmacia">
       <div className="full-width bg-primary-lightest">
         {!loading ? (
           <Container className="py-4">

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Col, Row } from 'design-react-kit';
 import { getVocabulary } from '@plone/volto/actions';
@@ -40,7 +41,7 @@ const Body = ({ isEditMode, data, id }) => {
   }, []);
 
   return (
-    <div className="iosanita-block-topics-list">
+    <div className={cx('iosanita-block-topics-list', { block: !isEditMode })}>
       {data?.title && (
         <LinkedHeadline isEditMode={isEditMode} title={data.title} id={id} />
       )}

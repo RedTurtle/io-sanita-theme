@@ -21,7 +21,7 @@ const SimpleCardTemplateDefault = (props) => {
   const resultsUID = uuid();
 
   return (
-    <div className="simple-card-default">
+    <div className="simple-card-default mb-5">
       <Row className="mb-3" id={resultsUID + '_results'}>
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>

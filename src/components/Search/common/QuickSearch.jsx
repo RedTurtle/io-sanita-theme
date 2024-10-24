@@ -44,7 +44,7 @@ const QuickSearch = ({ onClick, scrollOnMobile = false, titleTag = 'h2' }) => {
 
   return items?.length > 0 ? (
     <div className="quick-search">
-      <Tag tagName={titleTag} className="h6 mb-0 title">
+      <Tag tagName={titleTag} className="h6 mb-2 mb-lg-0 title">
         {intl.formatMessage(messages.quick_search)}
       </Tag>
 
@@ -58,7 +58,7 @@ const QuickSearch = ({ onClick, scrollOnMobile = false, titleTag = 'h2' }) => {
             <Button
               key={'quick-search' + i}
               color="link-accent"
-              className="px-0 quick-item"
+              className={cx('px-0 quick-item', { 'py-lg-2': !scrollOnMobile })}
               size="sm"
               aria-label={item.title}
               onClick={() => onClick(item)}

@@ -65,7 +65,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
                   attributes={attr}
                   className={cx('headline', {
                     emptyListing: !listingItems?.length > 0,
-                    'mt-5': !data.show_block_bg,
+                    'mt-0': !data.show_block_bg,
                     'mt-4': data.show_block_bg,
                     'mb-4': !path_filters_buttons && !data.description,
                   })}

@@ -228,7 +228,7 @@ const Body = ({ data, id, path, properties, block, inEditMode }) => {
   };
 
   return (
-    <div className="iosanita-block-search servizi-procedure">
+    <div className="block iosanita-block-search servizi-procedure">
       <div className="full-width bg-primary-lightest py-4">
         <Container className="px-4">
           {/* TITOLO DEL BLOCCO */}
