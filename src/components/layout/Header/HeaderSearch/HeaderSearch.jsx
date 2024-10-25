@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
 import { SearchModal } from 'io-sanita-theme/components';
@@ -15,13 +16,13 @@ const messages = defineMessages({
   },
 });
 
-const HeaderSearch = () => {
+const HeaderSearch = ({ className }) => {
   const intl = useIntl();
   const [showSearchModal, setShowSearchModal] = useState(false);
 
   return (
     <>
-      <div className="it-search-wrapper">
+      <div className={cx('it-search-wrapper', className)}>
         <span className="d-none d-md-block">
           {intl.formatMessage(messages.search)}
         </span>
