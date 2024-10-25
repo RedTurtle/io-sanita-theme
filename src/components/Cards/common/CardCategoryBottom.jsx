@@ -21,7 +21,9 @@ const CardCategoryBottom = ({
   const portal_type = item['@type'] ?? item.portal_type;
   switch (item['@type']) {
     case 'Servizio':
-      defaultCategory = item.tassonomia_servizio;
+      defaultCategory =
+        item.tipologia_servizio_metadata?.[0]?.title ??
+        item.tipologia_servizio?.[0];
       break;
     case 'News Item':
       defaultCategory =
