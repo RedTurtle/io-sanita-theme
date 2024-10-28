@@ -14,6 +14,9 @@ body:not(.section-edit):not(.section-add) {
 
       .display-only-when-sticky {
         display: block;
+        &.it-search-wrapper {
+          display: flex;
+        }
       }
 
       .it-header-navbar-wrapper .menu-wrapper {
