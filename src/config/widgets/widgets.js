@@ -22,6 +22,11 @@ const IconWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget'
   ),
 );
+export const LinkToWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/LinkToWidget/LinkToWidget'
+  ),
+);
 
 const getIoSanitaWidgets = (config) => {
   return {
@@ -52,6 +57,7 @@ const getIoSanitaWidgets = (config) => {
     widget: {
       ...config.widgets.widget,
       icon: IconWidget,
+      linkTo: LinkToWidget,
     },
   };
 };

@@ -185,6 +185,72 @@ body.cms-ui {
     margin-left: 0.1rem;
   }
 
+  //fix drag block button and delete block button colors
+  &.has-toolbar.has-sidebar .drag.handle.wrapper,
+  .drag.handle.wrapper,
+  .block .ui.basic.button.delete-button,
+  .block.cta_block .ui.basic.button.delete-button,
+  .block.numbersBlock > .ui.basic.button.delete-button,
+  .block.iconBlocks .ui.basic.button.delete-button,
+  .block.contacts .ui.basic.button.delete-button {
+    background-color: #fff !important;
+    color: #575757 !important;
+    border: 1px solid #fff !important;
+    border-radius: 100% !important;
+    padding: 5px !important;
+    margin-right: -40px !important;
+    line-height: 0;
+    margin-top: -5px;
+    min-height: unset;
+    svg,
+    svg:not(:hover) {
+      line-height: 0;
+      fill: currentColor !important;
+    }
+    .icon {
+      background: none;
+    }
+    &:hover {
+      background-color: black !important;
+      color: #fff !important;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+
+  &.has-toolbar.has-sidebar .drag.handle.wrapper,
+  .drag.handle.wrapper {
+    margin-left: -40px !important;
+    &:hover {
+      background-color: #4e8aa5 !important;
+    }
+  }
+  // @media only screen and (min-width: 1655px) {
+  //   &.has-toolbar.has-sidebar .drag.handle.wrapper {
+  //     margin-left: -40px !important;
+  //   }
+  // }
+
+  //fix delete block button colors
+
+  .block .ui.basic.button.delete-button,
+  .block.cta_block .ui.basic.button.delete-button,
+  .block.numbersBlock > .ui.basic.button.delete-button,
+  .block.iconBlocks .ui.basic.button.delete-button,
+  .block.contacts .ui.basic.button.delete-button {
+    margin-right: -39px !important;
+    &:hover {
+      background-color: #d90062 !important;
+    }
+  }
+
+  .block .subblock-edit .ui.basic.button.delete-button {
+    border-radius: 100% !important;
+    margin-left: 0.5rem;
+    color: #575757 !important;
+  }
+
   /*Select*/
   .react-select__menu {
     z-index: 11;
