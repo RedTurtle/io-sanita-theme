@@ -23,7 +23,7 @@ const SimpleListTemplateSkeleton = (props) => {
             {[0, 1, 2, 3, 4, 5, 6].map((i) => (
               <li key={i}>
                 <UniversalLink href="#">
-                  <h3 className="skeleton-item-title"> </h3>
+                  <span className="skeleton-item-title"> </span>
                 </UniversalLink>
               </li>
             ))}
