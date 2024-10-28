@@ -98,21 +98,6 @@ body.cms-ui {
       }
     }
 
-    // Placeholder block title
-    .title {
-      .public-DraftEditorPlaceholder-inner {
-        font-family: $font-family-sans-serif;
-      }
-    }
-
-    &.title {
-      .public-DraftEditorPlaceholder-inner {
-        font-size: 2.66rem;
-        font-weight: bold;
-        line-height: 1.25;
-      }
-    }
-
     //align
     .text-center {
       text-align: center;
@@ -573,10 +558,6 @@ body.cms-ui {
 
   .block-editor-title,
   .block-editor-description {
-    .DraftEditor-root {
-      padding: 0 1.333em;
-    }
-
     & + [class^='block-editor'] {
       margin-top: 2.8rem;
     }
