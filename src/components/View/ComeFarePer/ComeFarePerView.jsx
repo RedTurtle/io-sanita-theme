@@ -20,6 +20,7 @@ import {
 import {
   ComeFarePerDescrizione,
   ComeFarePerAChiSiRivolge,
+  ComeFarePerAllegati,
   ComeFarePerComeFare,
   ComeFarePerUlterioriInformazioni,
 } from 'io-sanita-theme/components/View/ComeFarePer';
@@ -27,6 +28,7 @@ import {
 export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
   { /* A CHI SI RIVOLGE */ component: ComeFarePerAChiSiRivolge },
+  { /* ALLEGATI */ component: ComeFarePerAllegati },
   { /* COME FARE */ component: ComeFarePerComeFare },
   {
     /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component:
