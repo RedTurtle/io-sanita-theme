@@ -8,13 +8,12 @@ import {
   InEvidenceTemplateSkeleton,
   CardWithImageTemplate,
   CardWithImageTemplateSkeleton,
+  SmallBlockLinksTemplate,
+  SmallBlockLinksTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
-
-// import SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinksTemplate';
-// import SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SmallBlockLinksTemplateSkeleton';
 
 // import CompleteBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/CompleteBlockLinksTemplate';
 // import CompleteBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CompleteBlockLinksTemplateSkeleton';
@@ -53,6 +52,7 @@ import {
   addMapTemplateOptions,
   addInEvidenceTemplateOptions,
   addCardWithImageTemplateOptions,
+  addSmallBlockLinksTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
@@ -60,7 +60,6 @@ import {
   // addSimpleListTemplateOptions,
   // addCardWithSlideUpTextTemplateOptions,
   // addPhotogalleryTemplateOptions,
-  // addSmallBlockLinksTemplateOptions,
   // addAttachmentCardTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
@@ -172,20 +171,20 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
-  // {
-  //   id: 'smallBlockLinksTemplate',
-  //   isDefault: false,
-  //   title: 'Blocco link solo immagini',
-  //   template: SmallBlockLinksTemplate,
-  //   skeleton: SmallBlockLinksTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
+  {
+    id: 'smallBlockLinksTemplate',
+    isDefault: false,
+    title: 'Blocco link solo immagini',
+    template: SmallBlockLinksTemplate,
+    skeleton: SmallBlockLinksTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'completeBlockLinksTemplate',
   //   isDefault: false,

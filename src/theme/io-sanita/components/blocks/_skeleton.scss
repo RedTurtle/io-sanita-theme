@@ -105,6 +105,9 @@
     @extend %skeleton-animation;
     height: 100%;
     background-color: var(--skeleton-bg);
+    &::before {
+      background-color: var(--skeleton-bg);
+    }
   }
 
   .skeleton-item-title {
