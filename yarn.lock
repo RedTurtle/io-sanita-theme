@@ -8354,7 +8354,7 @@ __metadata:
     volto-feedback: 0.4.0
     volto-feedback-italia: 1.0.4
     volto-form-block: 3.10.0
-    volto-form-block-italia: 1.0.1
+    volto-form-block-italia: 1.0.2
     volto-gdpr-privacy: 2.2.8
     volto-querywidget-with-browser: 0.4.2
     volto-secondarymenu: 4.1.1
@@ -13027,13 +13027,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block-italia@npm:1.0.1":
-  version: 1.0.1
-  resolution: "volto-form-block-italia@npm:1.0.1"
+"volto-form-block-italia@npm:1.0.2":
+  version: 1.0.2
+  resolution: "volto-form-block-italia@npm:1.0.2"
   peerDependencies:
     "@plone/volto": ^17.0.0
     volto-form-block: ^3.10.0
-  checksum: 1eeeda5012ae707ed3891818706b39b8dc40dcfefaf308758e1c8ad46238475fa6bc8afaab99975292f8c6d5e6a3bbc0c45f835d2a597a1674981682a540206c
+  checksum: c52d5e0991dff1b155c8a2d9bf4800d4cfd752ac3de8b37e56bac9f942608c24e2dad5ec7fd0fd2fa12b6ddf4b4360dbaab0b6ecde83526c61bf9e4802b081ba
   languageName: node
   linkType: hard
 

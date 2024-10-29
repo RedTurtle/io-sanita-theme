@@ -20,15 +20,18 @@ const messages = defineMessages({
   },
 });
 
-const Topics = ({ content }) => {
+const Topics = ({ content, titleTag = 'h3' }) => {
   const intl = useIntl();
   const list = content.parliamo_di_metadata ?? content.parliamo_di; // gli argomenti possono esssere in uno di questi due campi, a seconda di dove arriva l'oggetto principale (brain o load)
 
+  const Tag = ({ tagName, children, ...props }) =>
+    React.createElement(tagName, props, children);
+
   return list?.length > 0 ? (
     <div className="mt-4 mb-5 page-topics">
-      <h3 clasName="h5">
+      <Tag tagName={titleTag} className="h5">
         <small>{intl.formatMessage(messages.topics)}</small>
-      </h3>
+      </Tag>
       {list.map((item, i) => (
         <UniversalLink
           href={AGGREGATION_PAGE_ARGOMENTO + item.token}

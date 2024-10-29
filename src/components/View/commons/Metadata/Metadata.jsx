@@ -38,7 +38,7 @@ const Metadata = ({
 
       {children}
 
-      <Topics content={content} />
+      <Topics content={content} titleTag={title ? 'h3' : 'h2'} />
 
       {showDates && (
         <p className="mb-0">
