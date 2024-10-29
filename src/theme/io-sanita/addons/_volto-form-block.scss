@@ -1,0 +1,13 @@
+.block.form {
+  .single-block.subblock-draggable .ui.basic.button.delete-button,
+  .volto-subblocks-wrapper
+    .single-block.subblock-draggable
+    .ui.basic.button.delete-button,
+  .form-field .single-block.subblock-draggable .ui.basic.button.delete-button {
+    top: 0.7rem !important;
+    right: -0.15rem !important;
+    margin-right: -13px !important;
+    border: 1px solid #c7d5d7 !important;
+    z-index: 1;
+  }
+}

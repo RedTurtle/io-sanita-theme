@@ -1,14 +1,4 @@
 .public-ui {
-  .is-block-description {
-    &,
-    p {
-      @include rem-size(font-size, 24);
-    }
-    p {
-      margin-bottom: 0;
-    }
-  }
-
   .block {
     margin-bottom: 1.5rem;
   }
@@ -16,3 +6,28 @@
     margin-bottom: 0;
   }
 }
+
+.public-ui,
+.cms-ui {
+  .block {
+    .is-block-description {
+      &,
+      p {
+        @include rem-size(font-size, 24);
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// .is-block-description {
+//   &,
+//   p {
+//     @include rem-size(font-size, 24);
+//   }
+//   p {
+//     margin-bottom: 0;
+//   }
+// }
