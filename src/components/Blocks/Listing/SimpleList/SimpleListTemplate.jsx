@@ -28,7 +28,7 @@ const SimpleListTemplate = (props) => {
   } = props;
   return (
     <div className="simple-list-template">
-      <ListingContainer data={props} isEditMode={isEditMode} className="px-4">
+      <ListingContainer data={props} isEditMode={isEditMode}>
         {items.length > 0 && (
           <Row>
             <Col>
