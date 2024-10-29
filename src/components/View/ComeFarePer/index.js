@@ -31,7 +31,11 @@ export const ComeFarePerUlterioriInformazioni = loadable(() =>
     /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerUlterioriInformazioni'
   ),
 );
-
+export const ComeFarePerApprofondimenti = loadable(() =>
+  import(
+    /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerApprofondimenti'
+  ),
+);
 export const Steps = loadable(() =>
   import(
     /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/Steps/Steps'
