@@ -79,6 +79,7 @@ const Steps = ({ content, steps = [] }) => {
     steps.forEach((item) => {
       const url = flattenToAppURL(item['@id']);
       const loaded = searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
+      console.log(item, loaded);
       if (!loaded) {
         dispatch(getContent(url, null, url));
       }
@@ -89,7 +90,7 @@ const Steps = ({ content, steps = [] }) => {
         dispatch(resetContent(flattenToAppURL(item['@id'])));
       });
     };
-  }, [content, steps]);
+  }, []);
 
   return steps.length > 0 ? (
     <div className="steps">
@@ -109,7 +110,7 @@ const Steps = ({ content, steps = [] }) => {
       </Button>
       <Accordion background="active">
         {steps.map((s, index) => {
-          const step = searchSteps[flattenToAppURL(s['@id'])]?.data;
+          const step = searchSteps[flattenToAppURL(s['@id'])]?.data ?? s;
           const itemIndex = index + 1;
           const toggleItem = () => {
             setActiveItem(activeItem !== itemIndex ? itemIndex : '');
