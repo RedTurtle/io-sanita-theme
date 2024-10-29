@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: center;
     padding: 3.5rem 2.5rem;
-    z-index: -1;
 
     &.full-width {
       height: auto;
@@ -61,6 +60,7 @@
       display: block;
       overflow: hidden;
       background: none;
+      background: transparent !important;
 
       &.full-width {
         display: flex;

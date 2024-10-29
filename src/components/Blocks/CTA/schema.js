@@ -39,7 +39,7 @@ export function CTASchema({
           'bg:noprefix',
           'showFullWidth',
           'ctaImage',
-          'showImage',
+          //'showImage',
           'ctaLinkTitle',
           'ctaLink',
         ],
@@ -76,12 +76,12 @@ export function CTASchema({
           pattern_options: { selectableTypes: ['Image'] },
         },
       },
-      showImage: {
-        title: intl.formatMessage(messages.showImage),
-        type: 'boolean',
-        default: false,
-        isDisabled: (formData.ctaImage ?? []).length <= 0,
-      },
+      // showImage: {
+      //   title: intl.formatMessage(messages.showImage),
+      //   type: 'boolean',
+      //   default: false,
+      //   isDisabled: (formData.ctaImage ?? []).length <= 0,
+      // },
 
       ctaLinkTitle: {
         title: intl.formatMessage(messages.ctaLinkTitle),

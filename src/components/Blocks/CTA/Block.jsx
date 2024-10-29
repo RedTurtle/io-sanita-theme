@@ -30,7 +30,7 @@ const Block = (props) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
   const title = data?.cta_title;
-  const hasImage = data?.showImage && data?.ctaImage?.length > 0;
+  const hasImage = data?.ctaImage?.length > 0; //&& data?.showImage &&
   const content = data?.cta_content;
   const fullWidth = data?.showFullWidth;
   const bg_color = data['bg:noprefix'];
@@ -91,8 +91,8 @@ const Block = (props) => {
               fieldName="cta_content"
               block={block}
               selected={selected && selectedField === 'cta_content'}
-              placeholder={intl.formatMessage(messages.cta_content)}
               setSelected={setSelectedField}
+              placeholder={intl.formatMessage(messages.cta_content)}
               focusPrevField={() => {
                 setSelectedField('cta_title');
               }}
