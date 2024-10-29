@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import { Form } from 'semantic-ui-react';
 import { Accordion, Grid, Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
-import { CheckboxWidget, Icon, TextWidget } from '@plone/volto/components';
+import {
+  CheckboxWidget,
+  Icon,
+  TextWidget,
+  //ObjectBrowserWidget,
+} from '@plone/volto/components';
 import AlignBlock from '@plone/volto/components/manage/Sidebar/AlignBlock';
 
 import videoSVG from '@plone/volto/icons/videocamera.svg';
@@ -33,7 +38,12 @@ const messages = defineMessages({
   },
   allowExternals: {
     id: 'Allow Externals',
-    defaultMessage: 'Allow Externals',
+    defaultMessage:
+      "Accetta URL esterni per l'embed se diversi da Youtube/Vimeo",
+  },
+  linkSettings: {
+    id: 'video_link settings',
+    defaultMessage: 'Impostazioni del link',
   },
 });
 
@@ -98,8 +108,25 @@ const VideoSidebar = ({
                   }}
                   onChange={() => {}}
                 />
+                {/*
+                //sarebbe meglio usare questo ma bisonga migrare tutti i blocchi video esistenti
+                <ObjectBrowserWidget
+                  id="preview_image"
+                  title={intl.formatMessage(messages.Preview_image)}
+                  mode="image"
+                  return="single"
+                  required={false}
+                  value={data.preview_image}
+                  allowExternals={true}
+                  onChange={(id, value) =>
+                    onChangeBlock(block, {
+                      ...data,
+                      [id]: value ?? '',
+                    })
+                  }
+                /> */}
                 <TextWidget
-                  id="video-preview-image"
+                  id="preview-image"
                   title={intl.formatMessage(messages.Preview_image)}
                   required={false}
                   value={data.preview_image?.split('/').slice(-1)[0]}
@@ -170,7 +197,7 @@ const VideoSidebar = ({
                 index={0}
                 onClick={handleAccClick}
               >
-                Link Settings
+                {intl.formatMessage(messages.linkSettings)}
                 {activeAccIndex === 0 ? (
                   <Icon name={upSVG} size="20px" />
                 ) : (

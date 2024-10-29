@@ -48,6 +48,11 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
+#. Default: "Unità operativa"
+#: components/Cards/common/CardCategoryBottom
+msgid "CardCategoryBottom_UO"
+msgstr ""
+
 #. Default: "Apri in Google Maps"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
@@ -394,6 +399,11 @@ msgstr "Drop the file here to upload a new file"
 msgid "Trascina qui un file per sostituire quello esistente"
 msgstr "Drop the file here to replace existing file"
 
+#. Default: "Digita la descrizione…"
+#: components/Blocks/CTA/Block
+msgid "Type description…"
+msgstr ""
+
 #. Default: "Digita il testo…"
 #: components/Blocks/Callout/Edit
 #: helpers/Translations/overrideTranslations
@@ -402,6 +412,7 @@ msgstr ""
 
 #. Default: "Type the title…"
 #: components/Blocks/Callout/Edit
+#: components/Blocks/CTA/Block
 msgid "Type the title…"
 msgstr ""
 
@@ -670,6 +681,11 @@ msgstr "Scheduled"
 msgid "bando_servizi_collegati"
 msgstr "Related services"
 
+#. Default: "Tutto per"
+#: components/Blocks/TopicsList/Sidebar
+msgid "block_Tutto per"
+msgstr ""
+
 #. Default: "Colore di sfondo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "block_bg_color"
@@ -821,6 +837,46 @@ msgstr "Talk about"
 msgid "come_fare_per_ulteriori_informazioni"
 msgstr "More informations"
 
+#. Default: "Approfondimenti"
+#: components/View/ComeFarePer/ComeFarePerApprofondimenti
+msgid "comefareper_approfondimenti"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerAllegati
+msgid "comefareper_documenti"
+msgstr ""
+
+#. Default: "Blocco CTA"
+#: components/Blocks/CTA/Sidebar
+msgid "cta_block"
+msgstr ""
+
+#. Default: "Mostra a tutta larghezza"
+#: components/Blocks/CTA/schema
+msgid "cta_full_width"
+msgstr ""
+
+#. Default: "Immagine di sfondo"
+#: components/Blocks/CTA/schema
+msgid "cta_image"
+msgstr ""
+
+#. Default: "Link della CTA"
+#: components/Blocks/CTA/schema
+msgid "cta_link"
+msgstr ""
+
+#. Default: "Titolo per il link della CTA"
+#: components/Blocks/CTA/schema
+msgid "cta_linkTitle"
+msgstr ""
+
+#. Default: "Mostra immagine"
+#: components/Blocks/CTA/schema
+msgid "cta_show_image"
+msgstr ""
+
 #. Default: "dal {dateStart} fino a conclusione"
 #: components/View/commons/PageHeader/PageHeaderEventDates
 msgid "dal {dateStart} fino a conclusione"
@@ -910,11 +966,6 @@ msgstr ""
 #: components/View/Evento/Dates
 msgid "end"
 msgstr "Event end"
-
-#. Default: "La data di fine deve essere successiva alla data di inizio"
-#: helpers/FormValidation/FormValidation
-msgid "event_end"
-msgstr "You cannot specify an end date prior to the start date."
 
 #. Default: "Url dell'evento"
 #: components/View/Evento/EventoUlterioriInformazioni
@@ -1173,6 +1224,11 @@ msgstr ""
 msgid "linkedin"
 msgstr ""
 
+#. Default: "Descrizione"
+#: config/blocks/listing/ListingOptions/defaultOptions
+msgid "listing_Descrizione"
+msgstr ""
+
 #. Default: "Questo evento ha più date: vedi tutte"
 #: helpers/dates
 msgid "listing_event_recurrence_label"
@@ -1388,6 +1444,11 @@ msgstr "News"
 #: components/View/commons/PageHeader/PageHeaderNewsItem
 msgid "numero_progressivo_cs"
 msgstr "Press release number"
+
+#. Default: "Apri link in una nuova scheda"
+#: components/Blocks/CTA/Block
+msgid "openLinkInNewTab"
+msgstr ""
 
 #. Default: "Questo evento ha una data di fine aperta/variabile."
 #: components/View/Evento/Dates
@@ -2093,7 +2154,7 @@ msgstr "Go to search results"
 msgid "search_sp_btn_filters_label"
 msgstr "Filters"
 
-#. Default: "utenti"
+#. Default: "Rivolto a"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_label_utenti"
 msgstr "users"
@@ -2360,6 +2421,11 @@ msgstr ""
 msgid "share"
 msgstr "Share"
 
+#. Default: "Mostra la categoria"
+#: config/blocks/listing/ListingOptions/utils
+msgid "show_category"
+msgstr ""
+
 #. Default: "Mostra la descrizione"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_description"
@@ -2433,16 +2499,6 @@ msgstr ""
 #. Default: "Mostra la tipologia"
 #: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
 msgid "show_tipologia"
-msgstr ""
-
-#. Default: "Mostra gli argomenti"
-#: config/blocks/listing/ListingOptions/cardWithImageTemplate
-msgid "show_topics"
-msgstr ""
-
-#. Default: "Mostra il tipo"
-#: config/blocks/listing/ListingOptions/utils
-msgid "show_type"
 msgstr ""
 
 #. Default: "Compatto"
@@ -2711,6 +2767,36 @@ msgstr "Close"
 #: overrideTranslations
 msgid "toggleMenu_open"
 msgstr "Open"
+
+#. Default: "Descrizione"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_description"
+msgstr ""
+
+#. Default: "Mostra l'icona"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_show_icon"
+msgstr ""
+
+#. Default: "Tassonomie"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_taxonomies"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_title"
+msgstr ""
+
+#. Default: "Parliamo di"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_topics"
+msgstr ""
+
+#. Default: "A chi si rivolge"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_users"
+msgstr ""
 
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti

@@ -16,6 +16,7 @@ const vimeoReg =
 // Return videoID and placeholder (if needed), null if no match found.
 export const videoUrlHelper = (url, previewImage) => {
   const ytVideoMatch = checkIfValidYTLink(url, true);
+  console.log(previewImage);
   let placeholder = previewImage
     ? isInternalURL(previewImage)
       ? `${flattenToAppURL(previewImage)}/@@images/image`
