@@ -61,6 +61,7 @@ export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTempla
 export HighlightedContentTemplate from 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate';
 export InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidence/InEvidenceTemplate';
 export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
+export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
 
 /*Skeleton*/
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
@@ -68,6 +69,7 @@ export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skele
 export HighlightedContentTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/HighlightedContentTemplateSkeleton';
 export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/InEvidenceTemplateSkeleton';
 export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
+export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 
 /*Edit*/
 const BreakEdit = loadable(() =>
