@@ -50,7 +50,7 @@ class LinkToWidget extends Component {
    */
   render() {
     const {
-      data,
+      data = {},
       onChange,
       openObjectBrowser,
       intl,

@@ -3,6 +3,7 @@ import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
 import userSVG from '@plone/volto/icons/user.svg';
+import flashSVG from '@plone/volto/icons/flash.svg';
 import {
   BreakView,
   BreakEdit,
@@ -22,6 +23,9 @@ import {
   TopicsListView,
   TopicsListEdit,
   TopicsListSchema,
+  CTAView,
+  CTAEdit,
+  CTASchema,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -59,6 +63,12 @@ export const applyIoSanitaBlocksConfig = (config) => {
       listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
+      defaultAdditionalOptions:
+        null /*(schema, formData, intl, position = 0) => {
+        let pos = position;
+
+        return pos;
+      };*/,
     },
     hero: {
       id: 'hero',
@@ -93,6 +103,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
       blockHasOwnFocusManagement: true,
+    },
+    cta_block: {
+      id: 'cta_block',
+      title: 'CTA - Call To Action',
+      icon: flashSVG,
+      group: 'common',
+      view: CTAView,
+      edit: CTAEdit,
+      schema: CTASchema,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
     },
     maps: {
       ...config.blocks.blocksConfig.maps,
@@ -236,6 +263,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
         styles.push('full-width');
         styles.push('pb-4');
       }
+
       return [...classNames, ...styles];
     },
   );

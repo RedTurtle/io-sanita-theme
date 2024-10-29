@@ -13,6 +13,7 @@ const SimpleCardTemplatePlace = ({
   linkTitle,
   linkHref,
   show_block_bg,
+  show_category,
   title,
   id_lighthouse,
   linkAlign,
@@ -29,6 +30,7 @@ const SimpleCardTemplatePlace = ({
               type={cardType}
               titleDataElement={id_lighthouse}
               isEditMode={isEditMode}
+              showCategory={show_category}
             />
           </Col>
         ))}
@@ -37,7 +39,7 @@ const SimpleCardTemplatePlace = ({
       <ListingLinkMore
         title={linkTitle}
         href={linkHref}
-        className="my-4"
+        className={show_block_bg ? 'mt-4' : 'my-4'}
         linkAlign={linkAlign}
         linkmoreIdLighthouse={linkmore_id_lighthouse}
       />

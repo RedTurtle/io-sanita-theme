@@ -86,8 +86,8 @@ const SearchModal = ({ closeModal, show }) => {
       isOpen={show}
       toggle={closeModal}
     >
-      <ModalHeader toggle={closeModal}>
-        <Container>
+      <ModalHeader toggle={closeModal} className="px-0 px-lg-4">
+        <Container className="">
           <div className="d-flex align-items-center">
             <Button
               color="link"
@@ -103,7 +103,7 @@ const SearchModal = ({ closeModal, show }) => {
         </Container>
       </ModalHeader>
       <ModalBody>
-        <Container className="px-5">
+        <Container className="px-lg-5">
           <div className="search-filters">
             <div className="mb-4">
               <SearchBar

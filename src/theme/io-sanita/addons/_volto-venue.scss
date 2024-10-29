@@ -5,3 +5,8 @@
     box-shadow: 0 0 1px 4px rgba($accent, 60%);
   }
 }
+.leaflet-pane,
+.leaflet-bottom,
+.leaflet-top {
+  z-index: 0; //per evitare che vada sopra alla testata styicky del sito
+}

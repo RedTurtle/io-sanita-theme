@@ -42,4 +42,13 @@ body.search-modal-opened {
     margin-right: auto;
     margin-left: auto;
   }
+
+  @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .quick-search {
+      h2.h6,
+      .quick-search-items .btn.btn-sm {
+        font-size: 1.12977rem;
+      }
+    }
+  }
 }

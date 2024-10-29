@@ -76,6 +76,10 @@ $footer-borders: 1px solid hsla($primary-h, 70.59%, 20%);
   ul {
     padding: 0;
     list-style-type: none;
+
+    li {
+      padding: 0.25rem 0;
+    }
   }
   .link-list-wrapper {
     ul {

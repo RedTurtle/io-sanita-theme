@@ -107,6 +107,19 @@ export const addSimpleCardTemplateOptions = (
       pos,
     );
   }
+
+  if (formData?.appearance === SimpleCardTemplateAppearance_PLACE) {
+    pos = templatesOptions(
+      schema,
+      formData,
+      intl,
+      ['show_category'],
+      {
+        show_category: { default: true },
+      },
+      pos,
+    );
+  }
   return pos;
 };
 
@@ -125,8 +138,7 @@ export const simpleCardTemplateOptions_appearance_default = (
     [
       'show_icon',
       'hide_dates',
-      //'show_section', //in io-sanita non lo usiamo
-      'show_type',
+      'show_category',
       'show_description',
       'show_detail_link',
       //  'show_path_filters',
@@ -136,7 +148,7 @@ export const simpleCardTemplateOptions_appearance_default = (
     {
       hide_dates: { default: false },
       show_icon: { default: false },
-      show_type: { default: false },
+      show_category: { default: true },
       show_detail_link: { default: false },
       // show_path_filters: { default: false },
     },

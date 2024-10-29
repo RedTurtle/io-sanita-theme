@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Col, Row } from 'design-react-kit';
 import { getVocabulary } from '@plone/volto/actions';
@@ -40,17 +41,17 @@ const Body = ({ isEditMode, data, id }) => {
   }, []);
 
   return (
-    <div className="iosanita-block-topics-list">
+    <div className={cx('iosanita-block-topics-list', { block: !isEditMode })}>
       {data?.title && (
         <LinkedHeadline isEditMode={isEditMode} title={data.title} id={id} />
       )}
 
       {data?.description && (
-        <div className="mb-2">
+        <div className="mb-4 is-block-description">
           <TextBlockView data={{ value: data?.description }} />
         </div>
       )}
-      <Row>
+      <Row className="mb-3">
         {data?.taxonomies?.map((obj, i) => {
           const t = obj.user || obj.topic;
           const _taxUser = taxonomyUsers.filter((tt) => tt.value === t);
@@ -69,6 +70,7 @@ const Body = ({ isEditMode, data, id }) => {
                 showIcon={data.show_icon}
                 icon={obj.icon}
                 isEditMode={isEditMode}
+                titleTag={!data.title ? 'h2' : 'h3'}
               />
             </Col>
           ) : (

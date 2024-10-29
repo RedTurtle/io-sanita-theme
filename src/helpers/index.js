@@ -63,11 +63,7 @@ export Address from 'io-sanita-theme/helpers/Address/Address';
 export { mapPinDirections } from 'io-sanita-theme/helpers/Address/mapPin';
 
 //item
-export {
-  getItemIcon,
-  getItemListingCategory,
-  hasGeolocation,
-} from 'io-sanita-theme/helpers/Item/item';
+export { getItemIcon, hasGeolocation } from 'io-sanita-theme/helpers/Item/item';
 
 //registry
 export { getComponentWithFallback } from 'io-sanita-theme/helpers/registry';

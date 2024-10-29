@@ -16,9 +16,9 @@ const ModuloFilePrincipale = ({ content }) => {
   return (
     <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
       <div className="card-body">
-        <h5 className="card-title">
+        <h2 className="card-title h5">
           {intl.formatMessage(messages.file_principale)}
-        </h5>
+        </h2>
         <DownloadFileFormat file={content.file_principale} iconSize="2x" />
       </div>
     </div>

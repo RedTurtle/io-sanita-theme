@@ -13,7 +13,7 @@ import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
 
 import { flattenToAppURL } from '@plone/volto/helpers';
 
-import { CollapseNavigation } from 'io-sanita-theme/components';
+import { CollapseNavigation, HeaderSearch } from 'io-sanita-theme/components';
 import {
   MegaMenu,
   MenuSecondary,
@@ -135,6 +135,7 @@ const Navigation = ({ pathname = '/' }) => {
                 {/* Headerslim Menu - main site */}
                 {!subsite && <TertiaryMenu mobile={true} />}
                 {/* Social Links */}
+                <HeaderSearch className="display-only-when-sticky" />
                 <SocialHeader mobile={true} />
                 {/* Headerslim Menu - parent site (if subsite) */}
                 {subsite && <ParentSiteMenu />}

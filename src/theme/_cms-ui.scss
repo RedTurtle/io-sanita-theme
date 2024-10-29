@@ -98,21 +98,6 @@ body.cms-ui {
       }
     }
 
-    // Placeholder block title
-    .title {
-      .public-DraftEditorPlaceholder-inner {
-        font-family: $font-family-sans-serif;
-      }
-    }
-
-    &.title {
-      .public-DraftEditorPlaceholder-inner {
-        font-size: 2.66rem;
-        font-weight: bold;
-        line-height: 1.25;
-      }
-    }
-
     //align
     .text-center {
       text-align: center;
@@ -183,6 +168,72 @@ body.cms-ui {
   a .icon.external-link {
     height: 1rem;
     margin-left: 0.1rem;
+  }
+
+  //fix drag block button and delete block button colors
+  &.has-toolbar.has-sidebar .drag.handle.wrapper,
+  .drag.handle.wrapper,
+  .block .ui.basic.button.delete-button,
+  .block.cta_block .ui.basic.button.delete-button,
+  .block.numbersBlock > .ui.basic.button.delete-button,
+  .block.iconBlocks .ui.basic.button.delete-button,
+  .block.contacts .ui.basic.button.delete-button {
+    background-color: #fff !important;
+    color: #575757 !important;
+    border: 1px solid #fff !important;
+    border-radius: 100% !important;
+    padding: 5px !important;
+    margin-right: -40px !important;
+    line-height: 0;
+    margin-top: -5px;
+    min-height: unset;
+    svg,
+    svg:not(:hover) {
+      line-height: 0;
+      fill: currentColor !important;
+    }
+    .icon {
+      background: none;
+    }
+    &:hover {
+      background-color: black !important;
+      color: #fff !important;
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+
+  &.has-toolbar.has-sidebar .drag.handle.wrapper,
+  .drag.handle.wrapper {
+    margin-left: -40px !important;
+    &:hover {
+      background-color: #4e8aa5 !important;
+    }
+  }
+  // @media only screen and (min-width: 1655px) {
+  //   &.has-toolbar.has-sidebar .drag.handle.wrapper {
+  //     margin-left: -40px !important;
+  //   }
+  // }
+
+  //fix delete block button colors
+
+  .block .ui.basic.button.delete-button,
+  .block.cta_block .ui.basic.button.delete-button,
+  .block.numbersBlock > .ui.basic.button.delete-button,
+  .block.iconBlocks .ui.basic.button.delete-button,
+  .block.contacts .ui.basic.button.delete-button {
+    margin-right: -39px !important;
+    &:hover {
+      background-color: #d90062 !important;
+    }
+  }
+
+  .block .subblock-edit .ui.basic.button.delete-button {
+    border-radius: 100% !important;
+    margin-left: 0.5rem;
+    color: #575757 !important;
   }
 
   /*Select*/
@@ -507,10 +558,6 @@ body.cms-ui {
 
   .block-editor-title,
   .block-editor-description {
-    .DraftEditor-root {
-      padding: 0 1.333em;
-    }
-
     & + [class^='block-editor'] {
       margin-top: 2.8rem;
     }
@@ -549,80 +596,6 @@ body.cms-ui {
           overflow-y: unset;
         }
       }
-    }
-  }
-
-  /*Login page*/
-  #page-login {
-    .ui.text.container,
-    .ui.form input[type='text'],
-    .ui.form input[type='password'] {
-      font-family: $font-family-sans-serif;
-    }
-
-    .help {
-      a {
-        color: $link-color;
-
-        &:hover,
-        &:focus {
-          color: darken($link-color, 10%);
-          text-decoration: underline;
-        }
-      }
-    }
-
-    button#login-form-submit.ui.basic.button.primary {
-      color: $link-color !important;
-
-      &:hover,
-      &:focus {
-        color: darken($link-color, 10%) !important;
-      }
-    }
-
-    button#login-form-submit.ui.basic.button.primary,
-    a#login-form-cancel.ui.basic.button.secondary {
-      &:hover,
-      &:focus {
-        svg {
-          box-shadow: 0 0 0.5em rgba($neutral-2-b5, 0.5);
-        }
-      }
-    }
-
-    .ui.secondary.segment {
-      color: $text-color;
-    }
-
-    .row .column {
-      width: 100% !important;
-
-      label {
-        margin-top: 1rem;
-        margin-bottom: 0;
-      }
-
-      .wrapper {
-        min-height: 0;
-      }
-    }
-
-    .ui.text.container {
-      max-width: 600px !important;
-    }
-
-    .ui.segment.form {
-      padding-top: 1rem;
-    }
-  }
-
-  /*Reset password page*/
-  #page-password-reset {
-    &,
-    h1,
-    .ui.message .header {
-      font-family: $font-family-sans-serif;
     }
   }
 

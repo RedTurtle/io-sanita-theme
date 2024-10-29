@@ -103,7 +103,7 @@ const MapTemplate = (props) => {
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}
-          className="my-5"
+          className={show_block_bg ? 'mt-5' : 'my-5'}
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
       </ListingContainer>

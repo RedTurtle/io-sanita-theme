@@ -16,9 +16,9 @@ const ModuloFormatiAlternativi = ({ content }) => {
   return content.formato_alternativo_1 || content.formato_alternativo_2 ? (
     <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
       <div className="card-body">
-        <h5 className="card-title">
+        <h2 className="card-title h5">
           {intl.formatMessage(messages.formati_alternativi)}
-        </h5>
+        </h2>
         {content.formato_alternativo_1 && (
           <DownloadFileFormat
             file={content.formato_alternativo_1}

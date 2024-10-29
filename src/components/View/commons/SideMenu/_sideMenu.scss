@@ -20,12 +20,15 @@
             border: none;
             background: transparent;
 
-            h3 {
+            h2 {
               padding: 0px;
               border: none;
               margin: 0;
               text-transform: none;
               color: $accordion-title-color;
+              font-size: 1rem;
+              font-weight: $font-weight-semibold;
+              line-height: 2;
 
               &:after {
                 content: none;

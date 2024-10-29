@@ -8,6 +8,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Input, FormGroup, Label, Collapse, Button } from 'design-react-kit';
 import { values } from 'lodash';
 import cx from 'classnames';
+import './searchCheckbox.scss';
 
 const messages = defineMessages({
   show_all: {
@@ -139,7 +140,7 @@ const SearchCheckbox = ({
   );
 
   return (
-    <>
+    <div className="search-checkbox">
       <h6 className="text-uppercase">
         {/* SECTION TITLE */}
         {title}
@@ -159,7 +160,7 @@ const SearchCheckbox = ({
           </span>
         )}
       </h6>
-      <div className="form-check mt-3">
+      <div className="mt-3">
         {/* TODO: se serve, attivare anche il 'seleziona tutto' */}
         {toggleAll && (
           <Button
@@ -211,7 +212,7 @@ const SearchCheckbox = ({
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

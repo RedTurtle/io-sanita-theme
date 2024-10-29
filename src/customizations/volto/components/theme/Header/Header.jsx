@@ -3,9 +3,9 @@
  * @module components/theme/Header/Header
  */
 
-import React /*, { useEffect, useState } */ from 'react';
-
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import {
   /* Anontools,
@@ -23,38 +23,31 @@ import {
 import { Headers } from 'design-react-kit';
 
 const Header = ({ pathname }) => {
-  // const [mini, setMini] = useState(false);
+  const [mini, setMini] = useState(false);
 
-  // const handleScroll = () => {
-  //   setMini(window.pageYOffset > 120);
-  // };
+  const handleScroll = () => {
+    setMini(window.pageYOffset > 120);
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <>
-      <div className="public-ui">
-        {/* <div
-        className="sticky-placeholder"
-        style={{ paddingTop: mini ? '50px' : '120px' }}
-      /> */}
-        {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-        <Headers>
-          <HeaderSlim />
+    <div className="public-ui">
+      {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
+      <Headers className={cx('it-header-sticky', { 'is-sticky': mini })}>
+        <HeaderSlim />
 
-          <div className="it-nav-wrapper">
-            <HeaderCenter />
-            <Navigation pathname={pathname} />
-          </div>
-          <HeaderContacts />
-        </Headers>
-        <SubsiteHeader />
-      </div>
-      <div id="portal-header-image"></div>
-    </>
+        <div className="it-nav-wrapper">
+          <HeaderCenter />
+          <Navigation pathname={pathname} />
+        </div>
+        <HeaderContacts />
+      </Headers>
+      <SubsiteHeader />
+    </div>
   );
 };
 

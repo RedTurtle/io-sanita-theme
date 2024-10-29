@@ -19,11 +19,8 @@ const CardWithImageDefault = (props) => {
     isEditMode,
     always_show_image = false,
     set_four_columns = false,
-    show_type = true,
-    // show_section,
-    // show_icon = true,
-    // show_topics = true,
     show_description = true,
+    show_category,
     hide_dates = false,
     natural_image_size = false,
     id_lighthouse,
@@ -36,12 +33,6 @@ const CardWithImageDefault = (props) => {
   const listingText = show_description ? <ListingText item={item} /> : null;
 
   const showImage = index < imagesToShow || always_show_image;
-  // const category = getItemListingCategory({
-  //   ...props,
-  //   item,
-  //   show_type,
-  //   show_section,
-  // });
 
   const BlockExtraTags = getComponentWithFallback({
     name: 'BlockExtraTags',
@@ -61,13 +52,15 @@ const CardWithImageDefault = (props) => {
           size={show_description ? 'big' : 'small'}
           isEditMode={isEditMode}
           titleDataElement={id_lighthouse}
+          showCategory={show_category}
         />
       ) : (
         <>
           <CardImage
             item={item}
-            show_image={showImage}
+            showImage={showImage}
             showDescription={listingText != null}
+            showCategory={show_category}
             description={listingText}
             className={cx({
               'rassegna-appointment': isEventAppointment,
@@ -83,17 +76,9 @@ const CardWithImageDefault = (props) => {
                 </>
               ),
             }}
-            show_dates={!hide_dates}
-            show_type={show_type}
+            showDates={!hide_dates}
             titleDataElement={id_lighthouse}
           />
-
-          {/* {category && (
-                    <span className="text fw-bold">
-                      <ListingCategory category={category} item={item} />
-                    </span>
-                  )}
-              */}
         </>
       )}
     </>

@@ -13,9 +13,9 @@ const BandoNoteAggiornamento = ({ content }) => {
   const intl = useIntl();
   return content?.note_aggiornamento ? (
     <div className="mb-4">
-      <h5>
+      <h2 clasName="h5">
         <small>{intl.formatMessage(messages.note_aggiornamento)}</small>
-      </h5>
+      </h2>
       <span>{content?.note_aggiornamento}</span>
     </div>
   ) : (

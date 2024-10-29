@@ -292,7 +292,7 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
 
   const results_region_id = block_id + 'results-region';
   return (
-    <div className="iosanita-block-search map">
+    <div className="block iosanita-block-search map">
       <div className="strutture-search">
         <div className="full-width bg-primary-lightest py-4">
           <Container className="px-4">

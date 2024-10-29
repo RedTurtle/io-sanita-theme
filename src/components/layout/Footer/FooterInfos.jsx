@@ -42,7 +42,7 @@ const FooterInfos = () => {
   );
 
   useEffect(() => {
-    if (!req.loadingResults) {
+    if (!req.loadingResults && !footerConfiguration) {
       dispatch(getEditableFooterColumns());
     }
   }, [dispatch, location]);
@@ -52,6 +52,7 @@ const FooterInfos = () => {
     footerConfiguration,
     location?.pathname?.length ? location.pathname : '/',
   ).filter((c) => c.visible);
+
   footerColumns.forEach((column) => {
     if (__CLIENT__) {
       column.slateText = fromHtml(column.text);

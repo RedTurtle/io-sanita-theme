@@ -4,7 +4,6 @@ export {
   addLighthouseField,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions/utils';
 export addDefaultOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/defaultOptions';
-export addDefaultAdditionalOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/defaultAdditionalOptions';
 export addLinkMoreOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/linkMoreOptions';
 export {
   addSimpleCardTemplateOptions,

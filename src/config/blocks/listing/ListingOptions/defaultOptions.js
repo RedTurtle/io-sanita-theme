@@ -1,8 +1,5 @@
 import { defineMessages } from 'react-intl';
-import {
-  addSchemaField,
-  addDefaultAdditionalOptions,
-} from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+import { addSchemaField } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 
 import config from '@plone/volto/registry';
 
@@ -10,6 +7,10 @@ const messages = defineMessages({
   title: {
     id: 'Titolo',
     defaultMessage: 'Titolo',
+  },
+  description: {
+    id: 'listing_Descrizione',
+    defaultMessage: 'Descrizione',
   },
   show_block_bg: {
     id: 'Mostra lo sfondo del blocco',
@@ -42,6 +43,16 @@ const addDefaultOptions = (schema, formData = {}, intl, position = 1) => {
       intl.formatMessage(messages.title),
       null,
       null,
+      pos,
+      fieldset,
+    );
+    pos++;
+    addSchemaField(
+      schema,
+      'description',
+      intl.formatMessage(messages.description),
+      null,
+      { widget: 'slate' },
       pos,
       fieldset,
     );
@@ -100,8 +111,11 @@ const addDefaultOptions = (schema, formData = {}, intl, position = 1) => {
     pos++;
   }
 
-  pos = addDefaultAdditionalOptions(schema, formData, intl, pos);
-
+  const defaultAdditionalOptions =
+    config.blocks.blocksConfig.listing.defaultAdditionalOptions;
+  if (defaultAdditionalOptions) {
+    pos = defaultAdditionalOptions(schema, formData, intl, pos);
+  }
   return pos;
 };
 

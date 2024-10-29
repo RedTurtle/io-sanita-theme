@@ -22,7 +22,7 @@ export const CardTaxonomy = ({
   item,
   isEditMode,
   className,
-  titleTag = 'h5',
+  titleTag = 'h3',
   titleDataElement,
   type = 'topics', //topics,users
 }) => {
@@ -38,7 +38,10 @@ export const CardTaxonomy = ({
     >
       <CardBody>
         <div className="card-taxonomy-content">
-          <CardTitle tag={titleTag} className="d-flex my-0 align-items-center">
+          <CardTitle
+            tag={titleTag}
+            className="d-flex my-0 align-items-center h5"
+          >
             <UniversalLink
               href={isEditMode ? '#' : href}
               className="card-title-link"

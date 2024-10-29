@@ -35,36 +35,6 @@ export const getItemIcon = (item) => {
   return custom_icon || icon;
 };
 
-export const getItemListingCategory = ({
-  item,
-  show_type,
-  show_section,
-  //show_topics, //nei listing di io-sanita non vengono piu mostrati gli argomenti nella categoria di un elemento
-  variation,
-  ...other_props
-}) => {
-  let cat = [];
-  if (item) {
-    // if (show_section && item.parent) {
-    //   cat.push(item.parent?.title);
-    // }
-    if (show_type) {
-      cat.push(item.type_title);
-    }
-    // if (show_topics) {
-    //   const firstTopic = item?.parliamo_di_metadata?.[0];
-    //   if (firstTopic) {
-    //     cat.push(firstTopic?.title ?? firstTopic);
-    //   }
-    // }
-  }
-
-  if (cat.length > 0) {
-    return cat.join(cat.length > 1 ? ' - ' : '');
-  }
-  return null;
-};
-
 export const hasGeolocation = (item) => {
   return (
     item?.geolocation &&

@@ -30,7 +30,7 @@ const Body = ({ data, id }) => {
     }
   }, [searchableText]);
   return (
-    <div className="full-width bg-primary-lightest py-4 quick-search-block">
+    <div className="full-width bg-primary-lightest py-4 quick-search-block mb-4">
       <Container className="px-4">
         <Row>
           <Col xl={6}>

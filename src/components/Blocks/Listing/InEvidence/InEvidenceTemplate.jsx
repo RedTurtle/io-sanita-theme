@@ -1,17 +1,14 @@
 /*
- * In evidenza
+ * In evidenza: serve a mettere in evidenza uno o piu contenuti. Il primo contenuto ha rilevanza maggiore, infatti occupa l'intero spazio orizzontale e vengono mostrate piu informazioni nella card.
  */
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Row, Col } from 'design-react-kit';
-
-import { getItemListingCategory } from 'io-sanita-theme/helpers';
+import { Row, Col, CardReadMore } from 'design-react-kit';
 
 import { CardPersona, CardFeatured } from 'io-sanita-theme/components';
-
+import { getComponentWithFallback } from 'io-sanita-theme/helpers';
 import {
-  ListingCategory,
   ListingText,
   ListingLinkMore,
   ListingContainer,
@@ -26,6 +23,7 @@ const InEvidenceTemplate = (props) => {
     isEditMode,
     show_block_bg,
     show_description = true,
+    show_category = true,
     id_lighthouse,
     hide_dates,
     linkAlign,
@@ -37,21 +35,21 @@ const InEvidenceTemplate = (props) => {
   return (
     <div className="in-evidence">
       <ListingContainer data={props} isEditMode={isEditMode}>
-        <div className="in-evidence-cards-wrapper mb-5">
+        <div className="in-evidence-cards-wrapper mb-4">
           <Row>
             {items.map((item, index) => {
               const listingText = show_description ? (
                 <ListingText item={item} />
               ) : null;
 
-              const category = getItemListingCategory({
-                ...props,
-                item,
-              });
-
               const isEventAppointment =
                 item?.parent?.['@type'] === 'Event' &&
                 item?.['@type'] === 'Event';
+
+              const BlockExtraTags = getComponentWithFallback({
+                name: 'BlockExtraTags',
+                dependencies: ['InEvidenceTemplate', item['@type']],
+              }).component;
 
               return (
                 <Col lg={index > 0 ? 6 : 12} key={index}>
@@ -62,6 +60,7 @@ const InEvidenceTemplate = (props) => {
                       size={show_description ? 'big' : 'small'}
                       isEditMode={isEditMode}
                       titleDataElement={id_lighthouse}
+                      showCategory={show_category}
                     />
                   ) : (
                     <>
@@ -73,16 +72,20 @@ const InEvidenceTemplate = (props) => {
                         className={cx('listing-item', {
                           'rassegna-appointment': isEventAppointment,
                         })}
-                        show_dates={!hide_dates}
-                        category={
-                          category && (
-                            <ListingCategory category={category} item={item} />
-                          )
-                        }
-                        showDefaultCategory={false}
+                        showDates={!hide_dates}
+                        showCategory={show_category}
                         otherChildren={{
                           afterTitle: isEventAppointment && (
                             <RassegnaInfo eventoPadre={item.parent} />
+                          ),
+                          afterText: (
+                            <>
+                              <BlockExtraTags
+                                {...props}
+                                item={item}
+                                itemIndex={index}
+                              />
+                            </>
                           ),
                         }}
                         text={listingText}
@@ -99,7 +102,7 @@ const InEvidenceTemplate = (props) => {
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}
-          className="my-4"
+          className={show_block_bg ? 'mt-4' : 'my-4'}
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
       </ListingContainer>

@@ -58,11 +58,12 @@ const PuntoDiContattoContatti = ({ content }) => {
       {content?.contatti?.map((pdc, i) => (
         <div key={i}>
           <div className="mt-2 d-flex">
-            <h5 className="h6 text-capitalize">
+            <h3 className="h6 text-capitalize">
               {messages[pdc?.tipo] === undefined
                 ? pdc?.tipo
-                : intl.formatMessage(messages[pdc.tipo])}:
-            </h5>
+                : intl.formatMessage(messages[pdc.tipo])}
+              :
+            </h3>
             <span className="ms-1">
               <PuntoDiContattoValue value={pdc} />
             </span>

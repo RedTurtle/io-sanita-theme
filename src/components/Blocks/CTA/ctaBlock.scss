@@ -1,0 +1,123 @@
+.block.cta_block,
+.block-editor-cta_block {
+  margin-bottom: 0;
+
+  .cta-block-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5rem 2.5rem;
+    z-index: -1;
+
+    &.full-width {
+      height: auto;
+      padding: 70px 0;
+    }
+
+    .cta-tile-text {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+
+      h2,
+      h3 {
+        margin: 0 0 1.5rem;
+        font-size: 2.25rem;
+      }
+
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+
+      a.btn {
+        position: relative;
+        max-width: 300px;
+        font-size: 0.9rem;
+
+        .external-link {
+          position: absolute;
+          top: 3px;
+          right: 3px;
+        }
+
+        &.btn-accent.inverted {
+          &:not(:hover):not(:active):not(:focus) {
+            background-color: #fff;
+            color: var(--is-accent);
+            .external-link {
+              fill: var(--is-accent);
+            }
+          }
+        }
+      }
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    &.has-image {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: none;
+
+      &.full-width {
+        display: flex;
+      }
+
+      .img-wrapper,
+      picture {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          min-width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          content: '';
+        }
+      }
+    }
+
+    &.bg-primary-dark {
+      color: var(--bs-primary-text);
+
+      .cta-tile-text {
+        h2,
+        h3 {
+          color: var(--bs-primary-text);
+        }
+        a.btn-outline-info {
+          color: var(--bs-primary-text);
+          box-shadow: inset 0 0 0 1px var(--bs-primary-text);
+          &:hover,
+          &:focus {
+            background: var(--bs-primary-text);
+            color: var(--bs-primary);
+          }
+          .external-link {
+            fill: var(--bs-primary-text);
+          }
+        }
+      }
+    }
+  }
+}

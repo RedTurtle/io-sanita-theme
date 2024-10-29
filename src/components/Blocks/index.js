@@ -6,6 +6,7 @@ export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/sch
 export { SearchFarmaciaSchema } from 'io-sanita-theme/components/Blocks/SearchFarmacia/schema';
 export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
 export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/schema';
+export { CTASchema } from 'io-sanita-theme/components/Blocks/CTA/schema';
 
 /*View*/
 export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
@@ -41,11 +42,15 @@ export const TopicsListView = loadable(() =>
     /* webpackChunkName: "ISBlockTopicsList" */ 'io-sanita-theme/components/Blocks/TopicsList/View'
   ),
 );
+export const CTAView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockCTA" */ 'io-sanita-theme/components/Blocks/CTA/View'
+  ),
+);
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
 export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
-export ListingCategory from 'io-sanita-theme/components/Blocks/Listing/commons/ListingCategory';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
 export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
@@ -107,6 +112,11 @@ const TopicsListEdit = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/TopicsList/Edit'
   ),
 );
+const CTAEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/CTA/Edit'
+  ),
+);
 
 /*Sidebar - only reusable sidebar outside specific edit component.*/
 const HTMLBlockSidebar = loadable(() =>
@@ -125,4 +135,5 @@ export {
   SearchFarmaciaEdit,
   SearchServiziProcedureEdit,
   TopicsListEdit,
+  CTAEdit,
 };

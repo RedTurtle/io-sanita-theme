@@ -21,7 +21,7 @@ const SimpleCardTemplateDefault = (props) => {
   const resultsUID = uuid();
 
   return (
-    <div className="simple-card-default">
+    <div className="simple-card-default mb-5">
       <Row className="mb-3" id={resultsUID + '_results'}>
         {items.map((item, index) => (
           <Col md={6} lg={4} key={index}>
@@ -38,7 +38,7 @@ const SimpleCardTemplateDefault = (props) => {
       <ListingLinkMore
         title={linkTitle}
         href={linkHref}
-        className="my-4"
+        className={show_block_bg ? 'mt-4' : 'my-4'}
         linkAlign={linkAlign}
         linkmoreIdLighthouse={linkmore_id_lighthouse}
       />
