@@ -5,9 +5,13 @@ const messages = defineMessages({
     id: 'cta_image',
     defaultMessage: 'Immagine di sfondo',
   },
-  showImage: {
-    id: 'cta_show_image',
-    defaultMessage: 'Mostra immagine',
+  // showImage: {
+  //   id: 'cta_show_image',
+  //   defaultMessage: 'Mostra immagine',
+  // },
+  default_image: {
+    id: 'cta_default_image',
+    defaultMessage: 'Immagine predefinita',
   },
   fullWidth: {
     id: 'cta_full_width',
@@ -38,6 +42,7 @@ export function CTASchema({
         fields: [
           'bg:noprefix',
           'showFullWidth',
+          'defaultImage',
           'ctaImage',
           //'showImage',
           'ctaLinkTitle',
@@ -67,6 +72,15 @@ export function CTASchema({
         title: intl.formatMessage(messages.fullWidth),
         type: 'boolean',
         default: true,
+      },
+      defaultImage: {
+        title: intl.formatMessage(messages.default_image),
+        widget: 'select',
+
+        choices: [
+          ['default-1', 'Default 1'],
+          ['default-2', 'Default 2'],
+        ],
       },
       ctaImage: {
         title: intl.formatMessage(messages.image),
