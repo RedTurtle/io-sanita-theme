@@ -17,11 +17,11 @@
       border-color: var(--is-accent);
 
       & > .chip-label {
-        color: var(--is-accent-text);
+        color: var(--is-accent-contrast-text);
       }
 
       .icon {
-        fill: var(--is-accent-text) !important;
+        fill: var(--is-accent-contrast-text) !important;
       }
     }
   }

@@ -10,6 +10,8 @@ import {
   CardWithImageTemplateSkeleton,
   SimpleListTemplate,
   SimpleListTemplateSkeleton,
+  CompleteBlockLinksTemplate,
+  CompleteBlockLinksTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
@@ -17,9 +19,6 @@ import {
 
 // import SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinksTemplate';
 // import SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SmallBlockLinksTemplateSkeleton';
-
-// import CompleteBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/CompleteBlockLinksTemplate';
-// import CompleteBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CompleteBlockLinksTemplateSkeleton';
 
 // import PhotogalleryTemplate from 'io-sanita-theme/components/Blocks/Listing/PhotogalleryTemplate';
 // import PhotogalleryTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/PhotogalleryTemplateSkeleton';
@@ -53,8 +52,8 @@ import {
   addInEvidenceTemplateOptions,
   addCardWithImageTemplateOptions,
   addSimpleListTemplateOptions,
+  addCompleteBlockLinksTemplateOptions,
   // addRibbonCardTemplateOptions,
-  // addCompleteBlockLinksTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
   // addSliderTemplateOptions,
   // addCardWithSlideUpTextTemplateOptions,
@@ -131,6 +130,33 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
+  {
+    id: 'mapTemplate',
+    isDefault: false,
+    title: 'Mappa',
+    template: MapTemplate,
+    skeleton: MapTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addMapTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
+  {
+    id: 'completeBlockLinksTemplate',
+    isDefault: false,
+    title: 'Blocco link completo',
+    template: CompleteBlockLinksTemplate,
+    skeleton: CompleteBlockLinksTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      addCompleteBlockLinksTemplateOptions(schema, formData, intl);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'ribbonCardTemplate',
   //   isDefault: false,
@@ -171,20 +197,6 @@ const iosanitaListingVariations = [
   //   },
   //   cloneData: cloneBlock,
   // },
-  {
-    id: 'mapTemplate',
-    isDefault: false,
-    title: 'Mappa',
-    template: MapTemplate,
-    skeleton: MapTemplateSkeleton,
-    schemaEnhancer: ({ schema, formData, intl }) => {
-      let pos = addDefaultOptions(schema, formData, intl);
-      addMapTemplateOptions(schema, formData, intl, pos);
-      addLinkMoreOptions(schema, formData, intl);
-      return schema;
-    },
-    cloneData: cloneBlock,
-  },
   // {
   //   id: 'smallBlockLinksTemplate',
   //   isDefault: false,
@@ -200,18 +212,6 @@ const iosanitaListingVariations = [
   //   cloneData: cloneBlock,
   // },
   // {
-  //   id: 'completeBlockLinksTemplate',
-  //   isDefault: false,
-  //   title: 'Blocco link completo',
-  //   template: CompleteBlockLinksTemplate,
-  //   skeleton: CompleteBlockLinksTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     addCompleteBlockLinksTemplateOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
   // {
   //   id: 'photogallery',
   //   isDefault: false,
