@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'design-react-kit';
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
