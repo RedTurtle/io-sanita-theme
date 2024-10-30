@@ -19,7 +19,7 @@ import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
 import { isEqual } from 'lodash';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
-export { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers/Blocks/focus';
+import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
 import {
   flattenToAppURL,
   getBaseUrl,
