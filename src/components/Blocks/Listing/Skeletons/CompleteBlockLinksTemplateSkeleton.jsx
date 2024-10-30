@@ -1,22 +1,19 @@
 import PropTypes from 'prop-types';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import {
   Card,
   CardBody,
   CardTitle,
   CardText,
-  Container,
   Row,
   Col,
 } from 'design-react-kit';
 
-const CompleteBlockLinksTemplateSkeleton = ({
-  title,
-  isEditMode,
-  linkHref,
-}) => {
+const CompleteBlockLinksTemplateSkeleton = (props) => {
+  const { title, isEditMode, linkHref } = props;
   return (
     <div className="complete-block-links-template">
-      <Container className="px-4 px-md-0">
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
           {title && (
             <Row>
@@ -50,7 +47,7 @@ const CompleteBlockLinksTemplateSkeleton = ({
           </Row>
           {linkHref && <div className="link-button text-center my-4"></div>}
         </div>
-      </Container>
+      </ListingContainer>
     </div>
   );
 };
