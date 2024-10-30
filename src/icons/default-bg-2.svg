@@ -64,9 +64,9 @@
 <ellipse cx="6.99079" cy="7.123" rx="6.99079" ry="7.123" transform="matrix(0.706693 0.706691 -0.706693 0.706691 38.8945 105.835)" fill="currentColor"/>
 <ellipse cx="0.584298" cy="154.027" rx="6.98668" ry="7.11882" transform="rotate(45 0.584298 154.027)" fill="currentColor"/>
 <ellipse cx="2.00422" cy="2.58209" rx="6.98668" ry="7.11882" transform="rotate(45 2.00422 2.58209)" fill="currentColor"/>
-<path d="M1308.5 -34C1308.5 18.3392 1266.49 60.5 1215 60.5C1163.51 60.5 1121.5 18.3392 1121.5 -34C1121.5 -86.3392 1163.51 -128.5 1215 -128.5C1266.49 -128.5 1308.5 -86.3392 1308.5 -34Z" stroke="currentColor" stroke-width="35"/>
+<path d="M1308.5 -34C1308.5 18.3392 1266.49 60.5 1215 60.5C1163.51 60.5 1121.5 18.3392 1121.5 -34C1121.5 -86.3392 1163.51 -128.5 1215 -128.5C1266.49 -128.5 1308.5 -86.3392 1308.5 -34Z" stroke="currentColor" stroke-width="35" fill="none"/>
 </g>
-<circle cx="1243" cy="8" r="95.5" stroke="currentColor" stroke-width="3"/>
+<circle cx="1243" cy="8" r="95.5" stroke="currentColor" stroke-width="3" fill="none"/>
 <g opacity="0.15">
 <line x1="1.5" y1="-1.5" x2="49.0587" y2="-1.5" transform="matrix(0.641913 0.766778 -0.742101 0.670288 10 169)" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
 <line x1="1.5" y1="-1.5" x2="49.0587" y2="-1.5" transform="matrix(0.641913 0.766778 -0.742101 0.670288 67.3867 169)" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>

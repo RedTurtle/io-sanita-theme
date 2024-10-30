@@ -1,7 +1,5 @@
 .block.cta_block,
 .block-editor-cta_block {
-  margin-bottom: 0;
-
   .cta-block-wrapper {
     display: flex;
     align-items: center;
@@ -137,4 +135,10 @@
       }
     }
   }
+}
+
+.block.full-width[class*='bg-']:has(+ .block.cta_block),
+.block.cta_block:has(+ .block.full-width[class*='bg-']),
+.block.cta_block:has(+ .block.iosanita-block-search) {
+  margin-bottom: 0;
 }
