@@ -73,6 +73,10 @@ const Wrapper = ({ inEditMode, children, className = '', data }) => {
 
   const activeStatus = isActive();
 
+  const color =
+    data.color && data.color.indexOf('bg-alert') < 0
+      ? 'bg-alert-' + data.color
+      : data.color;
   return (
     <>
       {(userLogged || activeStatus.active) && (
@@ -89,7 +93,7 @@ const Wrapper = ({ inEditMode, children, className = '', data }) => {
                 {activeStatus.message}
               </div>
             )}
-            <div className={cx('full-width', data.color)}>
+            <div className={cx('full-width', color)}>
               <Container className="px-4 py-5">{children}</Container>
             </div>
           </section>

@@ -39,12 +39,12 @@ const messages = defineMessages({
   },
   start_date_description: {
     id: 'alert_startDate_descr',
-    defineMessage:
+    defaultMessage:
       'Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile.',
   },
   end_date_description: {
     id: 'alert_endDate_descr',
-    defineMessage:
+    defaultMessage:
       'Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile.',
   },
 });
