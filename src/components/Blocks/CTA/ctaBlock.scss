@@ -1,3 +1,5 @@
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
 .block.cta_block,
 .block-editor-cta_block {
   .cta-block-wrapper {
@@ -137,8 +139,4 @@
   }
 }
 
-.block.full-width[class*='bg-']:has(+ .block.cta_block),
-.block.cta_block:has(+ .block.full-width[class*='bg-']),
-.block.cta_block:has(+ .block.iosanita-block-search) {
-  margin-bottom: 0;
-}
+@include nearFullWidthBlocks('.cta_block');

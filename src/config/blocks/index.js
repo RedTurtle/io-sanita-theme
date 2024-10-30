@@ -4,6 +4,7 @@ import calloutSVG from '@plone/volto/icons/megaphone.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
 import userSVG from '@plone/volto/icons/user.svg';
 import flashSVG from '@plone/volto/icons/flash.svg';
+import alertSVG from '@plone/volto/icons/alert.svg';
 import {
   BreakView,
   BreakEdit,
@@ -26,6 +27,9 @@ import {
   CTAView,
   CTAEdit,
   CTASchema,
+  AlertView,
+  AlertEdit,
+  AlertSchema,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -69,6 +73,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
 
         return pos;
       };*/,
+    },
+    alert: {
+      id: 'alert',
+      title: 'Alert',
+      icon: alertSVG,
+      group: 'text',
+      view: AlertView,
+      edit: AlertEdit,
+      schema: AlertSchema,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
     },
     hero: {
       id: 'hero',
