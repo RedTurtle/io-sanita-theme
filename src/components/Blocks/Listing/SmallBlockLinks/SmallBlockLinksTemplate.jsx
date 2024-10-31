@@ -6,10 +6,10 @@ import { Row, Col } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 
 import {
-  ListingLinkMore,
   ListingImage,
   ListingContainer,
 } from 'io-sanita-theme/components/Blocks';
+import { LinkMore } from 'io-sanita-theme/components';
 
 import './smallblockLinksTemplate.scss';
 
@@ -61,7 +61,7 @@ const SmallBlockLinksTemplate = (props) => {
             );
           })}
         </Row>
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}

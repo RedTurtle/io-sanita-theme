@@ -187,7 +187,7 @@ const iosanitaListingVariations = [
   {
     id: 'smallBlockLinksTemplate',
     isDefault: false,
-    title: 'Blocco link solo immagini',
+    title: 'Link solo immagini',
     template: SmallBlockLinksTemplate,
     skeleton: SmallBlockLinksTemplateSkeleton,
     schemaEnhancer: ({ schema, formData, intl }) => {
