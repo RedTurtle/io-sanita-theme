@@ -1,0 +1,134 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.block.contacts {
+  .full-width {
+    height: auto;
+  }
+
+  .block-header {
+    .title {
+      margin: 1rem 0 2rem 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+      line-height: 3rem;
+      text-align: center;
+    }
+
+    .description {
+      margin-bottom: 2rem;
+      line-height: 1.65em;
+      text-align: center;
+    }
+  }
+
+  .col-md-4 {
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    &:after {
+      content: none;
+    }
+
+    .contact-title {
+      font-size: 1.35rem;
+      font-weight: bold;
+      line-height: 1.4em;
+
+      margin-bottom: 1rem;
+    }
+
+    .contact-text {
+      font-size: 0.9rem;
+    }
+
+    .contact-info {
+      display: flex;
+
+      &:first-of-type {
+        align-items: center;
+
+        .icon-wrapper {
+          margin-top: 0;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 1rem;
+      }
+
+      .icon-wrapper {
+        margin-top: 0.2rem;
+        margin-right: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .tel {
+        font-size: 1.8rem;
+      }
+
+      .email {
+        font-size: 1.26rem;
+      }
+
+      .tel,
+      .email {
+        flex: 1 1 auto;
+        word-break: break-word;
+
+        p {
+          line-height: 1.48em;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .bg-primary-dark {
+    .block-header {
+      .title,
+      .description,
+      .description h1,
+      .description h2,
+      .description h3,
+      .description h4,
+      .description h5,
+      .description h6,
+      .description a {
+        color: var(--bs-primary-text);
+      }
+    }
+    .link-more-button-wrapper {
+      .text-accent {
+        color: var(--bs-primary-text) !important;
+      }
+      .icon-accent {
+        fill: var(--bs-primary-text) !important;
+      }
+    }
+  }
+
+  @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .card {
+      .contact-info {
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+
+        .tel {
+          font-size: 1.5rem;
+          word-break: break-word;
+        }
+
+        .email {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

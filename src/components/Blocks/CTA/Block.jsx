@@ -5,10 +5,13 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Container } from 'design-react-kit';
 
 import { TextEditorWidget } from 'volto-slate-italia';
-import { UniversalLink } from '@plone/volto/components';
+import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+
 import { useHandleDetachedBlockFocus } from 'io-sanita-theme/helpers';
 import config from '@plone/volto/registry';
+import defaultImage1 from 'io-sanita-theme/icons/default-bg-1.svg';
+import defaultImage2 from 'io-sanita-theme/icons/default-bg-2.svg';
 
 const messages = defineMessages({
   cta_title: {
@@ -30,7 +33,9 @@ const Block = (props) => {
   const intl = useIntl();
   const Image = config.getComponent({ name: 'Image' }).component;
   const title = data?.cta_title;
-  const hasImage = data?.showImage && data?.ctaImage?.length > 0;
+  const hasDefaultImage = data?.defaultImage?.length > 1;
+  const hasImage = data?.ctaImage?.length > 0 || hasDefaultImage; //&& data?.showImage &&
+
   const content = data?.cta_content;
   const fullWidth = data?.showFullWidth;
   const bg_color = data['bg:noprefix'];
@@ -44,24 +49,55 @@ const Block = (props) => {
     <div
       className={cx('cta-block-wrapper', bg_color, {
         'has-image': hasImage,
+        'has-default-image': hasDefaultImage,
         'full-width': fullWidth,
       })}
     >
       {hasImage && (
         <figure className="img-wrapper">
-          <Image
-            item={data.ctaImage[0]}
-            sizes="100vw"
-            loading="lazy"
-            responsive={true}
-            alt=""
-            aria-hidden="true"
-            role="presentation"
-            key={data.ctaImage[0]['@id']}
-          />
+          {data.ctaImage?.length > 0 ? (
+            <Image
+              item={data.ctaImage[0]}
+              sizes="100vw"
+              loading="lazy"
+              responsive={true}
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              key={data.ctaImage[0]['@id']}
+            />
+          ) : (
+            <>
+              <VoltoIcon
+                className="me-2 icon-sm icon-svg-telephone"
+                name={
+                  data.defaultImage == 'default-1'
+                    ? defaultImage1
+                    : defaultImage2
+                }
+                loading="lazy"
+                responsive={true}
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+              />
+              {/* <img
+                src={
+                  data.defaultImage == 'default-1'
+                    ? defaultImage1
+                    : defaultImage2
+                }
+                loading="lazy"
+                responsive={true}
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+              /> */}
+            </>
+          )}
         </figure>
       )}
-      <Container tag="div" className="px-3 px-md-4">
+      <Container tag="div" className="px-3 px-md-4 text-container">
         <div className="cta-tile-text">
           <h2 className="title mt-0" id={block + 'title'}>
             {inEditMode ? (
@@ -91,8 +127,8 @@ const Block = (props) => {
               fieldName="cta_content"
               block={block}
               selected={selected && selectedField === 'cta_content'}
-              placeholder={intl.formatMessage(messages.cta_content)}
               setSelected={setSelectedField}
+              placeholder={intl.formatMessage(messages.cta_content)}
               focusPrevField={() => {
                 setSelectedField('cta_title');
               }}

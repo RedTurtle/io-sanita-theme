@@ -1,0 +1,135 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+@import 'io-sanita-theme/theme/io-sanita/mixins';
+
+.bg-alert-danger {
+  &,
+  .cms-ui &.ui.button,
+  .cms-ui &.ui.button.active {
+    background-color: $alert-danger;
+  }
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: $alert-danger-text;
+  }
+}
+
+.bg-alert-warning {
+  &,
+  .cms-ui &.ui.button,
+  .cms-ui &.ui.button.active {
+    background-color: $alert-warning;
+  }
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: $alert-warning-text;
+  }
+}
+
+.bg-alert-info {
+  &,
+  .cms-ui &.ui.button,
+  .cms-ui &.ui.button.active {
+    background-color: $alert-info;
+  }
+  &,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a {
+    color: $alert-info-text;
+  }
+}
+
+.block.alert_block {
+  .full-width {
+    height: auto;
+  }
+
+  a.btn.btn-primary.inline-link {
+    background-color: $white;
+    color: $body-color;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .row {
+    margin-right: calc(var(--bs-gutter-x) * -0.25);
+    margin-left: calc(var(--bs-gutter-x) * -0.25);
+
+    .col {
+      padding-right: calc(var(--bs-gutter-x) * 0.25);
+      padding-left: calc(var(--bs-gutter-x) * 0.25);
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img.left-image {
+    max-width: 80%;
+    object-fit: unset;
+
+    &.size {
+      &-m {
+        max-width: 50%;
+      }
+
+      &-s {
+        max-width: 30%;
+      }
+    }
+  }
+
+  .image-col {
+    text-align: center;
+  }
+
+  .manager-alert-info-dates {
+    position: absolute;
+    top: -1rem;
+    background-color: #fff;
+    padding: 0.25rem 3rem;
+    //border-radius: 0.3rem;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #9bd0e2;
+    font-size: 0.8rem;
+  }
+
+  &.expired {
+    .full-width {
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        opacity: 0.85;
+      }
+    }
+  }
+}
+
+@include nearFullWidthBlocks('.alert_block');

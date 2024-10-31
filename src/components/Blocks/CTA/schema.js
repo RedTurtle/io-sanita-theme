@@ -5,9 +5,13 @@ const messages = defineMessages({
     id: 'cta_image',
     defaultMessage: 'Immagine di sfondo',
   },
-  showImage: {
-    id: 'cta_show_image',
-    defaultMessage: 'Mostra immagine',
+  // showImage: {
+  //   id: 'cta_show_image',
+  //   defaultMessage: 'Mostra immagine',
+  // },
+  default_image: {
+    id: 'cta_default_image',
+    defaultMessage: 'Immagine predefinita',
   },
   fullWidth: {
     id: 'cta_full_width',
@@ -38,8 +42,9 @@ export function CTASchema({
         fields: [
           'bg:noprefix',
           'showFullWidth',
+          'defaultImage',
           'ctaImage',
-          'showImage',
+          //'showImage',
           'ctaLinkTitle',
           'ctaLink',
         ],
@@ -68,6 +73,15 @@ export function CTASchema({
         type: 'boolean',
         default: true,
       },
+      defaultImage: {
+        title: intl.formatMessage(messages.default_image),
+        widget: 'select',
+
+        choices: [
+          ['default-1', 'Default 1'],
+          ['default-2', 'Default 2'],
+        ],
+      },
       ctaImage: {
         title: intl.formatMessage(messages.image),
         widget: 'object_browser',
@@ -76,12 +90,12 @@ export function CTASchema({
           pattern_options: { selectableTypes: ['Image'] },
         },
       },
-      showImage: {
-        title: intl.formatMessage(messages.showImage),
-        type: 'boolean',
-        default: false,
-        isDisabled: (formData.ctaImage ?? []).length <= 0,
-      },
+      // showImage: {
+      //   title: intl.formatMessage(messages.showImage),
+      //   type: 'boolean',
+      //   default: false,
+      //   isDisabled: (formData.ctaImage ?? []).length <= 0,
+      // },
 
       ctaLinkTitle: {
         title: intl.formatMessage(messages.ctaLinkTitle),

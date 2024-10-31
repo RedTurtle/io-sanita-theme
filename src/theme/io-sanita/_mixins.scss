@@ -5,3 +5,11 @@
 @mixin margin-size($key, $value) {
   #{$key}: calc($value / 18) + em;
 }
+
+@mixin nearFullWidthBlocks($class) {
+  .block.full-width[class*='bg-']:has(+ .block#{$class}),
+  .block#{$class}:has(+ .block.full-width[class*='bg-']),
+  .block#{$class}:has(+ .block.iosanita-block-search) {
+    margin-bottom: 0;
+  }
+}

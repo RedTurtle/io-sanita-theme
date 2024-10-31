@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Row, Col } from 'design-react-kit';
 
-import { CardGuide } from 'io-sanita-theme/components';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
+import { CardGuide, LinkMore } from 'io-sanita-theme/components';
 
 const SimpleCardTemplateGuide = ({
   items,
@@ -22,7 +21,7 @@ const SimpleCardTemplateGuide = ({
     <div className="simple-card-guide-template">
       <Row className="mb-3">
         {items.map((item, index) => (
-          <Col md={6} lg={4} key={index}>
+          <Col md={6} lg={6} key={index}>
             <CardGuide
               item={item}
               isEditMode={isEditMode}
@@ -32,7 +31,7 @@ const SimpleCardTemplateGuide = ({
         ))}
       </Row>
 
-      <ListingLinkMore
+      <LinkMore
         title={linkTitle}
         href={linkHref}
         className={show_block_bg ? 'mt-4' : 'my-4'}

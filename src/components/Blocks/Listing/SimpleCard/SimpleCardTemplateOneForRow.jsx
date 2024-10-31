@@ -14,12 +14,8 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { UniversalLink } from '@plone/volto/components';
 
 import { getItemIcon } from 'io-sanita-theme/helpers';
-
-import { CardCategoryTop } from 'io-sanita-theme/components';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
-
+import { CardCategoryTop, LinkMore } from 'io-sanita-theme/components';
 import { ListingText } from 'io-sanita-theme/components/Blocks';
-
 import {
   getCalendarDate,
   getEventRecurrenceMore,
@@ -165,7 +161,7 @@ const SimpleCardTemplateDefaultOneForRow = (props) => {
         })}
       </div>
 
-      <ListingLinkMore
+      <LinkMore
         title={linkTitle}
         href={linkHref}
         className={show_block_bg ? 'mt-4' : 'my-4'}

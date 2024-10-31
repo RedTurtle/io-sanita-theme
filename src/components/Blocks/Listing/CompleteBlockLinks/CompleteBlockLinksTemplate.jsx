@@ -1,8 +1,7 @@
 /*
- * Blocco link completo
+ * Link completo
  */
 import PropTypes from 'prop-types';
-import { UniversalLink } from '@plone/volto/components';
 import {
   Card,
   CardBody,
@@ -11,14 +10,14 @@ import {
   Row,
   Col,
 } from 'design-react-kit';
+import { UniversalLink } from '@plone/volto/components';
+import { isInternalURL } from '@plone/volto/helpers';
+import { Icon, LinkMore } from 'io-sanita-theme/components';
 import {
-  ListingLinkMore,
   ListingImage,
   ListingContainer,
 } from 'io-sanita-theme/components/Blocks';
-import { Icon } from 'io-sanita-theme/components';
 import { getComponentWithFallback } from 'io-sanita-theme/helpers';
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
 import './completeBlockLinksTemplate.scss';
 
@@ -32,7 +31,6 @@ const CompleteBlockLinksTemplate = (props) => {
     linkAlign,
     linkTitle,
     linkHref,
-    // show_block_bg,
     show_description = true,
     id_lighthouse,
     linkmore_id_lighthouse,
@@ -57,50 +55,43 @@ const CompleteBlockLinksTemplate = (props) => {
 
             return (
               <Col md="6" lg="3" key={item['@id']} className="col-item">
-                <Card
-                  color=""
-                  className="card-bg rounded"
-                  noWrapper={false}
-                  tag="div"
-                >
+                <Card className="shadow rounded card-bg no-after">
                   <UniversalLink
                     item={!isEditMode ? item : null}
                     href={isEditMode ? '#' : null}
                     data-element={id_lighthouse}
-                    className={'no-external-if-link'}
+                    className="item-card-link"
                   >
                     <div className="d-flex">
                       {image && <div className="image-container">{image}</div>}
-                      <div>
-                        <CardBody>
-                          <CardTitle tag="h3" className="text-contrast-accent">
-                            {item.title}
-                            {item['@type'] === 'Link' &&
-                              !isInternalURL(
-                                item.remoteUrl || item.getRemoteUrl,
-                              ) &&
-                              config.settings.siteProperties
-                                .markSpecialLinks && (
-                                <Icon
-                                  icon="it-external-link"
-                                  title={title}
-                                  size="xs"
-                                  className="ms-1 align-sub external-link"
-                                />
-                              )}
-                          </CardTitle>
-                          {show_description && (
-                            <CardText tag="p" className="text-secondary">
-                              {item.description}
-                            </CardText>
-                          )}
-                          <BlockExtraTags
-                            {...props}
-                            item={item}
-                            itemIndex={index}
-                          />
-                        </CardBody>
-                      </div>
+                      <CardBody>
+                        <CardTitle
+                          tag="h3"
+                          className="d-flex my-0 align-items-center h5"
+                        >
+                          {item.title}
+                          {item['@type'] === 'Link' &&
+                            !isInternalURL(
+                              item.remoteUrl || item.getRemoteUrl,
+                            ) &&
+                            config.settings.siteProperties.markSpecialLinks && (
+                              <Icon
+                                icon="it-external-link"
+                                title={title}
+                                size="xs"
+                                className="ms-1 align-sub external-link"
+                              />
+                            )}
+                        </CardTitle>
+                        {show_description && (
+                          <CardText tag="p">{item.description}</CardText>
+                        )}
+                        <BlockExtraTags
+                          {...props}
+                          item={item}
+                          itemIndex={index}
+                        />
+                      </CardBody>
                     </div>
                   </UniversalLink>
                 </Card>
@@ -108,7 +99,7 @@ const CompleteBlockLinksTemplate = (props) => {
             );
           })}
         </Row>
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}

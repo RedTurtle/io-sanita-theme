@@ -1,24 +1,23 @@
 import {
-  SimpleCardTemplate,
-  MapTemplate,
-  MapTemplateSkeleton,
+  CardWithImageTemplate,
+  CardWithImageTemplateSkeleton,
+  CompleteBlockLinksTemplate,
+  CompleteBlockLinksTemplateSkeleton,
   HighlightedContentTemplate,
   HighlightedContentTemplateSkeleton,
   InEvidenceTemplate,
   InEvidenceTemplateSkeleton,
-  CardWithImageTemplate,
-  CardWithImageTemplateSkeleton,
+  MapTemplate,
+  MapTemplateSkeleton,
+  SimpleCardTemplate,
   SimpleListTemplate,
   SimpleListTemplateSkeleton,
-  CompleteBlockLinksTemplate,
-  CompleteBlockLinksTemplateSkeleton,
+  SmallBlockLinksTemplate,
+  SmallBlockLinksTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
-
-// import SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinksTemplate';
-// import SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SmallBlockLinksTemplateSkeleton';
 
 // import PhotogalleryTemplate from 'io-sanita-theme/components/Blocks/Listing/PhotogalleryTemplate';
 // import PhotogalleryTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/PhotogalleryTemplateSkeleton';
@@ -41,8 +40,6 @@ import {
 // import CardWithSlideUpTextTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithSlideUpTextTemplate';
 // import CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithSlideUpTextTemplateSkeleton';
 
-// import AttachmentCardTemplate from 'io-sanita-theme/components/Blocks/Listing/AttachmentCardTemplate';
-
 import {
   addLighthouseField,
   addLinkMoreOptions,
@@ -53,13 +50,12 @@ import {
   addCardWithImageTemplateOptions,
   addSimpleListTemplateOptions,
   addCompleteBlockLinksTemplateOptions,
+  addSmallBlockLinksTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
   // addSliderTemplateOptions,
   // addCardWithSlideUpTextTemplateOptions,
   // addPhotogalleryTemplateOptions,
-  // addSmallBlockLinksTemplateOptions,
-  // addAttachmentCardTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
 
@@ -145,9 +141,23 @@ const iosanitaListingVariations = [
     cloneData: cloneBlock,
   },
   {
+    id: 'smallBlockLinksTemplate',
+    isDefault: false,
+    title: 'Link solo immagini',
+    template: SmallBlockLinksTemplate,
+    skeleton: SmallBlockLinksTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
+  {
     id: 'completeBlockLinksTemplate',
     isDefault: false,
-    title: 'Blocco link completo',
+    title: 'Link completi',
     template: CompleteBlockLinksTemplate,
     skeleton: CompleteBlockLinksTemplateSkeleton,
     schemaEnhancer: ({ schema, formData, intl }) => {
@@ -197,21 +207,7 @@ const iosanitaListingVariations = [
   //   },
   //   cloneData: cloneBlock,
   // },
-  // {
-  //   id: 'smallBlockLinksTemplate',
-  //   isDefault: false,
-  //   title: 'Blocco link solo immagini',
-  //   template: SmallBlockLinksTemplate,
-  //   skeleton: SmallBlockLinksTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
-  // {
+
   // {
   //   id: 'photogallery',
   //   isDefault: false,
@@ -267,20 +263,6 @@ const iosanitaListingVariations = [
   //   schemaEnhancer: ({ schema, formData, intl }) => {
   //     let pos = addDefaultOptions(schema, formData, intl);
   //     addBandiInEvidenceTemplateOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
-  // {
-  //   id: 'attachmentCardTemplate',
-  //   isDefault: false,
-  //   title: 'Allegati',
-  //   template: AttachmentCardTemplate,
-  //   // used default skeleton
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addAttachmentCardTemplateOptions(schema, formData, intl, pos);
   //     addLinkMoreOptions(schema, formData, intl);
   //     return schema;
   //   },

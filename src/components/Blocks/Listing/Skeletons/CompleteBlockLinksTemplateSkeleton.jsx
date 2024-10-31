@@ -25,12 +25,7 @@ const CompleteBlockLinksTemplateSkeleton = (props) => {
           <Row className="items">
             {[0, 1, 2, 3].map((i) => (
               <Col md="6" lg="3" key={i} className="col-item">
-                <Card
-                  color=""
-                  className="card-bg rounded"
-                  noWrapper={false}
-                  tag="div"
-                >
+                <Card color="" className="card-bg rounded" noWrapper={false}>
                   <a target="_blank" rel="noopener noreferrer" href="/">
                     <div className="d-flex">
                       <div className="image-container"> </div>

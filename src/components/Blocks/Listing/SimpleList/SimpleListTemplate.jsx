@@ -3,10 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink } from '@plone/volto/components';
 import { Row, Col } from 'design-react-kit';
-import {
-  ListingLinkMore,
-  ListingContainer,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
+import { LinkMore } from 'io-sanita-theme/components';
 
 import './simpleListTemplate.scss';
 
@@ -46,7 +44,7 @@ const SimpleListTemplate = (props) => {
             </Col>
           </Row>
         )}
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}

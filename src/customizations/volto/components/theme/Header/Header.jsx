@@ -6,6 +6,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 
 import {
   /* Anontools,
@@ -24,6 +25,9 @@ import { Headers } from 'design-react-kit';
 
 const Header = ({ pathname }) => {
   const [mini, setMini] = useState(false);
+  const isEditMode = useSelector(
+    (state) => Object.keys(state.form.global ?? {})?.length > 0,
+  );
 
   const handleScroll = () => {
     setMini(window.pageYOffset > 120);
@@ -37,7 +41,12 @@ const Header = ({ pathname }) => {
   return (
     <div className="public-ui">
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-      <Headers className={cx('it-header-sticky', { 'is-sticky': mini })}>
+      <Headers
+        className={cx({
+          'is-sticky': mini && !isEditMode,
+          'it-header-sticky': !isEditMode,
+        })}
+      >
         <HeaderSlim />
 
         <div className="it-nav-wrapper">
