@@ -72,6 +72,7 @@ export HighlightedContentTemplate from 'io-sanita-theme/components/Blocks/Listin
 export InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidence/InEvidenceTemplate';
 export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
 export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
+export SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinks/SmallBlockLinksTemplate';
 
 /*Skeleton*/
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
@@ -80,6 +81,7 @@ export HighlightedContentTemplateSkeleton from 'io-sanita-theme/components/Block
 export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/InEvidenceTemplateSkeleton';
 export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
+export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
 
 /*Edit*/
 const AlertEdit = loadable(() =>
