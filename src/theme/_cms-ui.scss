@@ -1,5 +1,6 @@
-@import 'cms-ui_container';
+@import 'cms-ui/cms-ui_container';
 @import 'cms-ui/sidebar';
+@import 'cms-ui/subblocks-edit';
 
 body.cms-ui {
   color: $body-color;
@@ -176,8 +177,7 @@ body.cms-ui {
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
   .block.numbersBlock > .ui.basic.button.delete-button,
-  .block.iconBlocks .ui.basic.button.delete-button,
-  .block.contacts .ui.basic.button.delete-button {
+  .block.iconBlocks .ui.basic.button.delete-button {
     background-color: #fff !important;
     color: #575757 !important;
     border: 1px solid #fff !important;
@@ -228,12 +228,6 @@ body.cms-ui {
     &:hover {
       background-color: #d90062 !important;
     }
-  }
-
-  .block .subblock-edit .ui.basic.button.delete-button {
-    border-radius: 100% !important;
-    margin-left: 0.5rem;
-    color: #575757 !important;
   }
 
   /*Select*/
