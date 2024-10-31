@@ -5,6 +5,7 @@ import heroSVG from '@plone/volto/icons/hero.svg';
 import userSVG from '@plone/volto/icons/user.svg';
 import flashSVG from '@plone/volto/icons/flash.svg';
 import alertSVG from '@plone/volto/icons/alert.svg';
+import emailSVG from '@plone/volto/icons/email.svg';
 import {
   BreakView,
   BreakEdit,
@@ -30,6 +31,9 @@ import {
   AlertView,
   AlertEdit,
   AlertSchema,
+  ContactsView,
+  ContactsEdit,
+  ContactsSchema,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -91,13 +95,13 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
     },
-    hero: {
-      id: 'hero',
-      title: 'Hero',
-      icon: heroSVG,
+    break: {
+      id: 'break',
+      title: 'Interruzione di pagina',
+      icon: divideHorizontalSVG,
       group: 'text',
-      view: HeroView,
-      edit: HeroEdit,
+      view: BreakView,
+      edit: BreakEdit,
       restricted: false,
       mostUsed: false,
       cloneData: cloneBlock,
@@ -105,8 +109,6 @@ export const applyIoSanitaBlocksConfig = (config) => {
         addPermission: [],
         view: [],
       },
-      sidebarTab: 1,
-      blockHasOwnFocusManagement: true,
     },
     callout_block: {
       id: 'callout_block',
@@ -125,6 +127,25 @@ export const applyIoSanitaBlocksConfig = (config) => {
       sidebarTab: 1,
       blockHasOwnFocusManagement: true,
     },
+    contacts: {
+      id: 'contacts',
+      title: 'Contatti',
+      icon: emailSVG,
+      group: 'text',
+      view: ContactsView,
+      edit: ContactsEdit,
+      schema: ContactsSchema,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
+    },
+
     cta_block: {
       id: 'cta_block',
       title: 'CTA - Call To Action',
@@ -142,20 +163,53 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
     },
-    maps: {
-      ...config.blocks.blocksConfig.maps,
-      restricted: true,
-    },
+
     gridBlock: {
       ...config.blocks.blocksConfig.gridBlock,
       allowedBlocks: config.blocks.blocksConfig.gridBlock.allowedBlocks.filter(
         (item) => !['teaser'].includes(item),
       ),
     },
+    hero: {
+      id: 'hero',
+      title: 'Hero',
+      icon: heroSVG,
+      group: 'text',
+      view: HeroView,
+      edit: HeroEdit,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
+    },
     html: {
       ...config.blocks.blocksConfig.html,
       sidebarTab: 1,
       schema: HTMLBlockSchema,
+    },
+    maps: {
+      ...config.blocks.blocksConfig.maps,
+      restricted: true,
+    },
+    quickSearch: {
+      id: 'quickSearch',
+      title: 'Ricerca rapida',
+      icon: searchSVG,
+      group: 'search',
+      view: QuickSearchView,
+      edit: QuickSearchEdit,
+      restricted: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 0,
     },
     search: {
       ...config.blocks.blocksConfig.search,
@@ -193,37 +247,6 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       schema: SearchServiziProcedureSchema,
       sidebarTab: 1,
-    },
-    break: {
-      id: 'break',
-      title: 'Interruzione di pagina',
-      icon: divideHorizontalSVG,
-      group: 'text',
-      view: BreakView,
-      edit: BreakEdit,
-      restricted: false,
-      mostUsed: false,
-      cloneData: cloneBlock,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-    },
-
-    quickSearch: {
-      id: 'quickSearch',
-      title: 'Ricerca rapida',
-      icon: searchSVG,
-      group: 'search',
-      view: QuickSearchView,
-      edit: QuickSearchEdit,
-      restricted: false,
-      cloneData: cloneBlock,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-      sidebarTab: 0,
     },
     topics_list: {
       id: 'topics_list',

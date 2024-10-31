@@ -168,5 +168,5 @@ export const EmbeddedVideo = loadable(() =>
     /* webpackChunkName: "is-video" */ 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo'
   ),
 );
-
+export LinkMore from 'io-sanita-theme/components/LinkMore/LinkMore';
 export LinkedHeadline from 'io-sanita-theme/components/LinkedHeadline/LinkedHeadline';

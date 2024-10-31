@@ -8,19 +8,39 @@ export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/
 export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/schema';
 export { CTASchema } from 'io-sanita-theme/components/Blocks/CTA/schema';
 export { AlertSchema } from 'io-sanita-theme/components/Blocks/Alert/schema';
+export { ContactsSchema } from 'io-sanita-theme/components/Blocks/Contacts/schema';
 
 /*View*/
-export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
-export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
-
 export const AlertView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockAlert" */ 'io-sanita-theme/components/Blocks/Alert/View'
   ),
 );
+export BreakView from 'io-sanita-theme/components/Blocks/Break/View';
+export CalloutView from 'io-sanita-theme/components/Blocks/Callout/View';
+export const ContactsView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockContacts" */ 'io-sanita-theme/components/Blocks/Contacts/View'
+  ),
+);
+export const CTAView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockCTA" */ 'io-sanita-theme/components/Blocks/CTA/View'
+  ),
+);
+export const HeroView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockHero" */ 'io-sanita-theme/components/Blocks/Hero/View'
+  ),
+);
 export const QuickSearchView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockSearchMap" */ 'io-sanita-theme/components/Blocks/QuickSearch/View'
+  ),
+);
+export const SearchFarmaciaView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockSearchFarmacia" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/View'
   ),
 );
 export const SearchMapView = loadable(() =>
@@ -33,30 +53,14 @@ export const SearchServiziProcedureView = loadable(() =>
     /* webpackChunkName: "ISBlockSearchServiziProcedure" */ 'io-sanita-theme/components/Blocks/SearchServiziProcedure/View'
   ),
 );
-export const SearchFarmaciaView = loadable(() =>
-  import(
-    /* webpackChunkName: "ISBlockSearchFarmacia" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/View'
-  ),
-);
-export const HeroView = loadable(() =>
-  import(
-    /* webpackChunkName: "ISBlockHero" */ 'io-sanita-theme/components/Blocks/Hero/View'
-  ),
-);
 export const TopicsListView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockTopicsList" */ 'io-sanita-theme/components/Blocks/TopicsList/View'
   ),
 );
-export const CTAView = loadable(() =>
-  import(
-    /* webpackChunkName: "ISBlockCTA" */ 'io-sanita-theme/components/Blocks/CTA/View'
-  ),
-);
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
-export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
 export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
@@ -91,6 +95,11 @@ const BreakEdit = loadable(() =>
 const CalloutEdit = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Callout/Edit'
+  ),
+);
+const ContactsEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Contacts/Edit'
   ),
 );
 const CTAEdit = loadable(() =>
@@ -141,6 +150,7 @@ export {
   AlertEdit,
   BreakEdit,
   CalloutEdit,
+  ContactsEdit,
   CTAEdit,
   HeroEdit,
   HTMLBlockSidebar,
