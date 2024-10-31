@@ -1,9 +1,9 @@
 :root {
   --focus-outline-color: #{$focus-outline-color};
   --is-accent: #{$accent};
-  --is-accent-text: #{$accent-text};
-  --is-accent-text: #{$accent-text};
+  --is-accent-contrast-text: #{$accent-contrast-text};
   --is-highlight-search: #{$highlight-search};
+  --primary: #{$primary};
   --primary-darker: #{$primary-darker};
   --primary-dark: #{$primary-dark};
   --primary-lightest: #{$bg-primary-lightest};

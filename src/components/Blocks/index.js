@@ -66,20 +66,22 @@ export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/Rass
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
 
 /*Listing variations*/
-export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
-export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTemplate';
+export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
+export CompleteBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/CompleteBlockLinks/CompleteBlockLinksTemplate';
 export HighlightedContentTemplate from 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate';
 export InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidence/InEvidenceTemplate';
-export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
+export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTemplate';
+export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
 export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
 export SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinks/SmallBlockLinksTemplate';
 
 /*Skeleton*/
+export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
+export CompleteBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CompleteBlockLinksTemplateSkeleton';
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
-export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export HighlightedContentTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/HighlightedContentTemplateSkeleton';
 export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/InEvidenceTemplateSkeleton';
-export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
+export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
 

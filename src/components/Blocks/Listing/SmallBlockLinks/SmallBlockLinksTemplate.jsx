@@ -1,5 +1,5 @@
 /*
- * Blocco link solo immagini
+ * Link solo immagini
  */
 import PropTypes from 'prop-types';
 import { Row, Col } from 'design-react-kit';
