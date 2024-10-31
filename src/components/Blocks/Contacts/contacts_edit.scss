@@ -1,0 +1,48 @@
+.block.contacts {
+  .ui.basic.button.delete-button {
+    padding: 0.5rem;
+    text-align: center;
+
+    svg:not(:hover) {
+      fill: #fff !important;
+    }
+
+    &:hover {
+      border-radius: 100%;
+    }
+  }
+
+  .single-block.subblock-edit {
+    height: 100%;
+
+    .card-wrapper {
+      height: 100%;
+    }
+
+    .ui.basic.button.delete-button {
+      padding: 0.36rem;
+    }
+  }
+
+  .button.add-element {
+    margin-top: 1em;
+  }
+
+  .card {
+    .contact-text {
+      .detached-slate-editor {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .contact-info {
+      [role='textbox'] {
+        //slate editor
+        width: 100%;
+        &[data-slate-editor='true'] {
+          min-height: 1em;
+        }
+      }
+    }
+  }
+}

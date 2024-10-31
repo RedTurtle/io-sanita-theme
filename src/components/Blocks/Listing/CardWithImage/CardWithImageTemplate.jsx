@@ -4,10 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'design-react-kit';
-import {
-  ListingLinkMore,
-  ListingContainer,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
+import { LinkMore } from 'io-sanita-theme/components';
 import CardWithImageDefault from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
 
 const CardWithImageTemplate = (props) => {
@@ -41,7 +39,7 @@ const CardWithImageTemplate = (props) => {
             );
           })}
         </Row>
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           className={show_block_bg ? 'mt-4' : 'my-4'}

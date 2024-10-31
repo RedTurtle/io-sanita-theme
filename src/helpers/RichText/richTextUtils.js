@@ -25,7 +25,6 @@ export const richTextHasContent = (data) => {
         noTextBlocks.length > 0)
     );
   } else {
-    console.log(data);
     const textToDisplay = data?.data?.replace(/(<([^>]+)>)/g, '') ?? '';
     return textToDisplay.length > 0 ? true : false;
   }

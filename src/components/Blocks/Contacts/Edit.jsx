@@ -7,8 +7,8 @@ import React from 'react';
 import { defineMessages } from 'react-intl';
 import { Container, Row, Col } from 'design-react-kit';
 
-import { SidebarPortal } from '@plone/volto/components';
-import { UniversalLink } from '@plone/volto/components';
+import { SidebarPortal, UniversalLink } from '@plone/volto/components';
+
 import {
   withDNDContext,
   SubblocksEdit,
@@ -16,13 +16,14 @@ import {
 } from 'volto-subblocks';
 
 import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
-
+import { LinkMore } from 'io-sanita-theme/components';
 import { TextEditorWidget } from 'volto-slate-italia';
 
 import EditBlock from './Block/EditBlock';
 import Sidebar from './Sidebar';
 
 import './contacts.scss';
+import './contacts_edit.scss';
 
 const messages = defineMessages({
   addItem: {
@@ -131,7 +132,7 @@ class Edit extends SubblocksEdit {
 
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
-        <div className={`full-width section ${this.props.data.bg_color} py-5`}>
+        <div className={`full-width section ${this.props.data.bg_color} py-4`}>
           <Container className="px-md-4">
             <div className="block-header">
               <div className="title">
@@ -219,12 +220,18 @@ class Edit extends SubblocksEdit {
             </SubblocksWrapper>
 
             {href?.length > 0 && this.props.data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
-                <UniversalLink item={href[0]} className="btn btn-tertiary">
-                  {this.props.data.linkMoreTitle}
-                </UniversalLink>
-              </div>
+              // <div className="link-button text-center my-4">
+              //   <UniversalLink item={href[0]} className="btn btn-tertiary">
+              //     {this.props.data.linkMoreTitle}
+              //   </UniversalLink>
+              // </div>
+              <LinkMore
+                title={this.props.data.linkMoreTitle}
+                href={href}
+                className="my-4"
+              />
             )}
+
             <SidebarPortal selected={this.props.selected || false}>
               <Sidebar
                 {...this.props}

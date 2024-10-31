@@ -5,10 +5,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit';
 import { UniversalLink } from '@plone/volto/components';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import { LinkMore } from 'io-sanita-theme/components';
+import ViewBlock from './Block/ViewBlock';
 import './contacts.scss';
 /**
  * View Accordion block class.
@@ -30,7 +31,7 @@ const AccordionView = ({ data, block, id }) => {
   return (
     <div className="block contacts" id={id}>
       <div className="public-ui">
-        <div className={`full-width section ${data.bg_color} py-5`}>
+        <div className={`full-width section ${data.bg_color} py-4`}>
           <Container className="px-md-4">
             {(data.title || data.description) && (
               <div className="block-header">
@@ -62,11 +63,16 @@ const AccordionView = ({ data, block, id }) => {
             </Row>
 
             {href?.length > 0 && data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
-                <UniversalLink item={href[0]} className="btn btn-tertiary">
-                  {data.linkMoreTitle}
-                </UniversalLink>
-              </div>
+              //   <div className="link-button text-center my-4">
+              //   <UniversalLink item={href[0]} className="btn btn-tertiary">
+              //     {data.linkMoreTitle}
+              //   </UniversalLink>
+              // </div>
+              <LinkMore
+                title={data.linkMoreTitle}
+                href={href}
+                className="my-4"
+              />
             )}
           </Container>
         </div>

@@ -85,7 +85,6 @@ class EditBlock extends SubblockEdit {
         <Card
           className="card-bg rounded"
           noWrapper={false}
-          space
           tag="div"
           ref={this.contact_item_ref}
           key={this.props.data.index}
