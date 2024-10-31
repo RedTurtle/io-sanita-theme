@@ -7,10 +7,8 @@ import moment from 'moment';
 import cx from 'classnames';
 import { OSMMap } from 'volto-venue';
 import { Row, Col } from 'design-react-kit';
-import {
-  ListingLinkMore,
-  ListingContainer,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
+import { LinkMore } from 'io-sanita-theme/components';
 import './mapTemplate.scss';
 
 const messages = defineMessages({
@@ -99,7 +97,7 @@ const MapTemplate = (props) => {
           intl.formatMessage(messages.no_markers)
         )}
 
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}

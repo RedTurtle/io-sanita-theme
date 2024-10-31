@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Row, Col } from 'design-react-kit';
 
-import { CardGhost } from 'io-sanita-theme/components';
-import { ListingLinkMore } from 'io-sanita-theme/components/Blocks';
+import { CardGhost, LinkMore } from 'io-sanita-theme/components';
 
 const SimpleCardTemplateGhost = ({
   items,
@@ -32,7 +31,7 @@ const SimpleCardTemplateGhost = ({
         ))}
       </Row>
 
-      <ListingLinkMore
+      <LinkMore
         title={linkTitle}
         href={linkHref}
         className={show_block_bg ? 'mt-4' : 'my-4'}

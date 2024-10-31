@@ -68,4 +68,9 @@ defineMessages({
     id: 'Clear dates',
     defaultMessage: 'Pulisci i campi',
   },
+  //volto-feedback-italia
+  feedback_clear_proceeding: {
+    id: 'feedback_clear_proceeding',
+    defaultMessage: 'Non ho avuto dubbi su quello che stavo facendo',
+  },
 });

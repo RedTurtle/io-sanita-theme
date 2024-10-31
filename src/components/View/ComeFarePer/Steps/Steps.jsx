@@ -79,7 +79,7 @@ const Steps = ({ content, steps = [] }) => {
     steps.forEach((item) => {
       const url = flattenToAppURL(item['@id']);
       const loaded = searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
-      console.log(item, loaded);
+
       if (!loaded) {
         dispatch(getContent(url, null, url));
       }

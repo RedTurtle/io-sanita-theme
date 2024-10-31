@@ -26,11 +26,15 @@ import {
   ListingContainer,
   //getPathFiltersButtons,
 } from 'io-sanita-theme/components/Blocks';
-
+import { checkRichTextHasContent } from 'io-sanita-theme/helpers';
 import config from '@plone/volto/registry';
 
 const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
-  if (!data.title && !data.description) {
+  const description = checkRichTextHasContent(data.description)
+    ? data.description
+    : null;
+
+  if (!data.title && !description) {
     return <></>;
   }
 
@@ -48,15 +52,16 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
     data.path_filters,
   );*/
 
+  console.log(data.title, description);
   return (
-    (data.title || data.description || path_filters_buttons) && (
+    (data.title || description || path_filters_buttons) && (
       <ListingContainer data={data} isEditMode={isEditMode}>
         <Row
           className={cx('template-header', {
             'with-filters': path_filters_buttons,
           })}
         >
-          {(data.title || data.description) && (
+          {(data.title || description) && (
             <Col md={path_filters_buttons ? 6 : 12}>
               {data.title && (
                 <LinkedHeadline
@@ -67,13 +72,13 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
                     emptyListing: !listingItems?.length > 0,
                     'mt-0': !data.show_block_bg,
                     'mt-4': data.show_block_bg,
-                    'mb-4': !path_filters_buttons && !data.description,
+                    'mb-4': !path_filters_buttons && !description,
                   })}
                 />
               )}
-              {data?.description && (
+              {description && (
                 <div className="mb-4 is-block-description">
-                  <TextBlockView data={{ value: data?.description }} />
+                  <TextBlockView data={{ value: description }} />
                 </div>
               )}
             </Col>

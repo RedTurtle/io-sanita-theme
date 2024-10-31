@@ -46,7 +46,10 @@ export {
 export RichText from 'io-sanita-theme/helpers/RichText/RichText';
 export RichTextRender from 'io-sanita-theme/helpers/RichText/RichTextRender';
 export RichTextSection from 'io-sanita-theme/helpers/RichText/RichTextSection';
-export { richTextHasContent } from 'io-sanita-theme/helpers/RichText/richTextUtils';
+export {
+  richTextHasContent,
+  checkRichTextHasContent,
+} from 'io-sanita-theme/helpers/RichText/richTextUtils';
 
 //blocks
 export RenderBlocks from 'io-sanita-theme/helpers/Blocks/RenderBlocks';

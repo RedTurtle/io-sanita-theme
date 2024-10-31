@@ -1,10 +1,12 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { Icon } from 'io-sanita-theme/components';
 
+import './linkmore.scss';
 const messages = defineMessages({
   view_all: {
     id: 'Vedi tutto',
@@ -12,7 +14,7 @@ const messages = defineMessages({
   },
 });
 
-export const ListingLinkMore = ({
+export const LinkMore = ({
   title,
   href,
   className = '',
@@ -21,21 +23,26 @@ export const ListingLinkMore = ({
   const intl = useIntl();
   const url = href?.[0]?.['@id'];
   return url ? (
-    <div className={`link-more-button-wrapper text-end ${className}`}>
+    <div className={cx('link-more-button-wrapper text-end', className)}>
       <UniversalLink
         href={flattenToAppURL(url)}
         data-element={linkmoreIdLighthouse}
         className="text-accent fw-semibold"
       >
         {title || intl.formatMessage(messages.view_all)}{' '}
-        <Icon color="accent" icon="it-arrow-right" padding={false} />
+        <Icon
+          color="accent"
+          icon="it-arrow-right"
+          className="arrow-icon"
+          padding={false}
+        />
       </UniversalLink>
     </div>
   ) : null;
 };
 
-ListingLinkMore.propTypes = {
+LinkMore.propTypes = {
   linkMore: PropTypes.object,
 };
 
-export default ListingLinkMore;
+export default LinkMore;

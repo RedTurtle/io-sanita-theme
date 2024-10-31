@@ -32,7 +32,7 @@ export ScrollToTop from 'io-sanita-theme/components/ScrollToTop/ScrollToTop';
 export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/HeaderSlim';
 export HeaderContacts from 'io-sanita-theme/components/layout/Header/HeaderContacts/HeaderContacts';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';
-export SubsiteHeader from 'io-sanita-theme/components/layout/Header/SubsiteHeader';
+export SubsiteHeader from 'io-sanita-theme/components/layout/Header/SubsiteHeader/SubsiteHeader';
 export SearchModal from 'io-sanita-theme/components/layout/Header/HeaderSearch/SearchModal';
 export UserLoggedMenu from 'io-sanita-theme/components/layout/Header/HeaderSlim/UserLoggedMenu';
 export LoginButton from 'io-sanita-theme/components/layout/Header/HeaderSlim/LoginButton';
@@ -168,5 +168,5 @@ export const EmbeddedVideo = loadable(() =>
     /* webpackChunkName: "is-video" */ 'io-sanita-theme/components/EmbeddedVideo/EmbeddedVideo'
   ),
 );
-
+export LinkMore from 'io-sanita-theme/components/LinkMore/LinkMore';
 export LinkedHeadline from 'io-sanita-theme/components/LinkedHeadline/LinkedHeadline';

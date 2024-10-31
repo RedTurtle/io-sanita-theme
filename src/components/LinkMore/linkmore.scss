@@ -1,0 +1,28 @@
+.link-more-button-wrapper {
+  a {
+    display: inline-flex;
+    align-items: flex-start;
+
+    .icon.arrow-icon {
+      order: 2;
+      margin-left: 0.5rem;
+      transition: transform 0.5s ease-out;
+    }
+    .icon.external-link {
+      order: 1;
+      fill: currentColor;
+    }
+    &:not(:hover):not(:active):not(:focus) {
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      .icon.arrow-icon {
+        // Link icon animatio
+        transform: translateX(3px);
+      }
+    }
+  }
+}

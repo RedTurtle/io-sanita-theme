@@ -1,0 +1,37 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.small-block-links {
+  .center-image-card {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid $white;
+    background: $white;
+    box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+
+    .img-link svg.external-link {
+      position: absolute;
+      z-index: 2;
+      top: 4px;
+      right: 4px;
+    }
+
+    img.responsive,
+    .img-skeleton {
+      width: auto;
+      min-width: 100%;
+      object-fit: contain;
+    }
+
+    .img-skeleton {
+      height: 80px;
+    }
+
+    @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+      height: unset;
+    }
+  }
+}
