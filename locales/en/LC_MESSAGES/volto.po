@@ -16,6 +16,16 @@ msgstr ""
 msgid "Accedi all'area personale"
 msgstr "Login to your personal area"
 
+#. Default: "Aggiungi elemento"
+#: components/Blocks/Contacts/Edit
+msgid "Add accordion item"
+msgstr ""
+
+#. Default: "Alert"
+#: components/Blocks/Alert/Sidebar
+msgid "Alert"
+msgstr ""
+
 #. Default: "Aspetto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
@@ -31,6 +41,11 @@ msgstr "Attention!"
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
 msgstr "Notice"
+
+#. Default: "Bottom"
+#: overrideTranslations
+msgid "Bottom"
+msgstr ""
 
 #. Default: "Browse"
 #: components/Blocks/Hero/Edit
@@ -57,6 +72,11 @@ msgstr ""
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
 msgstr "View on map"
+
+#. Default: "Center"
+#: overrideTranslations
+msgid "Center"
+msgstr ""
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/HeaderSearch
@@ -109,7 +129,23 @@ msgstr "Starting from {start}"
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Between {start} and {end}"
 
-#. Default: "Description"
+#. Default: "Delete col"
+#: overrideTranslations
+msgid "Delete col"
+msgstr ""
+
+#. Default: "Delete row"
+#: overrideTranslations
+msgid "Delete row"
+msgstr ""
+
+#. Default: "Delete table"
+#: overrideTranslations
+msgid "Delete table"
+msgstr ""
+
+#. Default: "Descrizione..."
+#: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 msgid "Description"
 msgstr ""
@@ -117,6 +153,11 @@ msgstr ""
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
+msgstr ""
+
+#. Default: "Divide each row into separate cells"
+#: overrideTranslations
+msgid "Divide each row into separate cells"
 msgstr ""
 
 #. Default: "Etichetta"
@@ -139,6 +180,11 @@ msgstr ""
 msgid "Faq Folder: Nessun risultato trovato"
 msgstr "I didn't find the answer you were looking for"
 
+#. Default: "Fixed width table cells"
+#: overrideTranslations
+msgid "Fixed width table cells"
+msgstr ""
+
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
 msgid "Go to content"
@@ -157,6 +203,11 @@ msgstr ""
 #. Default: "Hero"
 #: components/Blocks/Hero/HeroSidebar
 msgid "Hero"
+msgstr ""
+
+#. Default: "Hide headers"
+#: overrideTranslations
+msgid "Hide headers"
 msgstr ""
 
 #. Default: "Home"
@@ -191,6 +242,26 @@ msgstr "Cookies settings"
 msgid "In this section"
 msgstr "In this section"
 
+#. Default: "Insert col after"
+#: overrideTranslations
+msgid "Insert col after"
+msgstr ""
+
+#. Default: "Insert col before"
+#: overrideTranslations
+msgid "Insert col before"
+msgstr ""
+
+#. Default: "Insert row after"
+#: overrideTranslations
+msgid "Insert row after"
+msgstr ""
+
+#. Default: "Insert row before"
+#: overrideTranslations
+msgid "Insert row before"
+msgstr ""
+
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
 msgid "Interruzione di pagina"
@@ -205,6 +276,11 @@ msgstr "Subscribe to receive newsletter"
 #: components/View/Evento/Dates
 msgid "L'evento non si terrà nelle seguenti date"
 msgstr "The event will not be held on the following dates"
+
+#. Default: "Left"
+#: overrideTranslations
+msgid "Left"
+msgstr ""
 
 #. Default: "Link a"
 #: components/manage/Widgets/LinkToWidget/LinkToWidget
@@ -231,11 +307,26 @@ msgstr "Loading page..."
 msgid "Logout"
 msgstr "Logout"
 
+#. Default: "Make the table compact"
+#: overrideTranslations
+msgid "Make the table compact"
+msgstr ""
+
+#. Default: "Make the table sortable"
+#: overrideTranslations
+msgid "Make the table sortable"
+msgstr ""
+
 #. Default: "Menu selezionato"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/layout/Navigation/MenuSecondary/MenuSecondary
 msgid "Menu selezionato"
 msgstr "Menu selected"
+
+#. Default: "Middle"
+#: overrideTranslations
+msgid "Middle"
+msgstr ""
 
 #. Default: "Mostra i filtri per percorso"
 #: config/blocks/listing/ListingOptions/utils
@@ -299,6 +390,11 @@ msgstr "Select to play slider"
 msgid "Previous page"
 msgstr "Previous page"
 
+#. Default: "Reduce complexity"
+#: overrideTranslations
+msgid "Reduce complexity"
+msgstr ""
+
 #. Default: "Ricerca con mappa"
 #: components/Blocks/SearchMap/Sidebar
 msgid "Ricerca con mappa"
@@ -312,6 +408,11 @@ msgstr ""
 #. Default: "Ricerca servizi o procedure"
 #: components/Blocks/SearchServiziProcedure/Sidebar
 msgid "Ricerca servizi o procedure"
+msgstr ""
+
+#. Default: "Right"
+#: overrideTranslations
+msgid "Right"
 msgstr ""
 
 #. Default: "Rimuovi il file"
@@ -359,10 +460,30 @@ msgstr "Available and bookable service"
 msgid "Sono occorsi degli errori"
 msgstr "Some errors occurued"
 
+#. Default: "Stripe alternate rows with color"
+#: overrideTranslations
+msgid "Stripe alternate rows with color"
+msgstr ""
+
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "Subscribe"
 msgstr "Subscribe"
+
+#. Default: "Table"
+#: overrideTranslations
+msgid "Table"
+msgstr ""
+
+#. Default: "Table color inverted"
+#: overrideTranslations
+msgid "Table color inverted"
+msgstr ""
+
+#. Default: "Testo..."
+#: components/Blocks/Contacts/Block/EditBlock
+msgid "Text placeholder"
+msgstr ""
 
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
@@ -374,14 +495,25 @@ msgstr ""
 msgid "Tipi di contenuto"
 msgstr ""
 
-#. Default: "Title"
+#. Default: "Titolo..."
+#: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 msgid "Title"
+msgstr ""
+
+#. Default: "Titolo..."
+#: components/Blocks/Contacts/Block/EditBlock
+msgid "Title placeholder"
 msgstr ""
 
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "Titolo"
+msgstr ""
+
+#. Default: "Top"
+#: overrideTranslations
+msgid "Top"
 msgstr ""
 
 #. Default: "Trascina qui il file..."
@@ -405,6 +537,7 @@ msgid "Type description…"
 msgstr ""
 
 #. Default: "Digita il testo…"
+#: components/Blocks/Alert/Edit
 #: components/Blocks/Callout/Edit
 #: helpers/Translations/overrideTranslations
 msgid "Type text…"
@@ -445,16 +578,22 @@ msgid "Vai alla pagina"
 msgstr "Go to page"
 
 #. Default: "Vedi"
+#: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Listing/Map/MapTemplate
 msgid "Vedi"
 msgstr "View"
 
 #. Default: "Vedi tutto"
-#: components/Blocks/Listing/commons/ListingLinkMore
 #: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
+#: components/LinkMore/LinkMore
 msgid "Vedi tutto"
 msgstr "View all"
+
+#. Default: "Visible only in view mode"
+#: overrideTranslations
+msgid "Visible only in view mode"
+msgstr ""
 
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
@@ -480,6 +619,86 @@ msgstr "All contents for {title}"
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_no_results"
 msgstr "No results found"
+
+#. Default: "Pubblicazione attiva."
+#: components/Blocks/Alert/Wrapper
+msgid "alert_activeDate"
+msgstr ""
+
+#. Default: "Colore di sfondo"
+#: components/Blocks/Alert/schema
+msgid "alert_bg_olor"
+msgstr ""
+
+#. Default: "Rosso"
+#: components/Blocks/Alert/schema
+msgid "alert_color_danger"
+msgstr ""
+
+#. Default: "Arancione"
+#: components/Blocks/Alert/schema
+msgid "alert_color_orange"
+msgstr ""
+
+#. Default: "Giallo"
+#: components/Blocks/Alert/schema
+msgid "alert_color_warning"
+msgstr ""
+
+#. Default: "Scadenza"
+#: components/Blocks/Alert/schema
+msgid "alert_endDate"
+msgstr ""
+
+#. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#: components/Blocks/Alert/schema
+msgid "alert_endDate_descr"
+msgstr ""
+
+#. Default: "Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio"
+#: components/Blocks/Alert/Wrapper
+msgid "alert_errorDate"
+msgstr ""
+
+#. Default: "Non visibile. E' scaduto il {date}."
+#: components/Blocks/Alert/Wrapper
+msgid "alert_expiredDate"
+msgstr ""
+
+#. Default: "Non visibile. Verà pubblicato il {date}"
+#: components/Blocks/Alert/Wrapper
+msgid "alert_futureDate"
+msgstr ""
+
+#. Default: "Immagine"
+#: components/Blocks/Alert/schema
+msgid "alert_image"
+msgstr ""
+
+#. Default: "Dimensione immagine"
+#: components/Blocks/Alert/schema
+msgid "alert_image_size"
+msgstr ""
+
+#. Default: "Inizio"
+#: components/Blocks/Alert/schema
+msgid "alert_startDate"
+msgstr ""
+
+#. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#: components/Blocks/Alert/schema
+msgid "alert_startDate_descr"
+msgstr ""
+
+#. Default: "Periodo di visibilità"
+#: components/Blocks/Alert/schema
+msgid "alert_validity"
+msgstr ""
+
+#. Default: "Scadrà il {date}"
+#: components/Blocks/Alert/Wrapper
+msgid "alert_willExpire"
+msgstr ""
 
 #. Default: "Allinea il bottone a destra"
 #: components/Blocks/Listing/schema
@@ -681,6 +900,12 @@ msgstr "Scheduled"
 msgid "bando_servizi_collegati"
 msgstr "Related services"
 
+#. Default: "Colore di sfondo"
+#: components/Blocks/Contacts/schema
+#: components/Blocks/Contacts/Sidebar
+msgid "bg_color"
+msgstr ""
+
 #. Default: "Tutto per"
 #: components/Blocks/TopicsList/Sidebar
 msgid "block_Tutto per"
@@ -847,9 +1072,34 @@ msgstr ""
 msgid "comefareper_documenti"
 msgstr ""
 
+#. Default: "Contatti"
+#: components/Blocks/Contacts/Sidebar
+msgid "contacts_block"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Contacts/schema
+msgid "contacts_linkMore"
+msgstr ""
+
+#. Default: "Link"
+#: components/Blocks/Contacts/schema
+msgid "contacts_linkMoreHref"
+msgstr ""
+
+#. Default: "Titolo per il link ad altro"
+#: components/Blocks/Contacts/schema
+msgid "contacts_linkMoreTitle"
+msgstr ""
+
 #. Default: "Blocco CTA"
 #: components/Blocks/CTA/Sidebar
 msgid "cta_block"
+msgstr ""
+
+#. Default: "Immagine predefinita"
+#: components/Blocks/CTA/schema
+msgid "cta_default_image"
 msgstr ""
 
 #. Default: "Mostra a tutta larghezza"
@@ -870,11 +1120,6 @@ msgstr ""
 #. Default: "Titolo per il link della CTA"
 #: components/Blocks/CTA/schema
 msgid "cta_linkTitle"
-msgstr ""
-
-#. Default: "Mostra immagine"
-#: components/Blocks/CTA/schema
-msgid "cta_show_image"
 msgstr ""
 
 #. Default: "dal {dateStart} fino a conclusione"
@@ -1122,6 +1367,11 @@ msgstr "From"
 msgid "farmacia_turni_to"
 msgstr "To"
 
+#. Default: "Non ho avuto dubbi su quello che stavo facendo"
+#: overrideTranslations
+msgid "feedback_clear_proceeding"
+msgstr ""
+
 #. Default: "Filtri"
 #: components/Search/Search
 msgid "filtersCollapse"
@@ -1215,8 +1465,14 @@ msgid "link"
 msgstr "Link"
 
 #. Default: "Link ad altro"
+#: components/Blocks/Contacts/Sidebar
 #: components/Blocks/Hero/StoresButtons
 msgid "linkMore"
+msgstr ""
+
+#. Default: "Titolo per il link ad altro"
+#: components/Blocks/Contacts/Sidebar
+msgid "linkMoreTitle"
 msgstr ""
 
 #. Default: "LinkedIn"
