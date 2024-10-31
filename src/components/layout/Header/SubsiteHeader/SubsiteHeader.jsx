@@ -10,6 +10,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { isSubsiteRoot } from 'volto-subsites';
 
 import { richTextHasContent, RichText } from 'io-sanita-theme/helpers';
+import './subsite-header.scss';
 
 const SubsiteHeader = () => {
   const subsite = useSelector((state) => state.subsite?.data);
