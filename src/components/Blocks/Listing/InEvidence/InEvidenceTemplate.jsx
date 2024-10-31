@@ -6,11 +6,14 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Row, Col, CardReadMore } from 'design-react-kit';
 
-import { CardPersona, CardFeatured } from 'io-sanita-theme/components';
+import {
+  CardPersona,
+  CardFeatured,
+  LinkMore,
+} from 'io-sanita-theme/components';
 import { getComponentWithFallback } from 'io-sanita-theme/helpers';
 import {
   ListingText,
-  ListingLinkMore,
   ListingContainer,
   RassegnaInfo,
 } from 'io-sanita-theme/components/Blocks';
@@ -98,7 +101,7 @@ const InEvidenceTemplate = (props) => {
             })}
           </Row>
         </div>
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}
