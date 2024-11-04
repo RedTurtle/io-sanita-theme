@@ -60,10 +60,15 @@ export const TopicsListView = loadable(() =>
 );
 
 /*Listing commons*/
-export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
+export ListingImage, {
+  getListingImageBackground,} from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
 export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
+export ListingCategory from 'io-sanita-theme/components/Blocks/Listing/commons/ListingCategory';
+export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
+
+
 
 /*Listing variations*/
 export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
@@ -74,6 +79,7 @@ export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTempla
 export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
 export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
 export SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinks/SmallBlockLinksTemplate';
+export CardWithSlideUpTextTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithSlideUpText/CardWithSlideUpTextTemplate';
 
 /*Skeleton*/
 export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
@@ -84,6 +90,7 @@ export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listin
 export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
+export CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithSlideUpTextTemplateSkeleton';
 
 /*Edit*/
 const AlertEdit = loadable(() =>
