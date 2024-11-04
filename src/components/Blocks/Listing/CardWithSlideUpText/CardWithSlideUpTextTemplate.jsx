@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, CardReadMore } from 'design-react-kit';
+import { CardReadMore } from 'design-react-kit';
 import cx from 'classnames';
 
 import { UniversalLink } from '@plone/volto/components';
@@ -13,6 +13,7 @@ import {
   ListingLinkMore,
   ListingCategory,
   getListingImageBackground,
+  ListingContainer,
 } from 'io-sanita-theme/components/Blocks';
 import { getCategory } from 'io-sanita-theme/components/Blocks/Listing/Commons/utils';
 import { defineMessages, useIntl } from 'react-intl';
@@ -48,14 +49,7 @@ const CardWithSlideUpTextTemplate = (props) => {
 
   return (
     <div className="card-slide-text-template">
-      <Container>
-        <div className="title">
-          {title && (
-            <h2 className={cx('', { 'title-bottom-line': titleLine })}>
-              {title}
-            </h2>
-          )}
-        </div>
+      <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="grid mb-3 mt-5">
           {items.map((item, index) => {
             const image = getListingImageBackground(item, 'large');
@@ -125,7 +119,7 @@ const CardWithSlideUpTextTemplate = (props) => {
           className="my-4"
           linkmoreIdLighthouse={linkmore_id_lighthouse}
         />
-      </Container>
+      </ListingContainer>
     </div>
   );
 };
