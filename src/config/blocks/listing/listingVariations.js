@@ -1,6 +1,8 @@
 import {
   CardWithImageTemplate,
   CardWithImageTemplateSkeleton,
+  CardWithSlideUpTextTemplate,
+  CardWithSlideUpTextTemplateSkeleton,
   CompleteBlockLinksTemplate,
   CompleteBlockLinksTemplateSkeleton,
   HighlightedContentTemplate,
@@ -14,8 +16,6 @@ import {
   SimpleListTemplateSkeleton,
   SmallBlockLinksTemplate,
   SmallBlockLinksTemplateSkeleton,
-  CardWithSlideUpTextTemplate,
-  CardWithSlideUpTextTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
@@ -40,17 +40,17 @@ import {
 // import SquaresImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SquaresImageTemplateSkeleton';
 
 import {
+  addCardWithImageTemplateOptions,
+  addCardWithSlideUpTextTemplateOptions,
+  addCompleteBlockLinksTemplateOptions,
+  addDefaultOptions,
+  addInEvidenceTemplateOptions,
   addLighthouseField,
   addLinkMoreOptions,
-  addDefaultOptions,
-  addSimpleCardTemplateOptions,
   addMapTemplateOptions,
-  addInEvidenceTemplateOptions,
-  addCardWithImageTemplateOptions,
+  addSimpleCardTemplateOptions,
   addSimpleListTemplateOptions,
-  addCompleteBlockLinksTemplateOptions,
   addSmallBlockLinksTemplateOptions,
-  addCardWithSlideUpTextTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
   // addSliderTemplateOptions,

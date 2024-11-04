@@ -10,7 +10,7 @@ import {
 } from 'design-react-kit';
 
 const CompleteBlockLinksTemplateSkeleton = (props) => {
-  const { title, isEditMode, linkHref } = props;
+  const { title, isEditMode } = props;
   return (
     <div className="complete-block-links-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
@@ -26,21 +26,18 @@ const CompleteBlockLinksTemplateSkeleton = (props) => {
             {[0, 1, 2, 3].map((i) => (
               <Col md="6" lg="3" key={i} className="col-item">
                 <Card color="" className="card-bg rounded" noWrapper={false}>
-                  <a target="_blank" rel="noopener noreferrer" href="/">
-                    <div className="d-flex">
-                      <div className="image-container"> </div>
+                  <div className="d-flex">
+                    <div className="image-container"> </div>
 
-                      <CardBody>
-                        <CardTitle tag="h5">-</CardTitle>
-                        <CardText tag="p"></CardText>
-                      </CardBody>
-                    </div>
-                  </a>
+                    <CardBody>
+                      <CardTitle tag="h5">-</CardTitle>
+                      <CardText tag="p"></CardText>
+                    </CardBody>
+                  </div>
                 </Card>
               </Col>
             ))}
           </Row>
-          {linkHref && <div className="link-button text-center my-4"></div>}
         </div>
       </ListingContainer>
     </div>

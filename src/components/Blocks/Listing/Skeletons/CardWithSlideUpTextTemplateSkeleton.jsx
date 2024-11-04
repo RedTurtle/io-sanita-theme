@@ -1,54 +1,44 @@
-import React from 'react';
+/*
+ * Skeleton card con testo animato
+ */
+
 import PropTypes from 'prop-types';
-import { Container } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
-import { defineMessages, useIntl } from 'react-intl';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
-const messages = defineMessages({
-  vedi: {
-    id: 'card_vedi',
-    defaultMessage: 'Vedi',
-  },
-});
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardText,
+  Row,
+  Col,
+} from 'design-react-kit';
 
-const CardWithSlideUpTextTemplateSkeleton = ({
-  title,
-  linkTitle,
-  linkHref,
-}) => {
-  const intl = useIntl();
+const CardWithSlideUpTextTemplateSkeleton = (props) => {
+  const { isEditMode } = props;
 
   return (
     <div className="card-slide-text-template">
-      <Container>
-        <div className="title">{title && <h2>{title}</h2>}</div>
-        <div className="grid mb-3 mt-5">
-          {[0, 1, 2].map((i) => {
-            return (
-              <UniversalLink
-                href="#"
-                className="listing-item box bg-img"
-                key={i}
-              >
-                <div className="bg-gradient"></div>
-                <h3 className="title">{title}</h3>
-                <div className="box-slide-up">
-                  <p> </p>
-                  {linkHref && (
-                    <div className="read-more">
-                      <div className="read-more justify-content-end my-4">
-                        {linkTitle || intl.formatMessage(messages.vedi)}
-                      </div>
+      <ListingContainer className="px-4" data={props} isEditMode={isEditMode}>
+        <div className="skeleton-template">
+          <Row className="items">
+            {[0, 1, 2].map((i) => (
+              <Col md="6" lg="4" key={i} className="col-item">
+                <Card color="" className="card-bg rounded" noWrapper={false}>
+                  <a target="_blank" rel="noopener noreferrer" href="/">
+                    <div className="d-flex">
+                      <CardBody>
+                        <CardTitle tag="h5"></CardTitle>
+                        <CardText tag="p"></CardText>
+                      </CardBody>
                     </div>
-                  )}
-                </div>
-              </UniversalLink>
-            );
-          })}
+                  </a>
+                </Card>
+              </Col>
+            ))}
+          </Row>
         </div>
-
-        {linkHref && <div className="link-button text-center"></div>}
-      </Container>
+      </ListingContainer>
     </div>
   );
 };

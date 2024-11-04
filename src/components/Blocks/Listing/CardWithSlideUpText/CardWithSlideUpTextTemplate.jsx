@@ -1,4 +1,7 @@
-import React from 'react';
+/*
+ * Blocco card con testo animato
+ */
+
 import PropTypes from 'prop-types';
 import { CardReadMore } from 'design-react-kit';
 import cx from 'classnames';
@@ -10,11 +13,11 @@ import {
   getComponentWithFallback,
 } from 'io-sanita-theme/helpers';
 import {
-  ListingLinkMore,
   ListingCategory,
   getListingImageBackground,
   ListingContainer,
 } from 'io-sanita-theme/components/Blocks';
+import { LinkMore } from 'io-sanita-theme/components';
 import { getCategory } from 'io-sanita-theme/components/Blocks/Listing/Commons/utils';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -32,7 +35,6 @@ const CardWithSlideUpTextTemplate = (props) => {
 
   const {
     items,
-    title,
     isEditMode,
     linkAlign,
     linkTitle,
@@ -43,7 +45,6 @@ const CardWithSlideUpTextTemplate = (props) => {
     hide_dates = false,
     id_lighthouse,
     linkmore_id_lighthouse,
-    titleLine,
     rrule,
   } = props;
 
@@ -112,7 +113,7 @@ const CardWithSlideUpTextTemplate = (props) => {
           })}
         </div>
 
-        <ListingLinkMore
+        <LinkMore
           title={linkTitle}
           href={linkHref}
           linkAlign={linkAlign}
