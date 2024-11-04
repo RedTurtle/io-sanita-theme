@@ -58,6 +58,11 @@ export const TopicsListView = loadable(() =>
     /* webpackChunkName: "ISBlockTopicsList" */ 'io-sanita-theme/components/Blocks/TopicsList/View'
   ),
 );
+export const IconBlocksView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockTopicsList" */ 'io-sanita-theme/components/Blocks/IconBlocks/View'
+  ),
+);
 
 /*Listing commons*/
 export ListingImage from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
@@ -143,6 +148,12 @@ const TopicsListEdit = loadable(() =>
   ),
 );
 
+const IconBlocksEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/IconBlocks/Edit'
+  ),
+);
+
 /*Sidebar - only reusable sidebar outside specific edit component.*/
 const HTMLBlockSidebar = loadable(() =>
   import(
@@ -163,4 +174,5 @@ export {
   SearchMapEdit,
   SearchServiziProcedureEdit,
   TopicsListEdit,
+  IconBlocksEdit,
 };

@@ -3,6 +3,7 @@ import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
 import userSVG from '@plone/volto/icons/user.svg';
+import iconBlocksSVG from '@plone/volto/icons/user.svg';
 import flashSVG from '@plone/volto/icons/flash.svg';
 import alertSVG from '@plone/volto/icons/alert.svg';
 import emailSVG from '@plone/volto/icons/email.svg';
@@ -34,6 +35,9 @@ import {
   ContactsView,
   ContactsEdit,
   ContactsSchema,
+  IconBlocksView,
+  IconBlocksEdit,
+  IconBlocksSchema,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -264,6 +268,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
         view: [],
       },
       sidebarTab: 1,
+    },
+    iconBlocks: {
+      id: 'iconBlocks',
+      title: 'Blocchi con icone',
+      icon: iconBlocksSVG,
+      group: 'text',
+      view: IconBlocksView,
+      edit: IconBlocksEdit,
+      restricted: false,
+      mostUsed: true,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
     },
   };
 
