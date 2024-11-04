@@ -276,6 +276,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       group: 'text',
       view: IconBlocksView,
       edit: IconBlocksEdit,
+      schema: IconBlocksSchema,
       restricted: false,
       mostUsed: true,
       cloneData: cloneBlock,

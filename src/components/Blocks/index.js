@@ -9,6 +9,7 @@ export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/s
 export { CTASchema } from 'io-sanita-theme/components/Blocks/CTA/schema';
 export { AlertSchema } from 'io-sanita-theme/components/Blocks/Alert/schema';
 export { ContactsSchema } from 'io-sanita-theme/components/Blocks/Contacts/schema';
+export { IconBlocksSchema } from 'io-sanita-theme/components/Blocks/IconBlocks/schema';
 
 /*View*/
 export const AlertView = loadable(() =>
