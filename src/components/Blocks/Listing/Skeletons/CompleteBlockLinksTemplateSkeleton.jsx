@@ -31,7 +31,7 @@ const CompleteBlockLinksTemplateSkeleton = (props) => {
                       <div className="image-container"> </div>
 
                       <CardBody>
-                        <CardTitle tag="h5">-</CardTitle>
+                        <CardTitle tag="h5"> </CardTitle>
                         <CardText tag="p"></CardText>
                       </CardBody>
                     </div>
