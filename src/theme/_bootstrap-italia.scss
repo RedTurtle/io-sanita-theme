@@ -55,6 +55,10 @@
   @import 'bootstrap-italia/src/scss/custom/type';
 }
 
+.cms-ui {
+  @import 'bootstrap/scss/tables';
+}
+
 @import './bootstrap-italia/custom/type';
 
 .public-ui {
