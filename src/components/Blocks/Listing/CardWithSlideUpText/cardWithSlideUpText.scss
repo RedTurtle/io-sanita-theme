@@ -40,12 +40,12 @@
       }
     }
 
-    .category,
+    .category-wrapper,
     .title {
       margin-top: auto !important;
     }
 
-    .category + .title {
+    .category-wrapper + .title {
       margin-top: 0 !important;
     }
 
@@ -55,7 +55,7 @@
       line-height: 1.3rem;
     }
 
-    .category {
+    .category-wrapper {
       position: relative;
       z-index: 2;
       display: flex;
@@ -76,6 +76,12 @@
         border-top: 28px solid var(--primary);
         border-right: 10px solid transparent;
         content: '';
+      }
+      .category-bottom {
+        display: flex;
+        .data {
+          margin-left: 0.5em;
+        }
       }
     }
 

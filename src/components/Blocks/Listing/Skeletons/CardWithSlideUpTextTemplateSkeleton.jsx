@@ -24,15 +24,13 @@ const CardWithSlideUpTextTemplateSkeleton = (props) => {
           <Row className="items">
             {[0, 1, 2].map((i) => (
               <Col md="6" lg="4" key={i} className="col-item">
-                <Card color="" className="card-bg rounded" noWrapper={false}>
-                  <a target="_blank" rel="noopener noreferrer" href="/">
-                    <div className="d-flex">
-                      <CardBody>
-                        <CardTitle tag="h5"></CardTitle>
-                        <CardText tag="p"></CardText>
-                      </CardBody>
-                    </div>
-                  </a>
+                <Card shadow rounded card-teaser-image card-flex mb-3>
+                  <div className="d-flex">
+                    <CardBody>
+                      <CardTitle tag="h5"></CardTitle>
+                      <CardText tag="p"></CardText>
+                    </CardBody>
+                  </div>
                 </Card>
               </Col>
             ))}

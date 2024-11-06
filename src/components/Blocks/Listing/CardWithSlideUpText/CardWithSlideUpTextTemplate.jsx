@@ -13,13 +13,12 @@ import {
   getComponentWithFallback,
 } from 'io-sanita-theme/helpers';
 import {
-  ListingCategory,
   getListingImageBackground,
   ListingContainer,
 } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
-import { getCategory } from 'io-sanita-theme/components/Blocks/Listing/Commons/utils';
 import { defineMessages, useIntl } from 'react-intl';
+import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import './cardWithSlideUpText.scss';
 
@@ -39,8 +38,7 @@ const CardWithSlideUpTextTemplate = (props) => {
     linkAlign,
     linkTitle,
     linkHref,
-    show_type = true,
-    show_section,
+    show_category = true,
     show_description = true,
     hide_dates = false,
     id_lighthouse,
@@ -54,7 +52,6 @@ const CardWithSlideUpTextTemplate = (props) => {
         <div className="grid mb-3 mt-5">
           {items.map((item, index) => {
             const image = getListingImageBackground(item, 'large');
-            const category = getCategory(item, show_type, show_section, props);
             const date = hide_dates
               ? null
               : getCalendarDate(item, rrule.rrulestr);
@@ -79,13 +76,15 @@ const CardWithSlideUpTextTemplate = (props) => {
                 data-element={id_lighthouse}
               >
                 <div className="bg-gradient"></div>
-                {(category || date) && (
-                  <div className="category">
-                    <ListingCategory category={category} item={item} />
-                    {category && date && <span>&nbsp;-&nbsp;</span>}
-                    {date}
-                  </div>
-                )}
+                <div className="category-wrapper">
+                  <CardCategoryBottom
+                    item={item}
+                    date={date}
+                    isEditMode={isEditMode}
+                    showCategory={show_category}
+                  />
+                </div>
+
                 <h3
                   className={cx('title', {
                     ellipsis: title.length > 50,
