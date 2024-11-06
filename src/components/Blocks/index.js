@@ -65,8 +65,6 @@ export ListingImage, {
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
 export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
-export ListingCategory from 'io-sanita-theme/components/Blocks/Listing/commons/ListingCategory';
-export ListingLinkMore from 'io-sanita-theme/components/Blocks/Listing/commons/ListingLinkMore';
 
 
 

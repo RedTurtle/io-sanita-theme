@@ -15,7 +15,7 @@ import {
 } from 'design-react-kit';
 
 const CardWithSlideUpTextTemplateSkeleton = (props) => {
-  const { isEditMode } = props;
+  const { isEditMode, linkHref } = props;
 
   return (
     <div className="card-slide-text-template">
@@ -35,6 +35,7 @@ const CardWithSlideUpTextTemplateSkeleton = (props) => {
               </Col>
             ))}
           </Row>
+          {linkHref && <div className="link-button text-center my-4"></div>}
         </div>
       </ListingContainer>
     </div>
