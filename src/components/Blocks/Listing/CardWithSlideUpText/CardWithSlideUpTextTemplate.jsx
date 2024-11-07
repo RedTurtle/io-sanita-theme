@@ -76,14 +76,13 @@ const CardWithSlideUpTextTemplate = (props) => {
                 data-element={id_lighthouse}
               >
                 <div className="bg-gradient"></div>
-                <div className="category-wrapper">
-                  <CardCategoryBottom
-                    item={item}
-                    date={date}
-                    isEditMode={isEditMode}
-                    showCategory={show_category}
-                  />
-                </div>
+
+                <CardCategoryBottom
+                  item={item}
+                  date={date}
+                  isEditMode={isEditMode}
+                  showCategory={show_category}
+                />
 
                 <h3
                   className={cx('title', {

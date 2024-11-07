@@ -40,12 +40,12 @@
       }
     }
 
-    .category-wrapper,
+    .category-bottom,
     .title {
       margin-top: auto !important;
     }
 
-    .category-wrapper + .title {
+    .category-bottom + .title {
       margin-top: 0 !important;
     }
 
@@ -55,10 +55,12 @@
       line-height: 1.3rem;
     }
 
-    .category-wrapper {
+    .category-bottom {
+      display: flex;
+      gap: 0.5em;
+
       position: relative;
       z-index: 2;
-      display: flex;
       align-self: start;
       padding: 0.1rem 0.5rem;
       margin-bottom: 0.5rem;
@@ -77,10 +79,13 @@
         border-right: 10px solid transparent;
         content: '';
       }
-      .category-bottom {
-        display: flex;
-        .data {
-          margin-left: 0.5em;
+
+      .data {
+        display: contents;
+      }
+      .category + .data {
+        &:before {
+          content: '-';
         }
       }
     }
