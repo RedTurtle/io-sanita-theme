@@ -21,9 +21,9 @@ export const addCardWithSlideUpTextTemplateOptions = (
     schema,
     formData,
     intl,
-    ['show_section', 'hide_dates', 'show_description'],
+    ['show_category', 'hide_dates', 'show_description'],
     {
-      show_section: { default: false },
+      show_category: { default: false },
       hide_dates: { default: false },
     },
     pos,

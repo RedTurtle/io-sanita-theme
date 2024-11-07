@@ -1,6 +1,8 @@
 import {
   CardWithImageTemplate,
   CardWithImageTemplateSkeleton,
+  CardWithSlideUpTextTemplate,
+  CardWithSlideUpTextTemplateSkeleton,
   CompleteBlockLinksTemplate,
   CompleteBlockLinksTemplateSkeleton,
   HighlightedContentTemplate,
@@ -37,24 +39,21 @@ import {
 // import SquaresImageTemplate from 'io-sanita-theme/components/Blocks/Listing/SquaresImageTemplate';
 // import SquaresImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SquaresImageTemplateSkeleton';
 
-// import CardWithSlideUpTextTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithSlideUpTextTemplate';
-// import CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/CardWithSlideUpTextTemplateSkeleton';
-
 import {
+  addCardWithImageTemplateOptions,
+  addCardWithSlideUpTextTemplateOptions,
+  addCompleteBlockLinksTemplateOptions,
+  addDefaultOptions,
+  addInEvidenceTemplateOptions,
   addLighthouseField,
   addLinkMoreOptions,
-  addDefaultOptions,
-  addSimpleCardTemplateOptions,
   addMapTemplateOptions,
-  addInEvidenceTemplateOptions,
-  addCardWithImageTemplateOptions,
+  addSimpleCardTemplateOptions,
   addSimpleListTemplateOptions,
-  addCompleteBlockLinksTemplateOptions,
   addSmallBlockLinksTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
   // addSliderTemplateOptions,
-  // addCardWithSlideUpTextTemplateOptions,
   // addPhotogalleryTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
@@ -167,6 +166,19 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
+  {
+    id: 'cardSlideUpTextTemplate',
+    isDefault: false,
+    title: 'Card con testo animato',
+    template: CardWithSlideUpTextTemplate,
+    skeleton: CardWithSlideUpTextTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      addCardWithSlideUpTextTemplateOptions(schema, formData, intl);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'ribbonCardTemplate',
   //   isDefault: false,
@@ -175,19 +187,6 @@ const iosanitaListingVariations = [
   //   skeleton: RibbonCardTemplateSkeleton,
   //   schemaEnhancer: ({ schema, formData, intl }) => {
   //     addRibbonCardTemplateOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
-  // {
-  //   id: 'cardSlideUpTextTemplate',
-  //   isDefault: false,
-  //   title: 'Card con testo animato',
-  //   template: CardWithSlideUpTextTemplate,
-  //   skeleton: CardWithSlideUpTextTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     addCardWithSlideUpTextTemplateOptions(schema, formData, intl);
   //     addLinkMoreOptions(schema, formData, intl);
   //     return schema;
   //   },
