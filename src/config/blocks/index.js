@@ -1,3 +1,4 @@
+import { rssBlock as defaultRssBlock } from 'volto-rss-block';
 import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
@@ -34,6 +35,10 @@ import {
   ContactsView,
   ContactsEdit,
   ContactsSchema,
+  // CardWithoutImageRssTemplate,
+  // CardWithoutImageRssTemplateSkeleton,
+  // CardWithImageRssTemplate,
+  // CardWithImageRssTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
@@ -145,7 +150,6 @@ export const applyIoSanitaBlocksConfig = (config) => {
       sidebarTab: 1,
       blockHasOwnFocusManagement: true,
     },
-
     cta_block: {
       id: 'cta_block',
       title: 'CTA - Call To Action',
@@ -163,7 +167,6 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
     },
-
     gridBlock: {
       ...config.blocks.blocksConfig.gridBlock,
       allowedBlocks: config.blocks.blocksConfig.gridBlock.allowedBlocks.filter(
@@ -211,6 +214,22 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 0,
     },
+    // rssBlock: {
+    //   ...config.blocks.blocksConfig.rssBlock, //defaultRssBlock,
+    //   templates: {
+    //     ...config.blocks.blocksConfig.rssBlock.templates,
+    //     default: {
+    //       label: 'Card senza immagine',
+    //       template: CardWithoutImageRssTemplate,
+    //       skeleton: CardWithoutImageRssTemplateSkeleton,
+    //     },
+    //     card_without_image: {
+    //       label: 'Card con immagine',
+    //       template: CardWithImageRssTemplate,
+    //       skeleton: CardWithImageRssTemplateSkeleton,
+    //     },
+    //   },
+    // },
     search: {
       ...config.blocks.blocksConfig.search,
       templates: ['simpleCard', 'simpleListTemplate'],

@@ -6527,6 +6527,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^1.1.1":
+  version: 1.1.2
+  resolution: "entities@npm:1.1.2"
+  checksum: d537b02799bdd4784ffd714d000597ed168727bddf4885da887c5a491d735739029a00794f1998abbf35f3f6aeda32ef5c15010dca1817d401903a501b6d3e05
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -8357,6 +8364,7 @@ __metadata:
     volto-form-block-italia: 1.0.3
     volto-gdpr-privacy: 2.2.8
     volto-querywidget-with-browser: 0.4.2
+    volto-rss-block: 3.0.0
     volto-secondarymenu: 4.1.1
     volto-site-settings: 0.4.5
     volto-slate-italia: 1.0.5
@@ -11582,6 +11590,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rss-parser@npm:3.7.5":
+  version: 3.7.5
+  resolution: "rss-parser@npm:3.7.5"
+  dependencies:
+    entities: ^1.1.1
+    xml2js: ^0.4.19
+  checksum: 07c5b95a8f4583a8f5f5b3412c1eb33dbab32810f6247e294c2931e31c40d94b99ec68d9a8d3edd640315aa03a0b3445f523859f8c74a05bee0e31ca2dd4c4b9
+  languageName: node
+  linkType: hard
+
 "run-applescript@npm:^5.0.0":
   version: 5.0.0
   resolution: "run-applescript@npm:5.0.0"
@@ -11650,6 +11668,13 @@ __metadata:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cab8f25ae6f1434abee8d80023d7e72b598cf1327164ddab31003c51215526801e40b66c5e65d658a0af1e9d6478cadcb4c745f4bd6751f97d8644786c0978b0
+  languageName: node
+  linkType: hard
+
+"sax@npm:>=0.6.0":
+  version: 1.4.1
+  resolution: "sax@npm:1.4.1"
+  checksum: 3ad64df16b743f0f2eb7c38ced9692a6d924f1cd07bbe45c39576c2cf50de8290d9d04e7b2228f924c7d05fecc4ec5cf651423278e0c7b63d260c387ef3af84a
   languageName: node
   linkType: hard
 
@@ -13084,6 +13109,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"volto-rss-block@npm:3.0.0":
+  version: 3.0.0
+  resolution: "volto-rss-block@npm:3.0.0"
+  dependencies:
+    rss-parser: 3.7.5
+  peerDependencies:
+    "@plone/volto": ">=16.0.0-alpha.38"
+  checksum: 40bbf6ebdbd0d6c5b420072f1c4839e568528006c7d0c02e9ed3e4cfd6e8a1091af8c46e27ceb7d59843d43cf161adb62f970e6d02b10d13060c1ec361a84073
+  languageName: node
+  linkType: hard
+
 "volto-secondarymenu@npm:4.1.1":
   version: 4.1.1
   resolution: "volto-secondarymenu@npm:4.1.1"
@@ -13441,6 +13477,23 @@ __metadata:
   version: 5.1.0
   resolution: "xdg-basedir@npm:5.1.0"
   checksum: b60e8a2c663ccb1dac77c2d913f3b96de48dafbfa083657171d3d50e10820b8a04bb4edfe9f00808c8c20e5f5355e1927bea9029f03136e29265cb98291e1fea
+  languageName: node
+  linkType: hard
+
+"xml2js@npm:^0.4.19":
+  version: 0.4.23
+  resolution: "xml2js@npm:0.4.23"
+  dependencies:
+    sax: ">=0.6.0"
+    xmlbuilder: ~11.0.0
+  checksum: ca0cf2dfbf6deeaae878a891c8fbc0db6fd04398087084edf143cdc83d0509ad0fe199b890f62f39c4415cf60268a27a6aed0d343f0658f8779bd7add690fa98
+  languageName: node
+  linkType: hard
+
+"xmlbuilder@npm:~11.0.0":
+  version: 11.0.1
+  resolution: "xmlbuilder@npm:11.0.1"
+  checksum: 7152695e16f1a9976658215abab27e55d08b1b97bca901d58b048d2b6e106b5af31efccbdecf9b07af37c8377d8e7e821b494af10b3a68b0ff4ae60331b415b0
   languageName: node
   linkType: hard
 
