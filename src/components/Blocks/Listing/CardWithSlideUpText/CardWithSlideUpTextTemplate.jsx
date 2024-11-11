@@ -84,14 +84,14 @@ const CardWithSlideUpTextTemplate = (props) => {
                   showCategory={show_category}
                 />
 
-                <h3
+                <h2
                   className={cx('title', {
                     ellipsis: title.length > 50,
                   })}
                   title={title.length > 50 ? title : undefined}
                 >
                   {title.substring(0, 50)}
-                </h3>
+                </h2>
                 <div className="box-slide-up">
                   {show_description && item.description && (
                     <p>{item.description}</p>
