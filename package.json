@@ -32,7 +32,8 @@
     "volto-form-block-italia",
     "volto-data-grid-widget",
     "volto-venue",
-    "volto-site-settings"
+    "volto-site-settings",
+    "volto-rss-block"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -97,6 +98,7 @@
     "volto-form-block-italia": "1.0.3",
     "volto-gdpr-privacy": "2.2.8",
     "volto-querywidget-with-browser": "0.4.2",
+    "volto-rss-block": "3.0.0",
     "volto-secondarymenu": "4.1.1",
     "volto-site-settings": "0.4.5",
     "volto-slate-italia": "1.0.5",

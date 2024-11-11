@@ -61,12 +61,11 @@ export const TopicsListView = loadable(() =>
 
 /*Listing commons*/
 export ListingImage, {
-  getListingImageBackground,} from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
+  getListingImageBackground,
+} from 'io-sanita-theme/components/Blocks/Listing/commons/ListingImage';
 export ListingText from 'io-sanita-theme/components/Blocks/Listing/commons/ListingText';
 export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/RassegnaInfo';
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
-
-
 
 /*Listing variations*/
 export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
@@ -89,6 +88,12 @@ export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skele
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
 export CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithSlideUpTextTemplateSkeleton';
+
+/*Rss block (as listing)*/
+export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';
+export CardWithImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithImageRssTemplate';
+export CardWithoutImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithoutImageRssTemplateSkeleton';
+export CardWithImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithImageRssTemplateSkeleton';
 
 /*Edit*/
 const AlertEdit = loadable(() =>
