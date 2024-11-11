@@ -44,7 +44,10 @@ const CardWithSlideUpTextTemplate = (props) => {
     id_lighthouse,
     linkmore_id_lighthouse,
     rrule,
+    title,
   } = props;
+
+  const TitleHeadingTag = title ? 'h3' : 'h2';
 
   return (
     <div className="card-slide-text-template">
@@ -84,14 +87,14 @@ const CardWithSlideUpTextTemplate = (props) => {
                   showCategory={show_category}
                 />
 
-                <h2
+                <TitleHeadingTag
                   className={cx('title', {
                     ellipsis: title.length > 50,
                   })}
                   title={title.length > 50 ? title : undefined}
                 >
                   {title.substring(0, 50)}
-                </h2>
+                </TitleHeadingTag>
                 <div className="box-slide-up">
                   {show_description && item.description && (
                     <p>{item.description}</p>
