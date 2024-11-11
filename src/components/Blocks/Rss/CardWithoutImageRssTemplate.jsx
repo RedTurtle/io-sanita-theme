@@ -16,6 +16,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { LinkMore } from 'io-sanita-theme/components';
 import { getViewDate } from 'io-sanita-theme/components/Blocks/Rss/utils';
+import './rssBlock.scss';
 
 const messages = defineMessages({
   readMore: { id: 'rss_read_more', defaultMessage: 'Read more' },
@@ -71,7 +72,7 @@ const CardWithoutImageRssTemplate = ({
                       {item.title}
                     </CardTitle>
                     {item?.source?.length > 0 && (
-                      <div className="source-title">
+                      <div className="source-title mb-3">
                         <span className="source">{item.source}</span>
                       </div>
                     )}
@@ -90,7 +91,11 @@ const CardWithoutImageRssTemplate = ({
               </Col>
             ))}
           </Row>
-          <LinkMore title={data.linkMoreTitle} href={data.linkMore} />
+
+          <LinkMore
+            title={data.linkMoreTitle}
+            href={data.linkMore ? [{ '@id': data.linkMore }] : []}
+          />
         </>
       ) : data.feed ? (
         <div className="no-rss-feed-results" aria-live="polite">

@@ -112,6 +112,7 @@ const UniversalLink = ({
         href={url}
         title={`${title ? title + ' - ' : ''}${intl.formatMessage({
           id: 'opensInNewTab',
+          defaultMessage: 'Apri in un nuovo tab',
         })}`}
         target={
           !checkedURL.isMail && !checkedURL.isTelephone && openInNewTab
@@ -129,6 +130,7 @@ const UniversalLink = ({
               icon="it-external-link"
               title={`${title ? title + ' - ' : ''}${intl.formatMessage({
                 id: 'opensInNewTab',
+                defaultMessage: 'Apri in un nuovo tab',
               })}`}
               size="xs"
               className="ms-1 align-sub external-link"

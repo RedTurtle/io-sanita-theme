@@ -90,10 +90,10 @@ export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/L
 export CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithSlideUpTextTemplateSkeleton';
 
 /*Rss block (as listing)*/
-// export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';
-// export CardWithImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithImageRssTemplate';
-// export CardWithoutImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithoutImageRssTemplateSkeleton';
-// export CardWithImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithImageRssTemplateSkeleton';
+export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';
+export CardWithImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithImageRssTemplate';
+export CardWithoutImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithoutImageRssTemplateSkeleton';
+export CardWithImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithImageRssTemplateSkeleton';
 
 /*Edit*/
 const AlertEdit = loadable(() =>
