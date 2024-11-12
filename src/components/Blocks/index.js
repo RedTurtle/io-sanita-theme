@@ -38,6 +38,11 @@ export const HeroView = loadable(() =>
     /* webpackChunkName: "ISBlockHero" */ 'io-sanita-theme/components/Blocks/Hero/View'
   ),
 );
+export const IconsView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockIcons" */ 'io-sanita-theme/components/Blocks/Icons/View'
+  ),
+);
 export const QuickSearchView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockSearchMap" */ 'io-sanita-theme/components/Blocks/QuickSearch/View'
@@ -136,6 +141,11 @@ const HeroEdit = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Hero/Edit'
   ),
 );
+const IconsEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Icons/Edit'
+  ),
+);
 const QuickSearchEdit = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/QuickSearch/Edit'
@@ -172,6 +182,7 @@ const HTMLBlockSidebar = loadable(() =>
 
 export {
   AccordionEdit,
+  IconsEdit,
   AlertEdit,
   BreakEdit,
   CalloutEdit,

@@ -1,5 +1,5 @@
-.select-icon-widget {
-  .wdg {
+.select-icon-widget-wrapper {
+  .select-icon-widget-wrapper-inside {
     display: flex;
     & > div {
       flex: 1;
@@ -7,6 +7,10 @@
 
     &.wrapped {
       flex-direction: column;
+    }
+
+    .field-wrapper-textIcon .wrapper {
+      display: none;
     }
   }
 
@@ -16,6 +20,49 @@
     margin-bottom: 2rem !important;
     svg {
       height: 1em;
+    }
+  }
+
+  .show-icon {
+    font-size: 40px;
+  }
+
+  .show-icon-italia {
+    height: 2rem;
+  }
+
+  .icon-container {
+    width: 1.5em;
+    &.italia-icon {
+      svg.icon {
+        height: 1.5em;
+      }
+    }
+  }
+
+  .label-container {
+    width: 100%;
+    margin-left: 15px;
+    text-align: left;
+    height: 1.5em;
+  }
+
+  .ms-4 {
+    margin-left: 4px;
+  }
+}
+
+#sidebar-properties {
+  .select-icon-widget-wrapper {
+    .select-icon-widget-wrapper-inside {
+      flex-direction: column;
+    }
+
+    p.help.help-icon-widget {
+      border-bottom: 1px solid #edf1f2;
+      padding-bottom: 1rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
   }
 }

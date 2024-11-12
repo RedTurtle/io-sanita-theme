@@ -8,6 +8,8 @@ import flashSVG from '@plone/volto/icons/flash.svg';
 import alertSVG from '@plone/volto/icons/alert.svg';
 import emailSVG from '@plone/volto/icons/email.svg';
 import listArrowsSVG from '@plone/volto/icons/list-arrows.svg';
+import iconsBlockSVG from 'io-sanita-theme/icons/blocco-icone.svg';
+
 import {
   AccordionView,
   AccordionEdit,
@@ -26,6 +28,8 @@ import {
   QuickSearchView,
   HeroView,
   HeroEdit,
+  IconsView,
+  IconsEdit,
   TopicsListView,
   TopicsListEdit,
   TopicsListSchema,
@@ -214,6 +218,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
       ...config.blocks.blocksConfig.html,
       sidebarTab: 1,
       schema: HTMLBlockSchema,
+    },
+    iconBlocks: {
+      id: 'iconBlocks',
+      title: 'Blocchi con icone',
+      icon: iconsBlockSVG,
+      group: 'text',
+      view: IconsView,
+      edit: IconsEdit,
+      restricted: false,
+      mostUsed: true,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
     },
     maps: {
       ...config.blocks.blocksConfig.maps,

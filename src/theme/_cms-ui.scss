@@ -176,8 +176,7 @@ body.cms-ui {
   .drag.handle.wrapper,
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
-  .block.numbersBlock > .ui.basic.button.delete-button,
-  .block.iconBlocks .ui.basic.button.delete-button {
+  .block.numbersBlock > .ui.basic.button.delete-button {
     background-color: #fff !important;
     color: #575757 !important;
     border: 1px solid #fff !important;
@@ -222,7 +221,6 @@ body.cms-ui {
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
   .block.numbersBlock > .ui.basic.button.delete-button,
-  .block.iconBlocks .ui.basic.button.delete-button,
   .block.contacts .ui.basic.button.delete-button {
     margin-right: -39px !important;
     &:hover {
@@ -629,36 +627,6 @@ body.cms-ui {
   }
 
   /*Widgets*/
-
-  .select-icon-widget {
-    .show-icon {
-      font-size: 40px;
-    }
-
-    .show-icon-italia {
-      height: 2rem;
-    }
-
-    .icon-container {
-      width: 1.5em;
-      &.italia-icon {
-        svg.icon {
-          height: 1.5em;
-        }
-      }
-    }
-
-    .label-container {
-      width: 100%;
-      margin-left: 15px;
-      text-align: left;
-      height: 1.5em;
-    }
-
-    .ms-4 {
-      margin-left: 4px;
-    }
-  }
 
   .column.color-chooser {
     padding-top: 0.5em;

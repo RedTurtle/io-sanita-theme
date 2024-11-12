@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Grid } from 'semantic-ui-react';
@@ -44,49 +45,55 @@ const IconWidget = (props) => {
 
   return (
     <FormFieldWrapper {...props} className="select-icon-widget">
-      <div className={'wdg ' + props.wrapped == false ? '' : 'wrapped'}>
-        {defaultOptions && defaultOptions.length > 0 && (
-          <SelectWidget
-            id="selectIcon"
-            title={intl.formatMessage(messages.icon)}
-            required={false}
-            value={selectValue}
-            intl={intl}
-            onChange={(_id, value) => {
-              setSelectValue(value);
+      <div className="select-icon-widget-wrapper">
+        <div
+          className={cx('select-icon-widget-wrapper-inside', {
+            wrapped: props.wrapped,
+          })}
+        >
+          {defaultOptions && defaultOptions.length > 0 && (
+            <SelectWidget
+              id="selectIcon"
+              title={intl.formatMessage(messages.icon)}
+              required={false}
+              value={selectValue}
+              intl={intl}
+              onChange={(_id, value) => {
+                setSelectValue(value);
+                setIconString(value);
+                onChange(id, value);
+              }}
+              choices={defaultOptions}
+              customOptionStyling={CustomSelectOption}
+            />
+          )}
+          <TextWidget
+            id="textIcon"
+            title=""
+            value={iconString}
+            onChange={(name, value) => {
+              setSelectValue(null);
               setIconString(value);
               onChange(id, value);
             }}
-            choices={defaultOptions}
-            customOptionStyling={CustomSelectOption}
+            wrapped={true}
           />
-        )}
-        <TextWidget
-          id="textIcon"
-          title=""
-          value={iconString}
-          onChange={(name, value) => {
-            setSelectValue(null);
-            setIconString(value);
-            onChange(id, value);
-          }}
-          wrapped={false}
-        />
-        <IconPreviewWidget icon={iconString} wrapped={false} />
-      </div>
+          <IconPreviewWidget icon={iconString} wrapped={true} />
+        </div>
 
-      <p className="help help-icon-widget">
-        {intl.formatMessage(messages.description)}
-        <span className="ms-4">
-          <a
-            target="_blank"
-            href="https://fontawesome.com/search?o=r&m=free"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon="arrow-right" />
-          </a>
-        </span>
-      </p>
+        <p className="help help-icon-widget">
+          {intl.formatMessage(messages.description)}
+          <span className="ms-4">
+            <a
+              target="_blank"
+              href="https://fontawesome.com/search?o=r&m=free"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon="arrow-right" />
+            </a>
+          </span>
+        </p>
+      </div>
     </FormFieldWrapper>
   );
 };
