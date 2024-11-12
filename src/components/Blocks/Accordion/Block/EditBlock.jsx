@@ -9,9 +9,7 @@ import { injectIntl, defineMessages } from 'react-intl';
 import { Button } from 'design-react-kit';
 import { TextEditorWidget } from 'volto-slate-italia';
 import { injectDNDSubblocks, SubblockEdit, Subblock } from 'volto-subblocks';
-import { UniversalLink } from '@plone/volto/components';
-
-import { Icon } from 'io-sanita-theme/components';
+import { Icon, LinkMore } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   titlePlaceholder: {
@@ -155,13 +153,13 @@ class EditBlock extends SubblockEdit {
                 />
               </div>
               {this.props.data.href && (
-                <div className="link-more">
-                  <UniversalLink href={this.props.data.href}>
-                    {this.props.data.linkMoreTitle ||
-                      this.props.intl.formatMessage(messages.vedi)}
-                    <Icon icon="it-arrow-right" />
-                  </UniversalLink>
-                </div>
+                <LinkMore
+                  href={[{ '@id': this.props.data.href }]}
+                  title={
+                    this.props.data.linkMoreTitle ||
+                    intl.formatMessage(messages.vedi)
+                  }
+                />
               )}
             </div>
           )}

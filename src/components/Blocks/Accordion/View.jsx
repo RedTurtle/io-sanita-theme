@@ -26,16 +26,16 @@ const AccordionView = ({ data, block }) => {
       <div className="public-ui">
         <div className="full-width section section-muted section-inset-shadow py-5">
           <Container className="px-md-4">
-            <Card className="card-bg rounded" noWrapper={false} space tag="div">
+            <Card className="card-bg rounded" noWrapper={false} space>
               <div className="block-header">
-                {data.title && <div className="title">{data.title}</div>}
+                {data.title && <h2 className="title">{data.title}</h2>}
                 {data.description && (
                   <div className="description">
                     <TextBlockView data={{ value: data.description }} />
                   </div>
                 )}
               </div>
-              <CardBody tag="div">
+              <CardBody className="px-1">
                 {data.subblocks.map((subblock, index) => (
                   <ViewBlock
                     data={subblock}

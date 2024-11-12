@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { Icon, TextWidget } from '@plone/volto/components';
+import { Icon, TextWidget /*, CheckboxWidget*/ } from '@plone/volto/components';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import { defineMessages, useIntl } from 'react-intl';
@@ -10,12 +10,16 @@ import { defineMessages, useIntl } from 'react-intl';
 import { LinkToWidget } from 'io-sanita-theme/components/manage/Widgets';
 const messages = defineMessages({
   linkMoreTitle: {
-    id: 'linkMoreTitle',
+    id: 'accordion_linkMoreTitle',
     defaultMessage: 'Titolo per il link ad altro',
   },
   linkMore: {
-    id: 'linkMore',
+    id: 'accordion_linkMore',
     defaultMessage: 'Link ad altro',
+  },
+  bg: {
+    id: 'accordion_bg',
+    defaultMessage: 'Mostra lo sfondo',
   },
 });
 
@@ -37,24 +41,21 @@ const Sidebar = ({
           <FormattedMessage id="accordion_block" defaultMessage="Accordion" />
         </h2>
       </header>
-      <Accordion className="form">
+      {/* <Accordion className="form">
         <Accordion.Content active={true}>
-          {/* <ObjectBrowserWidget
-            id={'ObjectBrowserWidget'}
-            title={intl.formatMessage(messages.selectOtherArguments)}
-            value={data.arguments}
-            widgetOptions={{
-              pattern_options: { selectableTypes: ['Pagina Argomento'] },
-            }}
+          <CheckboxWidget
+            id="bg"
+            title={intl.formatMessage(messages.bg)}
+            value={data.bg}
             onChange={(name, value) => {
               onChangeBlock(block, {
                 ...data,
-                arguments: value,
+                bg: value,
               });
             }}
-          /> */}
+          />
         </Accordion.Content>
-      </Accordion>
+      </Accordion> */}
       <Accordion fluid styled className="form">
         {data.subblocks &&
           data.subblocks.map((subblock, index) => {
@@ -65,7 +66,9 @@ const Sidebar = ({
                   index={index}
                   onClick={() => setSelected(selected === index ? null : index)}
                 >
-                  {subblock?.argument && subblock?.argument[0]?.title}
+                  {subblock?.title?.length > 0
+                    ? subblock?.title
+                    : 'Elemento [' + index + ']'}
                   {selected === index ? (
                     <Icon name={upSVG} size="20px" />
                   ) : (
@@ -73,25 +76,6 @@ const Sidebar = ({
                   )}
                 </Accordion.Title>
                 <Accordion.Content active={selected === index}>
-                  {/* <ObjectBrowserWidget
-                    id={'ObjectBrowserWidget'}
-                    title={intl.formatMessage(messages.argument)}
-                    required={true}
-                    mode={'link'}
-                    value={subblock.argument}
-                    widgetOptions={{
-                      pattern_options: {
-                        selectableTypes: ['Pagina Argomento'],
-                      },
-                    }}
-                    onChange={(name, value) => {
-                      onChangeSubBlock(index, {
-                        ...subblock,
-                        argument: value,
-                      });
-                    }}
-                  /> */}
-
                   <TextWidget
                     id="linkMoreTitle"
                     title={intl.formatMessage(messages.linkMoreTitle)}
@@ -103,7 +87,6 @@ const Sidebar = ({
                       });
                     }}
                   />
-
                   <LinkToWidget
                     data={subblock}
                     openObjectBrowser={openObjectBrowser}

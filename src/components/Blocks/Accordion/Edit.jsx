@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import cx from 'classnames';
 import EditBlock from './Block/EditBlock';
 
 import { Container, Card, CardBody } from 'design-react-kit';
@@ -112,13 +113,14 @@ class Edit extends SubblocksEdit {
     if (__SERVER__) {
       return <div />;
     }
+
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
         <div className="full-width section section-muted section-inset-shadow py-5 is-edit-mode">
           <Container className="px-md-4">
-            <Card className="card-bg rounded" noWrapper={false} space tag="div">
+            <Card className="card-bg rounded" noWrapper={false} space>
               <div className="block-header">
-                <div className="title">
+                <h2 className="title">
                   <TextEditorWidget
                     {...this.props}
                     showToolbar={false}
@@ -137,9 +139,9 @@ class Edit extends SubblocksEdit {
                       this.setState({ selectedField: 'description' });
                     }}
                   />
-                </div>
+                </h2>
 
-                <div className="description">
+                <div className="description pb-4">
                   <TextEditorWidget
                     {...this.props}
                     showToolbar={true}
@@ -167,8 +169,9 @@ class Edit extends SubblocksEdit {
                   />
                 </div>
               </div>
-              <CardBody tag="div">
-                <SubblocksWrapper node={this.node}>
+
+              <SubblocksWrapper node={this.node}>
+                <CardBody className="px-5">
                   {this.state.subblocks.map((subblock, subindex) => (
                     <div className="accordion-item" key={subblock.id}>
                       <EditBlock
@@ -186,29 +189,29 @@ class Edit extends SubblocksEdit {
                       />
                     </div>
                   ))}
+                </CardBody>
 
-                  {this.props.selected && (
-                    <div className="accordion-item">
-                      {this.renderAddBlockButton(
-                        this.props.intl.formatMessage(messages.addItem),
-                      )}
-                    </div>
-                  )}
-                </SubblocksWrapper>
+                {this.props.selected && (
+                  <div className="accordion-item text-center">
+                    {this.renderAddBlockButton(
+                      this.props.intl.formatMessage(messages.addItem),
+                    )}
+                  </div>
+                )}
+              </SubblocksWrapper>
 
-                <SidebarPortal selected={this.props.selected || false}>
-                  <Sidebar
-                    {...this.props}
-                    data={this.props.data}
-                    block={this.props.block}
-                    onChangeBlock={this.props.onChangeBlock}
-                    onChangeSubBlock={this.onChangeSubblocks}
-                    selected={this.state.subIndexSelected}
-                    setSelected={this.onSubblockChangeFocus}
-                    openObjectBrowser={this.props.openObjectBrowser}
-                  />
-                </SidebarPortal>
-              </CardBody>
+              <SidebarPortal selected={this.props.selected || false}>
+                <Sidebar
+                  {...this.props}
+                  data={this.props.data}
+                  block={this.props.block}
+                  onChangeBlock={this.props.onChangeBlock}
+                  onChangeSubBlock={this.onChangeSubblocks}
+                  selected={this.state.subIndexSelected}
+                  setSelected={this.onSubblockChangeFocus}
+                  openObjectBrowser={this.props.openObjectBrowser}
+                />
+              </SidebarPortal>
             </Card>
           </Container>
         </div>

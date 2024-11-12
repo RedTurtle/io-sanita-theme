@@ -7,8 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
-import { Icon } from 'io-sanita-theme/components';
-import { UniversalLink } from '@plone/volto/components';
+import { Icon, LinkMore } from 'io-sanita-theme/components';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 const messages = defineMessages({
@@ -71,15 +70,10 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
             <TextBlockView id={id} data={{ value: data.text }} />
           </div>
           {data.href && (
-            <div className="link-more">
-              <UniversalLink href={data.href}>
-                {data.linkMoreTitle || intl.formatMessage(messages.vedi)}
-                <Icon
-                  icon="it-arrow-right"
-                  title={intl.formatMessage(messages.vedi)}
-                />
-              </UniversalLink>
-            </div>
+            <LinkMore
+              href={[{ '@id': data.href }]}
+              title={data.linkMoreTitle || intl.formatMessage(messages.vedi)}
+            />
           )}
         </div>
       )}
