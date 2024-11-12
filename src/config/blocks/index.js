@@ -43,6 +43,13 @@ import {
   CardWithImageRssTemplate,
   CardWithImageRssTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
+import Accordion1Edit from 'io-sanita-theme/components/Blocks/Accordion1/Edit';
+import Accordion1View from 'io-sanita-theme/components/Blocks/Accordion1/View';
+import { AccordionSchema } from 'io-sanita-theme/components/Blocks/Accordion1/schema';
+import { AccordionDataAdapter } from 'io-sanita-theme/components/Blocks/Accordion1/adapter';
+import AccordionItemEdit from 'io-sanita-theme/components/Blocks/Accordion1/Item/Edit';
+import AccordionItemView from 'io-sanita-theme/components/Blocks/Accordion1/Item/View';
+import { AccordionItemSchema } from 'io-sanita-theme/components/Blocks/Accordion1/Item/schema';
 
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
@@ -102,6 +109,38 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
       blockHasOwnFocusManagement: true,
+    },
+    accordion1: {
+      id: 'accordion1',
+      title: 'Accordion 1',
+      icon: listArrowsSVG,
+      group: 'text',
+      view: Accordion1View,
+      edit: Accordion1Edit,
+      blockSchema: AccordionSchema,
+      dataAdapter: AccordionDataAdapter,
+      restricted: false,
+      mostUsed: true,
+      sidebarTab: 1,
+      //templates: GridTemplates,
+      maxLength: 9999,
+      allowedBlocks: ['accordionItem'],
+    },
+    accordionItem: {
+      id: 'accordionItem',
+      title: 'Accordion item',
+      icon: listArrowsSVG,
+      group: 'text',
+      view: AccordionItemView,
+      edit: AccordionItemEdit,
+      schema: AccordionItemSchema,
+      restricted: true,
+      sidebarTab: 1,
+      allowedBlocks: ['slate'],
+      blocksConfig: {
+        slate: { ...config.blocks.blocksConfig.slate },
+        //   image: { ...config.blocks.blocksConfig.image },
+      },
     },
     alert: {
       id: 'alert',
