@@ -7,7 +7,10 @@ import userSVG from '@plone/volto/icons/user.svg';
 import flashSVG from '@plone/volto/icons/flash.svg';
 import alertSVG from '@plone/volto/icons/alert.svg';
 import emailSVG from '@plone/volto/icons/email.svg';
+import listArrowsSVG from '@plone/volto/icons/list-arrows.svg';
 import {
+  AccordionView,
+  AccordionEdit,
   BreakView,
   BreakEdit,
   HTMLBlockSchema,
@@ -82,6 +85,23 @@ export const applyIoSanitaBlocksConfig = (config) => {
 
         return pos;
       };*/,
+    },
+    accordion: {
+      id: 'accordion',
+      title: 'Accordion',
+      icon: listArrowsSVG,
+      group: 'text',
+      view: AccordionView,
+      edit: AccordionEdit,
+      restricted: false,
+      mostUsed: false,
+      cloneData: cloneBlock,
+      security: {
+        addPermission: [],
+        view: [],
+      },
+      sidebarTab: 1,
+      blockHasOwnFocusManagement: true,
     },
     alert: {
       id: 'alert',
