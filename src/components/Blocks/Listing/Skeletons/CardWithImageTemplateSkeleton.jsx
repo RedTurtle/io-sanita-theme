@@ -32,6 +32,13 @@ const CardWithImageTemplateSkeleton = (props) => {
     <div className="card-with-image-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
+          {title && (
+            <Row>
+              <Col>
+                <h2 className="mb-4">{title}</h2>
+              </Col>
+            </Row>
+          )}
           <Row className="items mb-3">
             {[0, 1, 2, 3, 4, 5, 6].map((i) => {
               return (

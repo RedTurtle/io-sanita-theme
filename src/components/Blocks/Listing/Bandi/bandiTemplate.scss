@@ -1,0 +1,144 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.bandi-template {
+  .bandi-template-cards-wrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 1.3rem;
+    -ms-grid-columns: 1fr 1.3rem 1fr 1.3rem 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .read-more a.read-more {
+      flex-direction: row;
+    }
+  }
+
+  .card-wrapper {
+    min-height: 340px;
+
+    &:first-child {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .card {
+      align-items: normal;
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2rem;
+
+        .card-title {
+          font-size: 1.555rem;
+        }
+      }
+    }
+  }
+
+  // smartphone
+  @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+    .bandi-template-cards-wrapper {
+      .card-wrapper {
+        width: 100%;
+        margin: 0px;
+      }
+      display: block;
+      height: 100%;
+    }
+  }
+
+  // tablet
+  .bandi-template-cards-wrapper {
+    @media (min-width: #{map-get($grid-breakpoints, md)}) and  (max-width: #{map-get($grid-breakpoints, xl)}) {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    @media (min-width: #{map-get($grid-breakpoints, md)}) and (max-width: #{map-get($grid-breakpoints, lg)}) {
+      gap: 1rem;
+    }
+
+    @media (min-width: #{map-get($grid-breakpoints, sm)}) and (max-width: #{map-get($grid-breakpoints, md)}) {
+      display: block !important;
+    }
+  }
+
+  .bando-description {
+    flex-grow: 1;
+    margin-top: 0.5rem;
+    font-size: 18px;
+  }
+
+  .bando-dati {
+    padding: 0.1rem;
+    margin-top: 2rem;
+    font-size: 16px;
+
+    .bando-dati-info {
+      margin-bottom: 0.7rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .bando-dati-label {
+        font-weight: 550;
+      }
+
+      .bando-dati-date {
+        font-weight: 200;
+      }
+    }
+  }
+
+  .card-title + .bando-dati {
+    margin-top: 0;
+  }
+
+  .bando-state {
+    padding-top: 0.2rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    border-radius: 0.3rem;
+    color: $primary-text;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .open {
+    /* background-color: #00cf86;*/
+    background-color: $complementary-3-a9;
+  }
+
+  .scheduled {
+    background-color: $analogue-1-b5;
+  }
+
+  .closed {
+    background-color: $neutral-1-a7;
+  }
+
+  .in-progress,
+  .inProgress {
+    background-color: $analogue-1-a9;
+  }
+
+  .skeleton-template {
+    .bando-description,
+    .bando-dati {
+      background-color: #fff;
+      color: transparent;
+    }
+
+    .bando-dati {
+      min-height: 7em;
+    }
+
+    .read-more {
+      margin-top: 0;
+    }
+  }
+}

@@ -13,7 +13,7 @@ const messages = defineMessages({
   },
 });
 
-export const addBandiInEvidenceTemplateOptions = (
+export const addBandiTemplateOptions = (
   schema,
   formData,
   intl,

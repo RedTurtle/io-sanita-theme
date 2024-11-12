@@ -10,6 +10,13 @@ const HighlightedContentTemplateSkeleton = (props) => {
   return (
     <ListingContainer data={props} isEditMode={isEditMode}>
       <div className="skeleton-template">
+        {title && (
+          <Row>
+            <Col>
+              <h2 className="mb-4">{title}</h2>
+            </Col>
+          </Row>
+        )}
         {[0].map((i) => {
           return (
             <Card

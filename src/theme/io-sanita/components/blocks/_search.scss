@@ -248,7 +248,7 @@
     }
   }
   .block.listing {
-    .bandi-in-evidence .bandi-in-evidence-cards-wrapper {
+    .bandi-template .bandi-template-cards-wrapper {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       @media (min-width: #{map-get($grid-breakpoints, md)}) and (max-width: #{map-get($grid-breakpoints, lg)}) {
         display: block !important;

@@ -78,7 +78,9 @@ export RassegnaInfo from 'io-sanita-theme/components/Blocks/Listing/commons/Rass
 export ListingContainer from 'io-sanita-theme/components/Blocks/Listing/commons/ListingContainer';
 
 /*Listing variations*/
+export BandiTemplate from 'io-sanita-theme/components/Blocks/Listing/Bandi/BandiTemplate';
 export CardWithImageTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageTemplate';
+export CardWithSlideUpTextTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithSlideUpText/CardWithSlideUpTextTemplate';
 export CompleteBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/CompleteBlockLinks/CompleteBlockLinksTemplate';
 export HighlightedContentTemplate from 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate';
 export InEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/InEvidence/InEvidenceTemplate';
@@ -86,10 +88,11 @@ export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTempla
 export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
 export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
 export SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinks/SmallBlockLinksTemplate';
-export CardWithSlideUpTextTemplate from 'io-sanita-theme/components/Blocks/Listing/CardWithSlideUpText/CardWithSlideUpTextTemplate';
 
 /*Skeleton*/
+export BandiTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/BandiTemplateSkeleton';
 export CardWithImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithImageTemplateSkeleton';
+export CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithSlideUpTextTemplateSkeleton';
 export CompleteBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CompleteBlockLinksTemplateSkeleton';
 export DefaultSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/DefaultSkeleton';
 export HighlightedContentTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/HighlightedContentTemplateSkeleton';
@@ -97,7 +100,6 @@ export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listin
 export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
-export CardWithSlideUpTextTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CardWithSlideUpTextTemplateSkeleton';
 
 /*Rss block (as listing)*/
 export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';

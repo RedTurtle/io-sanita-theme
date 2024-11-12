@@ -18,7 +18,7 @@ export { addInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/list
 export { addRibbonCardTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/ribbonCardTemplate';
 export { addMapTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/mapTemplate';
 export { addCompleteBlockLinksTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/completeBlockLinksTemplate';
-export { addBandiInEvidenceTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/bandiInEvidenceTemplate';
+export { addBandiTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/bandiTemplate';
 export { addSliderTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/sliderTemplate';
 export { addSimpleListTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleListTemplate';
 export { addCardWithSlideUpTextTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithSlideUpTextTemplate';

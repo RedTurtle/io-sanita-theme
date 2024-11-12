@@ -21,6 +21,13 @@ const CardWithSlideUpTextTemplateSkeleton = (props) => {
     <div className="card-slide-text-template">
       <ListingContainer className="px-4" data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
+          {title && (
+            <Row>
+              <Col>
+                <h2 className="mb-4">{title}</h2>
+              </Col>
+            </Row>
+          )}
           <Row className="items">
             {[0, 1, 2].map((i) => (
               <Col md="6" lg="4" key={i} className="col-item">

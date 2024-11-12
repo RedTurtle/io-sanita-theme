@@ -18,6 +18,13 @@ const InEvidenceTemplateSkeleton = (props) => {
     <div className="in-evidence">
       <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="skeleton-template">
+          {title && (
+            <Row>
+              <Col>
+                <h2 className="mb-4">{title}</h2>
+              </Col>
+            </Row>
+          )}
           <div className="in-evidence-cards-wrapper mb-5">
             <Row>
               {[0, 1, 2, 3, 4].map((i) => {

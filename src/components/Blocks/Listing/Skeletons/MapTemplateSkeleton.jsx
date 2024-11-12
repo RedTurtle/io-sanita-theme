@@ -19,6 +19,13 @@ const MapTemplateSkeleton = (props) => {
     <div className="map-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
         <div className="template-skeleton">
+          {title && (
+            <Row>
+              <Col>
+                <h2 className="mb-4">{title}</h2>
+              </Col>
+            </Row>
+          )}
           {title && <h2 className="mb-4">{title}</h2>}
 
           <div className="mb-4">

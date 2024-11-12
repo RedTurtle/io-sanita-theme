@@ -1,4 +1,6 @@
 import {
+  BandiTemplate,
+  BandiTemplateSkeleton,
   CardWithImageTemplate,
   CardWithImageTemplateSkeleton,
   CardWithSlideUpTextTemplate,
@@ -33,13 +35,11 @@ import {
 // import GridGalleryTemplate from 'io-sanita-theme/components/Blocks/Listing/GridGalleryTemplate';
 // import GridGalleryTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/GridGalleryTemplateSkeleton';
 
-// import BandiInEvidenceTemplate from 'io-sanita-theme/components/Blocks/Listing/BandiInEvidenceTemplate';
-// import BandiInEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/BandiInEvidenceTemplateSkeleton';
-
 // import SquaresImageTemplate from 'io-sanita-theme/components/Blocks/Listing/SquaresImageTemplate';
 // import SquaresImageTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SquaresImageTemplateSkeleton';
 
 import {
+  addBandiTemplateOptions,
   addCardWithImageTemplateOptions,
   addCardWithSlideUpTextTemplateOptions,
   addCompleteBlockLinksTemplateOptions,
@@ -179,6 +179,20 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
+  {
+    id: 'bandiInEvidenceTemplate',
+    isDefault: false,
+    title: 'Bandi',
+    template: BandiTemplate,
+    skeleton: BandiTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addBandiTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
   // {
   //   id: 'ribbonCardTemplate',
   //   isDefault: false,
@@ -248,20 +262,6 @@ const iosanitaListingVariations = [
   //   skeleton: GridGalleryTemplateSkeleton,
   //   schemaEnhancer: ({ schema, formData, intl }) => {
   //     /*let pos = */ addDefaultOptions(schema, formData, intl);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  // },
-  // {
-  //   id: 'bandiInEvidenceTemplate',
-  //   isDefault: false,
-  //   title: 'Bandi',
-  //   template: BandiInEvidenceTemplate,
-  //   skeleton: BandiInEvidenceTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addBandiInEvidenceTemplateOptions(schema, formData, intl, pos);
   //     addLinkMoreOptions(schema, formData, intl);
   //     return schema;
   //   },
