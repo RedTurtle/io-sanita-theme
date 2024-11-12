@@ -19,6 +19,7 @@ import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
 import Sidebar from './Sidebar.jsx';
 
 import { defineMessages } from 'react-intl';
+import './accordion.scss';
 
 const messages = defineMessages({
   addItem: {

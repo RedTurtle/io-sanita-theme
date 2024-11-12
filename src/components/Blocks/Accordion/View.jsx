@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import ViewBlock from './Block/ViewBlock';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { Container, Card, CardBody } from 'design-react-kit';
+import './accordion.scss';
 
 /**
  * View Accordion block class.
