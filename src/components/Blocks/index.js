@@ -11,6 +11,11 @@ export { AlertSchema } from 'io-sanita-theme/components/Blocks/Alert/schema';
 export { ContactsSchema } from 'io-sanita-theme/components/Blocks/Contacts/schema';
 
 /*View*/
+export const AccordionView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockAccordion" */ 'io-sanita-theme/components/Blocks/Accordion/View'
+  ),
+);
 export const AlertView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockAlert" */ 'io-sanita-theme/components/Blocks/Alert/View'
@@ -96,6 +101,11 @@ export CardWithoutImageRssTemplateSkeleton from 'io-sanita-theme/components/Bloc
 export CardWithImageRssTemplateSkeleton from 'io-sanita-theme/components/Blocks/Rss/Skeletons/CardWithImageRssTemplateSkeleton';
 
 /*Edit*/
+const AccordionEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Accordion/Edit'
+  ),
+);
 const AlertEdit = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/Alert/Edit'
@@ -161,6 +171,7 @@ const HTMLBlockSidebar = loadable(() =>
 );
 
 export {
+  AccordionEdit,
   AlertEdit,
   BreakEdit,
   CalloutEdit,
