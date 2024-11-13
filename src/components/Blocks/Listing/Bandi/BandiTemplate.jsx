@@ -186,18 +186,7 @@ const BandiTemplate = (props) => {
                           </div>
 
                           <span className="bando-dati-date">
-                            <div
-                              className={cx('bando-state', {
-                                open: item.bando_state?.includes('open'),
-                                closed: item.bando_state?.includes('closed'),
-                                scheduled:
-                                  item.bando_state?.includes('scheduled'),
-                                'in-progress':
-                                  item.bando_state?.includes('inProgress'),
-                              })}
-                            >
-                              <BandoStatus content={item} />
-                            </div>
+                            <BandoStatus content={item} style="chip" />
                           </span>
                         </span>
                       )}

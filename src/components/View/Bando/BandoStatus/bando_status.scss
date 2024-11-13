@@ -1,0 +1,78 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+$bando-color-open: $complementary-3-a9;
+$bando-color-closed: $neutral-1-a7;
+$bando-color-scheduled: $analogue-1-b5;
+$bando-color-in-progress: $analogue-1-a7;
+
+.bando-status {
+  //style: card
+  &.style-card {
+    width: 20em;
+    border-left: 0.3em solid;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+
+    &.open {
+      border-left: 5px solid $bando-color-open;
+
+      svg {
+        padding-right: 10px;
+        fill: $bando-color-open;
+      }
+    }
+
+    &.closed {
+      border-left: 5px solid $bando-color-closed;
+
+      svg {
+        padding-right: 10px;
+        fill: $bando-color-closed;
+      }
+    }
+
+    &.scheduled {
+      border-left: 5px solid $bando-color-scheduled;
+
+      svg {
+        padding-right: 10px;
+        fill: $bando-color-scheduled;
+      }
+    }
+
+    &.inProgress {
+      border-left: 5px solid $bando-color-in-progress;
+
+      svg {
+        padding-right: 10px;
+        fill: $bando-color-in-progress;
+      }
+    }
+  }
+
+  //style: chip
+  &.style-chip {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    color: $primary-text;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &.open {
+      background-color: $bando-color-open;
+    }
+
+    &.scheduled {
+      background-color: $bando-color-scheduled;
+    }
+
+    &.closed {
+      background-color: $bando-color-closed;
+    }
+
+    &.in-progress,
+    &.inProgress {
+      background-color: $bando-color-in-progress;
+    }
+  }
+}
