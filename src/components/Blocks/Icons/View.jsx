@@ -11,6 +11,8 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 import { UniversalLink } from '@plone/volto/components';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import config from '@plone/volto/registry';
+import { Icon } from 'io-sanita-theme/components';
+
 import './icons.scss';
 /**
  * View IconsBlock block class.
@@ -62,12 +64,18 @@ const IconsBlockView = ({ data, block }) => {
             </Row>
 
             {data.href && data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
+              <div className="link-more-button-wrapper text-center my-4">
                 <UniversalLink
                   href={flattenToAppURL(data.href)}
-                  className="btn btn-tertiary"
+                  className="btn btn-primary"
                 >
                   {data.linkMoreTitle}
+                  <Icon
+                    color="white"
+                    icon="it-arrow-right"
+                    className="arrow-icon"
+                    padding={false}
+                  />
                 </UniversalLink>
               </div>
             )}

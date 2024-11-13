@@ -17,9 +17,9 @@ import {
   SubblocksWrapper,
 } from 'volto-subblocks';
 import { TextEditorWidget } from 'volto-slate-italia';
-
 import EditBlock from './Block/EditBlock';
 import Sidebar from './Sidebar.jsx';
+import { Icon } from 'io-sanita-theme/components';
 
 import config from '@plone/volto/registry';
 import './icons.scss';
@@ -218,12 +218,18 @@ class Edit extends SubblocksEdit {
               </Row>
             </SubblocksWrapper>
             {this.props.data.href && this.props.data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
+              <div className="link-more-button-wrapper text-center my-4">
                 <UniversalLink
                   href={flattenToAppURL(this.props.data.href)}
-                  className="btn btn-tertiary"
+                  className="btn btn-primary"
                 >
                   {this.props.data.linkMoreTitle}
+                  <Icon
+                    color="white"
+                    icon="it-arrow-right"
+                    className="arrow-icon"
+                    padding={false}
+                  />
                 </UniversalLink>
               </div>
             )}
