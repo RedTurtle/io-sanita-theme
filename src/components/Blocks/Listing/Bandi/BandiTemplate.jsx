@@ -42,7 +42,7 @@ const messages = defineMessages({
   },
   stato: {
     id: 'bando_stato',
-    defaultMessage: 'Stato:',
+    defaultMessage: 'Stato',
   },
   ente: {
     id: 'bando_ente',
