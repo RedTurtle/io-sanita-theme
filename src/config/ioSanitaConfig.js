@@ -151,8 +151,8 @@ export default function applyConfig(config) {
     siteProperties: {
       siteTitle: 'io-Sanita', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome dell'istituzione', 'en':'Site name'}. Se multilingua il default è comunque la stringa.
       siteSubtitle: "Tag line dell'istituzione", //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Uno dei tanti Comuni d'Italia', 'en':'Uno dei tanti Comuni d'Italia'}. Se multilingua il default è comunque la stringa.
-      parentSiteTitle: 'Link al portale sanitario regionale', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Link al portale sanitario regionale', 'en':'Region name'}.Se multilingua il default è comunque la stringa.
-      parentSiteURL: 'https://www.link-portale-sanitario-regionale.it', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
+      parentSiteTitle: 'Servizio sanitario regionale Emilia-Romagna', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Link al portale sanitario regionale', 'en':'Region name'}.Se multilingua il default è comunque la stringa.
+      parentSiteURL: 'https://salute.regione.emilia-romagna.it/', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'https://www.governo.it', 'en':'https://www.governo.it/en'}. Se multilingua il default è comunque la stringa.
       subsiteParentSiteTitle: 'io-Sanita', //può essere una stringa, o un oggetto nel caso di multilingua: {'it':'Nome del sito padre', 'en':'Parent site name'}. Se multilingua il default è comunque la stringa.
 
       //arLoginUrl: '/login?e=1',
