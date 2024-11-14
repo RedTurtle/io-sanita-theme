@@ -4,11 +4,17 @@ import config from '@plone/volto/registry';
 
 const Background = ({ data }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
+  const bg_color =
+    ['primary', 'secondary'].indexOf(data.bg_color ?? '') >= 0
+      ? data.bg_color == 'primary'
+        ? 'bg-primary-lightest'
+        : 'bg-primary-dark'
+      : data.bg_color; //for backward compatibility with old io-comune-v2
 
   return data.background?.[0] ? (
     <div
       className={cx('background-image', {
-        [data.bg_color]: data.bg_color,
+        [bg_color]: bg_color,
       })}
     >
       <Image
@@ -22,7 +28,7 @@ const Background = ({ data }) => {
   ) : (
     <div
       className={cx('background-image no-image', {
-        [data.bg_color]: data.bg_color,
+        [bg_color]: bg_color,
       })}
     ></div>
   );

@@ -22,13 +22,18 @@ import './icons.scss';
  */
 const IconsBlockView = ({ data, block }) => {
   const id = new Date().getTime();
-
+  const bg_color =
+    ['primary', 'secondary'].indexOf(data.bg_color ?? '') >= 0
+      ? data.bg_color == 'primary'
+        ? 'bg-primary-lightest'
+        : 'bg-primary-dark'
+      : data.bg_color; //for backward compatibility with old io-comune-v2
   return (
     <div className="block iconBlocks">
       <div className="public-ui">
         <div
           className={cx('full-width section py-5 icons-block-wrapper', {
-            [data.bg_color]: data.bg_color,
+            [bg_color]: bg_color,
           })}
         >
           <Background data={data} />
