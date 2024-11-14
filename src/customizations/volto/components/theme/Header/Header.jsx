@@ -51,7 +51,7 @@ const Header = ({ pathname }) => {
 
         <div className="it-nav-wrapper">
           <HeaderCenter />
-          <Navigation pathname={pathname} />
+          <Navigation pathname={pathname} isEditMode={isEditMode} />
         </div>
         <HeaderContacts />
       </Headers>

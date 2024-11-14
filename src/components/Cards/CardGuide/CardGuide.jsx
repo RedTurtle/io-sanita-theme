@@ -34,7 +34,11 @@ export const CardGuide = ({
               {item.title}
             </UniversalLink>
 
-            <VoltoIcon className="icon-svg-book" size="sm" name={bookIcon} />
+            <VoltoIcon
+              className="icon-svg-book icon-accent"
+              size="sm"
+              name={bookIcon}
+            />
           </CardTitle>
         </div>
       </CardBody>

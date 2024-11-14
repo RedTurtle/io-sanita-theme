@@ -24,7 +24,7 @@ const PageHeaderBando = ({ content }) => {
   const intl = useIntl();
 
   return content['@type'] === 'Bando' ? (
-    <BandoStatus content={content} style="chip" />
+    <BandoStatus content={content} style="card" />
   ) : null;
 };
 
