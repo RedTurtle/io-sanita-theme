@@ -4,6 +4,35 @@
   .full-width {
     height: auto;
   }
+  .icons-block-wrapper {
+    z-index: -1;
+
+    &.bg-primary-dark {
+      .block-header {
+        .title {
+          color: #fff;
+        }
+
+        .description {
+          color: #fff;
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .row.center {
+    justify-content: center;
+  }
 
   .background-image {
     position: absolute;
@@ -25,43 +54,35 @@
       min-height: 100%;
       transform: translate(-50%, -50%);
     }
-
     &:after {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: rgba(
-        var(--bs-primary) 0.85
-      ); // serve per fare la trasparenza sull'immagine di sfondo.
       content: '';
     }
 
-    &.no-image {
-      &:after {
-        background-color: var(--bs-primary);
-      }
+    &.bg-primary-lightest:after {
+      background-color: rgb(
+        from var(--primary-lightest) r g b / 85%
+      ); //rgba( var(--bs-primary), 0.85  ); // serve per fare la trasparenza sull'immagine di sfondo.
+    }
+    &.bg-primary-dark:after {
+      background-color: rgb(
+        from var(--primary-dark) r g b / 85%
+      ); //  background-color: rgba($secondary, 0.85);; // serve per fare la trasparenza sull'immagine di sfondo.
+    }
+    &.transparent:after {
+      background-color: none;
     }
   }
 
   .block-header {
     .title {
       margin: 1rem 0 2rem 0;
-      color: #fff;
     }
 
     .description {
       margin-bottom: 2rem;
-      color: #fff;
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      a {
-        color: #fff;
-      }
     }
   }
 
