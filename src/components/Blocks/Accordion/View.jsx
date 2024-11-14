@@ -46,6 +46,7 @@ const AccordionView = ({ data, block }) => {
                     key={index}
                     id={id}
                     index={index}
+                    titleTag={data.title?.length > 0 ? 'h3' : 'h2'}
                   />
                 ))}
               </CardBody>

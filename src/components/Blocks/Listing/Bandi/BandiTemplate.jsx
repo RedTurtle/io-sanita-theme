@@ -116,13 +116,13 @@ const BandiTemplate = (props) => {
                       )}
 
                       {/* Tipologia */}
-                      {show_tipologia && item?.tipologia_bando && (
+                      {show_tipologia && item?.tipologia_bando_label && (
                         <span className="d-flex flex-wrap align-items-baseline bando-dati-info">
                           <div className="bando-dati-label me-2">
                             {intl.formatMessage(messages.tipologia)}:
                           </div>
                           <span className="bando-dati-date">
-                            {item.tipologia_bando}
+                            {item.tipologia_bando_label}
                           </span>
                         </span>
                       )}
@@ -186,18 +186,7 @@ const BandiTemplate = (props) => {
                           </div>
 
                           <span className="bando-dati-date">
-                            <div
-                              className={cx('bando-state', {
-                                open: item.bando_state?.includes('open'),
-                                closed: item.bando_state?.includes('closed'),
-                                scheduled:
-                                  item.bando_state?.includes('scheduled'),
-                                'in-progress':
-                                  item.bando_state?.includes('inProgress'),
-                              })}
-                            >
-                              <BandoStatus content={item} />
-                            </div>
+                            <BandoStatus content={item} style="chip" />
                           </span>
                         </span>
                       )}

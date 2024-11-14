@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +26,7 @@ import {
   BrandWrapper,
 } from 'io-sanita-theme/components';
 
-const Navigation = ({ pathname = '/' }) => {
+const Navigation = ({ pathname = '/', isEditMode }) => {
   const intl = useIntl();
   const [collapseOpen, setCollapseOpen] = useState(false);
   const [focusTrapActive, setFocusTrapActive] = useState(false);
@@ -135,7 +136,12 @@ const Navigation = ({ pathname = '/' }) => {
                 {/* Headerslim Menu - main site */}
                 {!subsite && <TertiaryMenu mobile={true} />}
                 {/* Social Links */}
-                <HeaderSearch className="display-only-when-sticky" />
+                <HeaderSearch
+                  className={cx({
+                    'd-none': isEditMode,
+                    'display-only-when-sticky': !isEditMode,
+                  })}
+                />
                 <SocialHeader mobile={true} />
                 {/* Headerslim Menu - parent site (if subsite) */}
                 {subsite && <ParentSiteMenu />}

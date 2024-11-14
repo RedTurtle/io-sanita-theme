@@ -22,44 +22,9 @@ const messages = defineMessages({
 
 const PageHeaderBando = ({ content }) => {
   const intl = useIntl();
-  const status =
-    content['@type'] === 'Bando'
-      ? content['@components']?.['view-extra-data']?.stato_bando
-      : null;
 
   return content['@type'] === 'Bando' ? (
-    <>
-      {status && (
-        <div
-          className={cx(
-            'card card-teaser shadow p-3 mt-3 rounded bando_state',
-            status[0],
-          )}
-        >
-          <div className="card-body">
-            <div className="card-text">
-              <Icon
-                className="me-2"
-                color=""
-                icon={
-                  {
-                    open: 'it-check-circle',
-                    closed: 'it-error',
-                    inProgress: 'it-info-circle',
-                    scheduled: 'it-calendar',
-                  }[status[0]]
-                }
-                padding={false}
-                size=""
-                title={`${intl.formatMessage(messages.bando)} ${status[1]}`}
-              />
-              {intl.formatMessage(messages.bando)}{' '}
-              <BandoStatus content={content} />
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    <BandoStatus content={content} style="card" />
   ) : null;
 };
 

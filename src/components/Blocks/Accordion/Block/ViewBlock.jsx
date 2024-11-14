@@ -30,13 +30,13 @@ const messages = defineMessages({
  * @class ViewBlock
  * @extends Component
  */
-const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
+const ViewBlock = ({ data, isOpen, toggle, id, index, titleTag }) => {
   const intl = useIntl();
-
+  const TitleTag = titleTag;
   return (
     <div className="accordion-item subblock-view">
       {data.title && (
-        <h3 className="accordion-header">
+        <TitleTag className="accordion-header h3">
           <button
             onClick={toggle()}
             aria-expanded={isOpen}
@@ -56,7 +56,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
 
             {data.title}
           </button>
-        </h3>
+        </TitleTag>
       )}
 
       {data.text && (
