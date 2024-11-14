@@ -4,14 +4,17 @@
  */
 
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import ViewBlock from './Block/ViewBlock';
 import { Container, Row, Col } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import config from '@plone/volto/registry';
+
+import MoreButton from './MoreButton';
+import Background from './Background';
 import './icons.scss';
+
 /**
  * View IconsBlock block class.
  * @class View
@@ -19,25 +22,22 @@ import './icons.scss';
  */
 const IconsBlockView = ({ data, block }) => {
   const id = new Date().getTime();
-  const Image = config.getComponent({ name: 'Image' }).component;
-
+  const bg_color =
+    ['primary', 'secondary'].indexOf(data.bg_color ?? '') >= 0
+      ? data.bg_color == 'primary'
+        ? 'bg-primary-lightest'
+        : 'bg-primary-dark'
+      : data.bg_color; //for backward compatibility with old io-comune-v2
   return (
     <div className="block iconBlocks">
       <div className="public-ui">
-        <div className="full-width section py-5">
-          {data.background?.[0] ? (
-            <div className="background-image">
-              <Image
-                item={data.background[0]}
-                alt=""
-                role={null}
-                responsive={true}
-                sizes="100vw"
-              />
-            </div>
-          ) : (
-            <div className="background-image no-image"></div>
-          )}
+        <div
+          className={cx('full-width section py-5 icons-block-wrapper', {
+            [bg_color]: bg_color,
+          })}
+        >
+          <Background data={data} />
+
           <Container className="px-md-4">
             <div className="block-header text-center">
               {data.title && <h2 className="title">{data.title}</h2>}
@@ -47,7 +47,7 @@ const IconsBlockView = ({ data, block }) => {
                 </div>
               )}
             </div>
-            <Row>
+            <Row className={cx({ center: data.alignCards })}>
               {data.subblocks.map((subblock, index) => (
                 <Col lg="4" xl="3" key={subblock.id} className="mb-3">
                   <ViewBlock
@@ -61,16 +61,7 @@ const IconsBlockView = ({ data, block }) => {
               ))}
             </Row>
 
-            {data.href && data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
-                <UniversalLink
-                  href={flattenToAppURL(data.href)}
-                  className="btn btn-tertiary"
-                >
-                  {data.linkMoreTitle}
-                </UniversalLink>
-              </div>
-            )}
+            <MoreButton data={data} />
           </Container>
         </div>
       </div>

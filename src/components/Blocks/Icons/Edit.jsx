@@ -4,12 +4,11 @@
  */
 
 import React from 'react';
+import cx from 'classnames';
 import { defineMessages } from 'react-intl';
 import { Container, Row, Col } from 'design-react-kit';
 
 import { SidebarPortal } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
 import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
 import {
   withDNDContext,
@@ -17,11 +16,12 @@ import {
   SubblocksWrapper,
 } from 'volto-subblocks';
 import { TextEditorWidget } from 'volto-slate-italia';
-
 import EditBlock from './Block/EditBlock';
 import Sidebar from './Sidebar.jsx';
 
-import config from '@plone/volto/registry';
+import MoreButton from './MoreButton';
+import Background from './Background';
+
 import './icons.scss';
 
 const messages = defineMessages({
@@ -118,24 +118,15 @@ class Edit extends SubblocksEdit {
     if (__SERVER__) {
       return <div />;
     }
-    const Image = config.getComponent({ name: 'Image' }).component;
 
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
-        <div className="full-width section py-5">
-          {this.props.data.background?.[0] ? (
-            <div className="background-image">
-              <Image
-                item={this.props.data.background[0]}
-                alt=""
-                role={null}
-                responsive={true}
-                sizes="100vw"
-              />
-            </div>
-          ) : (
-            <div className="background-image no-image"></div>
-          )}
+        <div
+          className={cx('full-width section py-5 icons-block-wrapper', {
+            [this.props.data.bg_color]: this.props.data.bg_color,
+          })}
+        >
+          <Background data={this.props.data} isEditMode={true} />
 
           <Container className="px-md-4">
             <div className="block-header text-center">
@@ -186,7 +177,7 @@ class Edit extends SubblocksEdit {
               </div>
             </div>
             <SubblocksWrapper node={this.node}>
-              <Row>
+              <Row className={cx({ center: this.props.data.alignCards })}>
                 {this.state.subblocks.map((subblock, subindex) => (
                   <Col lg="4" xl="3" key={subblock.id} className="mb-3">
                     <EditBlock
@@ -217,26 +208,13 @@ class Edit extends SubblocksEdit {
                 )}
               </Row>
             </SubblocksWrapper>
-            {this.props.data.href && this.props.data.linkMoreTitle && (
-              <div className="link-button text-center my-4">
-                <UniversalLink
-                  href={flattenToAppURL(this.props.data.href)}
-                  className="btn btn-tertiary"
-                >
-                  {this.props.data.linkMoreTitle}
-                </UniversalLink>
-              </div>
-            )}
+            <MoreButton data={this.props.data} isEditMode={true} />
             <SidebarPortal selected={this.props.selected || false}>
               <Sidebar
                 {...this.props}
-                data={this.props.data}
-                block={this.props.block}
-                onChangeBlock={this.props.onChangeBlock}
                 onChangeSubBlock={this.onChangeSubblocks}
                 selected={this.state.subIndexSelected}
                 setSelected={this.onSubblockChangeFocus}
-                openObjectBrowser={this.props.openObjectBrowser}
               />
             </SidebarPortal>
           </Container>

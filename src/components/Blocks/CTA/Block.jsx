@@ -139,11 +139,11 @@ const Block = (props) => {
           {data.ctaLink?.length > 0 && data.ctaLinkTitle?.length > 0 && (
             <div className="mt-5">
               <Button
+                tag={UniversalLink}
                 color={bg_color == 'bg-primary-dark' ? 'accent' : 'primary'}
                 className={bg_color == 'bg-primary-dark' ? 'inverted' : ''}
                 icon={false}
                 size="lg"
-                tag={UniversalLink}
                 disabled={inEditMode}
                 href={data.ctaLink}
                 openLinkInNewTab={!!data.openLinkInNewTab}

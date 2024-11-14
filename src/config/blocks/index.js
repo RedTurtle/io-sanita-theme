@@ -30,6 +30,7 @@ import {
   HeroEdit,
   IconsView,
   IconsEdit,
+  IconsSchema,
   TopicsListView,
   TopicsListEdit,
   TopicsListSchema,
@@ -234,6 +235,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
         view: [],
       },
       sidebarTab: 1,
+      schema: IconsSchema,
       blockHasOwnFocusManagement: true,
     },
     maps: {

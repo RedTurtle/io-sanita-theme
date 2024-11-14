@@ -235,13 +235,9 @@ class Edit extends SubblocksEdit {
             <SidebarPortal selected={this.props.selected || false}>
               <Sidebar
                 {...this.props}
-                data={this.props.data}
-                block={this.props.block}
-                onChangeBlock={this.props.onChangeBlock}
                 onChangeSubBlock={this.onChangeSubblocks}
                 selected={this.state.subIndexSelected}
                 setSelected={this.onSubblockChangeFocus}
-                openObjectBrowser={this.props.openObjectBrowser}
               />
             </SidebarPortal>
           </Container>

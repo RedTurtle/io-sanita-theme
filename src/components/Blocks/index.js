@@ -1,14 +1,15 @@
 import loadable from '@loadable/component';
 
 /*Schema*/
-export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
-export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
-export { SearchFarmaciaSchema } from 'io-sanita-theme/components/Blocks/SearchFarmacia/schema';
-export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
-export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/schema';
-export { CTASchema } from 'io-sanita-theme/components/Blocks/CTA/schema';
 export { AlertSchema } from 'io-sanita-theme/components/Blocks/Alert/schema';
 export { ContactsSchema } from 'io-sanita-theme/components/Blocks/Contacts/schema';
+export { CTASchema } from 'io-sanita-theme/components/Blocks/CTA/schema';
+export HTMLBlockSchema from 'io-sanita-theme/components/Blocks/HTML/schema';
+export { IconsSchema } from 'io-sanita-theme/components/Blocks/Icons/schema';
+export { SearchFarmaciaSchema } from 'io-sanita-theme/components/Blocks/SearchFarmacia/schema';
+export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
+export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
+export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/schema';
 
 /*View*/
 export const AccordionView = loadable(() =>
