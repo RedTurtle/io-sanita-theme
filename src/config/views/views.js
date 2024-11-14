@@ -121,7 +121,8 @@ const applyIoSanitaViews = (config) => {
     ioSanitaContentTypesViewsConfig: {
       //---example:
       // Document: {
-      //   sections: [],
+      //   sections: [], //per fare l'override delle sezioni
+      //   pushSections: [{ /* LIBERA PROFESSIONE */ component: PersonaLiberaProfessione, atIndex: 2 , key:'LP'}], //per aggiungere una sezione all'indice atIndex. La key serve per aggiungerla una volta sola ed è obbligatoria
       //   placeholder: { afterContent: ComponentToRender, title: ComponentToRender },
       //   updateSideMenuOnLoadingBlocks: false
       //   sideMenu:null //set here a different SideMenu component. If null uses default SideMenu component
