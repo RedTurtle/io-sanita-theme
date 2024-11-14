@@ -35,6 +35,11 @@ a {
   }
 }
 
+.icon.external-link {
+  vertical-align: baseline;
+  fill: currentColor;
+}
+
 .font-small {
   @include rem-size(font-size, 16);
 }

@@ -69,3 +69,18 @@
     padding-bottom: 0;
   }
 }
+
+//override pastanaga styles for card
+//pastanaga style was: .block h1:last-child, .block h2:last-child, .block h3:last-child, .block h4:last-child, .block h5:last-child { margin: calc(2rem - 0.14285714em) 0em 1rem;}
+.block .card {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &:last-child {
+      margin: initial;
+      margin-bottom: var(--bs-card-title-spacer-y);
+    }
+  }
+}

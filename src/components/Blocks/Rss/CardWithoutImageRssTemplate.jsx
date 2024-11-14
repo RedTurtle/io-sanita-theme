@@ -36,7 +36,7 @@ const CardWithoutImageRssTemplate = ({
   const titleID = data?.title ? data.title.replace(/[^A-Z0-9]+/gi, '_') : '';
 
   return (
-    <div className={cx('', { 'public-ui': isEditMode })} aria-live="polite">
+    <div className={cx({ 'public-ui': isEditMode })} aria-live="polite">
       {items?.length > 0 ? (
         <>
           {data.title && (
@@ -97,7 +97,7 @@ const CardWithoutImageRssTemplate = ({
             href={data.linkMore ? [{ '@id': data.linkMore }] : []}
           />
         </>
-      ) : data.feed ? (
+      ) : data.feed && isEditMode ? (
         <div className="no-rss-feed-results" aria-live="polite">
           {intl.formatMessage(messages.noResults)}
         </div>

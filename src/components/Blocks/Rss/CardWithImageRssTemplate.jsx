@@ -107,7 +107,7 @@ const CardWithImageRssTemplate = ({
             href={data.linkMore ? [{ '@id': data.linkMore }] : []}
           />
         </>
-      ) : data.feed ? (
+      ) : data.feed && isEditMode ? (
         <div className="no-rss-feed-results" aria-live="polite">
           {intl.formatMessage(messages.noResults)}
         </div>

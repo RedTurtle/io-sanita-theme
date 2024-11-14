@@ -222,7 +222,7 @@ export default function applyConfig(config) {
       <Icon
       icon="it-external-link"
       size="xs"
-      className="ms-1 align-sub external-link"
+      className="ms-1 external-link"
     />*/,
     },
     videoAllowExternalsDefault: false,

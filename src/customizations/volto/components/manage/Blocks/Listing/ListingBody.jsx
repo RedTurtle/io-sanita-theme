@@ -52,7 +52,6 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
     data.path_filters,
   );*/
 
-  console.log(data.title, description);
   return (
     (data.title || description || path_filters_buttons) && (
       <ListingContainer data={data} isEditMode={isEditMode}>
