@@ -33,6 +33,7 @@ const MapTemplate = (props) => {
     titleLine,
     show_map_full_width,
     map_size = 'medium',
+    show_block_bg,
     linkmore_id_lighthouse,
   } = props;
 
