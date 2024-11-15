@@ -1,5 +1,6 @@
 import loadable from '@loadable/component';
 import { defineMessages } from 'react-intl';
+import ImageWithErrors from 'io-sanita-theme/components/ImageWithErrors/ImageWithErrors';
 
 import menuSVG from '@plone/volto/icons/menu.svg';
 import menuAltSVG from '@plone/volto/icons/menu-alt.svg';
@@ -268,6 +269,9 @@ export default function applyConfig(config) {
   config.components = {
     ...config.components,
     BlockExtraTags: { component: () => null },
+    Image: {
+      component: ImageWithErrors,
+    },
   };
 
   config.registerComponent({
