@@ -107,24 +107,29 @@ const CardPlace = ({
 
       {type === 'complete' && size !== 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
-          {__CLIENT__ &&
-            showMap &&
+          {showMap &&
             item.geolocation?.latitude &&
             item.geolocation?.longitude && (
-              <OSMMap
-                markers={[
-                  {
-                    latitude: item.geolocation.latitude,
-                    longitude: item.geolocation.longitude,
-                    title: item.title,
-                  },
-                ]}
-                mapOptions={{
-                  scrollWheelZoom: false,
-                  // tap: false,
-                  // dragging: false,
-                }}
-              />
+              <>
+                {__CLIENT__ ? (
+                  <OSMMap
+                    markers={[
+                      {
+                        latitude: item.geolocation.latitude,
+                        longitude: item.geolocation.longitude,
+                        title: item.title,
+                      },
+                    ]}
+                    mapOptions={{
+                      scrollWheelZoom: false,
+                      // tap: false,
+                      // dragging: false,
+                    }}
+                  />
+                ) : (
+                  <div>Loading...</div>
+                )}
+              </>
             )}
           <UniversalLink
             href={`http://maps.google.com/?q=${item?.street ?? ''} ${

@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     .bg-img {
-      background-color: var(--primary);
+      background-color: var(--bs-primary);
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -65,7 +65,7 @@
       align-self: start;
       padding: 0.1rem 0.5rem;
       margin-bottom: 0.5rem;
-      background-color: var(--primary);
+      background-color: var(--bs-primary);
       color: var(--bs-primary-text);
       font-size: 0.9rem;
       font-style: italic;
@@ -76,7 +76,7 @@
         right: -10px;
         width: 0;
         height: 0;
-        border-top: 28px solid var(--primary);
+        border-top: 28px solid var(--bs-primary);
         border-right: 10px solid transparent;
         content: '';
       }

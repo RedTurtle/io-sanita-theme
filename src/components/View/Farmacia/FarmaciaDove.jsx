@@ -109,9 +109,10 @@ const FarmaciaDove = ({ content }) => {
           </CardText>
         </CardBody>
       </Card>
-      {__CLIENT__ &&
+      {
         content.geolocation?.latitude &&
         content.geolocation?.longitude && (
+        <>{__CLIENT__ ?
           <OSMMap
             markers={[
               {
@@ -125,7 +126,7 @@ const FarmaciaDove = ({ content }) => {
               // tap: false,
               // dragging: false,
             }}
-          />
+          />:<div>Loading...</>}</>
         )}
       {content.circoscrizione && (
         <div className="circoscrizione">

@@ -3,6 +3,8 @@
   .avatar {
     border-radius: 0;
     background-color: var(--primary-lightest);
+    color: var(--bs-primary);
+
     &.size-xl {
       min-width: 80px;
     }
