@@ -29,7 +29,10 @@ const LocationsMap = ({ center, locations }) => {
 
   useEffect(() => {
     venues.forEach((loc) => {
-      if(!fetchedLocations?.[loc.key]?.loading && !fetchedLocations?.[loc.key]?.loaded){
+      if (
+        !fetchedLocations?.[loc.key]?.loading &&
+        !fetchedLocations?.[loc.key]?.loaded
+      ) {
         dispatch(getContent(loc.url, null, loc.key));
       }
     });
@@ -73,7 +76,7 @@ const LocationsMap = ({ center, locations }) => {
 
   return venuesData?.length > 0 ? (
     <>
-      {__CLIENT__ && (
+      {__CLIENT__ ? (
         <OSMMap
           center={[venuesData[0].latitude, venuesData[0].longitude]}
           markers={venuesData}
@@ -85,6 +88,8 @@ const LocationsMap = ({ center, locations }) => {
             // dragging: false,
           }}
         />
+      ) : (
+        <div>Loading...</div>
       )}
     </>
   ) : null;
