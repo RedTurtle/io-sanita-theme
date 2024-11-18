@@ -13,6 +13,7 @@ import {
   Chip,
   ChipLabel,
 } from 'design-react-kit';
+import { omit } from 'lodash';
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -87,22 +88,28 @@ const LeafIcon = (options, item) => {
 };
 
 const resultsReducer = (items) => {
-  const geolocated_items = [...items]
-    .map((item) => {
-      let i = { ...item };
-      //per i medici (ct 'Persona')
-      if (!hasGeolocation(item) && item.struttura_ricevimento?.length > 0) {
-        const struttura = item.struttura_ricevimento[0];
-        if (hasGeolocation(struttura)) {
-          //copia il campo geolocation della struttura dentro all'item, per poterlo mostrare come punto sulla mappa
-          i.geolocation = struttura.geolocation;
-        }
-      }
-      return i;
-    })
-    .filter((item) => hasGeolocation(item));
+  //questo filtro è inutile, perchè questi conti li fa già il parametro 'has_geolocation' che si passa nella query
+  //let geolocated_items = [];
+  // items.forEach((item) => {
+  //   //se l'oggetto è una Persona con stutture collegate con geolocation, o ha una sua geolocation, la aggiungo, altrimenti no.
+  //   if (item['@type'] === 'Persona') {
+  //     const strutture = [
+  //       ...(item.struttura_ricevimento ?? []),
+  //       ...(item.struttura_in_cui_opera ?? []),
+  //     ].filter((s) => hasGeolocation(s));
 
-  return geolocated_items;
+  //     if (hasGeolocation(item) || strutture.length > 0) {
+  //       geolocated_items.push(item);
+  //     }
+  //   } else {
+  //     if (hasGeolocation(item)) {
+  //       geolocated_items.push(item);
+  //     }
+  //   }
+  // });
+  //return geolocated_items;
+
+  return items;
 };
 
 /*
@@ -195,6 +202,7 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
           metadata_fields: [
             'tipologia_struttura',
             'struttura_ricevimento',
+            'struttura_in_cui_opera',
             'incarico_metadata',
           ], //'_all',
           query: query,
@@ -208,10 +216,15 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
     );
   };
 
-  const calculateMarkers = () => {
-    let points = items.map((item) => {
-      let point = {
-        ...item,
+  const getPoint = (item, title) => {
+    let point = { ...item };
+    if (title) {
+      point.title = title;
+    }
+
+    if (hasGeolocation(item)) {
+      point = {
+        ...point,
         ...(item.geolocation
           ? item.geolocation
           : { latitude: item.latitude, longitude: item.longitude }),
@@ -230,6 +243,30 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
         ),
         popupContent: mapPinDirections(point, intl),
       };
+    }
+    return null;
+  };
+
+  const calculateMarkers = () => {
+    let points = [];
+    items.forEach((item) => {
+      const point = getPoint(item);
+      if (point) {
+        points.push(point);
+      }
+
+      if (item['@type'] === 'Persona') {
+        const strutture = [
+          ...(item.struttura_ricevimento ?? []),
+          ...(item.struttura_in_cui_opera ?? []),
+        ].filter((s) => hasGeolocation(s));
+        strutture.forEach((s) => {
+          const point_s = getPoint(s, item.title);
+          if (point_s) {
+            points.push(point_s);
+          }
+        });
+      }
     });
     setMarkers(points);
   };

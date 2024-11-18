@@ -62,6 +62,11 @@ export const CardPersona = ({
       ? incarico_field[incarico_field.length - 1]
       : null;
 
+  const strutture = [
+    ...(item.struttura_ricevimento ?? []),
+    ...(item.struttura_in_cui_opera ?? []),
+  ];
+
   return (
     <Card className={cx('shadow rounded card-persona no-after', className)}>
       <CardBody className="d-flex">
@@ -85,33 +90,26 @@ export const CardPersona = ({
             )}
             {size !== 'small' && (
               <>
-                {item.struttura_ricevimento?.length > 0 ? (
+                {hasGeolocation(item) && (
+                  <div className="mb-2 mt-2">
+                    <Address item={item} showDistance={showDistance} />
+                  </div>
+                )}
+
+                {strutture.map((s) => (
                   <div className="mb-2 mt-2">
                     <div>
                       <UniversalLink
-                        item={
-                          !isEditMode ? item.struttura_ricevimento[0] : null
-                        }
+                        item={!isEditMode ? s : null}
                         href={isEditMode ? '#' : ''}
                         className="fw-bold"
                       >
-                        {item.struttura_ricevimento[0].title}
+                        {s.title}
                       </UniversalLink>
                     </div>
-                    <Address
-                      item={item.struttura_ricevimento[0]}
-                      showDistance={showDistance}
-                    />
+                    <Address item={s} showDistance={showDistance} />
                   </div>
-                ) : (
-                  <>
-                    {hasGeolocation(item) && (
-                      <div className="mb-2 mt-2">
-                        <Address item={item} showDistance={showDistance} />
-                      </div>
-                    )}
-                  </>
-                )}
+                ))}
               </>
             )}
           </CardText>
