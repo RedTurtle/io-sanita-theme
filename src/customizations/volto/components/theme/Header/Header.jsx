@@ -4,6 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
@@ -24,9 +25,12 @@ import {
 import { Headers } from 'design-react-kit';
 
 const Header = ({ pathname }) => {
+  const location = useLocation();
   const [mini, setMini] = useState(false);
   const isEditMode = useSelector(
-    (state) => Object.keys(state.form.global ?? {})?.length > 0,
+    (state) =>
+      Object.keys(state.form.global ?? {})?.length > 0 ||
+      location.pathname.indexOf('/controlpanel') === 0,
   );
 
   const handleScroll = () => {
