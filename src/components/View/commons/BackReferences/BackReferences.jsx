@@ -53,6 +53,7 @@ const BackReferences = ({ id, title, content, type }) => {
       items = [
         ...(backreferences?.['responsabile']?.['Struttura'] ?? []),
         ...(backreferences?.['personale']?.['Struttura'] ?? []),
+        ...(content.struttura_in_cui_opera ?? []),
       ];
     default:
       break;
@@ -93,6 +94,7 @@ const BackReferences = ({ id, title, content, type }) => {
 BackReferences.propTypes = {
   content: PropTypes.object.isRequired,
   type: PropTypes.string, //nome del portal type, oppure 'responsabile' o 'personale', oppure 'persona_uo' cerca tutte le uo nelle backreferences 'personale' e 'responsabile'
+  add_items: PropTypes.array,
 };
 
 export default BackReferences;
