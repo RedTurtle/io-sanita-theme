@@ -40,6 +40,17 @@ const Body = ({ isEditMode, data, id }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const getTaxonomy = (obj) => {
+    const t = obj.user || obj.topic;
+    const _taxUser = taxonomyUsers.filter((tt) => tt.value === t);
+    const _taxTopic = taxonomyTopics.filter((tt) => tt.value === t);
+    const tUser = _taxUser?.length > 0 ? _taxUser[0] : null;
+    const tTopic = _taxTopic?.length > 0 ? _taxTopic[0] : null;
+
+    const tFound = tUser || tTopic;
+    const type = tUser ? 'users' : 'topics';
+    return tFound ? { taxonomy: tFound, type } : null;
+  };
   return (
     <div className={cx('iosanita-block-topics-list', { block: !isEditMode })}>
       {data?.title && (
@@ -52,31 +63,27 @@ const Body = ({ isEditMode, data, id }) => {
         </div>
       )}
       <Row className="mb-3">
-        {data?.taxonomies?.map((obj, i) => {
-          const t = obj.user || obj.topic;
-          const _taxUser = taxonomyUsers.filter((tt) => tt.value === t);
-          const _taxTopic = taxonomyTopics.filter((tt) => tt.value === t);
-          const tUser = _taxUser?.length > 0 ? _taxUser[0] : null;
-          const tTopic = _taxTopic?.length > 0 ? _taxTopic[0] : null;
+        {data?.taxonomies
+          ?.filter((obj) => {
+            const t = getTaxonomy(obj);
+            return t != null;
+          })
+          .map((obj, i) => {
+            const { taxonomy, type } = getTaxonomy(obj);
 
-          const tFound = tUser || tTopic;
-          const type = tUser ? 'users' : 'topics';
-
-          return tFound ? (
-            <Col xs={6} lg={3} key={t + i} className="mb-lg-3">
-              <CardTaxonomy
-                item={tFound}
-                type={type}
-                showIcon={data.show_icon}
-                icon={obj.icon}
-                isEditMode={isEditMode}
-                titleTag={!data.title ? 'h2' : 'h3'}
-              />
-            </Col>
-          ) : (
-            <></>
-          );
-        })}
+            return (
+              <Col xs={6} lg={3} key={i} className="mb-lg-3">
+                <CardTaxonomy
+                  item={taxonomy}
+                  type={type}
+                  showIcon={data.show_icon}
+                  icon={obj.icon}
+                  isEditMode={isEditMode}
+                  titleTag={!data.title ? 'h2' : 'h3'}
+                />
+              </Col>
+            );
+          })}
       </Row>
     </div>
   );
