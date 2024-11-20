@@ -15,7 +15,7 @@ import {
 // import { dettagliProcedimento } from './dettagliProcedimento';
 import { modulisticaItems } from './modulistica';
 // import { originalQueryReducer } from './originalQueryReducer';
-// import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
+import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
 import { iosanita_settings } from './settings';
 import { farmaciaReducer } from './farmaciaReducer';
@@ -37,7 +37,7 @@ const reducers = {
   // dettagliProcedimento: dettagliProcedimento,
   modulisticaItems,
   // originalQuery: originalQueryReducer,
-  // searchBandiFilters: searchBandiFiltersReducer,
+  searchBandiFilters: searchBandiFiltersReducer,
   // breadcrumbs: breadcrumbs,
   iosanita_settings,
   farmacia: farmaciaReducer,

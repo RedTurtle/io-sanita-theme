@@ -4,86 +4,17 @@
 */
 import React, { useState } from 'react';
 import { Icon } from 'io-sanita-theme/components';
-import { defineMessages, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import qs from 'query-string';
-
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-
-const messages = defineMessages({
-  startDate: {
-    id: 'Start Date',
-    defaultMessage: 'Start Date',
-  },
-  endDate: {
-    id: 'End Date',
-    defaultMessage: 'End Date',
-  },
-  clearDates: {
-    id: 'Clear dates',
-    defaultMessage: 'Pulisci i campi',
-  },
-});
-
-const PrevIcon = () => (
-  <div
-    className="prev-icon"
-    style={{
-      color: '#000',
-      left: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-left" size="30px" />
-  </div>
-);
-const NextIcon = () => (
-  <div
-    className="next-icon"
-    style={{
-      color: '#000',
-      right: '22px',
-      padding: '5px',
-      position: 'absolute',
-      top: '15px',
-    }}
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-    tabIndex="0"
-  >
-    <Icon icon="it-chevron-right" size="30px" />
-  </div>
-);
-
-const customArrowIcon = (props) => {
-  const { intl } = props;
-  return (
-    <Icon icon="it-arrow-right" title={intl.formatMessage(messages.endDate)} />
-  );
-};
-
-const CloseIcon = (props) => {
-  const { intl } = props;
-  return (
-    <Icon
-      icon="it-close"
-      size="24px"
-      className="close"
-      title={intl.formatMessage(messages.clearDates)}
-    />
-  );
-};
+import { DateRange } from 'io-sanita-theme/components';
 
 const DateRangeFacet = (props) => {
-  const { facet, isEditMode, onChange, value, reactDates, intl, lang } = props;
+  const { facet, isEditMode, onChange, value, intl, lang } = props;
   const moment = props.moment.default;
-  const { DateRangePicker } = reactDates;
+
   const [focused, setFocused] = useState(null);
   return (
     <div className="daterange-facet">
@@ -92,21 +23,14 @@ const DateRangeFacet = (props) => {
       </h6>
       <div className="date-time-widget-wrapper">
         <div className="date-input">
-          <DateRangePicker
+          <DateRange
             startDate={value && value[0] ? moment(value[0]) : null}
             startDateId={`${facet['@id']}-start-date`}
-            startDatePlaceholderText={intl.formatMessage(messages.startDate)}
             endDate={value && value[1] ? moment(value[1]) : null}
             endDateId={`${facet['@id']}-end-date`}
-            endDatePlaceholderText={intl.formatMessage(messages.endDate)}
             numberOfMonths={1}
             disabled={isEditMode}
-            noBorder
-            showClearDates
-            customCloseIcon={<CloseIcon {...props} />}
             displayFormat={moment.localeData(lang).longDateFormat('L')}
-            focusedInput={focused}
-            onFocusChange={(focusedInput) => setFocused(focusedInput)}
             onDatesChange={({ startDate, endDate }) => {
               onChange(facet.field.value, [
                 startDate ? startDate.format('YYYY-MM-DD') : null,
@@ -114,9 +38,6 @@ const DateRangeFacet = (props) => {
               ]);
             }}
             isOutsideRange={() => false}
-            navPrev={<PrevIcon />}
-            navNext={<NextIcon />}
-            customArrowIcon={customArrowIcon(props)}
           />
         </div>
       </div>
@@ -192,7 +113,7 @@ DateRangeFacet.valueToQuery = ({ value, facet }) => {
 };
 
 export default compose(
-  injectLazyLibs(['reactDates', 'moment']),
+  injectLazyLibs(['moment']),
   connect((state) => ({
     lang: state.intl.locale,
   })),

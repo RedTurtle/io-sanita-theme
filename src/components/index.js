@@ -85,6 +85,10 @@ export const SelectInput = loadable(() =>
   import('io-sanita-theme/components/Widgets/SelectInput/SelectInput'),
 );
 
+export const DateRange = loadable(() =>
+  import('io-sanita-theme/components/Widgets/DateRange/DateRange'),
+);
+
 //Search widgets
 export const SortByWidget = loadable(() =>
   import(
@@ -98,7 +102,7 @@ export const SearchBar = loadable(() =>
 );
 export const SearchCheckbox = loadable(() =>
   import(
-    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchCheckbox'
+    /* webpackChunkName: "is-search" */ 'io-sanita-theme/components/Widgets/SearchCheckbox/SearchCheckbox'
   ),
 );
 export const SearchSections = loadable(() =>

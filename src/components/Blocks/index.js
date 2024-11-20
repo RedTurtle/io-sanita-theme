@@ -49,6 +49,11 @@ export const QuickSearchView = loadable(() =>
     /* webpackChunkName: "ISBlockSearchMap" */ 'io-sanita-theme/components/Blocks/QuickSearch/View'
   ),
 );
+export const SearchBandiView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISBlockSearchBandi" */ 'io-sanita-theme/components/Blocks/SearchBandi/View'
+  ),
+);
 export const SearchFarmaciaView = loadable(() =>
   import(
     /* webpackChunkName: "ISBlockSearchFarmacia" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/View'
@@ -154,6 +159,11 @@ const QuickSearchEdit = loadable(() =>
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/QuickSearch/Edit'
   ),
 );
+const SearchBandiEdit = loadable(() =>
+  import(
+    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchBandi/Edit'
+  ),
+);
 const SearchFarmaciaEdit = loadable(() =>
   import(
     /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/SearchFarmacia/Edit'
@@ -183,6 +193,9 @@ const HTMLBlockSidebar = loadable(() =>
   ),
 );
 
+/*Others*/
+export SearchBandiFiltersConfig from 'io-sanita-theme/components/Blocks/SearchBandi/FiltersConfig';
+
 export {
   AccordionEdit,
   IconsEdit,
@@ -194,6 +207,7 @@ export {
   HeroEdit,
   HTMLBlockSidebar,
   QuickSearchEdit,
+  SearchBandiEdit,
   SearchFarmaciaEdit,
   SearchMapEdit,
   SearchServiziProcedureEdit,

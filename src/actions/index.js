@@ -29,6 +29,14 @@ import {
 } from './modulistica';
 
 import { getIoSanitaSettings, GET_IO_SANITA_SETTINGS } from './settings';
+import {
+  resetQuerystringResults,
+  RESET_QUERYSTRING_RESULTS,
+} from './resetQuerystringResults';
+import {
+  getSearchBandiFilters,
+  GET_SEARCH_BANDI_FILTERS,
+} from './getSearchBandiFilters';
 
 export {
   getSearchFilters,
@@ -45,4 +53,8 @@ export {
   RESET_MODULISTICA_ITEMS,
   getIoSanitaSettings,
   GET_IO_SANITA_SETTINGS,
+  resetQuerystringResults,
+  RESET_QUERYSTRING_RESULTS,
+  getSearchBandiFilters,
+  GET_SEARCH_BANDI_FILTERS,
 };
