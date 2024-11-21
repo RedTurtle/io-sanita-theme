@@ -5,7 +5,7 @@
 Crea con semplicità il nuovo sito della tua ASL
 conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
 
-![io-sanita](/docs/01-io-comune.png)
+![io-sanita](/docs/01-io-sanita.png)
 
 ### AgID 3.0
 
