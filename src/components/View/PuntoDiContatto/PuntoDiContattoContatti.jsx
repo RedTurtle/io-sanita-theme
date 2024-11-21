@@ -6,7 +6,7 @@ import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   contatti: {
-    id: 'servizio_contatti',
+    id: 'pdc_contatti',
     defaultMessage: 'Contatti',
   },
   email: {
@@ -18,7 +18,7 @@ const messages = defineMessages({
     defaultMessage: 'Telefono',
   },
   url: {
-    id: 'url',
+    id: 'sito web',
     defaultMessage: 'Sito web',
   },
   pec: {
@@ -61,7 +61,7 @@ const PuntoDiContattoContatti = ({ content }) => {
             <h3 className="h6 text-capitalize">
               {messages[pdc?.tipo] === undefined
                 ? pdc?.tipo
-                : intl.formatMessage(messages[pdc.tipo])}
+                : intl.formatMessage(messages[pdc.tipo.toLowerCase()])}
               :
             </h3>
             <span className="ms-1">

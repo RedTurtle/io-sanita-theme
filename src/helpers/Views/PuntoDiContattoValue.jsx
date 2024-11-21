@@ -61,7 +61,7 @@ export const PuntoDiContattoValue = ({ value }) => {
     case 'linkedin':
       return (
         <UniversalLink
-          href={`${value?.valore}`}
+          href={value?.valore}
           aria-label={`${intl.formatMessage(messages[value.tipo])}: ${
             value?.valore ?? ''
           }`}
