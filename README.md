@@ -1,9 +1,25 @@
 # io-sanita-theme
 
-## Introduction
+# io-Sanità il tema di Plone per le Aziende Sanitarie Locali (ASL)
 
-## Development
+Crea con semplicità il nuovo sito della tua ASL
+conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
 
+![io-sanita](/docs/01-io-comune.png)
+
+### AgID 3.0
+
+io-Sanità segue le linee guida ufficiali per il design dei siti web delle Aziende Sanitarie Locali: layout grafico, architettura informativa, struttura dei contenuti e flussi di navigazione rispecchiano gli standard definiti da AgID.
+
+### Pensato per i cittadini, costruito con i redattori
+
+io-Sanità è la soluzione versatile e facile da usare per garantire ai cittadini un rapido accesso ai contenuti e ai servizi della tua ASL, sia dal PC che da mobile.
+
+### Trovabilità dei contenuti
+
+io-Sanità integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
+
+## Installation and development
 You can develop an add-on in isolation using the boilerplate already provided by the add-on generator.
 The project is configured to have the current add-on installed and ready to work with.
 This is useful to bootstrap an isolated environment that can be used to quickly develop the add-on or for demo purposes.
