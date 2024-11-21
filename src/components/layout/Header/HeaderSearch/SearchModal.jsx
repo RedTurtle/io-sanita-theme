@@ -12,6 +12,7 @@ import {
   ModalBody,
   Container,
   Button,
+  Spinner,
 } from 'design-react-kit';
 
 import { SearchBar, QuickSearch, Icon } from 'io-sanita-theme/components';
@@ -49,6 +50,7 @@ const SearchModal = ({ closeModal, show }) => {
   const [searchableText, setSearchableText] = useState(
     qs.parse(location.search)?.SearchableText ?? '',
   );
+  const [redirectingToResults, setRedirectingToResults] = useState(false);
   const subsite = useSelector((state) => state.subsite?.data);
   const inputRef = React.useRef(null);
 
@@ -65,6 +67,7 @@ const SearchModal = ({ closeModal, show }) => {
 
   const submitSearch = (_searchableText) => {
     if (__CLIENT__) {
+      setRedirectingToResults(true);
       window.location.href =
         window.location.origin +
         getSearchParamsURL({
@@ -74,9 +77,9 @@ const SearchModal = ({ closeModal, show }) => {
         });
     }
 
-    setTimeout(() => {
-      closeModal();
-    }, 500);
+    // setTimeout(() => {
+    //   closeModal();
+    // }, 500);
   };
 
   return (
@@ -128,6 +131,11 @@ const SearchModal = ({ closeModal, show }) => {
             />
           </div>
         </Container>
+        {redirectingToResults && (
+          <div className="overlay loading-results">
+            <Spinner active />
+          </div>
+        )}
       </ModalBody>
     </Modal>
   );
