@@ -1,6 +1,4 @@
-# io-sanita-theme
-
-# io-Sanità il tema di Plone per le Aziende Sanitarie Locali (ASL)
+# io-Sanità: il tema di Plone per le Aziende Sanitarie Locali (ASL)
 
 Crea con semplicità il nuovo sito della tua ASL
 conforme alle nuove linee guida AgID, accessibile a tutti ed usabile da smartphone e da PC.
