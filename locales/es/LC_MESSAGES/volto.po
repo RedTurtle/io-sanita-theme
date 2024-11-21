@@ -24,8 +24,14 @@ msgid "Accedi all'area personale"
 msgstr "Accede a tu área personal"
 
 #. Default: "Aggiungi elemento"
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Contacts/Edit
 msgid "Add accordion item"
+msgstr ""
+
+#. Default: "Aggiungi elemento"
+#: components/Blocks/Icons/Edit
+msgid "Add icons item"
 msgstr ""
 
 #. Default: "Alert"
@@ -45,6 +51,7 @@ msgid "Attenzione!"
 msgstr ""
 
 #. Default: "Bando"
+#: components/View/Bando/BandoStatus/BandoStatus
 #: components/View/commons/PageHeader/PageHeaderBando
 msgid "Bando"
 msgstr "Aviso"
@@ -89,6 +96,11 @@ msgstr ""
 #: components/layout/Header/HeaderSearch/HeaderSearch
 msgid "Cerca"
 msgstr "Buscar"
+
+#. Default: "Cerca per parola chiave"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "Cerca per parola chiave"
+msgstr ""
 
 #. Default: "Pulisci i campi"
 #: overrideTranslations
@@ -157,6 +169,12 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#. Default: "Descrizione..."
+#: components/Blocks/Accordion/Edit
+#: components/Blocks/Icons/Edit
+msgid "Description placeholder"
+msgstr ""
+
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
@@ -165,6 +183,11 @@ msgstr ""
 #. Default: "Divide each row into separate cells"
 #: overrideTranslations
 msgid "Divide each row into separate cells"
+msgstr ""
+
+#. Default: "Errore: immagine non trovata"
+#: components/ImageWithErrors/ImageWithErrors
+msgid "Error - Image not found"
 msgstr ""
 
 #. Default: "Etichetta"
@@ -432,6 +455,11 @@ msgstr "Eliminar el archivo"
 msgid "Scroll to top"
 msgstr "Vuelve al comienzo"
 
+#. Default: "Ricerca bandi"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "SearchBandiBlock"
+msgstr ""
+
 #. Default: "Cerca una parola chiave"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlock"
@@ -456,6 +484,11 @@ msgstr ""
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
 msgstr "Seleccione un archivo"
+
+#. Default: "Seleziona un'icona nella barra a lato"
+#: components/Blocks/Icons/Block/EditBlock
+msgid "Seleziona un'icona"
+msgstr ""
 
 #. Default: "Servizio disponibile e prenotabile"
 #: components/View/commons/PageHeader/PageHeaderStatoServizio
@@ -488,6 +521,12 @@ msgid "Table color inverted"
 msgstr ""
 
 #. Default: "Testo..."
+#: components/Blocks/Icons/Block/EditBlock
+msgid "Testo placeholder"
+msgstr ""
+
+#. Default: "Text..."
+#: components/Blocks/Accordion/Block/EditBlock
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Text placeholder"
 msgstr ""
@@ -503,12 +542,15 @@ msgid "Tipi di contenuto"
 msgstr ""
 
 #. Default: "Titolo..."
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
+#: components/Blocks/Icons/Edit
 msgid "Title"
 msgstr ""
 
-#. Default: "Titolo..."
+#. Default: "Title..."
+#: components/Blocks/Accordion/Block/EditBlock
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Title placeholder"
 msgstr ""
@@ -516,6 +558,11 @@ msgstr ""
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "Titolo"
+msgstr ""
+
+#. Default: "Titolo..."
+#: components/Blocks/Icons/Block/EditBlock
+msgid "Titolo placeholder"
 msgstr ""
 
 #. Default: "Top"
@@ -585,7 +632,11 @@ msgid "Vai alla pagina"
 msgstr "Ir a la página"
 
 #. Default: "Vedi"
+#: components/Blocks/Accordion/Block/EditBlock
+#: components/Blocks/Accordion/Block/ViewBlock
 #: components/Blocks/Contacts/Block/EditBlock
+#: components/Blocks/Icons/Block/EditBlock
+#: components/Blocks/Icons/Block/ViewBlock
 #: components/Blocks/Listing/Map/MapTemplate
 msgid "Vedi"
 msgstr ""
@@ -606,6 +657,26 @@ msgstr ""
 #: components/Unauthorized/Unauthorized
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "Está intentando acceder a un elemento protegido, por favor, haga {login} primero."
+
+#. Default: "Mostra lo sfondo"
+#: components/Blocks/Accordion/Sidebar
+msgid "accordion_bg"
+msgstr ""
+
+#. Default: "Accordion"
+#: components/Blocks/Accordion/Sidebar
+msgid "accordion_block"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Accordion/Sidebar
+msgid "accordion_linkMore"
+msgstr ""
+
+#. Default: "Titolo per il link ad altro"
+#: components/Blocks/Accordion/Sidebar
+msgid "accordion_linkMoreTitle"
+msgstr ""
 
 #. Default: "Tutti"
 #: components/View/AggregationPage/AggregationPage
@@ -710,6 +781,12 @@ msgstr ""
 #. Default: "Allinea il bottone a destra"
 #: components/Blocks/Listing/schema
 msgid "alignButton"
+msgstr ""
+
+#. Default: "Allinea le card al centro"
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
+msgid "alignCards"
 msgstr ""
 
 #. Default: "Mostra l'immagine per tutti gli elementi"
@@ -847,13 +924,24 @@ msgstr ""
 msgid "ay11_select_press left to focus selected values"
 msgstr ""
 
+#. Default: "Immagine di sfondo"
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
+msgid "backgroundImage"
+msgstr ""
+
+#. Default: "Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale."
+#: components/Blocks/SearchBandi/Edit
+msgid "bandi_search_no_filters"
+msgstr ""
+
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
 msgid "bando_a_chi_si_rivolge"
 msgstr ""
 
 #. Default: "Scaduto"
-#: components/View/Bando/BandoStatus
+#: components/View/Bando/BandoStatus/BandoStatus
 msgid "bando_closed"
 msgstr "Expirado"
 
@@ -867,18 +955,24 @@ msgstr ""
 msgid "bando_cos_e"
 msgstr ""
 
+#. Default: "Pubblicato il"
+#: components/Blocks/Listing/Bandi/BandiTemplate
+msgid "bando_data_pubblicazione"
+msgstr ""
+
 #. Default: "Data di pubblicazione"
 #: components/View/Bando/Dates
 msgid "bando_effective"
 msgstr ""
 
-#. Default: "Ente erogatore"
+#. Default: "Ente"
+#: components/Blocks/Listing/Bandi/BandiTemplate
 #: components/View/Bando/BandoEnte
 msgid "bando_ente"
 msgstr ""
 
 #. Default: "In corso"
-#: components/View/Bando/BandoStatus
+#: components/View/Bando/BandoStatus/BandoStatus
 msgid "bando_inProgress"
 msgstr "En progreso"
 
@@ -893,12 +987,17 @@ msgid "bando_note_aggiornamento"
 msgstr ""
 
 #. Default: "Attivo"
-#: components/View/Bando/BandoStatus
+#: components/View/Bando/BandoStatus/BandoStatus
 msgid "bando_open"
 msgstr "Activar"
 
+#. Default: "Scadenza partecipazione"
+#: components/Blocks/Listing/Bandi/BandiTemplate
+msgid "bando_scadenza"
+msgstr ""
+
 #. Default: "Programmato"
-#: components/View/Bando/BandoStatus
+#: components/View/Bando/BandoStatus/BandoStatus
 msgid "bando_scheduled"
 msgstr "Programado"
 
@@ -907,9 +1006,26 @@ msgstr "Programado"
 msgid "bando_servizi_collegati"
 msgstr ""
 
+#. Default: "Stato"
+#: components/Blocks/Listing/Bandi/BandiTemplate
+msgid "bando_stato"
+msgstr ""
+
+#. Default: "Tipo"
+#: components/Blocks/Listing/Bandi/BandiTemplate
+msgid "bando_tipologia"
+msgstr ""
+
+#. Default: "Vedi"
+#: components/Blocks/Listing/Bandi/BandiTemplate
+msgid "bando_vedi"
+msgstr ""
+
 #. Default: "Colore di sfondo"
 #: components/Blocks/Contacts/schema
 #: components/Blocks/Contacts/Sidebar
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
 msgid "bg_color"
 msgstr ""
 
@@ -949,6 +1065,11 @@ msgstr ""
 msgid "card_file_last_update"
 msgstr ""
 
+#. Default: "Vedi"
+#: components/Blocks/Listing/CardWithSlideUpText/CardWithSlideUpTextTemplate
+msgid "card_vedi"
+msgstr ""
+
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
 msgid "carousel"
@@ -980,6 +1101,7 @@ msgid "category_icon"
 msgstr ""
 
 #. Default: "Chiusura del procedimento"
+#: components/Blocks/Listing/Bandi/BandiTemplate
 #: components/View/Bando/Dates
 msgid "chiusura_procedimento_bando"
 msgstr ""
@@ -1002,6 +1124,11 @@ msgstr ""
 #. Default: "Chiudi menu"
 #: components/layout/Navigation/CollapseNavigation
 msgid "close-menu"
+msgstr ""
+
+#. Default: "Chiudi l'accordion"
+#: components/Blocks/Accordion/Block/ViewBlock
+msgid "closeAccordion"
 msgstr ""
 
 #. Default: "Chiudi cerca"
@@ -1034,9 +1161,35 @@ msgstr ""
 msgid "color_note"
 msgstr ""
 
+#. Default: "Primario"
+#: components/Blocks/Icons/Sidebar
+msgid "color_primary"
+msgstr ""
+
+#. Default: "Primario scuro"
+#: components/Blocks/Icons/schema
+msgid "color_primary_dark"
+msgstr ""
+
+#. Default: "Primario chiaro"
+#: components/Blocks/Icons/schema
+msgid "color_primary_light"
+msgstr ""
+
+#. Default: "Secondario"
+#: components/Blocks/Icons/Sidebar
+msgid "color_secondary"
+msgstr ""
+
 #. Default: "Success"
 #: components/Blocks/Callout/Sidebar
 msgid "color_success"
+msgstr ""
+
+#. Default: "Trasparente"
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
+msgid "color_transparent"
 msgstr ""
 
 #. Default: "Warning"
@@ -1138,6 +1291,156 @@ msgstr ""
 #: components/View/commons/PageHeader/PageHeaderDates
 msgid "date"
 msgstr "Fecha"
+
+#. Default: "Calendario"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_calendarLabel"
+msgstr ""
+
+#. Default: "Scegli"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_choose"
+msgstr ""
+
+#. Default: "Cancella la data"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_clearDate"
+msgstr ""
+
+#. Default: "Cancella le date"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_clearDates"
+msgstr ""
+
+#. Default: "Chiudi"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_closeDatePicker"
+msgstr ""
+
+#. Default: "Tasto invio"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_enterKey"
+msgstr ""
+
+#. Default: "Tasto Esc"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_escape"
+msgstr ""
+
+#. Default: "Interagisci con il calendario e seleziona le date di inizio e/o fine"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_focusStartDate"
+msgstr ""
+
+#. Default: "Chiudi il pannello dei tasti rapidi"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_hideKeyboardShortcutsPanel"
+msgstr ""
+
+#. Default: "Tasti inizio e fine"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_homeEnd"
+msgstr ""
+
+#. Default: "Via avanti per passare al mese successivo"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_jumpToNextMonth"
+msgstr ""
+
+#. Default: "Torna indietro per passare al mese precedente"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_jumpToPrevMonth"
+msgstr ""
+
+#. Default: "Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date."
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_keyboardBackwardNavigationInstructions"
+msgstr ""
+
+#. Default: "Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date."
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_keyboardForwardNavigationInstructions"
+msgstr ""
+
+#. Default: "Tasti rapidi"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_keyboardShortcuts"
+msgstr ""
+
+#. Default: "Tasti freccia destra e sinistra"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_leftArrowRightArrow"
+msgstr ""
+
+#. Default: "Spostati indietro (sinistra) e avanti (destra) di un giorno."
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_moveFocusByOneDay"
+msgstr ""
+
+#. Default: "Cambia mese"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_moveFocusByOneMonth"
+msgstr ""
+
+#. Default: "Spostati indietro (su) e avanti (giu) di una settimana."
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_moveFocusByOneWeek"
+msgstr ""
+
+#. Default: "Vai al primo o all'ultimo giorno della settimana"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_moveFocustoStartAndEndOfWeek"
+msgstr ""
+
+#. Default: "Apri questo pannello."
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_openThisPanel"
+msgstr ""
+
+#. Default: "Tasti pagina su e giu"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_pageUpPageDown"
+msgstr ""
+
+#. Default: "Punto interrogativo"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_questionMark"
+msgstr ""
+
+#. Default: "Torna al campo di inserimento data"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_returnFocusToInput"
+msgstr ""
+
+#. Default: "Seleziona date"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_roleDescription"
+msgstr ""
+
+#. Default: "Seleziona la data evidenziata"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_selectFocusedDate"
+msgstr ""
+
+#. Default: "Apri il pannello dei tasti rapidi"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_showKeyboardShortcutsPanel"
+msgstr ""
+
+#. Default: "Tasti freccia su e giu"
+#: components/Widgets/DateRange/DateRange
+msgid "dateRangePicker_upArrowDownArrow"
+msgstr ""
+
+#. Default: "Data fine"
+#: components/Widgets/DateRange/DateRange
+msgid "daterange_end"
+msgstr ""
+
+#. Default: "Data inizio"
+#: components/Widgets/DateRange/DateRange
+msgid "daterange_start"
+msgstr ""
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils
@@ -1384,6 +1687,11 @@ msgstr ""
 msgid "filtersCollapse"
 msgstr ""
 
+#. Default: "Cerca"
+#: components/Blocks/SearchBandi/Body
+msgid "find"
+msgstr ""
+
 #. Default: "Annulla"
 #: overrideTranslations
 msgid "form_default_cancel_label"
@@ -1456,6 +1764,28 @@ msgstr ""
 msgid "iconDescription"
 msgstr ""
 
+#. Default: "Blocco con icone"
+#: components/Blocks/Icons/Sidebar
+msgid "icons_blocks"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
+msgid "icons_linkMore"
+msgstr ""
+
+#. Default: "Link ad altro"
+#: components/Blocks/Icons/schema
+msgid "icons_linkMoreHref"
+msgstr ""
+
+#. Default: "Titolo per il link ad altro"
+#: components/Blocks/Icons/schema
+#: components/Blocks/Icons/Sidebar
+msgid "icons_linkMoreTitle"
+msgstr ""
+
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
 msgid "index"
@@ -1505,6 +1835,11 @@ msgstr ""
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "loadVideo"
+msgstr ""
+
+#. Default: "Posizione in cui cercare"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "location_to_search"
 msgstr ""
 
 #. Default: "log in"
@@ -1698,6 +2033,11 @@ msgstr ""
 msgid "news_video_gallery"
 msgstr ""
 
+#. Default: "Nessun risultato trovato"
+#: components/Blocks/SearchBandi/Body
+msgid "noResult"
+msgstr ""
+
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
 msgid "novita"
@@ -1707,6 +2047,11 @@ msgstr ""
 #: components/View/commons/PageHeader/PageHeaderNewsItem
 msgid "numero_progressivo_cs"
 msgstr "Número de comunicado de prensa"
+
+#. Default: "Apri l'accordion"
+#: components/Blocks/Accordion/Block/ViewBlock
+msgid "openAccordion"
+msgstr ""
 
 #. Default: "Apri link in una nuova scheda"
 #: components/Blocks/CTA/Block
@@ -1766,6 +2111,11 @@ msgstr ""
 #. Default: "Account"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_account"
+msgstr ""
+
+#. Default: "Contatti"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "pdc_contatti"
 msgstr ""
 
 #. Default: "Correlati"
@@ -2055,6 +2405,38 @@ msgstr ""
 msgid "rrule_weekdays"
 msgstr ""
 
+#. Default: "No results from RSS feed."
+#: components/Blocks/Rss/CardWithImageRssTemplate
+#: components/Blocks/Rss/CardWithoutImageRssTemplate
+msgid "rss_no_results"
+msgstr ""
+
+#. Default: "Read more"
+#: components/Blocks/Rss/CardWithImageRssTemplate
+#: components/Blocks/Rss/CardWithoutImageRssTemplate
+msgid "rss_read_more"
+msgstr ""
+
+#. Default: "Categoria"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "sarchBandi_categoria_placeholder"
+msgstr ""
+
+#. Default: "Ente"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "sarchBandi_ente_placeholder"
+msgstr ""
+
+#. Default: "Tipologia"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "sarchBandi_tipologia_placeholder"
+msgstr ""
+
+#. Default: "Ufficio responsabile"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "sarchBandi_ufficio_responsabile_placeholder"
+msgstr ""
+
 #. Default: "Scadenza dei termini per partecipare al bando"
 #: components/View/Bando/Dates
 msgid "scadenza_bando"
@@ -2070,6 +2452,117 @@ msgstr ""
 #: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr "Búsqueda"
+
+#. Default: "Filtro per Categoria"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_categoria_filter"
+msgstr ""
+
+#. Default: "Filtro per data di chiusura del procedimento"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_chiusura_filter"
+msgstr ""
+
+#. Default: "Chiusura dal"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_chiusura_filter_from"
+msgstr ""
+
+#. Default: "Chiusura al"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_chiusura_filter_to"
+msgstr ""
+
+#. Default: "Filtro per date"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_date_filter"
+msgstr ""
+
+#. Default: "Filtro per Ente"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_ente_filter"
+msgstr ""
+
+#. Default: "Filtro 1"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_filter_one"
+msgstr ""
+
+#. Default: "Filtro 3"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_filter_three"
+msgstr ""
+
+#. Default: "Filtro 2"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_filter_two"
+msgstr ""
+
+#. Default: "Seleziona i filtri di ricerca da mostrare nel blocco."
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_help"
+msgstr ""
+
+#. Default: "Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri."
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_help_filters"
+msgstr ""
+
+#. Default: "Filtri pre-impostati"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_pre_filters"
+msgstr ""
+
+#. Default: "Primario"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_primarycolor"
+msgstr ""
+
+#. Default: "Filtro per data di scadenza del bando"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_scadenza_filter"
+msgstr ""
+
+#. Default: "Scadenza dal"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_scadenza_filter_from"
+msgstr ""
+
+#. Default: "Scadenza al"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_scadenza_filter_to"
+msgstr ""
+
+#. Default: "Secondario"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_secondaryColor"
+msgstr ""
+
+#. Default: "Ternario"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_tertiaryColor"
+msgstr ""
+
+#. Default: "Filtro di testo"
+#: components/Blocks/SearchBandi/DefaultFilters
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_text_filter"
+msgstr ""
+
+#. Default: "Filtro per tipologia"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_tipologia_filter"
+msgstr ""
+
+#. Default: "Filtro per Ufficio responsabile"
+#: components/Blocks/SearchBandi/DefaultFilters
+msgid "searchBlock_ufficio_responsabile_filter"
+msgstr ""
+
+#. Default: "Filtro per luoghi"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "searchBlock_venue_filter"
+msgstr ""
 
 #. Default: "Cerca contenuti in"
 #: components/View/commons/PageHeader/SearchSectionForm
@@ -2102,32 +2595,32 @@ msgid "search_brdc"
 msgstr ""
 
 #. Default: "{filterNumber} filtri attivati"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_active_filters"
 msgstr ""
 
 #. Default: "argomenti"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_default_title"
 msgstr ""
 
 #. Default: "Nascondi"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_hide_all"
 msgstr ""
 
 #. Default: "Cerca per"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_search_to"
 msgstr ""
 
 #. Default: "Seleziona tutti o nessuno"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_select_all"
 msgstr ""
 
 #. Default: "Mostra tutto"
-#: components/Widgets/SearchCheckbox
+#: components/Widgets/SearchCheckbox/SearchCheckbox
 msgid "search_checkbox_show_all"
 msgstr ""
 
@@ -2603,7 +3096,6 @@ msgid "servizio_avvisi_e_notizie"
 msgstr ""
 
 #. Default: "Contatti"
-#: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: components/View/Servizio/ServizioContatti
 msgid "servizio_contatti"
 msgstr ""
@@ -2705,7 +3197,7 @@ msgid "show_dots"
 msgstr ""
 
 #. Default: "Mostra l'ente"
-#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+#: config/blocks/listing/ListingOptions/bandiTemplate
 msgid "show_ente"
 msgstr ""
 
@@ -2760,7 +3252,7 @@ msgid "show_section"
 msgstr ""
 
 #. Default: "Mostra la tipologia"
-#: config/blocks/listing/ListingOptions/bandiInEvidenceTemplate
+#: config/blocks/listing/ListingOptions/bandiTemplate
 msgid "show_tipologia"
 msgstr ""
 
@@ -2792,6 +3284,11 @@ msgstr ""
 #. Default: "Strutture / Luoghi"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_place"
+msgstr ""
+
+#. Default: "Sito web"
+#: components/View/PuntoDiContatto/PuntoDiContattoContatti
+msgid "sito web"
 msgstr ""
 
 #. Default: "Skip to footer"
@@ -2840,9 +3337,29 @@ msgstr ""
 msgid "sort_Date"
 msgstr ""
 
+#. Default: "Data di apertura"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_apertura_bando"
+msgstr ""
+
 #. Default: "Ordina per"
 #: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_by"
+msgstr ""
+
+#. Default: "Chiusura procedimento bando"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_chiusura_procedimento_bando"
+msgstr ""
+
+#. Default: "Data di pubblicazione"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_effective_date"
+msgstr ""
+
+#. Default: "Data di modifica"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_modified_date"
 msgstr ""
 
 #. Default: "Alfabeticamente"
@@ -2850,9 +3367,24 @@ msgstr ""
 msgid "sort_name"
 msgstr ""
 
+#. Default: "Ordina per"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_on"
+msgstr ""
+
+#. Default: "Ordine inverso"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_order"
+msgstr ""
+
 #. Default: "Rilevanza"
 #: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_relevance"
+msgstr ""
+
+#. Default: "Scadenza termini partecipazione"
+#: components/Blocks/SearchBandi/Sidebar
+msgid "sort_scadenza_bando"
 msgstr ""
 
 #. Default: "Sponsor"
@@ -3001,6 +3533,11 @@ msgstr ""
 msgid "tempi_e_scadenze"
 msgstr ""
 
+#. Default: "Inserisci un valore"
+#: components/Widgets/SearchFilters/TextFilter
+msgid "text_filter_placeholder"
+msgstr ""
+
 #. Default: "Tipologia del bando"
 #: components/View/Bando/BandoTipologia
 msgid "tipologia_bando"
@@ -3145,11 +3682,6 @@ msgstr ""
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "update_date"
-msgstr ""
-
-#. Default: "Sito web"
-#: components/View/PuntoDiContatto/PuntoDiContattoContatti
-msgid "url"
 msgstr ""
 
 #. Default: "Vedi su Apple Maps"
