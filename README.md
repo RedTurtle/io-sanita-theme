@@ -18,4 +18,4 @@ io-Sanità è la soluzione versatile e facile da usare per garantire ai cittadin
 io-Sanità integra componenti e flussi di navigazione suggeriti da AgID, con l'esperienza ventennale di [RedTurtle](https://www.redturtle.it/) nella gestione di complesse basi informative per darti la migliore esperienza di fruizione e portarti velocemente al contenuto desiderato.
 
 ## Installazione e sviluppo
-vedi la ![guida](/DEVELOPMENT.md)
+vedi la [guida](/DEVELOPMENT.md)
