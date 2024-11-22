@@ -57,7 +57,7 @@ msgstr "In basso"
 #. Default: "Browse"
 #: components/Blocks/Hero/Edit
 msgid "Browse"
-msgstr ""
+msgstr "Cerca"
 
 #. Default: "Callout"
 #: components/Blocks/Callout/Sidebar
@@ -221,7 +221,7 @@ msgstr ""
 #. Default: "Headline"
 #: components/Blocks/HTML/schema
 msgid "Headline"
-msgstr ""
+msgstr "Titolo"
 
 #. Default: "Hero"
 #: components/Blocks/Hero/HeroSidebar
@@ -253,7 +253,7 @@ msgstr ""
 #. Default: "Image"
 #: components/Blocks/Hero/Edit
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #. Default: "Impostazioni cookie"
 #: components/layout/Footer/FooterSmall
@@ -605,17 +605,17 @@ msgstr "Non autorizzato"
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
-msgstr ""
+msgstr "Blocco {block} sconosciuto"
 
 #. Default: "Upload a new image"
 #: components/Blocks/Hero/Edit
 msgid "Upload a new image"
-msgstr ""
+msgstr "Carica una nuova immagine"
 
 #. Default: "Uploading image"
 #: components/Blocks/Hero/Edit
 msgid "Uploading image"
-msgstr ""
+msgstr "Sto caricando l'immagine"
 
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
@@ -1142,7 +1142,7 @@ msgstr ""
 #. Default: "Danger"
 #: components/Blocks/Callout/Sidebar
 msgid "color_danger"
-msgstr ""
+msgstr "Rosso"
 
 #. Default: "Default"
 #: components/Blocks/Callout/Sidebar
@@ -1188,7 +1188,7 @@ msgstr ""
 #. Default: "Warning"
 #: components/Blocks/Callout/Sidebar
 msgid "color_warning"
-msgstr ""
+msgstr "Giallo"
 
 #. Default: "A chi si rivolge"
 #: components/View/ComeFarePer/ComeFarePerAChiSiRivolge
