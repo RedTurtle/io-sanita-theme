@@ -1,13 +1,10 @@
 {
   "hooks": {
     "before:init": ["yarn install --immutable", "yarn i18n"],
-    "after:bump": "pipx run towncrier build --draft --yes --version ${version} > .changelog.draft && pipx run towncrier build --yes --version ${version}",
+    "after:bump": "git diff --unified=0 CHANGELOG.md | grep '^+' > .changelog.draft",
     "after:release": "rm .changelog.draft"
   },
   "git": {
-    "changelog": "pipx run towncrier build --draft --yes --version 0.0.0",
-    "requireUpstream": false,
-    "requireCleanWorkingDir": false,
     "commitMessage": "chore: Release ${version}",
     "tagName": "${version}",
     "tagAnnotation": "Release ${version}"
@@ -19,5 +16,60 @@
   },
   "npm": {
     "publish": true
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "refactor",
+            "section": "Changes"
+          },
+          {
+            "type": "chore",
+            "section": "Maintenance"
+          },
+          {
+            "type": "ci",
+            "section": "Maintenance"
+          },
+          {
+            "type": "perf",
+            "section": "Maintenance"
+          },
+          {
+            "type": "build",
+            "section": "Maintenance"
+          },
+          {
+            "type": "style",
+            "section": "Maintenance"
+          },
+          {
+            "type": "revert",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "test",
+            "section": "Maintenance"
+          },
+          {
+            "type": "docs",
+            "section": "Documentation"
+          }
+        ]
+      }
+    }
   }
 }

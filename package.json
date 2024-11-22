@@ -77,6 +77,7 @@
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-contents-next": "0.4.4",
     "@plone-collective/volto-sentry": "0.3.1",
+    "@release-it/conventional-changelog": "^9.0.3",
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.0-10",
     "react-focus-lock": "2.12.1",

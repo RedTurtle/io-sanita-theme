@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-11-21T13:17:23.540Z\n"
+"POT-Creation-Date: 2024-11-22T10:24:29.374Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -2427,11 +2427,6 @@ msgstr ""
 msgid "sarchBandi_tipologia_placeholder"
 msgstr ""
 
-#. Default: "Ufficio responsabile"
-#: components/Blocks/SearchBandi/DefaultFilters
-msgid "sarchBandi_ufficio_responsabile_placeholder"
-msgstr ""
-
 #. Default: "Scadenza dei termini per partecipare al bando"
 #: components/View/Bando/Dates
 msgid "scadenza_bando"
@@ -2547,11 +2542,6 @@ msgstr ""
 #. Default: "Filtro per tipologia"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_tipologia_filter"
-msgstr ""
-
-#. Default: "Filtro per Ufficio responsabile"
-#: components/Blocks/SearchBandi/DefaultFilters
-msgid "searchBlock_ufficio_responsabile_filter"
 msgstr ""
 
 #. Default: "Filtro per luoghi"

@@ -2430,11 +2430,6 @@ msgstr ""
 msgid "sarchBandi_tipologia_placeholder"
 msgstr ""
 
-#. Default: "Ufficio responsabile"
-#: components/Blocks/SearchBandi/DefaultFilters
-msgid "sarchBandi_ufficio_responsabile_placeholder"
-msgstr ""
-
 #. Default: "Scadenza dei termini per partecipare al bando"
 #: components/View/Bando/Dates
 msgid "scadenza_bando"
@@ -2550,11 +2545,6 @@ msgstr ""
 #. Default: "Filtro per tipologia"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_tipologia_filter"
-msgstr ""
-
-#. Default: "Filtro per Ufficio responsabile"
-#: components/Blocks/SearchBandi/DefaultFilters
-msgid "searchBlock_ufficio_responsabile_filter"
 msgstr ""
 
 #. Default: "Filtro per luoghi"
