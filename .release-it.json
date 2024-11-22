@@ -11,7 +11,7 @@
     "release": true,
     "releaseName": "${version}",
 
-    "releaseNotes": "git diff --unified=0 CHANGELOG.md | grep '^+'"
+    "releaseNotes": "git diff HEAD~1 --unified=0 CHANGELOG.md | grep '^+' | sed 's/^+//'"
   },
   "npm": {
     "publish": true
