@@ -9,9 +9,7 @@
   },
   "github": {
     "release": true,
-    "releaseName": "${version}",
-
-    "releaseNotes": "git diff HEAD~1 --unified=0 CHANGELOG.md | grep '^+' | sed 's/^+//'"
+    "releaseName": "${version}"
   },
   "npm": {
     "publish": true
