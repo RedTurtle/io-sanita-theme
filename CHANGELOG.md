@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.1...1.0.2) (2024-11-22)
+
+### Bug Fixes
+
+* searchSectionForm with on mobile ([76de553](https://github.com/RedTurtle/io-sanita-theme/commit/76de55332ca6b4224bffab1dc70458594ff6dab6))
+
 ## [1.0.1](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.0...1.0.1) (2024-11-22)
 
 ### Bug Fixes
