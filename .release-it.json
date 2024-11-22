@@ -1,8 +1,6 @@
 {
   "hooks": {
-    "before:init": ["yarn install --immutable", "yarn i18n"],
-    "after:bump": "git diff --unified=0 CHANGELOG.md | grep '^+' > .changelog.draft",
-    "after:release": "rm .changelog.draft"
+    "before:init": ["yarn install --immutable", "yarn i18n"]
   },
   "git": {
     "commitMessage": "chore: Release ${version}",
@@ -12,7 +10,8 @@
   "github": {
     "release": true,
     "releaseName": "${version}",
-    "releaseNotes": "cat .changelog.draft"
+
+    "releaseNotes": "git diff --unified=0 CHANGELOG.md | grep '^+'"
   },
   "npm": {
     "publish": true
