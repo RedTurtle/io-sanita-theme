@@ -31,14 +31,6 @@ const messages = defineMessages({
     id: 'sarchBandi_ente_placeholder',
     defaultMessage: 'Ente',
   },
-  ufficio_responsabile_filter: {
-    id: 'searchBlock_ufficio_responsabile_filter',
-    defaultMessage: 'Filtro per Ufficio responsabile',
-  },
-  ufficio_responsabile: {
-    id: 'sarchBandi_ufficio_responsabile_placeholder',
-    defaultMessage: 'Ufficio responsabile',
-  },
   categoria_filter: {
     id: 'searchBlock_categoria_filter',
     defaultMessage: 'Filtro per Categoria',
@@ -152,36 +144,6 @@ const DefaultFilters = (pathSearch, block_id) => {
         if (value?.value) {
           query.push({
             i: 'ente_bando',
-            o: 'plone.app.querystring.operation.selection.any',
-            v: value.value,
-          });
-        }
-      },
-    },
-    ufficio_responsabile_filter: {
-      label: intl.formatMessage(messages.ufficio_responsabile_filter),
-      type: 'ufficio_responsabile_filter',
-      widget: {
-        component: SelectFilter,
-        props: {
-          value: null,
-          options: {
-            dispatch: {
-              action: getSearchBandiFilters,
-              path: subsite
-                ? flattenToAppURL(subsite['@id'])
-                : pathSearch || '/',
-              stateSelector: 'searchBandiFilters',
-              resultProp: 'offices',
-            },
-            placeholder: intl.formatMessage(messages.ufficio_responsabile),
-          },
-        },
-      },
-      query: (value, query) => {
-        if (value?.value) {
-          query.push({
-            i: 'ufficio_responsabile',
             o: 'plone.app.querystring.operation.selection.any',
             v: value.value,
           });
