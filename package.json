@@ -33,7 +33,8 @@
     "volto-data-grid-widget",
     "volto-venue",
     "volto-site-settings",
-    "volto-rss-block"
+    "volto-rss-block",
+    "@eeacms/volto-taxonomy"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -74,6 +75,7 @@
     "@babel/plugin-proposal-export-default-from": "7.18.9",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
+    "@eeacms/volto-taxonomy": "5.1.1",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-contents-next": "0.4.4",
     "@plone-collective/volto-sentry": "0.3.1",

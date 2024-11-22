@@ -70,7 +70,7 @@ const SearchSectionForm = ({ content }) => {
   };
   return (
     <div className="search-section-form full-width bg-primary-lightest py-5">
-      <Container className="px-5">
+      <Container className="px-4 px-lg-5">
         <div className="form-group my-0">
           <div className="input-group">
             <span className="input-group-text">
