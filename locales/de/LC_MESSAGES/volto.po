@@ -183,11 +183,6 @@ msgstr ""
 msgid "Divide each row into separate cells"
 msgstr ""
 
-#. Default: "Errore: immagine non trovata"
-#: components/ImageWithErrors/ImageWithErrors
-msgid "Error - Image not found"
-msgstr ""
-
 #. Default: "Etichetta"
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"

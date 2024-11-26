@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-11-22T10:24:29.374Z\n"
+"POT-Creation-Date: 2024-11-26T09:46:11.558Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -178,11 +178,6 @@ msgstr ""
 #. Default: "Divide each row into separate cells"
 #: overrideTranslations
 msgid "Divide each row into separate cells"
-msgstr ""
-
-#. Default: "Errore: immagine non trovata"
-#: components/ImageWithErrors/ImageWithErrors
-msgid "Error - Image not found"
 msgstr ""
 
 #. Default: "Etichetta"
