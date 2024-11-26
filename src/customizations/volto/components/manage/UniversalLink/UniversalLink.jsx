@@ -5,6 +5,7 @@
  * CUSTOMIZATIONS:
  * - aggiunto icona per link esterni
  * - aggiunto title informativo per link esterni
+ * - aggiunta condizione per non avere un duplicato di @@download/file p @@display-file/file, perchè su io-sanità arriva dal BE anche per gli anonimi
  */
 
 import React from 'react';
@@ -62,14 +63,16 @@ const UniversalLink = ({
       //case: item of type 'File'
       if (
         !token &&
-        config.settings.downloadableObjects.includes(item['@type'])
+        config.settings.downloadableObjects.includes(item['@type']) &&
+        url.indexOf('@@download') < 0 //aggiunta condizione per non avere un duplicato di @@download/file, perchè su io-sanità arriva dal BE anche per gli anonimi
       ) {
         url = `${url}/@@download/file`;
       }
 
       if (
         !token &&
-        config.settings.viewableInBrowserObjects.includes(item['@type'])
+        config.settings.viewableInBrowserObjects.includes(item['@type']) &&
+        url.indexOf('@@display-file') < 0 //aggiunta condizione per non avere un duplicato di @@display-file/file, perchè su io-sanità arriva dal BE anche per gli anonimi
       ) {
         url = `${url}/@@display-file/file`;
       }
