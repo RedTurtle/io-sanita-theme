@@ -13,6 +13,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RedTurtle/io-sanita-theme"
+  },
   "addons": [
     "@plone-collective/volto-sentry",
     "@plone-collective/volto-contents-next",
