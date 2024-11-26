@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.3](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.2...1.0.3) (2024-11-26)
+
+### Bug Fixes
+
+* duplicate @@download/file and @@display-file/file for anonymous users ([62a5e32](https://github.com/RedTurtle/io-sanita-theme/commit/62a5e3268b44633e7c81227ae981675a01ca6309))
+* image with errors component ([a6610ab](https://github.com/RedTurtle/io-sanita-theme/commit/a6610ab8b054bf605a6c1956b79964851ecb4598))
+
+### Maintenance
+
+* udpated locales ([5404a61](https://github.com/RedTurtle/io-sanita-theme/commit/5404a6158a273d4500d978d0ac544b122d5448d0))
+
 ## [1.0.2](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.1...1.0.2) (2024-11-22)
 
 ### Bug Fixes
