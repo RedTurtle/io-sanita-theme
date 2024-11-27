@@ -42,7 +42,7 @@ const Breadcrumbs = ({ pathname, match }) => {
 
   let items =
     useSelector((state) => {
-      return state.breadcrumbs.items;
+      return [...state.breadcrumbs.items];
     }, isEqual) || [];
   const subsite = useSelector((state) => state.subsite?.data);
   const bcLoaded = useSelector((state) => {
