@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.5](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.4...1.0.5) (2024-11-27)
+
+### Bug Fixes
+
+* breadcrumbs ssr rewrite ([7127cc9](https://github.com/RedTurtle/io-sanita-theme/commit/7127cc926b3be860bc4f7704747fc4593685c9b5))
+
 ## [1.0.4](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.3...1.0.4) (2024-11-26)
 
 ## [1.0.3](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.2...1.0.3) (2024-11-26)
