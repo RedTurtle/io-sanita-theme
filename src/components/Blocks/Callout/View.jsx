@@ -26,7 +26,7 @@ const View = ({ data, id }) => {
           {data.icon && <Icon icon={data.icon} padding={false} aria-hidden />}
           <span className="text">{data.title}</span>
         </CalloutTitle>
-        <CalloutText>
+        <CalloutText tag="div" className="callout-text">
           <TextBlockView id={id} data={{ value: data.text }} />
         </CalloutText>
       </Callout>

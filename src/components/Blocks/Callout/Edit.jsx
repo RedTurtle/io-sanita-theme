@@ -69,7 +69,7 @@ const Edit = (props) => {
             />
           </div>
         </CalloutTitle>
-        <CalloutText>
+        <CalloutText tag="div" className="callout-text">
           <TextEditorWidget
             {...otherProps}
             data={data}
