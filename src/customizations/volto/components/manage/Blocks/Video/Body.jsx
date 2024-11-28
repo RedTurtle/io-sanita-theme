@@ -9,7 +9,7 @@
  * - overhauled url checking, it would break on correct links and allow incorrect ones
  */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Embed, Message } from 'semantic-ui-react';
@@ -26,6 +26,10 @@ import config from '@plone/volto/registry';
  * @extends Component
  */
 const Body = ({ data, isEditMode }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   const allowsExternals =
     data.allowExternals !== undefined
       ? !!data.allowExternals
@@ -34,7 +38,6 @@ const Body = ({ data, isEditMode }) => {
   let placeholder = null;
   let videoID = null;
   let listID = null;
-
   if (data.url) {
     const [computedID, computedPlaceholder] = videoUrlHelper(
       data.url,
@@ -74,7 +77,12 @@ const Body = ({ data, isEditMode }) => {
     ref: ref,
   };
 
-  return (
+  let apiPath = config.settings.apiPath;
+  if (!apiPath.endsWith('/')) {
+    apiPath += '/';
+  }
+
+  return isClient ? (
     <>
       {data.url && (
         <div
@@ -82,11 +90,12 @@ const Body = ({ data, isEditMode }) => {
             'full-width': data.align === 'full',
           })}
         >
-          <ConditionalEmbed url={data.url}>
+          <ConditionalEmbed url={data.url} suppressHydrationWarning>
             {data.url.match('youtu') ? (
               <>
                 {data.url.match('list') ? (
                   <Embed
+                    suppressHydrationWarning
                     url={`https://www.youtube.com/embed/videoseries?list=${listID}`}
                     {...embedSettings}
                   />
@@ -105,10 +114,7 @@ const Body = ({ data, isEditMode }) => {
                       <video
                         src={
                           isInternalURL(
-                            data.url.replace(
-                              getParentUrl(config.settings.apiPath),
-                              '',
-                            ),
+                            data.url.replace(getParentUrl(apiPath), ''),
                           )
                             ? `${data.url}${
                                 data.url.indexOf('@@download/file') < 0
@@ -151,7 +157,7 @@ const Body = ({ data, isEditMode }) => {
         </div>
       )}
     </>
-  );
+  ) : null;
 };
 
 /**
