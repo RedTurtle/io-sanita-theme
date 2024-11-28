@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.7](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.6...1.0.7) (2024-11-28)
+
+### Bug Fixes
+
+* hidration failing for Callout block ([77517cb](https://github.com/RedTurtle/io-sanita-theme/commit/77517cba3dee9506c3f87c1201d72c0fdb751ce0))
+
+### Maintenance
+
+* updated volto-gdpr-privacy ([195c329](https://github.com/RedTurtle/io-sanita-theme/commit/195c329643b4de82c93ab081e5457718cab9d78a))
+
 ## [1.0.6](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.5...1.0.6) (2024-11-28)
 
 ### Maintenance
