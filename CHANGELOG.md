@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.6](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.5...1.0.6) (2024-11-28)
+
+### Maintenance
+
+* fix hidration failing video block ([588ee09](https://github.com/RedTurtle/io-sanita-theme/commit/588ee097dcddd4b848ceeff4264f02b04eb7d243))
+
 ## [1.0.5](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.4...1.0.5) (2024-11-27)
 
 ### Bug Fixes
