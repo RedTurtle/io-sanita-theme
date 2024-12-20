@@ -69,13 +69,18 @@ const FileWidget = (props) => {
     validationText,
   } = props;
   const [isImage, setIsImage] = React.useState(false);
+  const [imageSRC, setImageSRC] = React.useState(null);
   const intl = useIntl();
 
   React.useEffect(() => {
     if (value && imageMimetypes.includes(value['content-type'])) {
       setIsImage(true);
+      if (value.download) {
+        setImageSRC(`${flattenToAppURL(imageSRC)}?id=${Date.now()}`);
+      }
     } else {
       setIsImage(false);
+      setImageSRC(null);
     }
   }, [value]);
 
@@ -102,8 +107,9 @@ const FileWidget = (props) => {
       const fields = reader.result.match(/^data:(.*);(.*),(.*)$/);
       if (imageMimetypes.includes(fields[1])) {
         setIsImage(true);
-        let imagePreview = document.getElementById(`field-${id}-image`);
-        imagePreview.src = reader.result;
+        // let imagePreview = document.getElementById(`field-${id}-image`);
+        // imagePreview.src = reader.result;
+        setImageSRC(reader.result);
       } else {
         setIsImage(false);
       }
@@ -131,19 +137,20 @@ const FileWidget = (props) => {
           {({ getRootProps, getInputProps, isDragActive }) => (
             <div className="file-widget-dropzone" {...getRootProps()}>
               {isDragActive && <Dimmer></Dimmer>}
+
               {isImage ? (
-                <img
-                  className="image-preview"
-                  id={`field-${id}-image`}
-                  src={
-                    value?.download
-                      ? `${flattenToAppURL(value.download)}?id=${Date.now()}`
-                      : null
-                  }
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                />
+                <>
+                  {imageSRC && (
+                    <img
+                      className="image-preview"
+                      id={`field-${id}-image`}
+                      src={imageSRC}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                    />
+                  )}
+                </>
               ) : (
                 <div className="dropzone-placeholder">
                   {isDragActive ? (
