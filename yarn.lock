@@ -8794,7 +8794,7 @@ __metadata:
     volto-feedback-italia: 1.0.4
     volto-form-block: 3.10.0
     volto-form-block-italia: 1.0.3
-    volto-gdpr-privacy: 2.2.11
+    volto-gdpr-privacy: 2.2.12
     volto-querywidget-with-browser: 0.4.2
     volto-rss-block: 3.0.0
     volto-secondarymenu: 4.1.1
@@ -13731,15 +13731,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.2.11":
-  version: 2.2.11
-  resolution: "volto-gdpr-privacy@npm:2.2.11"
+"volto-gdpr-privacy@npm:2.2.12":
+  version: 2.2.12
+  resolution: "volto-gdpr-privacy@npm:2.2.12"
   dependencies:
     react-focus-lock: 2.9.4
     volto-multilingual-widget: 3.2.1
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 11157e28f1d33942332a403d688e603053edaf78bae760fc07fd866bfd94951d7e9fe6532e31985803810646c288024a23671f3323aed2238bb3b4f0445654cc
+  checksum: ba1b9c012716b325e29fa5764f319bdb339a81424b292f30331695d5f940b4db17ccffffd59ecd17ff5058899c8b53f0f0cacd30e2e9927e35fa5c6907136635
   languageName: node
   linkType: hard
 
