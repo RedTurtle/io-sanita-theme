@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionHeader, AccordionBody } from 'design-react-kit';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import { Icon } from 'io-sanita-theme/components';
 import { TextOrBlocks } from 'io-sanita-theme/helpers';

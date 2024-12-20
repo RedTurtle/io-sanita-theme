@@ -11,15 +11,12 @@ import { defineMessages, useIntl } from 'react-intl';
 import { matchPath } from 'react-router';
 
 import { useLocation } from 'react-router-dom';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { getBreadcrumbs } from '@plone/volto/actions';
-import {
-  getBaseUrl,
-  flattenToAppURL,
-  hasApiExpander,
-} from '@plone/volto/helpers';
+import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Row, Col, BreadcrumbItem } from 'design-react-kit';
 import GoogleBreadcrumbs from 'io-sanita-theme/components/Breadcrumbs/GoogleBreadcrumbs';
 import config from '@plone/volto/registry';

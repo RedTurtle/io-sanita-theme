@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
 
 const messages = defineMessages({

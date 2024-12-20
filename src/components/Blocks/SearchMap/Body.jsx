@@ -13,10 +13,10 @@ import {
   Chip,
   ChipLabel,
 } from 'design-react-kit';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import { OSMMap } from 'volto-venue';
 import { getQueryStringResults } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 import {
   SearchBar,

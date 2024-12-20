@@ -5,7 +5,7 @@ CUSTOMIZATIONS:
 
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'io-sanita-theme/helpers';
 

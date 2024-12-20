@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Slugger from 'github-slugger';
 import cx from 'classnames';
-import { normalizeString } from '@plone/volto/helpers';
+import { normalizeString } from '@plone/volto/helpers/Utils/Utils';
 import { renderLinkElement } from '@plone/volto-slate/editor/render';
 
 const LinkedHeadline = ({

@@ -1,10 +1,10 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Chip, ChipLabel } from 'design-react-kit';
 import { RichTextSection } from 'io-sanita-theme/helpers';
-import { pick } from 'lodash';
+import pick from 'lodash/pick';
 
 const messages = defineMessages({
   correlati: {
@@ -40,7 +40,7 @@ const PuntoDiContattoCorrelati = ({ content }) => {
     'servizi_correlati',
     'eventi_correlati',
     'persone_correlate',
-    'uo_correlata'
+    'uo_correlata',
   ];
 
   const relatedCategories = pick(content, fieldLists);

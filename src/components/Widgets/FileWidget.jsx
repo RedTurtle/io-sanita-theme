@@ -10,7 +10,7 @@ import { Dimmer, Button } from 'design-react-kit';
 import { readAsDataURL } from 'promise-file-reader';
 import { injectIntl, defineMessages, useIntl } from 'react-intl';
 import loadable from '@loadable/component';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { Icon } from 'io-sanita-theme/components';
 

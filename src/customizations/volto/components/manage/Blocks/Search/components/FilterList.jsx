@@ -5,8 +5,8 @@
 import React, { useMemo, useRef } from 'react';
 import { Button, Icon } from 'design-react-kit';
 import { defineMessages, injectIntl } from 'react-intl';
-import { isEmpty } from 'lodash';
-import { resolveExtension } from '@plone/volto/helpers';
+import isEmpty from 'lodash/isEmpty';
+import { resolveExtension } from '@plone/volto/helpers/Extensions';
 import cx from 'classnames';
 import { compose } from 'redux';
 import { useClickOutside } from '../utils';

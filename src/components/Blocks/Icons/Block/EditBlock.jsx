@@ -6,7 +6,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { injectIntl, defineMessages } from 'react-intl';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { injectDNDSubblocks, SubblockEdit, Subblock } from 'volto-subblocks';
 import { TextEditorWidget } from 'volto-slate-italia';
 

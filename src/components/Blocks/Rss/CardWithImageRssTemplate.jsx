@@ -12,8 +12,8 @@ import {
   Col,
 } from 'design-react-kit';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import { LinkMore } from 'io-sanita-theme/components';
 import { getViewDate } from 'io-sanita-theme/components/Blocks/Rss/utils';

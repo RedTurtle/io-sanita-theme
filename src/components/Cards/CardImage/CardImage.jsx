@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 
 import {

@@ -9,7 +9,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
 import { TextEditorWidget } from 'volto-slate-italia';
 
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import { useHandleDetachedBlockFocus } from 'io-sanita-theme/helpers';
 import Sidebar from 'io-sanita-theme/components/Blocks/Alert/Sidebar';

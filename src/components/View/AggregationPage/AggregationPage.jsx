@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'design-react-kit';
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { resetContent } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
 import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
@@ -203,8 +203,8 @@ const AggregationPage = ({ match, route, location }) => {
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
                         : item.type_title
-                          ? [{ title: item.type_title }]
-                          : [];
+                        ? [{ title: item.type_title }]
+                        : [];
                     return (
                       <CardSimple
                         key={i + 'result'}

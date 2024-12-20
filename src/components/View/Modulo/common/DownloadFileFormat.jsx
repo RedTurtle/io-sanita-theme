@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { getFileViewFormat } from 'io-sanita-theme/helpers';

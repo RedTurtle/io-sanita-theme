@@ -6,10 +6,10 @@
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { Row, Col, LinkList, LinkListItem } from 'design-react-kit';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import config from '@plone/volto/registry';
 

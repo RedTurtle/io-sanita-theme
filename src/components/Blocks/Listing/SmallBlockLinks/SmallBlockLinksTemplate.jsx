@@ -3,7 +3,7 @@
  */
 import PropTypes from 'prop-types';
 import { Row, Col } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import {
   ListingImage,

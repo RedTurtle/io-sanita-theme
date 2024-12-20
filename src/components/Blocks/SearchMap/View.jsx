@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import Body from 'io-sanita-theme/components/Blocks/SearchMap/Body';
 
 const SearchMapView = ({ data, id, path, properties, block }) => {

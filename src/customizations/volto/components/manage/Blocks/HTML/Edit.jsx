@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 import { Button, Popup } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 import loadable from '@loadable/component';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 import { Icon, SidebarPortal } from '@plone/volto/components';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';

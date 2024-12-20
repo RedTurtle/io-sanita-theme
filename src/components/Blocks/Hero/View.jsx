@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import StoresButtons from 'io-sanita-theme/components/Blocks/Hero/StoresButtons';
 import { LinkedHeadline } from 'io-sanita-theme/components';
 import './hero.scss';

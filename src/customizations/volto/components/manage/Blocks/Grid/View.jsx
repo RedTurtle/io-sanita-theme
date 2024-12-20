@@ -5,7 +5,7 @@
 import { Row, Col } from 'design-react-kit';
 import cx from 'classnames';
 import { RenderBlocks } from '@plone/volto/components';
-import { withBlockExtensions } from '@plone/volto/helpers';
+import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 import config from '@plone/volto/registry';
 
 const GridBlockView = (props) => {

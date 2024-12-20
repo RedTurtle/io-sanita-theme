@@ -6,7 +6,7 @@ Implementa la
 import React from 'react';
 
 import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
 
 import {

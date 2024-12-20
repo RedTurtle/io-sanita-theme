@@ -7,7 +7,7 @@ import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Blocks/Blocks';
 import { RenderBlocks as VoltoRenderBlocks } from '@plone/volto/components';
 
 /**

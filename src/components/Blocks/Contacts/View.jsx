@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { LinkMore } from 'io-sanita-theme/components';
 import ViewBlock from './Block/ViewBlock';

@@ -6,7 +6,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { find, map } from 'lodash';
+
+import find from 'lodash/find';
+import map from 'lodash/map';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
@@ -20,7 +22,9 @@ import {
   Dropdown,
 } from 'design-react-kit';
 
-import { Helmet, flattenToAppURL, langmap } from '@plone/volto/helpers';
+import langmap from '@plone/volto/helpers/LanguageMap/LanguageMap';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 const languagesISO392 = {

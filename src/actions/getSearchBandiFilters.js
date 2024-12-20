@@ -1,5 +1,5 @@
 export const GET_SEARCH_BANDI_FILTERS = 'GET_SEARCH_BANDI_FILTERS';
-import { expandToBackendURL } from '@plone/volto/helpers';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 
 /**
  * Get search bandi filters.
@@ -10,11 +10,13 @@ import { expandToBackendURL } from '@plone/volto/helpers';
  *  subjects: [],
  *  tipologie: [],
  * }
-*/
+ */
 
 export function getSearchBandiFilters(path = '') {
   // let p = path === '/' ? '' : path;
-  const pathSearchFilters = `${path === '/' ? '' : expandToBackendURL(path)}/@bandi-search-filters`;
+  const pathSearchFilters = `${
+    path === '/' ? '' : expandToBackendURL(path)
+  }/@bandi-search-filters`;
   return {
     type: GET_SEARCH_BANDI_FILTERS,
     request: {

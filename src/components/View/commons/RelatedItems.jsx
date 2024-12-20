@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { defineMessages, useIntl } from 'react-intl';
 import { Container, Row, Col } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Icon } from 'io-sanita-theme/components';
 import { CardImage } from 'io-sanita-theme/components';
-
 
 const SITE_SECTIONS = {
   amministrazione: { icon: 'it-pa' },
@@ -44,11 +43,7 @@ const messages = defineMessages({
  * @params {object} location: object.
  * @returns {string} Markup of the component.
  */
-const RelatedItems = ({
-  content,
-  list = [],
-  children,
-}) => {
+const RelatedItems = ({ content, list = [], children }) => {
   const intl = useIntl();
 
   let sections = {};
@@ -83,9 +78,7 @@ const RelatedItems = ({
             <Row className="mt-lg-4">
               {related.map((item, i) => (
                 <Col md={4} key={item['@id'] + i} className="mb-3">
-                    <CardImage
-                      item={item}
-                    />
+                  <CardImage item={item} />
                 </Col>
               ))}
             </Row>

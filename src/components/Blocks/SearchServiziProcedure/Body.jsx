@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col, Spinner, Button } from 'design-react-kit';
 import { getVocabulary } from '@plone/volto/actions';
 import { getQueryStringResults } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import {
   SearchBar,
   SearchCheckbox,

@@ -11,7 +11,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
 import { getEditableFooterColumns, getItemsByPath } from 'volto-editablefooter';
 
-import { flattenHTMLToAppURL } from '@plone/volto/helpers';
+import { flattenHTMLToAppURL } from '@plone/volto/helpers/Url/Url';
 import { ConditionalLink } from '@plone/volto/components';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 

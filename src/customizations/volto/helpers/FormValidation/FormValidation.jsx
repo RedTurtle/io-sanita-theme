@@ -3,7 +3,12 @@
  * - test empty fields like dataGrid and blocks field (getRealEmptyField)
  * - Supporto alla validazione dei campi DataGridField
  */
-import { map, uniq, keys, intersection, isEmpty } from 'lodash';
+
+import map from 'lodash/map';
+import uniq from 'lodash/uniq';
+import keys from 'lodash/keys';
+import intersection from 'lodash/intersection';
+import isEmpty from 'lodash/isEmpty';
 import { messages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
 import { toast } from 'react-toastify';
 import Toast from '@plone/volto/components/manage/Toast/Toast';

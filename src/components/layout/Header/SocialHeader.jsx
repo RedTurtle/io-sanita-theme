@@ -6,7 +6,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 
 import { HeaderSocialsZone } from 'design-react-kit';
 import { Icon } from 'io-sanita-theme/components';

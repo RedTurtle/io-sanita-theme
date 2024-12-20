@@ -6,7 +6,7 @@ Costruisce il sidemenu in base alle sections passate come parametro
 /* eslint-disable no-unused-expressions */
 import React, { useState, useCallback } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 import cx from 'classnames';
 import {
   Sidebar,

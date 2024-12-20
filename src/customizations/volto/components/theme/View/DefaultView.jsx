@@ -15,10 +15,11 @@ import { getSchema } from '@plone/volto/actions';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
-import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 
 /**
  * Component to display the default view.

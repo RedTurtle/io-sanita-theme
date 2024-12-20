@@ -13,8 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSubFooter, getItemsByPath } from 'volto-subfooter';
 import { displayBanner } from 'volto-gdpr-privacy';
 
-import { UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getSiteProperty } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({

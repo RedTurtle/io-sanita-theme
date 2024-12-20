@@ -5,10 +5,11 @@ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect } from '@plone/volto/helpers/AsyncConnect';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container as SemanticContainer } from 'semantic-ui-react';
-import { Helmet, toBackendLang } from '@plone/volto/helpers';
+import { toBackendLang } from '@plone/volto/helpers/Utils/Utils';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { Link } from 'react-router-dom';
 import config from '@plone/volto/registry';
 

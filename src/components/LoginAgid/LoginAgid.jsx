@@ -9,7 +9,8 @@ import { defineMessages, useIntl } from 'react-intl';
 import { withRouter, useLocation } from 'react-router-dom';
 import { Row, Col, Container, Button } from 'design-react-kit';
 
-import { Helmet, getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { Login } from '@plone/volto/components';
 
 import { LoginAgidButtons } from 'io-sanita-theme/components';

@@ -11,7 +11,7 @@ import {
   Button,
 } from 'design-react-kit';
 
-import { toPublicURL } from '@plone/volto/helpers';
+import { toPublicURL } from '@plone/volto/helpers/Url/Url';
 import { Icon } from 'io-sanita-theme/components';
 import './sharing.scss';
 

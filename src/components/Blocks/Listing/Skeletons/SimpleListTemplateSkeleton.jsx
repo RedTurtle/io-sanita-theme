@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Row, Col } from 'design-react-kit';
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 

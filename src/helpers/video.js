@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
-import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 // test against all yt link formats I am aware of, not easy, can't find official docs.
 // Try all possible formats, match an alphanumeric token in the expected position, length should be 10-20 chars, that's the ID.

@@ -4,11 +4,15 @@ CUSTOMIZATIONS:
 */
 
 import { useEffect } from 'react';
-import { BodyClass, toBackendLang } from '@plone/volto/helpers';
+
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-import { withServerErrorCode } from '@plone/volto/helpers/Utils/Utils';
+import {
+  withServerErrorCode,
+  toBackendLang,
+} from '@plone/volto/helpers/Utils/Utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNavigation } from '@plone/volto/actions';
 import config from '@plone/volto/registry';

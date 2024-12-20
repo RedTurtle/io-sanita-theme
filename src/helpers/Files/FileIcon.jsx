@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { FontAwesomeIcon as IconFA } from 'io-sanita-theme/components';
 import { getFileViewFormat } from 'io-sanita-theme/helpers';
 

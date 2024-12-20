@@ -10,7 +10,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Container, Spinner } from 'design-react-kit';
 
 import { resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { GET_CONTENT } from '@plone/volto/constants/ActionTypes';
 
 import {

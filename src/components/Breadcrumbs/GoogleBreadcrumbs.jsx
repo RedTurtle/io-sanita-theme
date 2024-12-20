@@ -9,7 +9,9 @@ ref: https://developers.google.com/search/docs/advanced/structured-data/breadcru
 */
 
 import React from 'react';
-import { Helmet, toPublicURL } from '@plone/volto/helpers';
+
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { toPublicURL } from '@plone/volto/helpers/Url/Url';
 
 const GoogleBreadcrumbs = ({ items }) => {
   return items?.length > 0 ? (

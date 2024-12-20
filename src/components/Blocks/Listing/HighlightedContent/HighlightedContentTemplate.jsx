@@ -7,7 +7,7 @@ import { useIntl, defineMessages } from 'react-intl';
 import { CardReadMore } from 'design-react-kit';
 import cx from 'classnames';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 import { getComponentWithFallback } from 'io-sanita-theme/helpers';
 

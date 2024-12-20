@@ -9,7 +9,7 @@ import { resetSearchContent, searchContent } from '@plone/volto/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import { EmbeddedVideo, GalleryPreview } from 'io-sanita-theme/components';

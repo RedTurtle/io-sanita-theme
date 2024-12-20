@@ -5,7 +5,7 @@
 
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 /**
  * StepView view component class.
  * @function StepView

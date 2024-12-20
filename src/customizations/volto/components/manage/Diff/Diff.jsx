@@ -15,10 +15,11 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { filter, map } from 'lodash';
+import filter from 'lodash/filter';
+import map from 'lodash/map';
 import { Container, Button, Dropdown, Grid, Table } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { Portal } from 'react-portal';
@@ -26,7 +27,7 @@ import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { updateGdprPrivacyConsent } from 'volto-gdpr-privacy/actions/gdprPrivacyConsent';
 import qs from 'query-string';
 import { createBrowserHistory } from 'history';
-import { Api } from '@plone/volto/helpers';
+import Api from '@plone/volto/helpers/Api/Api';
 import configureStore from '@plone/volto/store';
 
 import {
@@ -35,7 +36,7 @@ import {
   getHistory,
   getContent,
 } from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import {
   FormattedDate,
   Icon,

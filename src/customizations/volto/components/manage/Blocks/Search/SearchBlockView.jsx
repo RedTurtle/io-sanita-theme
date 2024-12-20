@@ -7,7 +7,7 @@
 import React from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
-import { withBlockExtensions } from '@plone/volto/helpers';
+import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
 import config from '@plone/volto/registry';
 import cx from 'classnames';
@@ -17,7 +17,8 @@ import {
 } from '@plone/volto/components/manage/Blocks/Search/hocs';
 import { compose } from 'redux';
 import { useSelector } from 'react-redux';
-import { isEqual, isFunction } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import isFunction from 'lodash/isFunction';
 
 const getListingBodyVariation = (data) => {
   const { variations } = config.blocks.blocksConfig.listing;

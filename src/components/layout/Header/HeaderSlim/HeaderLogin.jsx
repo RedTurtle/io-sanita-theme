@@ -27,7 +27,7 @@ import { getUser, logout, purgeMessages } from '@plone/volto/actions';
 import config from '@plone/volto/registry';
 import { BodyClass } from '@plone/volto/helpers';
 import { Icon, UserLoggedMenu, LoginButton } from 'io-sanita-theme/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useLocation } from 'react-router-dom';
 
 const messages = defineMessages({

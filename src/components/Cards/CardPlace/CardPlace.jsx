@@ -10,7 +10,8 @@ import {
   AvatarIcon,
 } from 'design-react-kit';
 
-import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 import { Address, hasGeolocation } from 'io-sanita-theme/helpers';

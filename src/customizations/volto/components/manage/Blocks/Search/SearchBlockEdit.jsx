@@ -8,7 +8,7 @@ import { compose } from 'redux';
 
 import { SidebarPortal, BlockDataForm } from '@plone/volto/components';
 import { addExtensionFieldToSchema } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 import { SearchBlockViewComponent } from '@plone/volto/components/manage/Blocks/Search/SearchBlockView';
@@ -17,7 +17,7 @@ import {
   withSearch,
   withQueryString,
 } from '@plone/volto/components/manage/Blocks/Search/hocs';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 const messages = defineMessages({
   template: {

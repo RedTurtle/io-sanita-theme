@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import { Row, Col } from 'design-react-kit';
 import { LocationsMap } from 'io-sanita-theme/components/View/commons';
 import { CardPlace } from 'io-sanita-theme/components';

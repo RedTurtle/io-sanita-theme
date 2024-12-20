@@ -23,13 +23,11 @@ import {
   Toolbar,
 } from '@plone/volto/components';
 import { listActions, getContent } from '@plone/volto/actions';
-import {
-  BodyClass,
-  getBaseUrl,
-  flattenToAppURL,
-  getLayoutFieldname,
-  hasApiExpander,
-} from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
+import { getLayoutFieldname } from '@plone/volto/helpers/Content/Content';
 
 import config from '@plone/volto/registry';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';

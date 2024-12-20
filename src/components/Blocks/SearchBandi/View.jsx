@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Body from 'io-sanita-theme/components/Blocks/SearchBandi/Body';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 const View = ({ data, id, path, properties, block, blocksConfig }) => {
   return (

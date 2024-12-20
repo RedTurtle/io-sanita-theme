@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
 
 const MoreButton = ({ data, isEditMode }) => {
