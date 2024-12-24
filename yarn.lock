@@ -8799,7 +8799,7 @@ __metadata:
     volto-rss-block: 3.0.0
     volto-secondarymenu: 4.1.1
     volto-site-settings: 0.4.5
-    volto-slate-italia: 1.0.5
+    volto-slate-italia: 1.0.6
     volto-slimheader: 0.1.3
     volto-social-settings: 3.0.0
     volto-subfooter: 3.1.2
@@ -13794,12 +13794,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-slate-italia@npm:1.0.5":
-  version: 1.0.5
-  resolution: "volto-slate-italia@npm:1.0.5"
+"volto-slate-italia@npm:1.0.6":
+  version: 1.0.6
+  resolution: "volto-slate-italia@npm:1.0.6"
   peerDependencies:
     "@plone/volto": ^17.0.0
-  checksum: cbf6c09707aff084c2595714f20fbd46f3e3ac5310cdfddda0166237f3ac0ab17cd6f20ee0ac8ee41131527e9a9260b0e8439da56d6550c7ca560063486c867c
+  checksum: 68981804e8c4b4b11f2558b73a19d12a229c32dfac19da784e214851a51c2eece836710397c3048dd3ccf3b0527ddb1b239d3480745813dea451b39af12aaf00
   languageName: node
   linkType: hard
 
