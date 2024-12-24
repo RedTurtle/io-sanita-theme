@@ -1,4 +1,4 @@
-import { DatetimeWidget } from '@plone/volto/components';
+import { DatetimeWidget } from '@plone/volto/components/manage/Widgets';
 import { Row, Col } from 'design-react-kit';
 import { SearchBar, SelectInput } from 'io-sanita-theme/components';
 import { defineMessages, useIntl } from 'react-intl';

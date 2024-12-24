@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { Segment, Grid, Label } from 'semantic-ui-react';
 import { Container as DefaultContainer } from 'design-react-kit';
 import config from '@plone/volto/registry';
-import { getSchema } from '@plone/volto/actions';
+import { getSchema } from '@plone/volto/actions/schema/schema';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 

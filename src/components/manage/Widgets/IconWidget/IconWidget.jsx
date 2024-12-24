@@ -3,7 +3,10 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Grid } from 'semantic-ui-react';
-import { TextWidget, SelectWidget } from '@plone/volto/components';
+import {
+  TextWidget,
+  SelectWidget,
+} from '@plone/volto/components/manage/Widgets';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
 import { IconPreviewWidget } from 'io-sanita-theme/components/manage/Widgets';

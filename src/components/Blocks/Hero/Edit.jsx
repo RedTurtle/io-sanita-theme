@@ -24,7 +24,7 @@ import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/Form
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
-import { createContent } from '@plone/volto/actions';
+import { createContent } from '@plone/volto/actions/content/content';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 

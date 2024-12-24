@@ -23,7 +23,8 @@ import {
   getBlocksLayoutFieldname,
 } from '@plone/volto/helpers/Blocks/Blocks';
 
-import { UniversalLink, ConditionalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 
 import { Icon } from 'io-sanita-theme/components';
 

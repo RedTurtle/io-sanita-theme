@@ -14,7 +14,7 @@ import {
   toBackendLang,
 } from '@plone/volto/helpers/Utils/Utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { getNavigation } from '@plone/volto/actions';
+import { getNavigation } from '@plone/volto/actions/navigation/navigation';
 import config from '@plone/volto/registry';
 
 /**

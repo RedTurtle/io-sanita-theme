@@ -12,7 +12,7 @@ import { Row, Col } from 'design-react-kit';
 import { getEditableFooterColumns, getItemsByPath } from 'volto-editablefooter';
 
 import { flattenHTMLToAppURL } from '@plone/volto/helpers/Url/Url';
-import { ConditionalLink } from '@plone/volto/components';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 
 import {

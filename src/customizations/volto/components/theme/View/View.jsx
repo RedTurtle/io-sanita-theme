@@ -16,13 +16,12 @@ import qs from 'query-string';
 
 import loadable from '@loadable/component';
 
-import {
-  ContentMetadataTags,
-  Comments,
-  Tags,
-  Toolbar,
-} from '@plone/volto/components';
-import { listActions, getContent } from '@plone/volto/actions';
+import ContentMetadataTags from '@plone/volto/components/theme/ContentMetadataTags/ContentMetadataTags';
+import Comments from '@plone/volto/components/theme/Comments/Comments';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Tags from '@plone/volto/components/theme/Tags/Tags';
+import { listActions } from '@plone/volto/actions/actions/actions';
+import { getContent } from '@plone/volto/actions/content/content';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
@@ -306,11 +305,6 @@ class View extends Component {
           history={this.props.history}
         />
         <SlotRenderer name="belowContent" content={this.props.content} />
-        {config.settings.showTags &&
-          this.props.content.subjects &&
-          this.props.content.subjects.length > 0 && (
-            <Tags tags={this.props.content.subjects} />
-          )}
 
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />

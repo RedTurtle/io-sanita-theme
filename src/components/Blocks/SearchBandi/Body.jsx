@@ -5,7 +5,7 @@ import { Container, Button, Spinner } from 'design-react-kit';
 import moment from 'moment';
 import cx from 'classnames';
 
-import { getQueryStringResults } from '@plone/volto/actions';
+import { getQueryStringResults } from '@plone/volto/actions/querystringsearch/querystringsearch';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { BandiTemplate } from 'io-sanita-theme/components/Blocks';
 import { Pagination } from 'io-sanita-theme/components';

@@ -1,7 +1,7 @@
 /* Variation Lista Semplice of Listing block */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConditionalLink } from '@plone/volto/components';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Row, Col } from 'design-react-kit';
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';

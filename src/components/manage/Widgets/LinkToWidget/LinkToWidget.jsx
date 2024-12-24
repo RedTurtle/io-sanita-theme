@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-import { CheckboxWidget, TextWidget } from '@plone/volto/components';
+import {
+  CheckboxWidget,
+  TextWidget,
+} from '@plone/volto/components/manage/Widgets';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 

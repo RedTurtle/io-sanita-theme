@@ -15,7 +15,7 @@ import {
 } from 'design-react-kit';
 import omit from 'lodash/omit';
 import { OSMMap } from 'volto-venue';
-import { getQueryStringResults } from '@plone/volto/actions';
+import { getQueryStringResults } from '@plone/volto/actions/querystringsearch/querystringsearch';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 import {

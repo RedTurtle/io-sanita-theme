@@ -6,7 +6,7 @@ import menuSVG from '@plone/volto/icons/menu.svg';
 import menuAltSVG from '@plone/volto/icons/menu-alt.svg';
 import navSVG from '@plone/volto/icons/nav.svg';
 import shareSVG from '@plone/volto/icons/share.svg';
-import { Search } from '@plone/volto/components';
+import Search from '@plone/volto/components/theme/Search/Search';
 import { TextEditorWidget } from 'volto-slate-italia';
 import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 

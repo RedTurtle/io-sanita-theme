@@ -9,12 +9,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { useSelector } from 'react-redux';
 
-import {
-  /* Anontools,
-  Logo,*/
-  Navigation,
-  /* SearchWidget,*/
-} from '@plone/volto/components';
+import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
+//import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
+//import Logo from '@plone/volto/components/theme/Logo/Logo';
+//import { SearchWidget } from '@plone/volto/components/manage/Widgets';
 
 import {
   HeaderSlim,

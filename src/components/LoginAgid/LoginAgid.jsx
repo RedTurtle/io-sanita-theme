@@ -11,7 +11,7 @@ import { Row, Col, Container, Button } from 'design-react-kit';
 
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
-import { Login } from '@plone/volto/components';
+import Login from '@plone/volto/components/theme/Login/Login';
 
 import { LoginAgidButtons } from 'io-sanita-theme/components';
 

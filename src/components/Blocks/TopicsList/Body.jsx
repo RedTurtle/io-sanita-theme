@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Col, Row } from 'design-react-kit';
-import { getVocabulary } from '@plone/volto/actions';
+import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { CardTaxonomy, LinkedHeadline } from 'io-sanita-theme/components';
 

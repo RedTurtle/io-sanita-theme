@@ -8,7 +8,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'design-react-kit';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
-import { resetContent } from '@plone/volto/actions';
+import { resetContent } from '@plone/volto/actions/content/content';
 import config from '@plone/volto/registry';
 import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
 import { getTassonomieSearch } from 'io-sanita-theme/actions';

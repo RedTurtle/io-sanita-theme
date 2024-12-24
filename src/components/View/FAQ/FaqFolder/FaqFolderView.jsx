@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import { Container, Spinner } from 'design-react-kit';
 
-import { resetContent } from '@plone/volto/actions';
+import { resetContent } from '@plone/volto/actions/content/content';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { GET_CONTENT } from '@plone/volto/constants/ActionTypes';
 

@@ -4,7 +4,7 @@
  */
 import { Row, Col } from 'design-react-kit';
 import cx from 'classnames';
-import { RenderBlocks } from '@plone/volto/components';
+import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 import config from '@plone/volto/registry';
 

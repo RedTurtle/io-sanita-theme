@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { getContent, resetContent } from '@plone/volto/actions';
+import { getContent, resetContent } from '@plone/volto/actions/content/content';
 import { useIntl, defineMessages } from 'react-intl';
 import { viewDate } from 'io-sanita-theme/helpers';
 

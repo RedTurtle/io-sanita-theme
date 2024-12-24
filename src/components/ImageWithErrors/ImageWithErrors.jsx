@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Image } from '@plone/volto/components';
+import Image from '@plone/volto/components/theme/Image/Image';
 
 const ImageWithErrors = (props) => {
   return (

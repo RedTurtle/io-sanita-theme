@@ -12,7 +12,7 @@ import { matchPath } from 'react-router';
 
 import { useLocation } from 'react-router-dom';
 import isEqual from 'lodash/isEqual';
-import { getBreadcrumbs } from '@plone/volto/actions';
+import { getBreadcrumbs } from '@plone/volto/actions/breadcrumbs/breadcrumbs';
 import { getBaseUrl, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 

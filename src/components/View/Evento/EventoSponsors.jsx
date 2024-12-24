@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { searchContent, resetSearchContent } from '@plone/volto/actions';
+import {
+  searchContent,
+  resetSearchContent,
+} from '@plone/volto/actions/search/search';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, useIntl } from 'react-intl';
 import { Sponsors } from 'io-sanita-theme/components/View/Evento';

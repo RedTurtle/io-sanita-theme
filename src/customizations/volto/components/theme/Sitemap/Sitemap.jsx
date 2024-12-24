@@ -13,7 +13,7 @@ import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { Link } from 'react-router-dom';
 import config from '@plone/volto/registry';
 
-import { getNavigation } from '@plone/volto/actions';
+import { getNavigation } from '@plone/volto/actions/navigation/navigation';
 
 const SITEMAP_DEPTH = 3;
 

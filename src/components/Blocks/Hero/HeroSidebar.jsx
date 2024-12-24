@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Segment, Accordion } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
-import { TextWidget, CheckboxWidget } from '@plone/volto/components';
+import {
+  TextWidget,
+  CheckboxWidget,
+} from '@plone/volto/components/manage/Widgets';
 import { LinkToWidget } from 'io-sanita-theme/components/manage/Widgets';
 
 import clearSVG from '@plone/volto/icons/clear.svg';

@@ -30,19 +30,15 @@ import { createBrowserHistory } from 'history';
 import Api from '@plone/volto/helpers/Api/Api';
 import configureStore from '@plone/volto/store';
 
-import {
-  getDiff,
-  getSchema,
-  getHistory,
-  getContent,
-} from '@plone/volto/actions';
+import { getDiff } from '@plone/volto/actions/diff/diff';
+import { getSchema } from '@plone/volto/actions/schema/schema';
+import { getHistory } from '@plone/volto/actions/history/history';
+import { getContent } from '@plone/volto/actions/content/content';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
-import {
-  FormattedDate,
-  Icon,
-  Toolbar,
-  Unauthorized,
-} from '@plone/volto/components';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
+import Unauthorized from '@plone/volto/components/theme/Unauthorized/Unauthorized';
+import Icon from 'io-sanita-theme/components/Icon/Icon';
 import DiffField from './DiffField';
 
 import backSVG from '@plone/volto/icons/back.svg';

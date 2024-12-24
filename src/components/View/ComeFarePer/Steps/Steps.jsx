@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContent, resetContent } from '@plone/volto/actions';
+import { getContent, resetContent } from '@plone/volto/actions/content/content';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import PropTypes from 'prop-types';
 import {

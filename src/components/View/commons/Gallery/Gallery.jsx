@@ -5,7 +5,10 @@ import './gallery.scss';
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { resetSearchContent, searchContent } from '@plone/volto/actions';
+import {
+  resetSearchContent,
+  searchContent,
+} from '@plone/volto/actions/search/search';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
