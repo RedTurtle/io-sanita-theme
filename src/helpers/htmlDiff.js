@@ -1,7 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
 import { Provider } from 'react-intl-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import DefaultView from '@plone/volto/components/theme/view/DefaultView';
+import DefaultView from '@plone/volto/components/theme/View/DefaultView';
 
 export const blockIsNotEmptyPlaceholder = (blockField) => {
   if (!!!blockField?.blocks) return true;
