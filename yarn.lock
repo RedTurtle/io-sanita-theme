@@ -2439,7 +2439,7 @@ __metadata:
     usehooks-ts: 3.1.0
   peerDependencies:
     "@plone/volto": ">=17.0.0"
-  checksum: 43a3f1d3f51e68aa51ad6f5c33ea327c6c535daa89f07a03002a727dfa993397c023cf281e86f10e7ec09ba73abb4b28a5ad98c4d9377eb4e33013b0fcea9ac6
+  checksum: 997afb1502564ea746eb28790145b15a3ca75fcb2d09c3ced1d09231cebf143fcecad409f92bde585d8aceb2855ae6e45d7839f42ee9c1222a3c304ed9ae6eff
   languageName: node
   linkType: hard
 
