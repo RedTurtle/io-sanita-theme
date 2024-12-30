@@ -2431,7 +2431,7 @@ __metadata:
 
 "@plone-collective/volto-contents-next@https://github.com/collective/volto-contents-next#upgrade_fc_linkintegrity":
   version: 0.4.5
-  resolution: "@plone-collective/volto-contents-next@https://github.com/collective/volto-contents-next.git#commit=893ce49aac679212f07d1789038faa6d23e9175e"
+  resolution: "@plone-collective/volto-contents-next@https://github.com/collective/volto-contents-next.git#commit=be0e5e2794be7656cffbe9d0626b01fc071f6d1f"
   dependencies:
     "@plone/components": alpha
     react-aria: 3.33.0
@@ -2439,7 +2439,7 @@ __metadata:
     usehooks-ts: 3.1.0
   peerDependencies:
     "@plone/volto": ">=17.0.0"
-  checksum: 997afb1502564ea746eb28790145b15a3ca75fcb2d09c3ced1d09231cebf143fcecad409f92bde585d8aceb2855ae6e45d7839f42ee9c1222a3c304ed9ae6eff
+  checksum: 9ab46dccee2f0a22d09d7bf71b78736c53f9384b466f0e4ff7cccb88d67c81e394b8de2933fae53f35e1950818db2ae97b4aa498eb9c3a615fc3d808e74fbc2c
   languageName: node
   linkType: hard
 
