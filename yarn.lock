@@ -2429,9 +2429,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone-collective/volto-contents-next@https://github.com/collective/volto-contents-next#upgrade_fc_linkintegrity":
-  version: 0.4.5
-  resolution: "@plone-collective/volto-contents-next@https://github.com/collective/volto-contents-next.git#commit=be0e5e2794be7656cffbe9d0626b01fc071f6d1f"
+"@plone-collective/volto-contents-next@npm:0.5.0":
+  version: 0.5.0
+  resolution: "@plone-collective/volto-contents-next@npm:0.5.0"
   dependencies:
     "@plone/components": alpha
     react-aria: 3.33.0
@@ -2439,7 +2439,7 @@ __metadata:
     usehooks-ts: 3.1.0
   peerDependencies:
     "@plone/volto": ">=17.0.0"
-  checksum: 9ab46dccee2f0a22d09d7bf71b78736c53f9384b466f0e4ff7cccb88d67c81e394b8de2933fae53f35e1950818db2ae97b4aa498eb9c3a615fc3d808e74fbc2c
+  checksum: 7e992df2a431b2b4bc77a1b8fed3e4f31a6c1b24f2e738acf4573e458ae5575a8cd89c8f3630c0699c8f289cf8c89f8ea4ac6f0ec08de694a8b967113a9e68f9
   languageName: node
   linkType: hard
 
@@ -8753,7 +8753,7 @@ __metadata:
     "@babel/plugin-syntax-export-namespace-from": ^7.8.3
     "@eeacms/volto-taxonomy": 5.1.1
     "@loadable/babel-plugin": 5.13.2
-    "@plone-collective/volto-contents-next": "https://github.com/collective/volto-contents-next#upgrade_fc_linkintegrity"
+    "@plone-collective/volto-contents-next": 0.5.0
     "@plone-collective/volto-sentry": 0.3.1
     "@plone/scripts": ^3.3.2
     "@release-it/conventional-changelog": ^9.0.3
