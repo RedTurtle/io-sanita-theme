@@ -242,6 +242,11 @@ body.cms-ui {
     }
   }
 
+  .react-select__option .icon-container .icon {
+    height: 1rem;
+    width: auto;
+  }
+
   //slate
   .editor-link {
     &.input-anchorlink-theme {

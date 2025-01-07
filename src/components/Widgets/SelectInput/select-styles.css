@@ -42,3 +42,8 @@
   color: black !important;
   font-weight: bold;
 }
+
+.react-select__option .icon-container .icon {
+  height: 1rem;
+  width: auto;
+}
