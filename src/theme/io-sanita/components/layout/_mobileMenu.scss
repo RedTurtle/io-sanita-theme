@@ -24,22 +24,23 @@
 
         .it-brand-wrapper {
           padding: 3rem 1.5rem 1.5rem;
-
+          background-color: $header-center-bg-color;
+          color: $header-center-text-color;
           a {
             display: flex;
+            text-decoration: none;
             align-items: center;
             justify-content: space-between;
+            color: $header-center-text-color;
           }
 
           h2 {
             margin-bottom: 0;
-            color: $text-color;
             font-size: 1.5rem;
           }
 
           h3 {
             margin-bottom: 0;
-            color: $gray-secondary;
             font-size: 1rem;
           }
 
@@ -51,10 +52,14 @@
           .it-brand-text {
             flex: 1;
             padding-left: 1rem;
-          }
-
-          a {
-            text-decoration: none;
+            .it-brand-title {
+              font-size: 1.2rem;
+              font-weight: 600;
+              line-height: 1.2;
+            }
+            .it-brand-tagline {
+              margin-top: 0.5rem;
+            }
           }
         }
 
