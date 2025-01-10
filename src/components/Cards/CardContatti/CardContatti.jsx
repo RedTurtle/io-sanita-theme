@@ -4,7 +4,9 @@
 */
 import cx from 'classnames';
 import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
-import { ConditionalLink, Icon as VoltoIcon } from '@plone/volto/components';
+
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 
 import telephoneIcon from 'io-sanita-theme/icons/telephone_icon.svg';

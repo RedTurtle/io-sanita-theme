@@ -15,7 +15,7 @@ import {
 } from 'volto-subblocks';
 import { TextEditorWidget } from 'volto-slate-italia';
 
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
 import Sidebar from './Sidebar.jsx';
 

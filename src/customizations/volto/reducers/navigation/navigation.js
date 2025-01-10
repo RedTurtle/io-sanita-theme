@@ -9,12 +9,9 @@
  - added show_in_footer
  */
 
-import { map } from 'lodash';
-import {
-  flattenToAppURL,
-  getBaseUrl,
-  hasApiExpander,
-} from '@plone/volto/helpers';
+import map from 'lodash/map';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 import {
   GET_CONTENT,

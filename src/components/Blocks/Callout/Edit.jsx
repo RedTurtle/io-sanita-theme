@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import { Callout, CalloutTitle, CalloutText } from 'design-react-kit';
 import { Icon } from 'io-sanita-theme/components';

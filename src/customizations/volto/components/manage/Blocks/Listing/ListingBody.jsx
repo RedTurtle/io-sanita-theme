@@ -18,7 +18,7 @@ import Slugger from 'github-slugger';
 import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
-import { normalizeString } from '@plone/volto/helpers';
+import { normalizeString } from '@plone/volto/helpers/Utils/Utils';
 
 import { Pagination } from 'io-sanita-theme/components';
 import {

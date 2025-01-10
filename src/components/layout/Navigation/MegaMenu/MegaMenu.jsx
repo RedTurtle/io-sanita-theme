@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { map } from 'lodash';
+import map from 'lodash/map';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import {
@@ -15,14 +15,16 @@ import {
   LinkList,
 } from 'design-react-kit';
 
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
+
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import {
-  flattenToAppURL,
-  hasBlocksData,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
-  getBaseUrl,
-} from '@plone/volto/helpers';
-import { UniversalLink, ConditionalLink } from '@plone/volto/components';
+} from '@plone/volto/helpers/Blocks/Blocks';
+
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 
 import { Icon } from 'io-sanita-theme/components';
 

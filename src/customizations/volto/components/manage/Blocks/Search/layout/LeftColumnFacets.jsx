@@ -8,7 +8,7 @@ import {
   Facets,
   FilterList,
 } from '@plone/volto/components/manage/Blocks/Search/components';
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
 

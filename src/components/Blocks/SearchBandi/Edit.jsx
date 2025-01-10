@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Body from 'io-sanita-theme/components/Blocks/SearchBandi/Body';
-import { SidebarPortal } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import Sidebar from 'io-sanita-theme/components/Blocks/SearchBandi/Sidebar';
 import { useIntl, defineMessages } from 'react-intl';
 

@@ -3,7 +3,7 @@
 */
 import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import {
   hasNonValueOperation,
   hasDateOperation,

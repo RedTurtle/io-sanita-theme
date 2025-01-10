@@ -4,11 +4,12 @@ import { Segment, Accordion } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import {
   SelectWidget,
-  Icon,
   ObjectBrowserWidget,
   CheckboxWidget,
-} from '@plone/volto/components';
-import QueryWidget from '@plone/volto/components/manage/Widgets/QueryWidget';
+  QueryWidget,
+} from '@plone/volto/components/manage/Widgets';
+import Icon from 'io-sanita-theme/components/Icon/Icon';
+
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 

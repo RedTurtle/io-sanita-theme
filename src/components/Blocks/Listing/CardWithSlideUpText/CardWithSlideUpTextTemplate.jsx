@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { CardReadMore } from 'design-react-kit';
 import cx from 'classnames';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import {
   getCalendarDate,

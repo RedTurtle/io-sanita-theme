@@ -4,7 +4,8 @@ import qs from 'query-string';
 import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
 import { useLocation, useHistory } from 'react-router-dom';
-import { isEmpty, omit } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+import omit from 'lodash/omit';
 import {
   Container,
   Row,
@@ -17,7 +18,8 @@ import {
   Alert,
 } from 'design-react-kit';
 
-import { Helmet, flattenToAppURL } from '@plone/volto/helpers';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getSearchFilters, getSearchResults } from 'io-sanita-theme/actions';
 import {
   SearchBar,

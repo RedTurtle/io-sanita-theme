@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'design-react-kit';
-import { Helmet } from '@plone/volto/helpers';
-import { resetContent } from '@plone/volto/actions';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { resetContent } from '@plone/volto/actions/content/content';
 import config from '@plone/volto/registry';
 import { SideMenu } from 'io-sanita-theme/components/View/AggregationPage';
 import { getTassonomieSearch } from 'io-sanita-theme/actions';
@@ -203,8 +203,8 @@ const AggregationPage = ({ match, route, location }) => {
                       item.parliamo_di_metadata?.length > 0
                         ? item.parliamo_di_metadata
                         : item.type_title
-                          ? [{ title: item.type_title }]
-                          : [];
+                        ? [{ title: item.type_title }]
+                        : [];
                     return (
                       <CardSimple
                         key={i + 'result'}

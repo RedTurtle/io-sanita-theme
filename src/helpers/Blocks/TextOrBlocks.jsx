@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { hasBlocksData } from '@plone/volto/helpers';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import { RichText, RenderBlocks } from 'io-sanita-theme/helpers';
 
 /**

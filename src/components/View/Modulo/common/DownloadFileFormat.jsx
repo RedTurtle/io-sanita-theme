@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { flattenToAppURL } from '@plone/volto/helpers';
 import { defineMessages, useIntl } from 'react-intl';
-import { Icon, UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import Icon from 'io-sanita-theme/components/Icon/Icon';
 import { getFileViewFormat } from 'io-sanita-theme/helpers';
 import { FontAwesomeIcon as IconFA } from 'io-sanita-theme/components';
 

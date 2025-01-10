@@ -2,13 +2,15 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { /*TextWidget,*/ SelectWidget } from '@plone/volto/components';
+import {
+  /*TextWidget,*/ SelectWidget,
+} from '@plone/volto/components/manage/Widgets';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { defineMessages, useIntl } from 'react-intl';
 
 import { ColorPickerWidget } from '@plone/volto/components/manage/Widgets';
 import { Icon } from 'io-sanita-theme/components';
-import { FormFieldWrapper } from '@plone/volto/components';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 
 const messages = defineMessages({
   color: { id: 'color', defaultMessage: 'Colore' },

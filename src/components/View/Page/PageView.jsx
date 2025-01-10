@@ -15,11 +15,11 @@ import {
   SearchSectionForm,
   Placeholder,
   Metadata,
-  RelatedItems
+  RelatedItems,
 } from 'io-sanita-theme/components/View/commons';
 
 import { defineMessages, useIntl } from 'react-intl';
-import { getLayoutFieldname } from '@plone/volto/helpers';
+import { getLayoutFieldname } from '@plone/volto/helpers/Content/Content';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -105,7 +105,11 @@ const PageView = ({ content, token, location, history }) => {
 
           <TextOrBlocks content={content} />
 
-          <Metadata content={content} showDates={content.show_modified ?? false} className="my-4"/>
+          <Metadata
+            content={content}
+            showDates={content.show_modified ?? false}
+            className="my-4"
+          />
         </div>
         <RelatedItems content={content} />
         <Placeholder position="afterContent" content={content} />

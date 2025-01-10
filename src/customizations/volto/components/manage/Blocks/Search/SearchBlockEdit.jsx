@@ -6,9 +6,10 @@ import React, { useEffect } from 'react';
 import { defineMessages } from 'react-intl';
 import { compose } from 'redux';
 
-import { SidebarPortal, BlockDataForm } from '@plone/volto/components';
+import { BlockDataForm } from '@plone/volto/components/manage/Form';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { addExtensionFieldToSchema } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 import { SearchBlockViewComponent } from '@plone/volto/components/manage/Blocks/Search/SearchBlockView';
@@ -17,7 +18,7 @@ import {
   withSearch,
   withQueryString,
 } from '@plone/volto/components/manage/Blocks/Search/hocs';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 const messages = defineMessages({
   template: {

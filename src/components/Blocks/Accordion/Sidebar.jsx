@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { Icon, TextWidget /*, CheckboxWidget*/ } from '@plone/volto/components';
+import {
+  TextWidget /*, CheckboxWidget*/,
+} from '@plone/volto/components/manage/Widgets';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import { defineMessages, useIntl } from 'react-intl';

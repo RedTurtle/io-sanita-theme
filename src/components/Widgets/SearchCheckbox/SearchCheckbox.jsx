@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { defineMessages, useIntl } from 'react-intl';
 import { Input, FormGroup, Label, Collapse, Button } from 'design-react-kit';
-import { values } from 'lodash';
+import values from 'lodash/values';
 import cx from 'classnames';
 import './searchCheckbox.scss';
 

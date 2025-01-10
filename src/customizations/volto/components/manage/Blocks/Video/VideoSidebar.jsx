@@ -5,10 +5,10 @@ import { Accordion, Grid, Segment } from 'semantic-ui-react';
 import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import {
   CheckboxWidget,
-  Icon,
   TextWidget,
   //ObjectBrowserWidget,
-} from '@plone/volto/components';
+} from '@plone/volto/components/manage/Widgets';
+import Icon from 'io-sanita-theme/components/Icon/Icon';
 import AlignBlock from '@plone/volto/components/manage/Sidebar/AlignBlock';
 
 import videoSVG from '@plone/volto/icons/videocamera.svg';

@@ -1,6 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
-// import { invoke } from 'lodash';
+// import invoke from 'lodash/invoke';
 import keyboardKey from 'keyboard-key';
 import PropTypes from 'prop-types';
 import { Component } from 'react';

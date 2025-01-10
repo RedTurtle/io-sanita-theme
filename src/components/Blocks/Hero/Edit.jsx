@@ -16,17 +16,17 @@ import { compose } from 'redux';
 import { readAsDataURL } from 'promise-file-reader';
 import { Container } from 'design-react-kit';
 import { Button, Dimmer, Loader, Message } from 'semantic-ui-react';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
-import {
-  flattenToAppURL,
-  getBaseUrl,
-  validateFileUploadSize,
-} from '@plone/volto/helpers';
-import { createContent } from '@plone/volto/actions';
-import { Icon, SidebarPortal } from '@plone/volto/components';
+import { validateFileUploadSize } from '@plone/volto/helpers/FormValidation/FormValidation';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+
+import { createContent } from '@plone/volto/actions/content/content';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 import { TextEditorWidget } from 'volto-slate-italia';

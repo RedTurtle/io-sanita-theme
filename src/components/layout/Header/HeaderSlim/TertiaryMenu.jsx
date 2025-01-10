@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import cx from 'classnames';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { getSlimHeader, getItemsByPath } from 'volto-slimheader';
 

@@ -1,7 +1,7 @@
 import mapValues from 'lodash/mapValues';
 import moment from 'moment';
 import qs from 'query-string';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
 const defaultOptions = {

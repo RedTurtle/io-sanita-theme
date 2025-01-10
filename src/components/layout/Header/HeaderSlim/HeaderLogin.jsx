@@ -23,11 +23,13 @@ import {
   LinkListItem,
   Dropdown,
 } from 'design-react-kit';
-import { getUser, logout, purgeMessages } from '@plone/volto/actions';
+import { logout } from '@plone/volto/actions/userSession/userSession';
+import { getUser } from '@plone/volto/actions/users/users';
+import { purgeMessages } from '@plone/volto/actions/messages/messages';
 import config from '@plone/volto/registry';
-import { BodyClass } from '@plone/volto/helpers';
+import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import { Icon, UserLoggedMenu, LoginButton } from 'io-sanita-theme/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { useLocation } from 'react-router-dom';
 
 const messages = defineMessages({

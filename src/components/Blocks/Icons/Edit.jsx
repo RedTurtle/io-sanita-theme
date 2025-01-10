@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { defineMessages } from 'react-intl';
 import { Container, Row, Col } from 'design-react-kit';
 
-import { SidebarPortal } from '@plone/volto/components';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { handleKeyDownOwnFocusManagement } from 'io-sanita-theme/helpers';
 import {
   withDNDContext,

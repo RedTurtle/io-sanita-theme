@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { defineMessages, useIntl } from 'react-intl';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 import { HelpBox } from 'io-sanita-theme/components/View/commons';
 

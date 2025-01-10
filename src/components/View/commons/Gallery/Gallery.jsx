@@ -5,11 +5,14 @@ import './gallery.scss';
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { resetSearchContent, searchContent } from '@plone/volto/actions';
+import {
+  resetSearchContent,
+  searchContent,
+} from '@plone/volto/actions/search/search';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import { EmbeddedVideo, GalleryPreview } from 'io-sanita-theme/components';

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Container } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 import { Icon } from 'io-sanita-theme/components';
 

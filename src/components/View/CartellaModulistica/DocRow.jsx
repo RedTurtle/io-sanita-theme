@@ -8,8 +8,8 @@ import cx from 'classnames';
 import { v4 as uuid } from 'uuid';
 import Highlighter from 'react-highlight-words';
 
-import { UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Icon, FontAwesomeIcon } from 'io-sanita-theme/components';
 import { DownloadFileFormat } from 'io-sanita-theme/components/View/Modulo';
 

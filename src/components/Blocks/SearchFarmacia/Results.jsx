@@ -1,4 +1,4 @@
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Table } from 'semantic-ui-react';

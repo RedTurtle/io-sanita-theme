@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import config from '@plone/volto/registry';
 import './_sponsors.scss';
 
@@ -48,14 +48,14 @@ const Sponsors = ({ sponsors }) => {
         {sponsors_logos.length > 0 && (
           <div className="sponsor-logos">
             {sponsors_logos.map((item, i) => (
-              <Sponsor key={'sponsor'+item['@id']} item={item} />
+              <Sponsor key={'sponsor' + item['@id']} item={item} />
             ))}
           </div>
         )}
         {sponsors_no_logos.length > 0 && (
           <div className="sponsor-no-logos">
             {sponsors_no_logos.map((item, i) => (
-              <Sponsor key={'sponsor-no'+item['@id']} item={item} />
+              <Sponsor key={'sponsor-no' + item['@id']} item={item} />
             ))}
           </div>
         )}

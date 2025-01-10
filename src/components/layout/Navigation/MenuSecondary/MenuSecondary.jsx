@@ -4,15 +4,15 @@
  */
 
 import React, { useEffect } from 'react';
-import { isMatch } from 'lodash';
+import isMatch from 'lodash/isMatch';
 import { useIntl, defineMessages } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
 
 import { getSecondaryMenu, getItemsByPath } from 'volto-secondarymenu';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   menu_selected: {

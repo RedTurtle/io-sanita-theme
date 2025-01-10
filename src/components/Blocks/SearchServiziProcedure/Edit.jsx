@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SidebarPortal } from '@plone/volto/components';
-import { getBaseUrl } from '@plone/volto/helpers';
+import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import Body from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Body';
 import Sidebar from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/Sidebar';
 

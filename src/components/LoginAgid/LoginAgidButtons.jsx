@@ -10,7 +10,9 @@ import React from 'react';
 import { Button } from 'design-react-kit';
 import { defineMessages, useIntl } from 'react-intl';
 import { useLocation } from 'react-router-dom';
-import { Icon as BaseIcon, UniversalLink } from '@plone/volto/components';
+
+import BaseIcon from '@plone/volto/components/theme/Icon/Icon';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon, LoginButton } from 'io-sanita-theme/components';
 import cieSVG from 'io-sanita-theme/icons/entra_con_cie.svg';
 

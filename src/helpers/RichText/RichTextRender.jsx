@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { values } from 'lodash';
-import { flattenHTMLToAppURL } from '@plone/volto/helpers';
-import { hasBlocksData } from '@plone/volto/helpers';
+import values from 'lodash/values';
+import { flattenHTMLToAppURL } from '@plone/volto/helpers/Url/Url';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import { richTextHasContent, RenderBlocks } from 'io-sanita-theme/helpers';
 
 /**

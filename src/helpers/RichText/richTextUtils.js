@@ -1,5 +1,5 @@
-import { values } from 'lodash';
-import { hasBlocksData } from '@plone/volto/helpers';
+import values from 'lodash/values';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import { RenderBlocks } from 'io-sanita-theme/helpers';
 import { serializeNodesToText } from '@plone/volto-slate/editor/render';
 

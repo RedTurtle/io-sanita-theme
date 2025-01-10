@@ -2,7 +2,8 @@
 import React, { useEffect } from 'react';
 import { SelectInput } from 'io-sanita-theme/components';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchContent, getVocabulary } from '@plone/volto/actions';
+import { searchContent } from '@plone/volto/actions/search/search';
+import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 
 const SelectFilter = ({ options, value, id, onChange, placeholder }) => {
   const dispatch = useDispatch();

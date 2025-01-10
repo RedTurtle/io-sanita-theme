@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import { getContent, resetContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { UniversalLink } from '@plone/volto/components';
+import { getContent, resetContent } from '@plone/volto/actions/content/content';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { OSMMap } from 'volto-venue';
 import { hasGeolocation, mapPinDirections } from 'io-sanita-theme/helpers';
 

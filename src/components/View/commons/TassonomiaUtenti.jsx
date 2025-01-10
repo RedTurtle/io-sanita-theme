@@ -3,7 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
 
-import { UniversalLink } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
 import { AGGREGATION_PAGE_TIPOLOGIA_UTENTE } from 'io-sanita-theme/config/ioSanitaConfig';
 

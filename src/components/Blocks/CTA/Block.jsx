@@ -5,8 +5,9 @@ import { defineMessages, useIntl } from 'react-intl';
 import { Button, Container } from 'design-react-kit';
 
 import { TextEditorWidget } from 'volto-slate-italia';
-import { UniversalLink, Icon as VoltoIcon } from '@plone/volto/components';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
+import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 
 import { useHandleDetachedBlockFocus } from 'io-sanita-theme/helpers';
 import config from '@plone/volto/registry';

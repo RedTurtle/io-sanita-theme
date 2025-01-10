@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Segment, Accordion } from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { TextWidget, Icon } from '@plone/volto/components';
+import { TextWidget } from '@plone/volto/components/manage/Widgets';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 
-import { LinkToWidget } from 'io-sanita-theme/components/manage/Widgets';
+import {
+  LinkToWidget,
+  defaultIconWidgetOptions,
+} from 'io-sanita-theme/components/manage/Widgets';
 import IconWidget from 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget';
-import { defaultIconWidgetOptions } from 'io-sanita-theme/components/manage/Widgets';
+
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({

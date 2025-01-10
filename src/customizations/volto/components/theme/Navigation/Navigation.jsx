@@ -12,7 +12,7 @@ import { Header, HeaderContent, HeaderToggler, Nav } from 'design-react-kit';
 import FocusLock from 'react-focus-lock';
 import { getDropdownMenuNavitems, getItemsByPath } from 'volto-dropdownmenu';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { CollapseNavigation, HeaderSearch } from 'io-sanita-theme/components';
 import {

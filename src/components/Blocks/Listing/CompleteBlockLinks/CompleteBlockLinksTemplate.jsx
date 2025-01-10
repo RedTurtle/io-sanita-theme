@@ -10,8 +10,8 @@ import {
   Row,
   Col,
 } from 'design-react-kit';
-import { UniversalLink } from '@plone/volto/components';
-import { isInternalURL } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import { Icon, LinkMore } from 'io-sanita-theme/components';
 import {
   ListingImage,

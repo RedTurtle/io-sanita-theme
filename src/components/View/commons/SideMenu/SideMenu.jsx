@@ -6,7 +6,7 @@ Costruisce il sidemenu in base alle sections strutturate nella parte destra del 
 /* eslint-disable no-unused-expressions */
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { throttle } from 'lodash';
+import throttle from 'lodash/throttle';
 import cx from 'classnames';
 import {
   Progress,

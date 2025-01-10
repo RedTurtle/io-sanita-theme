@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-import { isNil, map } from 'lodash';
+import isNil from 'lodash/isNil';
+import map from 'lodash/map';
 import { Pager } from 'design-react-kit';
 import createPaginationItems from 'io-sanita-theme/components/Pagination/createPaginationItems';
 import PaginationItem from 'io-sanita-theme/components/Pagination/PaginationItem';

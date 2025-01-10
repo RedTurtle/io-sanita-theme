@@ -1,4 +1,4 @@
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import { GET_SEARCH_BANDI_FILTERS } from 'io-sanita-theme/actions';
 
 const RESET_SEARCH_BANDI_FILTERS_RESULTS = 'RESET_SEARCH_BANDI_FILTERS_RESULTS';

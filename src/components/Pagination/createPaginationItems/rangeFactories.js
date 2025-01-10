@@ -1,11 +1,13 @@
-import _ from 'lodash';
+import map from 'lodash/map';
+import range from 'lodash/range';
+
 import {
   createInnerPrefix,
   createInnerSuffix,
 } from 'io-sanita-theme/components/Pagination/createPaginationItems/suffixFactories';
 
 export const createSimpleRange = (start, end, pageFactory) =>
-  _.map(_.range(start, end + 1), pageFactory);
+  map(range(start, end + 1), pageFactory);
 
 export const createComplexRange = (options, pageFactory) => {
   const { activePage, boundaryRange, hideEllipsis, siblingRange, totalPages } =

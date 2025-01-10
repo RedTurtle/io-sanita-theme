@@ -5,7 +5,7 @@
 
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { getSocialSettings } from 'volto-social-settings';
 import { Icon } from 'io-sanita-theme/components';
 

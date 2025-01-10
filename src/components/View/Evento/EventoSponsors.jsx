@@ -1,8 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { searchContent, resetSearchContent } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import {
+  searchContent,
+  resetSearchContent,
+} from '@plone/volto/actions/search/search';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { defineMessages, useIntl } from 'react-intl';
 import { Sponsors } from 'io-sanita-theme/components/View/Evento';
 import {
@@ -46,13 +49,15 @@ const EventoSponsors = ({ content }) => {
 
   // TO DO: il titolo degli sponsor non compare nel sideMenu laterale
 
-  return sponsors.length > 0 && (
-    <RichTextSection
+  return (
+    sponsors.length > 0 && (
+      <RichTextSection
         tag_id="sponsors"
         title={intl.formatMessage(messages.sponsors)}
       >
-      <Sponsors sponsors={sponsors} />
-    </RichTextSection>
+        <Sponsors sponsors={sponsors} />
+      </RichTextSection>
+    )
   );
 };
 

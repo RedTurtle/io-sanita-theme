@@ -10,7 +10,7 @@
 */
 
 import React, { useMemo } from 'react';
-import { isEqual } from 'lodash';
+import isEqual from 'lodash/isEqual';
 import PropTypes from 'prop-types';
 import { Table } from 'semantic-ui-react';
 import { useSelector } from 'react-redux';
@@ -150,8 +150,8 @@ const DiffField = ({
                     schema?.type === 'boolean'
                       ? booleanMapping[!!one]
                       : schema?.widget === 'json'
-                        ? contentOne
-                        : one,
+                      ? contentOne
+                      : one,
                     schema?.widget ??
                       (schema?.type === 'object' && field.includes('image')
                         ? field
