@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.7...2.0.0) (2025-01-10)
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Volto 18.4.0 (#67)
+
+### Features
+
+* upgrade to Volto 18.4.0 ([#67](https://github.com/RedTurtle/io-sanita-theme/issues/67)) ([c65516f](https://github.com/RedTurtle/io-sanita-theme/commit/c65516fb4ef17e075551e9cc3f6206f64039386f))
+
+### Bug Fixes
+
+* fileWidget preview just uploaded image ([d4183f3](https://github.com/RedTurtle/io-sanita-theme/commit/d4183f3b47059f883857976728feb8652ec9295c))
+
+### Maintenance
+
+* updated volto-gdpr-privacy ([32630ac](https://github.com/RedTurtle/io-sanita-theme/commit/32630ac64648c2eea7c1901973439dab70b202e0))
+
 ## [1.0.7](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.6...1.0.7) (2024-11-28)
 
 ### Bug Fixes
