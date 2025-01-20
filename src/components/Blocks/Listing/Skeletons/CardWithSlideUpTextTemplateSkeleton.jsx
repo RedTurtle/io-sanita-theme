@@ -15,7 +15,7 @@ import {
 } from 'design-react-kit';
 
 const CardWithSlideUpTextTemplateSkeleton = (props) => {
-  const { isEditMode, linkHref } = props;
+  const { isEditMode, linkHref, title } = props;
 
   return (
     <div className="card-slide-text-template">
