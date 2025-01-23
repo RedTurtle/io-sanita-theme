@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.0.0...2.0.1) (2025-01-23)
+
+### Bug Fixes
+
+* resolved undefined title inside the skeleton ([#68](https://github.com/RedTurtle/io-sanita-theme/issues/68)) ([ecfe562](https://github.com/RedTurtle/io-sanita-theme/commit/ecfe5627d4fce486dfbaa308f1f2bcf78faf520e))
+
 ## [2.0.0](https://github.com/RedTurtle/io-sanita-theme/compare/1.0.7...2.0.0) (2025-01-10)
 
 ### ⚠ BREAKING CHANGES
