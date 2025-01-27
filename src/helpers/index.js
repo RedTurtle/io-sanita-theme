@@ -23,6 +23,7 @@ export {
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
 export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
+export { isResolveUID } from 'io-sanita-theme/helpers/url';
 
 //pagination
 export { useClientPagination } from 'io-sanita-theme/helpers/ClientPagination/clientPagination';
@@ -41,6 +42,9 @@ export {
   blocksFieldIsEmpty,
   getRealEmptyField,
 } from 'io-sanita-theme/helpers/FormValidation/FormValidation';
+
+//images
+export { useFallbackImageSrc } from 'io-sanita-theme/helpers/images';
 
 //richtext
 export RichText from 'io-sanita-theme/helpers/RichText/RichText';
