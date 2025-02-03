@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-11-26T09:46:11.558Z\n"
+"POT-Creation-Date: 2025-02-03T16:50:25.181Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1270,6 +1270,11 @@ msgstr ""
 #. Default: "Titolo per il link della CTA"
 #: components/Blocks/CTA/schema
 msgid "cta_linkTitle"
+msgstr ""
+
+#. Default: "attivo"
+#: components/ReleaseLog/ReleaseLog
+msgid "currentActive"
 msgstr ""
 
 #. Default: "dal {dateStart} fino a conclusione"

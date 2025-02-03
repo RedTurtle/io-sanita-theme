@@ -55,6 +55,11 @@ import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
+
+const ReleaseLog = loadable(() =>
+  import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
+);
+
 const messages = defineMessages({
   search_brdc: {
     id: 'search_brdc',
@@ -138,12 +143,22 @@ export default function applyConfig(config) {
       Modulo: faFileDownloadSVG,
       Faq: faQuestionSVG,
     },
+    controlpanels: [
+      ...(config.settings.controlpanels ?? []),
+      {
+        '@id': '/release-log',
+        group: 'General',
+        title: 'Novità ultimi rilasci',
+        id: 'release-log',
+      },
+    ],
     controlPanelsIcons: {
       ...config.settings.controlPanelsIcons,
       'dropdown-menu-settings': menuSVG,
       'secondary-menu-settings': menuAltSVG,
       'subsites-settings': navSVG,
       'social-settings': shareSVG,
+      'release-log': logSVG,
     },
     defaultExcludedFromSearch: {
       portalTypes: ['Image', 'File'],
@@ -301,6 +316,10 @@ export default function applyConfig(config) {
       component: LoginAgid,
     },
     {
+      path: ['/controlpanel/release-log', '/release-log'],
+      component: ReleaseLog,
+    },
+    {
       path: [AGGREGATION_PAGE_ARGOMENTO + ':id'],
       component: AggregationPage,
       type: 'parliamo_di',
@@ -320,6 +339,7 @@ export default function applyConfig(config) {
     ),
     AGGREGATION_PAGE_ARGOMENTO,
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+    /\/release-log\/.*$/
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
@@ -328,5 +348,7 @@ export default function applyConfig(config) {
     AGGREGATION_PAGE_ARGOMENTO,
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
+
+  console.log('super test');
   return config;
 }
