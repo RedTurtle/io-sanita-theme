@@ -1270,6 +1270,11 @@ msgstr ""
 msgid "cta_linkTitle"
 msgstr ""
 
+#. Default: "attivo"
+#: components/ReleaseLog/ReleaseLog
+msgid "currentActive"
+msgstr ""
+
 #. Default: "dal {dateStart} fino a conclusione"
 #: components/View/commons/PageHeader/PageHeaderEventDates
 msgid "dal {dateStart} fino a conclusione"

@@ -86,6 +86,7 @@
     "@release-it/conventional-changelog": "^9.0.3",
     "bootstrap-italia": "2.8.7",
     "design-react-kit": "5.0.0-10",
+    "marked": "9.0.0",
     "react-focus-lock": "2.12.1",
     "react-highlight-words": "0.20.0",
     "react-slick": "0.30.2",
