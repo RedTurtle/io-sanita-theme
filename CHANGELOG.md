@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.1.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.0.1...2.1.0) (2025-02-05)
+
+### Features
+
+* added release log in control panel ([#69](https://github.com/RedTurtle/io-sanita-theme/issues/69)) ([14d0c42](https://github.com/RedTurtle/io-sanita-theme/commit/14d0c42049a2998de58a441e9bc55519439119a0))
+
+### Bug Fixes
+
+* ImageWithErrors ([5072d74](https://github.com/RedTurtle/io-sanita-theme/commit/5072d74b2e2932db371486481c3f16826d876fa9))
+* tables styles ([e3b1e92](https://github.com/RedTurtle/io-sanita-theme/commit/e3b1e92c64b11185725605691cff960a315e0923))
+
+### Documentation
+
+* updated release.md ([cc35bf1](https://github.com/RedTurtle/io-sanita-theme/commit/cc35bf1cdab1db5ea59344b29f172d6cb45c4559))
+
 ## [2.0.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.0.0...2.0.1) (2025-01-23)
 
 ### Bug Fixes
