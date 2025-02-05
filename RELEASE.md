@@ -41,9 +41,9 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.1.0 (05/02/2025)
 
 ### Novità
 
-- Aggiunto RELEASE.md
+- Aggiunta sezione Novità Ultimi Rilasci nel pannello di controllo.
 - Aggiornato piattaforma a Volto 18.4.0
