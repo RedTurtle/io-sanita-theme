@@ -1345,7 +1345,7 @@ msgstr ""
 msgid "dateRangePicker_homeEnd"
 msgstr ""
 
-#. Default: "Via avanti per passare al mese successivo"
+#. Default: "Vai avanti per passare al mese successivo"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_jumpToNextMonth"
 msgstr ""
