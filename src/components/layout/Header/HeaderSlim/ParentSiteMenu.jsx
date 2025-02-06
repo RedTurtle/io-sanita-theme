@@ -9,7 +9,17 @@ import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
 
+import { defineMessages, useIntl } from 'react-intl';
+
+const messages = defineMessages({
+  parent_site_menu: {
+    id: 'parent_site_menu',
+    defaultMessage: 'Main site menu',
+  },
+});
+
 const ParentSiteMenu = () => {
+  const intl = useIntl();
   const dropdownMenu = useSelector(
     (state) => state.dropdownMenuNavItems?.result,
   );
@@ -37,7 +47,11 @@ const ParentSiteMenu = () => {
   }
 
   return subsite && menu ? (
-    <Nav vertical={false} className="parent-site-menu">
+    <Nav
+      vertical={false}
+      className="parent-site-menu"
+      aria-label={intl.formatMessage(messages.parent_site_menu)}
+    >
       {menu.items.map((navitem, id) => (
         <NavItem tag="li" key={id}>
           <NavLink

@@ -136,3 +136,4 @@ export const TassonomiaUtenti = loadable(() =>
     /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/TassonomiaUtenti'
   ),
 );
+export commonIntlMessages from 'io-sanita-theme/components/View/commons/intlMessages';

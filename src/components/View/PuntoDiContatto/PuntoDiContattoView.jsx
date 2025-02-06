@@ -5,7 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 
 import {
   PuntoDiContattoContatti,
@@ -20,6 +20,7 @@ import {
   Placeholder,
   useSideMenu,
   Metadata,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -38,6 +39,7 @@ export const PuntoDiContattoSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const PuntoDiContattoView = ({ content }) => {
+  const intl = useIntl();
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -51,7 +53,10 @@ const PuntoDiContattoView = ({ content }) => {
           showdates={false}
         />
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -60,6 +65,8 @@ const PuntoDiContattoView = ({ content }) => {
             ref={documentBody}
             id="main-content-section"
             className="col-lg-8 it-page-sections-container border-light"
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections
@@ -93,4 +100,4 @@ PuntoDiContattoView.propTypes = {
   }).isRequired,
 };
 
-export default injectIntl(PuntoDiContattoView);
+export default PuntoDiContattoView;

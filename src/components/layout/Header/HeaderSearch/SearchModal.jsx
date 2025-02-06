@@ -88,6 +88,7 @@ const SearchModal = ({ closeModal, show }) => {
       id="search-modal"
       isOpen={show}
       toggle={closeModal}
+      role="alertdialog"
     >
       <ModalHeader toggle={closeModal} className="px-0 px-lg-4">
         <Container className="">
@@ -107,7 +108,11 @@ const SearchModal = ({ closeModal, show }) => {
       </ModalHeader>
       <ModalBody>
         <Container className="px-lg-5">
-          <div className="search-filters">
+          <div
+            className="search-filters"
+            role="search"
+            aria-label={intl.formatMessage(messages.searchLabel)}
+          >
             <div className="mb-4">
               <SearchBar
                 id="search-site-modal"

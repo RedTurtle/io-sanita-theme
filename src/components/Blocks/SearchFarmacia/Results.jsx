@@ -80,6 +80,10 @@ const messages = defineMessages({
     id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
+  farmacie_results_aria: {
+    id: 'search_farmacia_results_aria',
+    defaultMessage: 'Risultati della ricerca farmacie',
+  },
 });
 
 const ContactColumns = ({ isEditMode, item, searchType }) => {
@@ -189,6 +193,7 @@ const Results = ({ items, isEditMode, resRef, searchType }) => {
           className="farmacie-results shadow"
           role="region"
           aria-live="polite"
+          aria-label={intl.formatMessage(messages.farmacie_results_aria)}
           ref={resRef}
         >
           <Table>

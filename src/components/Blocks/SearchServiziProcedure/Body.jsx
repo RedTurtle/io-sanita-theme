@@ -55,6 +55,10 @@ const messages = defineMessages({
     id: 'search_sp_show_filters',
     defaultMessage: 'Seleziona filtri',
   },
+  aria_search_results: {
+    id: 'search_sp_aria_search_results',
+    defaultMessage: 'Risultati della ricerca Servizi / Procedure',
+  },
 });
 
 const Body = ({ data, id, path, properties, block, inEditMode }) => {
@@ -328,6 +332,9 @@ const Body = ({ data, id, path, properties, block, inEditMode }) => {
                       aria-live="polite"
                       role="region"
                       ref={resultsRef}
+                      aria-label={intl.formatMessage(
+                        messages.aria_search_results,
+                      )}
                     >
                       {querystringResults && (
                         <>

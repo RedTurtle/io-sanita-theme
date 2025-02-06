@@ -40,6 +40,10 @@ const messages = defineMessages({
     id: 'faq_search',
     defaultMessage: 'Inserisci una parola chiave per trovare una risposta',
   },
+  aria_search_results: {
+    id: 'faq_search_aria_search_results',
+    defaultMessage: 'Risultati della ricerca FAQ',
+  },
 });
 
 /**
@@ -129,6 +133,8 @@ const FaqFolderView = ({ content }) => {
           className="faq-search-results-wrapper"
           id="faq-search-results-region"
           aria-live="polite"
+          role="region"
+          aria-label={intl.formatMessage(messages.aria_search_results)}
         >
           {faq_structure && (
             <>

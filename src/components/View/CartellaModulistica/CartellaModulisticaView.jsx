@@ -30,6 +30,10 @@ const messages = defineMessages({
     id: 'cartellamodulistica_formati_scaricabili',
     defaultMessage: 'Formati scaricabili',
   },
+  search_results: {
+    id: 'cartellamodulistica_search_results',
+    defaultMessage: 'Risultati della ricerca',
+  },
 });
 
 import './cartellaModulistica.scss';
@@ -119,7 +123,13 @@ const CartellaModulisticaView = ({ content }) => {
         )}
 
         {modulistica.length > 0 && (
-          <section className="modulistica">
+          <section
+            className="modulistica"
+            id="results-cm"
+            aria-live="polite"
+            role="region"
+            aria-label={intl.formatMessage(messages.search_results)}
+          >
             {modulistica.filter(filterModulistica).map((section) => {
               return section['@type'] === 'Document' ? (
                 <div className="documents-section" key={section['@id']}>

@@ -5,7 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-
+import { useIntl } from 'react-intl';
 import {
   ContentTypeViewSections,
   useReadingTime,
@@ -18,6 +18,7 @@ import {
   useSideMenu,
   Metadata,
   Placeholder,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -59,6 +60,7 @@ export const NewsItemViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const NewsItemView = ({ content, location }) => {
+  const intl = useIntl();
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
   const { readingtime } = useReadingTime(content, documentBody);
@@ -82,7 +84,10 @@ const NewsItemView = ({ content, location }) => {
         {/* HEADER IMAGE */}
         <ContentImage content={content} />
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-md-12 col-lg-4">
+          <aside
+            className="col-md-12 col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -91,6 +96,8 @@ const NewsItemView = ({ content, location }) => {
             className="col-lg-8 it-page-sections-container border-light"
             id="main-content-section"
             ref={documentBody}
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

@@ -1083,6 +1083,11 @@ msgstr "Downloadable formats"
 msgid "cartellamodulistica_search_description"
 msgstr "Enter a keyword, such as 'Module'"
 
+#. Default: "Risultati della ricerca"
+#: components/View/CartellaModulistica/CartellaModulisticaView
+msgid "cartellamodulistica_search_results"
+msgstr "Search results"
+
 #. Default: "Cerca un modulo"
 #: components/View/CartellaModulistica/SearchBar
 msgid "cartellamodulistica_search_title"
@@ -1600,6 +1605,11 @@ msgstr "Expire"
 msgid "faq_search"
 msgstr "Type in a keyword to find answers"
 
+#. Default: "Risultati della ricerca FAQ"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "faq_search_aria_search_results"
+msgstr "Search results for FAQ"
+
 #. Default: "Area territoriale"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_area_territoriale"
@@ -1928,6 +1938,11 @@ msgstr ""
 msgid "mailto"
 msgstr "Send"
 
+#. Default: "Menù principale"
+#: overrideTranslations
+msgid "mainMenu"
+msgstr "Main menu"
+
 #. Default: "Grande"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "map_size_large"
@@ -2086,6 +2101,11 @@ msgstr "Other infos"
 msgid "override_links_accessibility_marker"
 msgstr ""
 
+#. Default: "Contenuto della pagina"
+#: components/View/commons/intlMessages
+msgid "pageContent"
+msgstr "Page content"
+
 #. Default: "PARLIAMO DI"
 #: components/View/commons/Topics
 msgid "page_topics"
@@ -2095,6 +2115,11 @@ msgstr "Let's talk about"
 #: components/Pagination/Pagination
 msgid "paginationLabel"
 msgstr "Page selector"
+
+#. Default: "Main site menu"
+#: components/layout/Header/HeaderSlim/ParentSiteMenu
+msgid "parent_site_menu"
+msgstr "Parent site menu"
 
 #. Default: "Parteciperanno"
 #: components/View/Evento/EventoPartecipanti
@@ -2563,6 +2588,7 @@ msgid "searchInSection"
 msgstr ""
 
 #. Default: "Cerca nel sito"
+#: components/layout/Header/HeaderSearch/HeaderSearch
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
 msgstr "Search site"
@@ -2576,6 +2602,11 @@ msgstr ""
 #: components/Search/Search
 msgid "search_adv_filters"
 msgstr "Advanced filters"
+
+#. Default: "Risultato della ricerca dei bandi"
+#: components/Blocks/SearchBandi/Body
+msgid "search_bandi_results"
+msgstr "Search results"
 
 #. Default: "Ricerca"
 #: config/ioSanitaConfig
@@ -2657,6 +2688,11 @@ msgstr "to"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_results"
 msgstr "Results"
+
+#. Default: "Risultati della ricerca farmacie"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_results_aria"
+msgstr "Search results"
 
 #. Default: "Cerca per parola chiave"
 #: components/Blocks/SearchFarmacia/SearchFilters
@@ -2892,6 +2928,11 @@ msgstr "Show results"
 #: components/Search/Search
 msgid "search_skip_to_search_results"
 msgstr "Go to search results"
+
+#. Default: "Risultati della ricerca Servizi / Procedure"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_aria_search_results"
+msgstr "Search results for Services"
 
 #. Default: "Filtri"
 #: components/Blocks/SearchServiziProcedure/Body
@@ -3244,6 +3285,16 @@ msgstr ""
 msgid "show_tipologia"
 msgstr ""
 
+#. Default: "Indice della pagina"
+#: components/View/commons/intlMessages
+msgid "sideMenuIndex"
+msgstr "Page content index"
+
+#. Default: "Navigazione della pagina"
+#: components/View/commons/SideMenu/SideMenu
+msgid "sideMenuNavigation"
+msgstr "Page content navigation"
+
 #. Default: "Compatto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_compact"
@@ -3293,6 +3344,11 @@ msgstr "Go to content"
 #: components/SkipLinks/SkipLinks
 msgid "skiplink-navigation"
 msgstr "Go to navigation"
+
+#. Default: "Skiplinks"
+#: components/SkipLinks/SkipLinks
+msgid "skiplinks-description"
+msgstr ""
 
 #. Default: "Skype"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
@@ -3671,6 +3727,11 @@ msgstr "Services or internal offices"
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "update_date"
 msgstr "Update date"
+
+#. Default: "Utility Menu"
+#: components/layout/Header/HeaderSlim/HeaderSlim
+msgid "utilityMenu"
+msgstr ""
 
 #. Default: "Vedi su Apple Maps"
 #: helpers/Address/mapPin

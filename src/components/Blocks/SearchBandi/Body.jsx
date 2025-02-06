@@ -20,6 +20,10 @@ const messages = defineMessages({
     id: 'noResult',
     defaultMessage: 'Nessun risultato trovato',
   },
+  search_bandi_results: {
+    id: 'search_bandi_results',
+    defaultMessage: 'Risultato della ricerca dei bandi',
+  },
 });
 
 const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
@@ -210,7 +214,13 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
 
         {!loading ? (
           items?.length > 0 ? (
-            <div className="mt-4" ref={resultsRef} aria-live="polite">
+            <div
+              className="mt-4"
+              ref={resultsRef}
+              aria-live="polite"
+              aria-label={intl.formatMessage(messages.search_bandi_results)}
+              role="region"
+            >
               <div className="block listing">
                 <BandiTemplate items={items} full_width={false} />
               </div>
