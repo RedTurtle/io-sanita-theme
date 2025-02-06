@@ -475,6 +475,11 @@ msgstr "Siga con nosotros"
 msgid "Select all content types or none"
 msgstr ""
 
+#. Default: "Seleziona un'opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "SelectInput_default_label"
+msgstr ""
+
 #. Default: "Seleziona un file"
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
@@ -546,7 +551,6 @@ msgstr ""
 
 #. Default: "Title..."
 #: components/Blocks/Accordion/Block/EditBlock
-#: components/Blocks/Contacts/Block/EditBlock
 msgid "Title placeholder"
 msgstr ""
 
@@ -556,6 +560,7 @@ msgid "Titolo"
 msgstr ""
 
 #. Default: "Titolo..."
+#: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Titolo placeholder"
 msgstr ""

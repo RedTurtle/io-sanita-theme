@@ -46,7 +46,7 @@ const messages = defineMessages({
   },
   jumpToNextMonth: {
     id: 'dateRangePicker_jumpToNextMonth',
-    defaultMessage: 'Via avanti per passare al mese successivo',
+    defaultMessage: 'Vai avanti per passare al mese successivo',
   },
   keyboardShortcuts: {
     id: 'dateRangePicker_keyboardShortcuts',

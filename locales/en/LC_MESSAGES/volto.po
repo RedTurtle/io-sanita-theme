@@ -68,12 +68,12 @@ msgstr ""
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "Card detail label"
-msgstr ""
+msgstr "View"
 
 #. Default: "Unità operativa"
 #: components/Cards/common/CardCategoryBottom
 msgid "CardCategoryBottom_UO"
-msgstr ""
+msgstr "Operational unit"
 
 #. Default: "Apri in Google Maps"
 #: components/Cards/CardPlace/CardPlace
@@ -93,7 +93,7 @@ msgstr "Search"
 #. Default: "Cerca per parola chiave"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "Cerca per parola chiave"
-msgstr ""
+msgstr "Search by keyword"
 
 #. Default: "Pulisci i campi"
 #: overrideTranslations
@@ -114,7 +114,7 @@ msgstr "Click here to replace file"
 #: components/View/AggregationPage/SideMenu
 #: components/View/commons/SideMenu/SideMenu
 msgid "Contenuto"
-msgstr ""
+msgstr "Content"
 
 #. Default: "Current filters applied"
 #: helpers/Translations/searchBlockExtendedTranslations
@@ -466,7 +466,12 @@ msgstr "Follow us on"
 #. Default: "Seleziona tutti i tipi di contenuti o nessuno"
 #: components/Search/Search
 msgid "Select all content types or none"
-msgstr ""
+msgstr "Select all content types or none"
+
+#. Default: "Seleziona un'opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "SelectInput_default_label"
+msgstr "Select an option"
 
 #. Default: "Seleziona un file"
 #: components/Widgets/FileWidget
@@ -527,7 +532,7 @@ msgstr ""
 #. Default: "Tipi di contenuto"
 #: components/View/AggregationPage/SideMenu
 msgid "Tipi di contenuto"
-msgstr ""
+msgstr "Content types"
 
 #. Default: "Titolo..."
 #: components/Blocks/Accordion/Edit
@@ -539,7 +544,6 @@ msgstr ""
 
 #. Default: "Title..."
 #: components/Blocks/Accordion/Block/EditBlock
-#: components/Blocks/Contacts/Block/EditBlock
 msgid "Title placeholder"
 msgstr ""
 
@@ -549,6 +553,7 @@ msgid "Titolo"
 msgstr ""
 
 #. Default: "Titolo..."
+#: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Titolo placeholder"
 msgstr ""
@@ -946,7 +951,7 @@ msgstr "What is it"
 #. Default: "Pubblicato il"
 #: components/Blocks/Listing/Bandi/BandiTemplate
 msgid "bando_data_pubblicazione"
-msgstr ""
+msgstr "Published on"
 
 #. Default: "Data di pubblicazione"
 #: components/View/Bando/Dates
@@ -982,7 +987,7 @@ msgstr "Active"
 #. Default: "Scadenza partecipazione"
 #: components/Blocks/Listing/Bandi/BandiTemplate
 msgid "bando_scadenza"
-msgstr ""
+msgstr "Participation deadline"
 
 #. Default: "Programmato"
 #: components/View/Bando/BandoStatus/BandoStatus
@@ -997,17 +1002,17 @@ msgstr "Related services"
 #. Default: "Stato"
 #: components/Blocks/Listing/Bandi/BandiTemplate
 msgid "bando_stato"
-msgstr ""
+msgstr "Status"
 
 #. Default: "Tipo"
 #: components/Blocks/Listing/Bandi/BandiTemplate
 msgid "bando_tipologia"
-msgstr ""
+msgstr "Type"
 
 #. Default: "Vedi"
 #: components/Blocks/Listing/Bandi/BandiTemplate
 msgid "bando_vedi"
-msgstr ""
+msgstr "View"
 
 #. Default: "Colore di sfondo"
 #: components/Blocks/Contacts/schema
@@ -1056,7 +1061,7 @@ msgstr "Last update:"
 #. Default: "Vedi"
 #: components/Blocks/Listing/CardWithSlideUpText/CardWithSlideUpTextTemplate
 msgid "card_vedi"
-msgstr ""
+msgstr "View"
 
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
@@ -1117,7 +1122,7 @@ msgstr "Close menu"
 #. Default: "Chiudi l'accordion"
 #: components/Blocks/Accordion/Block/ViewBlock
 msgid "closeAccordion"
-msgstr ""
+msgstr "Close accordion"
 
 #. Default: "Chiudi cerca"
 #: components/layout/Header/HeaderSearch/SearchModal
@@ -1213,12 +1218,12 @@ msgstr "More informations"
 #. Default: "Approfondimenti"
 #: components/View/ComeFarePer/ComeFarePerApprofondimenti
 msgid "comefareper_approfondimenti"
-msgstr ""
+msgstr "Insights"
 
 #. Default: "Documenti"
 #: components/View/ComeFarePer/ComeFarePerAllegati
 msgid "comefareper_documenti"
-msgstr ""
+msgstr "Documents"
 
 #. Default: "Contatti"
 #: components/Blocks/Contacts/Sidebar
@@ -1288,152 +1293,152 @@ msgstr "Date"
 #. Default: "Calendario"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_calendarLabel"
-msgstr ""
+msgstr "Calendar"
 
 #. Default: "Scegli"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_choose"
-msgstr ""
+msgstr "Select"
 
 #. Default: "Cancella la data"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_clearDate"
-msgstr ""
+msgstr "Clear date"
 
 #. Default: "Cancella le date"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_clearDates"
-msgstr ""
+msgstr "Clear dates"
 
 #. Default: "Chiudi"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_closeDatePicker"
-msgstr ""
+msgstr "Close"
 
 #. Default: "Tasto invio"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_enterKey"
-msgstr ""
+msgstr "Enter key"
 
 #. Default: "Tasto Esc"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_escape"
-msgstr ""
+msgstr "Esc key"
 
 #. Default: "Interagisci con il calendario e seleziona le date di inizio e/o fine"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_focusStartDate"
-msgstr ""
+msgstr "Interact with the calendar and select the start and/or end dates"
 
 #. Default: "Chiudi il pannello dei tasti rapidi"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_hideKeyboardShortcutsPanel"
-msgstr ""
+msgstr "Close the Quick Keys panel"
 
 #. Default: "Tasti inizio e fine"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_homeEnd"
-msgstr ""
+msgstr "Start and End keys"
 
-#. Default: "Via avanti per passare al mese successivo"
+#. Default: "Vai avanti per passare al mese successivo"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_jumpToNextMonth"
-msgstr ""
+msgstr "Go ahead to move on to the next month"
 
 #. Default: "Torna indietro per passare al mese precedente"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_jumpToPrevMonth"
-msgstr ""
+msgstr "Go back to move on to the previous month"
 
 #. Default: "Naviga indietro per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date."
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_keyboardBackwardNavigationInstructions"
-msgstr ""
+msgstr "Navigate back to interact with the calendar and select a date. Press the 'question mark' button to learn the hotkeys for changing dates."
 
 #. Default: "Naviga avanti per interagire con il calendario e selezionare una data. Premi il pulsante 'punto interrogativo' per conoscere i tasti rapidi per modificare le date."
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_keyboardForwardNavigationInstructions"
-msgstr ""
+msgstr "Navigate forward to interact with the calendar and select a date. Press the 'question mark' button to learn the hotkeys for changing dates."
 
 #. Default: "Tasti rapidi"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_keyboardShortcuts"
-msgstr ""
+msgstr "Quick keys"
 
 #. Default: "Tasti freccia destra e sinistra"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_leftArrowRightArrow"
-msgstr ""
+msgstr "Left and right arrow keys"
 
 #. Default: "Spostati indietro (sinistra) e avanti (destra) di un giorno."
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_moveFocusByOneDay"
-msgstr ""
+msgstr "Move back (left) and forward (right) one day."
 
 #. Default: "Cambia mese"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_moveFocusByOneMonth"
-msgstr ""
+msgstr "Change month"
 
 #. Default: "Spostati indietro (su) e avanti (giu) di una settimana."
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_moveFocusByOneWeek"
-msgstr ""
+msgstr "Move back (up) and forward (down) one week."
 
 #. Default: "Vai al primo o all'ultimo giorno della settimana"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_moveFocustoStartAndEndOfWeek"
-msgstr ""
+msgstr "Go to the first or last day of the week"
 
 #. Default: "Apri questo pannello."
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_openThisPanel"
-msgstr ""
+msgstr "Open this panel."
 
 #. Default: "Tasti pagina su e giu"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_pageUpPageDown"
-msgstr ""
+msgstr "Page up and down keys"
 
 #. Default: "Punto interrogativo"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_questionMark"
-msgstr ""
+msgstr "Question point"
 
 #. Default: "Torna al campo di inserimento data"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_returnFocusToInput"
-msgstr ""
+msgstr "Returns to the date entry field"
 
 #. Default: "Seleziona date"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_roleDescription"
-msgstr ""
+msgstr "Select dates"
 
 #. Default: "Seleziona la data evidenziata"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_selectFocusedDate"
-msgstr ""
+msgstr "Select highlited date"
 
 #. Default: "Apri il pannello dei tasti rapidi"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_showKeyboardShortcutsPanel"
-msgstr ""
+msgstr "Open the Quick Keys panel"
 
 #. Default: "Tasti freccia su e giu"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_upArrowDownArrow"
-msgstr ""
+msgstr "Up and down arrow keys"
 
 #. Default: "Data fine"
 #: components/Widgets/DateRange/DateRange
 msgid "daterange_end"
-msgstr ""
+msgstr "End date"
 
 #. Default: "Data inizio"
 #: components/Widgets/DateRange/DateRange
 msgid "daterange_start"
-msgstr ""
+msgstr "Start date"
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils
@@ -1673,7 +1678,7 @@ msgstr "To"
 #. Default: "Non ho avuto dubbi su quello che stavo facendo"
 #: overrideTranslations
 msgid "feedback_clear_proceeding"
-msgstr ""
+msgstr "I had no doubts about what I was doing"
 
 #. Default: "Filtri"
 #: components/Search/Search
@@ -1683,7 +1688,7 @@ msgstr "Filters"
 #. Default: "Cerca"
 #: components/Blocks/SearchBandi/Body
 msgid "find"
-msgstr ""
+msgstr "Search"
 
 #. Default: "Annulla"
 #: overrideTranslations
@@ -2029,7 +2034,7 @@ msgstr ""
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchBandi/Body
 msgid "noResult"
-msgstr ""
+msgstr "No results found"
 
 #. Default: "Novità"
 #: components/View/commons/RelatedItems
@@ -2044,12 +2049,12 @@ msgstr "Press release number"
 #. Default: "Apri l'accordion"
 #: components/Blocks/Accordion/Block/ViewBlock
 msgid "openAccordion"
-msgstr ""
+msgstr "Open accordion"
 
 #. Default: "Apri link in una nuova scheda"
 #: components/Blocks/CTA/Block
 msgid "openLinkInNewTab"
-msgstr ""
+msgstr "Open link in a new tab"
 
 #. Default: "Questo evento ha una data di fine aperta/variabile."
 #: components/View/Evento/Dates
@@ -2109,7 +2114,7 @@ msgstr ""
 #. Default: "Contatti"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "pdc_contatti"
-msgstr ""
+msgstr "Contacts"
 
 #. Default: "Correlati"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
@@ -2413,17 +2418,17 @@ msgstr ""
 #. Default: "Categoria"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "sarchBandi_categoria_placeholder"
-msgstr ""
+msgstr "Category"
 
 #. Default: "Ente"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "sarchBandi_ente_placeholder"
-msgstr ""
+msgstr "Entity"
 
 #. Default: "Tipologia"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "sarchBandi_tipologia_placeholder"
-msgstr ""
+msgstr "Type"
 
 #. Default: "Scadenza dei termini per partecipare al bando"
 #: components/View/Bando/Dates
@@ -2444,32 +2449,32 @@ msgstr "Search"
 #. Default: "Filtro per Categoria"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_categoria_filter"
-msgstr ""
+msgstr "Filter by category"
 
 #. Default: "Filtro per data di chiusura del procedimento"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_chiusura_filter"
-msgstr ""
+msgstr "Filter by closing date of the proceeding"
 
 #. Default: "Chiusura dal"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_chiusura_filter_from"
-msgstr ""
+msgstr "Closed from"
 
 #. Default: "Chiusura al"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_chiusura_filter_to"
-msgstr ""
+msgstr "Closed to"
 
 #. Default: "Filtro per date"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_date_filter"
-msgstr ""
+msgstr "Dates filter"
 
 #. Default: "Filtro per Ente"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_ente_filter"
-msgstr ""
+msgstr "Entity filter"
 
 #. Default: "Filtro 1"
 #: components/Blocks/SearchBandi/Sidebar
@@ -2661,7 +2666,7 @@ msgstr "Search by keyword"
 #. Default: "Tipologia di ricerca"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_search_type_help"
-msgstr ""
+msgstr "Search type"
 
 #. Default: "Inserisci il nome della farmacia"
 #: components/Blocks/SearchFarmacia/SearchFilters
@@ -2766,7 +2771,7 @@ msgstr "Shift phone"
 #. Default: "Titolo"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Cerca nel sito"
 #: components/Search/Search
@@ -2871,7 +2876,7 @@ msgstr "Results"
 #. Default: "Rimuovi tutti i filtri"
 #: components/Search/Search
 msgid "search_remove_all_filters"
-msgstr ""
+msgstr "Remove all filters"
 
 #. Default: "Categorie"
 #: components/Search/Search
@@ -3267,12 +3272,12 @@ msgstr ""
 #. Default: "Strutture / Luoghi"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_place"
-msgstr ""
+msgstr "Structures / Places"
 
 #. Default: "Sito web"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "sito web"
-msgstr ""
+msgstr "Wen site"
 
 #. Default: "Skip to footer"
 #: components/SkipLinks/SkipLinks
@@ -3519,7 +3524,7 @@ msgstr "Times and deadlines"
 #. Default: "Inserisci un valore"
 #: components/Widgets/SearchFilters/TextFilter
 msgid "text_filter_placeholder"
-msgstr ""
+msgstr "Insert value"
 
 #. Default: "Tipologia del bando"
 #: components/View/Bando/BandoTipologia
