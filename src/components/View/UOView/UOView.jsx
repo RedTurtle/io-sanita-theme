@@ -4,7 +4,7 @@
  */
 
 import React, { createRef } from 'react';
-
+import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import {
   UOContatti,
@@ -32,6 +32,7 @@ import {
   Placeholder,
   useSideMenu,
   Metadata,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 
 export const UOViewSectionsOrder = [
@@ -58,6 +59,7 @@ export const UOViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const UOView = ({ content }) => {
+  const intl = useIntl();
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -75,7 +77,10 @@ const UOView = ({ content }) => {
         <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -84,6 +89,8 @@ const UOView = ({ content }) => {
             ref={documentBody}
             id="main-content-section"
             className="col-lg-8 it-page-sections-container border-light"
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

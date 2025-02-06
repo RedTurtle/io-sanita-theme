@@ -166,4 +166,8 @@ defineMessages({
     id: 'Visible only in view mode',
     defaultMessage: 'Visible only in view mode',
   },
+  mainMenu: {
+    id: 'mainMenu',
+    defaultMessage: 'Menù principale',
+  },
 });

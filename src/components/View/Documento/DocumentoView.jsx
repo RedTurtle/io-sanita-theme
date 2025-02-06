@@ -5,6 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 import {
   PageHeader,
@@ -14,6 +15,7 @@ import {
   Metadata,
   RelatedItems,
   Placeholder,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -42,6 +44,7 @@ export const DocumentoViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const DocumentoView = ({ content }) => {
+  const intl = useIntl();
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -59,7 +62,10 @@ const DocumentoView = ({ content }) => {
         <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -68,6 +74,8 @@ const DocumentoView = ({ content }) => {
             ref={documentBody}
             id="main-content-section"
             className="col-lg-8 it-page-sections-container border-light"
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

@@ -475,6 +475,11 @@ msgstr "Siga con nosotros"
 msgid "Select all content types or none"
 msgstr ""
 
+#. Default: "Seleziona un'opzione"
+#: components/Widgets/SelectInput/SelectInput
+msgid "SelectInput_default_label"
+msgstr ""
+
 #. Default: "Seleziona un file"
 #: components/Widgets/FileWidget
 msgid "Seleziona un file"
@@ -546,7 +551,6 @@ msgstr ""
 
 #. Default: "Title..."
 #: components/Blocks/Accordion/Block/EditBlock
-#: components/Blocks/Contacts/Block/EditBlock
 msgid "Title placeholder"
 msgstr ""
 
@@ -556,6 +560,7 @@ msgid "Titolo"
 msgstr ""
 
 #. Default: "Titolo..."
+#: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Titolo placeholder"
 msgstr ""
@@ -1085,6 +1090,11 @@ msgstr ""
 msgid "cartellamodulistica_search_description"
 msgstr ""
 
+#. Default: "Risultati della ricerca"
+#: components/View/CartellaModulistica/CartellaModulisticaView
+msgid "cartellamodulistica_search_results"
+msgstr ""
+
 #. Default: "Cerca un modulo"
 #: components/View/CartellaModulistica/SearchBar
 msgid "cartellamodulistica_search_title"
@@ -1342,7 +1352,7 @@ msgstr ""
 msgid "dateRangePicker_homeEnd"
 msgstr ""
 
-#. Default: "Via avanti per passare al mese successivo"
+#. Default: "Vai avanti per passare al mese successivo"
 #: components/Widgets/DateRange/DateRange
 msgid "dateRangePicker_jumpToNextMonth"
 msgstr ""
@@ -1600,6 +1610,11 @@ msgstr "Expirar"
 #. Default: "Inserisci una parola chiave per trovare una risposta"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "faq_search"
+msgstr ""
+
+#. Default: "Risultati della ricerca FAQ"
+#: components/View/FAQ/FaqFolder/FaqFolderView
+msgid "faq_search_aria_search_results"
 msgstr ""
 
 #. Default: "Area territoriale"
@@ -1930,6 +1945,11 @@ msgstr ""
 msgid "mailto"
 msgstr "Enviar"
 
+#. Default: "Menù principale"
+#: overrideTranslations
+msgid "mainMenu"
+msgstr ""
+
 #. Default: "Grande"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "map_size_large"
@@ -2088,6 +2108,11 @@ msgstr ""
 msgid "override_links_accessibility_marker"
 msgstr ""
 
+#. Default: "Contenuto della pagina"
+#: components/View/commons/intlMessages
+msgid "pageContent"
+msgstr ""
+
 #. Default: "PARLIAMO DI"
 #: components/View/commons/Topics
 msgid "page_topics"
@@ -2096,6 +2121,11 @@ msgstr ""
 #. Default: "Selettore di pagina"
 #: components/Pagination/Pagination
 msgid "paginationLabel"
+msgstr ""
+
+#. Default: "Main site menu"
+#: components/layout/Header/HeaderSlim/ParentSiteMenu
+msgid "parent_site_menu"
 msgstr ""
 
 #. Default: "Parteciperanno"
@@ -2565,6 +2595,7 @@ msgid "searchInSection"
 msgstr ""
 
 #. Default: "Cerca nel sito"
+#: components/layout/Header/HeaderSearch/HeaderSearch
 #: components/layout/Header/HeaderSearch/SearchModal
 msgid "searchLabel"
 msgstr "Busca en el sitio"
@@ -2577,6 +2608,11 @@ msgstr ""
 #. Default: "Filtri avanzati"
 #: components/Search/Search
 msgid "search_adv_filters"
+msgstr ""
+
+#. Default: "Risultato della ricerca dei bandi"
+#: components/Blocks/SearchBandi/Body
+msgid "search_bandi_results"
 msgstr ""
 
 #. Default: "Ricerca"
@@ -2658,6 +2694,11 @@ msgstr ""
 #. Default: "Risultati"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_results"
+msgstr ""
+
+#. Default: "Risultati della ricerca farmacie"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_results_aria"
 msgstr ""
 
 #. Default: "Cerca per parola chiave"
@@ -2893,6 +2934,11 @@ msgstr ""
 #. Default: "Vai ai risultati di ricerca"
 #: components/Search/Search
 msgid "search_skip_to_search_results"
+msgstr ""
+
+#. Default: "Risultati della ricerca Servizi / Procedure"
+#: components/Blocks/SearchServiziProcedure/Body
+msgid "search_sp_aria_search_results"
 msgstr ""
 
 #. Default: "Filtri"
@@ -3246,6 +3292,16 @@ msgstr ""
 msgid "show_tipologia"
 msgstr ""
 
+#. Default: "Indice della pagina"
+#: components/View/commons/intlMessages
+msgid "sideMenuIndex"
+msgstr ""
+
+#. Default: "Navigazione della pagina"
+#: components/View/commons/SideMenu/SideMenu
+msgid "sideMenuNavigation"
+msgstr ""
+
 #. Default: "Compatto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_compact"
@@ -3295,6 +3351,11 @@ msgstr "Ir al contenido"
 #: components/SkipLinks/SkipLinks
 msgid "skiplink-navigation"
 msgstr "Ir a navegación"
+
+#. Default: "Skiplinks"
+#: components/SkipLinks/SkipLinks
+msgid "skiplinks-description"
+msgstr ""
 
 #. Default: "Skype"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
@@ -3672,6 +3733,11 @@ msgstr ""
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
 #: components/Blocks/Listing/SimpleCard/SimpleCardTemplateOneForRow
 msgid "update_date"
+msgstr ""
+
+#. Default: "Utility Menu"
+#: components/layout/Header/HeaderSlim/HeaderSlim
+msgid "utilityMenu"
 msgstr ""
 
 #. Default: "Vedi su Apple Maps"

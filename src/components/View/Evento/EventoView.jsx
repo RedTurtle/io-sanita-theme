@@ -5,6 +5,7 @@
 
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 import {
@@ -15,6 +16,7 @@ import {
   useSideMenu,
   Metadata,
   Placeholder,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -61,6 +63,7 @@ export const EventoViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const EventoView = ({ content, location }) => {
+  const intl = useIntl();
   let documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -74,7 +77,10 @@ const EventoView = ({ content, location }) => {
         <ContentImage content={content} />
 
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-md-12 col-lg-4">
+          <aside
+            className="col-md-12 col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -83,6 +89,8 @@ const EventoView = ({ content, location }) => {
             ref={documentBody}
             id="main-content-section"
             className="col-lg-8 it-page-sections-container border-light"
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

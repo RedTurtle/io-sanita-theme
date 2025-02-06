@@ -59,7 +59,7 @@ class Edit extends SubblocksEdit {
     }
   }
 
-  handleEnter = (e) => {
+  handleKeydown = (e) => {
     if (this.props.selected && this.state.subIndexSelected < 0) {
       handleKeyDownOwnFocusManagement(e, this.props);
     }
@@ -99,7 +99,7 @@ class Edit extends SubblocksEdit {
     }
 
     if (this.nodeF && this.nodeF.current) {
-      this.nodeF.current.addEventListener('keydown', this.handleEnter, false);
+      this.nodeF.current.addEventListener('keydown', this.handleKeydown, false);
       this.nodeF.current.addEventListener('click', this.handleClick, false);
     }
   }

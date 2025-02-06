@@ -14,6 +14,10 @@ const messages = defineMessages({
     id: 'Cerca',
     defaultMessage: 'Cerca',
   },
+  ariaLabelSearch: {
+    id: 'searchLabel',
+    defaultMessage: 'Cerca nel sito',
+  },
 });
 
 const HeaderSearch = ({ className }) => {
@@ -22,7 +26,11 @@ const HeaderSearch = ({ className }) => {
 
   return (
     <>
-      <div className={cx('it-search-wrapper', className)}>
+      <div
+        className={cx('it-search-wrapper', className)}
+        role="search"
+        aria-label={intl.formatMessage(messages.ariaLabelSearch)}
+      >
         <span className="d-none d-md-block">
           {intl.formatMessage(messages.search)}
         </span>

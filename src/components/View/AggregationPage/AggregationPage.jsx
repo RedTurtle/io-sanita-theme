@@ -15,6 +15,7 @@ import { getTassonomieSearch } from 'io-sanita-theme/actions';
 import {
   PageHeader,
   SkipToMainContent,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 import {
   CardSimple,
@@ -157,7 +158,10 @@ const AggregationPage = ({ match, route, location }) => {
         />
 
         <div className="row row-column-border border-light row-column-menu-left">
-          <aside className="col-md-12 col-lg-4">
+          <aside
+            className="col-md-12 col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             <SideMenu
               sections={sections}
               selected={searchParams.portalType}
@@ -170,6 +174,8 @@ const AggregationPage = ({ match, route, location }) => {
             id="main-content-section"
             className="col-lg-8 aggregation-page-results border-light pt-4 pt-lg-0 pe-lg-0"
             aria-live="polite"
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             <div className="d-flex justify-content-end mb-4">
               <SortByWidget

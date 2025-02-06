@@ -339,7 +339,7 @@ export default function applyConfig(config) {
     ),
     AGGREGATION_PAGE_ARGOMENTO,
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
-    /\/release-log\/.*$/
+    /\/release-log\/.*$/,
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
@@ -349,6 +349,5 @@ export default function applyConfig(config) {
     AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
 
-  console.log('super test');
   return config;
 }

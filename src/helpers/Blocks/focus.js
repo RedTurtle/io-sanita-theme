@@ -13,7 +13,7 @@ export const handleKeyDownOwnFocusManagement = (
   const {
     index,
     block,
-    node,
+    blockNode,
     onFocusPreviousBlock = () => {},
     onFocusNextBlock = () => {},
     onSelectBlock = () => {},
@@ -22,11 +22,11 @@ export const handleKeyDownOwnFocusManagement = (
   const isMultipleSelection = e.shiftKey;
 
   if (e.key === 'ArrowUp' && !disableArrowUp) {
-    onFocusPreviousBlock(block, node, isMultipleSelection);
+    onFocusPreviousBlock(block, blockNode.current, isMultipleSelection);
     e.preventDefault();
   }
   if (e.key === 'ArrowDown' && !disableArrowDown) {
-    onFocusNextBlock(block, node, isMultipleSelection);
+    onFocusNextBlock(block, blockNode.current, isMultipleSelection);
     e.preventDefault();
   }
   if (e.key === 'Enter' && !disableEnter) {

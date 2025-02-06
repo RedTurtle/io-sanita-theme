@@ -66,7 +66,11 @@ const SearchBar = React.forwardRef(
     }, [value]);
 
     return (
-      <div className="form-group search-bar-widget mb-3">
+      <div
+        className="form-group search-bar-widget mb-3"
+        role="search"
+        aria-label={title ?? defaultTitle}
+      >
         <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
           {title ?? defaultTitle}
         </label>

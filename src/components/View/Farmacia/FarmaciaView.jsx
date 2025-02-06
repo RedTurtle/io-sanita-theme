@@ -1,3 +1,4 @@
+import { useIntl } from 'react-intl';
 import {
   ContentImage,
   PageHeader,
@@ -5,6 +6,7 @@ import {
   SkipToMainContent,
   useSideMenu,
   Metadata,
+  commonIntlMessages,
 } from 'io-sanita-theme/components/View/commons';
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 import PropTypes from 'prop-types';
@@ -33,6 +35,7 @@ export const FarmaciaViewSectionsOrder = [
  * @returns {string} Markup of the component.
  */
 const FarmaciaView = ({ content }) => {
+  const intl = useIntl();
   const documentBody = createRef();
   const { sideMenuElements, SideMenu } = useSideMenu(content, documentBody);
 
@@ -60,7 +63,10 @@ const FarmaciaView = ({ content }) => {
         <ContentImage content={content} />
 
         <div className="row border-top row-column-border row-column-menu-left">
-          <aside className="col-lg-4">
+          <aside
+            className="col-lg-4"
+            aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
+          >
             {__CLIENT__ && (
               <SideMenu data={sideMenuElements} content_uid={content?.UID} />
             )}
@@ -69,6 +75,8 @@ const FarmaciaView = ({ content }) => {
             className="col-lg-8 it-page-sections-container border-light"
             id="main-content-section"
             ref={documentBody}
+            role="region"
+            aria-label={intl.formatMessage(commonIntlMessages.pageContent)}
           >
             {/* SEZIONI */}
             <ContentTypeViewSections

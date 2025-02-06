@@ -42,7 +42,7 @@ const SearchBarCM = ({ setSearchableText, searchableText }) => {
             setSearchableText(v);
           }}
           value={searchableText}
-          ariaControls="cm-results"
+          ariaControls="results-cm"
           shadow={true}
         />
       </Container>
