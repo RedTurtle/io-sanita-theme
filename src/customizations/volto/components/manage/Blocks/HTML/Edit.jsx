@@ -17,7 +17,7 @@ import loadable from '@loadable/component';
 import isEqual from 'lodash/isEqual';
 
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
-import Icon from 'io-sanita-theme/components/Icon/Icon';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import showSVG from '@plone/volto/icons/show.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
@@ -248,6 +248,7 @@ class Edit extends Component {
       this.props.data.placeholder ||
       this.props.intl.formatMessage(messages.placeholder);
     const value = this.getValue();
+
     return (
       <>
         {this.props.selected && value && (
@@ -317,7 +318,7 @@ class Edit extends Component {
         <div className="public-ui">
           <div
             className={cx('', {
-              'container p-4': this.props.data.styles['full-width:bool'],
+              'container p-4': this.props.data.styles?.['full-width:bool'],
             })}
           >
             {this.state.isPreview ? (
