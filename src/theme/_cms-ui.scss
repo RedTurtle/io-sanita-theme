@@ -194,7 +194,9 @@ body.cms-ui {
     .icon {
       background: none;
     }
-    &:hover {
+    &:hover,
+    &:focus,
+    &:focus-within {
       background-color: black !important;
       color: #fff !important;
       svg {
@@ -223,7 +225,9 @@ body.cms-ui {
   .block.numbersBlock > .ui.basic.button.delete-button,
   .block.contacts .ui.basic.button.delete-button {
     margin-right: -39px !important;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:focus-within {
       background-color: #d90062 !important;
     }
   }

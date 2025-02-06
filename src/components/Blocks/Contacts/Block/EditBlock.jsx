@@ -16,7 +16,7 @@ import { TextEditorWidget } from 'volto-slate-italia';
 
 const messages = defineMessages({
   titlePlaceholder: {
-    id: 'Title placeholder',
+    id: 'Titolo placeholder',
     defaultMessage: 'Titolo...',
   },
   textPlaceholder: {
@@ -52,24 +52,13 @@ class EditBlock extends SubblockEdit {
     // eslint-disable-next-line no-unused-expressions
     this.contact_item_ref?.current?.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
-        if (!(this.state.focusOn === 'text')) {
-          this.setState({ focusOn: 'text' });
+        if (!(this.state.focusOn === 'title')) {
+          this.setState({ focusOn: 'title' });
         }
       }
     });
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (!this.props.selected && nextProps.focusOn) {
-      this.props.onSelectBlock(this.props.block);
-    }
-
-    if (nextProps.selected && !this.state.focusOn) {
-      this.setState({ focusOn: 'title' });
-    } else if (!nextProps.selected) {
-      this.setState({ focusOn: null });
-    }
-  }
   /**
    * Render method.
    * @method render
@@ -94,6 +83,7 @@ class EditBlock extends SubblockEdit {
               {/* eslint-disable */}
               <TextEditorWidget
                 {...this.props}
+                index={this.props.blockIndex}
                 key="title"
                 showToolbar={false}
                 data={this.props.data}
@@ -124,6 +114,7 @@ class EditBlock extends SubblockEdit {
             <div className="contact-text">
               <TextEditorWidget
                 {...this.props}
+                index={this.props.blockIndex}
                 key="text"
                 data={this.props.data}
                 fieldName="text"
@@ -150,6 +141,7 @@ class EditBlock extends SubblockEdit {
               </div>
               <TextEditorWidget
                 {...this.props}
+                index={this.props.blockIndex}
                 key="tel"
                 data={this.props.data}
                 fieldName="tel"
@@ -176,6 +168,7 @@ class EditBlock extends SubblockEdit {
               </div>
               <TextEditorWidget
                 {...this.props}
+                index={this.props.blockIndex}
                 key="email"
                 wrapClass="email"
                 data={this.props.data}
@@ -187,7 +180,14 @@ class EditBlock extends SubblockEdit {
                 placeholder={this.props.intl.formatMessage(
                   messages.textPlaceholder,
                 )}
-                setSelected={(f) => this.setState({ focusOn: f })}
+                setSelected={(f) => {
+                  if (!this.props.selected) {
+                    //a11y - per il focus del blocco da tastiera con navigazione inversa
+                    this.props.onSubblockChangeFocus(this.props.index);
+                    this.props.onSelectBlock(this.props.block);
+                  }
+                  this.setState({ focusOn: f });
+                }}
                 focusPrevField={() => {
                   this.setState({ focusOn: 'tel' });
                 }}

@@ -126,7 +126,7 @@ class EditComponent extends Component {
   }
   blockRef = React.createRef();
 
-  handleEnter = (e) => {
+  handleKeydown = (e) => {
     if (this.props.selected) {
       handleKeyDownOwnFocusManagement(e, this.props);
     }
@@ -148,7 +148,7 @@ class EditComponent extends Component {
       this.node.focus();
     }
     if (blockNode && blockNode.current) {
-      blockNode.current.addEventListener('keydown', this.handleEnter, false);
+      blockNode.current.addEventListener('keydown', this.handleKeydown, false);
     } else if (this.blockRef && this.blockRef.current) {
       this.blockRef.current.addEventListener(
         'keydown',

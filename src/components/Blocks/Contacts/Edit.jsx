@@ -54,14 +54,17 @@ class Edit extends SubblocksEdit {
   UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.selected) {
       if (!this.props.selected) {
-        this.setState({ selectedField: 'title' });
+        if (!this.state.selectedField && this.state.subIndexSelected < 0) {
+          //a11y - test subIndexSelected<0 per gestire il focus con navigazione da tastiera al contrario (dal blocco successivo a questo blocco)
+          this.setState({ selectedField: 'title' });
+        }
       }
     } else {
       this.setState({ selectedField: null });
     }
   }
 
-  handleEnter = (e) => {
+  handleKeydown = (e) => {
     if (
       this.props.selected &&
       this.state.subIndexSelected < 0 &&
@@ -105,7 +108,7 @@ class Edit extends SubblocksEdit {
     }
 
     if (this.nodeF && this.nodeF.current) {
-      this.nodeF.current.addEventListener('keydown', this.handleEnter, false);
+      this.nodeF.current.addEventListener('keydown', this.handleKeydown, false);
       this.nodeF.current.addEventListener('click', this.handleClick, false);
     }
   }
@@ -132,7 +135,11 @@ class Edit extends SubblocksEdit {
 
     return (
       <div className="public-ui" tabIndex="-1" ref={this.nodeF}>
-        <div className={`full-width section ${this.props.data.bg_color} py-4`}>
+        <div
+          className={`full-width section ${this.props.data.bg_color} py-4`}
+          role="form"
+          aria-label={this.props.blocksConfig[this.props.type].title}
+        >
           <Container className="px-md-4">
             <div className="block-header">
               <div className="title">
@@ -147,6 +154,10 @@ class Edit extends SubblocksEdit {
                   onSelectBlock={() => {}}
                   setSelected={(f) => {
                     this.setState({ selectedField: f, subIndexSelected: -1 });
+                    if (!this.props.selected) {
+                      //a11y - per il focus del blocco da tastiera
+                      this.props.onSelectBlock(this.props.block);
+                    }
                   }}
                   focusNextField={() => {
                     this.setState({ selectedField: 'description' });
@@ -192,12 +203,13 @@ class Edit extends SubblocksEdit {
                       {...this.props}
                       data={subblock}
                       index={subindex}
+                      blockIndex={this.props.index}
                       selected={this.isSubblockSelected(subindex)}
                       {...this.subblockProps}
                       openObjectBrowser={this.props.openObjectBrowser}
                       onSubblockChangeFocus={this.onSubblockChangeFocus}
                       onChangeFocus={this.onSubblockChangeFocus}
-                      isLast={this.state.subblocks.length - 1 === subindex}
+                      isLast={subindex === this.state.subblocks.length - 1}
                       isFirst={subindex === 0}
                       onFocusPreviousBlock={() => {
                         this.setState({
