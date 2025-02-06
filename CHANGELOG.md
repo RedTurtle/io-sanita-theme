@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.2.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.1.0...2.2.0) (2025-02-06)
+
+### Features
+
+* sorted BandoDates in view ([86d3d07](https://github.com/RedTurtle/io-sanita-theme/commit/86d3d077ded1ea1a4680741af10d3688731dc690))
+
+### Bug Fixes
+
+* A11y and style fixes ([#70](https://github.com/RedTurtle/io-sanita-theme/issues/70)) ([375b161](https://github.com/RedTurtle/io-sanita-theme/commit/375b161b3d325511728160697d5717280540b868))
+* html block error on edit ([5a5a27b](https://github.com/RedTurtle/io-sanita-theme/commit/5a5a27bd54856692dfe0fc29519a67bb3c869557))
+
 ## [2.1.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.0.1...2.1.0) (2025-02-05)
 
 ### Features
