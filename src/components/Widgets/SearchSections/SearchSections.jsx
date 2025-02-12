@@ -16,11 +16,11 @@ const messages = defineMessages({
   },
   hideAllSections: {
     id: 'search-hideAllSections',
-    defineMessages: 'Nascondi tutte le sezioni',
+    defaultMessage: 'Nascondi tutte le sezioni',
   },
   showAllSections: {
     id: 'search-showAllSections',
-    defineMessages: 'Mostra tutte le sezioni',
+    defaultMessage: 'Mostra tutte le sezioni',
   },
 });
 

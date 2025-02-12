@@ -323,7 +323,7 @@ msgid "Linkto title"
 msgstr ""
 
 #. Default: "Sto caricando la pagina richiesta..."
-#: components/AppExtras/PageLoader
+#: components/AppExtras/PageLoader/PageLoader
 msgid "Loading page..."
 msgstr "Cargando página..."
 
@@ -622,6 +622,11 @@ msgstr ""
 #. Default: "Uploading image"
 #: components/Blocks/Hero/Edit
 msgid "Uploading image"
+msgstr ""
+
+#. Default: "Utente"
+#: components/layout/Header/HeaderSlim/HeaderLogin
+msgid "User"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -2477,6 +2482,16 @@ msgstr ""
 #: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
 msgstr "Búsqueda"
+
+#. Default: "Nascondi tutte le sezioni"
+#: components/Widgets/SearchSections/SearchSections
+msgid "search-hideAllSections"
+msgstr ""
+
+#. Default: "Mostra tutte le sezioni"
+#: components/Widgets/SearchSections/SearchSections
+msgid "search-showAllSections"
+msgstr ""
 
 #. Default: "Filtro per Categoria"
 #: components/Blocks/SearchBandi/DefaultFilters

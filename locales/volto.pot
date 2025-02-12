@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-02-06T13:52:44.366Z\n"
+"POT-Creation-Date: 2025-02-12T13:43:16.681Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -318,7 +318,7 @@ msgid "Linkto title"
 msgstr ""
 
 #. Default: "Sto caricando la pagina richiesta..."
-#: components/AppExtras/PageLoader
+#: components/AppExtras/PageLoader/PageLoader
 msgid "Loading page..."
 msgstr ""
 
@@ -617,6 +617,11 @@ msgstr ""
 #. Default: "Uploading image"
 #: components/Blocks/Hero/Edit
 msgid "Uploading image"
+msgstr ""
+
+#. Default: "Utente"
+#: components/layout/Header/HeaderSlim/HeaderLogin
+msgid "User"
 msgstr ""
 
 #. Default: "Vai alla pagina"
@@ -2471,6 +2476,16 @@ msgstr ""
 #: components/layout/Header/HeaderSearch/SearchModal
 #: components/View/commons/PageHeader/SearchSectionForm
 msgid "search"
+msgstr ""
+
+#. Default: "Nascondi tutte le sezioni"
+#: components/Widgets/SearchSections/SearchSections
+msgid "search-hideAllSections"
+msgstr ""
+
+#. Default: "Mostra tutte le sezioni"
+#: components/Widgets/SearchSections/SearchSections
+msgid "search-showAllSections"
 msgstr ""
 
 #. Default: "Filtro per Categoria"
