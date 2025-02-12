@@ -66,6 +66,7 @@ const SocialHeader = ({ mobile }) => {
                   padding={false}
                   size=""
                   title={social.title}
+                  aria-hidden={true}
                 />
               </a>
             </li>

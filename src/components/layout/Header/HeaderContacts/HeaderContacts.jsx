@@ -57,7 +57,12 @@ const HeaderContacts = () => {
                   )}
 
                   {item.icon && (
-                    <Icon icon={item.icon} color="primary" size="sm" />
+                    <Icon
+                      icon={item.icon}
+                      color="primary"
+                      size="sm"
+                      aria-hidden={true}
+                    />
                   )}
                 </Col>
               );

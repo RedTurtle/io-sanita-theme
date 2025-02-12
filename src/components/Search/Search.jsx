@@ -323,6 +323,7 @@ const Search = () => {
                       color="primary"
                       padding={false}
                       size=""
+                      aria-hidden={true}
                     />
                   </Button>
                 </div>
@@ -383,6 +384,7 @@ const Search = () => {
                       <Icon
                         icon={advFiltersOpen ? 'it-minus' : 'it-plus'}
                         padding
+                        aria-hidden={true}
                       />
                       {intl.formatMessage(messages.advFilters)}
                     </Button>

@@ -41,6 +41,10 @@ const messages = defineMessages({
     id: 'Logout',
     defaultMessage: 'Esci',
   },
+  user: {
+    id: 'User',
+    defaultMessage: 'Utente',
+  },
 });
 
 const HeaderLogin = () => {
@@ -96,7 +100,13 @@ const HeaderLogin = () => {
             }
           >
             <span className="rounded-icon">
-              <Icon color="primary" icon="it-user" padding={false} size="" />
+              <Icon
+                color="primary"
+                icon="it-user"
+                padding={false}
+                size=""
+                aria-hidden={true}
+              />
             </span>
             <span className="d-none d-lg-block">
               {intl.formatMessage(messages.loginAreaPersonale)}
@@ -113,12 +123,23 @@ const HeaderLogin = () => {
                 className="btn-icon"
               >
                 <span className="rounded-icon">
-                  <Icon color="primary" icon="it-user" size="" />
+                  <Icon
+                    color="primary"
+                    icon="it-user"
+                    size=""
+                    title={intl.formatMessage(messages.user)}
+                  />
                 </span>
                 <span className="d-none d-lg-block">
                   {userLogged.fullname || userLogged.username}
                 </span>
-                <Icon color="" icon="it-expand" padding={false} size="" />
+                <Icon
+                  color=""
+                  icon="it-expand"
+                  padding={false}
+                  size=""
+                  aria-hidden={true}
+                />
               </DropdownToggle>
               <DropdownMenu flip tag="div">
                 <Row tag="div">
@@ -140,7 +161,13 @@ const HeaderLogin = () => {
                         }}
                         className="logout"
                       >
-                        <Icon color="" icon="sign-out-alt" size="sm" left />
+                        <Icon
+                          color=""
+                          icon="sign-out-alt"
+                          size="sm"
+                          left
+                          aria-hidden={true}
+                        />
                         <span>{intl.formatMessage(messages.Logout)}</span>
                       </LinkListItem>
                     </LinkList>

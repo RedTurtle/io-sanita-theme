@@ -80,6 +80,7 @@ const CompleteBlockLinksTemplate = (props) => {
                                 title={title}
                                 size="xs"
                                 className="ms-1 external-link"
+                                aria-hidden={true}
                               />
                             )}
                         </CardTitle>

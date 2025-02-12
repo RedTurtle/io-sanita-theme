@@ -86,7 +86,12 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
                   }}
                   className="prev"
                 >
-                  <Icon color="" icon="it-arrow-left" padding={false} />
+                  <Icon
+                    color=""
+                    icon="it-arrow-left"
+                    padding={false}
+                    aria-hidden={true}
+                  />
                 </Button>
               )}
 
@@ -106,7 +111,12 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
                   }}
                   className="next"
                 >
-                  <Icon color="" icon="it-arrow-right" padding={false} />
+                  <Icon
+                    color=""
+                    icon="it-arrow-right"
+                    padding={false}
+                    aria-hidden={true}
+                  />
                 </Button>
               )}
             </div>

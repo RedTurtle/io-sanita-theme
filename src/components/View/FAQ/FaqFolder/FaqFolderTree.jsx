@@ -23,7 +23,7 @@ const FaqFolderTree = ({ tree }) => {
     const [itemOpened, setItemOpened] = useState(null);
     let title = (
       <UniversalLink item={item}>
-        {item.icon && <Icon icon={item.icon} />}
+        {item.icon && <Icon icon={item.icon} aria-hidden={true} />}
         {item.title}
       </UniversalLink>
     );

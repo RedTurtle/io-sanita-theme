@@ -75,7 +75,13 @@ const SpidButton = ({ spidLoginUrl, qs, intl }) => (
         size="big"
       >
         <span className="rounded-icon">
-          <Icon color="primary" icon="it-user" padding={false} size="" />
+          <Icon
+            color="primary"
+            icon="it-user"
+            padding={false}
+            size=""
+            aria-hidden={true}
+          />
         </span>
         <span>{intl.formatMessage(messages.loginSpidButton)}</span>
       </Button>
@@ -127,7 +133,13 @@ const ArButton = ({ arLoginUrl, intl }) => (
     <div className="authorized-spid-login mb-4">
       <LoginButton baseLoginUrl={arLoginUrl}>
         <span className="rounded-icon">
-          <Icon color="primary" icon="it-user" padding={false} size="" />
+          <Icon
+            color="primary"
+            icon="it-user"
+            padding={false}
+            size=""
+            aria-hidden={true}
+          />
         </span>
         <span className="d-none d-lg-block">
           {intl.formatMessage(messages.loginSpidButton)}

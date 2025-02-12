@@ -154,8 +154,7 @@ const Sharing = ({ url, title }) => {
                     icon={item.icon}
                     padding={false}
                     size=""
-                    alt={item.title}
-                    title={item.title}
+                    aria-hidden={true}
                   />
                   <span>{item.title}</span>
                 </Button>
@@ -167,8 +166,7 @@ const Sharing = ({ url, title }) => {
                     icon={item.icon}
                     padding={false}
                     size=""
-                    alt={item.title}
-                    title={item.title}
+                    aria-hidden={true}
                   />
                   <span>{item.title}</span>
                 </>

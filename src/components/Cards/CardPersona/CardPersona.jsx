@@ -116,7 +116,11 @@ export const CardPersona = ({
         </div>
 
         <AvatarIcon size="xl">
-          {img ? img : <Icon icon="it-user" color="primary" />}
+          {img ? (
+            img
+          ) : (
+            <Icon icon="it-user" color="primary" aria-hidden={true} />
+          )}
         </AvatarIcon>
       </CardBody>
     </Card>

@@ -53,7 +53,13 @@ const FooterNewsletterSubscribe = () => {
         tag="button"
         icon={false}
       >
-        <Icon icon="it-mail" color="white" padding={false} size="" />
+        <Icon
+          icon="it-mail"
+          color="white"
+          padding={false}
+          size=""
+          aria-hidden={true}
+        />
         <span>{intl.formatMessage(messages.subscribe)}</span>
       </Button>
     </Form>

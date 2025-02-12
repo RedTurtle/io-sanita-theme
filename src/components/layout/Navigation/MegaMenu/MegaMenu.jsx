@@ -256,7 +256,11 @@ const MegaMenu = ({ item, pathname }) => {
             className={cx('dropdown-toggle', { active: isItemActive })}
           >
             <span dangerouslySetInnerHTML={{ __html: item.title }}></span>
-            <Icon icon="it-expand" className={cx('', { open: menuStatus })} />
+            <Icon
+              icon="it-expand"
+              className={cx('', { open: menuStatus })}
+              aria-hidden={true}
+            />
           </DropdownToggle>
           <DropdownMenu flip tag="div">
             <div className="text-end megamenu-close-button">
@@ -273,7 +277,7 @@ const MegaMenu = ({ item, pathname }) => {
                 // https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/
                 tabIndex="-1"
               >
-                <Icon icon="it-close" />
+                <Icon icon="it-close" aria-hidden={true} />
               </Button>
             </div>
             <Row>
@@ -384,7 +388,7 @@ const MegaMenu = ({ item, pathname }) => {
                               ? item.showMoreText
                               : intl.formatMessage(messages.view_all)}
                           </span>
-                          <Icon icon="it-arrow-right" />
+                          <Icon icon="it-arrow-right" aria-hidden={true} />
                         </UniversalLink>
                       </li>
                     </LinkList>

@@ -65,6 +65,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index, titleTag }) => {
           id={`content-${id}-${index}`}
           role="region"
           aria-labelledby={`${id}-${index}`}
+          hidden={!isOpen}
         >
           <div className="accordion-inner" onFocus={toggle()}>
             <TextBlockView id={id} data={{ value: data.text }} />

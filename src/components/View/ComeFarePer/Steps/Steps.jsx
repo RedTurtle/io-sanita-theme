@@ -106,7 +106,11 @@ const Steps = ({ content, steps = [] }) => {
         {allOpen
           ? intl.formatMessage(messages.hide_all)
           : intl.formatMessage(messages.show_all)}{' '}
-        <Icon icon={allOpen ? 'it-collapse' : 'it-expand'} size="sm" />
+        <Icon
+          icon={allOpen ? 'it-collapse' : 'it-expand'}
+          size="sm"
+          aria-hidden={true}
+        />
       </Button>
       <Accordion background="active">
         {steps.map((s, index) => {
@@ -140,6 +144,7 @@ const Steps = ({ content, steps = [] }) => {
                         <Icon
                           icon={isActive() ? 'it-collapse' : 'it-expand'}
                           size="sm"
+                          aria-hidden={true}
                         />
                       </Button>
                     )}

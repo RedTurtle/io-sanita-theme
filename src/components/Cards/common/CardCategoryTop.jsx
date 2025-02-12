@@ -40,7 +40,11 @@ const CardCategoryTop = (props) => {
     <span className="text">{children}</span>
   );
   const categoryIcon = iconName && (
-    <Icon icon={iconName} title={intl.formatMessage(messages.categoryIcon)} />
+    <Icon
+      icon={iconName}
+      title={intl.formatMessage(messages.categoryIcon)}
+      aria-hidden={true}
+    />
   );
 
   return (

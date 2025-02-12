@@ -28,6 +28,7 @@ const MoreButton = ({ data, isEditMode }) => {
           icon="it-arrow-right"
           className="arrow-icon ms-1"
           padding={false}
+          aria-hidden={true}
         />
       </Button>
     </div>

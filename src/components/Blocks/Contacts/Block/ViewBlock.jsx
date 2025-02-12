@@ -33,6 +33,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
       className="card-bg rounded subblock-view "
       noWrapper={false}
       tag="div"
+      tabIndex={0}
     >
       <CardBody tag="div">
         {data.title && <div className="contact-title">{data.title}</div>}
@@ -41,7 +42,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
         {tel && (
           <div className="contact-info">
             <div className="icon-wrapper">
-              <Icon icon="phone-alt" />
+              <Icon icon="phone-alt" title="Tel." />
             </div>
             <div className="tel">{tel}</div>
           </div>
@@ -50,7 +51,7 @@ const ViewBlock = ({ data, isOpen, toggle, id, index }) => {
         {email && (
           <div className="contact-info">
             <div className="icon-wrapper">
-              <Icon icon="envelope" />
+              <Icon icon="envelope" title="E-mail" />
             </div>
             <div className="email">{email}</div>
           </div>

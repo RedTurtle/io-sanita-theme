@@ -33,7 +33,12 @@ const TassonomiaUtenti = ({ content }) => {
             //data-element="service-topic"
           >
             <Chip color="accent" simple>
-              <Icon icon="it-user" size="xs" className="icon-accent" />
+              <Icon
+                icon="it-user"
+                size="xs"
+                className="icon-accent"
+                aria-hidden={true}
+              />
               <ChipLabel>{title}</ChipLabel>
             </Chip>
           </UniversalLink>

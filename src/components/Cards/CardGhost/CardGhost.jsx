@@ -19,7 +19,7 @@ export const CardGhost = ({ item, isEditMode, titleDataElement }) => {
           >
             {item.title}
 
-            <Icon icon="it-chevron-right" />
+            <Icon icon="it-chevron-right" aria-hidden={true} />
           </UniversalLink>
         </CardTitle>
 

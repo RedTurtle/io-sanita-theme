@@ -41,6 +41,7 @@ const FooterSocials = () => {
                 padding={false}
                 size="sm"
                 title={social.title}
+                aria-hidden={true}
               />
               <span className="visually-hidden">{social.title}</span>
             </a>

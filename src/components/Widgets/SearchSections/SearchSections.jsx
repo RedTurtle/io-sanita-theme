@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 
-import { Col, FormGroup, Label, Collapse } from 'design-react-kit';
+import { FormGroup, Label, Collapse } from 'design-react-kit';
 import { Icon, Checkbox } from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 
@@ -13,6 +13,14 @@ const messages = defineMessages({
   searchInSection: {
     id: 'searchInSection',
     defaultMessage: 'Cerca nella sezione',
+  },
+  hideAllSections: {
+    id: 'search-hideAllSections',
+    defineMessages: 'Nascondi tutte le sezioni',
+  },
+  showAllSections: {
+    id: 'search-showAllSections',
+    defineMessages: 'Mostra tutte le sezioni',
   },
 });
 
@@ -131,12 +139,18 @@ export default function SearchSections({
                   data-toggle="collapse"
                   aria-expanded={expanded}
                   aria-controls={`section${s.id}Collapse`}
+                  aria-label={intl.formatMessage(
+                    expanded
+                      ? messages.hideAllSections
+                      : messages.showAllSections,
+                  )}
                 >
                   <Icon
                     color="primary"
                     icon={expanded ? 'it-collapse' : 'it-expand'}
                     padding={false}
                     className="right"
+                    aria-hidden={true}
                   />
                 </a>
               )}

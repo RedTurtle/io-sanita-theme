@@ -72,7 +72,12 @@ const Collapse = ({
               title={intl.formatMessage(messages.CloseMenu)}
               onClick={onOverlayClick}
             >
-              <Icon color="white" icon="it-close-big" padding={false} />
+              <Icon
+                color="white"
+                icon="it-close-big"
+                padding={false}
+                aria-hidden={true}
+              />
             </button>
           </div>
         )}

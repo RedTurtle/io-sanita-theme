@@ -88,7 +88,13 @@ const SortByWidget = ({
     <UncontrolledDropdown className="sort-by-widget">
       <DropdownToggle color="primary" outline caret className="px-3 px-lg-4">
         <small>{intl.formatMessage(messages.sort)}</small>{' '}
-        <Icon color="primary" icon="it-expand" padding={false} size="sm" />
+        <Icon
+          color="primary"
+          icon="it-expand"
+          padding={false}
+          size="sm"
+          aria-hidden={true}
+        />
       </DropdownToggle>
       <DropdownMenu>
         {/* <LinkList> */}

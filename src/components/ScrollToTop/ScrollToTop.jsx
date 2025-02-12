@@ -53,7 +53,12 @@ const ScrollToTop = () => {
             aria-hidden="true"
             tabIndex={-1}
           >
-            <Icon icon="it-arrow-up" padding={false} size="sm" />
+            <Icon
+              icon="it-arrow-up"
+              padding={false}
+              size="sm"
+              aria-hidden={true}
+            />
           </Button>
         </div>
       )}

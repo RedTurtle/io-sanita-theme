@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (x/x/x)
+
+### Migliorie
+
+- a11y - migliorata l'accessibilità del sito per quanto riguarda le icone
+
 ## Versione 2.1.0 (05/02/2025)
 
 ### Novità

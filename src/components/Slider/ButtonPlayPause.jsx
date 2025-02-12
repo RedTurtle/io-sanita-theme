@@ -35,10 +35,13 @@ const ButtonPlayPause = ({ onClick, autoplay, showLabel = true, children }) => {
           key={autoplay ? 'pause' : 'play'}
           icon={autoplay ? 'pause' : 'play'}
           title={
-            autoplay
-              ? intl.formatMessage(messages.pause)
-              : intl.formatMessage(messages.play)
+            !showLabel
+              ? autoplay
+                ? intl.formatMessage(messages.pause)
+                : intl.formatMessage(messages.play)
+              : null
           }
+          aria-hidden={showLabel}
         />
         {showLabel && <span>{autoplay ? 'pause' : 'play'}</span>}
       </button>

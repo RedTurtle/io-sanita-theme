@@ -156,6 +156,7 @@ const DocRow = ({ doc, items, searchableText, collapsable }) => {
                   icon={itemOpen ? 'it-minus' : 'it-plus'}
                   padding={false}
                   key={itemOpen + id}
+                  aria-hidden={true}
                 />
               </button>
             )}

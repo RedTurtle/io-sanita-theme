@@ -100,7 +100,12 @@ const SearchModal = ({ closeModal, show }) => {
               icon
               className="text-uppercase fw-semibold"
             >
-              <Icon color="" icon="it-arrow-left" padding={false} />
+              <Icon
+                color=""
+                icon="it-arrow-left"
+                padding={false}
+                aria-hidden={true}
+              />
               <span>{intl.formatMessage(messages.closeSearchBack)}</span>
             </Button>
           </div>

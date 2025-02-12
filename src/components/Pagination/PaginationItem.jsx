@@ -89,7 +89,7 @@ class PaginationItem extends Component {
             <>
               <Icon
                 icon="it-chevron-left"
-                style={{ ariaHidden: true }}
+                aria-hidden={true}
                 color="primary"
                 className={cx({ disabled: isPrevButtonInactive })}
                 title={intl.formatMessage(messages.prevPage)}
@@ -104,7 +104,7 @@ class PaginationItem extends Component {
             <>
               <Icon
                 icon="it-chevron-right"
-                style={{ ariaHidden: true }}
+                aria-hidden={true}
                 color="primary"
                 className={cx({ disabled: isForwButtonInactive })}
                 title={intl.formatMessage(messages.nextPage)}

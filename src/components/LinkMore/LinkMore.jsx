@@ -35,6 +35,7 @@ export const LinkMore = ({
           icon="it-arrow-right"
           className="arrow-icon"
           padding={false}
+          aria-hidden={true}
         />
       </UniversalLink>
     </div>

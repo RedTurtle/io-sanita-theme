@@ -50,7 +50,7 @@ export const CardTaxonomy = ({
               {title}
             </UniversalLink>
           </CardTitle>
-          {showIcon && <Icon icon={icon} color="accent" />}
+          {showIcon && <Icon icon={icon} color="accent" aria-hidden={true} />}
         </div>
       </CardBody>
     </Card>
