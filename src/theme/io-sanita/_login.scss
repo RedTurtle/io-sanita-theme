@@ -15,6 +15,7 @@ body.public-ui {
     .ui.form input[type='text'],
     .ui.form input[type='password'] {
       font-family: $font-family-sans-serif;
+      width: 100%;
     }
 
     .ui.form {
