@@ -45,7 +45,10 @@
 
 ### Migliorie
 
+- aggiunto il tag <lin rel="canonical"> per tutte le pagine, come suggerito da consulente SEO
+- aggiunta la barra di loading nella parte alta della pagina quando si sta caricando un contenuto
 - a11y - migliorata l'accessibilità del sito per quanto riguarda le icone
+- a11y - migliorato il contrasto del focus sugli elementi con la navigazione da tastiera
 
 ## Versione 2.1.0 (05/02/2025)
 

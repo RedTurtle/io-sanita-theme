@@ -20,7 +20,8 @@ const GenericAppExtras = (props) => {
   return (
     <>
       <Helmet>
-        <link rel="canonical" href={toPublicURL(location.pathname)} />
+        <link rel="canonical" href={toPublicURL(location.pathname)} />{' '}
+        {/** Se impostato un canonlical nei campi SEO della pagina vincerà quello */}
       </Helmet>
       <ScrollToTop />
       <SubsiteLoader pathname={location.pathname} />
