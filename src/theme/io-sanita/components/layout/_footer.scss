@@ -7,7 +7,6 @@ $footer-borders: 1px solid hsla($primary-h, 70.59%, 20%);
 .public-ui .it-footer-main,
 .it-footer-small-prints,
 .public-ui .it-footer-small-prints {
-  background-color: $footer-top-background-asl !important; //questo perchè su bootstrap-italia la variabile $footer-top-background non è definita come !default
   &,
   p,
   ul {

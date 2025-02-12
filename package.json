@@ -84,7 +84,7 @@
     "@plone-collective/volto-contents-next": "0.5.0",
     "@plone-collective/volto-sentry": "0.3.1",
     "@release-it/conventional-changelog": "^9.0.3",
-    "bootstrap-italia": "2.8.7",
+    "bootstrap-italia": "2.9.2",
     "design-react-kit": "5.0.0-10",
     "marked": "9.0.0",
     "react-focus-lock": "2.12.1",

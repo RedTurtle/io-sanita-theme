@@ -41,7 +41,8 @@ $header-center-text-color: $primary-text !default;
 $navigation-toggle-button-icon-color: $primary-text !default;
 
 //footer
-$footer-top-background-asl: $primary-darker !default; // color-ocean-10 --> $primary-a12 //questo perchè su bootstrap-italia la variabile $footer-top-background non è definita come !default
+$footer-top-background: $primary-darker !default;
+$footer-bottom-background: $footer-top-background !default;
 $footer-main-text-color: $header-center-text-color !default;
 
 //nav
