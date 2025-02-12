@@ -1,11 +1,12 @@
-.skiplinks a:focus:not(.focus--mouse) {
-  border: 2px solid;
-}
-
-a.img-wrapper:focus:not(.focus--mouse) {
-  border: 2px solid;
-}
-
 [tabindex='-1']:focus {
   box-shadow: none !important;
+}
+
+:focus:not(.focus--mouse),
+%focus {
+  outline: 2px solid $focus-outline-color /*$outer-focus-outline*/ !important;
+  outline-offset: 2px;
+
+  border: none !important;
+  box-shadow: 0 0 0 2px $focus-inner-color /*$inner-focus-shadow*/ !important;
 }

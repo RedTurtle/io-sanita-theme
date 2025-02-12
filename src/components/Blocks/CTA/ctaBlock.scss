@@ -43,7 +43,7 @@
         }
 
         &.btn-accent.inverted {
-          &:not(:hover):not(:active):not(:focus) {
+          &:not(:hover):not(:active) {
             background-color: #fff;
             color: var(--is-accent);
             .external-link {

@@ -27,9 +27,9 @@ const PageHeaderServizio = ({ content }) => {
           : intl.formatMessage(messages.service_off)}
       </Badge>
       {content.servizio_attivo && (
-        <spam className="px-2">
+        <span className="px-2">
           {intl.formatMessage(messages.service_available)}
-        </spam>
+        </span>
       )}
     </div>
   ) : null;

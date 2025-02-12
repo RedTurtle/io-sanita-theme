@@ -32,15 +32,12 @@ import bandoSVG from 'io-sanita-theme/icons/bando.svg';
 import logSVG from 'io-sanita-theme/icons/log.svg';
 
 import reducers from 'io-sanita-theme/reducers';
-import {
-  LoginAgid,
-  HandleAnchor,
-  GenericAppExtras,
-  SiteSettingsExtras,
-  Icon,
-  FileWidget,
-} from 'io-sanita-theme/components';
-import { ListingContainer } from 'io-sanita-theme/components/Blocks';
+import { LoginAgid, Icon, FileWidget } from 'io-sanita-theme/components';
+import PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader/PageLoader';
+import TrackFocus from 'io-sanita-theme/components/AppExtras/TrackFocus';
+import HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
+import SiteSettingsExtras from 'io-sanita-theme/components/AppExtras/SiteSettingsExtras';
+import GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExtras';
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
 import { registerIOSanitaValidators } from 'io-sanita-theme/config/validators';
 
@@ -52,6 +49,7 @@ import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/Agg
 import { applyFarmacieConfig } from './farmacie';
 
 import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
+import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSquare';
 
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
@@ -215,6 +213,11 @@ export default function applyConfig(config) {
         match: '',
         component: SiteSettingsExtras,
       },
+      {
+        match: '',
+        component: PageLoader,
+      },
+      { match: '', component: TrackFocus },
     ],
     maxFileUploadSize: null,
 

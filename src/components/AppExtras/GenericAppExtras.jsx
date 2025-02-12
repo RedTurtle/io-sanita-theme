@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { ScrollToTop } from 'io-sanita-theme/components';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
+import { toPublicURL } from '@plone/volto/helpers/Url/Url';
 import { SubsiteLoader } from 'volto-subsites';
 import config from '@plone/volto/registry';
 
@@ -17,6 +19,9 @@ const GenericAppExtras = (props) => {
 
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href={toPublicURL(location.pathname)} />
+      </Helmet>
       <ScrollToTop />
       <SubsiteLoader pathname={location.pathname} />
     </>

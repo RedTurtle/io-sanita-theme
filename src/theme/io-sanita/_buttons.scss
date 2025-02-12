@@ -6,7 +6,8 @@
   .btn.btn-accent {
     &,
     &:hover,
-    &:active {
+    &:active,
+    :focus {
       svg {
         fill: $accent-contrast-text;
       }
@@ -14,7 +15,8 @@
   }
 
   a.btn.btn-accent {
-    &:focus-visible {
+    &:focus-visible,
+    &:focus {
       color: $accent;
     }
 
