@@ -19,13 +19,14 @@ import loadable from '@loadable/component';
 import ContentMetadataTags from '@plone/volto/components/theme/ContentMetadataTags/ContentMetadataTags';
 import Comments from '@plone/volto/components/theme/Comments/Comments';
 import Toolbar from '@plone/volto/components/manage/Toolbar/Toolbar';
-import Tags from '@plone/volto/components/theme/Tags/Tags';
 import { listActions } from '@plone/volto/actions/actions/actions';
 import { getContent } from '@plone/volto/actions/content/content';
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
+import { AlternateHrefLangs } from '@plone/volto/components/theme/AlternateHrefLangs/AlternateHrefLangs';
+
 import { getLayoutFieldname } from '@plone/volto/helpers/Content/Content';
 
 import config from '@plone/volto/registry';
@@ -288,6 +289,8 @@ class View extends Component {
     return (
       <div id="view" tabIndex="-1">
         <ContentMetadataTags content={this.props.content} />
+        <AlternateHrefLangs content={this.props.content} />
+
         {/* Body class if displayName in component is set */}
         <BodyClass
           className={
@@ -305,7 +308,6 @@ class View extends Component {
           history={this.props.history}
         />
         <SlotRenderer name="belowContent" content={this.props.content} />
-
         {this.props.content.allow_discussion && (
           <Comments pathname={this.props.pathname} />
         )}
