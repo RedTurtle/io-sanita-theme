@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.0...2.2.1) (2025-02-12)
+
+### Bug Fixes
+
+* a11y focus and enabled PageLoader ([40b83d8](https://github.com/RedTurtle/io-sanita-theme/commit/40b83d8676e82cc60967952cf271a398653b0517))
+* a11y icons ([9214b5c](https://github.com/RedTurtle/io-sanita-theme/commit/9214b5c7788054a947ba134c0cf26cb3ed292b4f))
+* messages ([fb5e06f](https://github.com/RedTurtle/io-sanita-theme/commit/fb5e06ff01def1e6e4bd9f2561981158df3c4eef))
+
+### Maintenance
+
+* info ([2d6a299](https://github.com/RedTurtle/io-sanita-theme/commit/2d6a29953b23b20b342343e0d0b8cd743b28079b))
+* updated bootstrap-italia ([995fec8](https://github.com/RedTurtle/io-sanita-theme/commit/995fec8e4e910d964f412a02169823d9deafab11))
+* updated customized theme/View to add AlternatHrefLangs ([70bba5a](https://github.com/RedTurtle/io-sanita-theme/commit/70bba5a54dba2159a3bf1f5193b8d6d974baad21))
+
 ## [2.2.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.1.0...2.2.0) (2025-02-06)
 
 ### Features
