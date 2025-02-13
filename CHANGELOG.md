@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.1...2.2.2) (2025-02-13)
+
+### Bug Fixes
+
+* login input width ([57ea17b](https://github.com/RedTurtle/io-sanita-theme/commit/57ea17be04d89d191ffcfb5963c35c7b8de3a5e3))
+
 ## [2.2.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.0...2.2.1) (2025-02-12)
 
 ### Bug Fixes
