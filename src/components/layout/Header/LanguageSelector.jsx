@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import find from 'lodash/find';
 import map from 'lodash/map';
-import { Link } from 'react-router-dom';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import {
@@ -19,7 +19,8 @@ import {
   DropdownToggle,
   LinkList,
   LinkListItem,
-  Dropdown,
+  UncontrolledDropdown,
+  Icon,
 } from 'design-react-kit';
 
 import langmap from '@plone/volto/helpers/LanguageMap/LanguageMap';
@@ -53,20 +54,25 @@ const LanguageSelector = (props) => {
   );
 
   return config.settings.isMultilingual ? (
-    <Dropdown inNavbar tag="div">
-      <DropdownToggle aria-haspopup caret inNavbar>
+    <UncontrolledDropdown nav tag="div" inNavbar>
+      <DropdownToggle aria-haspopup caret inNavbar nav role="button">
         {languagesISO392[currentLang]}
+        <Icon
+          icon="it-expand"
+          color="icon-white"
+          className="d-none d-lg-block"
+        />
       </DropdownToggle>
-      <DropdownMenu flip tag="div">
-        <Row tag="div">
-          <Col tag="div" widths={['xs', 'sm', 'md', 'lg', 'xl']}>
-            <LinkList tag="div">
+      <DropdownMenu flip>
+        <Row>
+          <Col size="12">
+            <LinkList>
               {map(config.settings.supportedLanguages, (lang) => {
                 const translation = find(translations, { language: lang });
                 return (
                   <LinkListItem
                     className={cx({ selected: lang === currentLang })}
-                    to={
+                    href={
                       translation
                         ? flattenToAppURL(translation['@id'])
                         : `/${lang}`
@@ -76,7 +82,8 @@ const LanguageSelector = (props) => {
                       props.onClickAction();
                     }}
                     key={`language-selector-${lang}`}
-                    tag={Link}
+                    tag={UniversalLink}
+                    inDropdown
                   >
                     <span>{langmap[lang].nativeName}</span>
                   </LinkListItem>
@@ -86,7 +93,7 @@ const LanguageSelector = (props) => {
           </Col>
         </Row>
       </DropdownMenu>
-    </Dropdown>
+    </UncontrolledDropdown>
   ) : (
     <Helmet>
       <html lang={config.settings.defaultLanguage} />

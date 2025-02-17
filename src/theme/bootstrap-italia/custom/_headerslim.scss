@@ -1,6 +1,22 @@
 .it-header-slim-wrapper {
   font-weight: $font-weight-semibold;
-  .it-header-slim-wrapper-content a {
-    background-color: transparent;
+
+  .it-header-slim-wrapper-content {
+    a {
+      background-color: transparent;
+    }
+    .dropdown-menu {
+      top: 100% !important;
+    }
   }
 }
+
+// @include media-breakpoint-up(lg) {
+//   .it-header-slim-wrapper {
+//     .it-header-slim-wrapper-content {
+//       .dropdown-menu {
+//         top: 100% !important;
+//       }
+//     }
+//   }
+// }
