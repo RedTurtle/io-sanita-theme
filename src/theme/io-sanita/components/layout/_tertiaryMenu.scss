@@ -1,9 +1,11 @@
+$tertiary-menu-border: 1px solid #fff;
+
 .tertiary-menu {
   li.nav-item {
     display: flex;
     align-items: center;
     &:not(:last-of-type) {
-      border-right: 1px solid #fff;
+      border-right: $tertiary-menu-border;
     }
 
     a {
@@ -16,6 +18,12 @@
         width: 16px;
         height: 16px;
       }
+    }
+  }
+
+  &:has(+ .is-language-selector) {
+    li.nav-item:last-of-type {
+      border-right: $tertiary-menu-border;
     }
   }
 }

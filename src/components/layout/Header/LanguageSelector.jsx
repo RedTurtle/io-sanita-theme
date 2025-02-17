@@ -54,7 +54,12 @@ const LanguageSelector = (props) => {
   );
 
   return config.settings.isMultilingual ? (
-    <UncontrolledDropdown nav tag="div" inNavbar>
+    <UncontrolledDropdown
+      nav
+      tag="div"
+      inNavbar
+      className="is-language-selector"
+    >
       <DropdownToggle aria-haspopup caret inNavbar nav role="button">
         {languagesISO392[currentLang]}
         <Icon
