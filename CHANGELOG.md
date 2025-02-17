@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.2...2.2.3) (2025-02-17)
+
+### Bug Fixes
+
+* language selector ([23b94a1](https://github.com/RedTurtle/io-sanita-theme/commit/23b94a16ccc2e3db86c443f91a8e7a4ce67c6cb4))
+
 ## [2.2.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.1...2.2.2) (2025-02-13)
 
 ### Bug Fixes
