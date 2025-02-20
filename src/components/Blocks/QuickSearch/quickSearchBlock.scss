@@ -4,4 +4,11 @@
   .form-group.search-bar-widget label.active {
     @include rem-size(font-size, 24);
   }
+
+  // &:has(+ .block.image),
+  // &:has(+ .block.listing.carouselTemplate) {
+  //   margin-bottom: 0 !important;
+  // }
 }
+
+@include nearFullWidthBlocks('.quick-search-block');

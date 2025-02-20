@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'design-react-kit';
@@ -13,7 +14,7 @@ const messages = defineMessages({
   },
 });
 
-const Body = ({ data, id }) => {
+const Body = ({ data, id, isEditMode }) => {
   const intl = useIntl();
   const [searchableText, setSearchableText] = useState();
   const subsite = useSelector((state) => state.subsite?.data);
@@ -30,7 +31,12 @@ const Body = ({ data, id }) => {
     }
   }, [searchableText]);
   return (
-    <div className="full-width bg-primary-lightest py-4 quick-search-block mb-4">
+    <div
+      className={cx(
+        'full-width bg-primary-lightest py-4 quick-search-block mb-4',
+        { block: !isEditMode },
+      )}
+    >
       <Container className="px-4">
         <Row>
           <Col xl={6}>

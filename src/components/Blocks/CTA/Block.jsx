@@ -70,7 +70,7 @@ const Block = (props) => {
           ) : (
             <>
               <VoltoIcon
-                className="me-2 icon-sm icon-svg-telephone"
+                className="me-2 icon-sm"
                 name={
                   data.defaultImage == 'default-1'
                     ? defaultImage1
