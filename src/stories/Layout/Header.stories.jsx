@@ -2409,7 +2409,7 @@ const store = mockStore({
         description: '',
         items: [],
         review_state: 'private',
-        title: 'Slider',
+        title: 'Carousel',
       },
       {
         '@id': 'https://v3.io-comune.redturtle.it/api/test-immagine',

@@ -52,10 +52,10 @@ const messages = defineMessages({
   },
 });
 
-export const SliderTemplateAppearance_SIMPLECARD = 'simple_card';
-export const SliderTemplateAppearance_IMAGECARD = 'image_card';
+export const CarouselTemplateAppearance_SIMPLECARD = 'simple_card';
+export const CarouselTemplateAppearance_IMAGECARD = 'image_card';
 
-export const addSliderTemplateOptions = (
+export const addCarouselTemplateOptions = (
   schema,
   formData,
   intl,
@@ -116,11 +116,11 @@ export const addSliderTemplateOptions = (
 
   let choices = [
     [
-      SliderTemplateAppearance_SIMPLECARD,
+      CarouselTemplateAppearance_SIMPLECARD,
       intl.formatMessage(messages.slider_listing_appearance_simplecard),
     ],
     [
-      SliderTemplateAppearance_IMAGECARD,
+      CarouselTemplateAppearance_IMAGECARD,
       intl.formatMessage(messages.slider_listing_appearance_imagecard),
     ],
   ];
@@ -137,12 +137,14 @@ export const addSliderTemplateOptions = (
   );
   pos++;
 
-  if (formData.slide_appearance === SliderTemplateAppearance_SIMPLECARD) {
+  if (formData.slide_appearance === CarouselTemplateAppearance_SIMPLECARD) {
     simpleCardTemplateOptions_appearance_default(schema, formData, intl, pos, [
       'show_path_filters',
     ]);
     pos++;
-  } else if (formData.slide_appearance === SliderTemplateAppearance_IMAGECARD) {
+  } else if (
+    formData.slide_appearance === CarouselTemplateAppearance_IMAGECARD
+  ) {
     imageCardTemplateOptions(schema, formData, intl, pos, ['set_four_columns']);
     pos++;
   } else {

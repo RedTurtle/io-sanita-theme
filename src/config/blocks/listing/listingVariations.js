@@ -20,17 +20,17 @@ import {
   SmallBlockLinksTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
+import CarouselTemplate from 'io-sanita-theme/components/Blocks/Listing/Carousel/CarouselTemplate.jsx';
+import CarouselTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CarouselTemplateSkeleton';
+import SlideItemDefault from 'io-sanita-theme/components/Blocks/Listing/Carousel/SlideItemDefault';
+import SlideItemSimpleCard from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
+import SlideItemImageCard from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
+
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
 
 // import PhotogalleryTemplate from 'io-sanita-theme/components/Blocks/Listing/PhotogalleryTemplate';
 // import PhotogalleryTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/PhotogalleryTemplateSkeleton';
-
-// import SliderTemplate from 'io-sanita-theme/components/Blocks/Listing/SliderTemplate';
-// import SliderTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/SliderTemplateSkeleton';
-// import SlideItemDefault from 'io-sanita-theme/components/Blocks/Listing/Slider/SlideItemDefault';
-// import SlideItemSimpleCard from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
-// import SlideItemImageCard from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/CardWithImageDefault';
 
 // import GridGalleryTemplate from 'io-sanita-theme/components/Blocks/Listing/GridGalleryTemplate';
 // import GridGalleryTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/GridGalleryTemplateSkeleton';
@@ -51,12 +51,14 @@ import {
   addSimpleCardTemplateOptions,
   addSimpleListTemplateOptions,
   addSmallBlockLinksTemplateOptions,
+  addCarouselTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
-  // addSliderTemplateOptions,
+
   // addPhotogalleryTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
+import { title } from 'process';
 
 const iosanitaListingVariations = [
   {
@@ -67,6 +69,7 @@ const iosanitaListingVariations = [
     schemaEnhancer: ({ schema, formData, intl }) => {
       addSimpleCardTemplateOptions(schema, formData, intl);
       addLinkMoreOptions(schema, formData, intl);
+      console.log(schema);
       return schema;
     },
     cloneData: cloneBlock,
@@ -193,6 +196,25 @@ const iosanitaListingVariations = [
     },
     cloneData: cloneBlock,
   },
+  {
+    id: 'carousel',
+    isDefault: false,
+    title: 'Carousel',
+    template: CarouselTemplate,
+    skeleton: CarouselTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addCarouselTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+    appearance: {
+      default: SlideItemDefault,
+      simple_card: SlideItemSimpleCard,
+      image_card: SlideItemImageCard,
+    },
+  },
   // {
   //   id: 'ribbonCardTemplate',
   //   isDefault: false,
@@ -236,24 +258,7 @@ const iosanitaListingVariations = [
   //   cloneData: cloneBlock,
   // },
   // {
-  //   id: 'slider',
-  //   isDefault: false,
-  //   title: 'Slider',
-  //   template: SliderTemplate,
-  //   skeleton: SliderTemplateSkeleton,
-  //   schemaEnhancer: ({ schema, formData, intl }) => {
-  //     let pos = addDefaultOptions(schema, formData, intl);
-  //     addSliderTemplateOptions(schema, formData, intl, pos);
-  //     addLinkMoreOptions(schema, formData, intl);
-  //     return schema;
-  //   },
-  //   cloneData: cloneBlock,
-  //   appearance: {
-  //     default: SlideItemDefault,
-  //     simple_card: SlideItemSimpleCard,
-  //     image_card: SlideItemImageCard,
-  //   },
-  // },
+
   // {
   //   id: 'gridGalleryTemplate',
   //   isDefault: false,
