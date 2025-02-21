@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.3...2.2.4) (2025-02-21)
+
+### Bug Fixes
+
+* language selector border ([ff5fece](https://github.com/RedTurtle/io-sanita-theme/commit/ff5fece6e99da36d47208cef5e51e3387fe408aa))
+* styles for quicksearch block ([f3e7084](https://github.com/RedTurtle/io-sanita-theme/commit/f3e7084e9a31071faaacb0e99d6791437e3f1f6b))
+
 ## [2.2.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.2...2.2.3) (2025-02-17)
 
 ### Bug Fixes
