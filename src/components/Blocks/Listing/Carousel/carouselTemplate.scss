@@ -76,7 +76,7 @@ $slider-mobile-height: 300px;
           background-color: #3f4142e0;
 
           .slide-link {
-            color: $white;
+            color: $white !important;
           }
 
           font-size: 1.8rem;
