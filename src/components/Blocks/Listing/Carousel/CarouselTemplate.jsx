@@ -15,6 +15,7 @@ import {
   SliderContainer,
   ButtonPlayPause,
   useSlider,
+  GalleryPreview,
 } from 'io-sanita-theme/components';
 
 import React, { useState } from 'react';
@@ -93,6 +94,7 @@ const CarouselTemplate = (props) => {
   const intl = useIntl();
 
   const [userAutoplay, setUserAutoplay] = useState(autoplay);
+  const [viewImageIndex, setViewImageIndex] = useState(null);
   const nSlidesToShow =
     items.length < parseInt(slidesToShow)
       ? items.length
@@ -241,9 +243,12 @@ const CarouselTemplate = (props) => {
                       index={index}
                       full_width={full_width}
                       item={item}
+                      items={items}
                       show_image_title={show_image_title}
                       userAutoplay={userAutoplay}
                       slider={slider}
+                      viewImageIndex={viewImageIndex}
+                      setViewImageIndex={setViewImageIndex}
                       appearance={slide_appearance}
                       appearanceProp={otherProps}
                       block_id={block_id}
@@ -261,6 +266,14 @@ const CarouselTemplate = (props) => {
                   );
                 })}
               </Slider>
+              {viewImageIndex !== null && (
+                <GalleryPreview
+                  id="slide-gallery-preview"
+                  viewIndex={viewImageIndex}
+                  setViewIndex={setViewImageIndex}
+                  items={items}
+                />
+              )}
             </CarouselWrapper>
           </SliderContainer>
           <LinkMore title={linkTitle} href={linkHref} className="my-4" />

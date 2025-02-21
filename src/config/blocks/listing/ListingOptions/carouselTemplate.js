@@ -17,6 +17,14 @@ const messages = defineMessages({
     id: 'show_image_title',
     defaultMessage: "Mostra il titolo dell'immagine",
   },
+  show_image_description: {
+    id: 'show_image_description',
+    defaultMessage: "Mostra la descrizione dell'immagine",
+  },
+  show_image_popup: {
+    id: 'show_image_popup',
+    defaultMessage: "Apri l'immagine in popup",
+  },
   show_dots: {
     id: 'show_dots',
     defaultMessage: 'Mostra i puntini di scorrimento',
@@ -50,10 +58,15 @@ const messages = defineMessages({
     id: 'slider_listing_appearance_imagecard',
     defaultMessage: 'Card con immagine',
   },
+  slider_listing_appearance_gallery: {
+    id: 'slider_listing_appearance_gallery',
+    defaultMessage: 'Gallery',
+  },
 });
 
 export const CarouselTemplateAppearance_SIMPLECARD = 'simple_card';
 export const CarouselTemplateAppearance_IMAGECARD = 'image_card';
+export const CarouselTemplateAppearance_GALLERY = 'gallery_item';
 
 export const addCarouselTemplateOptions = (
   schema,
@@ -123,6 +136,10 @@ export const addCarouselTemplateOptions = (
       CarouselTemplateAppearance_IMAGECARD,
       intl.formatMessage(messages.slider_listing_appearance_imagecard),
     ],
+    [
+      CarouselTemplateAppearance_GALLERY,
+      intl.formatMessage(messages.slider_listing_appearance_gallery),
+    ],
   ];
 
   addSchemaField(
@@ -146,6 +163,34 @@ export const addCarouselTemplateOptions = (
     formData.slide_appearance === CarouselTemplateAppearance_IMAGECARD
   ) {
     imageCardTemplateOptions(schema, formData, intl, pos, ['set_four_columns']);
+    pos++;
+  } else if (formData.slide_appearance === CarouselTemplateAppearance_GALLERY) {
+    addSchemaField(
+      schema,
+      'show_image_title',
+      intl.formatMessage(messages.show_image_title),
+      null,
+      { type: 'boolean', default: true },
+      pos,
+    );
+    pos++;
+    addSchemaField(
+      schema,
+      'show_image_description',
+      intl.formatMessage(messages.show_image_description),
+      null,
+      { type: 'boolean', default: true },
+      pos,
+    );
+    pos++;
+    addSchemaField(
+      schema,
+      'show_image_popup',
+      intl.formatMessage(messages.show_image_popup),
+      null,
+      { type: 'boolean', default: false },
+      pos,
+    );
     pos++;
   } else {
     addSchemaField(

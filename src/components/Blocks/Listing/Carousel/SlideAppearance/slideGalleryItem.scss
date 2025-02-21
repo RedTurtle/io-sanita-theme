@@ -1,0 +1,28 @@
+.photogallery-item {
+  .img-wrapper {
+    position: relative;
+
+    &.volto-image.responsive,
+    picture.volto-image.responsive {
+      height: 300px;
+      max-height: 300px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 0.5em 1em;
+      color: #666;
+      font-size: 0.8em;
+      text-align: center;
+    }
+  }
+}

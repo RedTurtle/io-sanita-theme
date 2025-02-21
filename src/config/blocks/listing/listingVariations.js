@@ -22,7 +22,8 @@ import {
 
 import CarouselTemplate from 'io-sanita-theme/components/Blocks/Listing/Carousel/CarouselTemplate.jsx';
 import CarouselTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/CarouselTemplateSkeleton';
-import SlideItemDefault from 'io-sanita-theme/components/Blocks/Listing/Carousel/SlideItemDefault';
+import SlideItemDefault from 'io-sanita-theme/components/Blocks/Listing/Carousel/SlideAppearance/SlideItemDefault';
+import SlideGalleryItem from 'io-sanita-theme/components/Blocks/Listing/Carousel/SlideAppearance/SlideGalleryItem';
 import SlideItemSimpleCard from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import SlideItemImageCard from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
 
@@ -213,6 +214,7 @@ const iosanitaListingVariations = [
       default: SlideItemDefault,
       simple_card: SlideItemSimpleCard,
       image_card: SlideItemImageCard,
+      gallery_item: SlideGalleryItem,
     },
   },
   // {
