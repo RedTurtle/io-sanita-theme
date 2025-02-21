@@ -6,6 +6,14 @@
     figure {
       width: 95%;
     }
+
+    &:focus,
+    &:focus-visible,
+    &:has(figure.img-wrapper a:focus),
+    &:has(figure.img-wrapper a:focus-within) {
+      border: #000 solid 2px !important;
+      box-shadow: 0 0 0 2px #fff !important;
+    }
   }
 
   .it-single-slide-wrapper {
@@ -56,8 +64,10 @@
 
     &.slick-prev,
     &.slick-next {
-      outline: none !important;
-
+      :not(:focus),
+      :not(:focus-within) {
+        outline: none !important;
+      }
       .icon {
         width: 25px;
         height: 40px;
@@ -65,9 +75,11 @@
         fill: var(--bs-primary);
       }
 
-      &:hover .icon {
-        color: var(--primary-darker);
-        fill: var(--primary-darker);
+      &:hover {
+        .icon {
+          color: var(--primary-darker);
+          fill: var(--primary-darker);
+        }
       }
     }
 
@@ -77,6 +89,19 @@
 
     &.slick-next {
       right: -40px;
+    }
+  }
+}
+
+.slider-container {
+  &.full-width {
+    .slick-arrow.slick-prev {
+      z-index: 1;
+      left: 1rem;
+    }
+    .slick-arrow.slick-next {
+      z-index: 1;
+      right: 1rem;
     }
   }
 }

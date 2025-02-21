@@ -1,6 +1,7 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon } from 'io-sanita-theme/components';
+import './buttonPlayPause.scss';
 
 const messages = defineMessages({
   play: {

@@ -54,8 +54,6 @@ import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSqua
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 
-import DefaultSlideAppearance from 'io-sanita-theme/components/Carousel/DefaultAppearance/DefaultSlideAppearance';
-
 const ReleaseLog = loadable(() =>
   import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
 );
@@ -72,17 +70,6 @@ export default function applyConfig(config) {
    * SETTINGS
    ******************************************************************************/
   const voltoSentryOptions = config.settings.sentryOptions;
-
-  config.settings['volto-rt-carousel'] = {
-    ...(config.settings['volto-rt-carousel'] ?? {}),
-    slide_appearances: {
-      ...(config.settings['volto-rt-carousel']?.slide_appearances ?? {}),
-      default: {
-        name: 'Default',
-        component: DefaultSlideAppearance,
-      },
-    },
-  };
 
   config.settings = {
     ...config.settings,

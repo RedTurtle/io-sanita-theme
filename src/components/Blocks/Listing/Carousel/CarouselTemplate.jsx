@@ -12,6 +12,7 @@ import {
   LinkMore,
   SingleSlideWrapper,
   CarouselWrapper,
+  SliderContainer,
   ButtonPlayPause,
   useSlider,
 } from 'io-sanita-theme/components';
@@ -23,6 +24,7 @@ import cx from 'classnames';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
 
+import './carouselTemplate.scss';
 const messages = defineMessages({
   carouselItemAriaLabel: {
     id: 'carousel-item-aria-label',
@@ -173,7 +175,7 @@ const CarouselTemplate = (props) => {
     pauseOnDotsHover: true,
     swipe: true,
     swipeToSlide: true,
-    focusOnSelect: false,
+    focusOnSelect: true,
     draggable: true,
     accessibility: true,
     nextArrow: <SliderNextArrow intl={intl} />,
@@ -193,67 +195,77 @@ const CarouselTemplate = (props) => {
   };
 
   return (
-    <div
-      className={cx(`carouselTemplate slidesToShow-${nSlidesToShow || 1}`, {
-        'no-margin': full_width,
-        ['appearance_' + slide_appearance]: slide_appearance,
-      })}
-      id={'slider_' + block_id}
-    >
-      <ListingContainer data={props} isEditMode={isEditMode}>
-        <div
-          className={cx('slider-container', {
-            'px-4 px-md-0': !full_width,
-            'full-width': full_width,
-          })}
-        >
-          <CarouselWrapper className="it-card-bg">
-            {items?.length > nSlidesToShow && (
-              <ButtonPlayPause onClick={toggleAutoplay} autoplay={userAutoplay}>
-                <span>{userAutoplay ? 'pause' : 'play'}</span>
-              </ButtonPlayPause>
-            )}
+    <div id={`outside-slider-${block_id}`}>
+      <div
+        className={cx(`carouselTemplate slidesToShow-${nSlidesToShow || 1}`, {
+          'no-margin': full_width,
+          ['appearance_' + slide_appearance]: slide_appearance,
+        })}
+        id={'slider_' + block_id}
+      >
+        <ListingContainer data={props} isEditMode={isEditMode}>
+          <SliderContainer
+            className={cx({
+              'px-4 px-md-0': !full_width,
+              'full-width': full_width,
+            })}
+          >
+            <CarouselWrapper className="it-card-bg">
+              {items?.length > nSlidesToShow && (
+                <ButtonPlayPause
+                  onClick={toggleAutoplay}
+                  autoplay={userAutoplay}
+                >
+                  <span>{userAutoplay ? 'pause' : 'play'}</span>
+                </ButtonPlayPause>
+              )}
 
-            <Slider {...settings} ref={slider}>
-              {items.map((item, index) => {
-                const image = (
-                  <ListingImage
-                    item={item}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    sizes={`max-width(991px) 620px, ${1300 / nSlidesToShow}px`}
-                    critical
-                    showDefault
-                  />
-                );
-                const nextIndex = index < items.length - 1 ? index + 1 : null;
-                const prevIndex = index > 0 ? index - 1 : null;
-                return (
-                  <Slide
-                    key={item['@id'] + index}
-                    image={image}
-                    index={index}
-                    full_width={full_width}
-                    item={item}
-                    show_image_title={show_image_title}
-                    userAutoplay={userAutoplay}
-                    slider={slider}
-                    appearance={slide_appearance}
-                    appearanceProp={otherProps}
-                    block_id={block_id}
-                    aria-label={
-                      !show_image_title && slide_appearance === 'default'
-                        ? item.title
-                        : null
-                    }
-                    onKeyDown={handleSlideKeydown(index, prevIndex, nextIndex)}
-                  />
-                );
-              })}
-            </Slider>
-          </CarouselWrapper>
-        </div>
-        <LinkMore title={linkTitle} href={linkHref} className="my-4" />
-      </ListingContainer>
+              <Slider {...settings} ref={slider}>
+                {items.map((item, index) => {
+                  const image = (
+                    <ListingImage
+                      item={item}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      sizes={`max-width(991px) 620px, ${
+                        1300 / nSlidesToShow
+                      }px`}
+                      showDefault
+                    />
+                  );
+                  const nextIndex = index < items.length - 1 ? index + 1 : null;
+                  const prevIndex = index > 0 ? index - 1 : null;
+                  return (
+                    <Slide
+                      key={item['@id'] + index}
+                      image={image}
+                      index={index}
+                      full_width={full_width}
+                      item={item}
+                      show_image_title={show_image_title}
+                      userAutoplay={userAutoplay}
+                      slider={slider}
+                      appearance={slide_appearance}
+                      appearanceProp={otherProps}
+                      block_id={block_id}
+                      aria-label={
+                        !show_image_title && slide_appearance === 'default'
+                          ? item.title
+                          : null
+                      }
+                      onKeyDown={handleSlideKeydown(
+                        index,
+                        prevIndex,
+                        nextIndex,
+                      )}
+                    />
+                  );
+                })}
+              </Slider>
+            </CarouselWrapper>
+          </SliderContainer>
+          <LinkMore title={linkTitle} href={linkHref} className="my-4" />
+        </ListingContainer>
+      </div>
     </div>
   );
 };

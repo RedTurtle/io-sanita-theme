@@ -1,8 +1,5 @@
 import { useRef, useEffect } from 'react';
-import {
-  NextArrow,
-  PrevArrow,
-} from 'io-sanita-theme/components';
+import { NextArrow, PrevArrow } from 'io-sanita-theme/components';
 
 export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
   const slider = useRef(null);
@@ -169,7 +166,8 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
         }
       } else {
         if (nextIndex != null) {
-          slider.current.slickGoTo(nextIndex);
+          slider.current.slickGoTo(nextIndex) ||
+            focusableSlideElements[0].focus();
         } else {
           document.getElementById('sliderNextArrow_' + block_id).focus();
         }

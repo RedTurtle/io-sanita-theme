@@ -1,0 +1,219 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+$slider-height: 400px;
+$slider-fullwidth-height: 600px;
+$slider-multislide-height: 300px;
+$slider-mobile-height: 300px;
+
+@mixin carousel-height($height) {
+  .slick-track {
+    min-height: $height;
+  }
+
+  .slick-slide {
+    .slide-wrapper {
+      figure.img-wrapper,
+      .img-placeholder {
+        height: $height;
+        img {
+          min-height: $height;
+        }
+      }
+    }
+  }
+}
+
+.carouselTemplate {
+  margin: 40px 0;
+
+  .slider-container {
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+
+    .slick-slide {
+      .slide-wrapper {
+        position: relative;
+        margin: 0 auto;
+
+        figure.img-wrapper {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          margin: 0;
+
+          img {
+            min-width: 100%;
+          }
+
+          .volto-image.responsive img,
+          img {
+            object-fit: cover;
+          }
+
+          figcaption {
+            padding: 0.5em 1em;
+            color: #666;
+            font-size: 0.8em;
+            text-align: center;
+          }
+        }
+
+        .img-placeholder {
+          height: 400px;
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .slide-title {
+          position: absolute;
+          right: auto;
+          bottom: 0;
+          left: auto;
+          width: 100%;
+          padding: 0.7rem 1.2rem;
+          margin: 0 auto;
+
+          background-color: #3f4142e0;
+
+          .slide-link {
+            color: $white;
+          }
+
+          font-size: 1.8rem;
+          font-weight: bold;
+          text-decoration: none;
+
+          &:hover,
+          &:active {
+            text-decoration-line: underline;
+          }
+
+          .icon {
+            margin-left: 0.5em;
+          }
+        }
+      }
+    }
+
+    @include carousel-height($slider-height);
+
+    &.full-width {
+      @include carousel-height($slider-fullwidth-height);
+    }
+  }
+
+  &.slidesToShow-2,
+  &.slidesToShow-3,
+  &.slidesToShow-4,
+  &.slidesToShow-5,
+  &.slidesToShow-6 {
+    .slider-container {
+      .slick-slide {
+        margin-right: 0.65rem;
+        margin-left: 0.65rem;
+      }
+      @include carousel-height($slider-multislide-height);
+    }
+  }
+
+  &.no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &.appearance_simple_card,
+  &.appearance_image_card {
+    .slider-container {
+      .slick-track {
+        align-items: stretch;
+        padding-bottom: 1.5rem;
+
+        .slick-slide {
+          height: auto;
+
+          > div {
+            height: 100%;
+          }
+
+          .it-single-slide-wrapper {
+            height: 100%;
+
+            .slide-wrapper {
+              height: 100%;
+
+              > .card,
+              > .card-wrapper {
+                height: 100%;
+              }
+
+              > .card {
+                margin: 0.5rem 0;
+              }
+
+              .shadow,
+              .card-bg {
+                box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.appearance_image_card {
+    .slider-container {
+      .slick-track {
+        align-items: start;
+      }
+
+      .slick-slide {
+        .slide-wrapper {
+          .listing-item {
+            margin-top: 0.5rem;
+
+            .img-responsive-wrapper {
+              .img-wrapper {
+                position: absolute;
+                height: 100%;
+
+                img {
+                  min-width: unset !important;
+                  min-height: unset !important;
+                }
+              }
+
+              &.natural-image-size {
+                .img-responsive {
+                  position: static;
+                  height: auto;
+                  padding: 0;
+
+                  .img-wrapper {
+                    position: static;
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+    .slider-container,
+    .slider-container.full-width {
+      @include carousel-height($slider-mobile-height);
+
+      .slick-slide {
+        .slide-wrapper {
+          .slide-title {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
