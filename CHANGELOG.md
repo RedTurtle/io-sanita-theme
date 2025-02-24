@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.4...2.3.0) (2025-02-24)
+
+### Features
+
+* Carousel listing template ([#71](https://github.com/RedTurtle/io-sanita-theme/issues/71)) ([176a3dd](https://github.com/RedTurtle/io-sanita-theme/commit/176a3dd00b9f723200904f3ed721ff156a696c38))
+
+### Maintenance
+
+* en translations ([600eb40](https://github.com/RedTurtle/io-sanita-theme/commit/600eb40cbe80e74e45fd7adfa890ce25c258208e))
+* updated locales ([cd15668](https://github.com/RedTurtle/io-sanita-theme/commit/cd156682ed13a0a7805b016b51304475637fe183))
+
 ## [2.2.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.3...2.2.4) (2025-02-21)
 
 ### Bug Fixes
