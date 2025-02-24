@@ -10,7 +10,8 @@
   .block.full-width[class*='bg-']:has(+ .block#{$class}),
   .block#{$class}:has(+ .block.full-width[class*='bg-']),
   .block#{$class}:has(+ .block.align.full),
-  .block#{$class}:has(+ .block.iosanita-block-search) {
+  .block#{$class}:has(+ .block.iosanita-block-search),
+  .block#{$class}:has(+ .block.image) {
     margin-bottom: 0 !important;
   }
 }
