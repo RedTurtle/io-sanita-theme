@@ -25,3 +25,4 @@ export { addCardWithSlideUpTextTemplateOptions } from 'io-sanita-theme/config/bl
 export { addPhotogalleryTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/photogalleryTemplate';
 export { addSmallBlockLinksTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/smallBlockLinksTemplate';
 export { addAttachmentCardTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/attachmentCardTemplate';
+export { addCarouselTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/carouselTemplate';
