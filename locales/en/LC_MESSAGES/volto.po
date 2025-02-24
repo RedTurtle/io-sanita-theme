@@ -643,7 +643,7 @@ msgstr "View"
 #. Default: "Vedi l'immagine"
 #: components/Blocks/Listing/Carousel/SlideAppearance/SlideGalleryItem
 msgid "Vedi l'immagine"
-msgstr ""
+msgstr "View image"
 
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
@@ -1085,7 +1085,7 @@ msgstr "Carousel"
 #. Default: "Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
 msgid "carousel-item-aria-label"
-msgstr ""
+msgstr "You are currently in a carousel. To navigate, use the left and right arrows."
 
 #. Default: "Slide"
 #: components/Slider/SingleSlideWrapper
@@ -1517,7 +1517,7 @@ msgstr "Referral service"
 #. Default: "Navigazione elementi slider"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
 msgid "dots"
-msgstr ""
+msgstr "Slider items navigation"
 
 #. Default: "Download and Play video"
 #: components/EmbeddedVideo/EmbeddedVideo
@@ -2095,7 +2095,7 @@ msgstr "Open accordion"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
 #: components/Blocks/Listing/Carousel/SlideAppearance/SlideItemDefault
 msgid "openLink"
-msgstr ""
+msgstr "Open link"
 
 #. Default: "Apri link in una nuova scheda"
 #: components/Blocks/CTA/Block
@@ -3409,7 +3409,7 @@ msgstr ""
 #. Default: "Vai alla slide {index}"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
 msgid "slideDot"
-msgstr ""
+msgstr "Go to slide {index}"
 
 #. Default: "Qui puoi selezionare, per il template 'Carousel', un aspetto diverso da quello di default per gli elementi mostrati nello slider."
 #: config/blocks/listing/ListingOptions/carouselTemplate
