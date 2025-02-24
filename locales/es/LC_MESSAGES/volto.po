@@ -40,6 +40,7 @@ msgid "Alert"
 msgstr ""
 
 #. Default: "Aspetto"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "Aspetto"
@@ -646,6 +647,11 @@ msgstr "Ir a la página"
 msgid "Vedi"
 msgstr ""
 
+#. Default: "Vedi l'immagine"
+#: components/Blocks/Listing/Carousel/SlideAppearance/SlideGalleryItem
+msgid "Vedi l'immagine"
+msgstr ""
+
 #. Default: "Vedi tutto"
 #: components/Blocks/Listing/HighlightedContent/HighlightedContentTemplate
 #: components/layout/Navigation/MegaMenu/MegaMenu
@@ -825,16 +831,19 @@ msgid "attachments"
 msgstr ""
 
 #. Default: "Autoplay"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "autoplay"
 msgstr ""
 
 #. Default: "Velocità autoplay"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "autoplay_speed"
 msgstr ""
 
 #. Default: "La velocità di autoplay deve essere espressa in secondi."
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "autoplay_speed_description"
 msgstr ""
@@ -1078,6 +1087,11 @@ msgstr ""
 #. Default: "Carosello"
 #: components/Slider/CarouselWrapper
 msgid "carousel"
+msgstr ""
+
+#. Default: "Sei attualmente in un carosello, per navigare usa le frecce sinistra e destra"
+#: components/Blocks/Listing/Carousel/CarouselTemplate
+msgid "carousel-item-aria-label"
 msgstr ""
 
 #. Default: "Slide"
@@ -1507,6 +1521,11 @@ msgstr ""
 msgid "documento_servizio_riferimento"
 msgstr ""
 
+#. Default: "Navigazione elementi slider"
+#: components/Blocks/Listing/Carousel/CarouselTemplate
+msgid "dots"
+msgstr ""
+
 #. Default: "Download and Play video"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "downloadPlayVideo"
@@ -1749,6 +1768,7 @@ msgid "gallery_videos"
 msgstr ""
 
 #. Default: "Vedi l'anteprima di"
+#: components/Blocks/Listing/Carousel/SlideAppearance/SlideGalleryItem
 #: components/View/commons/Gallery/GalleryImage
 msgid "gallery_viewPreview"
 msgstr ""
@@ -2076,6 +2096,12 @@ msgstr "Número de comunicado de prensa"
 #. Default: "Apri l'accordion"
 #: components/Blocks/Accordion/Block/ViewBlock
 msgid "openAccordion"
+msgstr ""
+
+#. Default: "Apri il link"
+#: components/Blocks/Listing/Carousel/CarouselTemplate
+#: components/Blocks/Listing/Carousel/SlideAppearance/SlideItemDefault
+msgid "openLink"
 msgstr ""
 
 #. Default: "Apri link in una nuova scheda"
@@ -3243,6 +3269,7 @@ msgid "show_detail_link"
 msgstr ""
 
 #. Default: "Mostra i puntini di scorrimento"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_dots"
 msgstr ""
@@ -3253,6 +3280,7 @@ msgid "show_ente"
 msgstr ""
 
 #. Default: "A tutta larghezza"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_full_width"
 msgstr ""
@@ -3262,12 +3290,19 @@ msgstr ""
 msgid "show_icon"
 msgstr ""
 
+#. Default: "Mostra la descrizione dell'immagine"
+#: config/blocks/listing/ListingOptions/carouselTemplate
+msgid "show_image_description"
+msgstr ""
+
 #. Default: "Apri l'immagine in popup"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/photogalleryTemplate
 msgid "show_image_popup"
 msgstr ""
 
 #. Default: "Mostra il titolo dell'immagine"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_image_title"
 msgstr ""
@@ -3378,22 +3413,36 @@ msgstr ""
 msgid "skype"
 msgstr ""
 
-#. Default: "Qui puoi selezionare, per il template 'Slider', un aspetto diverso da quello di default per gli elementi mostrati nello slider."
+#. Default: "Vai alla slide {index}"
+#: components/Blocks/Listing/Carousel/CarouselTemplate
+msgid "slideDot"
+msgstr ""
+
+#. Default: "Qui puoi selezionare, per il template 'Carousel', un aspetto diverso da quello di default per gli elementi mostrati nello slider."
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_description"
 msgstr ""
 
+#. Default: "Gallery"
+#: config/blocks/listing/ListingOptions/carouselTemplate
+msgid "slider_listing_appearance_gallery"
+msgstr ""
+
 #. Default: "Card con immagine"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_imagecard"
 msgstr ""
 
 #. Default: "Card semplice"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_simplecard"
 msgstr ""
 
 #. Default: "N° slide da mostrare"
+#: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slidesToShow"
 msgstr ""
