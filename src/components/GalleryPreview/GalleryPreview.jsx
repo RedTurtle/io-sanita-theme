@@ -72,7 +72,7 @@ const GalleryPreview = ({ id, viewIndex, setViewIndex, items }) => {
             {image.title}
           </ModalHeader>
           <ModalBody>
-            {image.description && <p className="pb-3">{image.description}</p>}
+            {image.description && <p>{image.description}</p>}
             <div className="item-preview">
               {items.length > 1 && (
                 <Button

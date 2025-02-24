@@ -2,11 +2,7 @@
   .img-wrapper {
     position: relative;
 
-    &.volto-image.responsive,
-    picture.volto-image.responsive {
-      height: 300px;
-      max-height: 300px;
-
+    &.responsive {
       img {
         width: 100%;
         height: 100%;
@@ -18,7 +14,8 @@
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: #ffffffa7;
+
       padding: 0.5em 1em;
       color: #666;
       font-size: 0.8em;
