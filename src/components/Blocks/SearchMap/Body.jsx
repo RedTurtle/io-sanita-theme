@@ -454,7 +454,10 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
                                   key={block_id + i}
                                   className="mb-lg-3"
                                 >
-                                  <SearchResultItem item={item} />
+                                  <SearchResultItem
+                                    item={item}
+                                    key={i + '' + block_id}
+                                  />
                                 </Col>
                               ))}
                             </Row>

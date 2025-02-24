@@ -8,13 +8,13 @@ import {
 
 const ResultItem = ({ item }) => {
   return item['@type'] === 'Struttura' ? (
-    <CardPlace item={item} type="synthetic" />
+    <CardPlace item={item} type="synthetic" key={item['@id']} />
   ) : item['@type'] === 'Persona' ? (
-    <CardPersona item={item} />
+    <CardPersona item={item} key={item['@id']} />
   ) : item['@type'] === 'ComeFarePer' ? (
-    <CardGuide item={item} />
+    <CardGuide item={item} key={item['@id']} />
   ) : (
-    <CardSimple item={item} />
+    <CardSimple item={item} key={item['@id']} />
   );
 };
 

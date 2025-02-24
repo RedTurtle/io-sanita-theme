@@ -70,7 +70,7 @@ const iosanitaListingVariations = [
     schemaEnhancer: ({ schema, formData, intl }) => {
       addSimpleCardTemplateOptions(schema, formData, intl);
       addLinkMoreOptions(schema, formData, intl);
-      console.log(schema);
+
       return schema;
     },
     cloneData: cloneBlock,
