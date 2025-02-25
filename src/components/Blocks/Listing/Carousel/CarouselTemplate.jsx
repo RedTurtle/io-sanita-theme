@@ -26,6 +26,7 @@ import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import config from '@plone/volto/registry';
 
 import './carouselTemplate.scss';
+import { on } from 'process';
 const messages = defineMessages({
   carouselItemAriaLabel: {
     id: 'carousel-item-aria-label',
@@ -48,7 +49,7 @@ const messages = defineMessages({
 
 const Slide = (props) => {
   const intl = useIntl();
-  const { index, appearance, appearanceProp, onKeyDown } = props;
+  const { index, appearance, appearanceProp, onKeyDown, ...otherProps } = props;
 
   const appearances = config.blocks.blocksConfig.listing.variations.filter(
     (v) => v.id === 'carousel',
@@ -57,6 +58,7 @@ const Slide = (props) => {
 
   return (
     <SingleSlideWrapper
+      {...otherProps}
       index={index}
       onKeyDown={onKeyDown}
       aria-label={
@@ -64,7 +66,7 @@ const Slide = (props) => {
         intl.formatMessage(messages.carouselItemAriaLabel)
       }
     >
-      <div className={'slide-wrapper'} role="presentation">
+      <div className="slide-wrapper" role="presentation">
         <SlideItemAppearance {...props} {...appearanceProp} intl={intl} />
       </div>
     </SingleSlideWrapper>
@@ -106,6 +108,7 @@ const CarouselTemplate = (props) => {
     SliderNextArrow,
     SliderPrevArrow,
     handleSlideKeydown,
+    HiddenSlideFocus,
   } = useSlider(userAutoplay, setUserAutoplay, block_id);
 
   const toggleAutoplay = () => {
@@ -185,6 +188,9 @@ const CarouselTemplate = (props) => {
     appendDots: renderCustomDots,
     // Custom handling of focus for a11y
     afterChange: focusSlide,
+    onInit: () => {
+      HiddenSlideFocus();
+    },
     responsive: [
       {
         breakpoint: 980,

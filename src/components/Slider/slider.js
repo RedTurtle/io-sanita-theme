@@ -27,6 +27,27 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const HiddenSlideFocus = () => {
+    const slides = document.querySelectorAll(
+      `${sliderElementSelector} .slick-slide`,
+    );
+
+    //set tab index to -1 for hidden slides
+
+    slides?.forEach((slide) => {
+      const focusableElements = slide.querySelectorAll(
+        'button:not([disabled]), [href], [tabindex="0"]',
+      );
+
+      focusableElements.forEach((element) => {
+        const tabIndexValue =
+          element.closest('.slick-active') !== null ? '0' : '-1';
+
+        element.setAttribute('tabIndex', tabIndexValue);
+      });
+    });
+  };
+
   const focusSlide = (slideIndex) => {
     if (!sliderElement) return;
     const sliderIsVisible = sliderContainer?.classList?.contains('visible');
@@ -52,8 +73,10 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
     ).some((node) => node.contains(document.activeElement));
 
     if (focusedSliderElement) {
+      slide.setAttribute('tabindex', '0');
       slide.focus();
     }
+    HiddenSlideFocus();
   };
 
   const visibleSlide = (selector) => {
@@ -160,7 +183,8 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
 
       if (shiftKey) {
         if (prevIndex != null) {
-          slider.current.slickGoTo(prevIndex);
+          slider.current.slickGoTo(prevIndex) ||
+            focusableSlideElements[focusableSlideElements.length - 1].focus();
         } else {
           document.getElementById('sliderPrevArrow_' + block_id).focus();
         }
@@ -197,5 +221,6 @@ export const useSlider = (userAutoplay, setUserAutoplay, block_id) => {
     SliderNextArrow,
     SliderPrevArrow,
     handleSlideKeydown,
+    HiddenSlideFocus,
   };
 };

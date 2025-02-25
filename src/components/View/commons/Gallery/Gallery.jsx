@@ -72,6 +72,7 @@ const Gallery = ({
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
       speed: 500,
+      accessibility: true,
       ...getResponsiveSettings(nItems, slidesToShow, slidesToScroll),
       responsive: [
         {
