@@ -61,7 +61,7 @@ const messages = defineMessages({
   },
 });
 
-const Body = ({ data, id, path, properties, block, inEditMode }) => {
+const Body = ({ data, id, path, properties, inEditMode }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const subsite = useSelector((state) => state.subsite?.data);
@@ -393,7 +393,7 @@ const Body = ({ data, id, path, properties, block, inEditMode }) => {
  * @static
  */
 Body.propTypes = {
-  block: PropTypes.objectOf(PropTypes.any).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Body;

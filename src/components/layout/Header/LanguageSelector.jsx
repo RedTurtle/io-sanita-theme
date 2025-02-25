@@ -60,7 +60,7 @@ const LanguageSelector = (props) => {
       inNavbar
       className="is-language-selector"
     >
-      <DropdownToggle aria-haspopup caret inNavbar nav role="button">
+      <DropdownToggle aria-haspopup caret nav role="button">
         {languagesISO392[currentLang]}
         <Icon
           icon="it-expand"

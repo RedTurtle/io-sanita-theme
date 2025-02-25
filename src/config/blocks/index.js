@@ -384,10 +384,15 @@ export const applyIoSanitaBlocksConfig = (config) => {
       const no_bg_for = ['hero'];
 
       if (data.show_block_bg && no_bg_for.indexOf(data['@type']) < 0) {
-        styles.push('bg-primary-lightest');
-
-        styles.push('full-width');
-        styles.push('pb-4');
+        if (classNames.indexOf('bg-primary-lightest') < 0) {
+          styles.push('bg-primary-lightest');
+        }
+        if (classNames.indexOf('full-width') < 0) {
+          styles.push('full-width');
+        }
+        if (classNames.indexOf('py-4') < 0) {
+          styles.push('py-4');
+        }
       }
 
       return [...classNames, ...styles];

@@ -96,8 +96,8 @@ export const CardPersona = ({
                   </div>
                 )}
 
-                {strutture.map((s) => (
-                  <div className="mb-2 mt-2">
+                {strutture.map((s, index_s) => (
+                  <div className="mb-2 mt-2" key={index_s}>
                     <div>
                       <UniversalLink
                         item={!isEditMode ? s : null}

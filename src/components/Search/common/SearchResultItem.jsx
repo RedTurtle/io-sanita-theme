@@ -6,7 +6,7 @@ import {
   CardGuide,
 } from 'io-sanita-theme/components';
 
-const ResultItem = ({ item }) => {
+const SearchResultItem = ({ item }) => {
   return item['@type'] === 'Struttura' ? (
     <CardPlace item={item} type="synthetic" key={item['@id']} />
   ) : item['@type'] === 'Persona' ? (
@@ -18,4 +18,4 @@ const ResultItem = ({ item }) => {
   );
 };
 
-export default ResultItem;
+export default SearchResultItem;
