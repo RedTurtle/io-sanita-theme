@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-02-24T10:51:14.508Z\n"
+"POT-Creation-Date: 2025-02-25T11:31:39.047Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -3285,18 +3285,18 @@ msgstr ""
 msgid "show_icon"
 msgstr ""
 
-#. Default: "Mostra la descrizione dell'immagine"
+#. Default: "Mostra la descrizione"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 msgid "show_image_description"
 msgstr ""
 
-#. Default: "Apri l'immagine in popup"
+#. Default: "Apri l'anteprima in popup"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/photogalleryTemplate
 msgid "show_image_popup"
 msgstr ""
 
-#. Default: "Mostra il titolo dell'immagine"
+#. Default: "Mostra il titolo"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_image_title"

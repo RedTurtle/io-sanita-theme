@@ -3290,18 +3290,18 @@ msgstr ""
 msgid "show_icon"
 msgstr ""
 
-#. Default: "Mostra la descrizione dell'immagine"
+#. Default: "Mostra la descrizione"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 msgid "show_image_description"
 msgstr ""
 
-#. Default: "Apri l'immagine in popup"
+#. Default: "Apri l'anteprima in popup"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/photogalleryTemplate
 msgid "show_image_popup"
 msgstr ""
 
-#. Default: "Mostra il titolo dell'immagine"
+#. Default: "Mostra il titolo"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_image_title"
