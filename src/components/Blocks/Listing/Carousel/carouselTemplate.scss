@@ -52,10 +52,19 @@ $slider-mobile-height: 300px;
           }
 
           figcaption {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+
             padding: 0.5em 1em;
-            color: #666;
+            color: #000;
             font-size: 0.8em;
             text-align: center;
+
+            .title:has(+ .description) {
+              font-weight: bold;
+            }
           }
         }
 

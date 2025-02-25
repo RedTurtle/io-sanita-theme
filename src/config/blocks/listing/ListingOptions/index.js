@@ -2,6 +2,7 @@ export {
   addSchemaField,
   templatesOptions,
   addLighthouseField,
+  addFieldsetAfter,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions/utils';
 export addDefaultOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/defaultOptions';
 export addLinkMoreOptions from 'io-sanita-theme/config/blocks/listing/ListingOptions/linkMoreOptions';

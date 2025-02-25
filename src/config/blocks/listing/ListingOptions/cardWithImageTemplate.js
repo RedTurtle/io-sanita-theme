@@ -49,6 +49,7 @@ export const imageCardTemplateOptions = (
   intl,
   position,
   hide_fields = [], //array of string
+  fieldset,
 ) => {
   let pos = position;
   pos = templatesOptions(
@@ -80,6 +81,7 @@ export const imageCardTemplateOptions = (
       show_category: { default: true },
     },
     pos,
+    fieldset,
   );
   return pos;
 };

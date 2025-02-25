@@ -49,11 +49,11 @@ const SlideGalleryItem = ({
         {(show_image_title ||
           (show_image_description && (item.description || item.rights))) && (
           <figcaption>
-            {show_image_title && <span className="title">{item.title}</span>}
+            {show_image_title && <div className="title">{item.title}</div>}
             {show_image_description && (item.description || item.rights) && (
-              <span className="description">
+              <div className="description">
                 {item.description ?? item.rights}
-              </span>
+              </div>
             )}
           </figcaption>
         )}

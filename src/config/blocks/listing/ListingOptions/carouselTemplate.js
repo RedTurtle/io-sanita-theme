@@ -1,6 +1,9 @@
 import { defineMessages } from 'react-intl';
 
-import { addSchemaField } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+import {
+  addSchemaField,
+  addFieldsetAfter,
+} from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 import { simpleCardTemplateOptions_appearance_default } from 'io-sanita-theme/config/blocks/listing/ListingOptions/simpleCardTemplate';
 import { imageCardTemplateOptions } from 'io-sanita-theme/config/blocks/listing/ListingOptions/cardWithImageTemplate';
 
@@ -15,15 +18,15 @@ const messages = defineMessages({
   },
   show_image_title: {
     id: 'show_image_title',
-    defaultMessage: "Mostra il titolo dell'immagine",
+    defaultMessage: 'Mostra il titolo',
   },
   show_image_description: {
     id: 'show_image_description',
-    defaultMessage: "Mostra la descrizione dell'immagine",
+    defaultMessage: 'Mostra la descrizione',
   },
   show_image_popup: {
     id: 'show_image_popup',
-    defaultMessage: "Apri l'immagine in popup",
+    defaultMessage: "Apri l'anteprima in popup",
   },
   show_dots: {
     id: 'show_dots',
@@ -142,6 +145,11 @@ export const addCarouselTemplateOptions = (
     ],
   ];
 
+  addFieldsetAfter(schema, 'default', {
+    id: 'appearance',
+    title: 'Aspetto delle slide',
+    fields: [],
+  });
   addSchemaField(
     schema,
     'slide_appearance',
@@ -151,18 +159,31 @@ export const addCarouselTemplateOptions = (
       choices,
     },
     pos,
+    'appearance',
   );
   pos++;
 
   if (formData.slide_appearance === CarouselTemplateAppearance_SIMPLECARD) {
-    simpleCardTemplateOptions_appearance_default(schema, formData, intl, pos, [
-      'show_path_filters',
-    ]);
+    simpleCardTemplateOptions_appearance_default(
+      schema,
+      formData,
+      intl,
+      pos,
+      ['show_path_filters'],
+      'appearance',
+    );
     pos++;
   } else if (
     formData.slide_appearance === CarouselTemplateAppearance_IMAGECARD
   ) {
-    imageCardTemplateOptions(schema, formData, intl, pos, ['set_four_columns']);
+    imageCardTemplateOptions(
+      schema,
+      formData,
+      intl,
+      pos,
+      ['set_four_columns'],
+      'appearance',
+    );
     pos++;
   } else if (formData.slide_appearance === CarouselTemplateAppearance_GALLERY) {
     addSchemaField(
@@ -172,6 +193,7 @@ export const addCarouselTemplateOptions = (
       null,
       { type: 'boolean', default: true },
       pos,
+      'appearance',
     );
     pos++;
     addSchemaField(
@@ -181,6 +203,7 @@ export const addCarouselTemplateOptions = (
       null,
       { type: 'boolean', default: true },
       pos,
+      'appearance',
     );
     pos++;
     addSchemaField(
@@ -190,6 +213,7 @@ export const addCarouselTemplateOptions = (
       null,
       { type: 'boolean', default: false },
       pos,
+      'appearance',
     );
     pos++;
   } else {
@@ -200,6 +224,7 @@ export const addCarouselTemplateOptions = (
       null,
       { type: 'boolean', default: true },
       pos,
+      'appearance',
     );
     pos++;
   }

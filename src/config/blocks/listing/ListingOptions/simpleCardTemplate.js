@@ -129,6 +129,7 @@ export const simpleCardTemplateOptions_appearance_default = (
   intl,
   position,
   hide_fields = [], //array of string
+  fieldset,
 ) => {
   let pos = position;
   pos = templatesOptions(
@@ -153,6 +154,7 @@ export const simpleCardTemplateOptions_appearance_default = (
       // show_path_filters: { default: false },
     },
     pos,
+    fieldset,
   );
   return pos;
 };

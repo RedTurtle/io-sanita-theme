@@ -2,6 +2,8 @@ import { defineMessages } from 'react-intl';
 
 import ListingBlockSchema from '@plone/volto/components/manage/Blocks/Listing/schema';
 
+import { addFieldsetAfter } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+
 export const schemaListing = (props) => {
   const intl = props.intl;
   const baseSchema = ListingBlockSchema(props);
@@ -11,13 +13,22 @@ export const schemaListing = (props) => {
   );
   if (defaultFieldset) {
     defaultFieldset.fields = defaultFieldset.fields.filter(
-      (field) => field !== 'headline' && field !== 'headlineTag',
+      (field) =>
+        field !== 'headline' &&
+        field !== 'headlineTag' &&
+        field !== 'querystring',
     );
   }
 
   const findFieldset = (fieldset) => {
     return fieldset.id === 'linkmore';
   };
+
+  addFieldsetAfter(baseSchema, 'default', {
+    id: 'criteria',
+    title: 'Risultati',
+    fields: ['querystring'],
+  });
 
   // const linkMoreFieldset = baseSchema.fieldsets.find(findFieldset);
   // linkMoreFieldset.fields.push('linkAlign');
