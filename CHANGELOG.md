@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.0...2.3.1) (2025-02-25)
+
+### Bug Fixes
+
+* a11y warning ([688bea5](https://github.com/RedTurtle/io-sanita-theme/commit/688bea5d793832f0f06a98a0e46bb992331620eb))
+* listing fieldset and carousel options ([ecec497](https://github.com/RedTurtle/io-sanita-theme/commit/ecec4975db519e9cda7de3df7ea0c3f14915a588))
+* locales and release.md ([94317a7](https://github.com/RedTurtle/io-sanita-theme/commit/94317a7ecdbbb6e1f8e4f61d1722a748f4926064))
+* mismatch server / client classname render ([9f1c20c](https://github.com/RedTurtle/io-sanita-theme/commit/9f1c20ceb23284caa20b66924dce529da78572a7))
+* remove margin between full-block and image block ([c7b0fe4](https://github.com/RedTurtle/io-sanita-theme/commit/c7b0fe419e6664fc58cd7da0d8c4abcd51bd79b4))
+* warnings ([2d10163](https://github.com/RedTurtle/io-sanita-theme/commit/2d10163dc917958329e813deb7ca92841a4190d6))
+
 ## [2.3.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.2.4...2.3.0) (2025-02-24)
 
 ### Features
