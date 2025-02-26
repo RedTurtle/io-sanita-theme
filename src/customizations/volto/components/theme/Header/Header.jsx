@@ -45,8 +45,8 @@ const Header = ({ pathname }) => {
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
       <Headers
         className={cx({
-          'is-sticky': mini && !isEditMode,
-          'it-header-sticky': !isEditMode,
+          'is-sticky': mini, //&& !isEditMode, //rimossa condizione su isEditMode  perchè creava problemi di mismatch con il server
+          'it-header-sticky': true, //!isEditMode,
         })}
       >
         <HeaderSlim />

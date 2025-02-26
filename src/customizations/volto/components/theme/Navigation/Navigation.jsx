@@ -149,8 +149,9 @@ const Navigation = ({ pathname = '/', isEditMode }) => {
                 {/* Social Links */}
                 <HeaderSearch
                   className={cx({
-                    'd-none': isEditMode,
-                    'display-only-when-sticky': !isEditMode,
+                    //rimossa condizione su isEditMode  perchè creava problemi di mismatch con il server
+                    //'d-none': isEditMode,
+                    'display-only-when-sticky': true, //!isEditMode,
                   })}
                 />
                 <SocialHeader mobile={true} />
