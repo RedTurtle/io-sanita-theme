@@ -41,6 +41,18 @@
 - ...
  -->
 
+## Versione x.x.x (x.x.x)
+
+### Fix
+
+- a11y - Sistemata l'accessibilità del template del blocco elenco 'Link completi'
+
+## Versione 2.3.2 (26/02/2025)
+
+### Fix
+
+- a11y - Sistemata l'accessibilità dei blocchi di tipo 'cerca'
+
 ## Versione 2.3.0 (24/02/2025)
 
 ### Novità
