@@ -46,6 +46,7 @@ const CompleteBlockLinksTemplate = (props) => {
               sizes: '60px',
               showTitleAttr: false,
               alt: item.title,
+              noWrapLink: true,
             });
 
             const BlockExtraTags = getComponentWithFallback({
