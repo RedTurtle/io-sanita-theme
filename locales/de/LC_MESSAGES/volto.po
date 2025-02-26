@@ -2736,7 +2736,7 @@ msgid "search_farmacia_results"
 msgstr ""
 
 #. Default: "Risultati della ricerca farmacie"
-#: components/Blocks/SearchFarmacia/Results
+#: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_results_aria"
 msgstr ""
 
@@ -2753,6 +2753,11 @@ msgstr ""
 #. Default: "Inserisci il nome della farmacia"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_searchable_text_description"
+msgstr ""
+
+#. Default: "Farmacia"
+#: components/Blocks/SearchFarmacia/SearchFilters
+msgid "search_farmacia_searchable_text_label"
 msgstr ""
 
 #. Default: "Comune"
