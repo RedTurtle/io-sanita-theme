@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.3.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.1...2.3.2) (2025-02-26)
+
+### Bug Fixes
+
+* a11y search blocks ([439519f](https://github.com/RedTurtle/io-sanita-theme/commit/439519f0763c79771bd0e6638147e24c32997a23))
+* mismatch ssr edit ([6a46afe](https://github.com/RedTurtle/io-sanita-theme/commit/6a46afee597cd372c28f6ec34edea544ce1a652c))
+
+### Maintenance
+
+* locales ([e44fb3d](https://github.com/RedTurtle/io-sanita-theme/commit/e44fb3d3b04ac2e12b4c31c47e3ed36c0ae33ac3))
+
 ## [2.3.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.0...2.3.1) (2025-02-25)
 
 ### Bug Fixes
