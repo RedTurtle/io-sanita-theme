@@ -328,6 +328,11 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
   };
 
   const results_region_id = block_id + 'results-region';
+  const title =
+    data.title ??
+    (data.portal_type === 'Struttura'
+      ? intl.formatMessage(messages.searchable_text_default_label_strutture)
+      : intl.formatMessage(messages.searchable_text_default_label_medici));
   return (
     <div className="block iosanita-block-search map">
       <div className="strutture-search">
@@ -340,29 +345,21 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
               }}
             >
               <div className="search-top">
-                {data.title && !data.show_search_bar && (
-                  <LinkedHeadline
-                    isEditMode={inEditMode}
-                    title={data.title}
-                    id={id}
-                    className="h5"
-                  />
-                )}
+                <LinkedHeadline
+                  isEditMode={inEditMode}
+                  title={title}
+                  id={id}
+                  className={cx('h5', {
+                    'visually-hidden': data.show_search_bar, //to prevent a11y issue descendant headings
+                  })}
+                />
+
                 {data.show_search_bar && (
                   <Row>
                     <Col lg={8}>
                       <SearchBar
                         id={block_id}
-                        title={data.title}
-                        defaultTitle={
-                          data.portal_type === 'Struttura'
-                            ? intl.formatMessage(
-                                messages.searchable_text_default_label_strutture,
-                              )
-                            : intl.formatMessage(
-                                messages.searchable_text_default_label_medici,
-                              )
-                        }
+                        title={title}
                         textDescription={intl.formatMessage(
                           messages.searchable_text_decription,
                         )}

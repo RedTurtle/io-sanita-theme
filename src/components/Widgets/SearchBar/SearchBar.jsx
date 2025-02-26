@@ -31,6 +31,7 @@ const SearchBar = React.forwardRef(
       ariaControls,
       showSubmit = false,
       shadow = false,
+      ariaLabel,
     },
     ref,
   ) => {
@@ -71,9 +72,11 @@ const SearchBar = React.forwardRef(
         role="search"
         aria-label={title ?? defaultTitle}
       >
-        <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
-          {title ?? defaultTitle}
-        </label>
+        {(title || defaultTitle) && (
+          <label htmlFor={id + 'searchable-text'} className="active px-0 h5">
+            {title ?? defaultTitle}
+          </label>
+        )}
 
         <div className={cx('input-group', { shadow: shadow })}>
           <span className="input-group-text">
@@ -84,11 +87,12 @@ const SearchBar = React.forwardRef(
             aria-describedby={id + 'searchable-text-description'}
             id={id + 'searchable-text'}
             className="form-control"
-            value={searchableText}
+            value={searchableText ?? ''}
             aria-controls={ariaControls}
             onChange={(e) => setSearchableText(e.currentTarget.value)}
             onKeyDown={onKeyDown}
             ref={ref}
+            aria-label={ariaLabel}
           />
           {showSubmit && (
             <div className="input-group-append">

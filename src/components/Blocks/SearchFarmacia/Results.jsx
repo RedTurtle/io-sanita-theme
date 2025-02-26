@@ -80,10 +80,6 @@ const messages = defineMessages({
     id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
-  farmacie_results_aria: {
-    id: 'search_farmacia_results_aria',
-    defaultMessage: 'Risultati della ricerca farmacie',
-  },
 });
 
 const ContactColumns = ({ isEditMode, item, searchType }) => {
@@ -183,112 +179,104 @@ const PeriodsStructure = ({ periods }) => {
   );
 };
 
-const Results = ({ items, isEditMode, resRef, searchType }) => {
+const Results = ({ items, isEditMode, searchType }) => {
   const intl = useIntl();
 
   return (
     <>
       {items?.length > 0 ? (
-        <div
-          className="farmacie-results shadow"
-          role="region"
-          aria-live="polite"
-          aria-label={intl.formatMessage(messages.farmacie_results_aria)}
-          ref={resRef}
-        >
-          <Table>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>
-                  {intl.formatMessage(messages.nome)} <br />
-                  {intl.formatMessage(messages.nome_en)}
-                </Table.HeaderCell>
-                <Table.HeaderCell>
-                  {intl.formatMessage(messages.comune)} <br />
-                  {intl.formatMessage(messages.comune_en)}
-                </Table.HeaderCell>
-                <Table.HeaderCell>
-                  {intl.formatMessage(messages.localita)}
-                  <br />
-                  {intl.formatMessage(messages.localita_en)}
-                </Table.HeaderCell>
-                <Table.HeaderCell>
-                  {intl.formatMessage(messages.indirizzo)}
-                  <br />
-                  {intl.formatMessage(messages.indirizzo_en)}
-                </Table.HeaderCell>
-                <Table.HeaderCell>
-                  {intl.formatMessage(messages.recapiti)}
-                  <br />
-                  {intl.formatMessage(messages.recapiti_en)}
-                </Table.HeaderCell>
+        <Table>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>
+                {intl.formatMessage(messages.nome)} <br />
+                {intl.formatMessage(messages.nome_en)}
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                {intl.formatMessage(messages.comune)} <br />
+                {intl.formatMessage(messages.comune_en)}
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                {intl.formatMessage(messages.localita)}
+                <br />
+                {intl.formatMessage(messages.localita_en)}
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                {intl.formatMessage(messages.indirizzo)}
+                <br />
+                {intl.formatMessage(messages.indirizzo_en)}
+              </Table.HeaderCell>
+              <Table.HeaderCell>
+                {intl.formatMessage(messages.recapiti)}
+                <br />
+                {intl.formatMessage(messages.recapiti_en)}
+              </Table.HeaderCell>
 
-                {searchType === 'vacations' ? (
-                  <>
-                    <Table.HeaderCell>
+              {searchType === 'vacations' ? (
+                <>
+                  <Table.HeaderCell>
+                    {intl.formatMessage(messages.ferie)}
+                    <br />
+                    {intl.formatMessage(messages.ferie_en)}
+                  </Table.HeaderCell>
+                </>
+              ) : (
+                <Table.HeaderCell>
+                  {intl.formatMessage(messages.turni)}
+                  <br />
+                  {intl.formatMessage(messages.turni_en)}
+                </Table.HeaderCell>
+              )}
+            </Table.Row>
+          </Table.Header>
+          <tbody>
+            {items.map((item, i) => (
+              <tr key={i}>
+                <td className="nome">
+                  {item['@id'] && (
+                    <p>
+                      <UniversalLink
+                        item={!isEditMode ? item : null}
+                        href={isEditMode ? '#' : null}
+                      >
+                        {item.title}
+                      </UniversalLink>
+                    </p>
+                  )}
+                </td>
+                <ContactColumns
+                  isEditMode={isEditMode}
+                  item={item}
+                  searchType={searchType}
+                />
+
+                {/* Periodi di turno */}
+                {searchType !== 'vacations' && (
+                  <td className="turni">
+                    <div className="th d-lg-none">
+                      {intl.formatMessage(messages.turni)}
+                      <br />
+                      {intl.formatMessage(messages.turni_en)}
+                    </div>
+                    <PeriodsStructure periods={item.turni} />
+                  </td>
+                )}
+
+                {/* Periodi di ferie */}
+                {searchType === 'vacations' && (
+                  <td className="ferie">
+                    <div className="th d-lg-none">
                       {intl.formatMessage(messages.ferie)}
                       <br />
                       {intl.formatMessage(messages.ferie_en)}
-                    </Table.HeaderCell>
-                  </>
-                ) : (
-                  <Table.HeaderCell>
-                    {intl.formatMessage(messages.turni)}
-                    <br />
-                    {intl.formatMessage(messages.turni_en)}
-                  </Table.HeaderCell>
-                )}
-              </Table.Row>
-            </Table.Header>
-            <tbody>
-              {items.map((item, i) => (
-                <tr key={i}>
-                  <td className="nome">
-                    {item['@id'] && (
-                      <p>
-                        <UniversalLink
-                          item={!isEditMode ? item : null}
-                          href={isEditMode ? '#' : null}
-                        >
-                          {item.title}
-                        </UniversalLink>
-                      </p>
-                    )}
+                    </div>
+                    <PeriodsStructure periods={item.ferie} />
                   </td>
-                  <ContactColumns
-                    isEditMode={isEditMode}
-                    item={item}
-                    searchType={searchType}
-                  />
-
-                  {/* Periodi di turno */}
-                  {searchType !== 'vacations' && (
-                    <td className="turni">
-                      <div className="th d-lg-none">
-                        {intl.formatMessage(messages.turni)}
-                        <br />
-                        {intl.formatMessage(messages.turni_en)}
-                      </div>
-                      <PeriodsStructure periods={item.turni} />
-                    </td>
-                  )}
-
-                  {/* Periodi di ferie */}
-                  {searchType === 'vacations' && (
-                    <td className="ferie">
-                      <div className="th d-lg-none">
-                        {intl.formatMessage(messages.ferie)}
-                        <br />
-                        {intl.formatMessage(messages.ferie_en)}
-                      </div>
-                      <PeriodsStructure periods={item.ferie} />
-                    </td>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       ) : (
         <div className="message px-4">
           {intl.formatMessage(messages.no_results)}

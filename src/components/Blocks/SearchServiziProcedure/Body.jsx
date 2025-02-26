@@ -211,6 +211,7 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
               filterKey="users"
               sectionTitle={intl.formatMessage(messages.label_utenti)}
               collapsable={true}
+              ariaControls={results_region_id}
             />
           </div>
         )}
@@ -224,24 +225,29 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
               filters={filters}
               filterKey="topics"
               collapsable={true}
+              ariaControls={results_region_id}
             />
           </div>
         )}
       </Col>
     );
   };
-
+  const title =
+    data.title ??
+    (data.portal_type === 'Servizio'
+      ? intl.formatMessage(messages.searchable_text_default_label_servizi)
+      : intl.formatMessage(messages.searchable_text_default_label_procedura));
   return (
     <div className="block iosanita-block-search servizi-procedure">
       <div className="full-width bg-primary-lightest py-4">
         <Container className="px-4">
           {/* TITOLO DEL BLOCCO */}
-          {data?.title && (
+          {title && (
             <LinkedHeadline
               isEditMode={inEditMode}
-              title={data.title}
+              title={title}
               id={id}
-              className="search-section-title mb-4"
+              className="h5 search-section-title visually-hidden" //visually-hidden for a11y descendant headings
             />
           )}
           <form
@@ -260,16 +266,7 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
                 <SearchBar
                   id={block_id}
                   className="w-100"
-                  title={data.title}
-                  defaultTitle={
-                    data.portal_type === 'Servizio'
-                      ? intl.formatMessage(
-                          messages.searchable_text_default_label_servizi,
-                        )
-                      : intl.formatMessage(
-                          messages.searchable_text_default_label_procedura,
-                        )
-                  }
+                  title={title}
                   textDescription={
                     data.portal_type === 'Servizio'
                       ? intl.formatMessage(
@@ -361,6 +358,7 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
                                     querystringResults.total / b_size,
                                   )}
                                   onPageChange={handleQueryPaginationChange}
+                                  ariaControls={results_region_id}
                                 />
                               )}
                             </div>

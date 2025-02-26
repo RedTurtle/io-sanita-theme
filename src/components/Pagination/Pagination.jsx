@@ -44,6 +44,7 @@ class Pagination extends Component {
     /** Total number of pages. */
     totalPages: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
       .isRequired,
+    ariaControls: PropTypes.string,
   };
 
   static defaultProps = {
@@ -71,8 +72,13 @@ class Pagination extends Component {
   };
 
   render() {
-    const { boundaryRange, ellipsisItem, siblingRange, totalPages } =
-      this.props;
+    const {
+      boundaryRange,
+      ellipsisItem,
+      siblingRange,
+      totalPages,
+      ariaControls,
+    } = this.props;
     const { activePage } = this.state;
 
     const items = createPaginationItems({
@@ -102,6 +108,7 @@ class Pagination extends Component {
                 ellipsisItem={ellipsisItem}
                 isPrevButtonInactive={inactivePrevButton}
                 isForwButtonInactive={inactiveForwButton}
+                ariaControls={ariaControls}
               >
                 {value}
               </PaginationItem>

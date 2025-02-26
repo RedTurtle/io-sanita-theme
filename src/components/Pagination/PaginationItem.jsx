@@ -54,6 +54,7 @@ class PaginationItem extends Component {
 
     isPrevButtonInactive: PropTypes.bool,
     isForwButtonInactive: PropTypes.bool,
+    ariaControls: PropTypes.string,
   };
 
   handleClick = (e) => {
@@ -75,6 +76,7 @@ class PaginationItem extends Component {
       ellipsisItem,
       isPrevButtonInactive,
       isForwButtonInactive,
+      ariaControls,
     } = this.props;
     const disabled = this.props.disabled || type === 'ellipsisItem';
     return (
@@ -84,6 +86,7 @@ class PaginationItem extends Component {
           onClick={this.handleClick}
           onKeyDown={this.handleKeyDown}
           aria-current={active ? 'page' : null}
+          aria-controls={ariaControls}
         >
           {type === 'prevItem' && (
             <>

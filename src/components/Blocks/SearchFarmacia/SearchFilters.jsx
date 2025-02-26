@@ -28,6 +28,10 @@ const messages = defineMessages({
     id: 'search_farmacia_searchable_text_description',
     defaultMessage: 'Inserisci il nome della farmacia',
   },
+  search_input_label: {
+    id: 'search_farmacia_searchable_text_label',
+    defaultMessage: 'Farmacia',
+  },
 });
 
 const SearchFilters = ({
@@ -54,6 +58,7 @@ const SearchFilters = ({
           onChange={(v) => {
             setFilters({ ...filters, searchableText: v });
           }}
+          ariaLabel={intl.formatMessage(messages.search_input_label)}
         />
       </Col>
 
@@ -71,6 +76,7 @@ const SearchFilters = ({
                   date: new Date(value).toISOString(),
                 });
               }}
+              title=""
             />
             <small className="ps-2">{intl.formatMessage(messages.date)}</small>{' '}
           </Col>
@@ -78,7 +84,7 @@ const SearchFilters = ({
           <Col lg="3">
             <SelectInput
               id="area_territoriale"
-              value={filters.area_territoriale}
+              value={filters.area_territoriale ?? ''}
               placeholder={intl.formatMessage(messages.area_territoriale)}
               onChange={(opt) => {
                 setFilters({ ...filters, area_territoriale: opt });

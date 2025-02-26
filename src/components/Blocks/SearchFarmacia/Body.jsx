@@ -36,6 +36,10 @@ const messages = defineMessages({
     id: 'search_farmacia_sort_localita',
     defaultMessage: 'Località',
   },
+  farmacie_results_aria: {
+    id: 'search_farmacia_results_aria',
+    defaultMessage: 'Risultati della ricerca farmacie',
+  },
 });
 
 const Body = ({ isEditMode, data, id }) => {
@@ -219,6 +223,7 @@ const Body = ({ isEditMode, data, id }) => {
     }
   }, [currentPage, results]);
 
+  const resultsWrapperId = 'search-farmacie-results_' + id;
   return (
     <div className="block iosanita-block-search farmacia">
       <div className="full-width bg-primary-lightest">
@@ -247,6 +252,7 @@ const Body = ({ isEditMode, data, id }) => {
                     searchType={searchType}
                     filters={filters}
                     options={filtersOptions}
+                    ariaControls={resultsWrapperId}
                     // isEditMode={isEditMode}
                     // doSearch={doSearch}
                     // checkClearComune={checkClearComune}
@@ -287,24 +293,34 @@ const Body = ({ isEditMode, data, id }) => {
                         title: intl.formatMessage(messages.localita),
                       },
                     ]}
+                    ariaControls={resultsWrapperId}
                   />
                 </Col>
               </Row>
             </form>
 
-            <Results
-              items={resultsPage}
-              isEditMode={isEditMode}
-              searchType={searchType}
-              resRef={resultsRef}
-            />
-            {results && results.length > b_size && (
-              <Pagination
-                activePage={currentPage}
-                totalPages={Math.ceil(results.length / b_size)}
-                onPageChange={handleQueryPaginationChange}
+            <div
+              className="farmacie-results shadow"
+              role="region"
+              aria-live="polite"
+              aria-label={intl.formatMessage(messages.farmacie_results_aria)}
+              ref={resultsRef}
+              id={resultsWrapperId}
+            >
+              <Results
+                items={resultsPage}
+                isEditMode={isEditMode}
+                searchType={searchType}
               />
-            )}
+              {results && results.length > b_size && (
+                <Pagination
+                  activePage={currentPage}
+                  totalPages={Math.ceil(results.length / b_size)}
+                  onPageChange={handleQueryPaginationChange}
+                  ariaControls={resultsWrapperId}
+                />
+              )}
+            </div>
           </Container>
         ) : (
           <Container className="d-flex justify-content-center mt-3">

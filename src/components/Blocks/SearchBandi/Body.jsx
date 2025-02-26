@@ -153,6 +153,8 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
   }
 
   const has_results = !loading && items?.length > 0;
+
+  const resultsWrapperId = `bandi-search-results-${id}`;
   return filterOne || filterTwo || filterThree ? (
     <div
       className={cx('full-width py-4', {
@@ -204,7 +206,12 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
                       }),
                   })}
 
-                <Button color="accent" icon={false} className="my-0 my-lg-1">
+                <Button
+                  color="accent"
+                  icon={false}
+                  className="my-0 my-lg-1"
+                  aria-controls={resultsWrapperId}
+                >
                   {intl.formatMessage(messages.find)}
                 </Button>
               </div>
@@ -212,40 +219,42 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
           </form>
         </div>
 
-        {!loading ? (
-          items?.length > 0 ? (
-            <div
-              className="mt-4"
-              ref={resultsRef}
-              aria-live="polite"
-              aria-label={intl.formatMessage(messages.search_bandi_results)}
-              role="region"
-            >
-              <div className="block listing">
-                <BandiTemplate items={items} full_width={false} />
-              </div>
-              {querystringResults.total > b_size && (
-                <Pagination
-                  activePage={currentPage}
-                  totalPages={Math.ceil(querystringResults.total / b_size)}
-                  onPageChange={handleQueryPaginationChange}
-                />
-              )}
+        <div
+          className="mt-4"
+          ref={resultsRef}
+          aria-live="polite"
+          aria-label={intl.formatMessage(messages.search_bandi_results)}
+          role="region"
+          id={resultsWrapperId}
+        >
+          {!loading ? (
+            items?.length > 0 ? (
+              <>
+                <div className="block listing">
+                  <BandiTemplate items={items} full_width={false} />
+                </div>
+                {querystringResults.total > b_size && (
+                  <Pagination
+                    activePage={currentPage}
+                    totalPages={Math.ceil(querystringResults.total / b_size)}
+                    onPageChange={handleQueryPaginationChange}
+                    ariaControls={resultsWrapperId}
+                  />
+                )}
+              </>
+            ) : querystringResults ? (
+              <p className="text-center">
+                {intl.formatMessage(messages.noResult)}
+              </p>
+            ) : (
+              <></>
+            )
+          ) : (
+            <div className="d-flex justify-content-center">
+              <Spinner active />
             </div>
-          ) : querystringResults ? (
-            <>
-              <div className="mt-4" aria-live="polite">
-                <p className="text-center">
-                  {intl.formatMessage(messages.noResult)}
-                </p>
-              </div>
-            </>
-          ) : null
-        ) : (
-          <div className="d-flex justify-content-center mt-3">
-            <Spinner active />
-          </div>
-        )}
+          )}
+        </div>
       </Container>
     </div>
   ) : null;

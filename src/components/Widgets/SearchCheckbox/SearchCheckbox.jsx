@@ -141,7 +141,7 @@ const SearchCheckbox = ({
 
   return (
     <div className="search-checkbox">
-      <h6 className="text-uppercase">
+      <div className="text-uppercase h6">
         {/* SECTION TITLE */}
         {title}
 
@@ -159,7 +159,7 @@ const SearchCheckbox = ({
             {activeOptions}
           </span>
         )}
-      </h6>
+      </div>
       <div className="mt-3">
         {/* TODO: se serve, attivare anche il 'seleziona tutto' */}
         {toggleAll && (
