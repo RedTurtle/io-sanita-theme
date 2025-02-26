@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.2...2.3.3) (2025-02-26)
+
+### Bug Fixes
+
+* a11y  of Blocco link completo ([febc56c](https://github.com/RedTurtle/io-sanita-theme/commit/febc56cb2e3813b631b5d1e5f02d7894cdb3d37e))
+
 ## [2.3.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.1...2.3.2) (2025-02-26)
 
 ### Bug Fixes
