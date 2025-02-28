@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.3...2.3.4) (2025-02-28)
+
+### Bug Fixes
+
+* resume header-sticky avoid in editmode ([27b380f](https://github.com/RedTurtle/io-sanita-theme/commit/27b380f5e6a5d17662d688fdb2536086ae9284eb))
+
 ## [2.3.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.2...2.3.3) (2025-02-26)
 
 ### Bug Fixes
