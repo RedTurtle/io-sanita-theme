@@ -32,11 +32,6 @@ msgstr ""
 msgid "Add icons item"
 msgstr ""
 
-#. Default: "Alert"
-#: components/Blocks/Alert/Sidebar
-msgid "Alert"
-msgstr ""
-
 #. Default: "Aspetto"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
@@ -417,21 +412,6 @@ msgstr "Vorherige Seite"
 #. Default: "Reduce complexity"
 #: overrideTranslations
 msgid "Reduce complexity"
-msgstr ""
-
-#. Default: "Ricerca con mappa"
-#: components/Blocks/SearchMap/Sidebar
-msgid "Ricerca con mappa"
-msgstr ""
-
-#. Default: "Ricerca farmacie"
-#: components/Blocks/SearchFarmacia/Sidebar
-msgid "Ricerca farmacie"
-msgstr ""
-
-#. Default: "Ricerca servizi o procedure"
-#: components/Blocks/SearchServiziProcedure/Sidebar
-msgid "Ricerca servizi o procedure"
 msgstr ""
 
 #. Default: "Right"
@@ -1035,15 +1015,9 @@ msgstr ""
 
 #. Default: "Colore di sfondo"
 #: components/Blocks/Contacts/schema
-#: components/Blocks/Contacts/Sidebar
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "bg_color"
-msgstr ""
-
-#. Default: "Tutto per"
-#: components/Blocks/TopicsList/Sidebar
-msgid "block_Tutto per"
 msgstr ""
 
 #. Default: "Colore di sfondo"
@@ -1255,8 +1229,8 @@ msgid "comefareper_documenti"
 msgstr ""
 
 #. Default: "Contatti"
-#: components/Blocks/Contacts/Sidebar
-msgid "contacts_block"
+#: components/Blocks/Contacts/schema
+msgid "contacts_block_title"
 msgstr ""
 
 #. Default: "Link ad altro"
@@ -1275,7 +1249,7 @@ msgid "contacts_linkMoreTitle"
 msgstr ""
 
 #. Default: "Blocco CTA"
-#: components/Blocks/CTA/Sidebar
+#: components/Blocks/CTA/schema
 msgid "cta_block"
 msgstr ""
 
@@ -1840,14 +1814,8 @@ msgid "link"
 msgstr ""
 
 #. Default: "Link ad altro"
-#: components/Blocks/Contacts/Sidebar
 #: components/Blocks/Hero/StoresButtons
 msgid "linkMore"
-msgstr ""
-
-#. Default: "Titolo per il link ad altro"
-#: components/Blocks/Contacts/Sidebar
-msgid "linkMoreTitle"
 msgstr ""
 
 #. Default: "LinkedIn"
@@ -2347,6 +2315,31 @@ msgstr ""
 #. Default: "Ricerca rapida"
 #: components/Search/common/QuickSearch
 msgid "quick-search-title"
+msgstr ""
+
+#. Default: "Ricerca rapida"
+#: components/Blocks/QuickSearch/schema
+msgid "quick_search_block_title"
+msgstr ""
+
+#. Default: "Etichetta"
+#: components/Blocks/QuickSearch/schema
+msgid "quick_search_quickLink_label"
+msgstr ""
+
+#. Default: "Link a"
+#: components/Blocks/QuickSearch/schema
+msgid "quick_search_quickLink_url"
+msgstr ""
+
+#. Default: "Link veloci"
+#: components/Blocks/QuickSearch/schema
+msgid "quick_search_quickLinks"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/QuickSearch/schema
+msgid "quick_search_title"
 msgstr ""
 
 #. Default: "Aggiungi radice di navigazione"
@@ -2860,6 +2853,11 @@ msgstr ""
 msgid "search_farmacia_title"
 msgstr ""
 
+#. Default: "Ricerca Farmacie"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacie_block_title"
+msgstr ""
+
 #. Default: "Cerca nel sito"
 #: components/Search/Search
 msgid "search_input_title"
@@ -2893,6 +2891,11 @@ msgstr ""
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Ricerca con mappa"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_block_title"
 msgstr ""
 
 #. Default: "Tipo di contenuto"
@@ -2983,6 +2986,11 @@ msgstr ""
 #. Default: "Risultati della ricerca Servizi / Procedure"
 #: components/Blocks/SearchServiziProcedure/Body
 msgid "search_sp_aria_search_results"
+msgstr ""
+
+#. Default: "Cerca servizi o procedure"
+#: components/Blocks/SearchServiziProcedure/schema
+msgid "search_sp_block_title"
 msgstr ""
 
 #. Default: "Filtri"
@@ -3684,6 +3692,11 @@ msgstr ""
 #. Default: "Apri"
 #: overrideTranslations
 msgid "toggleMenu_open"
+msgstr ""
+
+#. Default: "Tutto per"
+#: components/Blocks/TopicsList/schema
+msgid "topics_list_block_title"
 msgstr ""
 
 #. Default: "Descrizione"
