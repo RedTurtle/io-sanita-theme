@@ -29,6 +29,7 @@ import {
   CalloutEdit,
   QuickSearchEdit,
   QuickSearchView,
+  QuickSearchSchema,
   HeroView,
   HeroEdit,
   IconsView,
@@ -252,13 +253,14 @@ export const applyIoSanitaBlocksConfig = (config) => {
       group: 'search',
       view: QuickSearchView,
       edit: QuickSearchEdit,
+      schema: QuickSearchSchema,
       restricted: false,
       cloneData: cloneBlock,
       security: {
         addPermission: [],
         view: [],
       },
-      sidebarTab: 0,
+      sidebarTab: 1,
     },
     rssBlock: {
       ...config.blocks.blocksConfig.rssBlock, //defaultRssBlock,
@@ -299,7 +301,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
     },
     SearchServiziProcedure: {
       id: 'SearchServiziProcedure',
-      title: 'Cerca servizi o prestazioni',
+      title: 'Cerca servizi o procedure',
       icon: searchSVG,
       group: 'search',
       view: SearchServiziProcedureView,

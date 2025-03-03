@@ -25,6 +25,10 @@ const messages = defineMessages({
     id: 'cta_link',
     defaultMessage: 'Link della CTA',
   },
+  cta_block: {
+    id: 'cta_block',
+    defaultMessage: 'Blocco CTA',
+  },
 });
 
 export function CTASchema({
@@ -35,6 +39,7 @@ export function CTASchema({
   openObjectBrowser,
 }) {
   return {
+    title: intl.formatMessage(messages.cta_block),
     fieldsets: [
       {
         id: 'default',

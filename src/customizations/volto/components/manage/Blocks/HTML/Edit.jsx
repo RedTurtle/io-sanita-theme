@@ -24,7 +24,8 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import codeSVG from '@plone/volto/icons/code.svg';
 import indentSVG from '@plone/volto/icons/indent.svg';
 
-import { HTMLBlockSidebar as Sidebar } from 'io-sanita-theme/components/Blocks';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
+
 const Editor = loadable(() => import('react-simple-code-editor'));
 
 const messages = defineMessages({

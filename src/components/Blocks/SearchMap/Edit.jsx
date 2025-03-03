@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import Body from 'io-sanita-theme/components/Blocks/SearchMap/Body';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
-import Sidebar from 'io-sanita-theme/components/Blocks/SearchMap/Sidebar';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
 
 const SearchMapEdit = (props) => {
   const { data, id, onChangeBlock, selected, pathname } = props;

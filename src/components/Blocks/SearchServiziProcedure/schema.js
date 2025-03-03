@@ -13,10 +13,15 @@ const messages = defineMessages({
     id: 'search_sp_portal_type',
     defaultMessage: 'Tipo di contenuto',
   },
+  search_sp_block_title: {
+    id: 'search_sp_block_title',
+    defaultMessage: 'Cerca servizi o procedure',
+  },
 });
 
 export function SearchServiziProcedureSchema({ formData, intl }) {
   return {
+    title: intl.formatMessage(messages.search_sp_block_title),
     fieldsets: [
       {
         id: 'default',

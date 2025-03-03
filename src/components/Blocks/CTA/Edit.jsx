@@ -5,7 +5,9 @@
 
 import React from 'react';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
-import Sidebar from 'io-sanita-theme/components/Blocks/CTA/Sidebar';
+//import Sidebar from 'io-sanita-theme/components/Blocks/CTA/Sidebar';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
+
 import BodyWrapper from 'io-sanita-theme/components/Blocks/CTA/BodyWrapper.jsx';
 import Block from 'io-sanita-theme/components/Blocks/CTA/Block';
 import './ctaBlock.scss';

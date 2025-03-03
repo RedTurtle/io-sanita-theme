@@ -10,7 +10,7 @@ export { SearchFarmaciaSchema } from 'io-sanita-theme/components/Blocks/SearchFa
 export { SearchMapSchema } from 'io-sanita-theme/components/Blocks/SearchMap/schema';
 export { SearchServiziProcedureSchema } from 'io-sanita-theme/components/Blocks/SearchServiziProcedure/schema';
 export { TopicsListSchema } from 'io-sanita-theme/components/Blocks/TopicsList/schema';
-
+export { QuickSearchSchema } from 'io-sanita-theme/components/Blocks/QuickSearch/schema';
 /*View*/
 export const AccordionView = loadable(() =>
   import(
@@ -186,13 +186,6 @@ const TopicsListEdit = loadable(() =>
   ),
 );
 
-/*Sidebar - only reusable sidebar outside specific edit component.*/
-const HTMLBlockSidebar = loadable(() =>
-  import(
-    /* webpackChunkName: "iosanita-manage" */ 'io-sanita-theme/components/Blocks/HTML/Sidebar'
-  ),
-);
-
 /*Others*/
 export SearchBandiFiltersConfig from 'io-sanita-theme/components/Blocks/SearchBandi/FiltersConfig';
 
@@ -205,7 +198,6 @@ export {
   ContactsEdit,
   CTAEdit,
   HeroEdit,
-  HTMLBlockSidebar,
   QuickSearchEdit,
   SearchBandiEdit,
   SearchFarmaciaEdit,

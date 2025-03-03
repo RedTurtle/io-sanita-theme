@@ -17,6 +17,10 @@ const messages = defineMessages({
     id: 'bg_color',
     defaultMessage: 'Colore di sfondo',
   },
+  contacts_block_title: {
+    id: 'contacts_block_title',
+    defaultMessage: 'Contatti',
+  },
 });
 
 export function ContactsSchema({
@@ -34,6 +38,7 @@ export function ContactsSchema({
       : formData.bg_color;
 
   return {
+    title: intl.formatMessage(messages.contacts_block_title),
     fieldsets: [
       {
         id: 'default',

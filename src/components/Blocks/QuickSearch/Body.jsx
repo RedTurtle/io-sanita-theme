@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector } from 'react-redux';
-import { Container, Row, Col } from 'design-react-kit';
+import { Container, Row, Col, Button } from 'design-react-kit';
 import { SearchBar, QuickSearch } from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import './quickSearchBlock.scss';
 
 const messages = defineMessages({
@@ -30,6 +31,8 @@ const Body = ({ data, id, isEditMode }) => {
         });
     }
   }, [searchableText]);
+
+  console.log(data.quick_links);
   return (
     <div
       className={cx(
@@ -52,12 +55,37 @@ const Body = ({ data, id, isEditMode }) => {
             />
           </Col>
         </Row>
-        <QuickSearch
-          onClick={(v) => {
-            setSearchableText(v.title);
-          }}
-          scrollOnMobile={true}
-        />
+
+        {/* se non sono stati configurati quicklinks, mostro i link di "Ricerca rapida" */}
+        {(data.quick_links ?? []).length == 0 ? (
+          <QuickSearch
+            onClick={(v) => {
+              setSearchableText(v.title);
+            }}
+            scrollOnMobile={true}
+          />
+        ) : (
+          // mostro i link rapidi
+          <div className="quick-links">
+            {data.quick_links
+              .filter((l) => l.href?.length > 0)
+              .map((link, i) => (
+                <Button
+                  tag={UniversalLink}
+                  href={link.href[0]['@id']}
+                  key={i}
+                  color="primary"
+                  outline={true}
+                  size="xs"
+                >
+                  {link.title ??
+                    link.href[0]?.title ??
+                    link.href[0]?.Title ??
+                    'Link rapido'}
+                </Button>
+              ))}
+          </div>
+        )}
       </Container>
     </div>
   );

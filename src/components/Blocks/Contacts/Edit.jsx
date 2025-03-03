@@ -20,7 +20,7 @@ import { LinkMore } from 'io-sanita-theme/components';
 import { TextEditorWidget } from 'volto-slate-italia';
 
 import EditBlock from './Block/EditBlock';
-import Sidebar from './Sidebar';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
 
 import './contacts.scss';
 import './contacts_edit.scss';
@@ -245,12 +245,7 @@ class Edit extends SubblocksEdit {
             )}
 
             <SidebarPortal selected={this.props.selected || false}>
-              <Sidebar
-                {...this.props}
-                onChangeSubBlock={this.onChangeSubblocks}
-                selected={this.state.subIndexSelected}
-                setSelected={this.onSubblockChangeFocus}
-              />
+              <Sidebar {...this.props} />
             </SidebarPortal>
           </Container>
         </div>

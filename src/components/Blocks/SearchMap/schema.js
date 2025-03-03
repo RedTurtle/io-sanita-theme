@@ -1,3 +1,4 @@
+import { title } from 'process';
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
@@ -21,10 +22,15 @@ const messages = defineMessages({
     id: 'search_map_ct',
     defaultMessage: 'Tipo di contenuto',
   },
+  search_map_block_title: {
+    id: 'search_map_block_title',
+    defaultMessage: 'Ricerca con mappa',
+  },
 });
 
 export function SearchMapSchema({ formData, intl }) {
   return {
+    title: intl.formatMessage(messages.search_map_block_title),
     fieldsets: [
       {
         id: 'default',

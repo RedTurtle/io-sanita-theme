@@ -9,10 +9,15 @@ const messages = defineMessages({
     id: 'search_farmacia_search_type_help',
     defaultMessage: 'Tipologia di ricerca',
   },
+  search_farmacie_block_title: {
+    id: 'search_farmacie_block_title',
+    defaultMessage: 'Ricerca Farmacie',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
   return {
+    title: intl.formatMessage(messages.search_farmacie_block_title),
     fieldsets: [
       {
         id: 'default',

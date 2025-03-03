@@ -1,7 +1,7 @@
 import React from 'react';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import Body from 'io-sanita-theme/components/Blocks/SearchFarmacia/Body';
-import Sidebar from 'io-sanita-theme/components/Blocks/SearchFarmacia/Sidebar';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
 
 const Edit = (props) => {
   return (

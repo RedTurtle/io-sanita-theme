@@ -12,7 +12,7 @@ import { TextEditorWidget } from 'volto-slate-italia';
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 
 import { useHandleDetachedBlockFocus } from 'io-sanita-theme/helpers';
-import Sidebar from 'io-sanita-theme/components/Blocks/Alert/Sidebar';
+import Sidebar from 'io-sanita-theme/components/manage/SidebarWithSchema';
 import Wrapper from 'io-sanita-theme/components/Blocks/Alert/Wrapper';
 
 const messages = defineMessages({

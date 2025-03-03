@@ -26,6 +26,10 @@ const messages = defineMessages({
     defaultMessage: "Mostra l'icona",
     default: true,
   },
+  topics_list_block_title: {
+    id: 'topics_list_block_title',
+    defaultMessage: 'Tutto per',
+  },
 });
 
 const TaxonomiesSchema = ({ intl }) => ({
@@ -57,6 +61,7 @@ const TaxonomiesSchema = ({ intl }) => ({
 
 export function TopicsListSchema({ formData, intl }) {
   return {
+    title: intl.formatMessage(messages.topics_list_block_title),
     fieldsets: [
       {
         id: 'default',

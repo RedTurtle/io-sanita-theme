@@ -9,6 +9,16 @@
   // &:has(+ .block.listing.carouselTemplate) {
   //   margin-bottom: 0 !important;
   // }
+
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .btn-outline-primary {
+      background-color: #fff;
+    }
+  }
 }
 
 @include nearFullWidthBlocks('.quick-search-block');
