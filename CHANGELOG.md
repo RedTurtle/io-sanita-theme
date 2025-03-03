@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.4...2.4.0) (2025-03-03)
+
+### Features
+
+* QuickSearchBlock config title and quickLinks, refactor Sidebar ([f596350](https://github.com/RedTurtle/io-sanita-theme/commit/f5963504e83fbfea3d083de4a8e468492c659569))
+
+### Bug Fixes
+
+* search bandi styles ([682295e](https://github.com/RedTurtle/io-sanita-theme/commit/682295e6f4c06574e60c934f38cff642d495042b))
+
+### Maintenance
+
+* updated locales ([dc0dbb7](https://github.com/RedTurtle/io-sanita-theme/commit/dc0dbb7335a22ccc24171fd5529a8b0d846231a7))
+
 ## [2.3.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.3...2.3.4) (2025-02-28)
 
 ### Bug Fixes
