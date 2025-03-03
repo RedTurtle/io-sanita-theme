@@ -162,7 +162,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
       })}
     >
       <Container className="px-4">
-        <div className="rounded bg-primary search-block-filters">
+        <div className="rounded bg-primary-lightest search-block-filters">
           <form
             onSubmit={(event) => {
               event.preventDefault();
@@ -207,7 +207,7 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
                   })}
 
                 <Button
-                  color="accent"
+                  color="primary"
                   icon={false}
                   className="my-0 my-lg-1"
                   aria-controls={resultsWrapperId}

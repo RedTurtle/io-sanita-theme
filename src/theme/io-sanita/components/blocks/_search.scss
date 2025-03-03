@@ -1,4 +1,5 @@
 /* Blocco faccette */
+
 .block.search {
   .full-width {
     height: 100% !important;
@@ -258,7 +259,7 @@
 }
 
 /*Blocchi di ricerca con la barra dei filtri (tipo SearchBandi)*/
-
+$search-input-color: #484848;
 .search-block-filters {
   .search-container {
     width: 100%;
@@ -270,6 +271,11 @@
 
       &.text-filter {
         min-width: 35%;
+        input {
+          width: 100%;
+          color: $search-input-color;
+          font-weight: 300;
+        }
       }
 
       &.select-filter {
@@ -280,42 +286,53 @@
         }
 
         .react-select__control {
-          border: none !important;
-          background-color: transparent;
+          //border: none !important;
+          // background-color: transparent;
 
           .react-select__placeholder {
-            color: #fff !important;
+            // color: #fff !important;
           }
 
           .react-select__indicators {
+            .clearButton {
+              .icon {
+                fill: var(--bs-primary);
+              }
+            }
             svg {
-              fill: #fff;
+              //fill: #fff;
+            }
+            .react-select__indicator {
+              padding: 5px 8px;
             }
           }
 
           .react-select__single-value {
-            color: #fff !important;
+            // color: #fff !important;
+            font-weight: 300;
+            color: $search-input-color !important;
           }
         }
       }
 
       &.date-filter {
         .DateRangePickerInput {
-          background-color: transparent;
+          //background-color: transparent;
+          border-bottom: 1px solid;
 
           .DateInput {
             width: 116px;
-            background-color: transparent;
+            //   background-color: transparent;
           }
 
           .DateInput_input {
             border: none;
-            background-color: transparent;
-            color: #fff;
+            //    background-color: transparent;
+            // color: #fff;
             font-weight: 300;
 
             &::placeholder {
-              color: #fff;
+              //  color: #fff;
             }
 
             &.DateInput_input__focused {
@@ -324,10 +341,10 @@
           }
 
           .DateRangePickerInput_arrow {
-            color: #fff;
+            //  color: #fff;
 
             .icon {
-              fill: #fff;
+              //      fill: #fff;
             }
           }
 
@@ -336,7 +353,7 @@
             transition: opacity 0.1s ease;
 
             svg {
-              fill: #fff;
+              fill: var(--bs-primary);
             }
 
             &:hover,
@@ -350,7 +367,7 @@
               outline: none;
 
               svg {
-                fill: #000;
+                //fill: $accent;
               }
             }
           }
