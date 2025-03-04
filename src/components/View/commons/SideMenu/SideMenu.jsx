@@ -30,6 +30,10 @@ const messages = defineMessages({
     id: 'sideMenuNavigation',
     defaultMessage: 'Navigazione della pagina',
   },
+  progressBar: {
+    id: 'sideMenuNavigation_progressBar',
+    defaultMessage: 'Avanzamento della navigazione',
+  },
 });
 
 const extractHeaders = (elements, intl) => {
@@ -82,9 +86,10 @@ const SideMenu = ({ data, content_uid }) => {
     setIsClient(true);
   }, []);
 
-  const activeItemTitle = headers.find(
-    (item) => item.id === activeSection,
-  )?.title;
+  const activeItemTitle =
+    headers.find((item) => item.id === activeSection)?.title ??
+    headers?.[0]?.title ??
+    intl.formatMessage(messages.progressBar);
 
   const getMainOffset = () => {
     return isClient
@@ -202,7 +207,7 @@ const SideMenu = ({ data, content_uid }) => {
                 <Progress
                   value={progressValue > 0 ? 100 * progressValue : 0}
                   role="progressbar"
-                  aria-labelledby={activeItemTitle}
+                  aria-label={activeItemTitle}
                 />
 
                 <AccordionBody active={isNavOpen} id="side-menu-body">

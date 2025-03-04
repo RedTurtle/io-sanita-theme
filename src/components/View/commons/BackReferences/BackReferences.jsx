@@ -14,16 +14,16 @@ import {
 const RenderItem = ({ item }) => {
   switch (item['@type']) {
     case 'News Item':
-      return <CardImage item={item} />;
+      return <CardImage item={item} titleTag="h3" />;
       break;
     case 'Struttura':
-      return <CardPlace item={item} />;
+      return <CardPlace item={item} titleTag="h3" />;
       break;
     case 'Persona':
-      return <CardPersona item={item} />;
+      return <CardPersona item={item} titleTag="h3" />;
       break;
     default:
-      return <CardSimple item={item} />;
+      return <CardSimple item={item} titleTag="h3" />;
   }
 };
 
