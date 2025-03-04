@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.4.2 (04/03/2025)
+
+### Fix
+
+- sistemato lo scroll del menu laterale nelle viste dei content-type
+
 ## Versione 2.3.3 (26/02/2025)
 
 ### Fix
