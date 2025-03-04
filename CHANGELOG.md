@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.1...2.4.2) (2025-03-04)
+
+### Bug Fixes
+
+* scroll SideMenu with headersticky ([5a3e9d5](https://github.com/RedTurtle/io-sanita-theme/commit/5a3e9d531350933a2fe672ba6625bc30cb7cc5ba))
+
 ## [2.4.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.0...2.4.1) (2025-03-04)
 
 ### Bug Fixes
