@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.0...2.4.1) (2025-03-04)
+
+### Bug Fixes
+
+* CardPersona admit no reference ([3f1de41](https://github.com/RedTurtle/io-sanita-theme/commit/3f1de41002da3b9399d19547b9734866b60a1496))
+
 ## [2.4.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.3.4...2.4.0) (2025-03-03)
 
 ### Features
