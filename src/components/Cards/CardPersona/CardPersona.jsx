@@ -72,14 +72,18 @@ export const CardPersona = ({
       <CardBody className="d-flex">
         <div className="card-persona-content flex-grow-1 pe-2 pe-lg-5">
           <CardTitle tag={titleTag} className="mb-0">
-            <UniversalLink
-              item={!isEditMode ? item : null}
-              href={isEditMode ? '#' : ''}
-              className="card-title-link"
-              data-element={titleDataElement}
-            >
-              {item.title}
-            </UniversalLink>
+            {item['@id'] ? (
+              <UniversalLink
+                item={!isEditMode ? item : null}
+                href={isEditMode ? '#' : ''}
+                className="card-title-link"
+                data-element={titleDataElement}
+              >
+                {item.title}
+              </UniversalLink>
+            ) : (
+              item.title
+            )}
           </CardTitle>
 
           <CardText tag="div">
