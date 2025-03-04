@@ -86,8 +86,17 @@ const SideMenu = ({ data, content_uid }) => {
     (item) => item.id === activeSection,
   )?.title;
 
+  const getMainOffset = () => {
+    return isClient
+      ? document.querySelector('.it-header-wrapper.it-header-sticky')
+          ?.clientHeight + 20
+      : 0;
+  };
+  const mainOffset = getMainOffset();
+
   const handleScroll = useCallback(() => {
-    const scrollOffset = 0.1 * window.innerHeight;
+    const windowHeight = window.innerHeight * 0.1;
+    const mainOffset = getMainOffset();
     setScrollY(window.scrollY);
     const headersHeights = headers
       .map((section) => {
@@ -97,7 +106,8 @@ const SideMenu = ({ data, content_uid }) => {
           top: element?.getBoundingClientRect()?.top,
         };
       })
-      .filter((section) => section.top <= scrollOffset);
+      // .filter((section) => section.top - mainOffset + 40 <= windowHeight);
+      .filter((section) => section.top <= mainOffset + 20);
     if (headersHeights.length > 0) {
       const section = headersHeights.reduce(
         (prev, curr) => (prev.top > curr.top ? prev : curr),
@@ -130,6 +140,9 @@ const SideMenu = ({ data, content_uid }) => {
   }, [headers]);
 
   const throttledHandleScroll = throttle(handleScroll, 100);
+  const yCountEnd = isClient
+    ? document.querySelector('#main-content-section')
+    : null;
 
   const handleClickAnchor = (id) => (e) => {
     e.preventDefault();
@@ -143,16 +156,17 @@ const SideMenu = ({ data, content_uid }) => {
     // Scroll to section
     // setTimeout hack should wait for rerender after setIsNavOpen
     setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView?.({
+      // document.getElementById(id)?.scrollIntoView?.({
+      //   behavior: 'smooth',
+      //   block: 'start',
+      // });
+
+      window.scrollTo({
         behavior: 'smooth',
-        block: 'start',
+        top: document.querySelector('#' + id).offsetTop - mainOffset,
       });
     }, 0);
   };
-
-  const yCountEnd = isClient
-    ? document.querySelector('#main-content-section')
-    : null;
 
   const progressValue = useMemo(() => {
     if (!isClient) return 0;
@@ -162,7 +176,10 @@ const SideMenu = ({ data, content_uid }) => {
   }, [scrollY, isClient]);
 
   return headers?.length > 0 ? (
-    <div className="navbar-wrapper page-side-menu affix-top ">
+    <div
+      className="navbar-wrapper page-side-menu affix-top"
+      style={{ top: mainOffset - 20 }}
+    >
       <nav
         className="navbar it-navscroll-wrapper navbar-expand-lg"
         aria-label={intl.formatMessage(messages.sideMenuNavigation)}
