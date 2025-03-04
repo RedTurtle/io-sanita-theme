@@ -3363,6 +3363,11 @@ msgstr ""
 msgid "sideMenuNavigation"
 msgstr ""
 
+#. Default: "Avanzamento della navigazione"
+#: components/View/commons/SideMenu/SideMenu
+msgid "sideMenuNavigation_progressBar"
+msgstr ""
+
 #. Default: "Compatto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_compact"

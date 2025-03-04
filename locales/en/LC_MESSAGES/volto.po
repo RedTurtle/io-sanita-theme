@@ -3358,6 +3358,11 @@ msgstr "Page content index"
 msgid "sideMenuNavigation"
 msgstr "Page content navigation"
 
+#. Default: "Avanzamento della navigazione"
+#: components/View/commons/SideMenu/SideMenu
+msgid "sideMenuNavigation_progressBar"
+msgstr "Navigation progress"
+
 #. Default: "Compatto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_compact"
