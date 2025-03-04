@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.2...2.4.3) (2025-03-04)
+
+### Bug Fixes
+
+* a11y ([431f2c8](https://github.com/RedTurtle/io-sanita-theme/commit/431f2c892ae17646f4ffb607b8405049fcd345b9))
+* locales ([fb213b7](https://github.com/RedTurtle/io-sanita-theme/commit/fb213b78a7e976082db2cf39b0c7eb7488dc7eae))
+
 ## [2.4.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.1...2.4.2) (2025-03-04)
 
 ### Bug Fixes
