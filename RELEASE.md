@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.5.0 (05/03/2025)
+
+### Novità
+
+- implementato lo Schema.org per la homepage del sito
+
 ## Versione 2.4.2 (04/03/2025)
 
 ### Fix
