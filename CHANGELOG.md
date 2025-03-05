@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.2...2.5.3) (2025-03-05)
+
+### Bug Fixes
+
+* scroll bhv in paginations ([00b84e9](https://github.com/RedTurtle/io-sanita-theme/commit/00b84e9e2d8386552632fa92b968e59485638d1d))
+
 ## [2.5.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.1...2.5.2) (2025-03-05)
 
 ### Bug Fixes
