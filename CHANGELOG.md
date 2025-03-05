@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.0...2.5.1) (2025-03-05)
+
+### Bug Fixes
+
+* schemaorg component without content ([e2d0fb5](https://github.com/RedTurtle/io-sanita-theme/commit/e2d0fb52992d5df0fef1569cbbcfcc8ea7603494))
+
 ## [2.5.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.3...2.5.0) (2025-03-05)
 
 ### Features
