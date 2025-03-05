@@ -6,7 +6,7 @@ import { SchemaOrg, getSiteProperty } from 'io-sanita-theme/helpers';
 const HomeSchemaOrg = ({ content }) => {
   const intl = useIntl();
   let schemaOrg = null;
-  if (content['@type'] == 'Plone Site' || content['@type'] == 'LRF') {
+  if (content?.['@type'] == 'Plone Site' || content?.['@type'] == 'LRF') {
     const name = SiteProperty({
       property: 'site_title',
       defaultValue: getSiteProperty('siteTitle', intl.locale),
