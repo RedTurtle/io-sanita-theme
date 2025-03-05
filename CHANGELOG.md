@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.5.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.3...2.5.0) (2025-03-05)
+
+### Features
+
+* SchemaOrg implementation ([8cf0ce8](https://github.com/RedTurtle/io-sanita-theme/commit/8cf0ce8fa754ee4923027bbe60a6cd5712b62d7f))
+
 ## [2.4.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.4.2...2.4.3) (2025-03-04)
 
 ### Bug Fixes
