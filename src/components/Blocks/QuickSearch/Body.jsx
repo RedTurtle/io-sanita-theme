@@ -32,7 +32,6 @@ const Body = ({ data, id, isEditMode }) => {
     }
   }, [searchableText]);
 
-  console.log(data.quick_links);
   return (
     <div
       className={cx(

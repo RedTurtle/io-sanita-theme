@@ -6,6 +6,7 @@ import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { toPublicURL } from '@plone/volto/helpers/Url/Url';
 import { SubsiteLoader } from 'volto-subsites';
 import config from '@plone/volto/registry';
+import HomeSchemaOrg from 'io-sanita-theme/components/Home/HomeSchemaOrg';
 
 const GenericAppExtras = (props) => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const GenericAppExtras = (props) => {
         <link rel="canonical" href={toPublicURL(location.pathname)} />{' '}
         {/** Se impostato un canonlical nei campi SEO della pagina vincerà quello */}
       </Helmet>
+      <HomeSchemaOrg {...props} />
       <ScrollToTop />
       <SubsiteLoader pathname={location.pathname} />
     </>

@@ -1,3 +1,5 @@
+import { SchemaOrgUtils } from './SchemaOrg/SchemaOrg';
+
 export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export {
   viewDate,
@@ -74,3 +76,8 @@ export { getItemIcon, hasGeolocation } from 'io-sanita-theme/helpers/Item/item';
 
 //registry
 export { getComponentWithFallback } from 'io-sanita-theme/helpers/registry';
+
+//schemaOrg
+export SchemaOrg, {
+  SchemaOrgUtils,
+} from 'io-sanita-theme/helpers/SchemaOrg/SchemaOrg';
