@@ -28,9 +28,10 @@ const getSiteTitle = () => {
 };
 
 const SchemaOrg = ({ content, schema = {} }) => {
+  const contentSchema = content ? { name: content.title } : {};
   let schemaOrg = {
     '@context': 'https://schema.org',
-    name: content.title,
+    ...contentSchema,
     ...schema,
   };
 
