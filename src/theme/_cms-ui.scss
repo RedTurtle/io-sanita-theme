@@ -650,6 +650,12 @@ body.cms-ui {
     }
   }
 
+  .inline.field:not(.helper) {
+    .blocks-widget-container {
+      padding-top: 1em;
+    }
+  }
+
   .objectbrowser-field {
     .selected-values {
       .ui.label {
