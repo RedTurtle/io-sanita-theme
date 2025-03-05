@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.1...2.5.2) (2025-03-05)
+
+### Bug Fixes
+
+* homeschema check content ([f84fe73](https://github.com/RedTurtle/io-sanita-theme/commit/f84fe73bb03318ecd21a8828a159c5bcfb025b70))
+* styles for inline.field with blocks widget without helper ([d8e48c3](https://github.com/RedTurtle/io-sanita-theme/commit/d8e48c308ce360121d2f46252f7ecd9f2e13d0f8))
+
 ## [2.5.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.0...2.5.1) (2025-03-05)
 
 ### Bug Fixes
