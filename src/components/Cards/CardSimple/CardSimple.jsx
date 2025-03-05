@@ -30,6 +30,7 @@ export const CardSimple = ({
   titleTag = 'h5',
   titleDataElement,
   highlight, //se si vuole evidenziare un testo, ad esempio nei risultati delle ricerche
+  badgeText,
 }) => {
   const intl = useIntl();
   const date =
@@ -61,11 +62,13 @@ export const CardSimple = ({
   ) : (
     item.description
   );
+
+  const display_badge = isServizioOnline || badgeText?.length > 0;
   return (
     <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
         <div className="card-body-main">
-          <CardTitle tag={titleTag} className={isServizioOnline ? 'mb-1' : ''}>
+          <CardTitle tag={titleTag} className={display_badge ? 'mb-1' : ''}>
             {item['@id'] ? (
               <UniversalLink
                 item={!isEditMode ? item : null}
@@ -80,11 +83,13 @@ export const CardSimple = ({
             )}
           </CardTitle>
 
-          {/* Chip servizio attivo */}
-          {isServizioOnline && (
+          {/* Chip badge: servizio attivo per servizi o badge con badgeText */}
+          {display_badge && (
             <div className={showDescription ? 'mb-3' : ''}>
               <Badge color="info">
-                {intl.formatMessage(messages.servizioOnline)}
+                {isServizioOnline
+                  ? intl.formatMessage(messages.servizioOnline)
+                  : badgeText}
               </Badge>
             </div>
           )}

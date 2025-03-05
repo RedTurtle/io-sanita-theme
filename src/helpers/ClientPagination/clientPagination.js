@@ -1,4 +1,5 @@
 import React, { useEffect, useState, createRef } from 'react';
+import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 export const useClientPagination = ({ items, b_size = 4 }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,9 +17,7 @@ export const useClientPagination = ({ items, b_size = 4 }) => {
   const onPaginationChange = (activePage) => {
     let page = activePage;
     if (page != currentPage && ref?.current) {
-      ref.current.scrollIntoView({
-        behavior: 'smooth',
-      });
+      scrollIntoView({ ref: ref.current });
     }
     setCurrentPage(page);
   };

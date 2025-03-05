@@ -26,7 +26,10 @@ import {
   ListingContainer,
   //getPathFiltersButtons,
 } from 'io-sanita-theme/components/Blocks';
-import { checkRichTextHasContent } from 'io-sanita-theme/helpers';
+import {
+  checkRichTextHasContent,
+  scrollIntoView,
+} from 'io-sanita-theme/helpers';
 import config from '@plone/volto/registry';
 
 const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
@@ -207,8 +210,8 @@ const ListingBody = withQuerystringResults((props) => {
                       }
 
                       if (!isEditMode && page != currentPage) {
-                        listingRef.current.scrollIntoView({
-                          behavior: 'smooth',
+                        scrollIntoView({
+                          ref: listingRef.current,
                         });
                       }
                       onPaginationChange(e, {

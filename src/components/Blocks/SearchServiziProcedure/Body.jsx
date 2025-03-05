@@ -15,6 +15,7 @@ import {
   SortByWidget,
   LinkedHeadline,
 } from 'io-sanita-theme/components';
+import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   results: {
@@ -190,7 +191,7 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
     activeScroll = true,
   ) => {
     if (resultsRef.current && activeScroll) {
-      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+      scrollIntoView({ ref: resultsRef.current });
     }
     const current = activePage ?? 1;
     setCurrentPage(current);
@@ -237,6 +238,7 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
     (data.portal_type === 'Servizio'
       ? intl.formatMessage(messages.searchable_text_default_label_servizi)
       : intl.formatMessage(messages.searchable_text_default_label_procedura));
+
   return (
     <div className="block iosanita-block-search servizi-procedure">
       <div className="full-width bg-primary-lightest py-4">

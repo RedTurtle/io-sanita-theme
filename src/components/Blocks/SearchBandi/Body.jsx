@@ -10,6 +10,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { BandiTemplate } from 'io-sanita-theme/components/Blocks';
 import { Pagination } from 'io-sanita-theme/components';
 import { resetQuerystringResults } from 'io-sanita-theme/actions';
+import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   find: {
@@ -146,8 +147,9 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
   );
 
   function handleQueryPaginationChange(e, { activePage }) {
-    resultsRef.current.scrollIntoView({ behavior: 'smooth' });
-    const current = activePage?.children ?? 1;
+    scrollIntoView({ ref: resultsRef.current });
+
+    const current = activePage?.children ?? activePage ?? 1;
     setCurrentPage(current);
     doRequest(current);
   }

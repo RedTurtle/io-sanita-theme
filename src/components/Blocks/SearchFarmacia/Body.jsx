@@ -14,6 +14,7 @@ import SearchFilters from './SearchFilters';
 
 /* Style */
 import './search-farmacia.scss';
+import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   results: {
@@ -205,7 +206,7 @@ const Body = ({ isEditMode, data, id }) => {
     activeScroll = true,
   ) => {
     if (resultsRef.current && activeScroll) {
-      resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+      scrollIntoView({ ref: resultsRef.current });
     }
     setCurrentPage(activePage || 1);
   };

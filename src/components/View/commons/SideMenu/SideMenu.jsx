@@ -15,6 +15,7 @@ import {
   AccordionHeader,
 } from 'design-react-kit';
 import config from '@plone/volto/registry';
+import { scrollIntoView, getMainOffset } from 'io-sanita-theme/helpers';
 import './_sideMenu.scss';
 
 const messages = defineMessages({
@@ -91,14 +92,6 @@ const SideMenu = ({ data, content_uid }) => {
     headers?.[0]?.title ??
     intl.formatMessage(messages.progressBar);
 
-  const getMainOffset = () => {
-    return isClient
-      ? document.querySelector('.it-header-wrapper.it-header-sticky')
-          ?.clientHeight + 20
-      : 0;
-  };
-  const mainOffset = getMainOffset();
-
   const handleScroll = useCallback(() => {
     const windowHeight = window.innerHeight * 0.1;
     const mainOffset = getMainOffset();
@@ -161,16 +154,8 @@ const SideMenu = ({ data, content_uid }) => {
     // Scroll to section
     // setTimeout hack should wait for rerender after setIsNavOpen
     setTimeout(() => {
-      // document.getElementById(id)?.scrollIntoView?.({
-      //   behavior: 'smooth',
-      //   block: 'start',
-      // });
-
-      window.scrollTo({
-        behavior: 'smooth',
-        top: document.querySelector('#' + id).offsetTop - mainOffset,
-      });
-    }, 0);
+      scrollIntoView({ id });
+    });
   };
 
   const progressValue = useMemo(() => {
@@ -179,6 +164,8 @@ const SideMenu = ({ data, content_uid }) => {
       ? (scrollY - (yCountEnd.offsetTop ?? 0)) / (yCountEnd.offsetHeight ?? 0)
       : 0;
   }, [scrollY, isClient]);
+
+  const mainOffset = getMainOffset();
 
   return headers?.length > 0 ? (
     <div

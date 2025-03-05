@@ -81,3 +81,6 @@ export { getComponentWithFallback } from 'io-sanita-theme/helpers/registry';
 export SchemaOrg, {
   SchemaOrgUtils,
 } from 'io-sanita-theme/helpers/SchemaOrg/SchemaOrg';
+
+//scroll
+export { scrollIntoView, getMainOffset } from 'io-sanita-theme/helpers/scroll';
