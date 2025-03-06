@@ -90,11 +90,14 @@ const BandoDates = ({ content }) => {
         return (
           item.date && (
             <div className="point-list" key={index}>
-              <div className="point-list-aside point-list-warning">
-                <span className="point-date text-monospace">
+              <div
+                className="point-list-aside point-list-warning"
+                aria-label={item.date.format('DD MMMM Y')}
+              >
+                <span className="point-date text-monospace" aria-hidden={true}>
                   {item.date.format('DD')}
                 </span>
-                <span className="point-month text-monospace">
+                <span className="point-month text-monospace" aria-hidden={true}>
                   {item.date.format('MMM')}/{item.date.format('YY')}
                 </span>
               </div>

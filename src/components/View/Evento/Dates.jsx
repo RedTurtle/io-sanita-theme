@@ -80,13 +80,20 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
     <>
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
-          <div className="point-list-aside point-list-primary fw-normal">
-            <span className="point-date font-monospace">
+          <div
+            className="point-list-aside point-list-primary fw-normal"
+            aria-label={start.format('DD MMMM Y')}
+          >
+            <span className="point-date font-monospace" aria-hidden={true}>
               {start.format('DD')}
             </span>
-            <span className="point-month font-monospace">{start.format('MMMM')}</span>
+            <span className="point-month font-monospace" aria-hidden={true}>
+              {start.format('MMMM')}
+            </span>
             {!start.isSame(end, 'year') && (
-              <span className="point-month font-monospace">{start.format('YYYY')}</span>
+              <span className="point-month font-monospace" aria-hidden={true}>
+                {start.format('YYYY')}
+              </span>
             )}
           </div>
           <div className="point-list-content">
@@ -111,15 +118,18 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         </div>
         {!openEnd && (
           <div className="point-list">
-            <div className="point-list-aside point-list-primary fw-normal">
-              <span className="point-date font-monospace">
+            <div
+              className="point-list-aside point-list-primary fw-normal"
+              aria-label={end.format('DD MMMM Y')}
+            >
+              <span className="point-date font-monospace" aria-hidden={true}>
                 {end.format('DD')}
               </span>
-              <span className="point-month font-monospace">
+              <span className="point-month font-monospace" aria-hidden={true}>
                 {end.format('MMMM')}
               </span>
               {!end.isSame(start, 'year') && (
-                <span className="point-month font-monospace">
+                <span className="point-month font-monospace" aria-hidden={true}>
                   {end.format('YYYY')}
                 </span>
               )}
@@ -149,7 +159,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       {additionalDates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.additional_dates)}</h5>
-          {additionalDates.map((additionalDate,i) => (
+          {additionalDates.map((additionalDate, i) => (
             <div className="font-serif" key={i}>
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
             </div>
@@ -159,8 +169,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       {exdates.length > 0 && (
         <div className="mt-4">
           <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
-          {exdates.map((exDate,i) => (
-            <div className="font-serif" key={'exdate'+i}>
+          {exdates.map((exDate, i) => (
+            <div className="font-serif" key={'exdate' + i}>
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
             </div>
           ))}
