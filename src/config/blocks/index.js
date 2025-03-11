@@ -74,6 +74,11 @@ export const applyIoSanitaBlocksConfig = (config) => {
   delete config.blocks.blocksConfig.teaser;
   delete config.blocks.blocksConfig.leadimage;
 
+  const listingVariations = [
+    ...config.blocks.blocksConfig.listing.variations,
+    ...getIoSanitaListingVariations(config),
+  ];
+
   config.blocks.blocksConfig = {
     ...config.blocks.blocksConfig,
 
@@ -81,10 +86,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       ...config.blocks.blocksConfig.listing,
       showLinkMore: true,
       blockSchema: schemaListing,
-      variations: [
-        ...config.blocks.blocksConfig.listing.variations,
-        ...getIoSanitaListingVariations(config),
-      ],
+      variations: listingVariations,
       listing_bg_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       listing_items_colors: [], //{name:'blue', label:'Blu'},{name:'light-blue', label:'Light blue'},{name:'sidebar-background', label:'Grey'}
       getAsyncData: null, // questo disabilita il ssr dei listing perché rallenta vistosamente la pagina
@@ -280,7 +282,9 @@ export const applyIoSanitaBlocksConfig = (config) => {
     },
     search: {
       ...config.blocks.blocksConfig.search,
-      templates: ['simpleCard', 'simpleListTemplate'],
+      templates: [
+        ...listingVariations.map((v) => v.id).filter((v) => v !== 'carousel'),
+      ],
     },
     searchMap: {
       id: 'searchMap',

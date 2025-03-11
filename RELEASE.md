@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (x/x/x)
+
+### Novità
+
+- ora nel blocco Cerca, è possibile selezionare tutte le variazioni del blocco elenco come aspetto dei risultati.
+
 ## Versione 2.5.0 (05/03/2025)
 
 ### Novità
