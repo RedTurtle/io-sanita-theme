@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione x.x.x (x/x/x)
+## Versione 2.6.0 (11/03/2025)
 
 ### Novità
 
