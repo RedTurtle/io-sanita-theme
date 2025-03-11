@@ -13,6 +13,7 @@ import {
   LogoFooter,
   BrandTextFooter,
 } from 'io-sanita-theme/components/';
+import { useHomePath } from 'io-sanita-theme/helpers';
 
 import { FooterTop } from 'volto-editablefooter';
 
@@ -24,6 +25,7 @@ import { FooterTop } from 'volto-editablefooter';
 const FooterMain = () => {
   const footerTopContent = FooterTop();
   const footerNavigation = FooterNavigation();
+  const homepath = useHomePath();
   return (
     <div className="it-footer-main">
       <Container tag="div">
@@ -32,7 +34,7 @@ const FooterMain = () => {
             <Col sm={12} tag="div" widths={['xs', 'sm', 'md', 'lg', 'xl']}>
               <div className="it-brand-wrapper">
                 {footerTopContent ?? (
-                  <UniversalLink href="/">
+                  <UniversalLink href={homepath}>
                     <LogoFooter />
                     <BrandTextFooter />
                   </UniversalLink>

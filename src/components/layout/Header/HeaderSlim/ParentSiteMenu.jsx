@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Nav, NavItem, NavLink } from 'design-react-kit';
-
+import { useHomePath } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -24,6 +24,7 @@ const ParentSiteMenu = () => {
     (state) => state.dropdownMenuNavItems?.result,
   );
   const subsite = useSelector((state) => state.subsite?.data);
+  const homepath = useHomePath();
 
   let menu = null;
   if (subsite) {
@@ -33,7 +34,7 @@ const ParentSiteMenu = () => {
     let i = url_split.length - 1;
     while (i > 0) {
       let s = url_split.slice(0, i).join('/');
-      s = s.length === 0 ? '/' : s;
+      s = s.length === 0 ? homepath : s;
       // eslint-disable-next-line no-loop-func
       dropdownMenu.forEach((m) => {
         if (m.rootPath === s) {

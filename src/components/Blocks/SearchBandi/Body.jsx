@@ -10,7 +10,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { BandiTemplate } from 'io-sanita-theme/components/Blocks';
 import { Pagination } from 'io-sanita-theme/components';
 import { resetQuerystringResults } from 'io-sanita-theme/actions';
-import { scrollIntoView } from 'io-sanita-theme/helpers';
+import { scrollIntoView, useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   find: {
@@ -30,6 +30,7 @@ const messages = defineMessages({
 const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
   const intl = useIntl();
   const b_size = 6;
+  const homepath = useHomePath();
 
   moment.locale(intl.locale);
 
@@ -128,7 +129,8 @@ const Body = ({ data, id, inEditMode, path, onChangeBlock, blocksConfig }) => {
     return newState;
   };
 
-  const pathSearch = data?.location?.length > 0 ? data.location[0]['@id'] : '/';
+  const pathSearch =
+    data?.location?.length > 0 ? data.location[0]['@id'] : homepath;
   const FiltersConfigFN = blocksConfig['searchBandi'].filtersConfig;
   const filtersConfig = FiltersConfigFN
     ? FiltersConfigFN(null, pathSearch)

@@ -13,7 +13,7 @@ import {
   HeaderRightZone,
 } from 'design-react-kit';
 import { useIntl, defineMessages } from 'react-intl';
-import { getSiteProperty } from 'io-sanita-theme/helpers';
+import { getSiteProperty, useHomePath } from 'io-sanita-theme/helpers';
 import { SiteProperty } from 'volto-site-settings';
 
 const messages = defineMessages({
@@ -25,9 +25,10 @@ const messages = defineMessages({
 const HeaderSlim = () => {
   const subsite = useSelector((state) => state.subsite?.data);
   const intl = useIntl();
+  const homepath = useHomePath();
 
   const parentSiteURL = subsite
-    ? '/'
+    ? homepath
     : getSiteProperty('parentSiteURL', intl.locale);
 
   const staticParentSiteTitle = getSiteProperty('parentSiteTitle', intl.locale);
