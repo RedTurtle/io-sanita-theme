@@ -1,0 +1,44 @@
+@use '../../all_variables' as *;
+
+@mixin header($bg, $link-color) {
+  .it-header-slim-wrapper {
+    background-color: $bg;
+    .it-header-slim-wrapper-content {
+      a {
+        color: $link-color;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+
+  //tablet and desktop
+  @media (min-width: #{map-get($grid-breakpoints, md)}) {
+    .parent-site-menu {
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+
+      li.nav-item {
+        display: flex;
+        max-width: 10rem;
+        align-items: center;
+      }
+    }
+  }
+
+  //mobile
+  @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .parent-site-menu {
+      li.nav-item {
+        a.nav-link {
+          color: $link-color;
+          &:hover {
+            color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use '../../all_variables' as *;
+
+@mixin footer(
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-secondary-text,
+  $subsite-light-theme
+) {
+  &,
+  &.cms-ui {
+    .subsite-footer {
+      background-color: $subsite-primary;
+
+      .text {
+        color: $subsite-primary-text;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        a {
+          color: $subsite-primary-text;
+        }
+
+        a {
+          text-decoration: underline;
+
+          // &:hover,
+          // &:active {
+          //   text-decoration: none;
+          // }
+        }
+      }
+    }
+  }
+}

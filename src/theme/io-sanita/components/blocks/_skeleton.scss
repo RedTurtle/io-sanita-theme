@@ -167,17 +167,6 @@
   }
 }
 
-.bg-light {
-  .skeleton-template {
-    .card {
-      &.card-bg,
-      &.card-background {
-        background-color: var(--skeleton-bg) !important;
-      }
-    }
-  }
-}
-
 // Loader animation
 @keyframes loader-animate {
   from {

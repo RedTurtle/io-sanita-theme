@@ -1,0 +1,121 @@
+@use '../../all_variables' as *;
+
+@mixin headercenter(
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-light-theme
+) {
+  .it-header-wrapper {
+    .it-header-center-wrapper {
+      background-color: $subsite-primary;
+
+      .it-header-center-content-wrapper {
+        .it-brand-wrapper {
+          a {
+            color: $subsite-primary-text;
+
+            .icon {
+              display: flex;
+              align-items: center;
+              margin-bottom: 0;
+              color: $subsite-primary-text;
+              fill: $subsite-primary-text;
+            }
+          }
+        }
+
+        //right zone
+        .it-right-zone {
+          color: $subsite-primary-text !important;
+
+          .it-socials {
+            ul {
+              .icon {
+                color: $subsite-primary-text !important;
+                fill: $subsite-primary-text !important;
+              }
+            }
+          }
+        }
+
+        //-search
+
+        .it-search-wrapper {
+          a {
+            &.search-link {
+              outline: $subsite-primary 2px solid !important;
+            }
+
+            &.rounded-icon {
+              @if $subsite-light-theme {
+                background-color: $subsite-primary;
+                color: $subsite-primary-text;
+              } @else {
+                background-color: #fff;
+                color: $subsite-primary;
+              }
+
+              svg {
+                color: currentColor;
+                fill: currentColor;
+              }
+
+              &:hover,
+              &:active,
+              &:focus {
+                background-color: darken($subsite-primary, 10);
+                color: $subsite-primary-text;
+                svg {
+                  color: currentColor;
+                  fill: currentColor;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //Tablet horizontal / small desktop
+    @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+      .it-header-center-wrapper {
+        .it-header-center-content-wrapper {
+          //right zone
+          .it-right-zone {
+            .it-socials {
+              ul {
+                a {
+                  &:hover {
+                    svg {
+                      color: darken($subsite-primary-text, 5%);
+                      fill: darken($subsite-primary-text, 5%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          //-search
+          .it-search-wrapper {
+            a {
+              &.rounded-icon {
+                background-color: $subsite-primary-text;
+
+                svg {
+                  @if $subsite-light-theme {
+                    color: color-contrast($subsite-primary-text);
+                    fill: color-contrast($subsite-primary-text);
+                  } @else {
+                    color: $subsite-primary;
+                    fill: $subsite-primary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

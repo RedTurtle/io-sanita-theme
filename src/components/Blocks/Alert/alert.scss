@@ -15,7 +15,7 @@
   h5,
   h6,
   a {
-    color: $alert-danger-text;
+    color: $alert-danger-text !important;
   }
 }
 
@@ -23,7 +23,7 @@
   &,
   .cms-ui &.ui.button,
   .cms-ui &.ui.button.active {
-    background-color: $alert-warning;
+    background-color: $alert-warning !important;
   }
   &,
   h1,
@@ -51,7 +51,7 @@
   h5,
   h6,
   a {
-    color: $alert-info-text;
+    color: $alert-info-text !important;
   }
 }
 

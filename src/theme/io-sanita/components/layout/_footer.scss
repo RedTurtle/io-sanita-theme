@@ -1,6 +1,4 @@
 // fix footer bg, text colors and columns line
-$footer-font-size: 0.889rem;
-$footer-borders: 1px solid hsla($primary-h, 70.59%, 20%);
 
 //generali e in comune tra footer-main e footer-small
 .it-footer-main,
@@ -34,7 +32,7 @@ $footer-borders: 1px solid hsla($primary-h, 70.59%, 20%);
   .row {
     //bordo colonne
     .col-md-4 {
-      border-bottom: $footer-borders;
+      border-bottom: var(--is-footer-borders); // $footer-borders;
 
       &:last-of-type {
         border-bottom: none;
@@ -119,7 +117,7 @@ $footer-borders: 1px solid hsla($primary-h, 70.59%, 20%);
 //footer small
 .it-footer-small-prints,
 .public-ui .it-footer-small-prints {
-  border-top: $footer-borders;
+  border-top: var(--is-footer-borders); // $footer-borders;
   a,
   button {
     word-break: normal;

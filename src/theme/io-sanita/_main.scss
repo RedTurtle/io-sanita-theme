@@ -206,13 +206,18 @@ iframe {
 /* io-sanita Backgrounds */
 
 .bg-primary-lightest {
-  background: $bg-primary-lightest !important;
+  background: var(
+    --primary-lightest
+  ) !important; //$bg-primary-lightest !important;
 }
 .bg-primary-lighter {
-  background: $bg-primary-lighter !important;
+  background: var(
+    --primary-lighter
+  ) !important; //$bg-primary-lighter !important;
 }
+
 .bg-primary-dark {
-  background-color: $primary-dark !important;
+  background-color: var(--primary-dark) !important; //$primary-dark !important;
 }
 .bg-primary-darker {
   background-color: $primary-darker !important;

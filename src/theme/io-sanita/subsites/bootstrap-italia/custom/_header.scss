@@ -1,0 +1,48 @@
+@use '../../all_variables' as *;
+
+@mixin header($subsite-primary, $subsite-primary-text) {
+  //mobile
+  .it-header-wrapper {
+    //header sticky
+    &.it-header-sticky {
+      &.is-sticky {
+        .it-header-navbar-wrapper {
+          .menu-wrapper {
+            .it-brand-wrapper {
+              &.cloned {
+                a {
+                  color: $subsite-primary-text;
+
+                  .icon {
+                    fill: $subsite-primary-text;
+                  }
+                }
+              }
+            }
+
+            .it-search-wrapper {
+              color: $subsite-primary-text;
+
+              a {
+                &.rounded-icon {
+                  background-color: $subsite-primary-text;
+                  color: $subsite-primary;
+                  svg {
+                    fill: currentColor;
+                  }
+
+                  &:hover,
+                  &:active,
+                  &:focus {
+                    background-color: darken($subsite-primary, 10);
+                    color: $subsite-primary-text;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

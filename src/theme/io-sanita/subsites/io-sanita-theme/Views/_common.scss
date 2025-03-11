@@ -1,0 +1,107 @@
+@use '../../all_variables' as *;
+
+@mixin common(
+  $subsite-primary-a0,
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-secondary-text,
+  $subsite-link-color,
+  $subsite-light-theme
+) {
+  .progress-bar {
+    @if $subsite-light-theme {
+      background-color: $subsite-link-color;
+    } @else {
+      background-color: $subsite-primary;
+    }
+  }
+  //CT accordion arrow
+  .accordion-header .accordion-button:after {
+    @if $subsite-light-theme {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' %3E%3Cg%3E%3Cpath fill='#{url-friendly-color($subsite-link-color)}' d='M12,10.3l4.8,4.8c0.3,0.3,0.8,0.3,1.1,0c0.3-0.3,0.3-0.8,0-1c0,0,0,0,0,0l-4.8-4.8c-0.6-0.6-1.5-0.6-2.1,0L6.2,14c-0.3,0.3-0.3,0.8,0,1c0,0,0,0,0,0c0.3,0.3,0.8,0.3,1.1,0L12,10.3z'/%3E%3C/g%3E%3C/svg%3E");
+    } @else {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' %3E%3Cg%3E%3Cpath fill='#{url-friendly-color($subsite-primary)}' d='M12,10.3l4.8,4.8c0.3,0.3,0.8,0.3,1.1,0c0.3-0.3,0.3-0.8,0-1c0,0,0,0,0,0l-4.8-4.8c-0.6-0.6-1.5-0.6-2.1,0L6.2,14c-0.3,0.3-0.3,0.8,0,1c0,0,0,0,0,0c0.3,0.3,0.8,0.3,1.1,0L12,10.3z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+
+  .navbar.it-navscroll-wrapper .link-list-wrapper ul li {
+    a.active {
+      @if $subsite-light-theme {
+        border-color: $subsite-link-color;
+        border-left: 2px solid $subsite-link-color;
+      } @else {
+        border-color: $subsite-primary;
+        border-left: 2px solid $subsite-primary;
+      }
+    }
+
+    .nav-link {
+      // evita che il bordo a sinistra mostri il primary nel momento in cui si scorre
+      @if $subsite-light-theme {
+        color: $subsite-link-color;
+      } @else {
+        color: $subsite-primary;
+      }
+      transition: border-color 0 ease-in-out;
+    }
+  }
+
+  //icone card - allegati - genericcard
+  .card-title {
+    a {
+      color: $subsite-link-color;
+    }
+  }
+
+  //date evento, date bandi
+  .point-list-wrapper .point-list .point-list-aside.point-list-warning {
+    @if $subsite-light-theme {
+      color: $subsite-link-color;
+      border-color: $subsite-link-color;
+
+      &:after {
+        background-color: $subsite-link-color;
+      }
+    } @else {
+      color: $subsite-primary;
+      border-color: $subsite-primary;
+
+      &:after {
+        background-color: $subsite-primary;
+      }
+    }
+  }
+
+  .link-list-wrapper {
+    ul {
+      li {
+        button.btn-link {
+          color: $subsite-link-color;
+
+          &:hover {
+            color: $subsite-link-color;
+
+            .icon {
+              fill: $subsite-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .style_ol_list {
+    ol {
+      li {
+        &:before {
+          color: $subsite-secondary;
+        }
+
+        &:after {
+          background-color: $subsite-secondary;
+        }
+      }
+    }
+  }
+}

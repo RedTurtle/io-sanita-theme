@@ -50,7 +50,7 @@ export FooterInfos from 'io-sanita-theme/components/layout/Footer/FooterInfos';
 export FooterNewsletterSubscribe from 'io-sanita-theme/components/layout/Footer/FooterInfos';
 export FooterSocials from 'io-sanita-theme/components/layout/Footer/FooterSocials';
 export FooterSmall from 'io-sanita-theme/components/layout/Footer/FooterSmall';
-export SubsiteFooter from 'io-sanita-theme/components/layout/Footer/SubsiteFooter';
+export SubsiteFooter from 'io-sanita-theme/components/layout/Footer/SubsiteFooter/SubsiteFooter';
 
 //Menu
 export CollapseNavigation from 'io-sanita-theme/components/layout/Navigation/CollapseNavigation';
