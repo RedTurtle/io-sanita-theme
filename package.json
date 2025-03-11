@@ -1,6 +1,6 @@
 {
   "name": "io-sanita-theme",
-  "version": "2.5.3",
+  "version": "2.6.0",
   "description": "io-sanita-theme: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",

@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.6.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.3...2.6.0) (2025-03-11)
+
+### Features
+
+* added all listing variation to Search block ([100880f](https://github.com/RedTurtle/io-sanita-theme/commit/100880f76bcccab88f4055eef6a8a996bc4bc108))
+
+### Bug Fixes
+
+* a11y Bando and Event dates ([233d8d1](https://github.com/RedTurtle/io-sanita-theme/commit/233d8d10bd6e6c606fbc79f2b7f4c46196cf5b2a))
+
 ## [2.5.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.2...2.5.3) (2025-03-05)
 
 ### Bug Fixes
