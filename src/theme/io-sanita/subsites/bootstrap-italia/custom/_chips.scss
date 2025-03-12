@@ -1,0 +1,66 @@
+@use '../../all_variables' as *;
+
+@mixin chips(
+  $subsite-light-theme,
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-secondary-text,
+  $subsite-link-color
+) {
+  //mobile
+  .chip {
+    &.chip-primary {
+      @if $subsite-light-theme {
+        border-color: $subsite-link-color;
+        color: $subsite-link-color;
+
+        &:hover {
+          border-color: $subsite-link-color;
+          background-color: $subsite-link-color;
+
+          & > .chip-label {
+            color: color-contrast($subsite-primary-text);
+          }
+        }
+      } @else {
+        border-color: $subsite-primary;
+        color: $subsite-primary;
+        &:hover {
+          border-color: $subsite-primary;
+          background-color: $subsite-primary;
+
+          & > .chip-label {
+            color: $subsite-primary-text;
+          }
+        }
+      }
+
+      & > .chip-label {
+        @if $subsite-light-theme {
+          color: $subsite-link-color;
+        } @else {
+          color: $subsite-primary;
+        }
+      }
+    }
+
+    &.chip-secondary {
+      border-color: $subsite-secondary;
+      color: $subsite-primary;
+
+      & > .chip-label {
+        color: $subsite-secondary;
+      }
+
+      &:hover {
+        border-color: $subsite-secondary;
+        background-color: $subsite-secondary;
+
+        & > .chip-label {
+          color: $subsite-secondary-text;
+        }
+      }
+    }
+  }
+}

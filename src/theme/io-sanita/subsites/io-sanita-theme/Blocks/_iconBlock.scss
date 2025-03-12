@@ -1,0 +1,14 @@
+@use '../../all_variables' as *;
+
+@mixin block(
+  $subsite-primary,
+  $subsite-primary-text,
+  $subsite-secondary,
+  $subsite-light-theme
+) {
+  .iconBlocks {
+    .background-image:after {
+      background-color: transparentize($subsite-primary, 0.5);
+    }
+  }
+}

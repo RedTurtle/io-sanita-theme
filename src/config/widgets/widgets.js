@@ -22,6 +22,12 @@ const IconWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/IconWidget/IconWidget'
   ),
 );
+
+const SubsiteSocialLinksWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget'
+  ),
+);
 export const LinkToWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/LinkToWidget/LinkToWidget'
@@ -37,6 +43,7 @@ const getIoSanitaWidgets = (config) => {
       contatti_testata: HeaderContactsWidget,
       quick_search: QuickSearchConfigurationWidget,
       search_sections: SearchSectionsConfigurationWidget,
+      subsite_social_links: SubsiteSocialLinksWidget,
       icona: (props) => (
         <IconWidget
           {...props}

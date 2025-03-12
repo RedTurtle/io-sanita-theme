@@ -1,0 +1,17 @@
+@use '../../all_variables' as *;
+
+@mixin dropdown($subsite-primary, $subsite-primary-text, $subsite-link-color) {
+  .btn-dropdown {
+    color: $subsite-link-color;
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-link-active-bg: #{$subsite-primary};
+    --bs-dropdown-link-active-color: #{$subsite-primary-text};
+  }
+
+  //sharing
+  .page-sharing .btn.dropdown-toggle svg.icon {
+    fill: $subsite-link-color;
+  }
+}

@@ -128,8 +128,6 @@ body.cms-ui {
   }
 
   &.contenttype-document,
-  &.contenttype-argomento,
-  &.contenttype-pagina-argomento,
   &.contenttype-cartellamodulistica {
     &:not(.section-add) {
       .block {
@@ -169,6 +167,13 @@ body.cms-ui {
   a .icon.external-link {
     height: 1rem;
     margin-left: 0.1rem;
+  }
+
+  //vertical buttons move
+  .ui.vertical.buttons {
+    .button.icon {
+      min-width: 2.5rem;
+    }
   }
 
   //fix drag block button and delete block button colors

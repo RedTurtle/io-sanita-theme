@@ -15,7 +15,7 @@ import { displayBanner } from 'volto-gdpr-privacy';
 
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { getSiteProperty } from 'io-sanita-theme/helpers';
+import { getSiteProperty, useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   goToPage: {
@@ -37,7 +37,7 @@ const FooterSmall = () => {
   const intl = useIntl();
   const pathname = useLocation().pathname;
   const dispatch = useDispatch();
-
+  const homepath = useHomePath();
   const subFooter = useSelector((state) => state.subFooter?.result);
   const subFooterItems = getItemsByPath(subFooter, pathname)?.filter(
     (item) => item.visible,
@@ -56,7 +56,9 @@ const FooterSmall = () => {
           {subFooterItems?.length > 0 &&
             subFooterItems.map((item, index) => {
               let url =
-                item.href || flattenToAppURL(item.linkUrl?.[0]?.['@id']) || '/';
+                item.href ||
+                flattenToAppURL(item.linkUrl?.[0]?.['@id']) ||
+                homepath;
               return (
                 <li
                   className={cx('list-inline-item', {

@@ -64,12 +64,12 @@
     &.bg-primary-lightest:after {
       background-color: rgb(
         from var(--primary-lightest) r g b / 85%
-      ); //rgba( var(--bs-primary), 0.85  ); // serve per fare la trasparenza sull'immagine di sfondo.
+      ); // serve per fare la trasparenza sull'immagine di sfondo.
     }
     &.bg-primary-dark:after {
       background-color: rgb(
         from var(--primary-dark) r g b / 85%
-      ); //  background-color: rgba($secondary, 0.85);; // serve per fare la trasparenza sull'immagine di sfondo.
+      ); // serve per fare la trasparenza sull'immagine di sfondo.
     }
     &.transparent:after {
       background-color: none;

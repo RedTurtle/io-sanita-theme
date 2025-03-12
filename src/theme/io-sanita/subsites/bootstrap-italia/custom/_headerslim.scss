@@ -1,0 +1,48 @@
+@use '../../all_variables' as *;
+
+@mixin header($bg, $link-color) {
+  .it-header-slim-wrapper {
+    background-color: $bg;
+    .it-header-slim-wrapper-content {
+      a {
+        color: $link-color;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+  }
+
+  //tablet and desktop
+  @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+    .parent-site-menu {
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+
+      li.nav-item {
+        display: flex;
+        max-width: 10rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-size: 0.778em;
+      }
+
+      &:has(+ .is-language-selector) {
+        border-right: 1px solid $link-color;
+      }
+    }
+  }
+
+  //mobile
+  @media (max-width: #{map-get($grid-breakpoints, lg)}) {
+    .it-header-slim-right-zone .parent-site-menu {
+      display: none;
+    }
+    .parent-site-menu {
+      flex-direction: column;
+    }
+  }
+}

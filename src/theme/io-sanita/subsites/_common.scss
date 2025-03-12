@@ -1,21 +1,12 @@
-.subsite-footer {
-  //default bg color as main site
-  padding: 2rem 0;
-  background-color: $footer-top-background;
-  color: $white;
-  border-bottom: $footer-borders;
+@import '../../variables';
 
-  &,
-  p,
-  ul {
-    font-size: $footer-font-size;
-  }
+@import '~bootstrap-italia/src/scss/functions';
+@import '~bootstrap-italia/src/scss/utilities/colors_vars';
+@import '~bootstrap-italia/src/scss/variables';
+@import '~bootstrap-italia/src/scss/utilities/colors';
 
-  a {
-    color: $white;
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
 
-    &:hover:not(.disabled) {
-      text-decoration: underline;
-    }
-  }
-}
+@import 'mixin';

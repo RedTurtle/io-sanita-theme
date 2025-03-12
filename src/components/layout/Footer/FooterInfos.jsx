@@ -19,7 +19,7 @@ import {
   FooterNewsletterSubscribe,
   FooterSocials,
 } from 'io-sanita-theme/components';
-import { richTextHasContent } from 'io-sanita-theme/helpers';
+import { richTextHasContent, useHomePath } from 'io-sanita-theme/helpers';
 
 import { fromHtml } from 'volto-slate-italia/config/Slate/utils';
 
@@ -35,6 +35,7 @@ const FooterInfos = () => {
   const N_COLUMNS = 3;
   const location = useLocation();
   const dispatch = useDispatch();
+  const homepath = useHomePath();
 
   const req = useSelector((state) => state.editableFooterColumns);
   const footerConfiguration = useSelector(
@@ -50,7 +51,7 @@ const FooterInfos = () => {
   //filter rootpaths
   let footerColumns = getItemsByPath(
     footerConfiguration,
-    location?.pathname?.length ? location.pathname : '/',
+    location?.pathname?.length ? location.pathname : homepath,
   ).filter((c) => c.visible);
 
   footerColumns.forEach((column) => {

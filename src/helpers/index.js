@@ -25,7 +25,9 @@ export {
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
 export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
-export { isResolveUID } from 'io-sanita-theme/helpers/url';
+
+//url
+export { isResolveUID, useHomePath } from 'io-sanita-theme/helpers/url';
 
 //pagination
 export { useClientPagination } from 'io-sanita-theme/helpers/ClientPagination/clientPagination';

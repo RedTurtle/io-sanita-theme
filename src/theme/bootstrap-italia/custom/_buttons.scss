@@ -3,9 +3,9 @@
   --bs-btn-active-color: $primary-darker;
 }
 .btn.btn-link {
-  color: $link-color;
+  color: var(--bs-link-color); //$link-color;
   .icon {
-    fill: $link-color;
+    fill: var(--bs-link-color); //$link-color
   }
 }
 .btn-icon {

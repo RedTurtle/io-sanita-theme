@@ -148,7 +148,7 @@ const SearchCheckbox = ({
         {/* NUMBER OF CHECKBOX SELECTED */}
         {showActiveOptions && (
           <span
-            className={cx('badge bg-secondary ms-3', {
+            className={cx('badge bg-primary ms-3', {
               'visually-hidden': activeOptions === 0,
             })}
             aria-live="polite"

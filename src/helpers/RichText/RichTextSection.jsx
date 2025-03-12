@@ -31,13 +31,10 @@ const RichTextSection = ({
       id={tag_id}
       className={cx('it-page-section mb-5', {
         'anchor-offset': anchorOffset,
-        'bg-primary': hasBg,
+        'bg-primary-lightest': hasBg,
         [padding]: p,
       })}
       menu_title={title ? title : ''}
-      style={{
-        '--bs-bg-opacity': hasBg ? '.05' : undefined,
-      }}
     >
       {title && (
         <Tag

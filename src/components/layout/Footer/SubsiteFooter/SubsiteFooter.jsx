@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { isCmsUi } from '@plone/volto/helpers/Url/Url';
 import { flattenHTMLToAppURL } from '@plone/volto/helpers/Url/Url';
 import { richTextHasContent } from 'io-sanita-theme/helpers';
+import './subsite-footer.scss';
 
 const SubsiteFooter = () => {
   const location = useLocation();

@@ -20,6 +20,7 @@ import {
 
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { resetSubsite } from 'volto-subsites';
 import { getSearchFilters, getSearchResults } from 'io-sanita-theme/actions';
 import {
   SearchBar,

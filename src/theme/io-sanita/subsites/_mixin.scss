@@ -1,0 +1,257 @@
+@use 'sass:color';
+
+@use 'bootstrap-italia/custom/header' as bs-header;
+@use 'bootstrap-italia/custom/headercenter' as bs-headercenter;
+@use 'bootstrap-italia/brand-text' as bs-brandtext;
+@use 'bootstrap-italia/custom/headernavbar' as bs-headernavbar;
+@use 'bootstrap-italia/custom/headerslim' as bs-headerslim;
+@use 'bootstrap-italia/custom/navigation' as bs-navigation;
+@use 'bootstrap-italia/custom/nav' as bs-nav;
+@use 'bootstrap-italia/custom/megamenu' as bs-megamenu;
+@use 'bootstrap-italia/custom/buttons' as bs-buttons;
+@use 'bootstrap-italia/custom/chips' as bs-chips;
+@use 'bootstrap-italia/custom/card' as bs-card;
+@use 'bootstrap-italia/custom/dropdown' as bs-dropdown;
+@use 'bootstrap-italia/custom/linklist' as bs-linklist;
+@use 'bootstrap-italia/custom/navscroll' as bs-navscroll;
+@use 'io-sanita-theme/Components/subsiteFooter' as it-footer;
+@use 'io-sanita-theme/Components/subsiteHeader' as it-header;
+@use 'io-sanita-theme/Components/cards' as it-cards;
+@use 'io-sanita-theme/Blocks/calendar' as it-calendar;
+@use 'io-sanita-theme/Blocks/cardWithImageAndInEvidence' as
+  it-card-image-evidence;
+
+@use 'io-sanita-theme/Blocks/cta' as it-cta;
+@use 'io-sanita-theme/Blocks/form' as it-form;
+@use 'io-sanita-theme/Blocks/iconBlock' as it-icon-block;
+@use 'io-sanita-theme/Blocks/squaresImageTemplateAndSlideUp' as it-squares;
+//@use 'io-sanita-theme/Blocks/ribbonCardTemplate' as it-ribbon-card;
+
+@use 'io-sanita-theme/Blocks/tableOfContents' as it-table-contents;
+@use 'io-sanita-theme/Views/common' as it-views;
+@use 'io-sanita-theme/Widgets/reactSelect' as it-select-widget;
+@use 'io-sanita-theme/common' as it-common;
+
+@function create-primary-a0($color) {
+  @return hsl(color.hue($color), 62%, 97%);
+}
+@function create-primary-c1($color) {
+  @return hsl(
+    color.hue($color),
+    calc(color.saturation($color) / 2),
+    calc(color.lightness($color) * 1.8)
+  );
+}
+
+@mixin define-subsite(
+  $subsite-style,
+  $subsite-primary: $primary,
+  $subsite-primary-text: $primary-text,
+  $subsite-secondary: $secondary,
+  $subsite-secondary-text: $secondary-text,
+  $subsite-link-color: $link-color,
+  $subsite-light-theme: false
+) {
+  $subsite-primary-a0: create-primary-a0($subsite-primary);
+  $subsite-primary-c1: create-primary-c1($subsite-primary);
+
+  //variabili fisse, comuni a tutti gli stili di sottositi
+  $subsite-header-slim-bg-color: #363938;
+  $subsite-header-slim-link-color: #fff;
+
+  $subsite-primary-h: hue($subsite-primary);
+  $subsite-primary-s: saturation($subsite-primary);
+  $subsite-secondary-h: hue($subsite-secondary);
+  $subsite-secondary-s: saturation($subsite-secondary);
+
+  $subsite-bg-primary-lightest: hsl($subsite-primary-h, 50%, 97%);
+  $subsite-bg-primary-lighter: hsl($subsite-primary-h, 50%, 87%);
+
+  $subsite-primary-dark: hsl($subsite-primary-h, $subsite-primary-s * 1%, 20%);
+  $subsite-primary-darker: hsl(
+    $subsite-primary-h,
+    $subsite-primary-s * 1%,
+    12%
+  );
+
+  $subsite-accent: $subsite-primary;
+  $subsite-footer-borders: 1px solid hsla($subsite-primary-h, 70.59%, 20%);
+
+  @if ($subsite-light-theme) {
+    $subsite-bg-primary-lightest: hsl(hue($subsite-secondary), 50%, 97%);
+    $subsite-bg-primary-lighter: hsl(hue($subsite-secondary), 50%, 87%);
+    $subsite-primary-dark: hsl(
+      $subsite-secondary-h,
+      $subsite-secondary-s * 1%,
+      20%
+    ) !default;
+    $subsite-primary-darker: hsl(
+      $subsite-secondary-h,
+      $subsite-secondary-s * 1%,
+      12%
+    ) !default;
+    $subsite-accent: $subsite-secondary;
+    $subsite-footer-borders: 1px solid hsla($subsite-secondary-h, 70.59%, 20%);
+  }
+
+  :root {
+    --primary: #{$subsite-primary};
+    --bs-primary: #{$subsite-primary};
+    --bs-primary-rgb: #{to-rgb($subsite-primary)};
+    --bs-primary-text: #{$subsite-primary-text};
+    --primary-dark: #{$subsite-primary-dark};
+    --primary-darker: #{$subsite-primary-darker};
+    --primary-lightest: #{$subsite-bg-primary-lightest};
+    --primary-lighter: #{$subsite-bg-primary-lighter};
+    --bs-secondary-rgb: #{to-rgb($subsite-secondary)};
+    --bs-secondary-text: #{to-rgb($subsite-secondary-text)};
+    --is-accent: #{$subsite-accent};
+    --is-footer-borders: #{$subsite-footer-borders};
+    --bs-link-color: #{$subsite-link-color};
+  }
+  body.subsite-#{$subsite-style} {
+    &,
+    .public-ui,
+    .cms-ui {
+      @include bs-headerslim.header(
+        $subsite-header-slim-bg-color,
+        $subsite-header-slim-link-color
+      );
+      @include bs-header.header($subsite-primary, $subsite-primary-text);
+      @include bs-headercenter.headercenter(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-light-theme
+      );
+
+      @include bs-brandtext.text($subsite-primary, $subsite-primary-text);
+      @include bs-headernavbar.navbar($subsite-primary);
+
+      @include bs-navigation.nav(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-link-color
+      );
+      @include bs-nav.nav($subsite-link-color);
+      @include bs-megamenu.megamenu(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text
+      );
+      @include bs-buttons.buttons(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text
+      );
+      @include bs-chips.chips(
+        $subsite-light-theme,
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text,
+        $subsite-link-color
+      );
+      @include bs-card.card(
+        $subsite-primary,
+        $subsite-link-color,
+        $subsite-light-theme
+      );
+      @include bs-dropdown.dropdown(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-link-color
+      );
+      @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
+      @include bs-navscroll.navscroll($subsite-link-color);
+      @include it-footer.footer(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text,
+        $subsite-light-theme
+      );
+      @include it-header.header(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text
+      );
+
+      @include it-calendar.block($subsite-secondary, $subsite-secondary-text);
+      @include it-cards.cards($subsite-primary, $subsite-light-theme);
+      @include it-card-image-evidence.card($subsite-link-color);
+      @include it-cta.block($subsite-primary-dark, $subsite-light-theme);
+
+      @include it-form.block(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-light-theme
+      );
+      @include it-icon-block.block(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-light-theme
+      );
+
+      @include it-squares.block(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text,
+        $subsite-light-theme
+      );
+      //@include it-ribbon-card.card($subsite-link-color);
+
+      @include it-table-contents.block($subsite-primary);
+      @include it-views.common(
+        $subsite-primary-a0,
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-secondary,
+        $subsite-secondary-text,
+        $subsite-link-color,
+        $subsite-light-theme
+      );
+      @include it-select-widget.common($subsite-primary);
+      @include it-common.common(
+        $subsite-primary-a0,
+        $subsite-primary-c1,
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-primary-dark,
+        $subsite-primary-darker,
+        $subsite-secondary,
+        $subsite-secondary-text,
+        $subsite-link-color,
+        $subsite-light-theme
+      );
+
+      a,
+      &.cms-ui .public-ui a {
+        color: $subsite-link-color;
+
+        &:hover {
+          color: color-hover($subsite-link-color);
+        }
+      }
+
+      #categoryCollapse .btn-icon.btn.btn-outline-secondary {
+        border-color: $subsite-primary;
+        box-shadow:
+          inset 0 0 0 1px $subsite-primary,
+          0 0 0 0.2rem rgba(var($subsite-primary), 0.2);
+        color: color-contrast($subsite-primary);
+      }
+
+      //listing
+      .block.listing.simple-list-template ul li {
+        color: $subsite-primary;
+      }
+    }
+  }
+}

@@ -20,6 +20,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { Row, Col, BreadcrumbItem } from 'design-react-kit';
 import GoogleBreadcrumbs from 'io-sanita-theme/components/Breadcrumbs/GoogleBreadcrumbs';
 import config from '@plone/volto/registry';
+import { useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   home: {
@@ -36,6 +37,7 @@ const Breadcrumbs = ({ pathname, match }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const location = useLocation();
+  const homepath = useHomePath();
 
   let items =
     useSelector((state) => {
@@ -142,7 +144,7 @@ const Breadcrumbs = ({ pathname, match }) => {
           >
             <ol className="breadcrumb" data-element="breadcrumb">
               <BreadcrumbItem tag="li">
-                <UniversalLink href="/">
+                <UniversalLink href={homepath}>
                   {intl.formatMessage(messages.home)}
                 </UniversalLink>
                 <span className="separator">/</span>

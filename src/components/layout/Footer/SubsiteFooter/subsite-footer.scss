@@ -1,0 +1,23 @@
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
+
+.subsite-footer {
+  //default bg color as main site
+  padding: 2rem 0;
+  background-color: $footer-top-background;
+  color: $white;
+  border-bottom: var(--is-footer-borders); // $footer-borders;
+
+  &,
+  p,
+  ul {
+    font-size: $footer-font-size;
+  }
+
+  a {
+    color: $white;
+
+    &:hover:not(.disabled) {
+      text-decoration: underline;
+    }
+  }
+}
