@@ -1495,6 +1495,11 @@ msgstr ""
 msgid "documento_servizio_riferimento"
 msgstr ""
 
+#. Default: "Fatto"
+#: components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget
+msgid "done_edit_social_links"
+msgstr ""
+
 #. Default: "Navigazione elementi slider"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
 msgid "dots"
@@ -1514,6 +1519,11 @@ msgstr ""
 #: components/layout/Navigation/MegaMenu/MegaMenu
 msgid "dropdownmenu-close-menu-button"
 msgstr "Fermer le menu"
+
+#. Default: "Modifica i social"
+#: components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget
+msgid "edit_social_links"
+msgstr ""
 
 #. Default: "Email"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
