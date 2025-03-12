@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.7.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.6.0...2.7.0) (2025-03-12)
+
+### Features
+
+* Subsites styles ([#72](https://github.com/RedTurtle/io-sanita-theme/issues/72)) ([813af14](https://github.com/RedTurtle/io-sanita-theme/commit/813af14ea6e8ea1a46b96ddf8c61c925147d6088))
+
+### Maintenance
+
+* locales ([f8e4092](https://github.com/RedTurtle/io-sanita-theme/commit/f8e4092efe0edef933fe3a8c785b994a5047670b))
+
 ## [2.6.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.5.3...2.6.0) (2025-03-11)
 
 ### Features
