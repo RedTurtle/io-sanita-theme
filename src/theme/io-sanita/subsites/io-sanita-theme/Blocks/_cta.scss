@@ -1,0 +1,11 @@
+@use '../../all_variables' as *;
+
+@mixin block($subsite-primary-dark, $subsite-light-theme) {
+  @if ($subsite-light-theme) {
+    .block.cta_block {
+      .cta-block-wrapper.bg-primary-dark .cta-tile-text h2 {
+        color: color-contrast($subsite-primary-dark) !important;
+      }
+    }
+  }
+}

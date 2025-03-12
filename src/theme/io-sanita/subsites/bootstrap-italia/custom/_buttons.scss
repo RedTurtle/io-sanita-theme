@@ -17,7 +17,7 @@
 
   .slate-editor-link.btn.btn-primary,
   a.btn-primary,
-  .btn-primary {
+  .btn.btn-primary {
     @if $subsite-light-theme {
       @include button-variant(
         $background: darken($subsite-button-primary, 10%),
@@ -39,7 +39,8 @@
     }
     color: $subsite-button-primary-text;
 
-    .icon {
+    .icon,
+    svg.icon {
       color: $subsite-button-primary-text;
       fill: $subsite-button-primary-text;
     }
@@ -98,14 +99,14 @@
   a.btn-outline-primary,
   .btn-outline-primary {
     @if $subsite-light-theme {
-      @include button-outline-variant(darken($subsite-button-primary, 40));
+      @include button-outline-variant(darken($subsite-button-primary, 60));
       &.disabled {
         box-shadow: inset
           0
           0
           0
           2px
-          color-hover(darken($subsite-button-primary, 40));
+          color-hover(darken($subsite-button-primary, 60));
       }
     } @else {
       @include button-outline-variant($subsite-button-primary);

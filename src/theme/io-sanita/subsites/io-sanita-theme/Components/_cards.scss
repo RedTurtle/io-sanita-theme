@@ -1,0 +1,11 @@
+@use '../../all_variables' as *;
+
+@mixin cards($subsite-primary, $subsite-light-theme) {
+  @if ($subsite-light-theme) {
+    .card.card-place {
+      .avatar {
+        color: darken($subsite-primary, 30);
+      }
+    }
+  }
+}

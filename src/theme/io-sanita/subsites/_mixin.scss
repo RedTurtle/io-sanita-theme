@@ -16,10 +16,12 @@
 @use 'bootstrap-italia/custom/navscroll' as bs-navscroll;
 @use 'io-sanita-theme/Components/subsiteFooter' as it-footer;
 @use 'io-sanita-theme/Components/subsiteHeader' as it-header;
+@use 'io-sanita-theme/Components/cards' as it-cards;
 @use 'io-sanita-theme/Blocks/calendar' as it-calendar;
 @use 'io-sanita-theme/Blocks/cardWithImageAndInEvidence' as
   it-card-image-evidence;
 
+@use 'io-sanita-theme/Blocks/cta' as it-cta;
 @use 'io-sanita-theme/Blocks/form' as it-form;
 @use 'io-sanita-theme/Blocks/iconBlock' as it-icon-block;
 @use 'io-sanita-theme/Blocks/squaresImageTemplateAndSlideUp' as it-squares;
@@ -65,16 +67,12 @@
   $subsite-bg-primary-lightest: hsl($subsite-primary-h, 50%, 97%);
   $subsite-bg-primary-lighter: hsl($subsite-primary-h, 50%, 87%);
 
-  $subsite-primary-dark: hsl(
-    $subsite-primary-h,
-    $subsite-primary-s * 1%,
-    20%
-  ) !default;
+  $subsite-primary-dark: hsl($subsite-primary-h, $subsite-primary-s * 1%, 20%);
   $subsite-primary-darker: hsl(
     $subsite-primary-h,
     $subsite-primary-s * 1%,
     12%
-  ) !default;
+  );
 
   $subsite-accent: $subsite-primary;
   $subsite-footer-borders: 1px solid hsla($subsite-primary-h, 70.59%, 20%);
@@ -99,11 +97,14 @@
   :root {
     --primary: #{$subsite-primary};
     --bs-primary: #{$subsite-primary};
+    --bs-primary-rgb: #{to-rgb($subsite-primary)};
+    --bs-primary-text: #{$subsite-primary-text};
     --primary-dark: #{$subsite-primary-dark};
     --primary-darker: #{$subsite-primary-darker};
     --primary-lightest: #{$subsite-bg-primary-lightest};
     --primary-lighter: #{$subsite-bg-primary-lighter};
-    --bs-primary-text: #{$subsite-primary-text};
+    --bs-secondary-rgb: #{to-rgb($subsite-secondary)};
+    --bs-secondary-text: #{to-rgb($subsite-secondary-text)};
     --is-accent: #{$subsite-accent};
     --is-footer-borders: #{$subsite-footer-borders};
     --bs-link-color: #{$subsite-link-color};
@@ -153,8 +154,16 @@
         $subsite-secondary-text,
         $subsite-link-color
       );
-      @include bs-card.card($subsite-primary, $subsite-link-color);
-      @include bs-dropdown.dropdown($subsite-link-color);
+      @include bs-card.card(
+        $subsite-primary,
+        $subsite-link-color,
+        $subsite-light-theme
+      );
+      @include bs-dropdown.dropdown(
+        $subsite-primary,
+        $subsite-primary-text,
+        $subsite-link-color
+      );
       @include bs-linklist.linklist($subsite-primary, $subsite-link-color);
       @include bs-navscroll.navscroll($subsite-link-color);
       @include it-footer.footer(
@@ -172,7 +181,9 @@
       );
 
       @include it-calendar.block($subsite-secondary, $subsite-secondary-text);
+      @include it-cards.cards($subsite-primary, $subsite-light-theme);
       @include it-card-image-evidence.card($subsite-link-color);
+      @include it-cta.block($subsite-primary-dark, $subsite-light-theme);
 
       @include it-form.block(
         $subsite-primary,
@@ -206,12 +217,14 @@
         $subsite-link-color,
         $subsite-light-theme
       );
-      @include it-select-widget.common($subsite-primary-a0, $subsite-secondary);
+      @include it-select-widget.common($subsite-primary);
       @include it-common.common(
         $subsite-primary-a0,
         $subsite-primary-c1,
         $subsite-primary,
         $subsite-primary-text,
+        $subsite-primary-dark,
+        $subsite-primary-darker,
         $subsite-secondary,
         $subsite-secondary-text,
         $subsite-link-color,

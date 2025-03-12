@@ -86,7 +86,7 @@
               }
 
               &.active {
-                border-color: $subsite-primary-text;
+                border-color: $subsite-primary-text !important;
               }
             }
           }

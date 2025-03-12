@@ -1,9 +1,17 @@
 @use '../../all_variables' as *;
 
-@mixin card($subsite-primary, $subsite-link-color) {
+@mixin card($subsite-primary, $subsite-link-color, $subsite-light-theme) {
   //card category
-  .card .card-body .category-top a.category {
-    color: $subsite-link-color;
+  .card .card-body {
+    .category-top a.category {
+      color: $subsite-link-color;
+    }
+
+    @if ($subsite-light-theme) {
+      .card-title {
+        color: $subsite-link-color;
+      }
+    }
   }
 
   // flag

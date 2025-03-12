@@ -5,25 +5,23 @@
   $subsite-primary-c1,
   $subsite-primary,
   $subsite-primary-text,
+  $subsite-primary-dark,
+  $subsite-primary-darker,
   $subsite-secondary,
   $subsite-secondary-text,
   $subsite-link-color,
   $subsite-light-theme
 ) {
-  .bg-primary {
-    background-color: $subsite-primary !important;
-  }
-
-  //fix per bg-primary in CT servizio
-  // .contenttype-servizio {
-  .it-page-section.bg-primary {
-    background-color: $subsite-primary-a0 !important;
-  }
-  // }
-
   .bg-secondary {
-    background-color: $subsite-secondary !important;
     color: $subsite-secondary-text;
+  }
+  @if ($subsite-light-theme) {
+    .bg-primary-dark {
+      color: color-contrast($subsite-primary-dark) !important;
+    }
+    .bg-primary-darker {
+      color: color-contrast($subsite-primary-darker) !important;
+    }
   }
 
   //text
@@ -45,16 +43,6 @@
 
   .text-secondary {
     color: $subsite-secondary-text !important;
-  }
-
-  //btn mini
-  .select-all-cts.btn.btn-link.btn-mini,
-  .subsite-header .text a.select-all-cts.btn-link.btn-mini {
-    @if $subsite-light-theme {
-      color: $subsite-link-color !important;
-    } @else {
-      color: $subsite-primary !important;
-    }
   }
 
   //icons - general
@@ -154,18 +142,6 @@
     color: $subsite-link-color;
   }
 
-  &,
-  .simple-card-default .card.card-teaser .card-body {
-    .category-top span.text span.text.fw-bold {
-      color: $subsite-link-color;
-    }
-  }
-
-  // simple list bullet color
-  .simple-list-template ul li {
-    color: $subsite-link-color;
-  }
-
   // slider controller icons
   @if $subsite-light-theme {
     .slick-slider .slick-arrow.slick-prev .icon,
@@ -190,38 +166,17 @@
   }
 
   // customer satisfaction star colors
-  .rating > input:checked ~ label, // show primary color star when clicked
-.rating:not(:checked) > label:hover, // hover current star
-.rating:not(:checked) > label:hover ~ label {
-    svg {
+  .feedback-form
+    .rating-container
+    .rating.rating-label
+    input.volto-feedback-rating
+    ~ label {
+    svg.rating-star.starFilled {
       @if $subsite-light-theme {
         fill: $subsite-secondary;
       } @else {
         fill: $subsite-primary;
       }
-    }
-  }
-
-  .rating > input:checked + label:hover, // hover current star when changing rating
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, // lighten current selection
-.rating > input:checked ~ label:hover ~ label {
-    + svg {
-      @if $subsite-light-theme {
-        fill: $subsite-secondary;
-      } @else {
-        fill: $subsite-primary;
-      }
-    }
-  }
-
-  .rating > input:checked ~ label svg,
-  .rating:not(:checked) > label:hover svg,
-  .rating:not(:checked) > label:hover ~ label svg {
-    @if $subsite-light-theme {
-      fill: $subsite-secondary;
-    } @else {
-      fill: $subsite-primary;
     }
   }
 

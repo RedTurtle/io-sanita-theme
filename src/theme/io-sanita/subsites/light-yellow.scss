@@ -4,8 +4,6 @@ $subsite-light-yellow-primary: #f6eac5;
 $subsite-light-yellow-primary-text: #000;
 $subsite-light-yellow-secondary: #b77d04;
 $subsite-light-yellow-secondary-text: #000;
-$subsite-light-yellow-tertiary: #8b5d0a;
-$subsite-light-yellow-tertiary-text: #fff;
 $subsite-light-yellow-link-color: #b77d04;
 
 @include define-subsite(
@@ -14,8 +12,6 @@ $subsite-light-yellow-link-color: #b77d04;
   $subsite-light-yellow-primary-text,
   $subsite-light-yellow-secondary,
   $subsite-light-yellow-secondary-text,
-  $subsite-light-yellow-tertiary,
-  $subsite-light-yellow-tertiary-text,
   $subsite-light-yellow-link-color,
   true
 );

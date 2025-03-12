@@ -4,8 +4,6 @@ $subsite-light-blue-primary: #72a9f9;
 $subsite-light-blue-primary-text: #000;
 $subsite-light-blue-secondary: #2e4d7b;
 $subsite-light-blue-secondary-text: #fff;
-$subsite-light-blue-tertiary: #2e4d7b;
-$subsite-light-blue-tertiary-text: #fff;
 $subsite-light-blue-link-color: #235eb6;
 
 @include define-subsite(
@@ -14,8 +12,6 @@ $subsite-light-blue-link-color: #235eb6;
   $subsite-light-blue-primary-text,
   $subsite-light-blue-secondary,
   $subsite-light-blue-secondary-text,
-  $subsite-light-blue-tertiary,
-  $subsite-light-blue-tertiary-text,
   $subsite-light-blue-link-color,
   true
 );

@@ -169,6 +169,13 @@ body.cms-ui {
     margin-left: 0.1rem;
   }
 
+  //vertical buttons move
+  .ui.vertical.buttons {
+    .button.icon {
+      min-width: 2.5rem;
+    }
+  }
+
   //fix drag block button and delete block button colors
   &.has-toolbar.has-sidebar .drag.handle.wrapper,
   .drag.handle.wrapper,
