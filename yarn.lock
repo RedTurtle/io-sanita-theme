@@ -1785,12 +1785,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-accordion-block@npm:11.0.4":
+  version: 11.0.4
+  resolution: "@eeacms/volto-accordion-block@npm:11.0.4"
+  dependencies:
+    "@eeacms/volto-widget-theme-picker": "*"
+  checksum: 8bfe1e68cc95bbb74b1c7ad8b2db5b7541b9c88948acea319d091a51a8bf73d62bb709a4706afff8fa7e1a4ed69fca4d712a79956204311c3b58f1ea44b8d91c
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-taxonomy@npm:5.1.1":
   version: 5.1.1
   resolution: "@eeacms/volto-taxonomy@npm:5.1.1"
   dependencies:
     react-sortable-tree: 2.8.0
   checksum: 555149133ca91eba8350709e540f278e835480b0e1d3b0b5190eccb3564ca95faef6801dc4f27da804b57b73485b71f7651f1217485926f2e16bc47113451f40
+  languageName: node
+  linkType: hard
+
+"@eeacms/volto-widget-theme-picker@npm:*":
+  version: 2.0.0
+  resolution: "@eeacms/volto-widget-theme-picker@npm:2.0.0"
+  checksum: 2d00d239a530dfb09c0b3cc2bfbc51b841155ca9fea7a0b080cec5a0088e510672f2c4b9afc78f4d0df13ff51af2f303e9610e43d25dec345b15d81bbbdbca19
   languageName: node
   linkType: hard
 
@@ -8985,6 +9001,7 @@ __metadata:
     "@babel/plugin-proposal-nullish-coalescing-operator": 7.18.6
     "@babel/plugin-proposal-throw-expressions": 7.18.6
     "@babel/plugin-syntax-export-namespace-from": ^7.8.3
+    "@eeacms/volto-accordion-block": 11.0.4
     "@eeacms/volto-taxonomy": 5.1.1
     "@loadable/babel-plugin": 5.13.2
     "@plone-collective/volto-contents-next": 0.5.0

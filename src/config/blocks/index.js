@@ -56,6 +56,7 @@ import {
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
 import { cloneBlock } from 'io-sanita-theme/helpers';
+import { AccordionStylingSchema as DefaultAccordionStylingSchema } from '@eeacms/volto-accordion-block/components';
 
 const customBlocksOrder = [
   // { id: 'news', title: 'News' },
@@ -97,7 +98,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
         return pos;
       };*/,
     },
-    accordion: {
+    /*accordion: {
       id: 'accordion',
       title: 'Accordion',
       icon: listArrowsSVG,
@@ -113,6 +114,20 @@ export const applyIoSanitaBlocksConfig = (config) => {
       },
       sidebarTab: 1,
       blockHasOwnFocusManagement: true,
+    },*/
+    accordion: {
+      ...config.blocks.blocksConfig.accordion,
+      schemaEnhancer: (props) => {
+        let schema = props.schema;
+
+        schema.fieldsets.forEach((f) => {
+          if (f.id == 'options') {
+            f.fields = f.fields.filter((f) => f != 'title'); //remove field 'title' used only for edit mode, to avoid confusion with real block title
+          }
+        });
+
+        return schema;
+      },
     },
     alert: {
       id: 'alert',
