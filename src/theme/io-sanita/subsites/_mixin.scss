@@ -67,12 +67,8 @@
   $subsite-bg-primary-lightest: hsl($subsite-primary-h, 50%, 97%);
   $subsite-bg-primary-lighter: hsl($subsite-primary-h, 50%, 87%);
 
-  $subsite-primary-dark: hsl($subsite-primary-h, $subsite-primary-s * 1%, 20%);
-  $subsite-primary-darker: hsl(
-    $subsite-primary-h,
-    $subsite-primary-s * 1%,
-    12%
-  );
+  $subsite-primary-dark: hsl($subsite-primary-h, $subsite-primary-s, 20%);
+  $subsite-primary-darker: hsl($subsite-primary-h, $subsite-primary-s, 12%);
 
   $subsite-accent: $subsite-primary;
   $subsite-footer-borders: 1px solid hsla($subsite-primary-h, 70.59%, 20%);
@@ -82,12 +78,12 @@
     $subsite-bg-primary-lighter: hsl(hue($subsite-secondary), 50%, 87%);
     $subsite-primary-dark: hsl(
       $subsite-secondary-h,
-      $subsite-secondary-s * 1%,
+      $subsite-secondary-s,
       20%
     ) !default;
     $subsite-primary-darker: hsl(
       $subsite-secondary-h,
-      $subsite-secondary-s * 1%,
+      $subsite-secondary-s,
       12%
     ) !default;
     $subsite-accent: $subsite-secondary;
