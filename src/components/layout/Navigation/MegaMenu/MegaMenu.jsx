@@ -239,7 +239,7 @@ const MegaMenu = ({ item, pathname }) => {
         tag="li"
         className={isItemActive ? 'focus--mouse megamenu' : 'megamenu'}
         active={isItemActive}
-        role="none"
+        role="menuitem"
       >
         <UncontrolledDropdown
           nav
