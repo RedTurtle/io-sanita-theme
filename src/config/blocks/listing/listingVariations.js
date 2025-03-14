@@ -18,6 +18,8 @@ import {
   SimpleListTemplateSkeleton,
   SmallBlockLinksTemplate,
   SmallBlockLinksTemplateSkeleton,
+  AttachmentCardTemplate,
+  AttachmentCardTemplateSkeleton
 } from 'io-sanita-theme/components/Blocks';
 
 import CarouselTemplate from 'io-sanita-theme/components/Blocks/Listing/Carousel/CarouselTemplate.jsx';
@@ -53,6 +55,7 @@ import {
   addSimpleListTemplateOptions,
   addSmallBlockLinksTemplateOptions,
   addCarouselTemplateOptions,
+  addAttachmentCardTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
 
@@ -152,6 +155,20 @@ const iosanitaListingVariations = [
     schemaEnhancer: ({ schema, formData, intl }) => {
       let pos = addDefaultOptions(schema, formData, intl);
       addSmallBlockLinksTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    cloneData: cloneBlock,
+  },
+  {
+    id: 'attachmentCardTemplate',
+    isDefault: false,
+    title: 'Allegati',
+    template: AttachmentCardTemplate,
+    skeleton: AttachmentCardTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addAttachmentCardTemplateOptions(schema, formData, intl, pos);
       addLinkMoreOptions(schema, formData, intl);
       return schema;
     },

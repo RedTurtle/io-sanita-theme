@@ -94,6 +94,7 @@ export MapTemplate from 'io-sanita-theme/components/Blocks/Listing/Map/MapTempla
 export SimpleCardTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/SimpleCardTemplate';
 export SimpleListTemplate from 'io-sanita-theme/components/Blocks/Listing/SimpleList/SimpleListTemplate';
 export SmallBlockLinksTemplate from 'io-sanita-theme/components/Blocks/Listing/SmallBlockLinks/SmallBlockLinksTemplate';
+export AttachmentCardTemplate from 'io-sanita-theme/components/Blocks/Listing/AttachmentCard/AttachmentCardTemplate';
 
 /*Skeleton*/
 export BandiTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/BandiTemplateSkeleton';
@@ -106,6 +107,7 @@ export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listin
 export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
+export AttachmentCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/AttachmentCardTemplateSkeleton';
 
 /*Rss block (as listing)*/
 export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';
