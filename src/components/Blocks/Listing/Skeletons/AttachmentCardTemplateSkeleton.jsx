@@ -28,7 +28,7 @@ const AttachmentCardTemplateSkeleton = (props) => {
                 key={i}
               >
                 <CardBody className="pb-5">
-                  <CardTitle tag="h5"> </CardTitle>
+                  <CardTitle tag="h3"> </CardTitle>
                 </CardBody>
               </Card>
             </Col>
