@@ -1,70 +1,205 @@
-/**
- * View Accordion block.
- * @module components/ItaliaTheme/Blocks/Accordion/View
- */
+import React from 'react';
+import { getPanels, accordionBlockHasValue, Icon } from './util';
+import { Accordion } from 'semantic-ui-react';
+import { withBlockExtensions } from '@plone/volto/helpers';
+import { useLocation, useHistory } from 'react-router-dom';
 
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import ViewBlock from './Block/ViewBlock';
-import { TextBlockView } from '@plone/volto-slate/blocks/Text';
-import { Container, Card, CardBody } from 'design-react-kit';
-import './accordion.scss';
+import cx from 'classnames';
+import { RenderBlocks } from '@plone/volto/components';
+import AnimateHeight from 'react-animate-height';
+import config from '@plone/volto/registry';
+import './editor.less';
+import AccordionFilter from './AccordionFilter';
 
-/**
- * View Accordion block class.
- * @class View
- * @extends Component
- */
-const AccordionView = ({ data, block }) => {
-  const [itemOpen, setItemOpen] = useState(-1);
-  const toggle = (index) => {
-    setItemOpen(index === itemOpen ? -1 : index);
+import downSVG from '@plone/volto/icons/down-key.svg';
+import leftSVG from '@plone/volto/icons/left-key.svg';
+
+const useQuery = (location) => {
+  const { search } = location;
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+};
+
+const View = (props) => {
+  const { data, className } = props;
+  const location = useLocation();
+  const history = useHistory();
+  const panels = getPanels(data.data);
+  const metadata = props.metadata || props.properties;
+  const diffView =
+    location?.pathname.slice(
+      location?.pathname.lastIndexOf('/'),
+      location?.pathname.length,
+    ) === '/diff';
+
+  const [activeIndex, setActiveIndex] = React.useState([]);
+  const [activePanel, setActivePanel] = React.useState([]);
+  const [filterValue, setFilterValue] = React.useState('');
+  const [itemToScroll, setItemToScroll] = React.useState('');
+  const accordionConfig = config.blocks.blocksConfig.accordion;
+
+  const query = useQuery(location);
+  const activePanels = query.get('activeAccordion')?.split(',');
+  const [firstIdFromPanels] = panels[0];
+
+  const activePanelsRef = React.useRef(activePanels);
+  const firstIdFromPanelsRef = React.useRef(firstIdFromPanels);
+
+  const addQueryParam = (key, value) => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set(key, value);
+
+    history.push({
+      hash: location.hash,
+      pathname: location.pathname,
+      search: searchParams.toString(),
+    });
   };
-  const id = new Date().getTime();
+
+  const handleClick = (e, itemProps) => {
+    const { index, id } = itemProps;
+    const newIndex =
+      activeIndex.indexOf(index) === -1
+        ? data.non_exclusive
+          ? [...activeIndex, index]
+          : [index]
+        : activeIndex.filter((item) => item !== index);
+
+    const newPanel =
+      activePanel.indexOf(id) === -1
+        ? data.non_exclusive
+          ? [...activePanel, id]
+          : [id]
+        : activePanel.filter((item) => item !== id);
+
+    handleActiveIndex(newIndex, newPanel);
+  };
+
+  const handleActiveIndex = (index, id) => {
+    setActiveIndex(index);
+    setActivePanel(id);
+    addQueryParam('activeAccordion', id);
+  };
+
+  const handleFilteredValueChange = (value) => {
+    setFilterValue(value);
+  };
+
+  const scrollToElement = () => {
+    if (!!activePanels && !!activePanels[0].length) {
+      let element = document.getElementById(
+        activePanels[activePanels.length - 1],
+      );
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const isExclusive = (id) => {
+    return activePanel.includes(id);
+  };
+
+  React.useEffect(() => {
+    !!activePanelsRef.current &&
+      setItemToScroll(
+        activePanelsRef.current[activePanelsRef.current?.length - 1],
+      );
+  }, []);
+
+  React.useEffect(() => {
+    if (data.collapsed) {
+      setActivePanel(activePanelsRef.current || []);
+    } else {
+      if (!!activePanelsRef.current && !!activePanelsRef.current[0].length) {
+        setActivePanel(activePanelsRef.current || []);
+      } else {
+        setActivePanel([
+          firstIdFromPanelsRef.current,
+          ...(activePanelsRef.current || []),
+        ]);
+      }
+    }
+  }, [data.collapsed]);
+
   return (
-    <div className="block accordion border-bottom-0">
-      <div className="public-ui">
-        <div className="full-width section section-muted section-inset-shadow py-5">
-          <Container className="px-md-4">
-            <Card className="card-bg rounded" noWrapper={false} space>
-              <div className="block-header">
-                {data.title && <h2 className="title">{data.title}</h2>}
-                {data.description && (
-                  <div className="description">
-                    <TextBlockView data={{ value: data.description }} />
-                  </div>
-                )}
-              </div>
-              <CardBody className="px-1">
-                {data.subblocks.map((subblock, index) => (
-                  <ViewBlock
-                    data={subblock}
-                    toggle={() => {
-                      return () => toggle(index);
-                    }}
-                    isOpen={itemOpen === index}
-                    key={index}
-                    id={id}
-                    index={index}
-                    titleTag={data.title?.length > 0 ? 'h3' : 'h2'}
-                  />
-                ))}
-              </CardBody>
-            </Card>
-          </Container>
-        </div>
-      </div>
+    <div className={cx('accordion-block', className)}>
+      {data.title && <h2 className="headline">{data.title}</h2>}
+      {data.filtering && (
+        <AccordionFilter
+          config={accordionConfig}
+          data={data}
+          filterValue={filterValue}
+          handleFilteredValueChange={handleFilteredValueChange}
+        />
+      )}
+      {panels
+        .filter(
+          (panel) =>
+            !data.filtering ||
+            filterValue === '' ||
+            (filterValue !== '' &&
+              panel[1].title
+                ?.toLowerCase()
+                .includes(filterValue.toLowerCase())),
+        )
+        .map(([id, panel], index) => {
+          const active = isExclusive(id);
+          return accordionBlockHasValue(panel) ? (
+            <Accordion
+              key={id}
+              id={id}
+              exclusive={!data.exclusive}
+              className={
+                data.styles
+                  ? data.styles.theme
+                  : accordionConfig?.defaults?.theme
+              }
+              {...accordionConfig.options}
+            >
+              <React.Fragment>
+                <Accordion.Title
+                  as={data.title_size}
+                  active={active}
+                  aria-expanded={active}
+                  className="accordion-title align-arrow-right"
+                  index={index}
+                  onClick={(e) => handleClick(e, { index, id })}
+                  onKeyDown={(e) => {
+                    if (e.keyCode === 13 || e.keyCode === 32) {
+                      e.preventDefault();
+                      handleClick(e, { index, id });
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <Icon name={active ? downSVG : leftSVG} />
+                  <span>{panel?.title}</span>
+                </Accordion.Title>
+                <AnimateHeight
+                  animateOpacity
+                  duration={500}
+                  height={active || diffView ? 'auto' : 0}
+                  onTransitionEnd={() => {
+                    if (!!activePanels && id === itemToScroll) {
+                      scrollToElement();
+                      setItemToScroll('');
+                    }
+                  }}
+                >
+                  <Accordion.Content active={diffView ? true : active}>
+                    <RenderBlocks
+                      {...props}
+                      location={location}
+                      metadata={metadata}
+                      content={panel}
+                    />
+                  </Accordion.Content>
+                </AnimateHeight>
+              </React.Fragment>
+            </Accordion>
+          ) : null;
+        })}
     </div>
   );
 };
 
-/**
- * Property types.
- * @property {Object} propTypes Property types.
- * @static
- */
-AccordionView.propTypes = {
-  data: PropTypes.objectOf(PropTypes.any).isRequired,
-};
-
-export default AccordionView;
+export default withBlockExtensions(View);
