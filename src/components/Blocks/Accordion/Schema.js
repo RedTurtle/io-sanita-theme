@@ -198,6 +198,10 @@ const messages = defineMessages({
     id: 'accordion_linkMoreTitle',
     defaultMessage: 'Titolo per il link ad altro',
   },
+  show_block_bg: {
+    id: 'Mostra lo sfondo del blocco',
+    defaultMessage: 'Mostra lo sfondo del blocco',
+  },
 });
 
 const cache = createIntlCache();
@@ -348,6 +352,7 @@ export const AccordionBlockSchema = ({ intl }) => ({
         'collapsed',
         'non_exclusive',
         'filtering',
+        'show_block_bg',
       ],
     },
   ],
@@ -388,6 +393,11 @@ export const AccordionBlockSchema = ({ intl }) => ({
       title: intl.formatMessage(messages.filtering),
       type: 'boolean',
       default: false,
+    },
+    show_block_bg: {
+      title: intl.formatMessage(messages.show_block_bg),
+      type: 'boolean',
+      default: true,
     },
   },
   required: [],

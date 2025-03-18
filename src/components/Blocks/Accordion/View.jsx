@@ -1,18 +1,41 @@
 import React from 'react';
-import { getPanels, accordionBlockHasValue, Icon } from './util';
-import { Accordion } from 'semantic-ui-react';
-import { withBlockExtensions } from '@plone/volto/helpers';
+import cx from 'classnames';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionBody,
+} from 'design-react-kit';
+import { useIntl, defineMessages } from 'react-intl';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import cx from 'classnames';
 import { RenderBlocks } from '@plone/volto/components';
-import AnimateHeight from 'react-animate-height';
+import { withBlockExtensions } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import './view.scss';
-import AccordionFilter from './AccordionFilter';
 
-import downSVG from '@plone/volto/icons/down-key.svg';
-import leftSVG from '@plone/volto/icons/left-key.svg';
+import { LinkMore } from 'io-sanita-theme/components';
+
+import AccordionFilter from './AccordionFilter';
+import Heading from './Heading';
+import Container from './Container';
+import { getPanels, accordionBlockHasValue, Icon } from './util';
+
+import './view.scss';
+
+const messages = defineMessages({
+  vedi: {
+    id: 'Vedi',
+    defaultMessage: 'Vedi',
+  },
+  closeAccordion: {
+    id: 'closeAccordion',
+    defaultMessage: "Chiudi l'accordion",
+  },
+  openAccordion: {
+    id: 'openAccordion',
+    defaultMessage: "Apri l'accordion",
+  },
+});
 
 const useQuery = (location) => {
   const { search } = location;
@@ -20,7 +43,8 @@ const useQuery = (location) => {
 };
 
 const View = (props) => {
-  const { data, className } = props;
+  const { data, className, block } = props;
+  const intl = useIntl();
   const location = useLocation();
   const history = useHistory();
   const panels = getPanels(data.data);
@@ -121,83 +145,80 @@ const View = (props) => {
 
   return (
     <div className={cx('accordion-block', className)}>
-      {data.title && <h2 className="headline">{data.title}</h2>}
-      {data.filtering && (
-        <AccordionFilter
-          config={accordionConfig}
-          data={data}
-          filterValue={filterValue}
-          handleFilteredValueChange={handleFilteredValueChange}
-        />
-      )}
-      {panels
-        .filter(
-          (panel) =>
-            !data.filtering ||
-            filterValue === '' ||
-            (filterValue !== '' &&
-              panel[1].title
-                ?.toLowerCase()
-                .includes(filterValue.toLowerCase())),
-        )
-        .map(([id, panel], index) => {
-          const active = isExclusive(id);
-          return accordionBlockHasValue(panel) ? (
-            <Accordion
-              key={id}
-              id={id}
-              exclusive={!data.exclusive}
-              className={
-                data.styles
-                  ? data.styles.theme
-                  : accordionConfig?.defaults?.theme
-              }
-              {...accordionConfig.options}
-            >
-              <React.Fragment>
-                <Accordion.Title
-                  as={data.title_size}
-                  active={active}
-                  aria-expanded={active}
-                  className="accordion-title align-arrow-right"
-                  index={index}
-                  onClick={(e) => handleClick(e, { index, id })}
-                  onKeyDown={(e) => {
-                    if (e.keyCode === 13 || e.keyCode === 32) {
-                      e.preventDefault();
-                      handleClick(e, { index, id });
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <Icon name={active ? downSVG : leftSVG} />
-                  <span>{panel?.title}</span>
-                </Accordion.Title>
-                <AnimateHeight
-                  animateOpacity
-                  duration={500}
-                  height={active || diffView ? 'auto' : 0}
-                  onTransitionEnd={() => {
-                    if (!!activePanels && id === itemToScroll) {
-                      scrollToElement();
-                      setItemToScroll('');
-                    }
-                  }}
-                >
-                  <Accordion.Content active={diffView ? true : active}>
-                    <RenderBlocks
-                      {...props}
-                      location={location}
-                      metadata={metadata}
-                      content={panel}
-                    />
-                  </Accordion.Content>
-                </AnimateHeight>
-              </React.Fragment>
-            </Accordion>
-          ) : null;
-        })}
+      <div className="public-ui">
+        <Container data={data}>
+          {data.title && <h2 className="headline">{data.title}</h2>}
+          {data.filtering && (
+            <AccordionFilter
+              block={block}
+              config={accordionConfig}
+              data={data}
+              filterValue={filterValue}
+              handleFilteredValueChange={handleFilteredValueChange}
+            />
+          )}
+          <Accordion id={block + '-accordion'}>
+            {panels
+              .filter(
+                (panel) =>
+                  !data.filtering ||
+                  filterValue === '' ||
+                  (filterValue !== '' &&
+                    panel[1].title
+                      ?.toLowerCase()
+                      .includes(filterValue.toLowerCase())),
+              )
+              .map(([id, panel], index) => {
+                const active = isExclusive(id);
+                const html_id = block + '-' + id + '-' + index;
+                return accordionBlockHasValue(panel) ? (
+                  <AccordionItem key={id} {...accordionConfig.options}>
+                    <AccordionHeader
+                      active={active}
+                      onToggle={(e) => handleClick(e, { index, id })}
+                      aria-controls={html_id}
+                      aria-label={
+                        active
+                          ? intl.formatMessage(messages.closeAccordion)
+                          : intl.formatMessage(messages.openAccordion) +
+                            ' ' +
+                            panel.title
+                      }
+                    >
+                      <Heading type={data.title_size} id={html_id + '-title'}>
+                        {panel?.title}
+                      </Heading>
+                    </AccordionHeader>
+
+                    <AccordionBody
+                      active={diffView ? true : active}
+                      id={html_id}
+                      role="region"
+                      aria-labelledby={html_id + '-title'}
+                    >
+                      <RenderBlocks
+                        {...props}
+                        location={location}
+                        metadata={metadata}
+                        content={panel}
+                      />
+
+                      {panel.href && (
+                        <LinkMore
+                          href={[{ '@id': panel.href }]}
+                          title={
+                            panel.linkMoreTitle ||
+                            intl.formatMessage(messages.vedi)
+                          }
+                        />
+                      )}
+                    </AccordionBody>
+                  </AccordionItem>
+                ) : null;
+              })}
+          </Accordion>
+        </Container>
+      </div>
     </div>
   );
 };

@@ -392,7 +392,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
   config.settings.styleClassNameExtenders.push(
     ({ block, content, data, classNames }) => {
       let styles = [];
-      const no_bg_for = ['hero'];
+      const no_bg_for = ['hero', 'accordion'];
 
       if (data.show_block_bg && no_bg_for.indexOf(data['@type']) < 0) {
         if (classNames.indexOf('bg-primary-lightest') < 0) {

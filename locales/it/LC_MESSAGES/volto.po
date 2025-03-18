@@ -31,7 +31,7 @@ msgstr ""
 #. Default: "Accordion Title size"
 #: components/Blocks/Accordion/Schema
 msgid "Accordion Title size"
-msgstr "Dimensione del titolo"
+msgstr "Dimensione del titolo dei pannelli"
 
 #. Default: "Accordion block"
 #: components/Blocks/Accordion/Edit
@@ -801,7 +801,7 @@ msgstr ""
 #. Default: "Title size"
 #: components/Blocks/Accordion/Schema
 msgid "Title size"
-msgstr "Dimensione del titolo"
+msgstr "Dimensione dei titoli"
 
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions

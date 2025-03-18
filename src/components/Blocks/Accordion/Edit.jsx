@@ -1,3 +1,9 @@
+import React, { useState } from 'react';
+import { Button, Segment } from 'semantic-ui-react';
+import { defineMessages, useIntl } from 'react-intl';
+import { isEmpty, without, pickBy } from 'lodash';
+import { Accordion } from 'design-react-kit';
+
 import {
   BlocksForm,
   Icon,
@@ -12,19 +18,17 @@ import {
 } from '@plone/volto/helpers';
 import { cloneDeepSchema } from '@plone/volto/helpers/Utils/Utils';
 import helpSVG from '@plone/volto/icons/help.svg';
-import { isEmpty, without, pickBy } from 'lodash';
-import React, { useState } from 'react';
-import { Button, Segment } from 'semantic-ui-react';
-import { defineMessages, useIntl } from 'react-intl';
+import config from '@plone/volto/registry';
+
 import AccordionEdit from './AccordionEdit';
 import AccordionFilter from './AccordionFilter';
 import EditBlockWrapper from './EditBlockWrapper';
+import { AccordionBlockSchema } from './Schema';
+import Container from './Container';
+import { emptyAccordion, getPanels } from './util';
+
 import './editor.less';
 import './view.scss';
-import { AccordionBlockSchema } from './Schema';
-import { emptyAccordion, getPanels } from './util';
-import config from '@plone/volto/registry';
-import { Accordion } from 'design-react-kit';
 
 const messages = defineMessages({
   SectionHelp: {
@@ -330,10 +334,9 @@ const Edit = (props) => {
   };
 
   return (
-    <>
-      {data.title && <h2 className="headline">{data.title}</h2>}
+    <Container data={data}>
       <fieldset className="accordion-block">
-        <legend
+        {/* <legend
           onClick={() => {
             setSelectedBlock({});
             props.setSidebarTab(1);
@@ -341,169 +344,168 @@ const Edit = (props) => {
           aria-hidden="true"
         >
           Accordion
-        </legend>
-        <div className="public-ui">
-          {data.filtering && (
-            <AccordionFilter
-              block={block}
-              config={blockConfig}
-              data={data}
-              filterValue={filterValue}
-              handleFilteredValueChange={handleFilteredValueChange}
-            />
-          )}
-          <Accordion id={block + '-accordion'}>
-            {/* iconLeft={true} */}
-            {panels
-              .filter(
-                (panel) =>
-                  !data.filtering ||
-                  filterValue === '' ||
-                  (filterValue !== '' &&
-                    panel[1].title
-                      ?.toLowerCase()
-                      .includes(filterValue.toLowerCase())),
-              )
-              .map(([uid, panel], index) => (
-                <AccordionEdit
-                  uid={uid}
-                  panel={panel}
-                  panelData={panelData}
-                  handleTitleChange={handleTitleChange}
-                  handleTitleClick={() => {
-                    setActiveItem(index);
-                    setSelectedBlock({});
+        </legend> */}
+
+        {data.filtering && (
+          <AccordionFilter
+            block={block}
+            config={blockConfig}
+            data={data}
+            filterValue={filterValue}
+            handleFilteredValueChange={handleFilteredValueChange}
+          />
+        )}
+        <Accordion id={block + '-accordion'}>
+          {/* iconLeft={true} */}
+          {panels
+            .filter(
+              (panel) =>
+                !data.filtering ||
+                filterValue === '' ||
+                (filterValue !== '' &&
+                  panel[1].title
+                    ?.toLowerCase()
+                    .includes(filterValue.toLowerCase())),
+            )
+            .map(([uid, panel], index) => (
+              <AccordionEdit
+                uid={uid}
+                panel={panel}
+                panelData={panelData}
+                handleTitleChange={handleTitleChange}
+                handleTitleClick={() => {
+                  setActiveItem(index);
+                  setSelectedBlock({});
+                }}
+                data={data}
+                index={index}
+                key={`accordion-${index}`}
+                isActive={activeIndex.includes(index)}
+                toggle={toggleItem}
+              >
+                <BlocksForm
+                  errors={props.errors}
+                  key={uid}
+                  title={data.placeholder}
+                  description={instructions}
+                  manage={manage}
+                  blocksConfig={allowedBlocksConfig}
+                  metadata={metadata}
+                  properties={isEmpty(panel) ? emptyBlocksForm() : panel}
+                  selectedBlock={selected ? selectedBlock[uid] : null}
+                  onSelectBlock={(id, l, e) => {
+                    const isMultipleSelection = e
+                      ? e.shiftKey || e.ctrlKey || e.metaKey
+                      : false;
+                    onSelectBlock(
+                      uid,
+                      id,
+                      isMultipleSelection,
+                      e,
+                      selectedBlock,
+                    );
                   }}
-                  data={data}
-                  index={index}
-                  key={`accordion-${index}`}
-                  isActive={activeIndex.includes(index)}
-                  toggle={toggleItem}
-                >
-                  <BlocksForm
-                    errors={props.errors}
-                    key={uid}
-                    title={data.placeholder}
-                    description={instructions}
-                    manage={manage}
-                    blocksConfig={allowedBlocksConfig}
-                    metadata={metadata}
-                    properties={isEmpty(panel) ? emptyBlocksForm() : panel}
-                    selectedBlock={selected ? selectedBlock[uid] : null}
-                    onSelectBlock={(id, l, e) => {
-                      const isMultipleSelection = e
-                        ? e.shiftKey || e.ctrlKey || e.metaKey
-                        : false;
-                      onSelectBlock(
-                        uid,
-                        id,
-                        isMultipleSelection,
-                        e,
-                        selectedBlock,
-                      );
-                    }}
-                    onChangeFormData={(newFormData) => {
+                  onChangeFormData={(newFormData) => {
+                    onChangeBlock(block, {
+                      ...data,
+                      data: {
+                        ...panelData,
+                        blocks: {
+                          ...panelData.blocks,
+                          [uid]: newFormData,
+                        },
+                      },
+                    });
+                  }}
+                  onChangeField={(id, value) => {
+                    if (['blocks', 'blocks_layout'].indexOf(id) > -1) {
+                      blockState[id] = value;
                       onChangeBlock(block, {
                         ...data,
                         data: {
                           ...panelData,
                           blocks: {
                             ...panelData.blocks,
-                            [uid]: newFormData,
+                            [uid]: {
+                              ...panelData.blocks?.[uid],
+                              ...blockState,
+                            },
                           },
                         },
                       });
-                    }}
-                    onChangeField={(id, value) => {
-                      if (['blocks', 'blocks_layout'].indexOf(id) > -1) {
-                        blockState[id] = value;
-                        onChangeBlock(block, {
-                          ...data,
-                          data: {
-                            ...panelData,
-                            blocks: {
-                              ...panelData.blocks,
-                              [uid]: {
-                                ...panelData.blocks?.[uid],
-                                ...blockState,
-                              },
-                            },
-                          },
-                        });
-                      } else {
-                        onChangeField(id, value);
-                      }
-                    }}
-                    pathname={pathname}
-                  >
-                    {({ draginfo }, editBlock, blockProps) => {
-                      return (
-                        <EditBlockWrapper
-                          draginfo={draginfo}
-                          blockProps={blockProps}
-                          disabled={data.disableInnerButtons}
-                          multiSelected={searchElementInMultiSelection(
-                            uid,
-                            blockProps,
-                          )}
-                          extraControls={
-                            <>
-                              {instructions && (
-                                <>
-                                  <Button
-                                    icon
-                                    basic
-                                    title={intl.formatMessage(
-                                      messages.SectionHelp,
-                                    )}
-                                    onClick={() => {
-                                      setSelectedBlock({});
-                                      const tab = manage ? 0 : 1;
-                                      props.setSidebarTab(tab);
-                                    }}
-                                  >
-                                    <Icon
-                                      name={helpSVG}
-                                      className=""
-                                      size="19px"
-                                    />
-                                  </Button>
-                                </>
-                              )}
-                            </>
-                          }
-                        >
-                          {editBlock}
-                        </EditBlockWrapper>
-                      );
-                    }}
-                  </BlocksForm>
-                </AccordionEdit>
-              ))}
-            {selected ? (
-              <BlocksToolbar
-                selectedBlock={Object.keys(selectedBlock)[0]}
-                formData={data?.data?.blocks?.[currentUid]}
-                selectedBlocks={multiSelected}
-                onSetSelectedBlocks={(blockIds) => {
-                  setMultiSelected(blockIds);
-                }}
-                onSelectBlock={(id, l, e) => {
-                  const isMultipleSelection = e
-                    ? e.shiftKey || e.ctrlKey || e.metaKey
-                    : false;
+                    } else {
+                      onChangeField(id, value);
+                    }
+                  }}
+                  pathname={pathname}
+                >
+                  {({ draginfo }, editBlock, blockProps) => {
+                    return (
+                      <EditBlockWrapper
+                        draginfo={draginfo}
+                        blockProps={blockProps}
+                        disabled={data.disableInnerButtons}
+                        multiSelected={searchElementInMultiSelection(
+                          uid,
+                          blockProps,
+                        )}
+                        extraControls={
+                          <>
+                            {instructions && (
+                              <>
+                                <Button
+                                  icon
+                                  basic
+                                  title={intl.formatMessage(
+                                    messages.SectionHelp,
+                                  )}
+                                  onClick={() => {
+                                    setSelectedBlock({});
+                                    const tab = manage ? 0 : 1;
+                                    props.setSidebarTab(tab);
+                                  }}
+                                >
+                                  <Icon
+                                    name={helpSVG}
+                                    className=""
+                                    size="19px"
+                                  />
+                                </Button>
+                              </>
+                            )}
+                          </>
+                        }
+                      >
+                        {editBlock}
+                      </EditBlockWrapper>
+                    );
+                  }}
+                </BlocksForm>
+              </AccordionEdit>
+            ))}
+          {selected ? (
+            <BlocksToolbar
+              selectedBlock={Object.keys(selectedBlock)[0]}
+              formData={data?.data?.blocks?.[currentUid]}
+              selectedBlocks={multiSelected}
+              onSetSelectedBlocks={(blockIds) => {
+                setMultiSelected(blockIds);
+              }}
+              onSelectBlock={(id, l, e) => {
+                const isMultipleSelection = e
+                  ? e.shiftKey || e.ctrlKey || e.metaKey
+                  : false;
 
-                  onSelectBlock(id, isMultipleSelection, e, selectedBlock);
-                }}
-                onChangeBlocks={(newBlockData) => {
-                  changeBlockData(newBlockData);
-                }}
-              />
-            ) : (
-              ''
-            )}
-          </Accordion>
-        </div>
+                onSelectBlock(id, isMultipleSelection, e, selectedBlock);
+              }}
+              onChangeBlocks={(newBlockData) => {
+                changeBlockData(newBlockData);
+              }}
+            />
+          ) : (
+            ''
+          )}
+        </Accordion>
 
         <SidebarPortal
           selected={selected && !Object.keys(selectedBlock).length}
@@ -532,7 +534,7 @@ const Edit = (props) => {
           )}
         </SidebarPortal>
       </fieldset>
-    </>
+    </Container>
   );
 };
 

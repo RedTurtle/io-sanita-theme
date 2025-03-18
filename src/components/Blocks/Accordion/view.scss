@@ -10,7 +10,6 @@ body.public-ui {
     }
     .public-ui {
       .accordion {
-        margin-top: 0 !important;
         clear: both; /* ensure floated images from content area don't spill over next accordion title */
 
         .accordion-header {
@@ -21,6 +20,12 @@ body.public-ui {
           h6 {
             margin: 0 !important;
             width: 100%;
+            color: var(--bs-primary);
+          }
+          .accordion-button {
+            &:not(.collapsed) {
+              color: var(--bs-primary);
+            }
           }
         }
 
@@ -29,6 +34,19 @@ body.public-ui {
 
           .container {
             width: 100% !important;
+          }
+        }
+      }
+
+      .full-width {
+        .card {
+          .accordion {
+            border-bottom: none;
+            .accordion-item:first-of-type {
+              .accordion-header .accordion-button {
+                border-top: none;
+              }
+            }
           }
         }
       }

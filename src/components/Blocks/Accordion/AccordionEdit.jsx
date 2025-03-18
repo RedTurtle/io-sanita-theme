@@ -1,14 +1,18 @@
 import cx from 'classnames';
 import React from 'react';
 import { Input } from 'semantic-ui-react';
-
-import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import {
   AccordionItem,
   AccordionHeader,
   AccordionBody,
 } from 'design-react-kit';
+
+import config from '@plone/volto/registry';
+
+import { LinkMore } from 'io-sanita-theme/components';
+import Heading from './Heading';
+
 import './accordion_edit.scss';
 
 const messages = defineMessages({
@@ -16,14 +20,11 @@ const messages = defineMessages({
     id: 'Enter Title',
     defaultMessage: 'Enter Title',
   },
+  vedi: {
+    id: 'Vedi',
+    defaultMessage: 'Vedi',
+  },
 });
-
-const Heading = React.memo(({ type, children, ...props }) => {
-  return React.createElement(type || 'h2', props, children);
-});
-Heading.defaultProps = {
-  type: 'h2',
-};
 
 const AccordionEdit = (props) => {
   const {
@@ -37,6 +38,7 @@ const AccordionEdit = (props) => {
     isActive,
     toggle,
   } = props;
+
   const intl = useIntl();
 
   const accordionConfig = config.blocks.blocksConfig.accordion;
@@ -78,6 +80,12 @@ const AccordionEdit = (props) => {
         aria-labelledby={html_id + '-title'}
       >
         {children}
+        {panel.href && (
+          <LinkMore
+            href={[{ '@id': panel.href }]}
+            title={panel.linkMoreTitle || intl.formatMessage(messages.vedi)}
+          />
+        )}
       </AccordionBody>
     </AccordionItem>
   );
