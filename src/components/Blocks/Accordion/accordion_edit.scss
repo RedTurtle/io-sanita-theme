@@ -1,0 +1,37 @@
+.accordion-block {
+  .public-ui {
+    .accordion {
+      .ui.input {
+        font-size: unset;
+        > input {
+          font-family: 'Titillium Web';
+          color: var(--bs-primary);
+        }
+        &.fluid {
+          > input {
+            width: auto !important;
+          }
+        }
+      }
+      h2,
+      h3 {
+        .ui.input input {
+          font-weight: 700;
+        }
+      }
+      h4,
+      h5,
+      h6 {
+        .ui.input input {
+          font-weight: 600;
+        }
+      }
+
+      .accordion-body {
+        .invisible {
+          visibility: visible !important;
+        }
+      }
+    }
+  }
+}

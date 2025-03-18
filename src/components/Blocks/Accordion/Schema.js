@@ -4,10 +4,8 @@ import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 import { addStyling } from '@plone/volto/helpers';
 
 const messages = defineMessages({
-  Accordion: {
-    id: 'Accordion',
-    defaultMessage: 'Accordion',
-  },
+  Panels: { id: 'Panels', defaultMessage: 'Pannelli' },
+  Panel: { id: 'Panel', defaultMessage: 'Pannello' },
   Options: {
     id: 'Options',
     defaultMessage: 'Options',
@@ -131,7 +129,7 @@ const messages = defineMessages({
     id: 'Detailed expected value within this block',
     defaultMessage: 'Detailed expected value within this block',
   },
-  Required: {
+  required: {
     id: 'Required',
     defaultMessage: 'Required',
   },
@@ -283,7 +281,7 @@ export const AccordionLayoutSchema = (config) => {
         widget: 'richtext',
       },
       required: {
-        title: intl.formatMessage(messages.Required),
+        title: intl.formatMessage(messages.required),
         description: intl.formatMessage(messages.DontAllowDeletionOfThisBlock),
         type: 'boolean',
       },
@@ -358,7 +356,7 @@ export const AccordionBlockSchema = ({ intl }) => ({
       title: intl.formatMessage(messages.headline),
     },
     data: {
-      title: intl.formatMessage(messages.Accordion),
+      title: intl.formatMessage(messages.Panels),
       type: 'panels',
       schema: AccordionSchema(intl),
     },
@@ -397,7 +395,7 @@ export const AccordionBlockSchema = ({ intl }) => ({
 
 export const AccordionSchema = (intl) => {
   return {
-    title: intl.formatMessage(messages.Accordion),
+    title: intl.formatMessage(messages.Panel),
     fieldsets: [
       {
         id: 'default',

@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { RenderBlocks } from '@plone/volto/components';
 import AnimateHeight from 'react-animate-height';
 import config from '@plone/volto/registry';
-import './editor.less';
+import './view.scss';
 import AccordionFilter from './AccordionFilter';
 
 import downSVG from '@plone/volto/icons/down-key.svg';

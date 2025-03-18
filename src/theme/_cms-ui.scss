@@ -1,6 +1,7 @@
 @import 'cms-ui/cms-ui_container';
 @import 'cms-ui/sidebar';
 @import 'cms-ui/subblocks-edit';
+@import 'io-sanita/mixins';
 
 body.cms-ui {
   color: $body-color;

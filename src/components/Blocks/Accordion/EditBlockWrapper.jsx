@@ -100,7 +100,7 @@ class EditBlockWrapper extends React.Component {
                     </Button>
                   </div>
 
-                  {!disableNewBlocks && !blockHasValue(data) && (
+                  {!disableNewBlocks /*&& !blockHasValue(data)*/ && (
                     <NewBlockAddButton
                       block={block}
                       index={index}

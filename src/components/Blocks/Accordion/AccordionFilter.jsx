@@ -1,15 +1,21 @@
 import React from 'react';
-import { Accordion, Input } from 'semantic-ui-react';
+import { Input } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Icon } from './util';
 import './editor.less';
 import filterSVG from '@plone/volto/icons/filter.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
+import { Container, Row, Col } from 'design-react-kit';
+import { SearchBar } from 'io-sanita-theme/components';
 
 const messages = defineMessages({
   placeholder: {
-    id: 'Type to filter...',
+    id: 'accordion-Type to filter...',
     defaultMessage: 'Type to filter...',
+  },
+  search_description: {
+    id: 'accordion-filter description',
+    defaultMessage: 'Insert a keyword to filter items below..',
   },
 });
 
@@ -18,30 +24,28 @@ const AccordionFilter = ({
   data,
   filterValue,
   handleFilteredValueChange,
+  block,
 }) => {
   const intl = useIntl();
 
   return (
-    <Accordion
-      className={`styled ${
-        data.styles ? data.styles.theme : config?.defaults?.theme
-      }`}
-    >
-      <Accordion.Title className="accordion-title filter  align-arrow-right">
-        <Icon
-          name={filterValue === '' ? filterSVG : clearSVG}
-          onClick={() => handleFilteredValueChange('')}
-        />
-        <Input
-          fluid
-          className="input-accordion-title"
-          transparent
-          placeholder={intl.formatMessage(messages.placeholder)}
-          value={filterValue}
-          onChange={(e) => handleFilteredValueChange(e.target.value)}
-        />
-      </Accordion.Title>
-    </Accordion>
+    <Container className="px-4">
+      <Row>
+        <Col>
+          <SearchBar
+            id={block + '-search-bar'}
+            title={intl.formatMessage(messages.placeholder)}
+            textDescription={intl.formatMessage(messages.search_description)}
+            value={filterValue}
+            onChange={(v) => {
+              handleFilteredValueChange(v);
+            }}
+            showSubmit={false}
+            ariaControls={block + '-accordion'}
+          />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

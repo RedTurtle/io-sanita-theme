@@ -1,12 +1,15 @@
 import cx from 'classnames';
 import React from 'react';
-import AnimateHeight from 'react-animate-height';
-import { Accordion, Input } from 'semantic-ui-react';
-import { Icon } from './util';
+import { Input } from 'semantic-ui-react';
+
 import config from '@plone/volto/registry';
-import { defineMessages, injectIntl } from 'react-intl';
-import downSVG from '@plone/volto/icons/down-key.svg';
-import leftSVG from '@plone/volto/icons/left-key.svg';
+import { defineMessages, useIntl } from 'react-intl';
+import {
+  AccordionItem,
+  AccordionHeader,
+  AccordionBody,
+} from 'design-react-kit';
+import './accordion_edit.scss';
 
 const messages = defineMessages({
   EnterTitle: {
@@ -14,6 +17,13 @@ const messages = defineMessages({
     defaultMessage: 'Enter Title',
   },
 });
+
+const Heading = React.memo(({ type, children, ...props }) => {
+  return React.createElement(type || 'h2', props, children);
+});
+Heading.defaultProps = {
+  type: 'h2',
+};
 
 const AccordionEdit = (props) => {
   const {
@@ -24,54 +34,27 @@ const AccordionEdit = (props) => {
     panel,
     data,
     index,
-    intl,
+    isActive,
+    toggle,
   } = props;
-  const [activeIndex, setActiveIndex] = React.useState([0]);
+  const intl = useIntl();
+
   const accordionConfig = config.blocks.blocksConfig.accordion;
-  const isActive = activeIndex.includes(index);
 
-  const handleClick = (e, itemProps) => {
-    const { index } = itemProps;
-    if (data.non_exclusive) {
-      const newIndex =
-        activeIndex.indexOf(index) === -1
-          ? [...activeIndex, index]
-          : activeIndex.filter((item) => item !== index);
-
-      setActiveIndex(newIndex);
-    } else {
-      const newIndex =
-        activeIndex.indexOf(index) === -1
-          ? [index]
-          : activeIndex.filter((item) => item !== index);
-
-      setActiveIndex(newIndex);
-    }
-  };
-
-  React.useEffect(() => {
-    return data.collapsed ? setActiveIndex([]) : setActiveIndex([0]);
-  }, [data.collapsed]);
+  const html_id = uid + '-' + index;
 
   return (
-    <Accordion
-      className={
-        data.styles ? data.styles.theme : accordionConfig?.defaults?.theme
-      }
-      {...accordionConfig.options}
-    >
-      <React.Fragment>
-        <Accordion.Title
-          as={data.title_size}
-          active={isActive}
-          index={index}
-          onClick={handleClick}
-          className="accordion-title align-arrow-right"
-        >
-          <Icon name={isActive ? downSVG : leftSVG} />
+    <AccordionItem {...accordionConfig.options}>
+      <AccordionHeader
+        active={isActive}
+        onToggle={(e) => toggle(e, { index })}
+        aria-controls={html_id}
+      >
+        <Heading type={data.title_size} id={html_id + '-title'}>
           {!data.readOnlyTitles ? (
             <Input
               fluid
+              key={html_id + 'edit-title'}
               className="input-accordion-title"
               transparent
               placeholder={intl.formatMessage(messages.EnterTitle)}
@@ -85,17 +68,19 @@ const AccordionEdit = (props) => {
           ) : (
             <span>{panel?.title}</span>
           )}
-        </Accordion.Title>
-        <AnimateHeight
-          animateOpacity
-          duration={500}
-          height={isActive ? 'auto' : 0}
-        >
-          <Accordion.Content active={isActive}>{children}</Accordion.Content>
-        </AnimateHeight>
-      </React.Fragment>
-    </Accordion>
+        </Heading>
+      </AccordionHeader>
+
+      <AccordionBody
+        active={isActive}
+        id={html_id}
+        role="region"
+        aria-labelledby={html_id + '-title'}
+      >
+        {children}
+      </AccordionBody>
+    </AccordionItem>
   );
 };
 
-export default injectIntl(AccordionEdit);
+export default React.memo(AccordionEdit);
