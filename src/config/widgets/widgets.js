@@ -28,6 +28,11 @@ const SubsiteSocialLinksWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget'
   ),
 );
+const PanelsWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/PanelsWidget/PanelsWidget'
+  ),
+);
 export const LinkToWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/LinkToWidget/LinkToWidget'
@@ -65,6 +70,10 @@ const getIoSanitaWidgets = (config) => {
       ...config.widgets.widget,
       icon: IconWidget,
       linkTo: LinkToWidget,
+    },
+    type: {
+      ...config.widgets.type,
+      panels: PanelsWidget,
     },
   };
 };

@@ -1,0 +1,56 @@
+body.cms-ui,
+body.public-ui {
+  .accordion-block {
+    .search-bar-widget {
+      label {
+        visibility: hidden;
+        height: 0;
+        margin: 0 !important;
+      }
+    }
+    .public-ui {
+      .accordion {
+        clear: both; /* ensure floated images from content area don't spill over next accordion title */
+
+        .accordion-header {
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            margin: 0 !important;
+            width: 100%;
+            color: var(--bs-primary);
+          }
+          .accordion-button {
+            &:not(.collapsed) {
+              color: var(--bs-primary);
+            }
+          }
+        }
+
+        .accordion-body {
+          padding-left: 3em;
+
+          .container {
+            width: 100% !important;
+          }
+        }
+      }
+
+      .full-width {
+        .card {
+          padding: 2em;
+          .accordion {
+            border-bottom: none;
+            .accordion-item:first-of-type {
+              .accordion-header .accordion-button {
+                border-top: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
