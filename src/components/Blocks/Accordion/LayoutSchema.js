@@ -34,7 +34,7 @@ const messages = defineMessages({
     defaultMessage:
       'A short hint that describes the expected value within this block',
   },
-  Instructions: {
+  instructions: {
     id: 'Instructions',
     defaultMessage: 'Instructions',
   },
@@ -153,7 +153,7 @@ const layoutSchema = (intl) => ({
       type: 'string',
     },
     instructions: {
-      title: intl.formatMessage(messages.Instructions),
+      title: intl.formatMessage(messages.instructions),
       description: intl.formatMessage(
         messages.DetailedExpectedValueWithinThisBlock,
       ),
