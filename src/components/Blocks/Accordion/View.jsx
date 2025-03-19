@@ -147,7 +147,6 @@ const View = (props) => {
     <div className={cx('accordion-block', className)}>
       <div className="public-ui">
         <Container data={data}>
-          {data.title && <h2 className="headline">{data.title}</h2>}
           {data.filtering && (
             <AccordionFilter
               block={block}
