@@ -41,13 +41,11 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
+## Versione 2.8.0 (19/03/2025)
 
 ### Novità
 
 - Aggiunta variazione del blocco listing Allegati
-
 
 ## Versione 2.6.0 (11/03/2025)
 
