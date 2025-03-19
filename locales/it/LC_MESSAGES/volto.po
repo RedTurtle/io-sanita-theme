@@ -926,7 +926,7 @@ msgstr "Inserisci un testo per filtrare.."
 #. Default: "Insert a keyword to filter items below.."
 #: components/Blocks/Accordion/AccordionFilter
 msgid "accordion-filter description"
-msgstr "Inserisci una parola chiave per filtrare gli elementi sottostanti..."
+msgstr "Inserisci una parola chiave per filtrare i titoli sottostanti..."
 
 #. Default: "Mostra lo sfondo"
 #: components/Blocks/AccordionOld/Sidebar

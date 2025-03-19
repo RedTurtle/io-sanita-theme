@@ -1,34 +1,32 @@
-.public-ui {
-  .accordion-block {
-    .accordion {
-      margin-top: 0 !important;
-      .accordion-header {
-        .ui.input {
-          font-size: unset;
-          > input {
-            font-family: 'Titillium Web';
-            color: var(--bs-primary);
-            font-weight: 600;
-          }
-          &.fluid {
-            > input {
-              width: auto !important;
-            }
-          }
+.accordion-block {
+  .accordion {
+    margin-top: 0 !important;
+    .accordion-header {
+      .ui.input {
+        font-size: unset;
+        > input {
+          font-family: 'Titillium Web';
+          color: var(--bs-primary);
+          font-weight: 600;
         }
-
-        h2,
-        h3 {
-          .ui.input > input {
-            font-weight: 700;
+        &.fluid {
+          > input {
+            width: auto !important;
           }
         }
       }
 
-      .accordion-body {
-        .invisible {
-          visibility: visible !important;
+      h2,
+      h3 {
+        .ui.input > input {
+          font-weight: 700;
         }
+      }
+    }
+
+    .accordion-body {
+      .invisible {
+        visibility: visible !important;
       }
     }
   }

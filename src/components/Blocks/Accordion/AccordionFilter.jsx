@@ -15,7 +15,7 @@ const messages = defineMessages({
   },
   search_description: {
     id: 'accordion-filter description',
-    defaultMessage: 'Insert a keyword to filter items below..',
+    defaultMessage: 'Insert a keyword to filter below titles..',
   },
 });
 
@@ -34,6 +34,7 @@ const AccordionFilter = ({
         <SearchBar
           id={block + '-search-bar'}
           title={intl.formatMessage(messages.placeholder)}
+          ariaLabel={intl.formatMessage(messages.placeholder)}
           textDescription={intl.formatMessage(messages.search_description)}
           value={filterValue}
           onChange={(v) => {

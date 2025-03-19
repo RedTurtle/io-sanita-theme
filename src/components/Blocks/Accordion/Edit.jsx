@@ -390,9 +390,8 @@ const Edit = (props) => {
   );
   return (
     <div className="accordion-block">
-      <Container data={data} headerChildren={editBlockHeader}>
-        <fieldset className="accordion-block">
-          {/* <legend
+      <fieldset>
+        <legend
           onClick={() => {
             setSelectedBlock({});
             props.setSidebarTab(1);
@@ -400,8 +399,8 @@ const Edit = (props) => {
           aria-hidden="true"
         >
           Accordion
-        </legend> */}
-
+        </legend>
+        <Container data={data} headerChildren={editBlockHeader}>
           {data.filtering && (
             <AccordionFilter
               block={block}
@@ -589,8 +588,8 @@ const Edit = (props) => {
               />
             )}
           </SidebarPortal>
-        </fieldset>
-      </Container>
+        </Container>
+      </fieldset>
     </div>
   );
 };
