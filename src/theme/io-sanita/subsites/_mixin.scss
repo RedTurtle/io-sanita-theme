@@ -90,7 +90,8 @@
     $subsite-footer-borders: 1px solid hsla($subsite-secondary-h, 70.59%, 20%);
   }
 
-  :root {
+  body.subsite-#{$subsite-style} {
+    //override css variables
     --primary: #{$subsite-primary};
     --bs-primary: #{$subsite-primary};
     --bs-primary-rgb: #{to-rgb($subsite-primary)};
@@ -104,8 +105,7 @@
     --is-accent: #{$subsite-accent};
     --is-footer-borders: #{$subsite-footer-borders};
     --bs-link-color: #{$subsite-link-color};
-  }
-  body.subsite-#{$subsite-style} {
+
     &,
     .public-ui,
     .cms-ui {
