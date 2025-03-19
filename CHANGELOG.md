@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.8.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.7.0...2.8.0) (2025-03-19)
+
+### Features
+
+* added new listing variation attachments ([#73](https://github.com/RedTurtle/io-sanita-theme/issues/73)) ([2100d3c](https://github.com/RedTurtle/io-sanita-theme/commit/2100d3c65c2368d15fcae6c259c9effbf5600ffa))
+
+### Bug Fixes
+
+* a11y for menuItems ([c32015c](https://github.com/RedTurtle/io-sanita-theme/commit/c32015ce6df944f8228d57691411e194a852c230))
+* avoid sass deprecation warning on saturation ([ed6963b](https://github.com/RedTurtle/io-sanita-theme/commit/ed6963b80fa562b9f70695aa4db34c6a7f249d99))
+* subsites css variables ([005b669](https://github.com/RedTurtle/io-sanita-theme/commit/005b669273532f17880009a60d9051118830cd57))
+
+### Maintenance
+
+* preparing release 2.8.0 ([79c9414](https://github.com/RedTurtle/io-sanita-theme/commit/79c9414aea0403ae18a329ac7e3debaf0e657790))
+
 ## [2.7.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.6.0...2.7.0) (2025-03-12)
 
 ### Features
