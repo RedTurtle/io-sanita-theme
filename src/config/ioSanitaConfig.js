@@ -244,6 +244,21 @@ export default function applyConfig(config) {
       className="ms-1 external-link"
     />*/,
     },
+    'volto-feedback': {
+      ...config.settings['volto-feedback'],
+      feedbackEnabledNonContentRoutes: [
+        ...(config.settings['volto-feedback']
+          ?.feedbackEnabledNonContentRoutes ?? []),
+        {
+          path: AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+          feedbackTitle: null /*usa il path per sapere quale tipologia è*/,
+        },
+        {
+          path: AGGREGATION_PAGE_ARGOMENTO,
+          feedbackTitle: null /*usa il path per sapere quale tipologia è*/,
+        },
+      ],
+    },
     videoAllowExternalsDefault: false,
   };
 

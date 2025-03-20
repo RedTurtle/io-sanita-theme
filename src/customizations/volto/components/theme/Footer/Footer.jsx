@@ -32,15 +32,18 @@ const Footer = ({ intl }) => {
     contentType = null;
   }
 
-  const NoFeedbackFormFor = []; //['Plone Site', 'LRF', 'Subsite'];
-  const feedbackFormEnabled =
-    config.settings.siteProperties.enableFeedbackForm &&
-    contentType &&
-    NoFeedbackFormFor.indexOf(contentType) < 0;
+  const NoFeedbackFormFor =
+    config.settings.siteProperties.noFeedbackFormFor || [];
+  const showFeedbackForm = config.settings.siteProperties
+    ?.enableNoFeedbackFormFor
+    ? contentType &&
+      !noFeedbackFormFor.includes(contentType) &&
+      config.settings.siteProperties.enableFeedbackForm
+    : true;
 
   let content = (
     <>
-      {feedbackFormEnabled && <FeedbackForm contentType={contentType} />}
+      {showFeedbackForm && <FeedbackForm contentType={contentType} />}
 
       <SubsiteFooter />
       <footer className="it-footer" id="footer">

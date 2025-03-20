@@ -1,5 +1,5 @@
 .siteroot,
-body.public-ui.contenttype-lrf {
+body.public-ui.contenttype-lr:not(.section-search) {
   .block-editor-title,
   .documentFirstHeading,
   #briciole {
@@ -7,7 +7,7 @@ body.public-ui.contenttype-lrf {
   }
 }
 
-body.subsite.subsite-root {
+body.subsite.subsite-root:not(.section-search) {
   &,
   .public-ui {
     .documentFirstHeading,
