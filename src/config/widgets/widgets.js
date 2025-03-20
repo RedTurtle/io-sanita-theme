@@ -2,6 +2,12 @@ import React from 'react';
 import loadable from '@loadable/component';
 import { defaultIconWidgetOptions } from 'io-sanita-theme/components/manage/Widgets';
 
+const CTFieldsWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/CTFieldsWidget/CTFieldsWidget'
+  ),
+);
+
 const QuickSearchConfigurationWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
@@ -65,6 +71,7 @@ const getIoSanitaWidgets = (config) => {
       ...config.widgets.widget,
       icon: IconWidget,
       linkTo: LinkToWidget,
+      ct_fields: CTFieldsWidget,
     },
   };
 };
