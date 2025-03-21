@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.9.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.9.0...2.9.1) (2025-03-21)
+
+### Maintenance
+
+* updated volto-feedbac ([e9b6c7e](https://github.com/RedTurtle/io-sanita-theme/commit/e9b6c7e1a3601ea7962d573e1b811ec48c6cc732))
+
 ## [2.9.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.8.0...2.9.0) (2025-03-21)
 
 ### Maintenance
