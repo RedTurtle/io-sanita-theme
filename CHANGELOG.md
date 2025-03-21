@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.9.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.8.0...2.9.0) (2025-03-21)
+
+### Maintenance
+
+* updated volto-feedback ([13f4bd5](https://github.com/RedTurtle/io-sanita-theme/commit/13f4bd553c1ee2bcb837b4cb37acea95a69bb6ff))
+
 ## [2.8.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.7.0...2.8.0) (2025-03-19)
 
 ### Features
