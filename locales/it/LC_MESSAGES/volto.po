@@ -11,13 +11,52 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "A short hint that describes the expected value within this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "A short hint that describes the expected value within this block"
+msgstr "Un breve suggerimento che descrive il valore atteso all'interno di questo blocco"
+
 #. Default: "Accedi all'area personale"
 #: components/layout/Header/HeaderSlim/HeaderLogin
 msgid "Accedi all'area personale"
 msgstr "Accedi all'area personale"
 
-#. Default: "Aggiungi elemento"
+#. Default: "Accordion"
 #: components/Blocks/Accordion/Edit
+#: components/Blocks/Accordion/Schema
+msgid "Accordion"
+msgstr ""
+
+#. Default: "Accordion Title size"
+#: components/Blocks/Accordion/Schema
+msgid "Accordion Title size"
+msgstr "Dimensione del titolo dei pannelli"
+
+#. Default: "Accordion block"
+#: components/Blocks/Accordion/Edit
+#: components/Blocks/Accordion/Schema
+msgid "Accordion block"
+msgstr "Blocco Accordion"
+
+#. Default: "Accordion block settings"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Accordion block settings"
+msgstr "Opzioni"
+
+#. Default: "Accordion theme"
+#: components/Blocks/Accordion/Schema
+msgid "Accordion theme"
+msgstr "Tema"
+
+#. Default: "Accordion title"
+#: components/Blocks/Accordion/Schema
+msgid "Accordion title"
+msgstr "Titolo"
+
+#. Default: "Aggiungi elemento"
+#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 msgid "Add accordion item"
 msgstr ""
@@ -26,6 +65,23 @@ msgstr ""
 #: components/Blocks/Icons/Edit
 msgid "Add icons item"
 msgstr ""
+
+#. Default: "Allow multiple panels open at a time"
+#: components/Blocks/Accordion/Schema
+msgid "Allow multiple panels open at a time"
+msgstr "Consenti di aprire più pannelli contemporaneamente"
+
+#. Default: "Allow only the following blocks types"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Allow only the following blocks types"
+msgstr "Ammetti solo questi tipi di blocchi"
+
+#. Default: "Allowed blocks"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Allowed blocks"
+msgstr "Blocchi abilitati"
 
 #. Default: "Aspetto"
 #: config/blocks/listing/ListingOptions/carouselTemplate
@@ -106,6 +162,11 @@ msgstr "Azzera filtri"
 msgid "Clicca qui per sostituire il file"
 msgstr "Clicca qui per sostituire il file"
 
+#. Default: "Collapsed by default"
+#: components/Blocks/Accordion/Schema
+msgid "Collapsed by default"
+msgstr "Collassato di default"
+
 #. Default: "Contenuto"
 #: components/View/AggregationPage/SideMenu
 #: components/View/commons/SideMenu/SideMenu
@@ -137,6 +198,12 @@ msgstr "Dal {start}"
 msgid "DateRangeFacetFilterListEntryDalAl"
 msgstr "Dal {start} al {end}"
 
+#. Default: "Default"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Default"
+msgstr ""
+
 #. Default: "Delete col"
 #: overrideTranslations
 msgid "Delete col"
@@ -159,9 +226,15 @@ msgid "Description"
 msgstr ""
 
 #. Default: "Descrizione..."
-#: components/Blocks/Accordion/Edit
+#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Icons/Edit
 msgid "Description placeholder"
+msgstr ""
+
+#. Default: "Detailed expected value within this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Detailed expected value within this block"
 msgstr ""
 
 #. Default: "Dimensione della mappa"
@@ -169,10 +242,73 @@ msgstr ""
 msgid "Dimensione della mappa"
 msgstr ""
 
+#. Default: "Disable creation of new blocks after this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable creation of new blocks after this block"
+msgstr "Disabilita la creazione di nuovi blocchi dopo questo blocco"
+
+#. Default: "Disable drag & drop on this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable drag & drop on this block"
+msgstr "Disabilita il drag & drop in questo blocco"
+
+#. Default: "Disable editing on accordion block settings"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable editing on accordion block settings"
+msgstr "Disabilita la modifica delle impostazioni del blocco accordion"
+
+#. Default: "Disable editing on accordion titles"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable editing on accordion titles"
+msgstr "Non permettere la modifica de titoli dell'accordion"
+
+#. Default: "Disable editing on this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable editing on this block"
+msgstr ""
+
+#. Default: "Disable inner buttons"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable inner buttons"
+msgstr ""
+
+#. Default: "Disable new blocks"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Disable new blocks"
+msgstr ""
+
 #. Default: "Divide each row into separate cells"
 #: overrideTranslations
 msgid "Divide each row into separate cells"
 msgstr "Dividi ogni riga in celle separate"
+
+#. Default: "Don't allow deletion of this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Don't allow deletion of this block"
+msgstr ""
+
+#. Default: "Drag and drop"
+#: components/Blocks/Accordion/EditBlockWrapper
+msgid "Drag and drop"
+msgstr "Sposta"
+
+#. Default: "Enable filtering"
+#: components/Blocks/Accordion/Schema
+msgid "Enable filtering"
+msgstr "Abilita il filtro"
+
+#. Default: "Enter Title"
+#: components/Blocks/Accordion/AccordionEdit
+msgid "Enter Title"
+msgstr "Inserisci il titolo"
 
 #. Default: "Etichetta"
 #: config/blocks/listing/ListingOptions/utils
@@ -194,6 +330,24 @@ msgstr "La data di inizio dell'evento deve essere uguale o precedente alla data 
 msgid "Faq Folder: Nessun risultato trovato"
 msgstr ""
 
+#. Default: "Fixed layout"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Fixed layout"
+msgstr ""
+
+#. Default: "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
+msgstr ""
+
+#. Default: "Fixed position"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Fixed position"
+msgstr ""
+
 #. Default: "Fixed width table cells"
 #: overrideTranslations
 msgid "Fixed width table cells"
@@ -209,14 +363,52 @@ msgstr ""
 msgid "HTML"
 msgstr ""
 
+#. Default: "H2"
+#: components/Blocks/Accordion/Schema
+msgid "Heading 2"
+msgstr ""
+
+#. Default: "H3"
+#: components/Blocks/Accordion/Schema
+msgid "Heading 3"
+msgstr ""
+
+#. Default: "H4"
+#: components/Blocks/Accordion/Schema
+msgid "Heading 4"
+msgstr ""
+
+#. Default: "H5"
+#: components/Blocks/Accordion/Schema
+msgid "Heading 5"
+msgstr ""
+
+#. Default: "H6"
+#: components/Blocks/Accordion/Schema
+msgid "Heading 6"
+msgstr ""
+
 #. Default: "Headline"
+#: components/Blocks/Accordion/Schema
 #: components/Blocks/HTML/schema
 msgid "Headline"
 msgstr "Titolo"
 
+#. Default: "Helper text"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Helper text"
+msgstr "Testo descrittivo"
+
 #. Default: "Hero"
 #: components/Blocks/Hero/HeroSidebar
 msgid "Hero"
+msgstr ""
+
+#. Default: "Hide all block related buttons within this block"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Hide all block related buttons within this block"
 msgstr ""
 
 #. Default: "Hide headers"
@@ -275,6 +467,12 @@ msgstr "Inserisci una riga dopo"
 #: overrideTranslations
 msgid "Insert row before"
 msgstr "Inserisci una riga prima"
+
+#. Default: "Instructions"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Instructions"
+msgstr "Istruzioni"
 
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
@@ -364,6 +562,11 @@ msgstr "Pagina successiva"
 msgid "Non ci sono punti da mostrare sulla mappa"
 msgstr ""
 
+#. Default: "Non exclusive"
+#: components/Blocks/Accordion/Schema
+msgid "Non exclusive"
+msgstr "Non esclusivo"
+
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
 msgid "Nuova scheda"
@@ -373,6 +576,11 @@ msgstr "- apri in nuova scheda"
 #: components/manage/Widgets/LinkToWidget/LinkToWidget
 msgid "Open in a new tab"
 msgstr ""
+
+#. Default: "Options"
+#: components/Blocks/Accordion/Schema
+msgid "Options"
+msgstr "Opzioni"
 
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
@@ -404,10 +612,44 @@ msgstr ""
 msgid "Previous page"
 msgstr "Pagina precedente"
 
+#. Default: "Primary"
+#: components/Blocks/Accordion/Schema
+msgid "Primary"
+msgstr "Primario"
+
+#. Default: "Read-only"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Read-only"
+msgstr "Sola lettura"
+
+#. Default: "Read-only settings"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Read-only settings"
+msgstr "Impostazioni per la Sola lettura"
+
+#. Default: "Read-only titles"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Read-only titles"
+msgstr "Titoli non editabli"
+
 #. Default: "Reduce complexity"
 #: overrideTranslations
 msgid "Reduce complexity"
 msgstr "Riduci la complessità"
+
+#. Default: "Remove block"
+#: components/Blocks/Accordion/EditBlockWrapper
+msgid "Remove block"
+msgstr "Rimuovi blocco"
+
+#. Default: "Required"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Required"
+msgstr "Obbligatorio"
 
 #. Default: "Right"
 #: overrideTranslations
@@ -438,6 +680,22 @@ msgstr "Cerca una parola chiave"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlockButtonText"
 msgstr "Cerca"
+
+#. Default: "Secondary"
+#: components/Blocks/Accordion/Schema
+msgid "Secondary"
+msgstr "Secondario"
+
+#. Default: "Section friendly name"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+msgid "Section friendly name"
+msgstr ""
+
+#. Default: "Section help"
+#: components/Blocks/Accordion/Edit
+msgid "Section help"
+msgstr ""
 
 #. Default: "Seguici su"
 #: components/layout/Header/SocialHeader
@@ -494,13 +752,18 @@ msgstr "Tabella"
 msgid "Table color inverted"
 msgstr "Colore della tabella invertito"
 
+#. Default: "Tertiary"
+#: components/Blocks/Accordion/Schema
+msgid "Tertiary"
+msgstr "Terziario"
+
 #. Default: "Testo..."
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Testo placeholder"
 msgstr ""
 
 #. Default: "Text..."
-#: components/Blocks/Accordion/Block/EditBlock
+#: components/Blocks/AccordionOld/Block/EditBlock
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Text placeholder"
 msgstr ""
@@ -510,13 +773,20 @@ msgstr ""
 msgid "Thank you."
 msgstr "Grazie."
 
+#. Default: "Theme"
+#: components/Blocks/Accordion/Schema
+msgid "Theme"
+msgstr "Tema"
+
 #. Default: "Tipi di contenuto"
 #: components/View/AggregationPage/SideMenu
 msgid "Tipi di contenuto"
 msgstr ""
 
-#. Default: "Titolo..."
-#: components/Blocks/Accordion/Edit
+#. Default: "Title"
+#: components/Blocks/Accordion/LayoutSchema
+#: components/Blocks/Accordion/Schema
+#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 #: components/Blocks/Icons/Edit
@@ -524,9 +794,14 @@ msgid "Title"
 msgstr ""
 
 #. Default: "Title..."
-#: components/Blocks/Accordion/Block/EditBlock
+#: components/Blocks/AccordionOld/Block/EditBlock
 msgid "Title placeholder"
 msgstr ""
+
+#. Default: "Title size"
+#: components/Blocks/Accordion/Schema
+msgid "Title size"
+msgstr "Dimensione dei titoli"
 
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
@@ -583,6 +858,7 @@ msgid "Unauthorized"
 msgstr "Non autorizzato"
 
 #. Default: "Unknown Block {block}"
+#: components/Blocks/Accordion/EditBlockWrapper
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
@@ -611,8 +887,8 @@ msgid "Vai alla pagina"
 msgstr "Vai alla pagina"
 
 #. Default: "Vedi"
-#: components/Blocks/Accordion/Block/EditBlock
-#: components/Blocks/Accordion/Block/ViewBlock
+#: components/Blocks/AccordionOld/Block/EditBlock
+#: components/Blocks/AccordionOld/Block/ViewBlock
 #: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 #: components/Blocks/Icons/Block/ViewBlock
@@ -642,24 +918,40 @@ msgstr "Visibile solo in modalità di view"
 msgid "You are trying to access a protected resource, please {login} first."
 msgstr "Stai provando ad accedere ad una risorsa protetta, per favore {login} al sito."
 
+#. Default: "Type to filter..."
+#: components/Blocks/Accordion/AccordionFilter
+msgid "accordion-Type to filter..."
+msgstr "Inserisci un testo per filtrare.."
+
+#. Default: "Insert a keyword to filter items below.."
+#: components/Blocks/Accordion/AccordionFilter
+msgid "accordion-filter description"
+msgstr "Inserisci una parola chiave per filtrare i titoli sottostanti..."
+
 #. Default: "Mostra lo sfondo"
-#: components/Blocks/Accordion/Sidebar
+#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_bg"
 msgstr ""
 
 #. Default: "Accordion"
-#: components/Blocks/Accordion/Sidebar
+#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_block"
 msgstr ""
 
 #. Default: "Link ad altro"
-#: components/Blocks/Accordion/Sidebar
+#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_linkMore"
 msgstr ""
 
 #. Default: "Titolo per il link ad altro"
-#: components/Blocks/Accordion/Sidebar
+#: components/Blocks/Accordion/Schema
+#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_linkMoreTitle"
+msgstr ""
+
+#. Default: "Add block in position"
+#: components/Blocks/Accordion/NewBlockAddButton
+msgid "add_block_in_position"
 msgstr ""
 
 #. Default: "Tutti"
@@ -1118,7 +1410,7 @@ msgid "close-menu"
 msgstr "Chiudi menu"
 
 #. Default: "Chiudi l'accordion"
-#: components/Blocks/Accordion/Block/ViewBlock
+#: components/Blocks/AccordionOld/Block/ViewBlock
 msgid "closeAccordion"
 msgstr ""
 
@@ -1437,6 +1729,11 @@ msgstr ""
 #: components/Widgets/DateRange/DateRange
 msgid "daterange_start"
 msgstr ""
+
+#. Default: "delete"
+#: components/Blocks/Accordion/EditBlockWrapper
+msgid "delete"
+msgstr "elimina"
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils
@@ -2065,7 +2362,7 @@ msgid "numero_progressivo_cs"
 msgstr "Numero del comunicato stampa"
 
 #. Default: "Apri l'accordion"
-#: components/Blocks/Accordion/Block/ViewBlock
+#: components/Blocks/AccordionOld/Block/ViewBlock
 msgid "openAccordion"
 msgstr ""
 
@@ -2124,6 +2421,16 @@ msgstr ""
 #: components/Pagination/Pagination
 msgid "paginationLabel"
 msgstr "Selettore di pagina"
+
+#. Default: "Panel {panel_index}"
+#: components/manage/Widgets/PanelsWidget/PanelsWidget
+msgid "panel_index"
+msgstr "Pannello {panel_index}"
+
+#. Default: "Add"
+#: components/manage/Widgets/PanelsWidget/PanelsWidget
+msgid "panels_widget_Add"
+msgstr "Aggiungi"
 
 #. Default: "Main site menu"
 #: components/layout/Header/HeaderSlim/ParentSiteMenu
