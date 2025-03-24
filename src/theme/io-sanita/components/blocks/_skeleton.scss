@@ -141,11 +141,13 @@
 
     th,
     td {
-      height: 3.6em;
+      height: 2.5rem;
+      //min-width: 4rem;
+      @extend %skeleton-animation;
     }
 
     th {
-      background-color: var(--skeleton-item);
+      background-color: var(--skeleton-item) !important;
     }
 
     td {

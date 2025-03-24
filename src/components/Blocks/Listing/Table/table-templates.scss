@@ -1,8 +1,32 @@
 .table-template {
   table.table {
-    font-size: 1rem;
-  }
-  .date-column {
-    min-width: 6.5rem;
+    &,
+    p,
+    ul,
+    ul,
+    li,
+    ol {
+      font-size: 0.9rem;
+    }
+
+    .date-column {
+      min-width: 6.5rem;
+    }
+
+    th {
+      vertical-align: top;
+    }
+
+    ul.relations.widget {
+      list-style-type: none;
+      padding-left: 0;
+      li {
+        a {
+          .icon {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }

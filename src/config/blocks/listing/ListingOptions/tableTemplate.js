@@ -20,9 +20,10 @@ const messages = defineMessages({
   },
   title_description: {
     id: 'table_variaton_title_description',
-    defaultMessage: 'Titolo della colonna. Se vuoi, puoi modificarlo.',
+    defaultMessage:
+      'Titolo della colonna. Se vuoi, puoi modificare il titolo di default.',
   },
-  sortable: { id: 'table_variaton_sortable', defaultMessage: 'Ordinabile' },
+  //sortable: { id: 'table_variaton_sortable', defaultMessage: 'Ordinabile' },
 });
 
 const ColumnSchema = ({ intl }) => ({
@@ -50,10 +51,10 @@ const ColumnSchema = ({ intl }) => ({
       description: intl.formatMessage(messages.title_description),
       widget: 'ct_title_column',
     },
-    sortable: {
-      title: intl.formatMessage(messages.sortable),
-      type: 'boolean',
-    },
+    // sortable: {
+    //   title: intl.formatMessage(messages.sortable),
+    //   type: 'boolean',
+    // },
   },
 });
 
@@ -76,7 +77,7 @@ export const addTableTemplateOptions = (
       schemaExtender: (schema, data, intl) => {
         const mutated = cloneDeep(schema);
         if (data.ct) {
-          mutated.fieldsets[0].fields.push('field', 'title', 'sortable');
+          mutated.fieldsets[0].fields.push('field', 'title' /*, 'sortable'*/);
           mutated.properties.field.ct = data.ct;
         }
         return mutated;

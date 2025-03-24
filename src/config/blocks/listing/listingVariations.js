@@ -20,6 +20,7 @@ import {
   SimpleListTemplateSkeleton,
   SmallBlockLinksTemplate,
   SmallBlockLinksTemplateSkeleton,
+  TableTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 import CarouselTemplate from 'io-sanita-theme/components/Blocks/Listing/Carousel/CarouselTemplate.jsx';
@@ -240,7 +241,7 @@ const iosanitaListingVariations = [
     isDefault: false,
     title: 'Tabella',
     template: TableTemplate,
-    //skeleton: TableTemplateSkeleton,
+    skeleton: TableTemplateSkeleton,
     schemaEnhancer: ({ schema, formData, intl }) => {
       let pos = addDefaultOptions(schema, formData, intl);
       addTableTemplateOptions(schema, formData, intl, pos);

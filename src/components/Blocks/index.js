@@ -108,6 +108,7 @@ export InEvidenceTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listin
 export MapTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/MapTemplateSkeleton';
 export SimpleListTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SimpleListTemplateSkeleton';
 export SmallBlockLinksTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/SmallBlockLinksTemplateSkeleton';
+export TableTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/Skeletons/TableTemplateSkeleton';
 
 /*Rss block (as listing)*/
 export CardWithoutImageRssTemplate from 'io-sanita-theme/components/Blocks/Rss/CardWithoutImageRssTemplate';

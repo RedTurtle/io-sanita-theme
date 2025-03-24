@@ -19,6 +19,7 @@ import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
 import config from '@plone/volto/registry';
 import './table-templates.scss';
+
 const messages = defineMessages({
   title: { id: 'tabletemplate_column_title', defaultMessage: 'Titolo' },
 });
@@ -58,7 +59,7 @@ const TableTemplate = (props) => {
   return (
     <div className="table-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
-        <Table size="sm" responsive>
+        <Table size="sm" responsive bordered>
           <thead className="table-light">
             <tr>
               {render_columns.map((c, index) => {
