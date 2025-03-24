@@ -47,6 +47,12 @@
 
 - Migliorato il blocco accordion. Ora sono disponibili diverse opzioni per personalizzarne lo stile e il funzionamento, ed è possibile inserire nel corpo dell'accordion qualsiasi tipo di blocco gia aggiungibile nel resto del sito.
 
+## Versione 2.8.0 (19/03/2025)
+
+### Novità
+
+- Aggiunta variazione del blocco listing Allegati
+
 ## Versione 2.6.0 (11/03/2025)
 
 ### Novità

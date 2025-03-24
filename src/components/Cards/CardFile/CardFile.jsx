@@ -56,6 +56,7 @@ export const CardFile = ({
   file = null,
   titleDataElement,
   showModified = false,
+  showPDFPreview = false,
 }) => {
   const intl = useIntl();
   let _item = null;
@@ -82,10 +83,13 @@ export const CardFile = ({
         if (item.file) {
           _item = item.file;
         }
-        if (item['@id'].indexOf('/@@download/') < 0) {
+        if (item['@id'].indexOf('/@@download/') < 0 && !showPDFPreview) {
           _item['@id'] = `${item['@id']}/@@download/file`;
         } else {
           _item['@id'] = item['@id'];
+        }
+        if (showPDFPreview) {
+          _item['@id'] = `${item['@id']}/@@display-file/file`;
         }
         break;
       case 'Image':
@@ -135,12 +139,12 @@ export const CardFile = ({
       <CardBody>
         <div className={cx('card-file-content', _item['@type'])}>
           <CardTitle tag={titleTag} className="d-flex mb-0 align-items-center">
-            {!file ? (
+            {!file || showPDFPreview ? (
               <UniversalLink
                 item={!isEditMode ? _item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link flex-grow-1 pe-4"
-                target={_item['@type'] === 'Link' ? '_blank' : '_self'}
+                target={_item['@type'] === 'Link' || showPDFPreview ? '_blank' : '_self'}
                 rel={_item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
                 data-element={titleDataElement}
               >
