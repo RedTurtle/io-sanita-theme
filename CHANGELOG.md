@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.10.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.9.1...2.10.0) (2025-03-24)
+
+### Features
+
+* New accordion block ([#74](https://github.com/RedTurtle/io-sanita-theme/issues/74)) ([8230c76](https://github.com/RedTurtle/io-sanita-theme/commit/8230c767046a44abaa2d478011eee46c0afdbdde))
+
+### Maintenance
+
+* updated locales ([f9cabc4](https://github.com/RedTurtle/io-sanita-theme/commit/f9cabc479ee6d1dddabc8ad71a014a69c85c1a02))
+
 ## [2.9.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.9.0...2.9.1) (2025-03-21)
 
 ### Maintenance
