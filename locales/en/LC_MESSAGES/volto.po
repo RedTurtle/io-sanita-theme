@@ -24,7 +24,6 @@ msgstr "Login to your personal area"
 
 #. Default: "Accordion"
 #: components/Blocks/Accordion/Edit
-#: components/Blocks/Accordion/Schema
 msgid "Accordion"
 msgstr ""
 
@@ -56,7 +55,6 @@ msgid "Accordion title"
 msgstr ""
 
 #. Default: "Aggiungi elemento"
-#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 msgid "Add accordion item"
 msgstr ""
@@ -226,7 +224,7 @@ msgid "Description"
 msgstr ""
 
 #. Default: "Descrizione..."
-#: components/Blocks/AccordionOld/Edit
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Icons/Edit
 msgid "Description placeholder"
 msgstr ""
@@ -546,6 +544,7 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #. Default: "Mostra lo sfondo del blocco"
+#: components/Blocks/Accordion/Schema
 #: components/Blocks/Hero/HeroSidebar
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
@@ -586,6 +585,16 @@ msgstr ""
 #: components/Pagination/PaginationItem
 msgid "Page"
 msgstr "Page"
+
+#. Default: "Pannello"
+#: components/Blocks/Accordion/Schema
+msgid "Panel"
+msgstr ""
+
+#. Default: "Pannelli"
+#: components/Blocks/Accordion/Schema
+msgid "Panels"
+msgstr ""
 
 #. Default: "Filtro"
 #: config/blocks/listing/ListingOptions/utils
@@ -762,8 +771,7 @@ msgstr ""
 msgid "Testo placeholder"
 msgstr ""
 
-#. Default: "Text..."
-#: components/Blocks/AccordionOld/Block/EditBlock
+#. Default: "Testo..."
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Text placeholder"
 msgstr ""
@@ -783,19 +791,14 @@ msgstr ""
 msgid "Tipi di contenuto"
 msgstr "Content types"
 
-#. Default: "Title"
+#. Default: "Titolo..."
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
-#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 #: components/Blocks/Icons/Edit
 msgid "Title"
-msgstr ""
-
-#. Default: "Title..."
-#: components/Blocks/AccordionOld/Block/EditBlock
-msgid "Title placeholder"
 msgstr ""
 
 #. Default: "Title size"
@@ -887,8 +890,8 @@ msgid "Vai alla pagina"
 msgstr "Go to page"
 
 #. Default: "Vedi"
-#: components/Blocks/AccordionOld/Block/EditBlock
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/AccordionEdit
+#: components/Blocks/Accordion/View
 #: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 #: components/Blocks/Icons/Block/ViewBlock
@@ -923,29 +926,13 @@ msgstr "You are trying to access a protected resource, please {login} first."
 msgid "accordion-Type to filter..."
 msgstr ""
 
-#. Default: "Insert a keyword to filter items below.."
+#. Default: "Insert a keyword to filter below titles.."
 #: components/Blocks/Accordion/AccordionFilter
 msgid "accordion-filter description"
 msgstr ""
 
-#. Default: "Mostra lo sfondo"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_bg"
-msgstr ""
-
-#. Default: "Accordion"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_block"
-msgstr ""
-
-#. Default: "Link ad altro"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_linkMore"
-msgstr ""
-
 #. Default: "Titolo per il link ad altro"
 #: components/Blocks/Accordion/Schema
-#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_linkMoreTitle"
 msgstr ""
 
@@ -1410,7 +1397,7 @@ msgid "close-menu"
 msgstr "Close menu"
 
 #. Default: "Chiudi l'accordion"
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/View
 msgid "closeAccordion"
 msgstr "Close accordion"
 
@@ -2362,7 +2349,7 @@ msgid "numero_progressivo_cs"
 msgstr "Press release number"
 
 #. Default: "Apri l'accordion"
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/View
 msgid "openAccordion"
 msgstr "Open accordion"
 

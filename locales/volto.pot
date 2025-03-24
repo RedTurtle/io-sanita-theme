@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-03-18T12:21:52.571Z\n"
+"POT-Creation-Date: 2025-03-24T09:51:21.877Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -26,7 +26,6 @@ msgstr ""
 
 #. Default: "Accordion"
 #: components/Blocks/Accordion/Edit
-#: components/Blocks/Accordion/Schema
 msgid "Accordion"
 msgstr ""
 
@@ -58,7 +57,6 @@ msgid "Accordion title"
 msgstr ""
 
 #. Default: "Aggiungi elemento"
-#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 msgid "Add accordion item"
 msgstr ""
@@ -228,7 +226,7 @@ msgid "Description"
 msgstr ""
 
 #. Default: "Descrizione..."
-#: components/Blocks/AccordionOld/Edit
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Icons/Edit
 msgid "Description placeholder"
 msgstr ""
@@ -548,6 +546,7 @@ msgid "Mostra i filtri per percorso"
 msgstr ""
 
 #. Default: "Mostra lo sfondo del blocco"
+#: components/Blocks/Accordion/Schema
 #: components/Blocks/Hero/HeroSidebar
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
@@ -587,6 +586,16 @@ msgstr ""
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
 msgid "Page"
+msgstr ""
+
+#. Default: "Pannello"
+#: components/Blocks/Accordion/Schema
+msgid "Panel"
+msgstr ""
+
+#. Default: "Pannelli"
+#: components/Blocks/Accordion/Schema
+msgid "Panels"
 msgstr ""
 
 #. Default: "Filtro"
@@ -764,8 +773,7 @@ msgstr ""
 msgid "Testo placeholder"
 msgstr ""
 
-#. Default: "Text..."
-#: components/Blocks/AccordionOld/Block/EditBlock
+#. Default: "Testo..."
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Text placeholder"
 msgstr ""
@@ -785,19 +793,14 @@ msgstr ""
 msgid "Tipi di contenuto"
 msgstr ""
 
-#. Default: "Title"
+#. Default: "Titolo..."
+#: components/Blocks/Accordion/Edit
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
-#: components/Blocks/AccordionOld/Edit
 #: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 #: components/Blocks/Icons/Edit
 msgid "Title"
-msgstr ""
-
-#. Default: "Title..."
-#: components/Blocks/AccordionOld/Block/EditBlock
-msgid "Title placeholder"
 msgstr ""
 
 #. Default: "Title size"
@@ -889,8 +892,8 @@ msgid "Vai alla pagina"
 msgstr ""
 
 #. Default: "Vedi"
-#: components/Blocks/AccordionOld/Block/EditBlock
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/AccordionEdit
+#: components/Blocks/Accordion/View
 #: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 #: components/Blocks/Icons/Block/ViewBlock
@@ -925,29 +928,13 @@ msgstr ""
 msgid "accordion-Type to filter..."
 msgstr ""
 
-#. Default: "Insert a keyword to filter items below.."
+#. Default: "Insert a keyword to filter below titles.."
 #: components/Blocks/Accordion/AccordionFilter
 msgid "accordion-filter description"
 msgstr ""
 
-#. Default: "Mostra lo sfondo"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_bg"
-msgstr ""
-
-#. Default: "Accordion"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_block"
-msgstr ""
-
-#. Default: "Link ad altro"
-#: components/Blocks/AccordionOld/Sidebar
-msgid "accordion_linkMore"
-msgstr ""
-
 #. Default: "Titolo per il link ad altro"
 #: components/Blocks/Accordion/Schema
-#: components/Blocks/AccordionOld/Sidebar
 msgid "accordion_linkMoreTitle"
 msgstr ""
 
@@ -1412,7 +1399,7 @@ msgid "close-menu"
 msgstr ""
 
 #. Default: "Chiudi l'accordion"
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/View
 msgid "closeAccordion"
 msgstr ""
 
@@ -2364,7 +2351,7 @@ msgid "numero_progressivo_cs"
 msgstr ""
 
 #. Default: "Apri l'accordion"
-#: components/Blocks/AccordionOld/Block/ViewBlock
+#: components/Blocks/Accordion/View
 msgid "openAccordion"
 msgstr ""
 
