@@ -13,11 +13,11 @@ import {
   customSelectStyles,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
 
-const CTFieldsWidget = ({ ct, reactSelect, ...props }) => {
+const CTFieldsWidget = ({ ct, reactSelect, value, ...props }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const Select = reactSelect.default;
-  const exclude_fieldsets = ['ownership', 'seo'];
+  const exclude_fieldsets = ['ownership', 'seo', 'settings'];
   const ct_schema = useSelector(
     (state) => state.ct_schema?.subrequests?.[ct]?.result,
   );
@@ -48,7 +48,7 @@ const CTFieldsWidget = ({ ct, reactSelect, ...props }) => {
     groups_choices.reduce((acc, fieldset) => {
       return [...acc, ...fieldset.options];
     }, []),
-    props.value,
+    value,
     intl,
   );
 

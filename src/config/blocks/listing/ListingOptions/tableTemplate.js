@@ -14,14 +14,13 @@ const messages = defineMessages({
   },
   ct: { id: 'table_variaton_ct', defaultMessage: 'Tipo di contenuto' },
   field: { id: 'table_variaton_field', defaultMessage: 'Campo' },
-  alternative_title: {
-    id: 'table_variaton_alternative_title',
-    defaultMessage: 'Titolo alternativo',
+  title: {
+    id: 'table_variaton_title',
+    defaultMessage: 'Titolo',
   },
-  alternative_title_description: {
-    id: 'table_variaton_alternative_title_description',
-    defaultMessage:
-      'Titolo alternativo per la colonna, che verrà mostrato al posto del titolo di default.',
+  title_description: {
+    id: 'table_variaton_title_description',
+    defaultMessage: 'Titolo della colonna. Se vuoi, puoi modificarlo.',
   },
   sortable: { id: 'table_variaton_sortable', defaultMessage: 'Ordinabile' },
 });
@@ -32,7 +31,7 @@ const ColumnSchema = ({ intl }) => ({
     {
       id: 'default',
       title: 'Default',
-      fields: ['ct' /*'field', 'alternative_title', 'sortable'*/], //questi campi commentati vengono aggiunti solo quando è valorizzato il campo ct
+      fields: ['ct' /*'field', 'title', 'sortable'*/], //questi campi commentati vengono aggiunti solo quando è valorizzato il campo ct
     },
   ],
   properties: {
@@ -46,9 +45,10 @@ const ColumnSchema = ({ intl }) => ({
       title: intl.formatMessage(messages.field),
       widget: 'ct_fields',
     },
-    alternative_title: {
-      title: intl.formatMessage(messages.alternative_title),
-      description: intl.formatMessage(messages.alternative_title_description),
+    title: {
+      title: intl.formatMessage(messages.title),
+      description: intl.formatMessage(messages.title_description),
+      widget: 'ct_title_column',
     },
     sortable: {
       title: intl.formatMessage(messages.sortable),
@@ -76,11 +76,7 @@ export const addTableTemplateOptions = (
       schemaExtender: (schema, data, intl) => {
         const mutated = cloneDeep(schema);
         if (data.ct) {
-          mutated.fieldsets[0].fields.push(
-            'field',
-            'alternative_title',
-            'sortable',
-          );
+          mutated.fieldsets[0].fields.push('field', 'title', 'sortable');
           mutated.properties.field.ct = data.ct;
         }
         return mutated;
