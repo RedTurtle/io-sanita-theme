@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione 2.11.0 (24/03/2025)
 
 ### Novità
 
