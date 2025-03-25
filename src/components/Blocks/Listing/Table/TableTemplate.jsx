@@ -42,9 +42,16 @@ const TableTemplate = (props) => {
   const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
 
   useEffect(() => {
-    (columns ?? []).forEach((c) => {
-      if (!ct_schemas[c.ct]) {
-        dispatch(getCTSchema(c.ct));
+    const cts = columns.reduce((acc, c) => {
+      if (acc.indexOf(c.ct) < 0) {
+        acc.push(c.ct);
+      }
+      return acc;
+    }, []);
+
+    cts.forEach((c) => {
+      if (!ct_schemas[c]) {
+        dispatch(getCTSchema(c));
       }
     });
   }, [columns]);
@@ -100,7 +107,9 @@ const TableTemplate = (props) => {
 
                     let Widget = views?.getWidget(field);
 
-                    let widget_props = {};
+                    let widget_props = {
+                      behavior: field_properties.behavior,
+                    };
                     switch (c.field) {
                       case 'apertura_bando':
                       case 'chiusura_procedimento_bando':
@@ -116,6 +125,7 @@ const TableTemplate = (props) => {
                       widget_props.vocabulary =
                         field_properties.vocabulary['@id'];
                     }
+
                     render_value = (
                       <Widget value={item[c.field]} {...widget_props} />
                     );

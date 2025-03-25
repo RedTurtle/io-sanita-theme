@@ -49,7 +49,11 @@ const BlocksViewWidget = loadable(() =>
     /* webpackChunkName: "ISWidgetView" */ 'io-sanita-theme/components/View/Widgets/BlocksViewWidget'
   ),
 );
-
+const SelectViewWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISWidgetView" */ 'io-sanita-theme/components/View/Widgets/SelectViewWidget'
+  ),
+);
 const PanelsWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/PanelsWidget/PanelsWidget'
@@ -99,7 +103,12 @@ const getIoSanitaWidgets = (config) => {
     views: {
       ...config.widgets.views,
       id: { ...config.widgets.views.id, parliamo_di: ParliamoDiWidgetView },
-      widget: { ...config.widgets.views.widget, blocks: BlocksViewWidget },
+      widget: {
+        ...config.widgets.views.widget,
+        blocks: BlocksViewWidget,
+        choices: SelectViewWidget,
+      },
+      choices: SelectViewWidget,
     },
     type: {
       ...config.widgets.type,
