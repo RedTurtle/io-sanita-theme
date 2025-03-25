@@ -2,6 +2,16 @@ import React from 'react';
 import loadable from '@loadable/component';
 import { defaultIconWidgetOptions } from 'io-sanita-theme/components/manage/Widgets';
 
+const CTFieldsWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/CTFieldsWidget/CTFieldsWidget'
+  ),
+);
+const CTTitleColumnWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/CTTitleColumnWidget/CTTitleColumnWidget'
+  ),
+);
 const QuickSearchConfigurationWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
@@ -28,11 +38,24 @@ const SubsiteSocialLinksWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget'
   ),
 );
+
+const ParliamoDiWidgetView = loadable(() =>
+  import(
+    /* webpackChunkName: "ISWidgetView" */ 'io-sanita-theme/components/View/Widgets/ParliamoDiWidgetView'
+  ),
+);
+const BlocksViewWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISWidgetView" */ 'io-sanita-theme/components/View/Widgets/BlocksViewWidget'
+  ),
+);
+
 const PanelsWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/PanelsWidget/PanelsWidget'
   ),
 );
+
 export const LinkToWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/LinkToWidget/LinkToWidget'
@@ -70,6 +93,13 @@ const getIoSanitaWidgets = (config) => {
       ...config.widgets.widget,
       icon: IconWidget,
       linkTo: LinkToWidget,
+      ct_fields: CTFieldsWidget,
+      ct_title_column: CTTitleColumnWidget,
+    },
+    views: {
+      ...config.widgets.views,
+      id: { ...config.widgets.views.id, parliamo_di: ParliamoDiWidgetView },
+      widget: { ...config.widgets.views.widget, blocks: BlocksViewWidget },
     },
     type: {
       ...config.widgets.type,

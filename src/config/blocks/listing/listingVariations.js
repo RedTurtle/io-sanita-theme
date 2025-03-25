@@ -1,4 +1,6 @@
 import {
+  AttachmentCardTemplate,
+  AttachmentCardTemplateSkeleton,
   BandiTemplate,
   BandiTemplateSkeleton,
   CardWithImageTemplate,
@@ -18,8 +20,7 @@ import {
   SimpleListTemplateSkeleton,
   SmallBlockLinksTemplate,
   SmallBlockLinksTemplateSkeleton,
-  AttachmentCardTemplate,
-  AttachmentCardTemplateSkeleton
+  TableTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
 
 import CarouselTemplate from 'io-sanita-theme/components/Blocks/Listing/Carousel/CarouselTemplate.jsx';
@@ -28,7 +29,7 @@ import SlideItemDefault from 'io-sanita-theme/components/Blocks/Listing/Carousel
 import SlideGalleryItem from 'io-sanita-theme/components/Blocks/Listing/Carousel/SlideAppearance/SlideGalleryItem';
 import SlideItemSimpleCard from 'io-sanita-theme/components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault';
 import SlideItemImageCard from 'io-sanita-theme/components/Blocks/Listing/CardWithImage/Card/CardWithImageDefault';
-
+import TableTemplate from 'io-sanita-theme/components/Blocks/Listing/Table/TableTemplate';
 // import RibbonCardTemplate from 'io-sanita-theme/components/Blocks/Listing/RibbonCardTemplate';
 // import RibbonCardTemplateSkeleton from 'io-sanita-theme/components/Blocks/Listing/TemplatesSkeletons/RibbonCardTemplateSkeleton';
 
@@ -56,6 +57,7 @@ import {
   addSmallBlockLinksTemplateOptions,
   addCarouselTemplateOptions,
   addAttachmentCardTemplateOptions,
+  addTableTemplateOptions,
   // addRibbonCardTemplateOptions,
   // addBandiInEvidenceTemplateOptions,
 
@@ -233,6 +235,21 @@ const iosanitaListingVariations = [
       image_card: SlideItemImageCard,
       gallery_item: SlideGalleryItem,
     },
+  },
+  {
+    id: 'table',
+    isDefault: false,
+    title: 'Tabella',
+    template: TableTemplate,
+    skeleton: TableTemplateSkeleton,
+    schemaEnhancer: ({ schema, formData, intl }) => {
+      let pos = addDefaultOptions(schema, formData, intl);
+      addTableTemplateOptions(schema, formData, intl, pos);
+      addLinkMoreOptions(schema, formData, intl);
+      return schema;
+    },
+    fullobjects: true,
+    cloneData: cloneBlock,
   },
   // {
   //   id: 'ribbonCardTemplate',
