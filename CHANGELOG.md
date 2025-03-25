@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.11.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.10.0...2.11.0) (2025-03-25)
+
+### Features
+
+* Table listing template ([#75](https://github.com/RedTurtle/io-sanita-theme/issues/75)) ([9f478e2](https://github.com/RedTurtle/io-sanita-theme/commit/9f478e248761f6becf40660da4b66bf64b3796e3))
+
 ## [2.10.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.9.1...2.10.0) (2025-03-24)
 
 ### Features
