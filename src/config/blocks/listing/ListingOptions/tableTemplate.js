@@ -8,6 +8,10 @@ const messages = defineMessages({
     id: 'table_variation_columns',
     defaultMessage: 'Colonne della tabella',
   },
+  alternate_rows: {
+    id: 'table_variation_alternate_rows',
+    defaultMessage: 'Colore delle righe alternato',
+  },
   column: {
     id: 'table_variaton_column',
     defaultMessage: 'Colonna',
@@ -65,6 +69,16 @@ export const addTableTemplateOptions = (
   position = 1,
 ) => {
   let pos = position;
+
+  addSchemaField(
+    schema,
+    'alternate_rows',
+    intl.formatMessage(messages.alternate_rows),
+    null,
+    { type: 'boolean', default: true },
+    pos,
+  );
+  pos++;
 
   addSchemaField(
     schema,

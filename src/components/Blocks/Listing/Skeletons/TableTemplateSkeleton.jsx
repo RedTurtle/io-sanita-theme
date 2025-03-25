@@ -28,7 +28,7 @@ const SimpleListTemplateSkeleton = (props) => {
               </tr>
             </thead>
             <tbody>
-              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
+              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
                 <tr key={i}>
                   {[0, 1, 2, 3, 4].map((i) => (
                     <td scope="col" key={i}></td>

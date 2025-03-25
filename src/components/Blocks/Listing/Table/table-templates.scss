@@ -1,5 +1,12 @@
 .table-template {
   table.table {
+    th {
+      vertical-align: top;
+    }
+    td {
+      background-color: #fff;
+    }
+
     &,
     p,
     ul,
@@ -13,10 +20,6 @@
       min-width: 6.5rem;
     }
 
-    th {
-      vertical-align: top;
-    }
-
     ul.relations.widget {
       list-style-type: none;
       padding-left: 0;
@@ -27,6 +30,12 @@
           }
         }
       }
+    }
+  }
+
+  + .pagination-wrapper {
+    .mt-5.pagination-wrapper {
+      margin-top: 0 !important;
     }
   }
 }

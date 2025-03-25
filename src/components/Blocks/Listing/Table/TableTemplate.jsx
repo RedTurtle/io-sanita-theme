@@ -27,6 +27,7 @@ const messages = defineMessages({
 const TableTemplate = (props) => {
   const {
     columns,
+    alternate_rows,
     items,
     isEditMode,
     linkAlign,
@@ -59,7 +60,7 @@ const TableTemplate = (props) => {
   return (
     <div className="table-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
-        <Table size="sm" responsive bordered>
+        <Table size="sm" responsive bordered striped={alternate_rows ?? false}>
           <thead className="table-light">
             <tr>
               {render_columns.map((c, index) => {
