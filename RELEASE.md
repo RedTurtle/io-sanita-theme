@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.10.0 (24/03/2025)
+
+### Novità
+
+- Migliorato il blocco accordion. Ora sono disponibili diverse opzioni per personalizzarne lo stile e il funzionamento, ed è possibile inserire nel corpo dell'accordion qualsiasi tipo di blocco gia aggiungibile nel resto del sito.
+
 ## Versione 2.8.0 (19/03/2025)
 
 ### Novità

@@ -52,7 +52,10 @@ import {
   CardWithImageRssTemplate,
   CardWithImageRssTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
-
+import {
+  AccordionLayoutSchema,
+  defaultAllowedBlocks,
+} from 'io-sanita-theme/components/Blocks/Accordion/Schema';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
 import { cloneBlock } from 'io-sanita-theme/helpers';
@@ -106,13 +109,15 @@ export const applyIoSanitaBlocksConfig = (config) => {
       edit: AccordionEdit,
       restricted: false,
       mostUsed: false,
-      cloneData: cloneBlock,
+      blockHasOwnFocusManagement: true,
+      sidebarTab: 1,
+      schema: AccordionLayoutSchema(config),
+      schemaEnhancer: null,
+      defaults: {},
       security: {
         addPermission: [],
         view: [],
       },
-      sidebarTab: 1,
-      blockHasOwnFocusManagement: true,
     },
     alert: {
       id: 'alert',
@@ -387,7 +392,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
   config.settings.styleClassNameExtenders.push(
     ({ block, content, data, classNames }) => {
       let styles = [];
-      const no_bg_for = ['hero'];
+      const no_bg_for = ['hero', 'accordion'];
 
       if (data.show_block_bg && no_bg_for.indexOf(data['@type']) < 0) {
         if (classNames.indexOf('bg-primary-lightest') < 0) {
