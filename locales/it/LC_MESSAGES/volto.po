@@ -1075,7 +1075,7 @@ msgstr ""
 #. Default: "ascending"
 #: overrideTranslations
 msgid "ascendingTableSort"
-msgstr "ordina dall'alto"
+msgstr "ordine crescente"
 
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
@@ -1730,7 +1730,7 @@ msgstr "elimina"
 #. Default: "descending"
 #: overrideTranslations
 msgid "descendingTableSort"
-msgstr "ordina dal basso"
+msgstr "ordine discendente"
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils

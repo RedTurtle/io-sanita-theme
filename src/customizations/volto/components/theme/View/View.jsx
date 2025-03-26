@@ -33,8 +33,8 @@ import config from '@plone/volto/registry';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const sentryLibraries = {
-  Sentry: loadable.lib(
-    () => import(/* webpackChunkName: "s_entry-browser" */ '@sentry/browser'),
+  Sentry: loadable.lib(() =>
+    import(/* webpackChunkName: "s_entry-browser" */ '@sentry/browser'),
   ),
 };
 
@@ -287,7 +287,7 @@ class View extends Component {
       this.getViewByLayout() || this.getViewByType() || this.getViewDefault();
 
     return (
-      <div id="view">
+      <div id="view" tabIndex="-1">
         <ContentMetadataTags content={this.props.content} />
         <AlternateHrefLangs content={this.props.content} />
 
