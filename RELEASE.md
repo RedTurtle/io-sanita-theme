@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.11.0 (25/03/2025)
+
+### Novità
+
+- Aggiunto il template 'tabella' del blocco elenco in cui è possibile selezionare quali colonne dei content-type mostrare
+
 ## Versione 2.10.0 (24/03/2025)
 
 ### Novità

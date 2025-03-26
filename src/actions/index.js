@@ -19,6 +19,7 @@ import {
   getTassonomieSearch,
   GET_TASSONOMIE_SEARCH,
 } from './search';
+import { getCTSchema, GET_CT_SCHEMA } from './ctSchema';
 
 import { getFarmacia, GET_FARMACIA } from './getFarmacia';
 import {
@@ -57,4 +58,6 @@ export {
   RESET_QUERYSTRING_RESULTS,
   getSearchBandiFilters,
   GET_SEARCH_BANDI_FILTERS,
+  getCTSchema,
+  GET_CT_SCHEMA,
 };

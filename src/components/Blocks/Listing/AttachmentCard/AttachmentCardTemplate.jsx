@@ -7,8 +7,6 @@ import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
 import { CardFile } from 'io-sanita-theme/components';
 
-import AttachmentCardTemplateSkeleton from '../Skeletons/AttachmentCardTemplateSkeleton';
-
 const AttachmentCardTemplate = (props) => {
   const {
     items,

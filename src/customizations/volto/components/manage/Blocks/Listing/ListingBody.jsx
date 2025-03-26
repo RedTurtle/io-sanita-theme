@@ -85,7 +85,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
               )}
             </Col>
           )}
-          {path_filters_buttons && (
+          {/* {path_filters_buttons && (
             <Col md={6}>
               <PathFilters
                 {...data}
@@ -93,7 +93,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
                 addFilters={addFilters}
               />
             </Col>
-          )}
+          )} */}
         </Row>
       </ListingContainer>
     )
@@ -115,8 +115,8 @@ const ListingBody = withQuerystringResults((props) => {
     hasLoaded,
     id,
     block,
-    additionalFilters,
-    addFilters,
+    // additionalFilters,
+    // addFilters,
   } = props;
 
   let ListingBodyTemplate;
@@ -173,8 +173,8 @@ const ListingBody = withQuerystringResults((props) => {
               listingItems={listingItems}
               data={data}
               isEditMode={isEditMode}
-              additionalFilters={additionalFilters}
-              addFilters={addFilters}
+              // additionalFilters={additionalFilters}
+              // addFilters={addFilters}
             />
             <div
               ref={listingRef}

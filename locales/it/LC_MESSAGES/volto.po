@@ -3957,6 +3957,46 @@ msgstr ""
 msgid "successivo"
 msgstr ""
 
+#. Default: "Colore delle righe alternato"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variation_alternate_rows"
+msgstr ""
+
+#. Default: "Colonne della tabella"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variation_columns"
+msgstr ""
+
+#. Default: "Colonna"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_column"
+msgstr ""
+
+#. Default: "Tipo di contenuto"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_ct"
+msgstr ""
+
+#. Default: "Campo"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_field"
+msgstr ""
+
+#. Default: "Titolo"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_title"
+msgstr ""
+
+#. Default: "Titolo della colonna. Se vuoi, puoi modificare il titolo di default."
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_title_description"
+msgstr ""
+
+#. Default: "Titolo"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_column_title"
+msgstr ""
+
 #. Default: "Telefono"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "telefono"

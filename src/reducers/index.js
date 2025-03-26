@@ -19,6 +19,7 @@ import { searchBandiFiltersReducer } from './searchBandiFiltersReducer';
 // import { breadcrumbs } from './breadcrumbs';
 import { iosanita_settings } from './settings';
 import { farmaciaReducer } from './farmaciaReducer';
+import { ctSchema } from './ctSchema';
 
 /**
  * Root reducer.
@@ -41,6 +42,7 @@ const reducers = {
   // breadcrumbs: breadcrumbs,
   iosanita_settings,
   farmacia: farmaciaReducer,
+  ct_schema: ctSchema,
 };
 
 export default reducers;
