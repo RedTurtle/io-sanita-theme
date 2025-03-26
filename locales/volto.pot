@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-03-24T09:51:21.877Z\n"
+"POT-Creation-Date: 2025-03-26T11:51:30.855Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1074,6 +1074,11 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
+#. Default: "ascending"
+#: overrideTranslations
+msgid "ascendingTableSort"
+msgstr ""
+
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -1722,6 +1727,11 @@ msgstr ""
 #. Default: "delete"
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "delete"
+msgstr ""
+
+#. Default: "descending"
+#: overrideTranslations
+msgid "descendingTableSort"
 msgstr ""
 
 #. Default: "Testo per il link al dettaglio"

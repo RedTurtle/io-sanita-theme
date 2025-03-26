@@ -5,8 +5,9 @@
  * - aggiunto aria-sort per indicare la direzione dell’ordinamento (ascending o descending). Se la colonna non è ordinata, usa aria-sort="none".
  * - role="columnheader": Aggiunge il ruolo di intestazione di colonna.
  * - Accessibilità tastiera (onKeyDown) per permette l’ordinamento con Enter o Spazio.
- * tabIndex={0} per rende la cella interattiva tramite tastiera.
+ * - tabIndex={0} per rende la cella interattiva tramite tastiera.
  */
+
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'semantic-ui-react';
@@ -15,6 +16,18 @@ import {
   serializeNodesToText,
 } from '@plone/volto-slate/editor/render';
 import { Node } from 'slate';
+import { useIntl, defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  ascendingTableSort: {
+    id: 'ascendingTableSort',
+    defaultMessage: 'ascending',
+  },
+  descendingTableSort: {
+    id: 'descendingTableSort',
+    defaultMessage: 'descending',
+  },
+});
 
 /**
  * Slate Table block's View class.
@@ -26,6 +39,8 @@ const View = ({ data }) => {
     column: null,
     direction: null,
   });
+
+  const intl = useIntl();
 
   const { table } = data;
   const {
@@ -77,10 +92,11 @@ const View = ({ data }) => {
       column: index,
       direction:
         prevState.column !== index
-          ? 'ascending'
-          : prevState.direction === 'ascending'
-            ? 'descending'
-            : 'ascending',
+          ? intl.formatMessage(messages.ascendingTableSort)
+          : prevState.direction ===
+              intl.formatMessage(messages.ascendingTableSort)
+            ? intl.formatMessage(messages.descendingTableSort)
+            : intl.formatMessage(messages.ascendingTableSort),
     }));
   };
 

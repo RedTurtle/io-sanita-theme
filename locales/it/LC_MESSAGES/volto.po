@@ -1072,6 +1072,11 @@ msgstr ""
 msgid "appStoreLink"
 msgstr ""
 
+#. Default: "ascending"
+#: overrideTranslations
+msgid "ascendingTableSort"
+msgstr "ordina dall'alto"
+
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -1721,6 +1726,11 @@ msgstr ""
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "delete"
 msgstr "elimina"
+
+#. Default: "descending"
+#: overrideTranslations
+msgid "descendingTableSort"
+msgstr "ordina dal basso"
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils

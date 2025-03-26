@@ -170,4 +170,12 @@ defineMessages({
     id: 'mainMenu',
     defaultMessage: 'Menù principale',
   },
+  ascendingTableSort: {
+    id: 'ascendingTableSort',
+    defaultMessage: 'ascending',
+  },
+  descendingTableSort: {
+    id: 'descendingTableSort',
+    defaultMessage: 'descending',
+  },
 });
