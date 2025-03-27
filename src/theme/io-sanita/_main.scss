@@ -301,3 +301,9 @@ picture.volto-image.responsive img.full-width,
   margin: 0;
   box-shadow: none;
 }
+
+#footerConfigContent {
+  [class*='-newsletterSubscribe'] {
+    display: none;
+  }
+}
