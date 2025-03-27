@@ -54,8 +54,8 @@ import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSqua
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 
-const ReleaseLog = loadable(() =>
-  import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(
+  () => import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -223,7 +223,7 @@ export default function applyConfig(config) {
 
     'volto-editablefooter': {
       ...config.settings['volto-editablefooter'],
-      options: { socials: true, newsletterSubscribe: true },
+      options: { socials: true, newsletterSubscribe: false },
     },
 
     'volto-form-block-italia': {
