@@ -1072,6 +1072,11 @@ msgstr "Opening date"
 msgid "appStoreLink"
 msgstr ""
 
+#. Default: "ascending"
+#: overrideTranslations
+msgid "ascendingTableSort"
+msgstr ""
+
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
 msgid "attachment"
@@ -1720,6 +1725,11 @@ msgstr "Start date"
 #. Default: "delete"
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "delete"
+msgstr ""
+
+#. Default: "descending"
+#: overrideTranslations
+msgid "descendingTableSort"
 msgstr ""
 
 #. Default: "Testo per il link al dettaglio"
