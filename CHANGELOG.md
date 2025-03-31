@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.11.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.0...2.11.1) (2025-03-31)
+
+### Bug Fixes
+
+* a11y Table block ([#76](https://github.com/RedTurtle/io-sanita-theme/issues/76)) ([773d4d9](https://github.com/RedTurtle/io-sanita-theme/commit/773d4d9da80563ef531bcff4d546dd79cbedce00))
+* display none to -newsletterSubscribe on main footer settings ([f2d61ea](https://github.com/RedTurtle/io-sanita-theme/commit/f2d61eabd36d66ea8e5bb146762c5d9bbec595e5))
+* ImageWidget submit form . Backport of voltopr ([2c6c873](https://github.com/RedTurtle/io-sanita-theme/commit/2c6c873042661006f0ba3d60159630d68b07ed20))
+* locales ([b21cbbf](https://github.com/RedTurtle/io-sanita-theme/commit/b21cbbfa51927914081f912e22a801cc9400073f))
+* remove newsletter subscribe option in footer configuration form ([#77](https://github.com/RedTurtle/io-sanita-theme/issues/77)) ([f6b5bf4](https://github.com/RedTurtle/io-sanita-theme/commit/f6b5bf4c7f7b862c2b7ed06908ee6ac2c0be0413))
+* table template view taxonomy ([1175082](https://github.com/RedTurtle/io-sanita-theme/commit/11750828a8cbf7b414fbd8358204af9aa23e24d6))
+
 ## [2.11.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.10.0...2.11.0) (2025-03-25)
 
 ### Features
