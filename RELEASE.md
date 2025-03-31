@@ -41,6 +41,15 @@
 - ...
  -->
 
+## Versione 2.11.1 (31/03/2025)
+
+### Fix
+
+- sistemato un problema di perdita di dati durante il caricamento di una nuova immagine nel form di inseriemento dati di un ct con i campi a blocchi.
+- sistemata la visualizzazione delle tassonomie nel template 'Tabella' del blocco elenco
+- sistemata l'accessibilità per il blocco Tabella
+- rimosso il flag di configurazione 'Mostra la form di iscrizione' nel footer.
+
 ## Versione 2.11.0 (25/03/2025)
 
 ### Novità
