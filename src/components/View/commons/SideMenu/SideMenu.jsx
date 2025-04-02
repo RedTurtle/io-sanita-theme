@@ -69,9 +69,15 @@ const extractHeaders = (elements, intl) => {
  * SideMenu view component class.
  * @function SideMenu
  * @params {object} content: Content object.
+ * * @params {object} data: html data. Not required. Alternativelly you could pass 'calculeted_headers'
+ * * @params {object} calculeted_headers: calulated headers. Not required. Alternativelly you could pass 'data'. Format: [{
+          id: //identifier
+          title: //text to display
+          querySelector: //queryselector to use alternatively to 'id',
+        }] 
  * @returns {string} Markup of the component.
  */
-const SideMenu = ({ data, content_uid }) => {
+const SideMenu = ({ data, content_uid, calculeted_headers }) => {
   const intl = useIntl();
 
   const [headers, setHeaders] = useState([]);
@@ -98,7 +104,8 @@ const SideMenu = ({ data, content_uid }) => {
     setScrollY(window.scrollY);
     const headersHeights = headers
       .map((section) => {
-        const element = document.getElementById(section.id);
+        const selector = section.querySelector ?? '#' + section.id;
+        const element = document.querySelector(selector);
         return {
           id: section.id,
           top: element?.getBoundingClientRect()?.top,
@@ -106,6 +113,7 @@ const SideMenu = ({ data, content_uid }) => {
       })
       // .filter((section) => section.top - mainOffset + 40 <= windowHeight);
       .filter((section) => section.top <= mainOffset + 20);
+
     if (headersHeights.length > 0) {
       const section = headersHeights.reduce(
         (prev, curr) => (prev.top > curr.top ? prev : curr),
@@ -116,15 +124,18 @@ const SideMenu = ({ data, content_uid }) => {
   }, [headers, activeSection]);
 
   useEffect(() => {
-    if (data?.children) {
-      const extractedHeaders = extractHeaders(data.children, intl);
+    let _headers = null;
 
-      if (extractedHeaders.length > 0) {
-        setHeaders(extractedHeaders);
-        setActiveSection(extractedHeaders[0].id);
-      }
+    if (data?.children) {
+      _headers = extractHeaders(data.children, intl);
+    } else if (calculeted_headers?.length > 0) {
+      _headers = [...calculeted_headers];
     }
-  }, [data?.children, content_uid]);
+    if (_headers?.length > 0) {
+      setHeaders(_headers);
+      setActiveSection(_headers[0].id);
+    }
+  }, [data?.children, content_uid, calculeted_headers]);
 
   useEffect(() => {
     if (headers.length > 0)
@@ -142,7 +153,7 @@ const SideMenu = ({ data, content_uid }) => {
     ? document.querySelector('#main-content-section')
     : null;
 
-  const handleClickAnchor = (id) => (e) => {
+  const handleClickAnchor = (id, querySelector) => (e) => {
     e.preventDefault();
     if (window.innerWidth < 992) {
       setIsNavOpen(false);
@@ -150,11 +161,14 @@ const SideMenu = ({ data, content_uid }) => {
     // Blur a link
     document.getElementById(`item-${id}`).blur();
     // Focus on section
-    document.getElementById(id).focus({ preventScroll: true });
+    const selector = querySelector ?? '#' + id;
+    document.querySelector(selector).focus({ preventScroll: true });
     // Scroll to section
     // setTimeout hack should wait for rerender after setIsNavOpen
     setTimeout(() => {
-      scrollIntoView({ id });
+      const _id = querySelector ? null : id;
+      const ref = querySelector ? document.querySelector(querySelector) : null;
+      scrollIntoView({ id: _id, ref });
     });
   };
 
@@ -207,7 +221,10 @@ const SideMenu = ({ data, content_uid }) => {
                               active: item.id === activeSection,
                             })}
                             href={`#${item.id}`}
-                            onClick={handleClickAnchor(item.id)}
+                            onClick={handleClickAnchor(
+                              item.id,
+                              item.querySelector,
+                            )}
                             id={`item-${item.id}`}
                           >
                             <span id={item.title}>{item.title}</span>
