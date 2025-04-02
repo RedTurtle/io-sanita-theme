@@ -87,17 +87,22 @@ const View = ({ data }) => {
   }, [state, rowsData]);
 
   const handleSort = (index) => {
-    if (!sortable) return;
-    setState((prevState) => ({
+    if (!data.table.sortable) return;
+    setState({
       column: index,
       direction:
-        prevState.column !== index
+        state.column !== index
+          ? 'ascending'
+          : state.direction === 'ascending'
+            ? 'descending'
+            : 'ascending',
+      sortLabel:
+        state.column !== index
           ? intl.formatMessage(messages.ascendingTableSort)
-          : prevState.direction ===
-              intl.formatMessage(messages.ascendingTableSort)
+          : state.direction === 'ascending'
             ? intl.formatMessage(messages.descendingTableSort)
             : intl.formatMessage(messages.ascendingTableSort),
-    }));
+    });
   };
 
   return (
@@ -123,7 +128,7 @@ const View = ({ data }) => {
                     verticalAlign="middle"
                     sorted={state.column === index ? state.direction : null}
                     aria-sort={
-                      state.column === index ? state.direction : 'none'
+                      state.column === index ? state.sortLabel : 'none'
                     }
                     role="columnheader"
                     onClick={() => handleSort(index)}
