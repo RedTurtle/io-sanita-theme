@@ -87,7 +87,7 @@ const View = ({ data }) => {
   }, [state, rowsData]);
 
   const handleSort = (index) => {
-    if (!data.table.sortable) return;
+    if (!sortable) return;
     setState({
       column: index,
       direction:
