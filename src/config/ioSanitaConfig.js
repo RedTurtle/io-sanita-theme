@@ -50,16 +50,12 @@ import {
   removeListingVariation,
   EnhanceLink,
   viewDate,
-  RichTextSection,
   getMainOffset,
 } from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
-import {
-  SkipToMainContent,
-  SideMenu,
-} from 'io-sanita-theme/components/View/commons';
+import { SideMenu } from 'io-sanita-theme/components/View/commons';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 import { applyFarmacieConfig } from './farmacie';
 
@@ -281,9 +277,7 @@ export default function applyConfig(config) {
         getMainOffset: getMainOffset,
         Icon: Icon, //<Icon className={} color={} icon={} size={} style={}/>
         viewDate: viewDate, //viewDate(locale, date, format)
-        SkipToMainContent: SkipToMainContent, //<SkipToMainContent/>
         SideMenu: SideMenu, //   <SideMenu data={} content_uid={} />
-        RichTextSection: RichTextSection, //<RichTextSection title={} tag={}/>
         GenericCard: CardSimple, //<GenericCard item={} showimage={}/>
       },
     },
