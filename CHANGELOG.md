@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.11.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.1...2.11.2) (2025-04-08)
+
+### Bug Fixes
+
+* fixed title tag for a11y in Attachments component  not displayed as section ([#79](https://github.com/RedTurtle/io-sanita-theme/issues/79)) ([96bed38](https://github.com/RedTurtle/io-sanita-theme/commit/96bed38f4441dde74e3e059d7c3a05ad138a7f24))
+* table block sorting ([#78](https://github.com/RedTurtle/io-sanita-theme/issues/78)) ([2e1dfca](https://github.com/RedTurtle/io-sanita-theme/commit/2e1dfcad4faaafddc4991b96deb58078b56fd9be))
+
 ## [2.11.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.0...2.11.1) (2025-03-31)
 
 ### Bug Fixes
