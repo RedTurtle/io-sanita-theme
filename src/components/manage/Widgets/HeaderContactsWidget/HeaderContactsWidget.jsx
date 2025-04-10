@@ -18,7 +18,7 @@ const HeaderContactsWidget = (props) => {
     <ObjectListWidget
       schema={schema}
       block={'contatti_testata'}
-      value={JSON.parse(value) ?? []}
+      value={value ? JSON.parse(value) : []}
       onChange={onChangeField}
       id={id}
       title="Contatti in testata"

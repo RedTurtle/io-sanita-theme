@@ -42,18 +42,20 @@ const TableTemplate = (props) => {
   const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
 
   useEffect(() => {
-    const cts = columns.reduce((acc, c) => {
-      if (acc.indexOf(c.ct) < 0) {
-        acc.push(c.ct);
-      }
-      return acc;
-    }, []);
+    if(columns?.length > 0) { 
+      const cts = columns.reduce((acc, c) => {
+        if (acc.indexOf(c.ct) < 0) {
+          acc.push(c.ct);
+        }
+        return acc;
+      }, []);
 
-    cts.forEach((c) => {
-      if (!ct_schemas[c]) {
-        dispatch(getCTSchema(c));
-      }
-    });
+      cts.forEach((c) => {
+        if (!ct_schemas[c]) {
+          dispatch(getCTSchema(c));
+        }
+      });
+    }
   }, [columns]);
 
   let render_columns =
