@@ -47,3 +47,8 @@
   height: 1rem;
   width: auto;
 }
+
+.react-select__control .react-select__input input:focus:not(.focus--mouse) {
+  outline: none !important;
+  box-shadow: none !important;
+}
