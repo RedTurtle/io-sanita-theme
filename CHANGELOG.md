@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.12.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.2...2.12.0) (2025-04-14)
+
+### Features
+
+* searchable SelectFilter ([f653c01](https://github.com/RedTurtle/io-sanita-theme/commit/f653c0103823f8ef69507b8f78abd29a2126a933))
+
+### Bug Fixes
+
+* bug in columns listing table, header widget and hide h1 in homepage ([#80](https://github.com/RedTurtle/io-sanita-theme/issues/80)) ([fb9a671](https://github.com/RedTurtle/io-sanita-theme/commit/fb9a671d62eefdb1f3d6f0412bccd2e885d8be46))
+
 ## [2.11.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.1...2.11.2) (2025-04-08)
 
 ### Bug Fixes
