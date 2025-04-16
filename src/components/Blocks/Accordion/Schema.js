@@ -4,45 +4,45 @@ import { defineMessages, createIntlCache, createIntl } from 'react-intl';
 import { addStyling } from '@plone/volto/helpers';
 
 const messages = defineMessages({
-  Panels: { id: 'Panels', defaultMessage: 'Pannelli' },
-  Panel: { id: 'Panel', defaultMessage: 'Pannello' },
-  Options: {
+  panels: { id: 'Panels', defaultMessage: 'Pannelli' },
+  panel: { id: 'Panel', defaultMessage: 'Pannello' },
+  options: {
     id: 'Options',
     defaultMessage: 'Options',
   },
-  Default: {
+  default: {
     id: 'Default',
     defaultMessage: 'Default',
   },
-  AccordionTitle: {
+  accordionTitle: {
     id: 'Accordion title',
     defaultMessage: 'Accordion title',
   },
-  AccordionBlock: {
+  accordionBlock: {
     id: 'Accordion block',
     defaultMessage: 'Accordion block',
   },
-  Heading2: {
+  heading2: {
     id: 'Heading 2',
     defaultMessage: 'H2',
   },
-  Heading3: {
+  heading3: {
     id: 'Heading 3',
     defaultMessage: 'H3',
   },
-  Heading4: {
+  heading4: {
     id: 'Heading 4',
     defaultMessage: 'H4',
   },
-  Heading5: {
+  heading5: {
     id: 'Heading 5',
     defaultMessage: 'H5',
   },
-  Heading6: {
+  heading6: {
     id: 'Heading 6',
     defaultMessage: 'H6',
   },
-  Title: {
+  title: {
     id: 'Title',
     defaultMessage: 'Title',
   },
@@ -70,62 +70,40 @@ const messages = defineMessages({
     id: 'Enable filtering',
     defaultMessage: 'Enable filtering',
   },
-  Theme: {
-    id: 'Theme',
-    defaultMessage: 'Theme',
-  },
-  ThemeHelp: {
-    id: 'Accordion theme',
-    defaultMessage: 'Accordion theme',
-  },
-  ThemePrimary: {
-    id: 'Primary',
-    defaultMessage: 'Primary',
-  },
-  ThemeSecondary: {
-    id: 'Secondary',
-    defaultMessage: 'Secondary',
-  },
-  ThemeTertiary: {
-    id: 'Tertiary',
-    defaultMessage: 'Tertiary',
-  },
   headline: {
     id: 'Headline',
     defaultMessage: 'Headline',
   },
-
-  AccordionBlockSettings: {
+  accordionBlockSettings: {
     id: 'Accordion block settings',
     defaultMessage: 'Accordion block settings',
   },
-
-  SectionFriendlyName: {
+  sectionFriendlyName: {
     id: 'Section friendly name',
     defaultMessage: 'Section friendly name',
   },
-  AllowedBlocks: {
+  allowedBlocks: {
     id: 'Allowed blocks',
     defaultMessage: 'Allowed blocks',
   },
-  AllowOnlyFollowingBlocksTypes: {
+  allowOnlyFollowingBlocksTypes: {
     id: 'Allow only the following blocks types',
     defaultMessage: 'Allow only the following blocks types',
   },
-  HelperText: {
+  helperText: {
     id: 'Helper text',
     defaultMessage: 'Helper text',
   },
-  ShortHintThatDescribesExpectedValueWithinThisBlock: {
+  shortHintThatDescribesExpectedValueWithinThisBlock: {
     id: 'A short hint that describes the expected value within this block',
     defaultMessage:
       'A short hint that describes the expected value within this block',
   },
-  Instructions: {
+  instructions: {
     id: 'Instructions',
     defaultMessage: 'Instructions',
   },
-  DetailedExpectedValueWithinThisBlock: {
+  detailedExpectedValueWithinThisBlock: {
     id: 'Detailed expected value within this block',
     defaultMessage: 'Detailed expected value within this block',
   },
@@ -133,64 +111,64 @@ const messages = defineMessages({
     id: 'Required',
     defaultMessage: 'Required',
   },
-  DontAllowDeletionOfThisBlock: {
+  dontAllowDeletionOfThisBlock: {
     id: "Don't allow deletion of this block",
     defaultMessage: "Don't allow deletion of this block",
   },
-  FixedPosition: {
+  fixedPosition: {
     id: 'Fixed position',
     defaultMessage: 'Fixed position',
   },
-  DisableDragDropOnThisBlock: {
+  disableDragDropOnThisBlock: {
     id: 'Disable drag & drop on this block',
     defaultMessage: 'Disable drag & drop on this block',
   },
-  FixedLayout: {
+  fixedLayout: {
     id: 'Fixed layout',
     defaultMessage: 'Fixed layout',
   },
-  FixedlayoutNewPanesTabs: {
+  fixedLayoutNewPanesTabs: {
     id: 'Fixed layout, New panes (tabs) created by Editor within this block will be ignored',
     defaultMessage:
       'Fixed layout, New panes (tabs) created by Editor within this block will be ignored',
   },
-  DisableNewBlocks: {
+  disableNewBlocks: {
     id: 'Disable new blocks',
     defaultMessage: 'Disable new blocks',
   },
-  DisableCreationNewBlocks: {
+  disableCreationNewBlocks: {
     id: 'Disable creation of new blocks after this block',
     defaultMessage: 'Disable creation of new blocks after this block',
   },
-  ReadOnly: {
+  readOnly: {
     id: 'Read-only',
     defaultMessage: 'Read-only',
   },
-  DisableEditingBlock: {
+  disableEditingBlock: {
     id: 'Disable editing on this block',
     defaultMessage: 'Disable editing on this block',
   },
-  ReadOnlyTitles: {
+  readOnlyTitles: {
     id: 'Read-only titles',
     defaultMessage: 'Read-only titles',
   },
-  DisableEditingOnAccordionTitles: {
+  disableEditingOnAccordionTitles: {
     id: 'Disable editing on accordion titles',
     defaultMessage: 'Disable editing on accordion titles',
   },
-  ReadOnlySettings: {
+  readOnlySettings: {
     id: 'Read-only settings',
     defaultMessage: 'Read-only settings',
   },
-  DisableEditingOnAccordionBlockSettings: {
+  disableEditingOnAccordionBlockSettings: {
     id: 'Disable editing on accordion block settings',
     defaultMessage: 'Disable editing on accordion block settings',
   },
-  DisableInnerButtons: {
+  disableInnerButtons: {
     id: 'Disable inner buttons',
     defaultMessage: 'Disable inner buttons',
   },
-  HideAllBlockRelatedButtonsWithinThisBlock: {
+  hideAllBlockRelatedButtonsWithinThisBlock: {
     id: 'Hide all block related buttons within this block',
     defaultMessage: 'Hide all block related buttons within this block',
   },
@@ -234,11 +212,11 @@ export const AccordionLayoutSchema = (config) => {
   const choices = defaultAllowedBlocks(config);
 
   return {
-    title: intl.formatMessage(messages.AccordionBlockSettings),
+    title: intl.formatMessage(messages.accordionBlockSettings),
     fieldsets: [
       {
         id: 'default',
-        title: intl.formatMessage(messages.Default),
+        title: intl.formatMessage(messages.default),
         fields: [
           'title',
           'placeholder',
@@ -257,76 +235,76 @@ export const AccordionLayoutSchema = (config) => {
     ],
     properties: {
       title: {
-        title: intl.formatMessage(messages.Title),
-        description: intl.formatMessage(messages.SectionFriendlyName),
+        title: intl.formatMessage(messages.title),
+        description: intl.formatMessage(messages.sectionFriendlyName),
         type: 'string',
       },
       allowedBlocks: {
-        title: intl.formatMessage(messages.AllowedBlocks),
-        description: intl.formatMessage(messages.AllowOnlyFollowingBlocksTypes),
+        title: intl.formatMessage(messages.allowedBlocks),
+        description: intl.formatMessage(messages.allowOnlyFollowingBlocksTypes),
         type: 'array',
         items: {
           choices: choices,
         },
       },
       placeholder: {
-        title: intl.formatMessage(messages.HelperText),
+        title: intl.formatMessage(messages.helperText),
         description: intl.formatMessage(
-          messages.ShortHintThatDescribesExpectedValueWithinThisBlock,
+          messages.shortHintThatDescribesExpectedValueWithinThisBlock,
         ),
         type: 'string',
       },
       instructions: {
-        title: intl.formatMessage(messages.Instructions),
+        title: intl.formatMessage(messages.instructions),
         description: intl.formatMessage(
-          messages.DetailedExpectedValueWithinThisBlock,
+          messages.detailedExpectedValueWithinThisBlock,
         ),
         type: 'string',
         widget: 'richtext',
       },
       required: {
         title: intl.formatMessage(messages.required),
-        description: intl.formatMessage(messages.DontAllowDeletionOfThisBlock),
+        description: intl.formatMessage(messages.dontAllowDeletionOfThisBlock),
         type: 'boolean',
       },
       fixed: {
-        title: intl.formatMessage(messages.FixedPosition),
-        description: intl.formatMessage(messages.DisableDragDropOnThisBlock),
+        title: intl.formatMessage(messages.fixedPosition),
+        description: intl.formatMessage(messages.disableDragDropOnThisBlock),
         type: 'boolean',
       },
       fixedLayout: {
-        title: intl.formatMessage(messages.FixedLayout),
-        description: intl.formatMessage(messages.FixedlayoutNewPanesTabs),
+        title: intl.formatMessage(messages.fixedLayout),
+        description: intl.formatMessage(messages.fixedLayoutNewPanesTabs),
         type: 'boolean',
       },
       disableNewBlocks: {
-        title: intl.formatMessage(messages.DisableNewBlocks),
-        description: intl.formatMessage(messages.DisableCreationNewBlocks),
+        title: intl.formatMessage(messages.disableNewBlocks),
+        description: intl.formatMessage(messages.disableCreationNewBlocks),
         type: 'boolean',
       },
       readOnly: {
-        title: intl.formatMessage(messages.ReadOnly),
-        description: intl.formatMessage(messages.DisableEditingBlock),
+        title: intl.formatMessage(messages.readOnly),
+        description: intl.formatMessage(messages.disableEditingBlock),
         type: 'boolean',
       },
       readOnlyTitles: {
-        title: intl.formatMessage(messages.ReadOnlyTitles),
+        title: intl.formatMessage(messages.readOnlyTitles),
         description: intl.formatMessage(
-          messages.DisableEditingOnAccordionTitles,
+          messages.disableEditingOnAccordionTitles,
         ),
         type: 'boolean',
       },
       readOnlySettings: {
-        title: intl.formatMessage(messages.ReadOnlySettings),
+        title: intl.formatMessage(messages.readOnlySettings),
         description: intl.formatMessage(
-          messages.DisableEditingOnAccordionBlockSettings,
+          messages.disableEditingOnAccordionBlockSettings,
         ),
         type: 'boolean',
       },
       disableInnerButtons: {
-        title: intl.formatMessage(messages.DisableInnerButtons),
+        title: intl.formatMessage(messages.disableInnerButtons),
         description: intl.formatMessage(
-          messages.HideAllBlockRelatedButtonsWithinThisBlock,
+          messages.hideAllBlockRelatedButtonsWithinThisBlock,
         ),
         type: 'boolean',
       },
@@ -336,16 +314,16 @@ export const AccordionLayoutSchema = (config) => {
 };
 
 export const AccordionBlockSchema = ({ intl }) => ({
-  title: intl.formatMessage(messages.AccordionBlock),
+  title: intl.formatMessage(messages.accordionBlock),
   fieldsets: [
     {
       id: 'default',
-      title: intl.formatMessage(messages.Default),
+      title: intl.formatMessage(messages.default),
       fields: ['data'],
     },
     {
       id: 'options',
-      title: intl.formatMessage(messages.Options),
+      title: intl.formatMessage(messages.options),
       fields: [
         'title',
         'title_size',
@@ -361,7 +339,7 @@ export const AccordionBlockSchema = ({ intl }) => ({
       title: intl.formatMessage(messages.headline),
     },
     data: {
-      title: intl.formatMessage(messages.Panels),
+      title: intl.formatMessage(messages.panels),
       type: 'panels',
       schema: AccordionSchema(intl),
     },
@@ -371,11 +349,11 @@ export const AccordionBlockSchema = ({ intl }) => ({
       type: 'string',
       factory: 'Choice',
       choices: [
-        ['h2', intl.formatMessage(messages.Heading2)],
-        ['h3', intl.formatMessage(messages.Heading3)],
-        ['h4', intl.formatMessage(messages.Heading4)],
-        ['h5', intl.formatMessage(messages.Heading5)],
-        ['h6', intl.formatMessage(messages.Heading6)],
+        ['h2', intl.formatMessage(messages.heading2)],
+        ['h3', intl.formatMessage(messages.heading3)],
+        ['h4', intl.formatMessage(messages.heading4)],
+        ['h5', intl.formatMessage(messages.heading5)],
+        ['h6', intl.formatMessage(messages.heading6)],
       ],
     },
     collapsed: {
@@ -405,11 +383,11 @@ export const AccordionBlockSchema = ({ intl }) => ({
 
 export const AccordionSchema = (intl) => {
   return {
-    title: intl.formatMessage(messages.Panel),
+    title: intl.formatMessage(messages.panel),
     fieldsets: [
       {
         id: 'default',
-        title: intl.formatMessage(messages.Default),
+        title: intl.formatMessage(messages.default),
         fields: ['title', 'linkMoreTitle', 'href'],
       },
     ],

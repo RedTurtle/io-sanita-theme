@@ -271,7 +271,8 @@ export default function applyConfig(config) {
       ],
     },
     'volto-survey-form': {
-      ...config.settings['volto-survey-form'],
+      //configurazione per volto-survey-form nel caso venga installato come addon su un tema. volto-survey-form non è per il momento una dipendenza di io-sanita
+      ...(config.settings['volto-survey-form'] ?? {}),
       components: {
         ...(config.settings['volto-survey-form']?.components ?? {}),
         getMainOffset: getMainOffset,
