@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.12.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.0...2.12.1) (2025-04-17)
+
+### Bug Fixes
+
+* fixed video block view and layout ([#81](https://github.com/RedTurtle/io-sanita-theme/issues/81)) ([70cf688](https://github.com/RedTurtle/io-sanita-theme/commit/70cf688645320a172b766e37383df52ae9ed4546))
+* root aggregation page - redirect to home ([50d9c52](https://github.com/RedTurtle/io-sanita-theme/commit/50d9c52f5b7fcc4249a8067af19f2dbb8e143de7))
+
 ## [2.12.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.2...2.12.0) (2025-04-14)
 
 ### Features
