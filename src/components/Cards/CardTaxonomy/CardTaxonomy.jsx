@@ -8,11 +8,7 @@ import React from 'react';
 import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
-
-import {
-  AGGREGATION_PAGE_ARGOMENTO,
-  AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
-} from 'io-sanita-theme/config/ioSanitaConfig';
+import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
 
 import './cardTaxonomy.scss';
 
@@ -27,10 +23,7 @@ export const CardTaxonomy = ({
   type = 'topics', //topics,users
 }) => {
   const title = item.title ?? item.label;
-  const href =
-    (type === 'topics'
-      ? AGGREGATION_PAGE_ARGOMENTO
-      : AGGREGATION_PAGE_TIPOLOGIA_UTENTE) + item.value;
+  const href = getAggregationPageUrl(type, item.value);
 
   return (
     <Card

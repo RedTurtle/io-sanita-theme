@@ -2,10 +2,9 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
-
+import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
-import { AGGREGATION_PAGE_TIPOLOGIA_UTENTE } from 'io-sanita-theme/config/ioSanitaConfig';
 
 /**
  * TassonomiaUtenti view component class.
@@ -27,7 +26,10 @@ const TassonomiaUtenti = ({ content }) => {
 
         return (
           <UniversalLink
-            href={AGGREGATION_PAGE_TIPOLOGIA_UTENTE + item.token}
+            href={getAggregationPageUrl(
+              'a_chi_si_rivolge_tassonomia',
+              item.token,
+            )}
             key={item.token}
             className="text-decoration-none me-2 d-inline-block"
             //data-element="service-topic"
