@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Spinner } from 'design-react-kit';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { resetContent } from '@plone/volto/actions/content/content';
@@ -57,6 +58,9 @@ const AggregationPage = ({ match, route, location }) => {
   const id = match?.params?.id ?? '';
   const type = route?.type;
 
+  if (id?.length === 0) {
+    return <Redirect to="/" />;
+  }
   //search
   const b_size = config.settings.defaultPageSize; //batchsize
   const [searchParams, setSearchParams] = useState({
@@ -145,6 +149,7 @@ const AggregationPage = ({ match, route, location }) => {
 
   return (
     <>
+      {/* <Helmet title={title} /> */}
       <Helmet title={title} />
 
       <div className="container px-4 my-4 aggregation-page-view public-ui">

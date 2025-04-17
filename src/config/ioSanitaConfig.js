@@ -54,8 +54,8 @@ import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSqua
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 
-const ReleaseLog = loadable(
-  () => import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
+const ReleaseLog = loadable(() =>
+  import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
 );
 
 const messages = defineMessages({
@@ -338,13 +338,19 @@ export default function applyConfig(config) {
       component: ReleaseLog,
     },
     {
-      path: [AGGREGATION_PAGE_ARGOMENTO + ':id'],
+      path: [
+        AGGREGATION_PAGE_ARGOMENTO + ':id',
+        AGGREGATION_PAGE_ARGOMENTO.replace(/\/+$/, ''),
+      ],
       component: AggregationPage,
       type: 'parliamo_di',
       breadcrumbs_title: ':id',
     },
     {
-      path: [AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id'],
+      path: [
+        AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id',
+        AGGREGATION_PAGE_TIPOLOGIA_UTENTE.replace(/\/+$/, ''),
+      ],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
       breadcrumbs_title: ':id',
