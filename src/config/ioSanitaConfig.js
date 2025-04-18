@@ -92,8 +92,8 @@ export default function applyConfig(config) {
       //  return event;
       // },
     }),
-    isMultilingual: false,
-    supportedLanguages: ['it'],
+    isMultilingual: true,
+    supportedLanguages: ['it', 'en'],
     defaultLanguage: 'it',
     verticalFormTabs: true,
     showTags: false,
@@ -339,8 +339,8 @@ export default function applyConfig(config) {
     },
     {
       path: [
-        '/*' + AGGREGATION_PAGE_ARGOMENTO + ':id',
-        '/*' + AGGREGATION_PAGE_ARGOMENTO.replace(/\/+$/, ''),
+        '*' + AGGREGATION_PAGE_ARGOMENTO + ':id',
+        '*' + AGGREGATION_PAGE_ARGOMENTO.replace(/\/+$/, ''),
       ],
       component: AggregationPage,
       type: 'parliamo_di',
@@ -348,8 +348,8 @@ export default function applyConfig(config) {
     },
     {
       path: [
-        '/*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id',
-        '/*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE.replace(/\/+$/, ''),
+        '*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id',
+        '*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE.replace(/\/+$/, ''),
       ],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
@@ -361,16 +361,16 @@ export default function applyConfig(config) {
     ...config.settings.nonContentRoutes.filter(
       (route) => route !== '/contact-form',
     ),
-    '/*' + AGGREGATION_PAGE_ARGOMENTO,
-    '/*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
     /\/release-log\/.*$/,
     ///\/argomento\/.*$/,
     ///\/tipologia-utente\/.*$/,
   ];
   config.settings.nonContentRoutesPublic = [
     ...(config.settings.nonContentRoutesPublic ?? []),
-    '/*' + AGGREGATION_PAGE_ARGOMENTO,
-    '/*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+    AGGREGATION_PAGE_ARGOMENTO,
+    AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
   ];
 
   return config;
