@@ -1,6 +1,6 @@
 import React from 'react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
+import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
 import { Chip, ChipLabel } from 'design-react-kit';
 
 const ParliamoDiWidgetView = ({ value, children, className }) => {
@@ -8,7 +8,7 @@ const ParliamoDiWidgetView = ({ value, children, className }) => {
     <div className="topics-view-widget">
       {value.map((item, i) => (
         <UniversalLink
-          href={AGGREGATION_PAGE_ARGOMENTO + item.token}
+          href={getAggregationPageUrl('topics', item.token)}
           key={item.token}
           className="text-decoration-none me-2 d-inline-block"
         >

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
 
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
+import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
 
 /**
  * Topics view component class.
@@ -34,7 +34,7 @@ const Topics = ({ content, titleTag = 'h3' }) => {
       </Tag>
       {list.map((item, i) => (
         <UniversalLink
-          href={AGGREGATION_PAGE_ARGOMENTO + item.token}
+          href={getAggregationPageUrl('topics', item.token)}
           key={item.token}
           className="text-decoration-none me-2 d-inline-block"
           data-element="service-topic"

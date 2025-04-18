@@ -149,7 +149,6 @@ const AggregationPage = ({ match, route, location }) => {
 
   return (
     <>
-      {/* <Helmet title={title} /> */}
       <Helmet title={title} />
 
       <div className="container px-4 my-4 aggregation-page-view public-ui">

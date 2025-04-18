@@ -2,7 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { AGGREGATION_PAGE_ARGOMENTO } from 'io-sanita-theme/config/ioSanitaConfig';
+import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
 
 const messages = defineMessages({
   uo: { id: 'CardCategoryBottom_UO', defaultMessage: 'Unità operativa' },
@@ -53,7 +53,7 @@ const CardCategoryBottom = ({
               href={
                 isEditMode
                   ? '#'
-                  : AGGREGATION_PAGE_ARGOMENTO + display_category.token
+                  : getAggregationPageUrl('topics', display_category.token)
               }
             >
               <span className="text">{display_category.title}</span>

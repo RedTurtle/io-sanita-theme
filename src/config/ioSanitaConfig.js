@@ -250,11 +250,11 @@ export default function applyConfig(config) {
         ...(config.settings['volto-feedback']
           ?.feedbackEnabledNonContentRoutes ?? []),
         {
-          path: AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
+          path: '/*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
           feedbackTitle: null /*usa il path per sapere quale tipologia è*/,
         },
         {
-          path: AGGREGATION_PAGE_ARGOMENTO,
+          path: '/*' + AGGREGATION_PAGE_ARGOMENTO,
           feedbackTitle: null /*usa il path per sapere quale tipologia è*/,
         },
       ],
@@ -339,8 +339,8 @@ export default function applyConfig(config) {
     },
     {
       path: [
-        AGGREGATION_PAGE_ARGOMENTO + ':id',
-        AGGREGATION_PAGE_ARGOMENTO.replace(/\/+$/, ''),
+        '*' + AGGREGATION_PAGE_ARGOMENTO + ':id',
+        '*' + AGGREGATION_PAGE_ARGOMENTO.replace(/\/+$/, ''),
       ],
       component: AggregationPage,
       type: 'parliamo_di',
@@ -348,8 +348,8 @@ export default function applyConfig(config) {
     },
     {
       path: [
-        AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id',
-        AGGREGATION_PAGE_TIPOLOGIA_UTENTE.replace(/\/+$/, ''),
+        '*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE + ':id',
+        '*' + AGGREGATION_PAGE_TIPOLOGIA_UTENTE.replace(/\/+$/, ''),
       ],
       component: AggregationPage,
       type: 'a_chi_si_rivolge_tassonomia',
