@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.12.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.1...2.12.2) (2025-04-18)
+
+### Bug Fixes
+
+* Multilingual aggregation page url ([#82](https://github.com/RedTurtle/io-sanita-theme/issues/82)) ([a16e9e9](https://github.com/RedTurtle/io-sanita-theme/commit/a16e9e9b5f4bb3e1026eb53ef58e94e4ab5f5808))
+
 ## [2.12.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.0...2.12.1) (2025-04-17)
 
 ### Bug Fixes
