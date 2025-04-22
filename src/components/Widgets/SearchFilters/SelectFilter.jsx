@@ -58,13 +58,14 @@ const SelectFilter = ({ options, value, id, onChange, placeholder }) => {
     <div className="filter-wrapper select-filter">
       <SelectInput
         id={id}
-        value={value}
+        value={value ?? ''}
         placeholder={options?.placeholder}
         onChange={(opt) => {
           onChange(id, opt);
         }}
         options={select_options?.filter((opt) => !!opt.value?.toString()) ?? []}
         isClearable={true}
+        isSearchable={true}
       />
     </div>
   );

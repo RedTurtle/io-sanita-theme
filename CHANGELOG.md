@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.12.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.1...2.12.2) (2025-04-18)
+
+### Bug Fixes
+
+* Multilingual aggregation page url ([#82](https://github.com/RedTurtle/io-sanita-theme/issues/82)) ([a16e9e9](https://github.com/RedTurtle/io-sanita-theme/commit/a16e9e9b5f4bb3e1026eb53ef58e94e4ab5f5808))
+
+## [2.12.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.0...2.12.1) (2025-04-17)
+
+### Bug Fixes
+
+* fixed video block view and layout ([#81](https://github.com/RedTurtle/io-sanita-theme/issues/81)) ([70cf688](https://github.com/RedTurtle/io-sanita-theme/commit/70cf688645320a172b766e37383df52ae9ed4546))
+* root aggregation page - redirect to home ([50d9c52](https://github.com/RedTurtle/io-sanita-theme/commit/50d9c52f5b7fcc4249a8067af19f2dbb8e143de7))
+
+## [2.12.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.2...2.12.0) (2025-04-14)
+
+### Features
+
+* searchable SelectFilter ([f653c01](https://github.com/RedTurtle/io-sanita-theme/commit/f653c0103823f8ef69507b8f78abd29a2126a933))
+
+### Bug Fixes
+
+* bug in columns listing table, header widget and hide h1 in homepage ([#80](https://github.com/RedTurtle/io-sanita-theme/issues/80)) ([fb9a671](https://github.com/RedTurtle/io-sanita-theme/commit/fb9a671d62eefdb1f3d6f0412bccd2e885d8be46))
+
+## [2.11.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.1...2.11.2) (2025-04-08)
+
+### Bug Fixes
+
+* fixed title tag for a11y in Attachments component  not displayed as section ([#79](https://github.com/RedTurtle/io-sanita-theme/issues/79)) ([96bed38](https://github.com/RedTurtle/io-sanita-theme/commit/96bed38f4441dde74e3e059d7c3a05ad138a7f24))
+* table block sorting ([#78](https://github.com/RedTurtle/io-sanita-theme/issues/78)) ([2e1dfca](https://github.com/RedTurtle/io-sanita-theme/commit/2e1dfcad4faaafddc4991b96deb58078b56fd9be))
+
 ## [2.11.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.11.0...2.11.1) (2025-03-31)
 
 ### Bug Fixes

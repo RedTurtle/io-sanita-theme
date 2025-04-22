@@ -1,7 +1,10 @@
 .siteroot,
-body.public-ui.contenttype-lr:not(.section-search) {
-  .block-editor-title,
-  .documentFirstHeading,
+body.public-ui.contenttype-lrf:not(.section-search) {
+  .documentFirstHeading {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+  }
   #briciole {
     display: none;
   }
@@ -10,7 +13,11 @@ body.public-ui.contenttype-lr:not(.section-search) {
 body.subsite.subsite-root:not(.section-search) {
   &,
   .public-ui {
-    .documentFirstHeading,
+    .documentFirstHeading {
+      visibility: hidden;
+      height: 0;
+      margin: 0;
+    }
     #briciole {
       display: none;
     }
