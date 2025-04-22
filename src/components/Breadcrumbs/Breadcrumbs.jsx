@@ -73,13 +73,6 @@ const Breadcrumbs = ({ pathname, match }) => {
   // Gestione delle rotte statiche. Se definito nel config della rotta un breadcrumbs_title, lo aggiungo alle breadcrumbs
   const route = getCurrentPathFromAddonRoutes();
 
-  // if (
-  //   (!(items === null || isEmpty(route)) &&
-  //     items.length > 0 &&
-  //     route.breadcrumbs_title &&
-  //     items[items.length - 1].url !== location.pathname) ||
-  //   (items.length === 0 && bcLoaded && route.breadcrumbs_title)
-  // )
   if (
     route?.breadcrumbs_title &&
     (!items ||
@@ -95,7 +88,7 @@ const Breadcrumbs = ({ pathname, match }) => {
       : [];
     routePaths.forEach((p) => {
       const mr = getMatchingRoute(p);
-      if (mr) {
+      if (mr && !matchingRoute) {
         matchingRoute = mr;
       }
     });
