@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.13.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.2...2.13.0) (2025-04-24)
+
+### Features
+
+* basic config for volto-survey-form addon and fix accordion translations([#83](https://github.com/RedTurtle/io-sanita-theme/issues/83)) ([6a53ff6](https://github.com/RedTurtle/io-sanita-theme/commit/6a53ff6fa1d5bdac638b160fbc17b71081ead65e))
+
+### Bug Fixes
+
+* matching route on multilingual site for aggregation page ([263cec1](https://github.com/RedTurtle/io-sanita-theme/commit/263cec1de5771b5b5160783ea22f3218233b9380))
+* translations ([b9d4572](https://github.com/RedTurtle/io-sanita-theme/commit/b9d4572bf36f377299b9d33c25f0019c2530072e))
+
 ## [2.12.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.1...2.12.2) (2025-04-18)
 
 ### Bug Fixes
