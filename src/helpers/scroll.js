@@ -8,11 +8,18 @@ export const getMainOffset = () => {
     : 0;
 };
 
-export const scrollIntoView = ({ ref, id, behavior = 'smooth' }) => {
+export const scrollIntoView = ({
+  ref,
+  id,
+  querySelector,
+  behavior = 'smooth',
+}) => {
   const mainOffset = getMainOffset();
 
-  const top = id
-    ? document.querySelector('#' + id).offsetTop - mainOffset
+  const selector = ref ? null : querySelector ?? '#' + id;
+
+  const top = selector
+    ? document.querySelector(selector).offsetTop - mainOffset
     : ref.getBoundingClientRect().top + window.scrollY - mainOffset;
 
   window.scrollTo({

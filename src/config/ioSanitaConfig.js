@@ -32,7 +32,12 @@ import bandoSVG from 'io-sanita-theme/icons/bando.svg';
 import logSVG from 'io-sanita-theme/icons/log.svg';
 
 import reducers from 'io-sanita-theme/reducers';
-import { LoginAgid, Icon, FileWidget } from 'io-sanita-theme/components';
+import {
+  LoginAgid,
+  Icon,
+  FileWidget,
+  CardSimple,
+} from 'io-sanita-theme/components';
 import PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader/PageLoader';
 import TrackFocus from 'io-sanita-theme/components/AppExtras/TrackFocus';
 import HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
@@ -41,10 +46,16 @@ import GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExt
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
 import { registerIOSanitaValidators } from 'io-sanita-theme/config/validators';
 
-import { removeListingVariation, EnhanceLink } from 'io-sanita-theme/helpers';
+import {
+  removeListingVariation,
+  EnhanceLink,
+  viewDate,
+  getMainOffset,
+} from 'io-sanita-theme/helpers';
 
 import { applyIoSanitaBlocksConfig } from 'io-sanita-theme/config/blocks';
 import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
+import { SideMenu } from 'io-sanita-theme/components/View/commons';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 import { applyFarmacieConfig } from './farmacie';
 
@@ -258,6 +269,18 @@ export default function applyConfig(config) {
           feedbackTitle: null /*usa il path per sapere quale tipologia è*/,
         },
       ],
+    },
+    'volto-survey-form': {
+      //configurazione per volto-survey-form nel caso venga installato come addon su un tema. volto-survey-form non è per il momento una dipendenza di io-sanita
+      ...(config.settings['volto-survey-form'] ?? {}),
+      components: {
+        ...(config.settings['volto-survey-form']?.components ?? {}),
+        getMainOffset: getMainOffset,
+        Icon: Icon, //<Icon className={} color={} icon={} size={} style={}/>
+        viewDate: viewDate, //viewDate(locale, date, format)
+        SideMenu: SideMenu, //   <SideMenu data={} content_uid={} />
+        GenericCard: CardSimple, //<GenericCard item={} showimage={}/>
+      },
     },
     videoAllowExternalsDefault: false,
   };
