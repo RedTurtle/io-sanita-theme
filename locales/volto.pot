@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-03-31T11:23:16.064Z\n"
+"POT-Creation-Date: 2025-04-24T07:37:09.946Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -44,11 +44,6 @@ msgstr ""
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Accordion block settings"
-msgstr ""
-
-#. Default: "Accordion theme"
-#: components/Blocks/Accordion/Schema
-msgid "Accordion theme"
 msgstr ""
 
 #. Default: "Accordion title"
@@ -623,11 +618,6 @@ msgstr ""
 msgid "Previous page"
 msgstr ""
 
-#. Default: "Primary"
-#: components/Blocks/Accordion/Schema
-msgid "Primary"
-msgstr ""
-
 #. Default: "Read-only"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
@@ -690,11 +680,6 @@ msgstr ""
 #. Default: "Search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlockButtonText"
-msgstr ""
-
-#. Default: "Secondary"
-#: components/Blocks/Accordion/Schema
-msgid "Secondary"
 msgstr ""
 
 #. Default: "Section friendly name"
@@ -763,11 +748,6 @@ msgstr ""
 msgid "Table color inverted"
 msgstr ""
 
-#. Default: "Tertiary"
-#: components/Blocks/Accordion/Schema
-msgid "Tertiary"
-msgstr ""
-
 #. Default: "Testo..."
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Testo placeholder"
@@ -781,11 +761,6 @@ msgstr ""
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
 msgid "Thank you."
-msgstr ""
-
-#. Default: "Theme"
-#: components/Blocks/Accordion/Schema
-msgid "Theme"
 msgstr ""
 
 #. Default: "Tipi di contenuto"

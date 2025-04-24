@@ -44,11 +44,6 @@ msgstr ""
 msgid "Accordion block settings"
 msgstr ""
 
-#. Default: "Accordion theme"
-#: components/Blocks/Accordion/Schema
-msgid "Accordion theme"
-msgstr ""
-
 #. Default: "Accordion title"
 #: components/Blocks/Accordion/Schema
 msgid "Accordion title"
@@ -621,11 +616,6 @@ msgstr "Select to play slider"
 msgid "Previous page"
 msgstr "Previous page"
 
-#. Default: "Primary"
-#: components/Blocks/Accordion/Schema
-msgid "Primary"
-msgstr ""
-
 #. Default: "Read-only"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
@@ -688,11 +678,6 @@ msgstr "Search by keyword"
 #. Default: "Search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlockButtonText"
-msgstr ""
-
-#. Default: "Secondary"
-#: components/Blocks/Accordion/Schema
-msgid "Secondary"
 msgstr ""
 
 #. Default: "Section friendly name"
@@ -761,11 +746,6 @@ msgstr ""
 msgid "Table color inverted"
 msgstr ""
 
-#. Default: "Tertiary"
-#: components/Blocks/Accordion/Schema
-msgid "Tertiary"
-msgstr ""
-
 #. Default: "Testo..."
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Testo placeholder"
@@ -779,11 +759,6 @@ msgstr ""
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
 msgid "Thank you."
-msgstr ""
-
-#. Default: "Theme"
-#: components/Blocks/Accordion/Schema
-msgid "Theme"
 msgstr ""
 
 #. Default: "Tipi di contenuto"
