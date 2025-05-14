@@ -5,12 +5,16 @@ import {
   richTextHasContent,
 } from 'io-sanita-theme/helpers';
 
+import { useLoadSteps } from 'io-sanita-theme/components/View/ComeFarePer/Steps/helpers';
+import { positions } from 'slate';
+
 const ComeFarePerSchemaOrg = ({ content }) => {
   const siteTitle = SchemaOrgUtils.getSiteTitle();
 
   let description = [];
   let _yield = [];
   let steps = content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
+  const { loadedSteps } = useLoadSteps(steps);
 
   //description
   if (content.description) {
@@ -48,12 +52,18 @@ const ComeFarePerSchemaOrg = ({ content }) => {
     );
   }
 
-  if (steps.length > 0) {
-    schemaOrg.step = content.come_fare.items.map((item) => {
-      return {
+  if (steps.length > 0 && Object.keys(loadedSteps).length === steps.length) {
+    schemaOrg.step = Object.keys(loadedSteps).map((id, index) => {
+      const step = loadedSteps[id];
+      const stepSchemaOrg = {
         '@type': 'HowToStep',
-        //text: SchemaOrgUtils.fieldDataToPlainText(item),
+        position: index + 1,
+        name: step.title ?? 'Step ' + (index + 1),
       };
+      if (richTextHasContent(step.testo)) {
+        stepSchemaOrg.text = SchemaOrgUtils.fieldDataToPlainText(step.testo);
+      }
+      return stepSchemaOrg;
     });
   }
 

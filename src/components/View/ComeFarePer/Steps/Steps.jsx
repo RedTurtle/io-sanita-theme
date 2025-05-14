@@ -6,8 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContent, resetContent } from '@plone/volto/actions/content/content';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+
 import PropTypes from 'prop-types';
 import {
   richTextHasContent,
@@ -23,7 +22,7 @@ import {
 } from 'design-react-kit';
 import { Icon, CardPlace, CardContatti } from 'io-sanita-theme/components';
 import { Attachments } from 'io-sanita-theme/components/View/commons';
-
+import { useLoadSteps } from 'io-sanita-theme/components/View/ComeFarePer/Steps/helpers';
 import './steps.scss';
 
 const messages = defineMessages({
@@ -72,25 +71,7 @@ const Steps = ({ content, steps = [] }) => {
     setActiveItem('');
   }, [allOpen]);
 
-  const searchSteps = useSelector((state) => state.content?.subrequests);
-
-  // one request is made for every step
-  useEffect(() => {
-    steps.forEach((item) => {
-      const url = flattenToAppURL(item['@id']);
-      const loaded = searchSteps?.[url]?.loading || searchSteps?.[url]?.loaded;
-
-      if (!loaded) {
-        dispatch(getContent(url, null, url));
-      }
-    });
-
-    return () => {
-      steps.forEach((item) => {
-        dispatch(resetContent(flattenToAppURL(item['@id'])));
-      });
-    };
-  }, []);
+  const { loadedSteps } = useLoadSteps(steps);
 
   return steps.length > 0 ? (
     <div className="steps">
@@ -114,7 +95,7 @@ const Steps = ({ content, steps = [] }) => {
       </Button>
       <Accordion background="active">
         {steps.map((s, index) => {
-          const step = searchSteps[flattenToAppURL(s['@id'])]?.data ?? s;
+          const step = loadedSteps[s['@id']] ?? s;
           const itemIndex = index + 1;
           const toggleItem = () => {
             setActiveItem(activeItem !== itemIndex ? itemIndex : '');
