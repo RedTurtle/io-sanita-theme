@@ -22,6 +22,7 @@ const NewsItemMetadati = ({ content }) => {
       '@type': 'Organization',
       name: content.creators?.[0] || siteTitle,
     },
+    inLanguage: intl.locale,
     publisher: {
       '@type': 'Organization',
       name: siteTitle,
