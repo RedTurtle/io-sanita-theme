@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-04-24T07:37:09.946Z\n"
+"POT-Creation-Date: 2025-05-14T12:26:14.162Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -2696,6 +2696,11 @@ msgstr ""
 #. Default: "Contenuti correlati"
 #: components/View/commons/RelatedItems
 msgid "related_items"
+msgstr ""
+
+#. Default: "Diritti riservati"
+#: components/View/commons/Metadata/Metadata
+msgid "rights"
 msgstr ""
 
 #. Default: "il giorno"

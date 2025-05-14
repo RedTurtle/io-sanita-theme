@@ -2701,6 +2701,11 @@ msgstr ""
 msgid "related_items"
 msgstr ""
 
+#. Default: "Diritti riservati"
+#: components/View/commons/Metadata/Metadata
+msgid "rights"
+msgstr "Alle Rechte vorbehalten"
+
 #. Default: "il giorno"
 #: overrideTranslations
 msgid "rrule_in"
