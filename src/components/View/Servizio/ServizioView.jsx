@@ -23,6 +23,7 @@ import {
   ServizioNotizie,
   ServizioUlterioriInformazioni,
   ServizioDocumenti,
+  ServizioSchemaOrg,
 } from 'io-sanita-theme/components/View/Servizio';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -39,6 +40,7 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 export const ServizioSectionsOrder = [
+  { /* SCHEMA ORG */ component: ServizioSchemaOrg },
   { /* COSA SERVE */ component: ServizioCosaServe },
   { /* ACCEDI AL SERVIZIO */ component: ServizioAccediAlServizio },
   { /* TEMPI DI ATTESA */ component: ServizioTempiDiAttesa },
