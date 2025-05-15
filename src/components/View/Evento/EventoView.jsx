@@ -20,6 +20,7 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 import {
+  EventoSchemaOrg,
   EventoCosE,
   EventoPartecipanti,
   EventoAChiSiRivolge,
@@ -38,6 +39,7 @@ import {
 } from 'io-sanita-theme/components/View/Evento';
 
 export const EventoViewSectionsOrder = [
+  { /* METADATI SCHEMA.ORG */ component: EventoSchemaOrg },
   { /* COS'è */ component: EventoCosE },
   { /* CHI PARTECIPA */ component: EventoPartecipanti },
   { /* EVENTI PADRI */ component: EventoFaParteDi },
