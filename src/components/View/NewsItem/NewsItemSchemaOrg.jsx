@@ -35,7 +35,7 @@ const NewsItemSchemaOrg = ({ content }) => {
     schemaOrg.description = description.join('. ');
   }
 
-  if (content.uo_correlata.length > 0) {
+  if (content.uo_correlata?.length > 0) {
     schemaOrg.author = content.uo_correlata.map((e) => {
       const author = {
         '@type': 'Organization',
