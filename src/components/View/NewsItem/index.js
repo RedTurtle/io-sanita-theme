@@ -54,8 +54,8 @@ export const NewsItemNotizieCorrelate = loadable(() =>
     /* webpackChunkName: "ISNewsItemView" */ 'io-sanita-theme/components/View/NewsItem/NewsItemNotizieCorrelate'
   ),
 );
-export const NewsItemMetadati = loadable(() =>
+export const NewsItemSchemaOrg = loadable(() =>
   import(
-    /* webpackChunkName: "ISNewsItemView" */ 'io-sanita-theme/components/View/NewsItem/NewsItemMetadati'
+    /* webpackChunkName: "ISNewsItemView" */ 'io-sanita-theme/components/View/NewsItem/NewsItemSchemaOrg'
   ),
 );

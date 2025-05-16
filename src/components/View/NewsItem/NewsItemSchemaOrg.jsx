@@ -1,47 +1,105 @@
 import { useIntl } from 'react-intl';
-import { Helmet, toPublicURL } from '@plone/volto/helpers';
+import { toPublicURL } from '@plone/volto/helpers';
 import { SiteProperty } from 'volto-site-settings';
-import { getSiteProperty } from 'io-sanita-theme/helpers';
+import {
+  getSiteProperty,
+  SchemaOrgUtils,
+  richTextHasContent,
+  SchemaOrg,
+} from 'io-sanita-theme/helpers';
 
 const NewsItemSchemaOrg = ({ content }) => {
   const intl = useIntl();
+  console.log('content', content);
+
   let siteTitle = SiteProperty({
     property: 'site_title',
     getValue: true,
     defaultTitle: getSiteProperty('siteTitle', intl.locale),
   });
+
   siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
 
-  const schemaOrg = {
-    '@context': 'https://schema.org',
+  let schemaOrg = {
     '@type': 'NewsArticle',
     headline: content.title,
-    description: content.description || '',
-    image: content.image ? [toPublicURL(content.image.download)] : [],
-    author: {
-      '@type': 'Organization',
-      name: content.creators?.[0] || siteTitle,
-    },
-    inLanguage: intl.locale,
-    publisher: {
-      '@type': 'Organization',
-      name: siteTitle,
-    },
-    datePublished: content.effective,
-    dateModified: content.modified,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': toPublicURL(content['@id']),
-    },
+    url: toPublicURL(content['@id']),
   };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json" data-element="metatag">
-        {JSON.stringify(schemaOrg)}
-      </script>
-    </Helmet>
-  );
+  let description = [];
+
+  if (content.description) {
+    description.push(content.description);
+  }
+
+  if (richTextHasContent(content.descrizione_estesa)) {
+    description.push(
+      SchemaOrgUtils.fieldDataToPlainText(content.descrizione_estesa),
+    );
+  }
+
+  if (description.length > 0) {
+    schemaOrg.description = description.join('. ');
+  }
+
+  if (Array.isArray(content.uo_correlata) && content.uo_correlata.length > 0) {
+    schemaOrg.author = content.uo_correlata.map((e) => {
+      const author = {
+        '@type': 'Organization',
+        name: e.title,
+      };
+
+      const address = {
+        '@type': 'PostalAddress',
+      };
+
+      if (e.street) {
+        address.streetAddress = e.street;
+      }
+      if (e.city) {
+        address.addressLocality = e.city;
+      }
+      if (e.zip_code) {
+        address.postalCode = e.zip_code;
+      }
+      if (e.provincia) {
+        address.addressRegion = e.provincia;
+      }
+
+      if (
+        address.streetAddress ||
+        address.addressLocality ||
+        address.postalCode ||
+        address.addressRegion
+      ) {
+        address.addressCountry = 'IT';
+        author.address = address;
+      }
+
+      return author;
+    });
+  }
+
+  if (intl.locale) {
+    schemaOrg.inLanguage = intl.locale;
+  }
+
+  if (siteTitle.length > 0) {
+    schemaOrg.publisher = {
+      '@type': 'Organization',
+      name: siteTitle,
+    };
+  }
+
+  if (content.effective) {
+    schemaOrg.datePublished = content.effective;
+  }
+
+  if (content.modified) {
+    schemaOrg.dateModified = content.modified;
+  }
+
+  return <SchemaOrg content={content} schema={schemaOrg} />;
 };
 
 export default NewsItemSchemaOrg;
