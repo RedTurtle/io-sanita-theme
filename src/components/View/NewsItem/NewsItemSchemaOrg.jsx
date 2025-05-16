@@ -46,7 +46,7 @@ const NewsItemSchemaOrg = ({ content }) => {
     });
   }
 
-  if (intl.locale) {
+  if (content.language) {
     schemaOrg.inLanguage = content.language.token;
   }
 
