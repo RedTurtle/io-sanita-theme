@@ -11,13 +11,7 @@ import {
 const NewsItemSchemaOrg = ({ content }) => {
   const intl = useIntl();
 
-  let siteTitle = SiteProperty({
-    property: 'site_title',
-    getValue: true,
-    defaultTitle: getSiteProperty('siteTitle', intl.locale),
-  });
-
-  siteTitle = siteTitle?.replaceAll('\\n', ' - ') ?? '';
+  let siteTitle = SchemaOrgUtils.getSiteTitle();
 
   let schemaOrg = {
     '@type': 'NewsArticle',
@@ -41,7 +35,7 @@ const NewsItemSchemaOrg = ({ content }) => {
     schemaOrg.description = description.join('. ');
   }
 
-  if (Array.isArray(content.uo_correlata) && content.uo_correlata.length > 0) {
+  if (content.uo_correlata.length > 0) {
     schemaOrg.author = content.uo_correlata.map((e) => {
       const author = {
         '@type': 'Organization',
@@ -53,15 +47,13 @@ const NewsItemSchemaOrg = ({ content }) => {
   }
 
   if (intl.locale) {
-    schemaOrg.inLanguage = intl.locale;
+    schemaOrg.inLanguage = content.language.token;
   }
 
-  if (siteTitle.length > 0) {
-    schemaOrg.publisher = {
-      '@type': 'Organization',
-      name: siteTitle,
-    };
-  }
+  schemaOrg.publisher = {
+    '@type': 'Organization',
+    name: siteTitle,
+  };
 
   if (content.effective) {
     schemaOrg.datePublished = content.effective;
