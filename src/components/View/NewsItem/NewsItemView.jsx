@@ -32,9 +32,11 @@ import {
   NewsItemACuraDi,
   NewsItemNotizieCorrelate,
   NewsItemUlterioriInformazioni,
+  NewsItemSchemaOrg,
 } from 'io-sanita-theme/components/View/NewsItem';
 
 export const NewsItemViewSectionsOrder = [
+  { /* METADATI SCHEMA.ORG */ component: NewsItemSchemaOrg },
   { /* TESTO COMPLETO */ component: NewsItemTesto },
   { /* DOCUMENTI */ component: NewsItemDocumenti },
   { /* GALLERY */ component: NewsItemGallery },
