@@ -2703,10 +2703,10 @@ msgstr "Tiempo de leer"
 msgid "related_items"
 msgstr ""
 
-#. Default: "Diritti riservati"
+#. Default: "Diritti"
 #: components/View/commons/Metadata/Metadata
 msgid "rights"
-msgstr "Derechos reservados"
+msgstr "Derechos"
 
 #. Default: "il giorno"
 #: overrideTranslations

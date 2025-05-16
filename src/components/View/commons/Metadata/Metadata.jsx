@@ -13,7 +13,7 @@ const messages = defineMessages({
   },
   rights: {
     id: 'rights',
-    defaultMessage: 'Diritti riservati',
+    defaultMessage: 'Diritti',
   },
 });
 

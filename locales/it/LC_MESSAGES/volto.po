@@ -2696,7 +2696,7 @@ msgstr "Tempo di lettura"
 msgid "related_items"
 msgstr ""
 
-#. Default: "Diritti riservati"
+#. Default: "Diritti"
 #: components/View/commons/Metadata/Metadata
 msgid "rights"
 msgstr ""

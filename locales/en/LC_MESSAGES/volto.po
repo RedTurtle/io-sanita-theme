@@ -2696,10 +2696,10 @@ msgstr "Reading time"
 msgid "related_items"
 msgstr "Related items"
 
-#. Default: "Diritti riservati"
+#. Default: "Diritti"
 #: components/View/commons/Metadata/Metadata
 msgid "rights"
-msgstr "Diritti riservati"
+msgstr "All rights reserved"
 
 #. Default: "il giorno"
 #: overrideTranslations

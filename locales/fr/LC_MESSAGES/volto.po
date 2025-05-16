@@ -2703,7 +2703,7 @@ msgstr "Temps de lecture"
 msgid "related_items"
 msgstr ""
 
-#. Default: "Diritti riservati"
+#. Default: "Diritti"
 #: components/View/commons/Metadata/Metadata
 msgid "rights"
 msgstr "Tous droits réservés"
