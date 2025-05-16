@@ -28,7 +28,6 @@ import {
   ComeFarePerUlterioriInformazioni,
   ComeFarePerSchemaOrg,
 } from 'io-sanita-theme/components/View/ComeFarePer';
-import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSquare';
 
 export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
