@@ -10,7 +10,6 @@ import {
 
 const NewsItemSchemaOrg = ({ content }) => {
   const intl = useIntl();
-  console.log('content', content);
 
   let siteTitle = SiteProperty({
     property: 'site_title',
@@ -48,33 +47,6 @@ const NewsItemSchemaOrg = ({ content }) => {
         '@type': 'Organization',
         name: e.title,
       };
-
-      const address = {
-        '@type': 'PostalAddress',
-      };
-
-      if (e.street) {
-        address.streetAddress = e.street;
-      }
-      if (e.city) {
-        address.addressLocality = e.city;
-      }
-      if (e.zip_code) {
-        address.postalCode = e.zip_code;
-      }
-      if (e.provincia) {
-        address.addressRegion = e.provincia;
-      }
-
-      if (
-        address.streetAddress ||
-        address.addressLocality ||
-        address.postalCode ||
-        address.addressRegion
-      ) {
-        address.addressCountry = 'IT';
-        author.address = address;
-      }
 
       return author;
     });
