@@ -3,7 +3,7 @@ import { Helmet, toPublicURL } from '@plone/volto/helpers';
 import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'io-sanita-theme/helpers';
 
-const NewsItemMetadati = ({ content }) => {
+const NewsItemSchemaOrg = ({ content }) => {
   const intl = useIntl();
   let siteTitle = SiteProperty({
     property: 'site_title',
@@ -44,4 +44,4 @@ const NewsItemMetadati = ({ content }) => {
   );
 };
 
-export default NewsItemMetadati;
+export default NewsItemSchemaOrg;
