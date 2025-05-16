@@ -2706,7 +2706,7 @@ msgstr ""
 #. Default: "Diritti"
 #: components/View/commons/Metadata/Metadata
 msgid "rights"
-msgstr "Tous droits réservés"
+msgstr "Droits"
 
 #. Default: "il giorno"
 #: overrideTranslations
