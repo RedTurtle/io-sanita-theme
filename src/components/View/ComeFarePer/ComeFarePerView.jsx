@@ -26,6 +26,7 @@ import {
   ComeFarePerComeFare,
   ComeFarePerApprofondimenti,
   ComeFarePerUlterioriInformazioni,
+  ComeFarePerSchemaOrg,
 } from 'io-sanita-theme/components/View/ComeFarePer';
 
 export const ComeFarePerViewSectionsOrder = [
@@ -39,6 +40,7 @@ export const ComeFarePerViewSectionsOrder = [
       ComeFarePerUlterioriInformazioni,
   },
   { /* METADATA */ component: Metadata },
+  { /* SCHEMA ORG*/ component: ComeFarePerSchemaOrg },
 ];
 
 /**

@@ -9,19 +9,18 @@ import PropTypes from 'prop-types';
  */
 
 const PageHeaderPersona = ({ content }) => {
-  if(content['@type'] !== 'Persona'){
+  if (content['@type'] !== 'Persona') {
     return null;
   }
-  
-  const role = content.incarico?.title && content.incarico.title.split('»').pop().trim();
 
-  return role?(
-   
-        <p className="subtitle">
-          <strong>{role}</strong>
-        </p>
-    
-  ):null;
+  const role =
+    content.incarico?.title && content.incarico.title.split('»').pop().trim();
+
+  return role ? (
+    <p className="subtitle">
+      <strong>{role}</strong>
+    </p>
+  ) : null;
 };
 
 export default PageHeaderPersona;

@@ -60,3 +60,9 @@ export const PersonaStrutture = loadable(() =>
     /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaStrutture'
   ),
 );
+
+export const PersonaSchemaOrg = loadable(() =>
+  import(
+    /* webpackChunkName: "ISPersonaView" */ 'io-sanita-theme/components/View/Persona/PersonaSchemaOrg'
+  ),
+);
