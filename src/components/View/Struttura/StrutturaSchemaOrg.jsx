@@ -13,6 +13,12 @@ const StrutturaSchemaOrg = ({ content }) => {
     url: toPublicURL(content['@id']),
     name: siteTitle,
     additionalType: content.tipologia_struttura?.title,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: content.street,
+      postalCode: content.zip_code,
+      addressLocality: content.city,
+    },
   };
   let description = [];
 
@@ -25,15 +31,7 @@ const StrutturaSchemaOrg = ({ content }) => {
       SchemaOrgUtils.fieldDataToPlainText(content.descrizione_estesa),
     );
   }
-  console.log(content);
-  if (content.street || content.city || content.zip_code) {
-    schemaOrg.address = {
-      '@type': 'PostalAddress',
-      streetAddress: content.street,
-      postalCode: content.zip_code,
-      addressLocality: content.city,
-    };
-  }
+
   if (content.pdc_correlato?.length > 0) {
     schemaOrg.contactPoint = content.pdc_correlato.map((pdc) => {
       const contact = {
