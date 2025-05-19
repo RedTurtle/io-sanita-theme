@@ -16,7 +16,7 @@ import {
   StrutturaServizi,
   StrutturaResponsabile,
   StrutturaPersonale,
-  StrutturaMetatag,
+  StrutturaSchemaOrg,
   StrutturaNotizie,
   StrutturaGalleria,
   StrutturaUfficiCorrelati,
@@ -39,7 +39,7 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 export const StrutturaSectionsOrder = [
-  { /* METATAG SchemaOrg */ component: StrutturaMetatag },
+  { /* METATAG SchemaOrg */ component: StrutturaSchemaOrg },
   { /* COS'è */ component: StrutturaCosE },
   { /* A CHI SI RIVOLGE */ component: StrutturaAChiSiRivolge },
   { /* DOVE */ component: StrutturaDove },
