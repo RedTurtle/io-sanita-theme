@@ -20,8 +20,8 @@ const ServizioSchemaOrg = ({ content }) => {
   const schemaOrg = {
     '@type': 'Service',
     name: content.title,
-    serviceOperator: {
-      '@type': 'GovernmentOrganization',
+    brand: {
+      '@type': 'Organization',
       name: siteTitle,
     },
     areaServed: {
@@ -77,18 +77,23 @@ const ServizioSchemaOrg = ({ content }) => {
   }
 
   if (content.struttura_correlata.length > 0) {
-    schemaOrg.availableChannel.serviceLocation = {
-      '@type': 'Place',
-      name: content.struttura_correlata[0].title,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: content.struttura_correlata[0]?.street || null,
-        postalCode: content.struttura_correlata[0]?.zip_code || null,
-        addressLocality: content.struttura_correlata[0]?.city || null,
-      },
-    };
+    schemaOrg.availableChannel.serviceLocation =
+      content.struttura_correlata.map((struttura) => {
+        return {
+          '@type': 'Place',
+          name: struttura.title,
+          url: toPublicURL(struttura['@id']),
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: struttura?.street || null,
+            postalCode: struttura?.zip_code || null,
+            addressLocality: struttura?.city || null,
+          },
+        };
+      });
   }
 
+  // di UO se ne possono selezionare soltanto una
   if (content.uo_correlata.length > 0) {
     schemaOrg.provider = {
       '@type': 'Place',
