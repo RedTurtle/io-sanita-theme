@@ -18,9 +18,8 @@ const ServizioSchemaOrg = ({ content }) => {
   });
 
   const schemaOrg = {
-    '@type': 'GovernmentService',
+    '@type': 'Service',
     name: content.title,
-    serviceType: content.parent.title,
     serviceOperator: {
       '@type': 'GovernmentOrganization',
       name: siteTitle,
@@ -55,6 +54,10 @@ const ServizioSchemaOrg = ({ content }) => {
     schemaOrg.description = description.join('. ');
   }
 
+  if (content.tipologia_servizio?.title) {
+    schemaOrg.serviceType = content.tipologia_servizio.title;
+  }
+
   // a chi si rivolge
   if (richTextHasContent(content.a_chi_si_rivolge)) {
     schemaOrg.audience = {
@@ -71,8 +74,6 @@ const ServizioSchemaOrg = ({ content }) => {
     )
       ? toPublicURL(content.prenota_online_link)
       : content.prenota_online_link;
-  } else {
-    schemaOrg.availableChannel.serviceUrl = toPublicURL(content['@id']);
   }
 
   if (content.struttura_correlata.length > 0) {
@@ -81,9 +82,9 @@ const ServizioSchemaOrg = ({ content }) => {
       name: content.struttura_correlata[0].title,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: content.struttura_correlata[0].street,
-        postalCode: content.struttura_correlata[0].zip_code,
-        addressLocality: content.struttura_correlata[0].city,
+        streetAddress: content.struttura_correlata[0]?.street || null,
+        postalCode: content.struttura_correlata[0]?.zip_code || null,
+        addressLocality: content.struttura_correlata[0]?.city || null,
       },
     };
   }
@@ -95,9 +96,9 @@ const ServizioSchemaOrg = ({ content }) => {
       url: toPublicURL(content.uo_correlata[0]['@id']),
       address: {
         '@type': 'PostalAddress',
-        streetAddress: content.uo_correlata[0].street,
-        postalCode: content.uo_correlata[0].zip_code,
-        addressLocality: content.uo_correlata[0].city,
+        streetAddress: content.uo_correlata[0]?.street || null,
+        postalCode: content.uo_correlata[0]?.zip_code || null,
+        addressLocality: content.uo_correlata[0]?.city || null,
       },
     };
   }
