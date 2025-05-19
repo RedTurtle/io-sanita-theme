@@ -30,10 +30,9 @@ const HomeSchemaOrg = ({ content }) => {
       '@graph': [
         {
           '@type': 'WebSite',
-          url: toPublicURL(content['@id']),
+          url: toPublicURL('/'),
           name: name,
-          alternateName: content?.title || null,
-          description: content?.description || null,
+          description: description || null,
           potentialAction: {
             '@type': 'SearchAction',
             target: toPublicURL(content['@id']) + '/search',
@@ -42,9 +41,8 @@ const HomeSchemaOrg = ({ content }) => {
         {
           '@type': 'MedicalOrganization',
           name: name,
-          alternateName: content?.title || null,
-          description: description,
-          url: toPublicURL(content['@id']),
+          description: description || null,
+          url: toPublicURL('/'),
           sameAs: socialLinks,
         },
       ],
