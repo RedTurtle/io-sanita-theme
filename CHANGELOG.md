@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.15.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.14.0...2.15.0) (2025-05-20)
+
+### Features
+
+* added SchemaOrg ct servizio ([#88](https://github.com/RedTurtle/io-sanita-theme/issues/88)) ([7cd86d5](https://github.com/RedTurtle/io-sanita-theme/commit/7cd86d5338d0325a93931f590f11234a2cd11fb2))
+* added schemaOrg Struttura ([#89](https://github.com/RedTurtle/io-sanita-theme/issues/89)) ([5b7c091](https://github.com/RedTurtle/io-sanita-theme/commit/5b7c0917da5d9dbed9e3785936645e040707e4cf))
+* Schema.org Event and Homepage ([#87](https://github.com/RedTurtle/io-sanita-theme/issues/87)) ([073148a](https://github.com/RedTurtle/io-sanita-theme/commit/073148a9987b6d2cb045c3a0c274e911ca9a7258))
+
+### Documentation
+
+* updated RELEASE.md ([ef8c5d5](https://github.com/RedTurtle/io-sanita-theme/commit/ef8c5d57214932d53f3fd26dcce58703a03d5f4f))
+
 ## [2.14.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.13.0...2.14.0) (2025-05-19)
 
 ### Features
