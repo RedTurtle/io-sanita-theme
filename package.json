@@ -1,6 +1,6 @@
 {
   "name": "io-sanita-theme",
-  "version": "2.13.0",
+  "version": "2.14.0",
   "description": "io-sanita-theme: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -104,7 +104,7 @@
     "volto-feedback-italia": "1.0.8",
     "volto-form-block": "3.10.2",
     "volto-form-block-italia": "1.0.5",
-    "volto-gdpr-privacy": "2.2.14",
+    "volto-gdpr-privacy": "2.2.15",
     "volto-querywidget-with-browser": "0.4.3",
     "volto-rss-block": "3.0.1",
     "volto-rt-carousel": "1.0.0",

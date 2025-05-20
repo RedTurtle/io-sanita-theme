@@ -2703,6 +2703,11 @@ msgstr "Temps de lecture"
 msgid "related_items"
 msgstr ""
 
+#. Default: "Diritti"
+#: components/View/commons/Metadata/Metadata
+msgid "rights"
+msgstr "Droits"
+
 #. Default: "il giorno"
 #: overrideTranslations
 msgid "rrule_in"

@@ -11,6 +11,10 @@ const messages = defineMessages({
     id: 'modified',
     defaultMessage: 'Ultimo aggiornamento',
   },
+  rights: {
+    id: 'rights',
+    defaultMessage: 'Diritti',
+  },
 });
 
 /**

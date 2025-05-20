@@ -18,6 +18,7 @@ import {
   PersonaDocumenti,
   PersonaGalleria,
   PersonaUlterioriInformazioni,
+  PersonaSchemaOrg,
 } from 'io-sanita-theme/components/View/Persona';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -33,6 +34,7 @@ import {
 } from 'io-sanita-theme/components/View/commons';
 
 export const PersonaViewSectionsOrder = [
+  { /* SCHEMA.ORG */ component: PersonaSchemaOrg },
   { /* INCARICHI */ component: PersonaIncarichi },
   { /* COMPETENZE */ component: PersonaCompetenze },
   { /* UO DI APPARTENENZA */ component: PersonaUOAppartenenza },

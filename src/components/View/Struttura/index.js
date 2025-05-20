@@ -80,3 +80,8 @@ export const StrutturaAllegati = loadable(() =>
     /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaAllegati'
   ),
 );
+export const StrutturaSchemaOrg = loadable(() =>
+  import(
+    /* webpackChunkName: "ISStrutturaView" */ 'io-sanita-theme/components/View/Struttura/StrutturaSchemaOrg'
+  ),
+);

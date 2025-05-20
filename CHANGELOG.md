@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.14.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.13.0...2.14.0) (2025-05-19)
+
+### Features
+
+* Persona Schema.org ([a22ad2f](https://github.com/RedTurtle/io-sanita-theme/commit/a22ad2f005e1fb907eba408d0708b3e47f165c8d))
+* Schema.org ComeFarePer ([#84](https://github.com/RedTurtle/io-sanita-theme/issues/84)) ([7832265](https://github.com/RedTurtle/io-sanita-theme/commit/78322651fec3d2c9b84a72cb38a12009e5af6849))
+* schema.org for CT Notizia ([#85](https://github.com/RedTurtle/io-sanita-theme/issues/85)) ([8774a96](https://github.com/RedTurtle/io-sanita-theme/commit/8774a96ad440640ab5b13e47bbd5c752ef6e232e))
+
+### Bug Fixes
+
+* missed id 'rights' for Metadata field  ([#86](https://github.com/RedTurtle/io-sanita-theme/issues/86)) ([3d3bf9d](https://github.com/RedTurtle/io-sanita-theme/commit/3d3bf9d2965da118de0693244bd71d67137ca8a9))
+
+### Maintenance
+
+* udpated volto-gdpr-privacy to fix arrow in widget ([4c5c33a](https://github.com/RedTurtle/io-sanita-theme/commit/4c5c33a232760a2eebe91813861473c8a3653d34))
+
 ## [2.13.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.12.2...2.13.0) (2025-04-24)
 
 ### Features

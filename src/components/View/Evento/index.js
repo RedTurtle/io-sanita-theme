@@ -111,3 +111,9 @@ export const EventoEventiCorrelati = loadable(
       /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoEventiCorrelati'
     ),
 );
+export const EventoSchemaOrg = loadable(
+  () =>
+    import(
+      /* webpackChunkName: "ISEventView" */ 'io-sanita-theme/components/View/Evento/EventoSchemaOrg'
+    ),
+);
