@@ -1,0 +1,107 @@
+publiccodeYmlVersion: "0.4"
+name: io-Sanità - il sito web per ASL e strutture sanitarie
+applicationSuite: io-Sanità
+url: https://github.com/RedTurtle/io-sanita-theme
+landingURL: https://www.io-sanita.it/
+logo: logo.png
+platforms:
+  - web
+categories:
+  - website-builder
+  - content-management
+usedBy:
+  - AUSL Ferrara
+developmentStatus: stable
+softwareType: standalone/web
+description:
+  it:
+    shortDescription: Sito web conforme al modello ASL
+    longDescription: >
+      **[io-Sanità](https://www.io-sanita.it)** è una piattaforma web open
+      source progettata per rispondere alle esigenze comunicative e informative
+      delle Aziende Sanitarie Locali, in piena conformità con le **Linee guida
+      AgID** e i modelli promossi da **Designers Italia**. Il sistema adotta un
+      approccio "citizen-first", combinando una solida architettura informativa
+      con un’interfaccia utente accessibile, intuitiva e responsive, adatta sia
+      alla consultazione da desktop che da dispositivi mobili.
+
+
+      Il layout grafico, la struttura dei contenuti e i flussi di navigazione
+      seguono fedelmente i modelli ufficiali per i siti ASL, garantendo coerenza
+      con l’ecosistema digitale della Pubblica Amministrazione. L’interfaccia è
+      pensata per migliorare l’esperienza dell’utente finale, riducendo i tempi
+      di ricerca delle informazioni e semplificando l’accesso ai servizi
+      digitali.
+
+
+      Uno degli aspetti distintivi di io-Sanità è la **collaborazione attiva con
+      i redattori** delle aziende sanitarie durante il processo di sviluppo e
+      personalizzazione: la piattaforma è infatti progettata per essere
+      facilmente gestita dai team di comunicazione e URP, anche senza competenze
+      tecniche avanzate.
+
+
+      In termini di **trovabilità dei contenuti**, io-Sanità integra moduli e
+      pattern di navigazione suggeriti da Designers Italia, potenziati
+      dall’esperienza ventennale di **[RedTurtle](https://www.redturtle.it)**
+      nella gestione e pubblicazione di contenuti complessi. Il risultato è un
+      portale ad alta usabilità, che ottimizza la reperibilità delle
+      informazioni e garantisce un'esperienza coerente e fluida per cittadini,
+      operatori sanitari e stakeholder.
+
+
+      Basato su **[Plone](https://plone.org)**, uno dei CMS open source più
+      affidabili e sicuri, io-Sanità è una soluzione pronta all’uso, scalabile,
+      personalizzabile e costantemente aggiornata, pensata per accompagnare la
+      transizione digitale della sanità pubblica italiana.
+
+
+      io-Sanità è frutto della ventennale esperienza di RedTurtle come fornitore
+      qualificato della PA, in particolare grazie alla collaborazione con AUSL
+      Ferrara ed il Dipartimento per la Trasformazione Digitale, con lo scopo
+      finale di uniformare sul territorio nazionale i siti web delle aziende
+      sanitarie locali grazie al Modello ASL.
+    documentation: https://docs.google.com/document/d/1Vih0GDLa4bN16ac4g0wt7RVJIqwlJZgNPp_JdkKVURA/edit?tab=t.0
+    features:
+      - Sviluppato seguendo le linee guida del Modello ASL promosso da Designers
+        Italia.
+      - Gestione avanzata tramite content-type specifici conformi alle nuove
+        linee guida.
+      - Workflow di approvazione contenuti configurabili in base alle esigenze
+        specifiche.
+      - Gestione diretta ed esclusiva tramite un semplice browser senza plugin
+        aggiuntivi
+      - Creazione potenzialmente illimitata di pagine informative e relative
+        categorie.
+      - Editing in modalità "in context".
+      - Ricerca full-text nei contenuti, compresi i file in formato pdf.
+      - Predisposizione per gestione contenuti multilingua.
+      - Sistema di workflow per assegnare la redazione delle lingue aggiuntive
+        ad un gruppo di traduttori.
+      - Possibilità di integrazione con prodotti aggiuntivi, o di comunicazione
+        verso altri applicativi via API.
+      - Registrazione utenti per contenuti personalizzati o accesso ad area
+        riservata.
+      - Pubblicazione o ritiro contenuti temporizzabili con riferimento a date e
+        ore predefinite.
+      - Controllo in tempo reale di collegamenti e dell'integrità referenziale.
+      - Lock automatico dei contenuti per evitare sovrapposizione di modifiche
+        da parte di più redattori.
+      - Possibili connessioni con applicazioni e sistemi aziendali standard come
+        CRM e integrabile con web service, database SQL e NoSQL.
+    screenshots:
+      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/01-io-sanita.png
+legal:
+  license: LGPL-3.0-only
+maintenance:
+  type: internal
+  contacts:
+    - name: Stefano Marchetti
+      email: info@redturtle.it
+      phone: "+3905321915958"
+      affiliation: RedTurtle Technology srl
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - it
+    - en
