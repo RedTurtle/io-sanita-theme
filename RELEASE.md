@@ -41,6 +41,22 @@
 - ...
  -->
 
+## Versione 2.15.0 (20/05/2025)
+
+### Novità
+
+- Implementato lo Schema.org per i tipi di contenuti Struttura, Servizio ed Evento
+
+### Migliorie
+
+- Migliorato lo Schema.org della Homepage
+
+## Versione 2.14.0 (19/05/2025)
+
+### Novità
+
+- Implementato lo Schema.org per i tipi di contenuti Notizia, Persona e ComeFarePer
+
 ## Versione 2.11.1 (31/03/2025)
 
 ### Fix
