@@ -12,7 +12,7 @@ const StrutturaSchemaOrg = ({ content }) => {
     '@type': 'MedicalOrganization',
     url: toPublicURL(content['@id']),
     name: siteTitle,
-    additionalType: content.tipologia_struttura?.title,
+
     address: {
       '@type': 'PostalAddress',
       streetAddress: content.street,
@@ -20,6 +20,9 @@ const StrutturaSchemaOrg = ({ content }) => {
       addressLocality: content.city,
     },
   };
+  if (content.tipologia_struttura?.title) {
+    schemaOrg.additionalType = content.tipologia_struttura?.title;
+  }
   let description = [];
 
   if (content.description) {
