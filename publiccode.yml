@@ -3,7 +3,7 @@ name: io-Sanità - il sito web per ASL e strutture sanitarie
 applicationSuite: io-Sanità
 url: https://github.com/RedTurtle/io-sanita-theme
 landingURL: https://www.io-sanita.it/
-logo: logo.png
+logo: https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/logo.png
 platforms:
   - web
 categories:
@@ -91,6 +91,8 @@ description:
         CRM e integrabile con web service, database SQL e NoSQL.
     screenshots:
       - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/01-io-sanita.png
+      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/io-sanita-02.png
+      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/io-sanita-03.png
 legal:
   license: LGPL-3.0-only
 maintenance:
