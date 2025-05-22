@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.15.0...2.16.0) (2025-05-22)
+
+### Features
+
+* Add publiccode.yml ([e03ef83](https://github.com/RedTurtle/io-sanita-theme/commit/e03ef835891a0506e599df64ce7b4da9f192614f))
+
+### Bug Fixes
+
+* codereview and fixed schemaOrg ([e66803e](https://github.com/RedTurtle/io-sanita-theme/commit/e66803e282feb2b8805d6d3661466a367314be1b))
+
 ## [2.15.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.14.0...2.15.0) (2025-05-20)
 
 ### Features
