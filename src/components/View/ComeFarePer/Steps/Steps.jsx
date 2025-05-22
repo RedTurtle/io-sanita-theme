@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { useDispatch, useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
 import {
@@ -63,7 +62,6 @@ const messages = defineMessages({
  */
 const Steps = ({ content, steps = [] }) => {
   const intl = useIntl();
-  const dispatch = useDispatch();
   const [activeItem, setActiveItem] = useState('');
   const [allOpen, setAllOpen] = useState(false);
 

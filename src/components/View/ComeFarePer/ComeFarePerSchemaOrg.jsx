@@ -1,16 +1,12 @@
 import { toPublicURL } from '@plone/volto/helpers';
+import { useLoadSteps } from 'io-sanita-theme/components/View/ComeFarePer/Steps/helpers';
 import {
   SchemaOrg,
   SchemaOrgUtils,
   richTextHasContent,
 } from 'io-sanita-theme/helpers';
 
-import { useLoadSteps } from 'io-sanita-theme/components/View/ComeFarePer/Steps/helpers';
-import { positions } from 'slate';
-
 const ComeFarePerSchemaOrg = ({ content }) => {
-  const siteTitle = SchemaOrgUtils.getSiteTitle();
-
   let description = [];
   let _yield = [];
   let steps = content?.items?.filter((item) => item['@type'] === 'Step') ?? [];

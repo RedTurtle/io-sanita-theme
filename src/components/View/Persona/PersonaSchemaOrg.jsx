@@ -1,13 +1,5 @@
 import { toPublicURL } from '@plone/volto/helpers';
-import {
-  SchemaOrg,
-  SchemaOrgUtils,
-  richTextHasContent,
-} from 'io-sanita-theme/helpers';
-
-import { useLoadSteps } from 'io-sanita-theme/components/View/ComeFarePer/Steps/helpers';
-import { positions } from 'slate';
-import schema from '../../manage/Widgets/HeaderContactsWidget/schema';
+import { SchemaOrg, SchemaOrgUtils } from 'io-sanita-theme/helpers';
 
 const PersonaSchemaOrg = ({ content }) => {
   const siteTitle = SchemaOrgUtils.getSiteTitle();

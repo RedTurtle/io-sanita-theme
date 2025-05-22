@@ -24,7 +24,7 @@ export const useLoadSteps = (steps = []) => {
 
     return () => {
       steps.forEach((item) => {
-        dispatch(resetContent(subrequest_id));
+        dispatch(resetContent(item['@id']));
       });
     };
   }, []);

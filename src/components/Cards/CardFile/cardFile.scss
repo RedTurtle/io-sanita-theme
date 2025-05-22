@@ -7,6 +7,7 @@
     h5 {
       &.card-title {
         @include rem-size(font-size, 18);
+        word-break: break-word;
       }
     }
     .icon {

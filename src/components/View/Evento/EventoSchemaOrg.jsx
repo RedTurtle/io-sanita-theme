@@ -46,7 +46,7 @@ const EventoSchemaOrg = ({ content }) => {
         addressCountry: 'IT',
       },
     };
-  } else if (content.struttura_correlata.length > 0) {
+  } else if (content.struttura_correlata?.length > 0) {
     schemaOrg.location = {
       '@type': 'Place',
       name: content.struttura_correlata[0].title,
@@ -62,7 +62,7 @@ const EventoSchemaOrg = ({ content }) => {
   }
 
   // organizzatore interno
-  if (content.organizzato_da_interno.length > 0) {
+  if (content.organizzato_da_interno?.length > 0) {
     schemaOrg.organizer = {
       '@type': 'Organization',
       name: content.organizzato_da_interno[0].title,
@@ -85,7 +85,7 @@ const EventoSchemaOrg = ({ content }) => {
       SchemaOrgUtils.fieldDataToPlainText(content.parteciperanno),
     );
   }
-  if (content.persona_correlata.length > 0) {
+  if (content.persona_correlata?.length > 0) {
     attendeeList.push(content.persona_correlata.map((item) => item.title));
   }
   if (attendeeList.length > 0) {
@@ -102,7 +102,7 @@ const EventoSchemaOrg = ({ content }) => {
       SchemaOrgUtils.fieldDataToPlainText(content.a_chi_si_rivolge),
     );
   }
-  if (content.a_chi_si_rivolge_tassonomia.length > 0) {
+  if (content?.a_chi_si_rivolge_tassonomia?.length > 0) {
     audienceList.push(
       content.a_chi_si_rivolge_tassonomia.map((item) => item.title),
     );

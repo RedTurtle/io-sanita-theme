@@ -1,16 +1,11 @@
-import { useIntl } from 'react-intl';
 import { toPublicURL } from '@plone/volto/helpers';
-import { SiteProperty } from 'volto-site-settings';
 import {
-  getSiteProperty,
   SchemaOrgUtils,
   richTextHasContent,
   SchemaOrg,
 } from 'io-sanita-theme/helpers';
 
 const NewsItemSchemaOrg = ({ content }) => {
-  const intl = useIntl();
-
   let siteTitle = SchemaOrgUtils.getSiteTitle();
 
   let schemaOrg = {

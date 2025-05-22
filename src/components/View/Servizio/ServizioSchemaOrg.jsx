@@ -76,7 +76,7 @@ const ServizioSchemaOrg = ({ content }) => {
       : content.prenota_online_link;
   }
 
-  if (content.struttura_correlata.length > 0) {
+  if (content.struttura_correlata?.length > 0) {
     schemaOrg.availableChannel.serviceLocation =
       content.struttura_correlata.map((struttura) => {
         return {
@@ -94,7 +94,7 @@ const ServizioSchemaOrg = ({ content }) => {
   }
 
   // di UO se ne possono selezionare soltanto una
-  if (content.uo_correlata.length > 0) {
+  if (content.uo_correlata?.length > 0) {
     schemaOrg.provider = {
       '@type': 'Place',
       name: content.uo_correlata[0].title,

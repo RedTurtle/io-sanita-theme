@@ -7,10 +7,6 @@
   }
 
   .map-wrapper {
-    #geocoded-result {
-      z-index: 0;
-    }
-
     &.size_small {
       #geocoded-result {
         height: 400px;
