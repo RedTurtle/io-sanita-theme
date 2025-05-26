@@ -1,14 +1,23 @@
-publiccodeYmlVersion: "0.4"
+publiccodeYmlVersion: "0.4.0"
 name: io-Sanità - il sito web per ASL e strutture sanitarie
 applicationSuite: io-Sanità
 url: https://github.com/RedTurtle/io-sanita-theme
 landingURL: https://www.io-sanita.it/
-logo: https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/logo.png
+logo: docs/logo.png
 platforms:
   - web
 categories:
   - website-builder
   - content-management
+dependsOn:
+  open:
+    - name: nodejs
+      versionMin: '20'
+    - name: Python
+      versionMin: '3.11'
+    - name: Docker
+      versionMin: '18.03'
+      optional: true
 usedBy:
   - AUSL Ferrara
 developmentStatus: stable
@@ -90,11 +99,16 @@ description:
       - Possibili connessioni con applicazioni e sistemi aziendali standard come
         CRM e integrabile con web service, database SQL e NoSQL.
     screenshots:
-      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/01-io-sanita.png
-      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/io-sanita-02.png
-      - https://github.com/RedTurtle/io-sanita-theme/blob/main/docs/io-sanita-03.png
+      - docs/01-io-sanita.png
+      - docs/io-sanita-02.png
+      - docs/io-sanita-03.png
 legal:
   license: LGPL-3.0-only
+intendedAudience:
+  scope:
+    - local-authorities
+    - government
+    - healthcare
 maintenance:
   type: internal
   contacts:
@@ -106,4 +120,9 @@ localisation:
   localisationReady: true
   availableLanguages:
     - it
-    - en
+it:
+  conforme:
+    modelloInteroperabilita: true
+    gdpr: true
+    lineeGuidaDesign: true
+    misureMinimeSicurezza: true
