@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.16.1 (27/05/2025)
+
+### Fix
+
+- Sistemata la vista del control panel Utenti
+
 ## Versione 2.15.0 (20/05/2025)
 
 ### Novità
