@@ -1,0 +1,7 @@
+body.cms-ui {
+  .ui.container.users-control-panel {
+    form.ui.form:has(table.ui.table) {
+      overflow-x: auto;
+    }
+  }
+}
