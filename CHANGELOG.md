@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.0...2.16.1) (2025-05-27)
+
+### Bug Fixes
+
+* fixed control panel style ([19e3d9c](https://github.com/RedTurtle/io-sanita-theme/commit/19e3d9c20c5073b315fdb9e91936f0882dbf0f68))
+
+### Documentation
+
+* updated release.md ([158be7d](https://github.com/RedTurtle/io-sanita-theme/commit/158be7d7a680ad93b7a38e7432891c27c01cc196))
+
 ## [2.16.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.15.0...2.16.0) (2025-05-22)
 
 ### Features
