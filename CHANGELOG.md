@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.16.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.1...2.16.2) (2025-06-03)
+
+### Bug Fixes
+
+* handle anchor scroll ([811d25e](https://github.com/RedTurtle/io-sanita-theme/commit/811d25edfcad740736a6c6b817b8de273d9d237f))
+* package.json ([7bae896](https://github.com/RedTurtle/io-sanita-theme/commit/7bae896304e3e00242708f8550abcc5bd0708c5f))
+* package.json ([691c676](https://github.com/RedTurtle/io-sanita-theme/commit/691c676da09e736f2771a7de12904e62ce35ba15))
+
 ## [2.16.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.0...2.16.1) (2025-05-27)
 
 ### Bug Fixes
