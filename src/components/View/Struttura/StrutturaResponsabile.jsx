@@ -15,20 +15,20 @@ const StrutturaResponsabile = ({ content }) => {
   const intl = useIntl();
 
   return content?.responsabile_correlato?.length > 0 ? (
-      <RichTextSection
-        tag_id="responsabile"
-        title={intl.formatMessage(messages.responsabile)}
-      >
-        <Row>
-          {content.responsabile_correlato.map((item) => {
-            return (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
-                <CardPersona item={item} />
-              </Col>
-            );
-          })}
-        </Row>
-      </RichTextSection>
+    <RichTextSection
+      tag_id="responsabile"
+      title={intl.formatMessage(messages.responsabile)}
+    >
+      <Row>
+        {content.responsabile_correlato.map((item) => {
+          return (
+            <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <CardPersona item={item} />
+            </Col>
+          );
+        })}
+      </Row>
+    </RichTextSection>
   ) : (
     <></>
   );

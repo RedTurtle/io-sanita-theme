@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   cos_e: {
@@ -19,8 +19,7 @@ const StrutturaCosE = ({ content }) => {
       title={intl.formatMessage(messages.cos_e)}
       show_title={true}
       data={content.descrizione_estesa}
-    >
-    </RichTextSection>
+    ></RichTextSection>
   ) : (
     <></>
   );
