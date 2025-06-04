@@ -3885,7 +3885,7 @@ msgid "struttura_contatti"
 msgstr ""
 
 #. Default: "Coordinatore"
-#: components/View/Struttura/StrutturaPersonale
+#: components/View/Struttura/StrutturaCoordinatore
 msgid "struttura_coordinatore"
 msgstr ""
 
@@ -3919,7 +3919,7 @@ msgstr ""
 msgid "struttura_orari"
 msgstr ""
 
-#. Default: "Personale"
+#. Default: "Personale della struttura"
 #: components/View/Struttura/StrutturaPersonale
 msgid "struttura_personale"
 msgstr ""
