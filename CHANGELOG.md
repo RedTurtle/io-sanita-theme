@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.16.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.2...2.16.3) (2025-06-11)
+
+### Bug Fixes
+
+* handle Anchor in search block with query ([75a171a](https://github.com/RedTurtle/io-sanita-theme/commit/75a171ab0d65b817dbc41b1290da887ceaf373bb))
+
 ## [2.16.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.1...2.16.2) (2025-06-03)
 
 ### Bug Fixes
