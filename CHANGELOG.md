@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.16.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.3...2.16.4) (2025-06-12)
+
+### Maintenance
+
+* updated StrutturaPersonale with backreferences ([#93](https://github.com/RedTurtle/io-sanita-theme/issues/93)) ([130bd52](https://github.com/RedTurtle/io-sanita-theme/commit/130bd52e53f926b3707b7858cdec263a3f76112c))
+
+### Documentation
+
+* updated Release.md ([bfe8471](https://github.com/RedTurtle/io-sanita-theme/commit/bfe84715ed6cd69c32982a96701b283d0eb30513))
+
 ## [2.16.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.2...2.16.3) (2025-06-11)
 
 ### Bug Fixes
