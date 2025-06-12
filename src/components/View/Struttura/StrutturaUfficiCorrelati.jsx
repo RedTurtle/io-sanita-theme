@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Row, Col } from 'design-react-kit';
-import {
-  RichText,
-  richTextHasContent,
-  RichTextSection,
-} from 'io-sanita-theme/helpers';
+import { RichTextSection } from 'io-sanita-theme/helpers';
 import { CardPlace } from 'io-sanita-theme/components';
 
 const messages = defineMessages({

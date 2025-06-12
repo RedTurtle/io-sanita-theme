@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {
-  RichTextSection,
-  richTextHasContent,
-  RichText,
-  hasGeolocation,
-} from 'io-sanita-theme/helpers';
+import { RichTextSection, hasGeolocation } from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
 
 const messages = defineMessages({
