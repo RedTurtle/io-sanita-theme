@@ -1,0 +1,339 @@
+@media print {
+  @page {
+    margin: 0 !important;
+  }
+
+  body {
+    display: block !important;
+  }
+
+  .public-ui {
+    a {
+      font-weight: 600 !important;
+      // text-decoration: none !important;
+      /* i link che non devono essere sottolineati hanno già regole specifiche,
+          a video è necessario mostare che i tag a sono link */
+
+      &.read-more {
+        display: none !important; // omesso il read more nelle card
+      }
+    }
+
+    .text-secondary {
+      color: $body-color !important;
+    }
+
+    .content-area,
+    .public-ui {
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+    }
+
+    .container {
+      max-width: 98%;
+    }
+
+    // padding/margin
+    .py-5 {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+    .pb-5 {
+      padding-bottom: 20px !important;
+    }
+
+    .pt-5 {
+      padding-top: 20px !important;
+    }
+
+    // removed part of header header
+    .it-header-slim-wrapper {
+      display: none;
+    }
+
+    .it-header-navbar-wrapper {
+      display: none;
+    }
+    // removed sticky header
+    .it-header-wrapper.it-header-sticky.is-sticky {
+      position: static !important;
+    }
+    .header-contacts {
+      background-color: unset;
+    }
+
+    .it-header-center-wrapper {
+      background: none;
+
+      .it-header-center-content-wrapper {
+        .it-brand-wrapper {
+          padding: 0;
+          margin: 0 auto;
+
+          // incresed name of municipalitie
+          a {
+            .icon {
+              fill: $link-color;
+            }
+
+            .it-brand-text {
+              color: $link-color;
+              font-size: 2rem !important;
+            }
+          }
+        }
+
+        .it-right-zone {
+          display: none;
+        }
+      }
+    }
+
+    /* Removed link list in PageHeader*/
+    .PageHeaderWrapper {
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+
+      .link-list-wrapper {
+        display: none;
+      }
+    }
+    /* Removed quick search block */
+    .quick-search-block {
+      display: none;
+    }
+    /* Removed max-height from accordion block*/
+    .accordion-block {
+      .section {
+        padding: 0;
+        &.section-muted {
+          background: transparent;
+        }
+        &.section-inset-shadow {
+          box-shadow: none;
+        }
+      }
+
+      .accordion-item,
+      .accordion-content,
+      .accordion-inner {
+        padding: 0 10px;
+      }
+    }
+
+    .section {
+      padding: 1.2rem;
+    }
+
+    /* Removed shadow and card's padding. Add border*/
+    .card {
+      border: 1px solid $gray-border !important;
+      page-break-inside: avoid;
+
+      &.shadow {
+        box-shadow: none !important;
+      }
+
+      &.bigborder {
+        border: none !important;
+        border-left-width: 0 !important;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &.card-bg {
+        background-color: white !important;
+        color: $body-color !important;
+      }
+    }
+
+    // // Card teaser - io-Comune
+    // .card-wrapper.card-teaser-wrapper.card-teaser-block-3 {
+    //   > .card-teaser {
+    //     flex: 0 0 32.5%;
+    //   }
+    // }
+    // .card.card-teaser.simple-card-default-item .card-body .card-title a,
+    // .card.card-teaser .card-body .card-title a,
+    // .card .card-title a {
+    //   font-size: 1.1rem !important;
+    // }
+
+    .card .card-body .category-top {
+      flex-wrap: wrap;
+    }
+
+    #briciole {
+      display: none;
+    }
+
+    #view > div {
+      .page-header-right {
+        display: none;
+      }
+      #main-content-section {
+        width: 100%;
+      }
+      .row.border-top.row-column-border.row-column-menu-left {
+        border-top: none !important;
+      }
+
+      // Reduced max width image header
+      .content-image {
+        width: 100%;
+        max-width: 100%;
+
+        .row.row-full-width {
+          margin-right: 0;
+          margin-left: 0;
+        }
+
+        figure {
+          display: flex;
+          justify-content: center;
+
+          img {
+            max-width: 300px !important;
+
+            &.full-width {
+              position: initial;
+              right: unset;
+              left: unset;
+              width: auto !important;
+              height: auto;
+              max-height: 300px;
+              margin: 0 !important;
+              object-fit: unset;
+            }
+          }
+        }
+      }
+
+      aside {
+        display: none;
+      }
+
+      .it-page-sections-container {
+        border-top: none;
+
+        .it-carousel-wrapper:not(#galleria) {
+          display: none;
+        }
+
+        .video {
+          display: none;
+        }
+
+        /*.block { //i blocchi devono essere visibili per quei CT che hanno i blocchi
+          display: none;
+        }*/
+      }
+    }
+
+    // #geocoded-result {
+    //   .leaflet-control-attribution {
+    //     display: none;
+    //   }
+    // }
+
+    // .leaflet-container {
+    //   break-inside: avoid;
+    // }
+
+    // #contenuti-correlati {
+    //   display: none;
+    // }
+
+    // #correlato-in-evidenza {
+    //   display: none;
+    // }
+
+    // .scroll-to-top {
+    //   display: none;
+    // }
+
+    // footer.it-footer {
+    //   display: none;
+    // }
+
+    // .feedback-form {
+    //   display: none;
+    // }
+
+    // .grecaptcha-badge {
+    //   display: none;
+    // }
+
+    // .gdpr-privacy-show-banner {
+    //   visibility: hidden;
+    // }
+  }
+
+  // //subsite footer
+  // .subsite-footer {
+  //   display: none;
+  // }
+
+  // //text editor styles
+  // .public-ui {
+  //   p.callout-bg,
+  //   p.callout {
+  //     padding: 0rem 1.25rem;
+  //     border: none;
+  //     margin: 0.5rem 0rem;
+  //     box-shadow: none;
+  //     font-size: 1rem;
+  //   }
+
+  //   .callout {
+  //     page-break-inside: avoid;
+
+  //     .callout-inner {
+  //       // padding-top: 0px;
+  //       p {
+  //         margin-top: -2rem;
+  //       }
+  //     }
+  //   }
+  //   // buttons
+  //   button.btn,
+  //   .btn.btn-primary,
+  //   .draftjs-buttons a {
+  //     padding: 0.5rem 1rem;
+  //     border: 1px solid $link-color;
+  //     background-color: white;
+  //     color: $link-color;
+
+  //     svg.icon {
+  //       color: $link-color;
+  //       fill: $link-color;
+  //     }
+  //   }
+
+  //   // blockquote text
+  //   blockquote.blockquote-card.dark,
+  //   .blockquote.blockquote-card.dark {
+  //     border: 1px solid $body-color;
+  //     background-color: white;
+  //     color: $body-color;
+
+  //     a:not(.btn) {
+  //       color: $body-color;
+  //     }
+  //   }
+  // }
+
+  // .draft-text-larger {
+  //   font-size: 1.2rem;
+  // }
+
+  // //external link icon
+  // svg.external-link {
+  //   display: none;
+  // }
+}
