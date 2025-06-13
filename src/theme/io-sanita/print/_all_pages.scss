@@ -7,6 +7,16 @@
     display: block !important;
   }
 
+  // floating buttons
+  button {
+    &.scroll-to-top {
+      display: none;
+    }
+    &.gdpr-privacy-show-banner {
+      display: none;
+    }
+  }
+
   .public-ui {
     a {
       font-weight: 600 !important;
@@ -152,17 +162,12 @@
       }
     }
 
-    // // Card teaser - io-Comune
-    // .card-wrapper.card-teaser-wrapper.card-teaser-block-3 {
-    //   > .card-teaser {
-    //     flex: 0 0 32.5%;
-    //   }
-    // }
-    // .card.card-teaser.simple-card-default-item .card-body .card-title a,
-    // .card.card-teaser .card-body .card-title a,
-    // .card .card-title a {
-    //   font-size: 1.1rem !important;
-    // }
+    // Card teaser - it seems that the title font for those cards are already smaller than io-Comune. Left here for precaution.
+    .card.card-teaser.simple-card-default-item .card-body .card-title a,
+    .card.card-teaser .card-body .card-title a,
+    .card .card-title a {
+      font-size: 1.1rem !important;
+    }
 
     .card .card-body .category-top {
       flex-wrap: wrap;
@@ -228,34 +233,22 @@
         .video {
           display: none;
         }
-
-        /*.block { //i blocchi devono essere visibili per quei CT che hanno i blocchi
-          display: none;
-        }*/
       }
     }
 
-    // #geocoded-result {
-    //   .leaflet-control-attribution {
-    //     display: none;
-    //   }
-    // }
+    #geocoded-result {
+      .leaflet-control-attribution {
+        display: none;
+      }
+    }
 
-    // .leaflet-container {
-    //   break-inside: avoid;
-    // }
+    .leaflet-container {
+      break-inside: avoid;
+    }
 
-    // #contenuti-correlati {
-    //   display: none;
-    // }
-
-    // #correlato-in-evidenza {
-    //   display: none;
-    // }
-
-    // .scroll-to-top {
-    //   display: none;
-    // }
+    #contenuti-correlati {
+      display: none;
+    }
 
     // footer.it-footer {
     //   display: none;
