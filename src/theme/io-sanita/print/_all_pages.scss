@@ -8,15 +8,15 @@
   }
 
   // floating buttons
-  button {
-    &.scroll-to-top {
-      display: none;
-    }
-    &.gdpr-privacy-show-banner {
-      display: none;
-    }
+  button.gdpr-privacy-show-banner {
+    display: none;
   }
-
+  .scroll-to-top {
+    display: none;
+  }
+  .bg-primary-lightest {
+    background: transparent !important;
+  }
   .public-ui {
     a {
       font-weight: 600 !important;
@@ -27,6 +27,9 @@
       &.read-more {
         display: none !important; // omesso il read more nelle card
       }
+    }
+    h2 {
+      font-size: 1.1rem !important;
     }
 
     .text-secondary {
@@ -133,6 +136,20 @@
         padding: 0 10px;
       }
     }
+    .block.cta_block {
+      .bg-primary-dark {
+        background-color: transparent !important;
+        .cta-tile-text {
+          color: $body-color !important;
+          h2 {
+            color: $body-color !important;
+          }
+        }
+      }
+      figure {
+        display: none !important;
+      }
+    }
 
     .section {
       padding: 1.2rem;
@@ -169,8 +186,35 @@
       font-size: 1.1rem !important;
     }
 
+    .card-featured.card-teaser-wrapper-equal.card-teaser-block-2.card-featured-large
+      .card.card-flex {
+      flex-direction: row;
+    }
+    .card-featured.card-teaser-wrapper-equal.card-teaser-block-2.card-featured-large
+      .card.card-flex
+      .card-image {
+      flex: 0 0 49% !important;
+    }
+
     .card .card-body .category-top {
       flex-wrap: wrap;
+    }
+    .card-with-image-template {
+      .row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        .col-md-6 {
+          width: 100% !important;
+        }
+      }
+      .card-wrapper {
+        .card-image {
+          flex-direction: row;
+          .img-responsive-wrapper {
+            flex: 0 0 49% !important;
+          }
+        }
+      }
     }
 
     #briciole {
@@ -250,83 +294,59 @@
       display: none;
     }
 
-    // footer.it-footer {
-    //   display: none;
-    // }
+    footer.it-footer {
+      display: none;
+    }
 
-    // .feedback-form {
-    //   display: none;
-    // }
-
-    // .grecaptcha-badge {
-    //   display: none;
-    // }
-
-    // .gdpr-privacy-show-banner {
-    //   visibility: hidden;
-    // }
+    .feedback-form {
+      display: none;
+    }
   }
 
-  // //subsite footer
-  // .subsite-footer {
-  //   display: none;
-  // }
+  //subsite footer
+  .subsite-footer {
+    display: none;
+  }
+  .subsite-header {
+    background-image: none !important;
+    background-color: unset;
+    .text {
+      color: $body-color !important;
+    }
+  }
 
-  // //text editor styles
-  // .public-ui {
-  //   p.callout-bg,
-  //   p.callout {
-  //     padding: 0rem 1.25rem;
-  //     border: none;
-  //     margin: 0.5rem 0rem;
-  //     box-shadow: none;
-  //     font-size: 1rem;
-  //   }
+  //text editor styles
+  .public-ui {
+    // buttons
+    button.btn,
+    .btn.btn-primary,
+    .draftjs-buttons a {
+      padding: 0.5rem 1rem;
+      border: 1px solid $link-color;
+      background-color: white;
+      color: $link-color;
 
-  //   .callout {
-  //     page-break-inside: avoid;
+      svg.icon {
+        color: $link-color;
+        fill: $link-color;
+      }
+    }
 
-  //     .callout-inner {
-  //       // padding-top: 0px;
-  //       p {
-  //         margin-top: -2rem;
-  //       }
-  //     }
-  //   }
-  //   // buttons
-  //   button.btn,
-  //   .btn.btn-primary,
-  //   .draftjs-buttons a {
-  //     padding: 0.5rem 1rem;
-  //     border: 1px solid $link-color;
-  //     background-color: white;
-  //     color: $link-color;
+    // blockquote text
+    blockquote.blockquote-card.dark,
+    .blockquote.blockquote-card.dark {
+      border: 1px solid $body-color;
+      background-color: transparent;
+      color: $body-color;
 
-  //     svg.icon {
-  //       color: $link-color;
-  //       fill: $link-color;
-  //     }
-  //   }
+      a:not(.btn) {
+        color: $body-color;
+      }
+    }
+  }
 
-  //   // blockquote text
-  //   blockquote.blockquote-card.dark,
-  //   .blockquote.blockquote-card.dark {
-  //     border: 1px solid $body-color;
-  //     background-color: white;
-  //     color: $body-color;
-
-  //     a:not(.btn) {
-  //       color: $body-color;
-  //     }
-  //   }
-  // }
-
-  // .draft-text-larger {
-  //   font-size: 1.2rem;
-  // }
-
-  // //external link icon
-  // svg.external-link {
-  //   display: none;
-  // }
+  //external link icon
+  svg.external-link {
+    display: none;
+  }
 }
