@@ -33,7 +33,7 @@ const StrutturaPersonale = ({ content }) => {
     <BackReferences
       type="Persona"
       content={content}
-      id={'Persona'}
+      id="Persona"
       title={intl.formatMessage(messages.personale)}
     />
   );
