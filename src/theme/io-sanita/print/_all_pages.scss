@@ -6,6 +6,12 @@
   body {
     display: block !important;
   }
+  .public-ui h1,
+  .public-ui .h1 {
+    font-size: 1.5rem !important;
+    line-height: normal !important;
+    margin-bottom: 0.5rem !important;
+  }
 
   // floating buttons
   button.gdpr-privacy-show-banner {
@@ -222,6 +228,12 @@
     }
 
     #view > div {
+      .PageHeaderWrapper p.description {
+        font-size: 1rem;
+      }
+      .mb-5 {
+        margin-bottom: 1rem !important;
+      }
       .page-header-right {
         display: none;
       }
@@ -276,6 +288,11 @@
 
         .video {
           display: none;
+        }
+      }
+      .card-wrapper {
+        .category-bottom {
+          margin-top: 0 !important;
         }
       }
     }
