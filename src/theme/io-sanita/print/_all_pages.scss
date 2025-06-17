@@ -26,7 +26,6 @@
   .public-ui {
     a {
       font-weight: 600 !important;
-     
 
       &.read-more {
         display: none !important; // omesso il read more nelle card
@@ -167,8 +166,6 @@
       &.shadow {
         box-shadow: none !important;
       }
-
-   
 
       &::after {
         display: none;
@@ -331,8 +328,7 @@
   .public-ui {
     // buttons
     button.btn,
-    .btn.btn-primary,
-    .draftjs-buttons a {
+    .btn.btn-primary {
       padding: 0.5rem 1rem;
       border: 1px solid $link-color;
       background-color: white;
