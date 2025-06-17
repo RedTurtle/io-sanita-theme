@@ -40,6 +40,12 @@
 
 - ...
  -->
+ ## Versione 2.16.4 (12/06/2025)
+
+### Migliorie
+
+- Migliorato la vista delle Strutture con il campo dedicato al personale correlato, opzione attivabile dalla configurazione del tema
+
 
 ## Versione 2.16.1 (27/05/2025)
 
