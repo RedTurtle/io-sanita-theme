@@ -1,0 +1,13 @@
+.paths-configuration-widget {
+  .root-path-configuration {
+    background-color: #edf1f2;
+
+    .column:not(.row).delete-root-path-container {
+      padding-top: 0;
+      padding-right: 2em;
+    }
+  }
+  .root-path-content {
+    padding: 1rem 0;
+  }
+}

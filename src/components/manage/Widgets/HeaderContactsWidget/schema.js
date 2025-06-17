@@ -29,6 +29,7 @@ const schema = () => {
           "Seleziona o inserisci il nome di un'icona di FontAwesome.",
         widget: 'icon',
         defaultOptions: defaultIconWidgetOptions,
+        wrapped: false,
       },
     },
     required: [],
