@@ -26,9 +26,7 @@
   .public-ui {
     a {
       font-weight: 600 !important;
-      // text-decoration: none !important;
-      /* i link che non devono essere sottolineati hanno già regole specifiche,
-          a video è necessario mostare che i tag a sono link */
+     
 
       &.read-more {
         display: none !important; // omesso il read more nelle card
