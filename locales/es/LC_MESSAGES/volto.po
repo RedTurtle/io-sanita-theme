@@ -3924,6 +3924,11 @@ msgstr ""
 msgid "struttura_personale"
 msgstr ""
 
+#. Default: "Personale correlato"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_personale_correlato"
+msgstr ""
+
 #. Default: "Responsabile"
 #: components/View/Struttura/StrutturaResponsabile
 msgid "struttura_responsabile"

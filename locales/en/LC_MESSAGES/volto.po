@@ -3917,6 +3917,11 @@ msgstr "Times"
 msgid "struttura_personale"
 msgstr "Staff"
 
+#. Default: "Personale correlato"
+#: components/View/Struttura/StrutturaPersonale
+msgid "struttura_personale_correlato"
+msgstr "Related staff"
+
 #. Default: "Responsabile"
 #: components/View/Struttura/StrutturaResponsabile
 msgid "struttura_responsabile"
