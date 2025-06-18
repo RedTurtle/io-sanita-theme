@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.17.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.4...2.17.0) (2025-06-18)
+
+### Features
+
+* print styles ([#96](https://github.com/RedTurtle/io-sanita-theme/issues/96)) ([602059a](https://github.com/RedTurtle/io-sanita-theme/commit/602059af127f93186d9152909dfcfb62dd28f4fd))
+
+### Maintenance
+
+* updated Personale field ct struttura with backreferences and personale_correlato ([#95](https://github.com/RedTurtle/io-sanita-theme/issues/95)) ([3357e51](https://github.com/RedTurtle/io-sanita-theme/commit/3357e516708c658dee54a75fbc1f5dd85e84b410))
+
 ## [2.16.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.3...2.16.4) (2025-06-12)
 
 ### Maintenance
