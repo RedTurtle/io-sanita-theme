@@ -1,0 +1,360 @@
+@media print {
+  @page {
+    margin: 0 !important;
+  }
+
+  body {
+    display: block !important;
+  }
+  .public-ui h1,
+  .public-ui .h1 {
+    font-size: 1.5rem !important;
+    line-height: normal !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  // floating buttons
+  button.gdpr-privacy-show-banner {
+    display: none;
+  }
+  .scroll-to-top {
+    display: none;
+  }
+  .bg-primary-lightest {
+    background: transparent !important;
+  }
+  .public-ui {
+    a {
+      font-weight: 600 !important;
+
+      &.read-more {
+        display: none !important; // omesso il read more nelle card
+      }
+    }
+    h2 {
+      font-size: 1.1rem !important;
+    }
+
+    .text-secondary {
+      color: $body-color !important;
+    }
+
+    .content-area,
+    .public-ui {
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+    }
+
+    .container {
+      max-width: 98%;
+    }
+
+    // padding/margin
+    .py-5 {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+    .pb-5 {
+      padding-bottom: 20px !important;
+    }
+
+    .pt-5 {
+      padding-top: 20px !important;
+    }
+
+    // removed part of header header
+    .it-header-slim-wrapper {
+      display: none;
+    }
+
+    .it-header-navbar-wrapper {
+      display: none;
+    }
+    // removed sticky header
+    .it-header-wrapper.it-header-sticky.is-sticky {
+      position: static !important;
+    }
+    .header-contacts {
+      background-color: unset;
+    }
+
+    .it-header-center-wrapper {
+      background: none;
+
+      .it-header-center-content-wrapper {
+        .it-brand-wrapper {
+          padding: 0;
+          margin: 0 auto;
+
+          // incresed name of municipalitie
+          a {
+            .icon {
+              fill: $link-color;
+            }
+
+            .it-brand-text {
+              color: $link-color;
+              font-size: 2rem !important;
+            }
+          }
+        }
+
+        .it-right-zone {
+          display: none;
+        }
+      }
+    }
+
+    /* Removed link list in PageHeader*/
+    .PageHeaderWrapper {
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+
+      .link-list-wrapper {
+        display: none;
+      }
+    }
+    /* Removed quick search block */
+    .quick-search-block {
+      display: none;
+    }
+    /* Removed max-height from accordion block*/
+    .accordion-block {
+      .section {
+        padding: 0;
+        &.section-muted {
+          background: transparent;
+        }
+        &.section-inset-shadow {
+          box-shadow: none;
+        }
+      }
+
+      .accordion-item,
+      .accordion-content,
+      .accordion-inner {
+        padding: 0 10px;
+      }
+    }
+    .block.cta_block {
+      .bg-primary-dark {
+        background-color: transparent !important;
+        .cta-tile-text {
+          color: $body-color !important;
+          h2 {
+            color: $body-color !important;
+          }
+        }
+      }
+      figure {
+        display: none !important;
+      }
+    }
+
+    .section {
+      padding: 1.2rem;
+    }
+
+    /* Removed shadow and card's padding. Add border*/
+    .card {
+      border: 1px solid $gray-border !important;
+      page-break-inside: avoid;
+
+      &.shadow {
+        box-shadow: none !important;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &.card-bg {
+        background-color: white !important;
+        color: $body-color !important;
+      }
+    }
+
+    // Card teaser - it seems that the title font for those cards are already smaller than io-Comune. Left here for precaution.
+    .card.card-teaser.simple-card-default-item .card-body .card-title a,
+    .card.card-teaser .card-body .card-title a,
+    .card .card-title a {
+      font-size: 1.1rem !important;
+    }
+
+    .card-featured.card-teaser-wrapper-equal.card-teaser-block-2.card-featured-large
+      .card.card-flex {
+      flex-direction: row;
+    }
+    .card-featured.card-teaser-wrapper-equal.card-teaser-block-2.card-featured-large
+      .card.card-flex
+      .card-image {
+      flex: 0 0 49% !important;
+    }
+
+    .card .card-body .category-top {
+      flex-wrap: wrap;
+    }
+    .card-with-image-template {
+      .row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        .col-md-6 {
+          width: 100% !important;
+        }
+      }
+      .card-wrapper {
+        .card-image {
+          flex-direction: row;
+          .img-responsive-wrapper {
+            flex: 0 0 49% !important;
+          }
+        }
+      }
+    }
+
+    #briciole {
+      display: none;
+    }
+
+    #view {
+      .PageHeaderWrapper p.description {
+        font-size: 1rem;
+      }
+      .mb-5 {
+        margin-bottom: 1rem !important;
+      }
+      .page-header-right {
+        display: none;
+      }
+      #main-content-section {
+        width: 100%;
+      }
+      .row.border-top.row-column-border.row-column-menu-left {
+        border-top: none !important;
+      }
+
+      // Reduced max width image header
+      .content-image {
+        width: 100%;
+        max-width: 100%;
+
+        .row.row-full-width {
+          margin-right: 0;
+          margin-left: 0;
+        }
+
+        figure {
+          display: flex;
+          justify-content: center;
+
+          img {
+            max-width: 300px !important;
+
+            &.full-width {
+              position: initial;
+              right: unset;
+              left: unset;
+              width: auto !important;
+              height: auto;
+              max-height: 300px;
+              margin: 0 !important;
+              object-fit: unset;
+            }
+          }
+        }
+      }
+
+      aside {
+        display: none;
+      }
+
+      .it-page-sections-container {
+        border-top: none;
+
+        .it-carousel-wrapper:not(#galleria) {
+          display: none;
+        }
+
+        .video {
+          display: none;
+        }
+      }
+      .card-wrapper {
+        .category-bottom {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    #geocoded-result {
+      .leaflet-control-attribution {
+        display: none;
+      }
+    }
+
+    .leaflet-container {
+      break-inside: avoid;
+    }
+
+    #contenuti-correlati {
+      display: none;
+    }
+
+    footer.it-footer {
+      display: none;
+    }
+
+    .feedback-form {
+      display: none;
+    }
+  }
+
+  //subsite footer
+  .subsite-footer {
+    display: none;
+  }
+  .subsite-header {
+    background-image: none !important;
+    background-color: unset;
+    .text {
+      color: $body-color !important;
+    }
+  }
+
+  //text editor styles
+  .public-ui {
+    // buttons
+    button.btn,
+    .btn.btn-primary {
+      padding: 0.5rem 1rem;
+      border: 1px solid $link-color;
+      background-color: white;
+      color: $link-color;
+
+      svg.icon {
+        color: $link-color;
+        fill: $link-color;
+      }
+    }
+
+    // blockquote text
+    blockquote.blockquote-card.dark,
+    .blockquote.blockquote-card.dark {
+      border: 1px solid $body-color;
+      background-color: transparent;
+      color: $body-color;
+
+      a:not(.btn) {
+        color: $body-color;
+      }
+    }
+  }
+
+  //external link icon
+  svg.external-link {
+    display: none;
+  }
+}
