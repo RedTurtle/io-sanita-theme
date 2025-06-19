@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.17.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.0...2.17.1) (2025-06-19)
+
+### Bug Fixes
+
+* format bando date in TableTemplate ([72f55d4](https://github.com/RedTurtle/io-sanita-theme/commit/72f55d44134c00d54abdd632f035e38f90f30544))
+
 ## [2.17.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.16.4...2.17.0) (2025-06-18)
 
 ### Features
