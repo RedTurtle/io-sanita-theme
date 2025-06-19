@@ -42,7 +42,7 @@ const TableTemplate = (props) => {
   const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
 
   useEffect(() => {
-    if(columns?.length > 0) { 
+    if (columns?.length > 0) {
       const cts = columns.reduce((acc, c) => {
         if (acc.indexOf(c.ct) < 0) {
           acc.push(c.ct);
@@ -117,7 +117,7 @@ const TableTemplate = (props) => {
                       case 'chiusura_procedimento_bando':
                       case 'scadenza_domande_bando':
                       case 'scadenza_bando':
-                        widget_props.format = 'd MMM yyyy';
+                        widget_props.format = 'DD MMM yyyy';
                         break;
                       default:
                         break;
