@@ -20,3 +20,9 @@ export const LinkToWidget = loadable(() =>
 );
 
 export defaultIconWidgetOptions from 'io-sanita-theme/components/manage/Widgets/IconWidget/defaultIconWidgetOptions';
+
+export const PathsWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/PathsWidget/PathsWidget'
+  ),
+);

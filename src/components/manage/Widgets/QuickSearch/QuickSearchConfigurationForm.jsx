@@ -97,7 +97,7 @@ const QuickSearchConfigurationForm = ({
         }
         onChange={(id, value) => onChangeFormData('href', value)}
       /> */}
-
+      <br />
       <Form.Field inline className="delete wide" id="item-delete">
         <Grid>
           <Grid.Row>
