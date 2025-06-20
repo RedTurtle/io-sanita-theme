@@ -1,6 +1,12 @@
 @import 'io-sanita-theme/theme/bootstrap-italia-base-config';
 
 .search-view {
+  .form-check .form-control {
+    min-height: 1.5rem;
+    top: 0;
+    left: 0;
+  }
+
   @media (min-width: 576px) {
     .column-filters .form-check [type='checkbox'] + label {
       color: var(--bs-body-color-rgb);
