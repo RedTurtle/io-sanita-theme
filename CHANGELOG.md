@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.17.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.1...2.17.2) (2025-06-20)
+
+### Bug Fixes
+
+* fixed checkbox height search view ([f9cd55d](https://github.com/RedTurtle/io-sanita-theme/commit/f9cd55d61dd0419358a9f9dcfa24a5879a9398ea))
+
 ## [2.17.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.0...2.17.1) (2025-06-19)
 
 ### Bug Fixes
