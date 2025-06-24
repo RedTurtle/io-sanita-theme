@@ -4,22 +4,26 @@
  */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'design-react-kit';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import { Icon } from 'io-sanita-theme/components';
 import { getIoSanitaSettings } from 'io-sanita-theme/actions';
-
+import { getItemsByPath } from 'io-sanita-theme/components/manage/Widgets/PathsWidget/utils';
 import './headerContacts.scss';
 
 const HeaderContacts = () => {
   const dispatch = useDispatch();
   const content = useSelector((state) => state?.content);
   const settings = useSelector((state) => state?.iosanita_settings);
-  const items = useSelector(
+  const location = useLocation();
+  const config = useSelector(
     (state) =>
       state?.content?.data?.['@components']?.['iosanita-settings']
         ?.contatti_testata ?? state.iosanita_settings?.data?.contatti_testata,
   );
+
+  const items = getItemsByPath(config, location.pathname) ?? [];
 
   useEffect(() => {
     if (

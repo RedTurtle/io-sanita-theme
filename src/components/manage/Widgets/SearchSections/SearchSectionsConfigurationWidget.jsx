@@ -11,6 +11,7 @@ import {
 } from 'semantic-ui-react';
 import { TextWidget } from '@plone/volto/components/manage/Widgets';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { PathsWidget } from 'io-sanita-theme/components/manage/Widgets';
 
 import SearchSectionsConfigurationForm from 'io-sanita-theme/components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm';
 import './searchSectionsConfigurationWidget.scss';
@@ -19,18 +20,6 @@ const messages = defineMessages({
   rootItemsHeader: {
     id: 'searchsectionswidget-items-header',
     defaultMessage: 'Sezioni',
-  },
-  addRootPath: {
-    id: 'searchsectionswidget-add-rootpath',
-    defaultMessage: 'Aggiungi radice di navigazione',
-  },
-  deleteRootPath: {
-    id: 'searchsectionswidget-delete-rootpath',
-    defaultMessage: 'Rimuovi radice di navigazione',
-  },
-  root_path: {
-    id: 'searchsectionswidget-rootpath',
-    defaultMessage: 'Radice di navigazione',
   },
   addItem: {
     id: 'searchsectionswidget-additem',
@@ -44,10 +33,6 @@ const messages = defineMessages({
     id: 'searchsectionswidget-move-item-down',
     defaultMessage: 'Sposta dopo',
   },
-  emptyActiveRootPath: {
-    id: 'searchsectionswidget-emptyActiveRootPath',
-    defaultMessage: 'Seleziona un percorso',
-  },
   emptyActiveItem: {
     id: 'searchsectionswidget-emptyActiveItem',
     defaultMessage: 'Aggiungi una nuova sezione, o selezionane una.',
@@ -60,309 +45,183 @@ const defaultSectionItem = (title) => ({
 });
 
 const defaultRootConfiguration = (title) => ({
-  rootPath: '/',
   items: [defaultSectionItem(title)],
 });
 
 const defaultConfiguration = [defaultRootConfiguration()];
 
-const SearchSectionsConfigurationWidget = ({
-  value,
-  id,
-  onChange,
-  required,
-  title,
-  description,
-}) => {
+const SearchSectionsConfigurationWidget = (props) => {
+  const { value, id, onChange, required, title, description } = props;
   const intl = useIntl();
-  const [configuration, setConfiguration] = useState(
-    value?.length > 0 && value !== '""'
-      ? JSON.parse(value)
-      : defaultConfiguration,
-  );
-
-  const [activeRoot, setActiveRoot] = useState(0);
   const [activeItem, setActiveItem] = useState(0);
 
-  const handleChangeConfiguration = (value) => {
-    setConfiguration(value);
-    onChange(id, JSON.stringify(value));
-  };
-
-  const addRootPath = (e) => {
+  const deleteItem = (
+    e,
+    configuration,
+    pathIndex,
+    onChangePathConfig,
+    index,
+  ) => {
     e.preventDefault();
-    const itemsNumber = configuration.length;
-    const rootItem = `/tab${itemsNumber}`;
-    let newRootConfiguration = [
-      ...configuration,
-      {
-        ...defaultRootConfiguration(`Tab ${itemsNumber}`),
-        rootPath: rootItem,
-      },
-    ];
-
-    handleChangeConfiguration(newRootConfiguration);
-    setActiveRoot(newRootConfiguration.length - 1);
-  };
-
-  const deleteRootPath = (e, index) => {
-    e.preventDefault();
-    let newRootConfiguration = [...configuration];
-    newRootConfiguration.splice(index, 1);
-
-    if (activeRoot === index) {
-      setTimeout(() => setActiveRoot(index > 0 ? index - 1 : 0), 0);
-    }
-
-    handleChangeConfiguration(newRootConfiguration);
-  };
-
-  const deleteItem = (e, pathIndex, index) => {
-    e.preventDefault();
-    let newRootConfiguration = [...configuration];
-    newRootConfiguration[pathIndex].items.splice(index, 1);
+    let newRootConfiguration = { ...configuration[pathIndex] };
+    newRootConfiguration.items.splice(index, 1);
 
     if (activeItem === index) {
       setTimeout(() => setActiveItem(index > 0 ? index - 1 : 0), 0);
     }
 
-    handleChangeConfiguration(newRootConfiguration);
+    onChangePathConfig(newRootConfiguration, pathIndex);
   };
 
-  const addItem = (e, pathIndex) => {
+  const addItem = (e, configuration, pathIndex, onChangePathConfig) => {
     e.preventDefault();
-    let newRootConfiguration = [...configuration];
-    newRootConfiguration[pathIndex].items = [
-      ...(newRootConfiguration[pathIndex]?.items || []),
-      defaultSectionItem(
-        `New ${newRootConfiguration[pathIndex].items?.length || ''}`,
-      ),
+    let newRootConfiguration = { ...configuration[pathIndex] };
+    newRootConfiguration.items = [
+      ...(newRootConfiguration?.items || []),
+      defaultSectionItem(`New ${newRootConfiguration.items?.length || ''}`),
     ];
 
-    setActiveItem(newRootConfiguration[pathIndex].items.length - 1);
-    handleChangeConfiguration(newRootConfiguration);
+    setActiveItem(newRootConfiguration.items.length - 1);
+    onChangePathConfig(newRootConfiguration, pathIndex);
   };
 
-  const onChangeRootPath = (index, root) => {
-    let newRootConfiguration = [...configuration];
-    newRootConfiguration[index] = root;
-
-    handleChangeConfiguration(newRootConfiguration);
+  const onChangeItem = (
+    configuration,
+    pathIndex,
+    onChangePathConfig,
+    itemIndex,
+    item,
+  ) => {
+    let newRootConfiguration = { ...configuration[pathIndex] };
+    newRootConfiguration.items[itemIndex] = item;
+    onChangePathConfig(newRootConfiguration, pathIndex);
   };
 
-  const onChangeItem = (pathIndex, itemIndex, item) => {
-    let newRootConfiguration = [...configuration];
-    newRootConfiguration[pathIndex].items[itemIndex] = item;
-
-    handleChangeConfiguration(newRootConfiguration);
-  };
-
-  const moveItem = (e, pathIndex, itemIndex, direction) => {
+  const moveItem = (
+    e,
+    configuration,
+    pathIndex,
+    onChangePathConfig,
+    itemIndex,
+    direction,
+  ) => {
     e.preventDefault();
     const up = direction === 'up';
-    let newRootConfiguration = [...configuration];
+    let newRootConfiguration = { ...configuration[pathIndex] };
 
-    let item = newRootConfiguration[pathIndex].items[itemIndex];
-    newRootConfiguration[pathIndex].items.splice(itemIndex, 1);
-    newRootConfiguration[pathIndex].items.splice(
-      itemIndex + (up ? -1 : 1),
-      0,
-      item,
-    );
+    let item = newRootConfiguration.items[itemIndex];
+    newRootConfiguration.items.splice(itemIndex, 1);
+    newRootConfiguration.items.splice(itemIndex + (up ? -1 : 1), 0, item);
 
-    handleChangeConfiguration(newRootConfiguration);
+    onChangePathConfig(newRootConfiguration, pathIndex);
   };
 
   return (
     <div className="search-sections-configuration-widget">
-      <Form.Field inline id={id}>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column width="4">
-              <div className="wrapper">
-                <label htmlFor="search-sections-configuration">{title}</label>
-              </div>
-            </Grid.Column>
-            <Grid.Column
-              width="8"
-              className="search-sections-configuration-widget"
-            >
-              <div id="search-sections-configuration">
-                <Menu pointing secondary className="rootpath-menu">
-                  {configuration.map((root, idx) => (
-                    <Menu.Item
-                      key={`root-path-${idx}`}
-                      name={root.rootPath}
-                      active={activeRoot === idx}
-                      onClick={() => {
-                        setActiveRoot(idx);
-                        setActiveItem(0);
-                      }}
-                    >
-                      <span>
-                        {root?.rootPath ? flattenToAppURL(root?.rootPath) : '/'}
-                      </span>
-                    </Menu.Item>
-                  ))}
+      <PathsWidget
+        {...props}
+        defaultRootConfiguration={defaultRootConfiguration}
+        onClickRoot={() => {
+          setActiveItem(0);
+        }}
+      >
+        {({ configuration, activeRoot, onChangePathConfig }) => (
+          <Grid className="items-list-menu-wrapper">
+            <Grid.Column width={4}>
+              <Header as="h5" className="items-header">
+                {intl.formatMessage(messages.rootItemsHeader)}
+              </Header>
+              <Menu fluid vertical tabular className="root-items-menu">
+                {configuration[activeRoot].items?.map((item, idx) => (
                   <Menu.Item
-                    active={false}
-                    name={intl.formatMessage(messages.addRootPath)}
-                    onClick={addRootPath}
+                    key={`item-${idx}`}
+                    name={item.title}
+                    active={activeItem === idx}
+                    onClick={() => setActiveItem(idx)}
                   >
-                    <Icon name="plus" />
+                    <Button.Group vertical className="move-buttons">
+                      <Button
+                        disabled={idx === 0}
+                        size="tiny"
+                        icon={<Icon name="arrow left" />}
+                        title={intl.formatMessage(messages.moveItemUp)}
+                        onClick={(e) =>
+                          moveItem(
+                            e,
+                            configuration,
+                            activeRoot,
+                            onChangePathConfig,
+                            idx,
+                            'up',
+                          )
+                        }
+                      />
+                      <Button
+                        disabled={
+                          idx === configuration[activeRoot].items.length - 1
+                        }
+                        size="tiny"
+                        icon={<Icon name="arrow right" />}
+                        title={intl.formatMessage(messages.moveItemDown)}
+                        onClick={(e) =>
+                          moveItem(
+                            e,
+                            configuration,
+                            activeRoot,
+                            onChangePathConfig,
+                            idx,
+                            'down',
+                          )
+                        }
+                      />
+                    </Button.Group>
+                    <span>{item.title}</span>
                   </Menu.Item>
-                </Menu>
-                <Segment>
-                  {activeRoot > -1 && activeRoot < configuration.length ? (
-                    <>
-                      <Grid className="root-path-configuration">
-                        <Grid.Column
-                          width={12}
-                          className="search-sections-rootpath-segment"
-                        >
-                          <TextWidget
-                            id="rootPath"
-                            title={intl.formatMessage(messages.root_path)}
-                            description=""
-                            required={true}
-                            value={
-                              configuration?.[activeRoot]?.rootPath
-                                ? flattenToAppURL(
-                                    configuration[activeRoot].rootPath,
-                                  )
-                                : '/'
-                            }
-                            onChange={(id, value) => {
-                              onChangeRootPath(activeRoot, {
-                                ...configuration[activeRoot],
-                                rootPath: value?.length ? value : '/',
-                              });
-                            }}
-                          />
-                        </Grid.Column>
-                        <Grid.Column
-                          width={12}
-                          textAlign="right"
-                          className="delete-root-path-container"
-                        >
-                          <Button
-                            icon="trash"
-                            size="mini"
-                            negative
-                            onClick={(e) => deleteRootPath(e, activeRoot)}
-                            id="delete-rootpath"
-                            content={intl.formatMessage(
-                              messages.deleteRootPath,
-                            )}
-                          />
-                        </Grid.Column>
-                      </Grid>
-
-                      <Grid>
-                        <Grid.Column width={4}>
-                          <Header
-                            as="h5"
-                            className="search-sections-items-header"
-                          >
-                            {intl.formatMessage(messages.rootItemsHeader)}
-                          </Header>
-                          <Menu
-                            fluid
-                            vertical
-                            tabular
-                            className="root-items-menu"
-                          >
-                            {configuration[activeRoot].items?.map(
-                              (item, idx) => (
-                                <Menu.Item
-                                  key={`item-${idx}`}
-                                  name={item.title}
-                                  active={activeItem === idx}
-                                  onClick={() => setActiveItem(idx)}
-                                >
-                                  <Button.Group
-                                    vertical
-                                    className="move-buttons"
-                                  >
-                                    <Button
-                                      disabled={idx === 0}
-                                      size="tiny"
-                                      icon={<Icon name="arrow left" />}
-                                      title={intl.formatMessage(
-                                        messages.moveItemUp,
-                                      )}
-                                      onClick={(e) =>
-                                        moveItem(e, activeRoot, idx, 'up')
-                                      }
-                                    />
-                                    <Button
-                                      disabled={
-                                        idx ===
-                                        configuration[activeRoot].items.length -
-                                          1
-                                      }
-                                      size="tiny"
-                                      icon={<Icon name="arrow right" />}
-                                      title={intl.formatMessage(
-                                        messages.moveItemDown,
-                                      )}
-                                      onClick={(e) =>
-                                        moveItem(e, activeRoot, idx, 'down')
-                                      }
-                                    />
-                                  </Button.Group>
-                                  <span>{item.title}</span>
-                                </Menu.Item>
-                              ),
-                            )}
-                            <Menu.Item
-                              name={intl.formatMessage(messages.addItem)}
-                              onClick={(e) => addItem(e, activeRoot)}
-                            >
-                              <Icon name="plus" />
-                            </Menu.Item>
-                          </Menu>
-                        </Grid.Column>
-                        <Grid.Column stretched width={8}>
-                          {activeItem > -1 &&
-                          activeItem <
-                            configuration[activeRoot].items?.length ? (
-                            <SearchSectionsConfigurationForm
-                              id={`${activeRoot}-${activeItem}`}
-                              item={configuration[activeRoot].items[activeItem]}
-                              onChange={(root) =>
-                                onChangeItem(activeRoot, activeItem, root)
-                              }
-                              deleteItem={(e) =>
-                                deleteItem(e, activeRoot, activeItem)
-                              }
-                            />
-                          ) : (
-                            <span className="empty-active-item">
-                              {intl.formatMessage(messages.emptyActiveItem)}
-                            </span>
-                          )}
-                        </Grid.Column>
-                      </Grid>
-                    </>
-                  ) : (
-                    <span className="empty-active-root-path">
-                      {intl.formatMessage(messages.emptyActiveRootPath)}
-                    </span>
-                  )}
-                </Segment>
-              </div>
+                ))}
+                <Menu.Item
+                  name={intl.formatMessage(messages.addItem)}
+                  onClick={(e) =>
+                    addItem(e, configuration, activeRoot, onChangePathConfig)
+                  }
+                >
+                  <Icon name="plus" />
+                </Menu.Item>
+              </Menu>
             </Grid.Column>
-          </Grid.Row>
-          {description && (
-            <Grid.Row stretched>
-              <Grid.Column stretched width="12">
-                <p className="help">{description}</p>
-              </Grid.Column>
-            </Grid.Row>
-          )}
-        </Grid>
-      </Form.Field>
+            <Grid.Column stretched width={8}>
+              {activeItem > -1 &&
+              activeItem < configuration[activeRoot].items?.length ? (
+                <SearchSectionsConfigurationForm
+                  id={`${activeRoot}-${activeItem}`}
+                  item={configuration[activeRoot].items[activeItem]}
+                  onChange={(root) =>
+                    onChangeItem(
+                      configuration,
+                      activeRoot,
+                      onChangePathConfig,
+                      activeItem,
+                      root,
+                    )
+                  }
+                  deleteItem={(e) =>
+                    deleteItem(
+                      e,
+                      configuration,
+                      activeRoot,
+                      onChangePathConfig,
+                      activeItem,
+                    )
+                  }
+                />
+              ) : (
+                <span className="empty-active-item">
+                  {intl.formatMessage(messages.emptyActiveItem)}
+                </span>
+              )}
+            </Grid.Column>
+          </Grid>
+        )}
+      </PathsWidget>
     </div>
   );
 };
