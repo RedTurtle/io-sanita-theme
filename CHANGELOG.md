@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.18.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.2...2.18.0) (2025-06-24)
+
+### Features
+
+* config for HeaderContacts to path-like. Added PathWidget ([#97](https://github.com/RedTurtle/io-sanita-theme/issues/97)) ([5c847dd](https://github.com/RedTurtle/io-sanita-theme/commit/5c847ddb67404170c2b939070108f510050e860d))
+
+### Maintenance
+
+* locales ([1794d2e](https://github.com/RedTurtle/io-sanita-theme/commit/1794d2e1562d853539ab5973b9defba863c36202))
+* package.json ([d9762f0](https://github.com/RedTurtle/io-sanita-theme/commit/d9762f0d3ef58adaa93d09bb60b17b6fbacd09fe))
+
 ## [2.17.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.1...2.17.2) (2025-06-20)
 
 ### Bug Fixes
