@@ -2627,7 +2627,7 @@ msgid "quick_search_title"
 msgstr ""
 
 #. Default: "Aggiungi radice di navigazione"
-#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+#: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-add-rootpath"
 msgstr ""
 
@@ -2637,7 +2637,7 @@ msgid "quicksearchwidget-additem"
 msgstr ""
 
 #. Default: "Rimuovi radice di navigazione"
-#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+#: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-delete-rootpath"
 msgstr ""
 
@@ -2652,7 +2652,7 @@ msgid "quicksearchwidget-emptyActiveItem"
 msgstr ""
 
 #. Default: "Seleziona un percorso"
-#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+#: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-emptyActiveRootPath"
 msgstr ""
 
@@ -2672,7 +2672,7 @@ msgid "quicksearchwidget-move-item-up"
 msgstr ""
 
 #. Default: "Radice di navigazione"
-#: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
+#: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-rootpath"
 msgstr ""
 
@@ -3352,19 +3352,9 @@ msgstr "*Enter keywords, for example “Vaccinations”"
 msgid "searchedFor"
 msgstr "Searched for: <em>{searchedtext}</em>"
 
-#. Default: "Aggiungi radice di navigazione"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-add-rootpath"
-msgstr ""
-
 #. Default: "Aggiungi elemento"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-additem"
-msgstr ""
-
-#. Default: "Rimuovi radice di navigazione"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-delete-rootpath"
 msgstr ""
 
 #. Default: "Rimuovi sezione"
@@ -3375,11 +3365,6 @@ msgstr ""
 #. Default: "Aggiungi una nuova sezione, o selezionane una."
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-emptyActiveItem"
-msgstr ""
-
-#. Default: "Seleziona un percorso"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-emptyActiveRootPath"
 msgstr ""
 
 #. Default: "Mostra le sezioni figlie"
@@ -3410,11 +3395,6 @@ msgstr ""
 #. Default: "Sposta prima"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-move-item-up"
-msgstr ""
-
-#. Default: "Radice di navigazione"
-#: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
-msgid "searchsectionswidget-rootpath"
 msgstr ""
 
 #. Default: "Titolo"
