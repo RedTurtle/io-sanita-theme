@@ -37,26 +37,29 @@ const TableTemplate = (props) => {
   } = props;
 
   const intl = useIntl();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { views } = config.widgets;
-  const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
+  // const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
 
-  useEffect(() => {
-    if (columns?.length > 0) {
-      const cts = columns.reduce((acc, c) => {
-        if (acc.indexOf(c.ct) < 0) {
-          acc.push(c.ct);
-        }
-        return acc;
-      }, []);
-
-      cts.forEach((c) => {
-        if (!ct_schemas[c]) {
-          dispatch(getCTSchema(c));
-        }
-      });
-    }
-  }, [columns]);
+  // XXX: @types/Tipo è un'api accessibile solo alla redazione
+  //      anzchè leggere lo schema al volo consideriamo siano già state salvate
+  //      le properties in columns. effetto collaterale la pagina è anche più veloce
+  //       a caricarsi.
+  // useEffect(() => {
+  //   if (columns?.length > 0) {
+  //     const cts = columns.reduce((acc, c) => {
+  //       if (acc.indexOf(c.ct) < 0) {
+  //         acc.push(c.ct);
+  //       }
+  //       return acc;
+  //     }, []);
+  //     cts.forEach((c) => {
+  //       if (!ct_schemas[c]) {
+  //         dispatch(getCTSchema(c));
+  //       }
+  //     });
+  //   }
+  // }, [columns]);
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -73,8 +76,8 @@ const TableTemplate = (props) => {
           <thead className="table-light">
             <tr>
               {render_columns.map((c, index) => {
-                const field_properties =
-                  ct_schemas?.[c.ct]?.result?.properties?.[c.field] ?? {};
+                const field_properties = c.field_properties ?? {};
+                  // ct_schemas?.[c.ct]?.result?.properties?.[c.field] ?? {};
 
                 return (
                   <th
@@ -96,8 +99,8 @@ const TableTemplate = (props) => {
             {items.map((item, index) => (
               <tr key={index}>
                 {render_columns.map((c, index) => {
-                  const field_properties =
-                    ct_schemas?.[c.ct]?.result?.properties?.[c.field];
+                  const field_properties = c.field_properties ?? {};
+                    // ct_schemas?.[c.ct]?.result?.properties?.[c.field];
                   let render_value = JSON.stringify(item[c.field]);
 
                   if (field_properties) {
