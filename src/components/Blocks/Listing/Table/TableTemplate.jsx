@@ -1,19 +1,14 @@
 /*
  * Template a tabella
  */
-import React, { useEffect } from 'react';
+import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 import { useIntl, defineMessages } from 'react-intl';
-import { getCTSchema } from 'io-sanita-theme/actions';
 import { Row, Col, Table } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
-import {
-  ListingImage,
-  ListingContainer,
-} from 'io-sanita-theme/components/Blocks';
+import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
@@ -37,29 +32,7 @@ const TableTemplate = (props) => {
   } = props;
 
   const intl = useIntl();
-  // const dispatch = useDispatch();
   const { views } = config.widgets;
-  // const ct_schemas = useSelector((state) => state.ct_schema?.subrequests);
-
-  // XXX: @types/Tipo è un'api accessibile solo alla redazione
-  //      anzchè leggere lo schema al volo consideriamo siano già state salvate
-  //      le properties in columns. effetto collaterale la pagina è anche più veloce
-  //       a caricarsi.
-  // useEffect(() => {
-  //   if (columns?.length > 0) {
-  //     const cts = columns.reduce((acc, c) => {
-  //       if (acc.indexOf(c.ct) < 0) {
-  //         acc.push(c.ct);
-  //       }
-  //       return acc;
-  //     }, []);
-  //     cts.forEach((c) => {
-  //       if (!ct_schemas[c]) {
-  //         dispatch(getCTSchema(c));
-  //       }
-  //     });
-  //   }
-  // }, [columns]);
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -77,7 +50,6 @@ const TableTemplate = (props) => {
             <tr>
               {render_columns.map((c, index) => {
                 const field_properties = c.field_properties ?? {};
-                  // ct_schemas?.[c.ct]?.result?.properties?.[c.field] ?? {};
 
                 return (
                   <th
@@ -100,7 +72,6 @@ const TableTemplate = (props) => {
               <tr key={index}>
                 {render_columns.map((c, index) => {
                   const field_properties = c.field_properties ?? {};
-                    // ct_schemas?.[c.ct]?.result?.properties?.[c.field];
                   let render_value = JSON.stringify(item[c.field]);
 
                   if (field_properties) {
