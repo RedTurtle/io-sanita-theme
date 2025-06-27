@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.18.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.0...2.18.1) (2025-06-27)
+
+### Bug Fixes
+
+* Blocco search / variante table - aggiunte le proprietà dei campi nella colonna nel serializer ([#98](https://github.com/RedTurtle/io-sanita-theme/issues/98)) ([33295f9](https://github.com/RedTurtle/io-sanita-theme/commit/33295f948286126823902bef6b9f47c23b4dca5d))
+
 ## [2.18.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.17.2...2.18.0) (2025-06-24)
 
 ### Features
