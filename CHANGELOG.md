@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.18.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.1...2.18.2) (2025-07-03)
+
+### Bug Fixes
+
+* headlines styles in richtext ([#99](https://github.com/RedTurtle/io-sanita-theme/issues/99)) ([3aa230f](https://github.com/RedTurtle/io-sanita-theme/commit/3aa230fc07a60b9cd5b3c82fa2e496ccd0f4edca))
+
+### Maintenance
+
+* il rilascio su npm viene fattto con release-it da cli ([822d0b5](https://github.com/RedTurtle/io-sanita-theme/commit/822d0b57d9e3ca27cbb8cfe7d0d3299a8dd734c0))
+
 ## [2.18.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.0...2.18.1) (2025-06-27)
 
 ### Bug Fixes
