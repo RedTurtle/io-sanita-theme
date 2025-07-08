@@ -84,44 +84,49 @@ const BandoDates = ({ content }) => {
   ];
 
   dates.sort((a, b) => a.date - b.date);
-  return content ? (
-    <div className="point-list-wrapper my-4 mb-5">
-      {dates.map((item, index) => {
-        return (
-          item.date && (
-            <div className="point-list" key={index}>
-              <div
-                className="point-list-aside point-list-warning"
-                aria-label={item.date.format('DD MMMM Y')}
-              >
-                <span className="point-date text-monospace" aria-hidden={true}>
-                  {item.date.format('DD')}
-                </span>
-                <span className="point-month text-monospace" aria-hidden={true}>
-                  {item.date.format('MMM')}/{item.date.format('YY')}
-                </span>
-              </div>
-              <div className="point-list-content">
-                <Card
-                  className="card card-teaser rounded shadow"
-                  noWrapper={true}
-                  tag="div"
-                >
-                  <CardBody tag="div" className={'card-body'}>
-                    <CardTitle tag="p">
-                      {item.show_hour && <>{item.date.format('HH:mm')} - </>}
-                      {item.label}
-                    </CardTitle>
-                  </CardBody>
-                </Card>
-              </div>
-            </div>
-          )
-        );
-      })}
-    </div>
-  ) : null;
+
+  return content ? <Dates dates={dates} /> : null;
 };
+
+const Dates = ({ dates }) => (
+  <div className="point-list-wrapper my-4 mb-5">
+    {dates.map((item, index) => {
+      return (
+        item.date && (
+          <div className="point-list" key={index}>
+            <div
+              className="point-list-aside point-list-warning"
+              aria-label={item.date.format('DD MMMM Y')}
+            >
+              <span className="point-date text-monospace" aria-hidden={true}>
+                {item.date.format('DD')}
+              </span>
+              <span className="point-month text-monospace" aria-hidden={true}>
+                {item.date.format('MMM')}/{item.date.format('YY')}
+              </span>
+            </div>
+            <div className="point-list-content">
+              <Card
+                className="card card-teaser rounded shadow"
+                noWrapper={true}
+                tag="div"
+              >
+                <CardBody tag="div" className={'card-body'}>
+                  <CardTitle tag="p">
+                    {item.show_hour && <>{item.date.format('HH:mm')} - </>}
+                    {item.label}
+                  </CardTitle>
+                </CardBody>
+              </Card>
+            </div>
+          </div>
+        )
+      );
+    })}
+  </div>
+);
+
+export { Dates };
 
 export default BandoDates;
 
