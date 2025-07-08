@@ -90,10 +90,9 @@ const TableTemplate = (props) => {
                       id: c.field,
                       widget: getWidget(c.field, field_properties),
                     };
+                    const Widget = views?.getWidget(field);
 
-                    let Widget = views?.getWidget(field);
-
-                    let widget_props = {
+                    const widget_props = {
                       behavior: field_properties.behavior,
                     };
                     switch (c.field) {
@@ -106,7 +105,13 @@ const TableTemplate = (props) => {
                       default:
                         break;
                     }
-
+                    // rimuove ora, se non valorizzata
+                    if (
+                      field_properties.widget === 'datetime' &&
+                      item[c.field]?.indexOf('T00:00') > 0
+                    ) {
+                      widget_props.format = 'DD MMM yyyy';
+                    }
                     if (field_properties.vocabulary) {
                       widget_props.vocabulary =
                         field_properties.vocabulary['@id'];
