@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.19.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.2...2.19.0) (2025-07-08)
+
+### Features
+
+* aggiunta la possibilittà di usare le date del bando anche al di fuori della componente di default, per personalizzarre etichette e valori ([5f497b6](https://github.com/RedTurtle/io-sanita-theme/commit/5f497b64173e51c5db7748dc55f299ad6a1e7cf5))
+
+### Bug Fixes
+
+* in datatable rimuove ora, se non valorizzata ([1d14b88](https://github.com/RedTurtle/io-sanita-theme/commit/1d14b8886dcdc80efeb61362618f74e1b19d6d42))
+* nella variannte tabella reinserito utilizzo di schema per le prroprietà dei campi, ad uso della redazione quando aggiunge nuovi campi ([1bd7083](https://github.com/RedTurtle/io-sanita-theme/commit/1bd7083be33b4c54e1021f19ce0f726b62b89863))
+
 ## [2.18.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.1...2.18.2) (2025-07-03)
 
 ### Bug Fixes
