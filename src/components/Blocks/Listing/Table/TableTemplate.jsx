@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
 import { Row, Col, Table } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { useSelector } from 'react-redux';
 
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
@@ -34,6 +35,9 @@ const TableTemplate = (props) => {
   const intl = useIntl();
   const { views } = config.widgets;
 
+  // necessario per gli edditor nel momento in cui aggiungono nuove colonne
+  const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
+
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
       ? columns
@@ -49,7 +53,10 @@ const TableTemplate = (props) => {
           <thead className="table-light">
             <tr>
               {render_columns.map((c, index) => {
-                const field_properties = c.field_properties ?? {};
+                const field_properties =
+                  c.field_properties ??
+                  ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
+                  {};
 
                 return (
                   <th
@@ -71,11 +78,14 @@ const TableTemplate = (props) => {
             {items.map((item, index) => (
               <tr key={index}>
                 {render_columns.map((c, index) => {
-                  const field_properties = c.field_properties ?? {};
+                  const field_properties =
+                    c.field_properties ??
+                    ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
+                    {};
                   let render_value = JSON.stringify(item[c.field]);
 
                   if (field_properties) {
-                    let field = {
+                    const field = {
                       ...field_properties,
                       id: c.field,
                       widget: getWidget(c.field, field_properties),
