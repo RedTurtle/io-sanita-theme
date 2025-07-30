@@ -24,7 +24,7 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
             {intl.formatMessage(commonSearchBlockMessages.searchedFor, {
               em: (...chunks) => <em>{chunks}</em>,
               searchedtext: text,
-            })}
+            })}{' '}
           </>
         )}
         {data.showTotalResults && (
