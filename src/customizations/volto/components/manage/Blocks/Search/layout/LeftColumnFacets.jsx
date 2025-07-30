@@ -35,10 +35,11 @@ const LeftColumnFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-  const showColumn =
+  // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamo
+  const showColumn = !isEditMode && (
     data.columnTextTitle ||
     richTextHasContent(data.columnText) ||
-    data?.facets?.length > 0;
+    data?.facets?.length > 0);
   return (
     <div className="full-width bg-primary-lightest">
       <Container

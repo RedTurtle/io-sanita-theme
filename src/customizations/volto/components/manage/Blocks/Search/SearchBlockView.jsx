@@ -4,7 +4,7 @@
     existing listing template styles
 */
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
@@ -67,7 +67,9 @@ const applyDefaults = (data, root) => {
 };
 
 const SearchBlockView = (props) => {
-  const { data, searchData, mode = 'view', variation } = props;
+  console.log(props);  
+
+  const { data, searchData, mode = 'view', variation, path, id } = props;
 
   const Layout =
     variation?.view ||
@@ -93,10 +95,27 @@ const SearchBlockView = (props) => {
 
   const { variations } = config.blocks.blocksConfig.listing;
   const listingBodyVariation = variations.find(({ id }) => id === selectedView);
+
+  // TODO: useEffect ?
+  const downloadCsvUrl = __CLIENT__ && `${path}/searchblock/@@download/${id}/download.csv?${new URLSearchParams({
+    ...props.facets,
+    sort_on: props.sortOn,
+    sort_order: props.sortOrder,
+  })}`;
+  const downloadPdfUrl = __CLIENT__ && `${path}/searchblock/@@download/${id}/download.pdf?${new URLSearchParams({
+    ...props.facets,
+    sort_on: props.sortOn,
+    sort_order: props.sortOrder,
+  })}`;
+
   if (!Layout) return null;
 
+  
   return (
     <div className="block search">
+      {/* TODO: opzione per pulsante download csv/pdf */}
+      <a href={downloadCsvUrl} download>CSV</a>
+      <a href={downloadPdfUrl} download>PDF</a>
       <Layout
         {...props}
         isEditMode={mode === 'edit'}
@@ -111,6 +130,18 @@ const SearchBlockView = (props) => {
             path={props.path}
             isEditMode={mode === 'edit'}
           />
+
+          {/* TODO */}
+          {/* {downloadUrl && <>
+            <textarea style={{width: '100%'}} readOnly rows="10" value={downloadUrl}></textarea>
+            <br/>
+            <textarea style={{width: '100%'}} readOnly rows="10" value={
+              JSON.stringify({
+                query: searchData?.query, 
+                columns: data?.columns.map((c) => { return {field: c.field, ct: c.ct}})
+              }, null, 2)
+            }></textarea>
+          </>} */}
         </div>
       </Layout>
     </div>
