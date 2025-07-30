@@ -1,7 +1,7 @@
 /* CUSTOMIZATIONS:
   - Agid styling
 */
-import React from 'react';
+import React, {useMemo} from 'react';
 import {
   SearchInput,
   SearchDetails,
@@ -12,6 +12,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
 import { RichText, richTextHasContent } from 'io-sanita-theme/helpers';
+import { SelectInput } from 'io-sanita-theme/components';
 
 const FacetWrapper = ({ children }) => (
   <Col basic className="facet pt-4">
@@ -26,6 +27,8 @@ const RightColumnFacets = (props) => {
     totalItems,
     facets,
     setFacets,
+    sortOn,
+    sortOrder,
     onTriggerSearch,
     searchedText, // search text for previous search
     isEditMode,
@@ -36,10 +39,28 @@ const RightColumnFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-  const showColumn =
+
+  // TODO: fare mapping sul nome corretto (esempio sortable_title)
+  const sortableOptions = useMemo(() => [
+      {value: 'sortable_title', label: 'Titolo'},
+      ...data?.columns?.map((f) => { return { value: f.field, label: f.title}})
+  ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable),
+  [data?.columns, querystring]);  
+
+  // TODO: traduzioni
+  const sortOrderOptions = [
+    {value: 'ascending', label: 'Crescente'},
+    {value: 'descending', label: 'Decrescente'},
+  ];  
+
+  // TODO: filtro sopra non funziona affatto
+  // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamotes 
+  //        è completamente duplicato
+  // TODO: il codice tra RightColumnFacets e LeftColumnFca
+  const showColumn = !isEditMode && (
     data.columnTextTitle ||
     richTextHasContent(data.columnText) ||
-    data?.facets?.length > 0;
+    data?.facets?.length > 0);
   return (
     <div className="full-width bg-primary-lightest">
       <Container className="searchBlock-facets right-column-facets" stackable>
@@ -125,6 +146,41 @@ const RightColumnFacets = (props) => {
                   />
                 </div>
               )}
+
+              {data?.showOrderOptions &&
+                <div>
+                  <h6>Ordinamento</h6>
+                  {/* <pre>{JSON.stringify(searchData, null,2)}</pre> */}
+                  {/* <pre>{JSON.stringify(data.columns, null,2)}</pre> */}
+                  {/* <pre>{sortOn} {sortOrder}</pre> */}
+                  <div>
+                    <SelectInput
+                      id="sortOn"
+                      value={sortableOptions.find((o) => o.value === sortOn)}
+                      // placeholder={intl.formatMessage(messages.area_territoriale)}
+                      onChange={(opt) => {
+                        flushSync(() => {
+                          onTriggerSearch(undefined, undefined, opt.value);
+                        });
+                      }}    
+                      options={sortableOptions}
+                      />
+                  </div>
+                  <div>
+                    <SelectInput
+                      id="sortOrder"
+                      value={sortOrderOptions.find((o) => o.value === sortOrder)}
+                      // placeholder={intl.formatMessage(messages.area_territoriale)}
+                      onChange={(opt) => {
+                        flushSync(() => { 
+                          onTriggerSearch(undefined, undefined, undefined, opt.value);
+                        });
+                      }}    
+                      options={sortOrderOptions}
+                      />
+                  </div>
+                </div>
+              }
             </div>
           )}
         </Row>

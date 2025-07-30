@@ -123,6 +123,10 @@ const messages = defineMessages({
     id: 'Show total results',
     defaultMessage: 'Show total results',
   },
+  showOrderOptions: {
+    id: 'Show sort options',
+    defaultMessage: 'Show sort options',
+  },
   columnTextTitle: {
     id: 'columnTextTitle',
     defaultMessage: 'Intestazione della colonna',
@@ -282,6 +286,7 @@ const SearchSchema = ({ data = {}, intl }) => {
           // ...(data.showSearchInput ? ['searchInputPrompt'] : []),
           // ...(data.showSearchButton ? ['searchButtonLabel'] : []),
           'showTotalResults',
+          'showOrderOptions',
         ],
       },
     ],
@@ -305,6 +310,11 @@ const SearchSchema = ({ data = {}, intl }) => {
       showTotalResults: {
         type: 'boolean',
         title: intl.formatMessage(messages.showTotalResults),
+        default: true,
+      },
+      showOrderOptions: {
+        type: 'boolean',
+        title: intl.formatMessage(messages.showOrderOptions),
         default: true,
       },
       searchButtonLabel: {
