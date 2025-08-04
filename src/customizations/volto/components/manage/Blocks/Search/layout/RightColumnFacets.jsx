@@ -26,8 +26,18 @@ const messages = defineMessages({
     id: 'searchBlockOrder',
     defaultMessage: 'Ordinamento',
   },
+  ascending: {
+    id: 'ascending',
+    defaultMessage: 'Ascending',
+  },
+  descending: {
+    id: 'descending',
+    defaultMessage: 'Descending',
+  }
 });
 
+// TODO: il codice tra RightColumnFacets e LeftColumnFca
+//        è completamente duplicato
 const RightColumnFacets = (props) => {
   const {
     children,
@@ -52,32 +62,27 @@ const RightColumnFacets = (props) => {
   // TODO: fare mapping sul nome corretto (esempio sortable_title)
   const sortableOptions = useMemo(
     () =>
-      data?.columns
-        ? [
-            { value: 'sortable_title', label: 'Titolo' },
-            ...data?.columns?.map((f) => {
-              return { value: f.field, label: f.title };
-            }),
-          ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable)
-        : [{ value: 'sortable_title', label: 'Titolo' }],
+      data?.columns ? [
+        { value: 'sortable_title', label: 'Titolo' },
+        ...data?.columns?.map((f) => {
+          return { value: f.field, label: f.title };
+        }),
+      ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable) : [{ value: 'sortable_title', label: 'Titolo' }    ],
     [data?.columns, querystring],
   );
 
-  // TODO: traduzioni
   const sortOrderOptions = [
-    { value: 'ascending', label: 'Crescente' },
-    { value: 'descending', label: 'Decrescente' },
+    { value: 'ascending', label: intl.formatMessage(messages.ascending) },
+    { value: 'descending', label: intl.formatMessage(messages.descending) },
   ];
 
-  // TODO: filtro sopra non funziona affatto
   // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamotes
-  // TODO: il codice tra RightColumnFacets e LeftColumnFca
-  //        è completamente duplicato
   const showColumn =
     !isEditMode &&
     (data.columnTextTitle ||
       richTextHasContent(data.columnText) ||
-      data?.facets?.length > 0);
+      data?.facets?.length > 0 ||
+      data?.showOrderOptions);
   return (
     <div className="full-width bg-primary-lightest">
       <Container className="searchBlock-facets right-column-facets" stackable>
