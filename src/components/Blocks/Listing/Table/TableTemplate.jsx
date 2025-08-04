@@ -95,7 +95,17 @@ const TableTemplate = (props) => {
                     const widget_props = {
                       behavior: field_properties.behavior,
                     };
-                      // rimuove ora, se non valorizzata
+                    switch (c.field) {
+                      case 'apertura_bando':
+                      case 'chiusura_procedimento_bando':
+                      case 'scadenza_domande_bando':
+                      case 'scadenza_bando':
+                        widget_props.format = 'DD/MM/yyyy';
+                        break;
+                      default:
+                        break;
+                    }
+                    // rimuove ora, se non valorizzata
                     if (
                       field_properties.widget === 'datetime' &&
                       item[c.field]?.indexOf('T00:00') > 0
