@@ -52,7 +52,7 @@ const RightColumnFacets = (props) => {
   // TODO: fare mapping sul nome corretto (esempio sortable_title)
   const sortableOptions = useMemo(
     () =>
-      [
+      data?.columns && [
         { value: 'sortable_title', label: 'Titolo' },
         ...data?.columns?.map((f) => {
           return { value: f.field, label: f.title };
@@ -69,8 +69,8 @@ const RightColumnFacets = (props) => {
 
   // TODO: filtro sopra non funziona affatto
   // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamotes
-  //        è completamente duplicato
   // TODO: il codice tra RightColumnFacets e LeftColumnFca
+  //        è completamente duplicato
   const showColumn =
     !isEditMode &&
     (data.columnTextTitle ||
