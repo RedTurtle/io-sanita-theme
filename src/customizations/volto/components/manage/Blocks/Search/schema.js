@@ -315,7 +315,7 @@ const SearchSchema = ({ data = {}, intl }) => {
       showOrderOptions: {
         type: 'boolean',
         title: intl.formatMessage(messages.showOrderOptions),
-        default: true,
+        default: false,
       },
       searchButtonLabel: {
         title: intl.formatMessage(messages.searchButtonLabel),

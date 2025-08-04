@@ -20,17 +20,17 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
     <El className="search-details" aria-live="polite">
       <>
         {text && (
-          <>
+          <div>
             {intl.formatMessage(commonSearchBlockMessages.searchedFor, {
               em: (...chunks) => <em>{chunks}</em>,
               searchedtext: text,
             })}
-          </>
-        )}
+          </div>
+        )}{' '}
         {data.showTotalResults && (
-          <>
+          <div>
             {intl.formatMessage(messages.searchResults)}: <b>{total}</b>
-          </>
+          </div>
         )}
       </>
     </El>

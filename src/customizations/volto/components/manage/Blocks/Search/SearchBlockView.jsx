@@ -4,7 +4,7 @@
     existing listing template styles
 */
 
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
@@ -19,6 +19,14 @@ import { compose } from 'redux';
 import { useSelector } from 'react-redux';
 import isEqual from 'lodash/isEqual';
 import isFunction from 'lodash/isFunction';
+import { useIntl, defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  downloadInFormat: {
+    id: 'downloadInFormat',
+    defaultMessage: 'download in formato',
+  },
+});
 
 const getListingBodyVariation = (data) => {
   const { variations } = config.blocks.blocksConfig.listing;
@@ -67,10 +75,10 @@ const applyDefaults = (data, root) => {
 };
 
 const SearchBlockView = (props) => {
-  console.log(props);  
-
+  // console.log(props);
   const { data, searchData, mode = 'view', variation, path, id } = props;
 
+  const intl = useIntl();
   const Layout =
     variation?.view ||
     config.blocks.blocksConfig.search.variations.find(
@@ -96,26 +104,27 @@ const SearchBlockView = (props) => {
   const { variations } = config.blocks.blocksConfig.listing;
   const listingBodyVariation = variations.find(({ id }) => id === selectedView);
 
-  // TODO: useEffect ?
-  const downloadCsvUrl = __CLIENT__ && `${path}/searchblock/@@download/${id}/download.csv?${new URLSearchParams({
-    ...props.facets,
-    sort_on: props.sortOn,
-    sort_order: props.sortOrder,
-  })}`;
-  const downloadPdfUrl = __CLIENT__ && `${path}/searchblock/@@download/${id}/download.pdf?${new URLSearchParams({
-    ...props.facets,
-    sort_on: props.sortOn,
-    sort_order: props.sortOrder,
-  })}`;
+  const [downloadUrl, setDownloadUrl] = useState('');
+
+  useEffect(
+    () =>
+      setDownloadUrl(
+        `${path}/searchblock/@@download/${id}.__FORMAT__?${new URLSearchParams({
+          ...props.facets,
+          search: props.searchText,
+          sort_on: props.sortOn,
+          sort_order: props.sortOrder,
+        })}`,
+      ),
+    [props.facets, props.sortOn, props.sortOrder, props.searchText],
+  );
 
   if (!Layout) return null;
 
-  
   return (
     <div className="block search">
       {/* TODO: opzione per pulsante download csv/pdf */}
-      <a href={downloadCsvUrl} download>CSV</a>
-      <a href={downloadPdfUrl} download>PDF</a>
+      {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
       <Layout
         {...props}
         isEditMode={mode === 'edit'}
@@ -130,18 +139,26 @@ const SearchBlockView = (props) => {
             path={props.path}
             isEditMode={mode === 'edit'}
           />
-
-          {/* TODO */}
-          {/* {downloadUrl && <>
-            <textarea style={{width: '100%'}} readOnly rows="10" value={downloadUrl}></textarea>
-            <br/>
-            <textarea style={{width: '100%'}} readOnly rows="10" value={
-              JSON.stringify({
-                query: searchData?.query, 
-                columns: data?.columns.map((c) => { return {field: c.field, ct: c.ct}})
-              }, null, 2)
-            }></textarea>
-          </>} */}
+          <div style={{ textAlign: 'right' }}>
+            {intl.formatMessage(messages.downloadInFormat)}:{' '}
+            <a
+              href={downloadUrl.replace('__FORMAT__', 'csv')}
+              download
+              className="btn btn-xs btn-primary inline-link"
+              disabled={!downloadUrl}
+            >
+              CSV
+            </a>{' '}
+            <a
+              href={downloadUrl.replace('__FORMAT__', 'pdf')}
+              download
+              className="btn btn-xs btn-primary inline-link"
+              disabled={!downloadUrl}
+            >
+              PDF
+            </a>{' '}
+            {/* <a href={downloadUrl.replace('__FORMAT__', 'html')} className="btn btn-xs btn-primary inline-link">HTML</a> */}
+          </div>
         </div>
       </Layout>
     </div>

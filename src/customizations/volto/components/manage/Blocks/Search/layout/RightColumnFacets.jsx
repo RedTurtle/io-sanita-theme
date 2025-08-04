@@ -1,7 +1,7 @@
 /* CUSTOMIZATIONS:
   - Agid styling
 */
-import React, {useMemo} from 'react';
+import React, { useMemo } from 'react';
 import {
   SearchInput,
   SearchDetails,
@@ -13,12 +13,20 @@ import { Container, Row, Col, Icon } from 'design-react-kit';
 import { flushSync } from 'react-dom';
 import { RichText, richTextHasContent } from 'io-sanita-theme/helpers';
 import { SelectInput } from 'io-sanita-theme/components';
+import { useIntl, defineMessages } from 'react-intl';
 
 const FacetWrapper = ({ children }) => (
   <Col basic className="facet pt-4">
     {children}
   </Col>
 );
+
+const messages = defineMessages({
+  searchBlockOrder: {
+    id: 'searchBlockOrder',
+    defaultMessage: 'Ordinamento',
+  },
+});
 
 const RightColumnFacets = (props) => {
   const {
@@ -39,28 +47,35 @@ const RightColumnFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
+  const intl = useIntl();
 
   // TODO: fare mapping sul nome corretto (esempio sortable_title)
-  const sortableOptions = useMemo(() => [
-      {value: 'sortable_title', label: 'Titolo'},
-      ...data?.columns?.map((f) => { return { value: f.field, label: f.title}})
-  ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable),
-  [data?.columns, querystring]);  
+  const sortableOptions = useMemo(
+    () =>
+      [
+        { value: 'sortable_title', label: 'Titolo' },
+        ...data?.columns?.map((f) => {
+          return { value: f.field, label: f.title };
+        }),
+      ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable),
+    [data?.columns, querystring],
+  );
 
   // TODO: traduzioni
   const sortOrderOptions = [
-    {value: 'ascending', label: 'Crescente'},
-    {value: 'descending', label: 'Decrescente'},
-  ];  
+    { value: 'ascending', label: 'Crescente' },
+    { value: 'descending', label: 'Decrescente' },
+  ];
 
   // TODO: filtro sopra non funziona affatto
-  // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamotes 
+  // TODO: temporanea, il layout in edit è completamente sballato, per ora non la mettiamotes
   //        è completamente duplicato
   // TODO: il codice tra RightColumnFacets e LeftColumnFca
-  const showColumn = !isEditMode && (
-    data.columnTextTitle ||
-    richTextHasContent(data.columnText) ||
-    data?.facets?.length > 0);
+  const showColumn =
+    !isEditMode &&
+    (data.columnTextTitle ||
+      richTextHasContent(data.columnText) ||
+      data?.facets?.length > 0);
   return (
     <div className="full-width bg-primary-lightest">
       <Container className="searchBlock-facets right-column-facets" stackable>
@@ -147,13 +162,13 @@ const RightColumnFacets = (props) => {
                 </div>
               )}
 
-              {data?.showOrderOptions &&
-                <div>
-                  <h6>Ordinamento</h6>
+              {data?.showOrderOptions && (
+                <div className="pt-4">
+                  <h6>{intl.formatMessage(messages.searchBlockOrder)}</h6>
                   {/* <pre>{JSON.stringify(searchData, null,2)}</pre> */}
                   {/* <pre>{JSON.stringify(data.columns, null,2)}</pre> */}
                   {/* <pre>{sortOn} {sortOrder}</pre> */}
-                  <div>
+                  <div className="pt-2">
                     <SelectInput
                       id="sortOn"
                       value={sortableOptions.find((o) => o.value === sortOn)}
@@ -162,25 +177,32 @@ const RightColumnFacets = (props) => {
                         flushSync(() => {
                           onTriggerSearch(undefined, undefined, opt.value);
                         });
-                      }}    
+                      }}
                       options={sortableOptions}
-                      />
+                    />
                   </div>
-                  <div>
+                  <div className="pt-2">
                     <SelectInput
                       id="sortOrder"
-                      value={sortOrderOptions.find((o) => o.value === sortOrder)}
+                      value={sortOrderOptions.find(
+                        (o) => o.value === sortOrder,
+                      )}
                       // placeholder={intl.formatMessage(messages.area_territoriale)}
                       onChange={(opt) => {
-                        flushSync(() => { 
-                          onTriggerSearch(undefined, undefined, undefined, opt.value);
+                        flushSync(() => {
+                          onTriggerSearch(
+                            undefined,
+                            undefined,
+                            undefined,
+                            opt.value,
+                          );
                         });
-                      }}    
+                      }}
                       options={sortOrderOptions}
-                      />
+                    />
                   </div>
                 </div>
-              }
+              )}
             </div>
           )}
         </Row>
