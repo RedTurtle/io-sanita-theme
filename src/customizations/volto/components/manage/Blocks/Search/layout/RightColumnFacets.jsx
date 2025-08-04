@@ -52,12 +52,14 @@ const RightColumnFacets = (props) => {
   // TODO: fare mapping sul nome corretto (esempio sortable_title)
   const sortableOptions = useMemo(
     () =>
-      data?.columns && [
-        { value: 'sortable_title', label: 'Titolo' },
-        ...data?.columns?.map((f) => {
-          return { value: f.field, label: f.title };
-        }),
-      ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable),
+      data?.columns
+        ? [
+            { value: 'sortable_title', label: 'Titolo' },
+            ...data?.columns?.map((f) => {
+              return { value: f.field, label: f.title };
+            }),
+          ].filter((o) => querystring?.['indexes']?.[o.value]?.sortable)
+        : [{ value: 'sortable_title', label: 'Titolo' }],
     [data?.columns, querystring],
   );
 
