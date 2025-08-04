@@ -95,22 +95,12 @@ const TableTemplate = (props) => {
                     const widget_props = {
                       behavior: field_properties.behavior,
                     };
-                    switch (c.field) {
-                      case 'apertura_bando':
-                      case 'chiusura_procedimento_bando':
-                      case 'scadenza_domande_bando':
-                      case 'scadenza_bando':
-                        widget_props.format = 'DD MMM yyyy';
-                        break;
-                      default:
-                        break;
-                    }
-                    // rimuove ora, se non valorizzata
+                      // rimuove ora, se non valorizzata
                     if (
                       field_properties.widget === 'datetime' &&
                       item[c.field]?.indexOf('T00:00') > 0
                     ) {
-                      widget_props.format = 'DD MMM yyyy';
+                      widget_props.format = 'DD/MM/yyyy';
                     }
                     if (field_properties.vocabulary) {
                       widget_props.vocabulary =
