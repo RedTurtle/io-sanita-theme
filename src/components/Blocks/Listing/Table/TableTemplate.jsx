@@ -95,6 +95,10 @@ const TableTemplate = (props) => {
                     const widget_props = {
                       behavior: field_properties.behavior,
                     };
+                    if (field_properties.widget === 'datetime') {
+                      widget_props.format = 'DD/MM/yyyy HH:MM';
+                    }
+                    // per questi campi si è deciso dii non pubblicare ora:minuti
                     switch (c.field) {
                       case 'apertura_bando':
                       case 'chiusura_procedimento_bando':
