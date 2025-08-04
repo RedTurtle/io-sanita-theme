@@ -7,7 +7,7 @@ import {
   selectFacetStateToValue,
   selectFacetValueToQuery,
 } from '@plone/volto/components/manage/Blocks/Search/components/base';
-import { Select } from 'design-react-kit';
+import { SelectInput } from 'io-sanita-theme/components';
 
 const SelectFacet = (props) => {
   const { facet, choices, isMulti, onChange, value, isEditMode } = props;
@@ -23,7 +23,7 @@ const SelectFacet = (props) => {
           {facet?.title || facet?.field?.label || ''}
         </label> */}
         {/* Cannot style with props because the kit is... the kit. Resorting to div[class*='-ValueContainer'] */}
-        <Select
+        <SelectInput
           placeholder={facet?.title ?? (facet?.field?.label || 'select...')}
           aria-label={facet?.title ?? (facet?.field?.label || 'select...')}
           id={facet['@id']}

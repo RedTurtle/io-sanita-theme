@@ -25,8 +25,8 @@ const SearchDetails = ({ total, text, as = 'p', data }) => {
               em: (...chunks) => <em>{chunks}</em>,
               searchedtext: text,
             })}
-          </div>
-        )}{' '}
+          </div>{' '}
+        )}
         {data.showTotalResults && (
           <div>
             {intl.formatMessage(messages.searchResults)}: <b>{total}</b>
