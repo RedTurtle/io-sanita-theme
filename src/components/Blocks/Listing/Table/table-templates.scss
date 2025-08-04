@@ -1,3 +1,8 @@
+// XXX: workaround per template search con tabella e fltri con faccette laterali in edit
+body.cms-ui.has-toolbar.has-sidebar .public-ui .table-template .px-0.container {
+  width: 100% !important;
+}
+
 .table-template {
   table.table {
     th {

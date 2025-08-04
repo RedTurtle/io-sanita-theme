@@ -123,9 +123,9 @@ const messages = defineMessages({
     id: 'Show total results',
     defaultMessage: 'Show total results',
   },
-  showOrderOptions: {
-    id: 'Show sort options',
-    defaultMessage: 'Show sort options',
+  showSortOn: {
+    id: 'Show sorting?',
+    defaultMessage: 'Show sorting?',
   },
   columnTextTitle: {
     id: 'columnTextTitle',
@@ -286,7 +286,7 @@ const SearchSchema = ({ data = {}, intl }) => {
           // ...(data.showSearchInput ? ['searchInputPrompt'] : []),
           // ...(data.showSearchButton ? ['searchButtonLabel'] : []),
           'showTotalResults',
-          'showOrderOptions',
+          'showSortOn',
         ],
       },
     ],
@@ -312,9 +312,9 @@ const SearchSchema = ({ data = {}, intl }) => {
         title: intl.formatMessage(messages.showTotalResults),
         default: true,
       },
-      showOrderOptions: {
+      showSortOn: {
         type: 'boolean',
-        title: intl.formatMessage(messages.showOrderOptions),
+        title: intl.formatMessage(messages.showSortOn),
         default: false,
       },
       searchButtonLabel: {
