@@ -123,8 +123,6 @@ const SearchBlockView = (props) => {
 
   return (
     <div className="block search">
-      {/* TODO: opzione per pulsante download csv/pdf */}
-      {/* <pre>{JSON.stringify(props, null, 2)}</pre> */}
       <Layout
         {...props}
         isEditMode={mode === 'edit'}
@@ -139,26 +137,28 @@ const SearchBlockView = (props) => {
             path={props.path}
             isEditMode={mode === 'edit'}
           />
-          <div style={{ textAlign: 'right' }}>
-            {intl.formatMessage(messages.downloadInFormat)}:{' '}
-            <a
-              href={downloadUrl.replace('__FORMAT__', 'csv')}
-              download
-              className="btn btn-xs btn-primary inline-link"
-              disabled={!downloadUrl}
-            >
-              CSV
-            </a>{' '}
-            <a
-              href={downloadUrl.replace('__FORMAT__', 'pdf')}
-              download
-              className="btn btn-xs btn-primary inline-link"
-              disabled={!downloadUrl}
-            >
-              PDF
-            </a>{' '}
-            {/* <a href={downloadUrl.replace('__FORMAT__', 'html')} className="btn btn-xs btn-primary inline-link">HTML</a> */}
-          </div>
+          {downloadUrl && data?.showDownloadActions && (
+            <div style={{ textAlign: 'right' }}>
+              {intl.formatMessage(messages.downloadInFormat)}:{' '}
+              <a
+                href={downloadUrl.replace('__FORMAT__', 'csv')}
+                download
+                className="btn btn-xs btn-primary inline-link"
+                disabled={!downloadUrl}
+              >
+                CSV
+              </a>{' '}
+              <a
+                href={downloadUrl.replace('__FORMAT__', 'pdf')}
+                download
+                className="btn btn-xs btn-primary inline-link"
+                disabled={!downloadUrl}
+              >
+                PDF
+              </a>
+              {/* <a href={downloadUrl.replace('__FORMAT__', 'html')} className="btn btn-xs btn-primary inline-link">HTML</a> */}
+            </div>
+          )}
         </div>
       </Layout>
     </div>
