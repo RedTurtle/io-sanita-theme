@@ -38,10 +38,10 @@ const LeftColumnFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-  const showColumn =
+  const showColumn = !isEditMode && (
     data.columnTextTitle ||
     richTextHasContent(data.columnText) ||
-    data?.facets?.length > 0;
+    data?.facets?.length > 0);
   return (
     <div className="full-width bg-primary-lightest">
       <Container

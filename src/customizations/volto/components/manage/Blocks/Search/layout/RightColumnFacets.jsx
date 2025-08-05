@@ -39,11 +39,11 @@ const RightColumnFacets = (props) => {
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
 
-  const showColumn =
+  const showColumn = !isEditMode && (
     data.columnTextTitle ||
     richTextHasContent(data.columnText) ||
     data?.facets?.length > 0 ||
-    data?.showOrderOptions;
+    data?.showOrderOptions);
 
   return (
     <div className="full-width bg-primary-lightest">
