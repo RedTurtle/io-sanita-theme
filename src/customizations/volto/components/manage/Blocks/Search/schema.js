@@ -291,6 +291,7 @@ const SearchSchema = ({ data = {}, intl }) => {
           // ...(data.showSearchButton ? ['searchButtonLabel'] : []),
           'showTotalResults',
           'showSortOn',
+          'showDownloadActions',
         ],
       },
     ],
