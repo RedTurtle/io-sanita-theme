@@ -1,4 +1,5 @@
 /**
+CUSTOMIZATIONS: 
  * Original from @plone/volto 18.9.1
  * 
  * - querystring parameters are passed to the backend
