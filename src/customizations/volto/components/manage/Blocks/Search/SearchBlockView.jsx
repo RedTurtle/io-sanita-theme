@@ -138,7 +138,7 @@ const SearchBlockView = (props) => {
             isEditMode={mode === 'edit'}
           />
           {downloadUrl && data?.showDownloadActions && (
-            <div class="text-right">
+            <div class="text-right" style={{textAlign: 'right'}}>
               {intl.formatMessage(messages.downloadInFormat)}:{' '}
               <a
                 href={downloadUrl.replace('__FORMAT__', 'csv')}

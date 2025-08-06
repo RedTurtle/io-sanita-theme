@@ -127,6 +127,10 @@ const messages = defineMessages({
     id: 'Show sorting?',
     defaultMessage: 'Show sorting?',
   },
+  showDownloadActions: {
+    id: 'showDownloadActions',
+    defaultMessage: 'Mostra azioni downlad CSV/PDF',
+  },
   columnTextTitle: {
     id: 'columnTextTitle',
     defaultMessage: 'Intestazione della colonna',
@@ -316,6 +320,11 @@ const SearchSchema = ({ data = {}, intl }) => {
         type: 'boolean',
         title: intl.formatMessage(messages.showSortOn),
         default: false,
+      },
+      showDownloadActions: {
+        type: 'boolean',
+        title: intl.formatMessage(messages.showDownloadActions),
+        default: true,
       },
       searchButtonLabel: {
         title: intl.formatMessage(messages.searchButtonLabel),
