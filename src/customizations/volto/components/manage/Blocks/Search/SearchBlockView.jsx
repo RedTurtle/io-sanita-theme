@@ -4,7 +4,7 @@
     existing listing template styles
 */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
@@ -19,6 +19,14 @@ import { compose } from 'redux';
 import { useSelector } from 'react-redux';
 import isEqual from 'lodash/isEqual';
 import isFunction from 'lodash/isFunction';
+import { useIntl, defineMessages } from 'react-intl';
+
+const messages = defineMessages({
+  downloadInFormat: {
+    id: 'downloadInFormat',
+    defaultMessage: 'download in formato',
+  },
+});
 
 const getListingBodyVariation = (data) => {
   const { variations } = config.blocks.blocksConfig.listing;
@@ -67,8 +75,10 @@ const applyDefaults = (data, root) => {
 };
 
 const SearchBlockView = (props) => {
-  const { data, searchData, mode = 'view', variation } = props;
+  // console.log(props);
+  const { data, searchData, mode = 'view', variation, path, id } = props;
 
+  const intl = useIntl();
   const Layout =
     variation?.view ||
     config.blocks.blocksConfig.search.variations.find(
@@ -93,6 +103,22 @@ const SearchBlockView = (props) => {
 
   const { variations } = config.blocks.blocksConfig.listing;
   const listingBodyVariation = variations.find(({ id }) => id === selectedView);
+
+  const [downloadUrl, setDownloadUrl] = useState('');
+
+  useEffect(
+    () =>
+      setDownloadUrl(
+        `${path}/searchblock/@@download/${id}.__FORMAT__?${new URLSearchParams({
+          ...props.facets,
+          search: props.searchText,
+          sort_on: props.sortOn,
+          sort_order: props.sortOrder,
+        })}`,
+      ),
+    [props.facets, props.sortOn, props.sortOrder, props.searchText],
+  );
+
   if (!Layout) return null;
 
   return (
@@ -111,6 +137,28 @@ const SearchBlockView = (props) => {
             path={props.path}
             isEditMode={mode === 'edit'}
           />
+          {downloadUrl && data?.showDownloadActions && (
+            <div class="text-right">
+              {intl.formatMessage(messages.downloadInFormat)}:{' '}
+              <a
+                href={downloadUrl.replace('__FORMAT__', 'csv')}
+                download
+                className="btn btn-xs btn-primary inline-link"
+                disabled={!downloadUrl}
+              >
+                CSV
+              </a>{' '}
+              <a
+                href={downloadUrl.replace('__FORMAT__', 'pdf')}
+                download
+                className="btn btn-xs btn-primary inline-link"
+                disabled={!downloadUrl}
+              >
+                PDF
+              </a>
+              {/* <a href={downloadUrl.replace('__FORMAT__', 'html')} className="btn btn-xs btn-primary inline-link">HTML</a> */}
+            </div>
+          )}
         </div>
       </Layout>
     </div>

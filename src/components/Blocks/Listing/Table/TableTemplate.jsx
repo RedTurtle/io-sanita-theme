@@ -95,12 +95,16 @@ const TableTemplate = (props) => {
                     const widget_props = {
                       behavior: field_properties.behavior,
                     };
+                    if (field_properties.widget === 'datetime') {
+                      widget_props.format = 'DD/MM/yyyy HH:MM';
+                    }
+                    // per questi campi si è deciso dii non pubblicare ora:minuti
                     switch (c.field) {
                       case 'apertura_bando':
                       case 'chiusura_procedimento_bando':
                       case 'scadenza_domande_bando':
                       case 'scadenza_bando':
-                        widget_props.format = 'DD MMM yyyy';
+                        widget_props.format = 'DD/MM/yyyy';
                         break;
                       default:
                         break;
@@ -110,7 +114,7 @@ const TableTemplate = (props) => {
                       field_properties.widget === 'datetime' &&
                       item[c.field]?.indexOf('T00:00') > 0
                     ) {
-                      widget_props.format = 'DD MMM yyyy';
+                      widget_props.format = 'DD/MM/yyyy';
                     }
                     if (field_properties.vocabulary) {
                       widget_props.vocabulary =

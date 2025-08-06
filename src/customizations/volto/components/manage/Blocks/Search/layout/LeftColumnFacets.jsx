@@ -7,6 +7,7 @@ import {
   SearchDetails,
   Facets,
   FilterList,
+  SortOn,
 } from '@plone/volto/components/manage/Blocks/Search/components';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Container, Row, Col, Icon } from 'design-react-kit';
@@ -25,6 +26,8 @@ const LeftColumnFacets = (props) => {
     totalItems,
     facets,
     setFacets,
+    sortOn,
+    sortOrder,
     onTriggerSearch,
     searchedText, // search text for previous search
     isEditMode,
@@ -35,10 +38,10 @@ const LeftColumnFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
-  const showColumn =
+  const showColumn = !isEditMode && (
     data.columnTextTitle ||
     richTextHasContent(data.columnText) ||
-    data?.facets?.length > 0;
+    data?.facets?.length > 0);
   return (
     <div className="full-width bg-primary-lightest">
       <Container
@@ -95,6 +98,34 @@ const LeftColumnFacets = (props) => {
                   />
                 </div>
               )}
+              <div className="sort-views-wrapper">
+                {data.showSortOn && (
+                  <SortOn
+                    data={data}
+                    querystring={querystring}
+                    isEditMode={isEditMode}
+                    sortOrder={sortOrder}
+                    sortOn={sortOn}
+                    setSortOn={(sortOn) => {
+                      flushSync(() => {
+                        // setSortOn(sortOn);
+                        onTriggerSearch(searchedText || '', facets, sortOn);
+                      });
+                    }}
+                    setSortOrder={(sortOrder) => {
+                      flushSync(() => {
+                        // setSortOrder(sortOrder);
+                        onTriggerSearch(
+                          searchedText || '',
+                          facets,
+                          sortOn,
+                          sortOrder,
+                        );
+                      });
+                    }}
+                  />
+                )}
+              </div>
             </div>
           )}
 
