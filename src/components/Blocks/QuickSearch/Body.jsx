@@ -3,7 +3,11 @@ import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Container, Row, Col, Button } from 'design-react-kit';
-import { SearchBar, QuickSearch } from 'io-sanita-theme/components';
+import {
+  SearchBar,
+  QuickSearch,
+  OverlayLoading,
+} from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import './quickSearchBlock.scss';
@@ -19,9 +23,11 @@ const Body = ({ data, id, isEditMode }) => {
   const intl = useIntl();
   const [searchableText, setSearchableText] = useState();
   const subsite = useSelector((state) => state.subsite?.data);
+  const [redirectingToResults, setRedirectingToResults] = useState(false);
 
   useEffect(() => {
     if (searchableText?.length > 0) {
+      setRedirectingToResults(true);
       window.location.href =
         window.location.origin +
         SearchUtils.getSearchParamsURL({
@@ -86,6 +92,7 @@ const Body = ({ data, id, isEditMode }) => {
           </div>
         )}
       </Container>
+      <OverlayLoading loading={redirectingToResults} />
     </div>
   );
 };

@@ -179,12 +179,12 @@ defineMessages({
     defaultMessage: 'descending',
   },
   error404maintext: {
-    id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for.',
+    id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
     defaultMessage:
-      'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for.',
+      'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
   },
   error404hplink: {
     id: 'or you can go to the ',
-    defaultMessage: 'Or you can go to the ',
+    defaultMessage: 'or you can go to the ',
   },
 });

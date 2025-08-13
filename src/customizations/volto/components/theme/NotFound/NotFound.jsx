@@ -1,7 +1,7 @@
 /*
 CUSTOMIZATIONS:
 - Removed the "Site Administration" link, added a link to the home page
-- Added a search bar to the Not Found page
+- Added a Search in site bar
 */
 
 import { useEffect, useState, useRef } from 'react';
@@ -20,7 +20,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getNavigation } from '@plone/volto/actions/navigation/navigation';
 import config from '@plone/volto/registry';
-import { SearchBar, QuickSearch } from 'io-sanita-theme/components';
+import { SearchBar, OverlayLoading } from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 
 import { Spinner } from 'design-react-kit';
@@ -51,13 +51,13 @@ const messages = defineMessages({
     defaultMessage: 'Cerca nel sito',
   },
   error404maintext: {
-    id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for.',
+    id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
     defaultMessage:
-      'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for.',
+      'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
   },
   error404hplink: {
     id: 'or you can go to the ',
-    defaultMessage: 'Or you can go to the ',
+    defaultMessage: 'or you can go to the ',
   },
 });
 
@@ -93,10 +93,6 @@ const NotFound = () => {
           currentLang: intl.locale,
         });
     }
-
-    // setTimeout(() => {
-    //   closeModal();
-    // }, 500);
   };
 
   return (
@@ -108,10 +104,10 @@ const NotFound = () => {
           defaultMessage="This page does not seem to exist…"
         />
       </h1>
-      <p className="description text-center">
+      <p className="description text-center mt-3">
         {intl.formatMessage(messages.error404maintext)}
       </p>
-      <Container className="search-bar-container">
+      <Container className="search-bar-container my-5">
         <div
           className="search-filters"
           role="search"
@@ -120,7 +116,6 @@ const NotFound = () => {
           <div className="mb-4">
             <SearchBar
               id="search-site-modal"
-              title={intl.formatMessage(messages.searchLabel)}
               value={searchableText}
               onChange={(v) => {
                 setSearchableText(v);
@@ -130,20 +125,10 @@ const NotFound = () => {
               ref={inputRef}
             />
           </div>
-          <QuickSearch
-            onClick={(v) => {
-              setSearchableText(v.title);
-              submitSearch(v.title);
-            }}
-            scrollOnMobile={false}
-          />
         </div>
+        <OverlayLoading loading={redirectingToResults} />
       </Container>
-      {redirectingToResults && (
-        <div className="overlay loading-results">
-          <Spinner active />
-        </div>
-      )}
+
       <p>
         {intl.formatMessage(messages.error404hplink)}
         <Link to={navigationRootPath}>

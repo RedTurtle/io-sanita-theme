@@ -898,9 +898,9 @@ msgstr "Ver todo"
 msgid "Visible only in view mode"
 msgstr ""
 
-#. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for."
+#. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
 #: overrideTranslations
-msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for."
+msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
 msgstr ""
 
 #. Default: "You are trying to access a protected resource, please {login} first."
@@ -2366,7 +2366,7 @@ msgstr ""
 msgid "open_end"
 msgstr ""
 
-#. Default: "Or you can go to the"
+#. Default: "or you can go to the"
 #: overrideTranslations
 msgid "or you can go to the "
 msgstr ""

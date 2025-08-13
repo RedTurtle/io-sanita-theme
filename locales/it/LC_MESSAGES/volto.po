@@ -891,10 +891,10 @@ msgstr "Vedi tutto"
 msgid "Visible only in view mode"
 msgstr "Visibile solo in modalità di view"
 
-#. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for."
+#. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
 #: overrideTranslations
-msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for."
-msgstr "Ci scusiamo per l'inconveniente, la pagina cui stai provando ad accedere non esiste a questo indirizzo. Puoi usare la barra di ricerca qui sotto per trovare quello che stavi cercando"
+msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
+msgstr "Ci scusiamo per l'inconveniente, la pagina cui stai provando ad accedere non esiste a questo indirizzo. Puoi usare la barra di ricerca qui sotto per trovare quello che stavi cercando:"
 
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
@@ -2359,10 +2359,10 @@ msgstr ""
 msgid "open_end"
 msgstr ""
 
-#. Default: "Or you can go to the"
+#. Default: "or you can go to the"
 #: overrideTranslations
 msgid "or you can go to the "
-msgstr "Oppure vai alla "
+msgstr "oppure vai alla "
 
 #. Default: "Ordina per"
 #: components/Search/Search

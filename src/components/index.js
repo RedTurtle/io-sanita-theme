@@ -1,4 +1,5 @@
 import loadable from '@loadable/component';
+import OverlayLoading from './OverlayLoading/OverlayLoading';
 
 export Icon from 'io-sanita-theme/components/Icon/Icon';
 export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';
@@ -30,6 +31,7 @@ export HeaderSlim from 'io-sanita-theme/components/layout/Header/HeaderSlim/Head
 export HeaderContacts from 'io-sanita-theme/components/layout/Header/HeaderContacts/HeaderContacts';
 export HeaderCenter from 'io-sanita-theme/components/layout/Header/HeaderCenter';
 export SubsiteHeader from 'io-sanita-theme/components/layout/Header/SubsiteHeader/SubsiteHeader';
+export OverlayLoading from 'io-sanita-theme/components/OverlayLoading/OverlayLoading';
 export SearchModal from 'io-sanita-theme/components/layout/Header/HeaderSearch/SearchModal';
 export UserLoggedMenu from 'io-sanita-theme/components/layout/Header/HeaderSlim/UserLoggedMenu';
 export LoginButton from 'io-sanita-theme/components/layout/Header/HeaderSlim/LoginButton';
