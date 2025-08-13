@@ -898,6 +898,11 @@ msgstr "Ver todo"
 msgid "Visible only in view mode"
 msgstr ""
 
+#. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
+#: overrideTranslations
+msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
+msgstr ""
+
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
 msgid "You are trying to access a protected resource, please {login} first."
@@ -2359,6 +2364,11 @@ msgstr ""
 #. Default: "Questo evento ha una data di fine aperta/variabile."
 #: components/View/Evento/Dates
 msgid "open_end"
+msgstr ""
+
+#. Default: "or you can go to the"
+#: overrideTranslations
+msgid "or you can go to the "
 msgstr ""
 
 #. Default: "Ordina per"

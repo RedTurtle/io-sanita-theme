@@ -301,3 +301,14 @@ picture.volto-image.responsive img.full-width,
   margin: 0;
   box-shadow: none;
 }
+
+//error 404
+body.page-not-found {
+  .search-bar-container {
+    position: relative;
+  }
+
+  #customer-satisfaction-form {
+    display: none;
+  }
+}

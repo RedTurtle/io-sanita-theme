@@ -15,7 +15,12 @@ import {
   Spinner,
 } from 'design-react-kit';
 
-import { SearchBar, QuickSearch, Icon } from 'io-sanita-theme/components';
+import {
+  SearchBar,
+  QuickSearch,
+  Icon,
+  OverlayLoading,
+} from 'io-sanita-theme/components';
 import { SearchUtils } from 'io-sanita-theme/helpers';
 
 import './searchModal.scss';
@@ -141,11 +146,7 @@ const SearchModal = ({ closeModal, show }) => {
             />
           </div>
         </Container>
-        {redirectingToResults && (
-          <div className="overlay loading-results">
-            <Spinner active />
-          </div>
-        )}
+        <OverlayLoading loading={redirectingToResults} />
       </ModalBody>
     </Modal>
   );
