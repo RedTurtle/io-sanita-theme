@@ -96,7 +96,7 @@ const NotFound = () => {
   };
 
   return (
-    <Container className="view-wrapper w-50 px-lg-5 d-flex align-items-center flex-column">
+    <Container className="view-wrapper px-5 text-center py-3">
       <BodyClass className="page-not-found" />
       <h1>
         <FormattedMessage
@@ -134,6 +134,7 @@ const NotFound = () => {
         <Link to={navigationRootPath}>
           <FormattedMessage id="Home page" defaultMessage="Home page" />
         </Link>
+        .
       </p>
       {/* <p>
         <FormattedMessage

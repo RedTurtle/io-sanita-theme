@@ -311,4 +311,10 @@ body.page-not-found {
   #customer-satisfaction-form {
     display: none;
   }
+
+  @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+    .view-wrapper {
+      max-width: 50vw;
+    }
+  }
 }
