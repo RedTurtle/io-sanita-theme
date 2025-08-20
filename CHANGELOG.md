@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.20.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.19.0...2.20.0) (2025-08-20)
+
+### Features
+
+* search table layout: sort / export csv+pdf ([#102](https://github.com/RedTurtle/io-sanita-theme/issues/102)) ([c0095b8](https://github.com/RedTurtle/io-sanita-theme/commit/c0095b8c416c9b00433d25b69a71080ba2046e22))
+* Site Search bar into page 404 ([#103](https://github.com/RedTurtle/io-sanita-theme/issues/103)) ([b07b3e0](https://github.com/RedTurtle/io-sanita-theme/commit/b07b3e02f085eb0854f938a987465a1b7f9dd9ea))
+
+### Bug Fixes
+
+* 404 on mobile ([3525b85](https://github.com/RedTurtle/io-sanita-theme/commit/3525b8520b6827634a2e9bf1b327d44c135827fd))
+* added space before total results number in search results ([#101](https://github.com/RedTurtle/io-sanita-theme/issues/101)) ([ee9f384](https://github.com/RedTurtle/io-sanita-theme/commit/ee9f384439cfcf9598128cd3de1c0225cbf9f634))
+* missing showDownloadActions option ([12aa80a](https://github.com/RedTurtle/io-sanita-theme/commit/12aa80a024bc2a910a8356f6b2774c21efd3c905))
+* use SelectInput from iosanita-theme in Search SelectFacet component, instead of the one from design-react-kit ([#100](https://github.com/RedTurtle/io-sanita-theme/issues/100)) ([7c4b533](https://github.com/RedTurtle/io-sanita-theme/commit/7c4b5331ae09f662e7ed0fd38ea107cf308340c8))
+
+### Maintenance
+
+* fix datatable schema ([1b63442](https://github.com/RedTurtle/io-sanita-theme/commit/1b63442cd8d5a18cda8cd7f21a6ce2172e158675))
+
 ## [2.19.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.18.2...2.19.0) (2025-07-08)
 
 ### Features
