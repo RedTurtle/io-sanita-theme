@@ -44,7 +44,14 @@ export function getSearchResults(params) {
  * @function getTassonomieSearch
  * @returns {Object} Get search filters action.
  */
-export function getTassonomieSearch({ type, id, portalType, order, page }) {
+export function getTassonomieSearch({
+  type,
+  id,
+  portalType,
+  order,
+  currentPage,
+  b_size,
+}) {
   /*
   valori possibili.
   - type: ['a_chi_si_rivolge_tassonomia','parliamo_di']
@@ -52,8 +59,7 @@ export function getTassonomieSearch({ type, id, portalType, order, page }) {
   - portal_type: se si vogliono i contenuti di quel portal_type per la tassonomia type/value
   */
 
-  const b_size = config.settings.defaultPageSize;
-  const params = {};
+  const _b_size = b_size ?? config.settings.defaultPageSize;
 
   return {
     type: GET_TASSONOMIE_SEARCH,
@@ -66,10 +72,10 @@ export function getTassonomieSearch({ type, id, portalType, order, page }) {
         ...(portalType && { portal_type: portalType }),
         ...(order?.sort_on && { sort_on: order.sort_on }),
         ...(order?.sort_order & { sort_order: order.sort_order }),
-        ...(page && {
-          b_start: b_size * (page - 1),
+        ...(currentPage && {
+          b_start: _b_size * (currentPage - 1),
         }),
-        b_size: b_size,
+        b_size: _b_size,
       },
     },
   };

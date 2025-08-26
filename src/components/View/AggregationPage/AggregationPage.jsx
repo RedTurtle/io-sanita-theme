@@ -69,6 +69,7 @@ const AggregationPage = ({ match, route, location }) => {
     portalType: null, //per filtrare su un tipo di conteneuto specifico (click dal menu laterale)
     order: { sort_on: 'relevance', sort_order: 'ascending' },
     currentPage: 1,
+    b_size,
   });
   const tassonomieSearch = useSelector((state) => state.tassonomieSearch);
   const result = useSelector((state) => state.tassonomieSearch.result);
