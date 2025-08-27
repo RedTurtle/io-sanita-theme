@@ -3,7 +3,7 @@
  * @module components/theme/View/AggregationPage
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
@@ -23,6 +23,7 @@ import {
   Pagination,
   SortByWidget,
 } from 'io-sanita-theme/components';
+import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 /* STYLE */
 import './_aggregationPage.scss';
@@ -57,6 +58,7 @@ const AggregationPage = ({ match, route, location }) => {
   const dispatch = useDispatch();
   const id = match?.params?.id ?? '';
   const type = route?.type;
+  const resultsRef = createRef();
 
   if (id?.length === 0) {
     return <Redirect to="/" />;
@@ -141,6 +143,7 @@ const AggregationPage = ({ match, route, location }) => {
   }, [searchParams.portalType, searchParams.order]);
 
   const onPaginationChange = (e, { activePage }) => {
+    scrollIntoView({ ref: resultsRef.current });
     setSearchParams({ ...searchParams, currentPage: activePage });
   };
 
@@ -162,7 +165,10 @@ const AggregationPage = ({ match, route, location }) => {
           }}
         />
 
-        <div className="row row-column-border border-light row-column-menu-left">
+        <div
+          className="row row-column-border border-light row-column-menu-left"
+          ref={resultsRef}
+        >
           <aside
             className="col-md-12 col-lg-4"
             aria-label={intl.formatMessage(commonIntlMessages.sideMenuIndex)}
