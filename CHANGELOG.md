@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.20.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.0...2.20.1) (2025-08-27)
+
+### Bug Fixes
+
+* pagination in getTassonomieSearch ([e1b73fe](https://github.com/RedTurtle/io-sanita-theme/commit/e1b73fe25fb106043de69dad6a347b76151b4a8a))
+* scroll page on pagination change in aggregation page ([83e3239](https://github.com/RedTurtle/io-sanita-theme/commit/83e32395fecb5b910d688544d7309194a0e43745))
+
 ## [2.20.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.19.0...2.20.0) (2025-08-20)
 
 ### Features
