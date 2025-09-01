@@ -4437,6 +4437,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-table@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/react-table@npm:8.21.2"
+  dependencies:
+    "@tanstack/table-core": 8.21.2
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 3cda97794c10777d48d01de29d087a33edd8af153b3096ac9798c7ebddd31bd34f2b7838ecf4bddaf469d661a777556bd8021e15a41f692eb2e3dd79dd0e5c3b
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.21.2":
+  version: 8.21.2
+  resolution: "@tanstack/table-core@npm:8.21.2"
+  checksum: 21573388b26cef9c6fcabe3785640c470ea072a6d6ec34543e7eaf54ee742bf5fb12f8a04b172d7e08bd828a35afd7133add5adb4729dd4f94eaf4745b1cab14
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:10.4.0":
   version: 10.4.0
   resolution: "@testing-library/dom@npm:10.4.0"
@@ -9027,8 +9046,7 @@ __metadata:
     volto-editablefooter: 5.1.9
     volto-feedback: 0.6.2
     volto-feedback-italia: 1.0.8
-    volto-form-block: 3.10.2
-    volto-form-block-italia: 1.0.5
+    volto-form-block-italia: 1.1.1
     volto-gdpr-privacy: 2.2.15
     volto-querywidget-with-browser: 0.4.3
     volto-rss-block: 3.0.1
@@ -11816,14 +11834,14 @@ __metadata:
   linkType: hard
 
 "react-google-recaptcha-v3@npm:^1.8.0":
-  version: 1.10.1
-  resolution: "react-google-recaptcha-v3@npm:1.10.1"
+  version: 1.11.0
+  resolution: "react-google-recaptcha-v3@npm:1.11.0"
   dependencies:
     hoist-non-react-statics: ^3.3.2
   peerDependencies:
-    react: ^16.3 || ^17.0 || ^18.0
-    react-dom: ^17.0 || ^18.0
-  checksum: b5ffe0bc0b13ad9ab2fa7b7acd979c7ff9d4f9d698412eaf8721167883a2ace2b4f3f5386c4b70f59f1cab9f062c368c360dbaa1b2cad4f1645795f3dbdf9355
+    react: ^16.3 || ^17.0 || ^18.0 || ^19.0
+    react-dom: ^17.0 || ^18.0 || ^19.0
+  checksum: 8946eeba751c444ac81d4df6374b38b3ce4ecc4b5c36459972b07c504476c7571c0fc901039a082dcfa4b49be90f115a1fb0c2e77cecfcceb5e44ae2d30ea250
   languageName: node
   linkType: hard
 
@@ -13742,11 +13760,11 @@ __metadata:
   linkType: hard
 
 "ua-parser-js@npm:^0.7.30":
-  version: 0.7.39
-  resolution: "ua-parser-js@npm:0.7.39"
+  version: 0.7.41
+  resolution: "ua-parser-js@npm:0.7.41"
   bin:
     ua-parser-js: script/cli.js
-  checksum: 3488852961485b80b65a8dbc978098cdf1c51bb7765262698ee1a29304786f667272182e9cee15433e7792981376b1ca59ca77e126fee0b41b104085f4be9a3c
+  checksum: c14ea0ba52585f0c363375b30d511d972bf1842855b6d6f4a411e6a27c936c7eb1f96e53e2d321fe3c587f0420677dcabd8977622be71da51edc8521e595b9b9
   languageName: node
   linkType: hard
 
@@ -14114,28 +14132,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-form-block-italia@npm:1.0.5":
-  version: 1.0.5
-  resolution: "volto-form-block-italia@npm:1.0.5"
+"volto-form-block-italia@npm:1.1.1":
+  version: 1.1.1
+  resolution: "volto-form-block-italia@npm:1.1.1"
+  dependencies:
+    volto-form-block: 3.13.0
   peerDependencies:
     "@plone/volto": ^17.0.0
-    volto-form-block: ^3.10.0
-  checksum: c5e06754a5ad27d6f9cc38d38e967869ac4c8fdc97eaa5bd19314caaf8b1f72e01f559e3a1e2f40feb16321d558bf6704cd359ab217475512275f6b2929ff628
+    volto-form-block: ^3.13.0
+  checksum: 84ef7852ee399aa3343208041b4be869e738c8c9b2b057735867ca1d8b2bfc1576549a3e620173416bf6cc6b55c1f09a99ffa9d9f12c6f00cf838256fe9c0843
   languageName: node
   linkType: hard
 
-"volto-form-block@npm:3.10.2":
-  version: 3.10.2
-  resolution: "volto-form-block@npm:3.10.2"
+"volto-form-block@npm:3.13.0":
+  version: 3.13.0
+  resolution: "volto-form-block@npm:3.13.0"
   dependencies:
     "@hcaptcha/react-hcaptcha": ^0.3.6
+    "@tanstack/react-table": 8.21.2
     file-saver: ^2.0.5
     react-google-recaptcha-v3: ^1.8.0
     volto-subblocks: ^2.1.0
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-subblocks: ^2.1.0
-  checksum: 69407a5333817f47d2b4974f2a6c75f278c95c10ae584438d1360f260ccffb750309d9c425f1627a4ae1d242d27712e53ec79e2da90300b61ac0c448ce475d96
+  checksum: 0ce41843f5d2be216271bb074cb9db5b3f6b2948fee573c66025401a976c51a61f82c43aaa86c037fd7d673542dd7a7b8a3d3f072556a7265bec29748f291a3c
   languageName: node
   linkType: hard
 
