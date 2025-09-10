@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { searchContent } from '@plone/volto/actions/search/search';
 import { getVocabulary } from '@plone/volto/actions/vocabularies/vocabularies';
 
-const SelectFilter = ({ options, value, id, onChange, placeholder, b_size = -1 }) => {
+
+const SelectFilter = ({ options, value, id, onChange, placeholder, sortVocabulary = false, b_size = -1 }) => {
   const dispatch = useDispatch();
 
   const state = useSelector((state) => {
@@ -23,7 +24,9 @@ const SelectFilter = ({ options, value, id, onChange, placeholder, b_size = -1 }
       label: i.title,
     };
   });
-
+  if (sortVocabulary && selectOptions) {
+    selectOptions.sort((a, b) => a.label.localeCompare(b.label));
+  }
   const vocabularies = state?.vocabularies;
 
   useEffect(() => {
