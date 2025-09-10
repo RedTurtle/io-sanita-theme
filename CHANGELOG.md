@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.20.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.2...2.20.3) (2025-09-10)
+
+### Bug Fixes
+
+* fixed b_size select filter and subsite parent header when header is sticky ([#104](https://github.com/RedTurtle/io-sanita-theme/issues/104)) ([38b19a0](https://github.com/RedTurtle/io-sanita-theme/commit/38b19a0ab7eea01841c749b89a0fb1a35003f791))
+* fixed sort_order selectFilter options ([#106](https://github.com/RedTurtle/io-sanita-theme/issues/106)) ([6307487](https://github.com/RedTurtle/io-sanita-theme/commit/6307487b1ec92ee71a366e702e852a320fd2851d))
+
 ## [2.20.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.1...2.20.2) (2025-09-01)
 
 ### Maintenance
