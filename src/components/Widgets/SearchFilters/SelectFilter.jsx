@@ -24,9 +24,6 @@ const SelectFilter = ({ options, value, id, onChange, placeholder, sortVocabular
       label: i.title,
     };
   });
-  if (sortVocabulary && selectOptions) {
-    selectOptions.sort((a, b) => a.label.localeCompare(b.label));
-  }
   const vocabularies = state?.vocabularies;
 
   useEffect(() => {
@@ -56,6 +53,10 @@ const SelectFilter = ({ options, value, id, onChange, placeholder, sortVocabular
   const select_options = options?.vocabulary
     ? vocabularies?.[options.vocabulary]?.items
     : selectOptions;
+
+  if (sortVocabulary && select_options?.length > 0) {
+    select_options.sort((a, b) => a.label.localeCompare(b.label));
+  }
 
   return (
     <div className="filter-wrapper select-filter">
