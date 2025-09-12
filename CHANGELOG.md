@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.20.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.3...2.20.4) (2025-09-12)
+
+### Bug Fixes
+
+* better lead image centering ([#105](https://github.com/RedTurtle/io-sanita-theme/issues/105)) ([2bafdbc](https://github.com/RedTurtle/io-sanita-theme/commit/2bafdbc235952705060eaa47b67df8abe364ed6c))
+
 ## [2.20.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.2...2.20.3) (2025-09-10)
 
 ### Bug Fixes
