@@ -3,7 +3,7 @@
  * @module components/theme/Header/Header
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
@@ -24,39 +24,57 @@ import { Headers } from 'design-react-kit';
 
 const Header = ({ pathname }) => {
   const location = useLocation();
+  const headerWrapperRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const [mini, setMini] = useState(false);
-  const isEditMode = useSelector(
-    (state) =>
-      Object.keys(state.form.global ?? {})?.length > 0 ||
-      location.pathname.indexOf('/controlpanel') === 0,
+
+  const isEditMode = useSelector((state) =>
+    Object.keys(state.form.global ?? {})?.length > 0 ||
+    location.pathname.indexOf('/controlpanel') === 0
   );
 
-  const handleScroll = () => {
-    setMini(window.pageYOffset > 120);
-  };
-
   useEffect(() => {
+    const node = headerWrapperRef.current;
+    if (node) {
+      const height = node.offsetHeight;
+      if (height > 0) {
+        setHeaderHeight(height);
+      }
+    }
+  }, []);
+
+  // Scroll solo per mini
+  useEffect(() => {
+    const handleScroll = () => {
+      setMini(window.pageYOffset > 120);
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <div className="public-ui">
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-      <Headers
-        className={cx({
-          'is-sticky': mini && !isEditMode,
-          'it-header-sticky': !isEditMode,
-        })}
-      >
-        <HeaderSlim />
+      <div ref={headerWrapperRef}>
+        <Headers
+          className={cx({
+            'is-sticky': mini && !isEditMode,
+            'it-header-sticky': !isEditMode,
+          })}
+        >
+          <HeaderSlim />
 
-        <div className="it-nav-wrapper">
-          <HeaderCenter />
-          <Navigation pathname={pathname} isEditMode={isEditMode} />
-        </div>
-        <HeaderContacts />
-      </Headers>
+          <div className="it-nav-wrapper">
+            <HeaderCenter />
+            <Navigation pathname={pathname} isEditMode={isEditMode} />
+          </div>
+          <HeaderContacts />
+        </Headers>
+      </div>
+      <div id="headerSpacer" style={{ height: mini ? headerHeight : 0 }} />
       <SubsiteHeader />
     </div>
   );
