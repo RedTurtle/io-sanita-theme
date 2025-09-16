@@ -40,6 +40,14 @@
 
 - ...
  -->
+## Versione 2.20.5 (16/09/2025)
+
+### Fix
+
+- Sistemato header sticky durante lo scroll della pagina ora è più fluido.
+- Rimossa barra di scorrimento orizzontale che compariva saltuariamente nel sito durante la navigazione.
+
+
  ## Versione 2.16.4 (12/06/2025)
 
 ### Migliorie
