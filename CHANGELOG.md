@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.20.5](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.4...2.20.5) (2025-09-16)
+
+### Bug Fixes
+
+* fixed sticky header and horizontal page scroll ([#107](https://github.com/RedTurtle/io-sanita-theme/issues/107)) ([0a2356a](https://github.com/RedTurtle/io-sanita-theme/commit/0a2356a2ab9fdcf9731e2460cb63ebdebc3f64d1))
+
+### Documentation
+
+* updated release.md ([77a26ad](https://github.com/RedTurtle/io-sanita-theme/commit/77a26adb0ea93625a3839b53a9dd573bbe063bbc))
+
 ## [2.20.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.3...2.20.4) (2025-09-12)
 
 ### Bug Fixes
