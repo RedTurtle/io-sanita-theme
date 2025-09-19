@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.20.6](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.5...2.20.6) (2025-09-19)
+
+### Bug Fixes
+
+* fixed sticky menu cms-ui ([487ca7a](https://github.com/RedTurtle/io-sanita-theme/commit/487ca7ac9e6f7a12112d366ee5d4dcc521865c34))
+
 ## [2.20.5](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.4...2.20.5) (2025-09-16)
 
 ### Bug Fixes
