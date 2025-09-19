@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.21.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.6...2.21.0) (2025-09-19)
+
+### Features
+
+* titolo csutom su colonnna titolo, variante tabella ([#108](https://github.com/RedTurtle/io-sanita-theme/issues/108)) ([54f8684](https://github.com/RedTurtle/io-sanita-theme/commit/54f868416ba81af4f006a0ef79c296f14c0d6917))
+
+### Maintenance
+
+* locales ([64c9bcd](https://github.com/RedTurtle/io-sanita-theme/commit/64c9bcd93537fdece35c41c69b39682fa499b947))
+
 ## [2.20.6](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.5...2.20.6) (2025-09-19)
 
 ### Bug Fixes
