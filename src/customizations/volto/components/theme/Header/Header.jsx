@@ -28,9 +28,10 @@ const Header = ({ pathname }) => {
   const [headerHeight, setHeaderHeight] = useState(0);
   const [mini, setMini] = useState(false);
 
-  const isEditMode = useSelector((state) =>
-    Object.keys(state.form.global ?? {})?.length > 0 ||
-    location.pathname.indexOf('/controlpanel') === 0
+  const isEditMode = useSelector(
+    (state) =>
+      Object.keys(state.form.global ?? {})?.length > 0 ||
+      location.pathname.indexOf('/controlpanel') === 0,
   );
 
   useEffect(() => {

@@ -4,6 +4,12 @@
   }
 }
 
+body.cms-ui {
+  #headerSpacer {
+    display: none;
+  }
+}
+
 body:not(.section-edit):not(.section-add) {
   .public-ui .it-header-wrapper.it-header-sticky {
     &.is-sticky {
