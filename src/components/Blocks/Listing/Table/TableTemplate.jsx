@@ -23,6 +23,7 @@ const messages = defineMessages({
 const TableTemplate = (props) => {
   const {
     columns,
+    title_label,
     alternate_rows,
     items,
     isEditMode,
@@ -42,7 +43,10 @@ const TableTemplate = (props) => {
     (columns ?? []).filter((c) => c.field === 'title').length > 0
       ? columns
       : [
-          { field: 'title', title: intl.formatMessage(messages.title) },
+          {
+            field: 'title',
+            title: title_label || intl.formatMessage(messages.title),
+          },
           ...(columns ?? []),
         ];
 
