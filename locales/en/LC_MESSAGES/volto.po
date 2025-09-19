@@ -3962,10 +3962,20 @@ msgstr ""
 msgid "table_variaton_title_description"
 msgstr ""
 
+#. Default: "Etichetta colonna del titolo"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_title_label"
+msgstr "Label of the title column"
+
+#. Default: "Titolo"
+#: config/blocks/listing/ListingOptions/tableTemplate
+msgid "table_variaton_title_label_default"
+msgstr "Title"
+
 #. Default: "Titolo"
 #: components/Blocks/Listing/Table/TableTemplate
 msgid "tabletemplate_column_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Telefono"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
