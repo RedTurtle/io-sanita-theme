@@ -27,6 +27,14 @@ const messages = defineMessages({
     defaultMessage:
       'Titolo della colonna. Se vuoi, puoi modificare il titolo di default.',
   },
+  title_label: {
+    id: 'table_variaton_title_label',
+    defaultMessage: 'Etichetta colonna del titolo',
+  },
+  title_label_default: {
+    id: 'table_variaton_title_label_default',
+    defaultMessage: 'Titolo',
+  },
   //sortable: { id: 'table_variaton_sortable', defaultMessage: 'Ordinabile' },
 });
 
@@ -69,6 +77,16 @@ export const addTableTemplateOptions = (
   position = 1,
 ) => {
   let pos = position;
+
+  addSchemaField(
+    schema,
+    'title_label',
+    intl.formatMessage(messages.title_label),
+    null,
+    { type: 'text', default: intl.formatMessage(messages.title_label_default) },
+    pos,
+  );
+  pos++;
 
   addSchemaField(
     schema,
