@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.0...2.21.1) (2025-09-23)
+
+### Bug Fixes
+
+* fixed parentSiteMenu header center ([ee7022b](https://github.com/RedTurtle/io-sanita-theme/commit/ee7022b935dedc99431ae573e10c42dd54c62f9a))
+
 ## [2.21.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.20.6...2.21.0) (2025-09-19)
 
 ### Features
