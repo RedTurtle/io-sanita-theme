@@ -18,7 +18,7 @@ import { CollapseNavigation, HeaderSearch } from 'io-sanita-theme/components';
 import {
   MegaMenu,
   MenuSecondary,
-  ParentSiteMenu,
+  // ParentSiteMenu,
   TertiaryMenu,
   Logo,
   Icon,
@@ -155,7 +155,7 @@ const Navigation = ({ pathname = '/', isEditMode }) => {
                 />
                 <SocialHeader mobile={true} />
                 {/* Headerslim Menu - parent site (if subsite) */}
-                {subsite && <ParentSiteMenu />}
+                {/* {subsite && <ParentSiteMenu />} */}
               </div>
               <div className="close-div" style={closeButtonStyle}>
                 <button
