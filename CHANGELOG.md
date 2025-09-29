@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.1...2.21.2) (2025-09-29)
+
+### Bug Fixes
+
+* fixed skeleton listing imports ([77f4248](https://github.com/RedTurtle/io-sanita-theme/commit/77f42480c5ab2d21a7f21fc3659cddfa7c6a6927))
+
 ## [2.21.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.0...2.21.1) (2025-09-23)
 
 ### Bug Fixes
