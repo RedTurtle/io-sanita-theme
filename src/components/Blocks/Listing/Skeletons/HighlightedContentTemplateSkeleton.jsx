@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardBody, CardTitle, CardText, Chip } from 'design-react-kit';
+import { Card, CardBody, CardTitle, CardText, Chip, Row, Col } from 'design-react-kit';
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 
 import 'io-sanita-theme/components/Blocks/Listing/HighlightedContent/highlightedContentTemplate.scss';
