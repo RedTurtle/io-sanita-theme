@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.2...2.21.3) (2025-09-30)
+
+### Bug Fixes
+
+* fixed htmlDiffLib from history view ([c4ba7a5](https://github.com/RedTurtle/io-sanita-theme/commit/c4ba7a5349bc9efc81ea5e1f8cdeeaf1329a02e1))
+
 ## [2.21.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.1...2.21.2) (2025-09-29)
 
 ### Bug Fixes
