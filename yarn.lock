@@ -8747,6 +8747,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"htmldiff-js@npm:1.0.5":
+  version: 1.0.5
+  resolution: "htmldiff-js@npm:1.0.5"
+  checksum: a3d7814a6e7d24432a726310fe925ef44db9629c17164f4cba478164f63eac06e6486162e8cab5d6c298ca37dec495ace774c1dd9c61bdb2110dbaaf28787053
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.1":
   version: 4.1.1
   resolution: "http-cache-semantics@npm:4.1.1"
@@ -9022,6 +9029,7 @@ __metadata:
     eslint-plugin-prettier: 5.0.0
     eslint-plugin-react: 7.33.2
     eslint-plugin-react-hooks: 4.6.0
+    htmldiff-js: 1.0.5
     marked: 9.0.0
     postcss-less: 6.0.0
     postcss-scss: 4.0.8
