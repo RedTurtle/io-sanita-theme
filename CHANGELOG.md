@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.3...2.21.4) (2025-10-01)
+
+### Maintenance
+
+* updated volto-slate-italia v1.0.7 ([57addec](https://github.com/RedTurtle/io-sanita-theme/commit/57addecb736578b8426283548e78943d34137590))
+
 ## [2.21.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.2...2.21.3) (2025-09-30)
 
 ### Bug Fixes
