@@ -10,7 +10,7 @@ const HandleAnchor = () => {
       const _id = location.hash.replace('#', '');
       if (!_id.startsWith('query=')) {
         //nel blocco 'search' quando si applicano dei filtri, viene aggiunta all'url la query preceduta da '#query=' che in quel caso non si tratta di un'àncora
-        const ref = document.querySelector('#' + _id);
+        const ref = document.getElementById(_id);
         if (ref) {
           ref.focus();
 
