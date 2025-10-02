@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.5](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.4...2.21.5) (2025-10-02)
+
+### Bug Fixes
+
+* search with query in params, and updated volto-slate-italia ([6c35f99](https://github.com/RedTurtle/io-sanita-theme/commit/6c35f990db0e6a64bf00f8d00d96d2b6a1e6c0b8))
+
 ## [2.21.4](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.3...2.21.4) (2025-10-01)
 
 ### Maintenance
