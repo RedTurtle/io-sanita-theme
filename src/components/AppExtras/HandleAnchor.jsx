@@ -10,13 +10,17 @@ const HandleAnchor = () => {
       const _id = location.hash.replace('#', '');
       if (!_id.startsWith('query=')) {
         //nel blocco 'search' quando si applicano dei filtri, viene aggiunta all'url la query preceduta da '#query=' che in quel caso non si tratta di un'àncora
-        const ref = document.getElementById(_id);
-        if (ref) {
-          ref.focus();
+        try {
+          const ref = document.querySelector('#' + _id);
+          if (ref) {
+            ref.focus();
 
-          setTimeout(() => {
-            scrollIntoView({ ref });
-          }, 30);
+            setTimeout(() => {
+              scrollIntoView({ ref });
+            }, 30);
+          }
+        } catch (e) {
+          //non fare niente, vuol dire che document.querySelector ha tornato errore perchè l'elemento non esiste o l'_id non è valido
         }
       }
     }
