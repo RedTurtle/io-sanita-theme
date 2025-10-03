@@ -1,0 +1,18 @@
+.it-header-wrapper {
+  &.it-header-sticky {
+    &.is-sticky {
+      @include media-breakpoint-up(lg) {
+        .it-header-center-wrapper {
+          //queste regole, fanno in modo che se il sito non ha il menu, quando l'header è sticky mostra comunque l'header center, altrimenti non si vedrebbe nulla.
+          display: block;
+          &:has(~ .it-header-navbar-wrapper:not(:empty)) {
+            display: none;
+          }
+          &:has(~ .it-header-navbar-wrapper:empty) {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
