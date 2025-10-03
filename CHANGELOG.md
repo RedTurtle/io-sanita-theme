@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.7](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.6...2.21.7) (2025-10-03)
+
+### Bug Fixes
+
+* navigation - unconsider invisible items ([a21ab49](https://github.com/RedTurtle/io-sanita-theme/commit/a21ab493583f2ca017502ba2f64804d0c70ddc19))
+
 ## [2.21.6](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.5...2.21.6) (2025-10-03)
 
 ### Bug Fixes
