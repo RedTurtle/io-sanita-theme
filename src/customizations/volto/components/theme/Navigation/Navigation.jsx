@@ -40,7 +40,9 @@ const Navigation = ({ pathname = '/', isEditMode }) => {
     dispatch(getDropdownMenuNavitems());
   }, [dispatch]);
 
-  const menu = getItemsByPath(items, pathname);
+  const menu = getItemsByPath(items, pathname)?.filter(
+    (item) => item.visible !== false,
+  );
 
   const getAnchorTarget = (nodeElement) => {
     if (nodeElement.nodeName === 'A') {
