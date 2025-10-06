@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.21.7](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.6...2.21.7) (2025-10-03)
+
+### Bug Fixes
+
+* navigation - unconsider invisible items ([a21ab49](https://github.com/RedTurtle/io-sanita-theme/commit/a21ab493583f2ca017502ba2f64804d0c70ddc19))
+
+## [2.21.6](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.5...2.21.6) (2025-10-03)
+
+### Bug Fixes
+
+* display header contacts in subsites ([c22e19a](https://github.com/RedTurtle/io-sanita-theme/commit/c22e19afcd3e05c21a7f976f0589117c5e2e7961))
+* header sticky with no navbar ([#110](https://github.com/RedTurtle/io-sanita-theme/issues/110)) ([2de8e05](https://github.com/RedTurtle/io-sanita-theme/commit/2de8e053dc7a0b06f1773a05ce2f7c888b064228))
+
 ## [2.21.5](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.4...2.21.5) (2025-10-02)
 
 ### Bug Fixes

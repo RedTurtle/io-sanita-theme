@@ -59,24 +59,30 @@ const Header = ({ pathname }) => {
   return (
     <div className="public-ui">
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-      <div ref={headerWrapperRef}>
+      <div ref={headerWrapperRef} id='mainHeaderWrapper'>
         <Headers
           className={cx({
             'is-sticky': mini && !isEditMode,
             'it-header-sticky': !isEditMode,
           })}
         >
+          {/* SLIM HEADER */}
           <HeaderSlim />
 
+          {/* MAIN HEADER */}
           <div className="it-nav-wrapper">
             <HeaderCenter />
             <Navigation pathname={pathname} isEditMode={isEditMode} />
           </div>
+          {/* BOTTOM HEADER WITH CONTACTS */}
           <HeaderContacts />
         </Headers>
+
+        {/* SUBSITE HEADER */}
+        <SubsiteHeader />
       </div>
+      {/* SPACE HEADER WHEN IS STICKY */}
       <div id="headerSpacer" style={{ height: mini ? headerHeight : 0 }} />
-      <SubsiteHeader />
     </div>
   );
 };

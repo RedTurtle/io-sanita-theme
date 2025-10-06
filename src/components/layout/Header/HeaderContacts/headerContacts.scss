@@ -26,6 +26,7 @@
       .icon {
         width: 1.2em;
         height: 1.2em;
+        min-width: 1.2em;
       }
       .link-value {
         p {
@@ -38,7 +39,6 @@
       }
 
       @media (max-width: #{map-get($grid-breakpoints, md)}) {
-        flex-basis: 50%;
         &:nth-child(even) {
           justify-content: flex-end;
         }

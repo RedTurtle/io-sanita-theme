@@ -1,4 +1,5 @@
 @import 'io-sanita-theme/theme/io-sanita/mixins';
+@import 'io-sanita-theme/theme/bootstrap-italia-base-config';
 
 .block.cta_block,
 .block-editor-cta_block {
@@ -111,6 +112,12 @@
           width: unset !important;
           fill: currentcolor;
           z-index: 1;
+        }
+      }
+
+      @media (max-width: #{map-get($grid-breakpoints, xl)}) {
+        .img-wrapper, picture {
+          display: none;
         }
       }
     }

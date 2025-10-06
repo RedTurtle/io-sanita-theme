@@ -15,13 +15,25 @@ div.callout {
 
   &:not(.callout-highlight):not(.callout-more) {
     .callout-title {
+      display: flex;
+      width: calc(100% + 1.389rem * 2 + 1.4rem); // padding + icon
+
       .text {
         position: unset;
         width: auto;
+
         &:after {
-          left: unset;
-          margin-left: calc(10px + 0.7rem);
+          display: none;
         }
+      }
+      .text-line {
+        position: relative;
+        top: 1rem;
+        width: 100%;
+        min-width: 3rem;
+        height: 1px;
+        flex: 1;
+        background-color: $color-border-secondary;
       }
     }
   }
