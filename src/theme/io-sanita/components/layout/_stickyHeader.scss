@@ -53,9 +53,11 @@ body:not(.section-edit):not(.section-add) {
   }
 
   &.has-toolbar {
-    .public-ui .it-header-wrapper.it-header-sticky {
-      &.is-sticky {
-        width: calc(100% - 80px);
+    @media (min-width: #{map-get($grid-breakpoints, lg)}) {
+      .public-ui .it-header-wrapper.it-header-sticky {
+        &.is-sticky {
+          width: calc(100% - 80px);
+        }
       }
     }
   }
