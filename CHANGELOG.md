@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.8](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.7...2.21.8) (2025-10-07)
+
+### Maintenance
+
+* updated mobile style ([#111](https://github.com/RedTurtle/io-sanita-theme/issues/111)) ([c9f97d7](https://github.com/RedTurtle/io-sanita-theme/commit/c9f97d706f945a1e83aa855fe5edf75a30e3c695))
+
 ## [2.21.7](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.6...2.21.7) (2025-10-03)
 
 ### Bug Fixes
