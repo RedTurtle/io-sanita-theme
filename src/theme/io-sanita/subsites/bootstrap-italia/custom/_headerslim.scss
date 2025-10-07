@@ -44,5 +44,11 @@
     .parent-site-menu {
       flex-direction: column;
     }
+    .it-header-slim-wrapper .it-header-slim-wrapper-content {
+      a.navbar-brand {
+        max-width: 80%;
+        white-space: normal;
+      }
+    }
   }
 }

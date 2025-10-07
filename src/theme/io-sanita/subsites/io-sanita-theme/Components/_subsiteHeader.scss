@@ -33,5 +33,13 @@
         }
       }
     }
+    // mobile menu
+    .navbar .navbar-collapsable .menu-wrapper .it-brand-wrapper {
+      background-color: $subsite-secondary;
+
+      a .it-brand-text {
+        color: $subsite-secondary-text;
+      }
+    }
   }
 }

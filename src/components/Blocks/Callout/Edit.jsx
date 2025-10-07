@@ -68,6 +68,7 @@ const Edit = (props) => {
               onSelectBlock={onSelectBlock}
             />
           </div>
+          {data.style !== 'highlight' && <div className="text-line"></div>}
         </CalloutTitle>
         <CalloutText tag="div" className="callout-text">
           <TextEditorWidget
