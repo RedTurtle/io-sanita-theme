@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.9](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.8...2.21.9) (2025-10-08)
+
+### Bug Fixes
+
+* fixed callout border color ([c1b3472](https://github.com/RedTurtle/io-sanita-theme/commit/c1b34723d62494bb85044191524e429ecd5497ed))
+
 ## [2.21.8](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.7...2.21.8) (2025-10-07)
 
 ### Maintenance
