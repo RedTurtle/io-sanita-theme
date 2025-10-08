@@ -41,19 +41,16 @@ const Header = ({ pathname }) => {
       if (height > 0) {
         setHeaderHeight(height);
       }
+
+      const handleScroll = () => {
+        setMini(window.pageYOffset > height);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }
-  }, []);
-
-  // Scroll solo per mini
-  useEffect(() => {
-    const handleScroll = () => {
-      setMini(window.pageYOffset > 120);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, []);
 
   return (
