@@ -17,6 +17,7 @@ div.callout {
     .callout-title {
       display: flex;
       width: calc(100% + 1.389rem * 2 + 1.4rem); // padding + icon
+      align-items: center;
 
       .text {
         position: unset;
@@ -28,13 +29,18 @@ div.callout {
       }
       .text-line {
         position: relative;
-        top: 1rem;
         width: 100%;
         min-width: 3rem;
-        height: 1px;
+        height: 2px;
         flex: 1;
         background-color: $color-border-secondary;
       }
+    }
+  }
+
+   @each $color-name, $color-value in (success: $success, warning: $warning, danger: $danger, important: $success, note: $primary) {
+    &:not(.callout-highlight):not(.callout-more).#{$color-name} .callout-title .text-line {
+      background-color: $color-value;
     }
   }
 }
