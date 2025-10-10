@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.21.10](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.9...2.21.10) (2025-10-10)
+
+### Bug Fixes
+
+* fixed sticky menu and callout block ([d8c7612](https://github.com/RedTurtle/io-sanita-theme/commit/d8c7612890bfbfee91c2412b54e3a909ccaed5e3))
+
 ## [2.21.9](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.8...2.21.9) (2025-10-08)
 
 ### Bug Fixes
