@@ -13,6 +13,12 @@
           }
         }
       }
+
+      @media (max-width: #{map-get($grid-breakpoints, ml)}) {
+        .it-nav-wrapper .it-brand-wrapper {
+          padding-left: 1.2rem;
+        }
+      }
     }
   }
 }
