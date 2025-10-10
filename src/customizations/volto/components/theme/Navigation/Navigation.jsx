@@ -177,7 +177,12 @@ const Navigation = ({ pathname = '/', isEditMode }) => {
             </FocusLock>
           </CollapseNavigation>
         </HeaderContent>
-      ) : null}
+      ) : (// icona segnaposto per lo sticky menu,
+        <Icon
+          className="d-none"
+          icon="it-burger"
+          />
+      )}
     </Header>
   );
 };

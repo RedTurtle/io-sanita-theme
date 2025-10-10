@@ -61,3 +61,12 @@
     }
   }
 }
+
+@media (max-width: #{map-get($grid-breakpoints, ml)}) {
+  .it-header-wrapper.is-sticky.it-header-sticky {
+    .header-contacts .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

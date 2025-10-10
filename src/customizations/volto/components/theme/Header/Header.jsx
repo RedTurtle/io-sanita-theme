@@ -25,6 +25,7 @@ import { Headers } from 'design-react-kit';
 const Header = ({ pathname }) => {
   const location = useLocation();
   const headerWrapperRef = useRef(null);
+  const headerSlimRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
   const [mini, setMini] = useState(false);
 
@@ -35,15 +36,18 @@ const Header = ({ pathname }) => {
   );
 
   useEffect(() => {
-    const node = headerWrapperRef.current;
-    if (node) {
-      const height = node.offsetHeight;
-      if (height > 0) {
-        setHeaderHeight(height);
-      }
+    const headerWrapper = headerWrapperRef.current;
+    const headerSlim = headerSlimRef.current;
+
+    if (headerWrapper.offsetHeight && headerSlim.offsetHeight) {
+
+      // 5px è lo scarto quando sei mobile, 120 l'altezza fissa quando non si è su mobile 
+      const heightForDevice = window.matchMedia('(max-width: 991px)').matches ? (headerSlim.offsetHeight - 5) : (headerSlim.offsetHeight + 120);
+
+      setHeaderHeight(headerWrapper.offsetHeight);
 
       const handleScroll = () => {
-        setMini(window.pageYOffset > height);
+        setMini(window.pageYOffset > heightForDevice);
       };
 
       window.addEventListener('scroll', handleScroll);
@@ -56,7 +60,7 @@ const Header = ({ pathname }) => {
   return (
     <div className="public-ui">
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-      <div ref={headerWrapperRef} id='mainHeaderWrapper'>
+      <div ref={headerWrapperRef} id="mainHeaderWrapper">
         <Headers
           className={cx({
             'is-sticky': mini && !isEditMode,
@@ -64,7 +68,9 @@ const Header = ({ pathname }) => {
           })}
         >
           {/* SLIM HEADER */}
-          <HeaderSlim />
+          <div ref={headerSlimRef} id="headerSlimWrapper">
+            <HeaderSlim  />
+          </div>
 
           {/* MAIN HEADER */}
           <div className="it-nav-wrapper">

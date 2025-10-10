@@ -17,7 +17,10 @@ div.callout {
     .callout-title {
       display: flex;
       width: calc(100% + 1.389rem * 2 + 1.4rem); // padding + icon
-      align-items: center;
+
+      .icon {
+        min-width: 24px;
+      }
 
       .text {
         position: unset;
@@ -33,6 +36,7 @@ div.callout {
         min-width: 3rem;
         height: 2px;
         flex: 1;
+        top: 1rem;
         background-color: $color-border-secondary;
       }
     }
