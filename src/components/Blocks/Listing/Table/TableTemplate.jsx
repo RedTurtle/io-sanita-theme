@@ -100,7 +100,11 @@ const TableTemplate = (props) => {
                       behavior: field_properties.behavior,
                     };
                     if (field_properties.widget === 'datetime') {
-                      widget_props.format = 'DD/MM/yyyy HH:MM';
+                      if (item[c.field]?.indexOf('T') > 0) {
+                        widget_props.format = 'DD/MM/yyyy HH:mm';
+                      } else {
+                        widget_props.format = 'DD/MM/yyyy';
+                      }
                     }
                     // per questi campi si è deciso di non pubblicare ora:minuti
                     // XXX: queste personalizzazioni sul formato dei datetime, basate sui nomi
