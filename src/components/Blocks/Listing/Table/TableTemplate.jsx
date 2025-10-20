@@ -39,7 +39,7 @@ const TableTemplate = (props) => {
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
 
-  let render_columns =
+  const render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
       ? columns
       : [
@@ -102,21 +102,32 @@ const TableTemplate = (props) => {
                     if (field_properties.widget === 'datetime') {
                       widget_props.format = 'DD/MM/yyyy HH:MM';
                     }
-                    // per questi campi si è deciso dii non pubblicare ora:minuti
-                    switch (c.field) {
-                      case 'apertura_bando':
-                      case 'chiusura_procedimento_bando':
-                      case 'scadenza_domande_bando':
-                      case 'scadenza_bando':
-                        widget_props.format = 'DD/MM/yyyy';
+                    // per questi campi si è deciso di non pubblicare ora:minuti
+                    // XXX: queste personalizzazioni sul formato dei datetime, basate sui nomi
+                    //      dei field sono da rivedere in modo differente
+                    switch (c.ct) {
+                      case 'ATAvviso':
+                      case 'ATGara':
+                      case 'ATAffidamento':
+                      case 'ATConcorso':
                         break;
                       default:
-                        break;
+                        switch (c.field) {
+                          case 'apertura_bando':
+                          case 'chiusura_procedimento_bando':
+                          case 'scadenza_domande_bando':
+                          case 'scadenza_bando':
+                            widget_props.format = 'DD/MM/yyyy';
+                            break;
+                          default:
+                            break;
+                        }
                     }
                     // rimuove ora, se non valorizzata
                     if (
                       field_properties.widget === 'datetime' &&
-                      item[c.field]?.indexOf('T00:00') > 0
+                      (item[c.field]?.indexOf('T00:00') > 0 ||
+                        item[c.field]?.indexOf('T23:59') > 0)
                     ) {
                       widget_props.format = 'DD/MM/yyyy';
                     }
