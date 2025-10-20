@@ -2,6 +2,7 @@ import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'design-react-kit';
 import { RichTextSection, useClientPagination } from 'io-sanita-theme/helpers';
+import { CardFile } from 'io-sanita-theme/components';
 
 import {
   CardSimple,
@@ -21,6 +22,9 @@ const RenderItem = ({ item }) => {
       break;
     case 'Persona':
       return <CardPersona item={item} titleTag="h3" />;
+      break;
+    case 'File' || 'Image' || 'Link' || 'Modulo':
+      return <CardFile item={item} showModified={true} />;
       break;
     default:
       return <CardSimple item={item} titleTag="h3" />;
@@ -55,6 +59,10 @@ const BackReferences = ({ id, title, content, type }) => {
         ...(backreferences?.['personale']?.['Struttura'] ?? []),
         ...(content.struttura_in_cui_opera ?? []),
       ];
+      break;
+    case 'bando':
+      items = content?.items;
+      break;
     default:
       break;
   }
