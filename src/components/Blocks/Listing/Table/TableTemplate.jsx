@@ -137,8 +137,8 @@ const TableTemplate = (props) => {
                     // non fa quello che ci si aspetterebbe)
                     if (
                       field_properties.widget === 'datetime' &&
-                      (item[c.field]?.indexOf('T00:00') > 0 ||
-                        item[c.field]?.indexOf('T23:59') > 0)
+                      (item[c.field]?.indexOf('T00:00') >= 0 ||
+                        item[c.field]?.indexOf('T23:59') >= 0)
                     ) {
                       widget_props.format = 'DD/MM/yyyy';
                     }
