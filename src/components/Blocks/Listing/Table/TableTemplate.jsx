@@ -133,7 +133,8 @@ const TableTemplate = (props) => {
                             break;
                         }
                     }
-                    // rimuove ora, se non valorizzata
+                    // rimuove ora, se non valorizzata (XXX: in realtà se la data è UTC
+                    // non fa quello che ci si aspetterebbe)
                     if (
                       field_properties.widget === 'datetime' &&
                       (item[c.field]?.indexOf('T00:00') > 0 ||
