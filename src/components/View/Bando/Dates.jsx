@@ -37,7 +37,6 @@ const messages = defineMessages({
  */
 const BandoDates = ({ content }) => {
   const intl = useIntl();
-  const site = useSelector((state) => state.site.data);
 
   const effective = content?.effective
     ? viewDate(intl.locale, content.effective)
