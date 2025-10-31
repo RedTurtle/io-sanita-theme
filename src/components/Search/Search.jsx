@@ -126,7 +126,10 @@ const Search = () => {
     a_chi_si_rivolge_tassonomia: [],
     sections: [],
     portal_types: [],
-    order: { sort_on: 'relevance', sort_order: 'ascending' },
+    order: {
+      sort_on: qs.parse(location.search)?.sort_on ?? 'relevance',
+      sort_order: qs.parse(location.search)?.sort_order ?? 'ascending',
+    },
   });
   const [advFiltersOpen, setAdvFiltersOpen] = useState(false);
 
