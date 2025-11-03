@@ -1,3 +1,10 @@
+/*
+ * customization from @plone/volto 18.9.1
+ *
+ * show time using the server timezone
+ *
+ */
+
 import React from 'react';
 import cx from 'classnames';
 import moment from 'moment-timezone';
