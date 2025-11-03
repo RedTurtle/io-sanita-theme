@@ -87,6 +87,7 @@ const TableTemplate = (props) => {
                     ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
                     {};
                   let render_value = JSON.stringify(item[c.field]);
+                  let field_value = item[c.field];
 
                   if (field_properties) {
                     const field = {
@@ -100,12 +101,12 @@ const TableTemplate = (props) => {
                       behavior: field_properties.behavior,
                     };
                     if (field_properties.widget === 'datetime') {
-                      if (item[c.field]?.indexOf('T') > 0) {
+                      if (field_value?.indexOf('T') > 0) {
                         widget_props.format = 'DD/MM/yyyy HH:mm';
-                        item[c.field] =
-                          item[c.field] +
-                          (item[c.field].indexOf('Z') < 0 &&
-                          item[c.field].indexOf('+') < 0
+                        field_value =
+                          field_value +
+                          (field_value.indexOf('Z') < 0 &&
+                          field_value.indexOf('+') < 0
                             ? 'Z'
                             : '');
                       } else {
@@ -137,8 +138,8 @@ const TableTemplate = (props) => {
                     // non fa quello che ci si aspetterebbe)
                     if (
                       field_properties.widget === 'datetime' &&
-                      (item[c.field]?.indexOf('T00:00') >= 0 ||
-                        item[c.field]?.indexOf('T23:59') >= 0)
+                      (field_value?.indexOf('T00:00') >= 0 ||
+                        field_value?.indexOf('T23:59') >= 0)
                     ) {
                       widget_props.format = 'DD/MM/yyyy';
                     }
@@ -148,7 +149,7 @@ const TableTemplate = (props) => {
                     }
 
                     render_value = (
-                      <Widget value={item[c.field]} {...widget_props} />
+                      <Widget value={field_value} {...widget_props} />
                     );
                   }
                   if (c.field === 'title') {
@@ -158,7 +159,7 @@ const TableTemplate = (props) => {
                         href={isEditMode ? '#' : ''}
                         className="img-link"
                       >
-                        {item[c.field]}
+                        {field_value}
                       </UniversalLink>
                     );
                   }
