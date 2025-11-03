@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.22.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.10...2.22.1) (2025-11-03)
+
+### Features
+
+* replace fixed sorting with query string-based sorting ([#114](https://github.com/RedTurtle/io-sanita-theme/issues/114)) ([29d8195](https://github.com/RedTurtle/io-sanita-theme/commit/29d8195f40afc76b821d416763d8db3fecd9ebf7))
+
+### Maintenance
+
+* package.json fix ([c762a2f](https://github.com/RedTurtle/io-sanita-theme/commit/c762a2f043fa8743d82392a9a697cf4ce87e6c79))
+
 ## [2.21.10](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.9...2.21.10) (2025-10-10)
 
 ### Bug Fixes
