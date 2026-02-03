@@ -1,6 +1,5 @@
 import loadable from '@loadable/component';
 import { defineMessages } from 'react-intl';
-import ImageWithErrors from 'io-sanita-theme/components/ImageWithErrors/ImageWithErrors';
 
 import menuSVG from '@plone/volto/icons/menu.svg';
 import menuAltSVG from '@plone/volto/icons/menu-alt.svg';
@@ -43,6 +42,7 @@ import TrackFocus from 'io-sanita-theme/components/AppExtras/TrackFocus';
 import HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
 import SiteSettingsExtras from 'io-sanita-theme/components/AppExtras/SiteSettingsExtras';
 import GenericAppExtras from 'io-sanita-theme/components/AppExtras/GenericAppExtras';
+import applyComponentConfig from 'io-sanita-theme/config/components';
 import { loadables as IoSanitaLoadables } from 'io-sanita-theme/config/loadables';
 import { registerIOSanitaValidators } from 'io-sanita-theme/config/validators';
 
@@ -58,6 +58,7 @@ import applyIoSanitaViews from 'io-sanita-theme/config/views/views';
 import { SideMenu } from 'io-sanita-theme/components/View/commons';
 import AggregationPage from 'io-sanita-theme/components/View/AggregationPage/AggregationPage';
 import { applyFarmacieConfig } from './farmacie';
+import applyUtilitiesConfig from 'io-sanita-theme/config/utilities';
 
 import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSquare';
@@ -321,25 +322,21 @@ export default function applyConfig(config) {
   removeListingVariation(config, 'summary'); // removes summary volto template, because is unused
   removeListingVariation(config, 'imageGallery'); // removes imageGallery volto template, because we have our photoGallery template
 
-  // COMPONENTS
-  config.components = {
-    ...config.components,
-    BlockExtraTags: { component: () => null },
-    Image: {
-      component: ImageWithErrors,
-    },
-  };
-
-  config.registerComponent({
-    name: 'SiteSettingsExtras',
-    component: SiteSettingsExtras,
-  });
+  // /******************************************************************************
+  // * COMPONENTS
+  // ******************************************************************************/
+  applyComponentConfig(config);
 
   // REDUCERS
   config.addonReducers = {
     ...config.addonReducers,
     ...reducers,
   };
+
+  // /******************************************************************************
+  // * UTILITIES
+  // ******************************************************************************/
+  applyUtilitiesConfig(config);
 
   // VALIDATORS
   registerIOSanitaValidators(config);
