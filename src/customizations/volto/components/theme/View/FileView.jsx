@@ -2,6 +2,7 @@
  * File view component.
  * @module components/theme/View/FileView
  * - changed card layout
+ * - uriDecode filename
  */
 
 import React from 'react';
@@ -35,7 +36,7 @@ const FileView = ({ content }) => (
         <Col className="card-wrapper card-teaser-wrapper">
           <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
             <div className="card-body">
-              <h2 className="card-title h5">{content.file.filename}</h2>
+              <h2 className="card-title h5">{uriDecode(content.file.filename)}</h2>
               <DownloadFileFormat file={content.file} iconSize="2x" />
             </div>
           </div>

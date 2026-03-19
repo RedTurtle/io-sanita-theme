@@ -154,12 +154,12 @@ export const CardFile = ({
               <a
                 className="card-title-link flex-grow-1 pe-4"
                 href={flattenToAppURL(file.download)}
-                title={file.filename}
+                title={uriDecode(file.filename)}
                 target={pdfFile ? '_blank' : '_self'}
                 rel={pdfFile ? 'noopener noreferrer' : ''}
                 data-element={titleDataElement}
               >
-                {file.filename}
+                {uriDecode(file.filename)}
               </a>
             )}
 
