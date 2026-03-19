@@ -241,6 +241,13 @@
       &.dark {
         background-color: $subsite-primary;
         color: $subsite-primary-text;
+
+        a {
+          &,
+          &:hover {
+            color: $subsite-primary-text;
+          }
+        }
       }
     }
   }
