@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-
 import { FileIcon } from 'io-sanita-theme/helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 const DownloadFileFormat = ({
   file,
@@ -16,7 +14,7 @@ const DownloadFileFormat = ({
   return file ? (
     <a
       href={flattenToAppURL(file.download)}
-      title={uriDecode(file.filename)}
+      title={decodeURI(file.filename)}
       className={className}
       target={pdfFile ? '_blank' : '_self'}
       rel={pdfFile ? 'noopener noreferrer' : ''}

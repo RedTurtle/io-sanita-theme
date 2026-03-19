@@ -1,3 +1,11 @@
+import './cardFile.scss';
+
+import { Card, CardBody, CardText, CardTitle } from 'design-react-kit';
+import { defineMessages, useIntl } from 'react-intl';
+
+import { FileIcon } from 'io-sanita-theme/helpers';
+import { Icon } from 'io-sanita-theme/components';
+import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
 /*
 Usa la Card File per
   - allegare documenti o
@@ -21,17 +29,10 @@ In caso di download diretto, è suggerito l’utilizzo dell’icona con il forma
 In caso di collegamento a una pagina foglia di tipo documento, è suggerito l’utilizzo di un’icona file generica e non è necessario specificare estensione e peso nel titolo.
 */
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
-import cx from 'classnames';
-import { Card, CardBody, CardTitle, CardText } from 'design-react-kit';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import cx from 'classnames';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { viewDate } from 'io-sanita-theme/helpers';
-import { Icon } from 'io-sanita-theme/components';
-import { FileIcon } from 'io-sanita-theme/helpers';
-import Module from 'io-sanita-theme/components/Cards/CardFile/Module';
-
-import './cardFile.scss';
 
 const messages = defineMessages({
   attachment: {
@@ -154,12 +155,12 @@ export const CardFile = ({
               <a
                 className="card-title-link flex-grow-1 pe-4"
                 href={flattenToAppURL(file.download)}
-                title={uriDecode(file.filename)}
+                title={decodeURI(file.filename)}
                 target={pdfFile ? '_blank' : '_self'}
                 rel={pdfFile ? 'noopener noreferrer' : ''}
                 data-element={titleDataElement}
               >
-                {uriDecode(file.filename)}
+                {decodeURI(file.filename)}
               </a>
             )}
 
