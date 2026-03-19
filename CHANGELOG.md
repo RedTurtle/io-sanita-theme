@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.23.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.22.1...2.23.0) (2026-03-19)
+
+### Features
+
+* title in header could be hidden by settings panel and in that case loggo has width auto ([#117](https://github.com/RedTurtle/io-sanita-theme/issues/117)) ([7a7af44](https://github.com/RedTurtle/io-sanita-theme/commit/7a7af4419b61d359db2d5ff26ea1f004e1991d95))
+
+### Bug Fixes
+
+* download/file and display-file/file url ([bacf5cf](https://github.com/RedTurtle/io-sanita-theme/commit/bacf5cf1bbc7c90b6ec16d236dea6122fdc9f60c))
+* link color in callout dark ([#118](https://github.com/RedTurtle/io-sanita-theme/issues/118)) ([9bbbf02](https://github.com/RedTurtle/io-sanita-theme/commit/9bbbf0249a158f2dd2b03e05dee15eab0271c0aa))
+* objectbrowser searchableType now consider selectableTypes ([c2976b5](https://github.com/RedTurtle/io-sanita-theme/commit/c2976b5bbc71a41e87f6c13163e5498275109a3d))
+
 ## [2.22.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.10...2.22.1) (2025-11-03)
 
 ### Features
