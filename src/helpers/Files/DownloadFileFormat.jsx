@@ -16,7 +16,7 @@ const DownloadFileFormat = ({
   return file ? (
     <a
       href={flattenToAppURL(file.download)}
-      title={file.filename}
+      title={uriDecode(file.filename)}
       className={className}
       target={pdfFile ? '_blank' : '_self'}
       rel={pdfFile ? 'noopener noreferrer' : ''}
