@@ -40,6 +40,38 @@
 
 - ...
  -->
+
+## Versione 2.23.1 (20/03/2026)
+
+### Fix
+
+- Sistemata l'altezza del blocco "Alert" in visualizzaizone.
+- Sistemata la visualizzazione dei nomi dei file che in alcuni casi contenevano caratteri speciali.
+
+## Versione 2.23.0 (19/03/2026)
+
+### Novità
+
+- Ora è possibile nascondere il titolo del sito nell'header.
+
+## Versione 2.21.6 (03/10/2025)
+
+### Fix
+
+- Mostrati i contatti nell'header dei sottositi.
+
+## Versione 2.21.0 (19/09/2025)
+
+### Novità
+
+- Aggiunta la possibilità di inserire un titolo custom nelle collonne del template 'Tabella' del blocco elenco
+
+## Versione 2.20.6 (19/09/2025)
+
+### Fix
+
+- Sistemato l'header sticky in cms-ui.
+
 ## Versione 2.20.5 (16/09/2025)
 
 ### Fix
@@ -47,13 +79,11 @@
 - Sistemato header sticky durante lo scroll della pagina ora è più fluido.
 - Rimossa barra di scorrimento orizzontale che compariva saltuariamente nel sito durante la navigazione.
 
-
- ## Versione 2.16.4 (12/06/2025)
+## Versione 2.16.4 (12/06/2025)
 
 ### Migliorie
 
 - Migliorato la vista delle Strutture con il campo dedicato al personale correlato, opzione attivabile dalla configurazione del tema
-
 
 ## Versione 2.16.1 (27/05/2025)
 
