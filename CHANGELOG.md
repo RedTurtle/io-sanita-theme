@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.23.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.23.0...2.23.2) (2026-03-20)
+
+### Bug Fixes
+
+* alert block height in view mode  ([#120](https://github.com/RedTurtle/io-sanita-theme/issues/120)) ([58c969e](https://github.com/RedTurtle/io-sanita-theme/commit/58c969eda0d02e76b6535863eda7230db2808b14))
+* uridecode filename ([#119](https://github.com/RedTurtle/io-sanita-theme/issues/119)) ([eea9e68](https://github.com/RedTurtle/io-sanita-theme/commit/eea9e681fc78a29ee50167191e1f558984da5bda))
+
+### Changes
+
+* make codebase more flexible for addons ([#116](https://github.com/RedTurtle/io-sanita-theme/issues/116)) ([3e1b034](https://github.com/RedTurtle/io-sanita-theme/commit/3e1b034df7b0556ec6cb94cf7f29b0d92dba9788))
+
+### Maintenance
+
+* release-md ([3195b61](https://github.com/RedTurtle/io-sanita-theme/commit/3195b61b0c62bcbe4160470a33629e2ecf56ac31))
+
 ## [2.23.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.22.1...2.23.0) (2026-03-19)
 
 ### Features
