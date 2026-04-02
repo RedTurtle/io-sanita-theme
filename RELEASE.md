@@ -47,6 +47,7 @@
 
 - Sistemata l'altezza del blocco "Alert" in visualizzaizone.
 - Sistemata la visualizzazione dei nomi dei file che in alcuni casi contenevano caratteri speciali.
+-
 
 ## Versione 2.23.0 (19/03/2026)
 
