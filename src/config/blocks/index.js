@@ -290,6 +290,10 @@ export const applyIoSanitaBlocksConfig = (config) => {
     },
     search: {
       ...config.blocks.blocksConfig.search,
+      // filtro top non personalizzato / non funzionante con layout agid
+      variations: config.blocks.blocksConfig.search.variations.filter(
+        (v) => v.id !== 'facetsTopSide',
+      ),
       templates: [
         ...listingVariations.map((v) => v.id).filter((v) => v !== 'carousel'),
       ],
