@@ -41,7 +41,11 @@
 - ...
  -->
 
-## Versione 2.23.2 (20/03/2026)
+## Versione 2.23.2 (09/04/2026)
+
+### Novità
+
+- Aggiunta la possibilità di inserire il blocco Video all'interno del blocco Griglia.
 
 ### Fix
 
