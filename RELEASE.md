@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione 2.23.2 (09/04/2026)
+## Versione x.x.x (xx/xx/xxxx)
 
 ### Novità
 
