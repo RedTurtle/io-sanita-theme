@@ -47,6 +47,8 @@
 
 - Aggiunta la possibilità di inserire il blocco Video all'interno del blocco Griglia.
 
+## Versione 2.23.2 (20/03/2026)
+
 ### Fix
 
 - Sistemata l'altezza del blocco "Alert" in visualizzaizone.
