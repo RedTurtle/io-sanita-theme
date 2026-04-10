@@ -7,20 +7,14 @@ del modello dei siti ASL, la prop che va a leggere è: 'servizio_attivo'
 */
 
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import Highlighter from 'react-highlight-words';
 import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
+import { BadgeStatusServizio } from 'io-sanita-theme/components/View/Servizio';
 import { viewDate } from 'io-sanita-theme/helpers';
 import './cardSimple.scss';
-
-const messages = defineMessages({
-  servizioOnline: {
-    id: 'servizio_online_chip',
-    defaultMessage: 'Servizio online',
-  },
-});
 export const CardSimple = ({
   showDescription = true,
   showCategory = true,
@@ -86,11 +80,11 @@ export const CardSimple = ({
           {/* Chip badge: servizio attivo per servizi o badge con badgeText */}
           {display_badge && (
             <div className={showDescription ? 'mb-3' : ''}>
-              <Badge color="info">
-                {isServizioOnline
-                  ? intl.formatMessage(messages.servizioOnline)
-                  : badgeText}
-              </Badge>
+              {isServizioOnline ? (
+                <BadgeStatusServizio servizio_attivo={true} />
+              ) : (
+                <Badge color="info">{badgeText}</Badge>
+              )}
             </div>
           )}
 
