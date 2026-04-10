@@ -41,7 +41,11 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione 2.24.0 (10/04/2026)
+
+### Fix
+
+- Sistemata l'etichetta relativa allo stato del Servizio nelle card. Ora mostra correttamente "Attivo" o "Non attivo" a seconda dello stato del servizio, invece di mostrare sempre "Servizio Online".
 
 ### Novità
 

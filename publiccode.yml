@@ -12,14 +12,15 @@ categories:
 dependsOn:
   open:
     - name: nodejs
-      versionMin: '20'
+      versionMin: "20"
     - name: Python
-      versionMin: '3.11'
+      versionMin: "3.11"
     - name: Docker
-      versionMin: '18.03'
+      versionMin: "18.03"
       optional: true
 usedBy:
   - AUSL Ferrara
+  - IRST
 developmentStatus: stable
 softwareType: standalone/web
 description:
