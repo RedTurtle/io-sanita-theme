@@ -12,15 +12,25 @@ const messages = defineMessages({
   },
 });
 
-const BadgeStatusServizio = ({ servizio_attivo }) => {
+const BadgeStatusServizio = ({ item, wrapperClassName = null }) => {
   const intl = useIntl();
 
-  return (
-    <Badge color={servizio_attivo ? 'info' : 'danger'}>
-      {servizio_attivo
+  if (item?.['@type'] !== 'Servizio') {
+    return null;
+  }
+
+  const badge = (
+    <Badge color={item.servizio_attivo ? 'info' : 'danger'}>
+      {item.servizio_attivo
         ? intl.formatMessage(messages.service_on)
         : intl.formatMessage(messages.service_off)}
     </Badge>
+  );
+
+  return wrapperClassName ? (
+    <div className={wrapperClassName}>{badge}</div>
+  ) : (
+    badge
   );
 };
 

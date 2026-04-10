@@ -32,8 +32,7 @@ export const CardSimple = ({
       ? viewDate(intl.locale, item.effective, 'DD MMMM YYYY')
       : null;
 
-  const isServizioOnline =
-    item['@type'] === 'Servizio' && item?.servizio_attivo;
+  const isServizio = item['@type'] === 'Servizio';
 
   const title = highlight ? (
     <Highlighter
@@ -57,7 +56,7 @@ export const CardSimple = ({
     item.description
   );
 
-  const display_badge = isServizioOnline || badgeText?.length > 0;
+  const display_badge = isServizio || badgeText?.length > 0;
   return (
     <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
@@ -80,8 +79,8 @@ export const CardSimple = ({
           {/* Chip badge: servizio attivo per servizi o badge con badgeText */}
           {display_badge && (
             <div className={showDescription ? 'mb-3' : ''}>
-              {isServizioOnline ? (
-                <BadgeStatusServizio servizio_attivo={true} />
+              {isServizio ? (
+                <BadgeStatusServizio item={item} />
               ) : (
                 <Badge color="info">{badgeText}</Badge>
               )}

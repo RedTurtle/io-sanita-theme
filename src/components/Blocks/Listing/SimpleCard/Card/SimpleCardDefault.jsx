@@ -88,8 +88,6 @@ const SimpleCardDefault = (props) => {
   const listingText = show_description ? <ListingText item={item} /> : null;
 
   const type = item['@type'];
-  const isServizioOnline =
-    item['@type'] === 'Servizio' && item?.servizio_attivo;
 
   const BlockExtraTags = getComponentWithFallback({
     name: 'BlockExtraTags',
@@ -123,11 +121,7 @@ const SimpleCardDefault = (props) => {
           </CardTitle>
 
           {/* Chip servizio attivo */}
-          {isServizioOnline && (
-            <div className="mb-3">
-              <BadgeStatusServizio servizio_attivo={true} />
-            </div>
-          )}
+          <BadgeStatusServizio item={item} wrapperClassName="mb-3" />
           {listingText && (
             <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
               {listingText}

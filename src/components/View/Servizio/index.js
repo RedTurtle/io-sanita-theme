@@ -111,6 +111,6 @@ export const ServizioSchemaOrg = loadable(
 export const BadgeStatusServizio = loadable(
   () =>
     import(
-      /* webpackChunkName: "ISServizioView" */ 'io-sanita-theme/components/View/Servizio/BadgeStatusServizio'
+      /* webpackChunkName: "ISBadgeStatusServizio" */ 'io-sanita-theme/components/View/Servizio/BadgeStatusServizio'
     ),
 );

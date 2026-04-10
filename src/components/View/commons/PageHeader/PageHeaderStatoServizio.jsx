@@ -13,7 +13,7 @@ const PageHeaderServizio = ({ content }) => {
 
   return content['@type'] === 'Servizio' ? (
     <div className="mb-3">
-      <BadgeStatusServizio servizio_attivo={content.servizio_attivo} />
+      <BadgeStatusServizio item={content} />
       {content.servizio_attivo && (
         <span className="px-2">
           {intl.formatMessage(messages.service_available)}
