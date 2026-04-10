@@ -3428,12 +3428,12 @@ msgid "select_risultato"
 msgstr ""
 
 #. Default: "Servizio non attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_off"
 msgstr "Servizio non attivo"
 
 #. Default: "Servizio attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_on"
 msgstr "Servizio attivo"
 
@@ -3495,12 +3495,6 @@ msgstr ""
 #. Default: "Modulistica"
 #: components/View/Servizio/ServizioDocumenti
 msgid "servizio_modulistica"
-msgstr ""
-
-#. Default: "Servizio online"
-#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
-#: components/Cards/CardSimple/CardSimple
-msgid "servizio_online_chip"
 msgstr ""
 
 #. Default: "Orari del servizio"
