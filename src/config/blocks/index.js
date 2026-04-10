@@ -205,9 +205,12 @@ export const applyIoSanitaBlocksConfig = (config) => {
     },
     gridBlock: {
       ...config.blocks.blocksConfig.gridBlock,
-      allowedBlocks: config.blocks.blocksConfig.gridBlock.allowedBlocks.filter(
-        (item) => !['teaser'].includes(item),
-      ),
+      allowedBlocks: [
+        ...config.blocks.blocksConfig.gridBlock.allowedBlocks.filter(
+          (item) => !['teaser'].includes(item),
+        ),
+        'video',
+      ],
     },
     hero: {
       id: 'hero',
@@ -288,7 +291,9 @@ export const applyIoSanitaBlocksConfig = (config) => {
     search: {
       ...config.blocks.blocksConfig.search,
       // filtro top non personalizzato / non funzionante con layout agid
-      variations: config.blocks.blocksConfig.search.variations.filter((v) => v.id !== 'facetsTopSide'), 
+      variations: config.blocks.blocksConfig.search.variations.filter(
+        (v) => v.id !== 'facetsTopSide',
+      ),
       templates: [
         ...listingVariations.map((v) => v.id).filter((v) => v !== 'carousel'),
       ],
