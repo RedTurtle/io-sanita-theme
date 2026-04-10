@@ -9,7 +9,6 @@ import {
   CardTitle,
   CardText,
   CardReadMore,
-  Badge,
 } from 'design-react-kit';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
@@ -22,6 +21,7 @@ import {
 } from 'io-sanita-theme/helpers';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
 import { ListingText } from 'io-sanita-theme/components/Blocks';
+import { BadgeStatusServizio } from 'io-sanita-theme/components/View/Servizio';
 
 import { CardCategoryTop } from 'io-sanita-theme/components';
 import 'io-sanita-theme/components/Cards/CardSimple/cardSimple.scss';
@@ -35,10 +35,6 @@ const messages = defineMessages({
   update_date: {
     id: 'update_date',
     defaultMessage: 'Data di aggiornamento',
-  },
-  servizioOnline: {
-    id: 'servizio_online_chip',
-    defaultMessage: 'Servizio online',
   },
 });
 
@@ -92,8 +88,6 @@ const SimpleCardDefault = (props) => {
   const listingText = show_description ? <ListingText item={item} /> : null;
 
   const type = item['@type'];
-  const isServizioOnline =
-    item['@type'] === 'Servizio' && item?.servizio_attivo;
 
   const BlockExtraTags = getComponentWithFallback({
     name: 'BlockExtraTags',
@@ -127,13 +121,7 @@ const SimpleCardDefault = (props) => {
           </CardTitle>
 
           {/* Chip servizio attivo */}
-          {isServizioOnline && (
-            <div className="mb-3">
-              <Badge color="info">
-                {intl.formatMessage(messages.servizioOnline)}
-              </Badge>
-            </div>
-          )}
+          <BadgeStatusServizio item={item} wrapperClassName="mb-3" />
           {listingText && (
             <CardText className={cx('', { 'mb-5': eventRecurrenceMore })}>
               {listingText}
