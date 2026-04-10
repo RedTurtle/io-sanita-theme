@@ -39,7 +39,7 @@ const TableTemplate = (props) => {
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
 
-  let render_columns =
+  const render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
       ? columns
       : [
@@ -87,6 +87,7 @@ const TableTemplate = (props) => {
                     ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
                     {};
                   let render_value = JSON.stringify(item[c.field]);
+                  let field_value = item[c.field];
 
                   if (field_properties) {
                     const field = {
@@ -100,23 +101,45 @@ const TableTemplate = (props) => {
                       behavior: field_properties.behavior,
                     };
                     if (field_properties.widget === 'datetime') {
-                      widget_props.format = 'DD/MM/yyyy HH:MM';
-                    }
-                    // per questi campi si è deciso dii non pubblicare ora:minuti
-                    switch (c.field) {
-                      case 'apertura_bando':
-                      case 'chiusura_procedimento_bando':
-                      case 'scadenza_domande_bando':
-                      case 'scadenza_bando':
+                      if (field_value?.indexOf('T') > 0) {
+                        widget_props.format = 'DD/MM/yyyy HH:mm';
+                        field_value =
+                          field_value +
+                          (field_value.indexOf('Z') < 0 &&
+                          field_value.indexOf('+') < 0
+                            ? 'Z'
+                            : '');
+                      } else {
                         widget_props.format = 'DD/MM/yyyy';
+                      }
+                    }
+                    // per questi campi si è deciso di non pubblicare ora:minuti
+                    // XXX: queste personalizzazioni sul formato dei datetime, basate sui nomi
+                    //      dei field sono da rivedere in modo differente
+                    switch (c.ct) {
+                      case 'ATAvviso':
+                      case 'ATGara':
+                      case 'ATAffidamento':
+                      case 'ATConcorso':
                         break;
                       default:
-                        break;
+                        switch (c.field) {
+                          case 'apertura_bando':
+                          case 'chiusura_procedimento_bando':
+                          case 'scadenza_domande_bando':
+                          case 'scadenza_bando':
+                            widget_props.format = 'DD/MM/yyyy';
+                            break;
+                          default:
+                            break;
+                        }
                     }
-                    // rimuove ora, se non valorizzata
+                    // rimuove ora, se non valorizzata (XXX: in realtà se la data è UTC
+                    // non fa quello che ci si aspetterebbe)
                     if (
                       field_properties.widget === 'datetime' &&
-                      item[c.field]?.indexOf('T00:00') > 0
+                      (field_value?.indexOf('T00:00') >= 0 ||
+                        field_value?.indexOf('T23:59') >= 0)
                     ) {
                       widget_props.format = 'DD/MM/yyyy';
                     }
@@ -126,7 +149,7 @@ const TableTemplate = (props) => {
                     }
 
                     render_value = (
-                      <Widget value={item[c.field]} {...widget_props} />
+                      <Widget value={field_value} {...widget_props} />
                     );
                   }
                   if (c.field === 'title') {
@@ -136,7 +159,7 @@ const TableTemplate = (props) => {
                         href={isEditMode ? '#' : ''}
                         className="img-link"
                       >
-                        {item[c.field]}
+                        {field_value}
                       </UniversalLink>
                     );
                   }
