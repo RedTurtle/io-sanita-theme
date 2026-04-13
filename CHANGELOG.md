@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.24.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.23.2...2.24.0) (2026-04-10)
+
+### Features
+
+* create new component for badge service status ([#122](https://github.com/RedTurtle/io-sanita-theme/issues/122)) ([2452d1e](https://github.com/RedTurtle/io-sanita-theme/commit/2452d1e26fa963b3043695b4e99a6f59108e1f38))
+* video block added in grid block ([#121](https://github.com/RedTurtle/io-sanita-theme/issues/121)) ([a08d2a2](https://github.com/RedTurtle/io-sanita-theme/commit/a08d2a2a893e109e2f0135670a7cf4652865dbf6))
+
+### Maintenance
+
+* preparing release 2.24.0 ([6332b72](https://github.com/RedTurtle/io-sanita-theme/commit/6332b72f23634f305e1be5050b8b1555fe251377))
+
+### Documentation
+
+* test ([65db9b9](https://github.com/RedTurtle/io-sanita-theme/commit/65db9b93b686c6a422ea437144a085ce540ab164))
+
 ## [2.23.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.23.0...2.23.2) (2026-03-20)
 
 ### Bug Fixes
