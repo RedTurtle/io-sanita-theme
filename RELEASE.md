@@ -47,6 +47,7 @@
 
 - Rimossa la scritta "Servizio disponibile e prenotabile" dalla vista dettaglio del Servizio.
 - Creato componente dedicato per il badge di stato del Servizio, riutilizzato in tutte le viste (dettaglio, card, listing).
+- Rimosso il link dal titolo della card del Punto di contatto nei CT. Il titolo ora non è più cliccabile.
 
 ## Versione 2.24.0 (10/04/2026)
 
