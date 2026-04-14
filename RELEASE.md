@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Sistemata l'altezza del blocco Video quando è allineato a destra o sinistra: il video non si riduce più in altezza quando viene riprodotto.
+
 ## Versione 2.24.0 (10/04/2026)
 
 ### Fix
