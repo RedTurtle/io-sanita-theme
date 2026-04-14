@@ -41,6 +41,13 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Rimossa la scritta "Servizio disponibile e prenotabile" dalla vista dettaglio del Servizio.
+- Creato componente dedicato per il badge di stato del Servizio, riutilizzato in tutte le viste (dettaglio, card, listing).
+
 ## Versione 2.24.0 (10/04/2026)
 
 ### Fix
