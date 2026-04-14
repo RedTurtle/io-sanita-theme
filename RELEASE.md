@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Aggiunta la visualizzazione dell'icona nell'header delle pagine che hanno un campo icona (es. Cartella FAQ).
+
 ## Versione 2.24.0 (10/04/2026)
 
 ### Fix

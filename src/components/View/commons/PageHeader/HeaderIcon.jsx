@@ -6,27 +6,31 @@ import { Icon } from 'io-sanita-theme/components';
 const messages = defineMessages({
   iconTitle: {
     id: 'icon_title',
-    defaultMessage: "Icona per l'argomento {topic_title}",
+    defaultMessage: 'Icona per {topic_title}',
   },
 });
 
-const ArgumentIcon = ({ icon, title }) => {
+const HeaderIcon = ({ icon, title }) => {
   const intl = useIntl();
 
   return icon ? (
     <div className="icon-argument-container mb-2">
       <Icon
         icon={icon}
-        title={intl.formatMessage(messages.iconTitle, {
-          topic_title: title,
-        })}
+        {...(title
+          ? {
+              title: intl.formatMessage(messages.iconTitle, {
+                topic_title: title,
+              }),
+            }
+          : { 'aria-hidden': true })}
       />
     </div>
   ) : null;
 };
 
-export default ArgumentIcon;
+export default HeaderIcon;
 
-ArgumentIcon.propTypes = {
+HeaderIcon.propTypes = {
   icon: PropTypes.string,
 };

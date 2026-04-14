@@ -18,7 +18,7 @@ import {
   PageHeaderPersona,
   Sharing,
 } from 'io-sanita-theme/components/View/commons';
-import ArgumentIcon from 'io-sanita-theme/components/View/commons/PageHeader/ArgumentIcon';
+import HeaderIcon from 'io-sanita-theme/components/View/commons/PageHeader/HeaderIcon';
 
 const messages = defineMessages({
   reading_time: {
@@ -59,7 +59,7 @@ const PageHeader = (props) => {
       <div className="row mb-2 mb-lg-0 page-header">
         <div className="py-lg-2 col-lg-10 page-header-left">
           {(content.icon || content.icona) && (
-            <ArgumentIcon icon={content.icon || content.icona} />
+            <HeaderIcon icon={content.icon || content.icona} />
           )}
           <h1
             data-element={
