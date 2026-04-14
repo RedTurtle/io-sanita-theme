@@ -723,11 +723,6 @@ msgstr "Sélectionner un fichier"
 msgid "Seleziona un'icona"
 msgstr ""
 
-#. Default: "Servizio disponibile e prenotabile"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
-msgid "Service available"
-msgstr ""
-
 #. Default: "Sono occorsi degli errori"
 #: components/Search/Search
 msgid "Sono occorsi degli errori"

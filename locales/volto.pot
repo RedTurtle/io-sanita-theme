@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-04-10T09:33:51.894Z\n"
+"POT-Creation-Date: 2026-04-13T08:08:19.962Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -716,11 +716,6 @@ msgstr ""
 #. Default: "Seleziona un'icona nella barra a lato"
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Seleziona un'icona"
-msgstr ""
-
-#. Default: "Servizio disponibile e prenotabile"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
-msgid "Service available"
 msgstr ""
 
 #. Default: "Sono occorsi degli errori"
