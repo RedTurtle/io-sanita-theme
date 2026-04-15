@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-04-13T08:08:19.962Z\n"
+"POT-Creation-Date: 2026-04-14T08:49:56.389Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -2050,6 +2050,11 @@ msgstr ""
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
 #: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
+msgstr ""
+
+#. Default: "Icona per {topic_title}"
+#: components/View/commons/PageHeader/HeaderIcon
+msgid "icon_title"
 msgstr ""
 
 #. Default: "Blocco con icone"

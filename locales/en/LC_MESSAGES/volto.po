@@ -2050,6 +2050,11 @@ msgstr ""
 msgid "iconDescription"
 msgstr ""
 
+#. Default: "Icona per {topic_title}"
+#: components/View/commons/PageHeader/HeaderIcon
+msgid "icon_title"
+msgstr "Icon for {topic_title}"
+
 #. Default: "Blocco con icone"
 #: components/Blocks/Icons/Sidebar
 msgid "icons_blocks"
