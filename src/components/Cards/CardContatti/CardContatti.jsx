@@ -39,10 +39,10 @@ const CardContatti = ({
               return pdc.valore ? (
                 <span key={index}>
                   <span className="pdc-type">{pdc.tipo_label || pdc.tipo}</span>
-                  {/* <span className="pdc-desc">
-                    {pdc.descrizione ? ` - ${pdc.descrizione}` : ''}:{' '}
-                  </span> */}
                   : <PuntoDiContattoValue value={pdc} />
+                  <span className="pdc-desc">
+                    {pdc.descrizione ? ` - ${pdc.descrizione}` : ''}
+                  </span>
                 </span>
               ) : (
                 <></>
