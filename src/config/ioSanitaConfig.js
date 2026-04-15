@@ -25,6 +25,7 @@ import faUserSVG from 'io-sanita-theme/icons/user.svg';
 import faCogSVG from 'io-sanita-theme/icons/cog.svg';
 import faSitemapSVG from 'io-sanita-theme/icons/sitemap.svg';
 import faBuildingSVG from 'io-sanita-theme/icons/building.svg';
+import faAslSVG from 'io-sanita-theme/icons/asl.svg';
 import faFileDownloadSVG from 'io-sanita-theme/icons/file-download.svg';
 import faQuestionSVG from 'io-sanita-theme/icons/question-solid.svg';
 import bandoSVG from 'io-sanita-theme/icons/bando.svg';
@@ -141,6 +142,7 @@ export default function applyConfig(config) {
       Image: faImageSVG,
       File: faFileSVG,
       Link: faLinkSVG,
+      Struttura: faAslSVG,
 
       Argomento: faBoxOpenSVG,
       CartellaModulistica: faArchiveSVG,
