@@ -52,6 +52,7 @@
 - Rimosso il link dal titolo della card del Punto di contatto nei CT. Il titolo ora non è più cliccabile.
 - Mostrare il testo della descrizione del Punto di contatto all'interno della card Contatti
 - Modifica icona Struttura in Folder Content
+- Aggiunta la sezione Documenti correlati in ComeFarePer CT
 
 ## Versione 2.24.0 (10/04/2026)
 
