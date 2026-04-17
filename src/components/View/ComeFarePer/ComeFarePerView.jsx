@@ -41,7 +41,6 @@ export const ComeFarePerViewSectionsOrder = [
   { /* DOCUMENTI & ALLEGATI */ component: ComeFarePerDocumenti },
   { /* METADATA */ component: Metadata },
   { /* SCHEMA ORG*/ component: ComeFarePerSchemaOrg },
-  
 ];
 
 /**
