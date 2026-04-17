@@ -22,25 +22,26 @@ import {
 import {
   ComeFarePerDescrizione,
   ComeFarePerAChiSiRivolge,
-  ComeFarePerAllegati,
   ComeFarePerComeFare,
   ComeFarePerApprofondimenti,
   ComeFarePerUlterioriInformazioni,
+  ComeFarePerDocumenti,
   ComeFarePerSchemaOrg,
 } from 'io-sanita-theme/components/View/ComeFarePer';
 
 export const ComeFarePerViewSectionsOrder = [
   { /* DESCRIZIONE ESTESA (Panoramica) */ component: ComeFarePerDescrizione },
   { /* A CHI SI RIVOLGE */ component: ComeFarePerAChiSiRivolge },
-  { /* ALLEGATI */ component: ComeFarePerAllegati },
   { /* COME FARE */ component: ComeFarePerComeFare },
   { /* APPROFONDIMENTI */ component: ComeFarePerApprofondimenti },
   {
     /* ULTERIORI INFORMAZIONI (e Parliamo di) */ component:
       ComeFarePerUlterioriInformazioni,
   },
+  { /* DOCUMENTI & ALLEGATI */ component: ComeFarePerDocumenti },
   { /* METADATA */ component: Metadata },
   { /* SCHEMA ORG*/ component: ComeFarePerSchemaOrg },
+  
 ];
 
 /**
