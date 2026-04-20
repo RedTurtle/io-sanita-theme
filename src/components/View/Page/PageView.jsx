@@ -72,7 +72,6 @@ const PageView = ({ content, token, location, history }) => {
                     {content?.title}
                   </h1>
                 </Placeholder>
-                
                 <p className="description">{content?.description}</p>
               </div>
               {rightHeaderHasContent && (
