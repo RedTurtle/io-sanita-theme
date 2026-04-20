@@ -7,6 +7,7 @@ import {
   useSideMenu,
   Metadata,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
 import PropTypes from 'prop-types';
@@ -92,8 +93,7 @@ const FarmaciaView = ({ content }) => {
           ...(content.related_news ?? []),
         ]}
       />
-      {/* TODO
-      <RelatedItemInEvidence content={content} /> */}
+      <RelatedItemInEvidence content={content} />
     </>
   );
 };
