@@ -1,0 +1,13 @@
+.contenttype-document #view #page-document .repeatableContentBlock,
+.contenttype-document .block-editor-repeatableContentBlock .repeatableContentBlock {
+    // PER LA VIEW DI PAGE
+    overflow: unset;
+}
+
+#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock,
+.view-editview .content-area #page-edit .column .blocks-widget .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock {
+    overflow-x: scroll;
+    word-break: break-all;
+    position: unset !important;
+    margin: 0px !important;
+}
