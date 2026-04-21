@@ -55,7 +55,6 @@
 - Sistemata la visualizzazione dell'etichetta "Programmato" accanto al titolo dei contenuti in Folder Content: ora viene mostrata come badge ben distinguibile dal titolo.
 - Aggiunta la sezione Documenti correlati in ComeFarePer CT
 - Mostrare contenuto correlato in evidenza nella Pagina
-- Aggiunta la sezione Documenti correlati in ComeFarePer CT
 
 ## Versione 2.24.0 (10/04/2026)
 
