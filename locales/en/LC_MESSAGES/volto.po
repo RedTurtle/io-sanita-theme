@@ -1452,10 +1452,25 @@ msgstr ""
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr "Who is it for"
 
+#. Default: "Allegati"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_allegati"
+msgstr ""
+
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
 msgid "come_fare_per_come_fare"
 msgstr "How to do"
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_modulistica"
+msgstr ""
 
 #. Default: "Panoramica"
 #: components/View/ComeFarePer/ComeFarePerDescrizione
@@ -1476,11 +1491,6 @@ msgstr "More informations"
 #: components/View/ComeFarePer/ComeFarePerApprofondimenti
 msgid "comefareper_approfondimenti"
 msgstr "Insights"
-
-#. Default: "Documenti"
-#: components/View/ComeFarePer/ComeFarePerAllegati
-msgid "comefareper_documenti"
-msgstr "Documents"
 
 #. Default: "Contatti"
 #: components/Blocks/Contacts/schema
