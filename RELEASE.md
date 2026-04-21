@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione 2.25.0 (21/04/2026)
 
 ### Fix
 
