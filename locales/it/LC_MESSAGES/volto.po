@@ -1452,9 +1452,24 @@ msgstr "Giallo"
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_allegati"
+msgstr ""
+
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
 msgid "come_fare_per_come_fare"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_modulistica"
 msgstr ""
 
 #. Default: "Panoramica"
@@ -1475,11 +1490,6 @@ msgstr ""
 #. Default: "Approfondimenti"
 #: components/View/ComeFarePer/ComeFarePerApprofondimenti
 msgid "comefareper_approfondimenti"
-msgstr ""
-
-#. Default: "Documenti"
-#: components/View/ComeFarePer/ComeFarePerAllegati
-msgid "comefareper_documenti"
 msgstr ""
 
 #. Default: "Contatti"
