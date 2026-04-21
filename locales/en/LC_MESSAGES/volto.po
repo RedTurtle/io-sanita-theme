@@ -716,11 +716,6 @@ msgstr "Select a file"
 msgid "Seleziona un'icona"
 msgstr ""
 
-#. Default: "Servizio disponibile e prenotabile"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
-msgid "Service available"
-msgstr "Available and bookable service"
-
 #. Default: "Sono occorsi degli errori"
 #: components/Search/Search
 msgid "Sono occorsi degli errori"
@@ -1457,10 +1452,25 @@ msgstr ""
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr "Who is it for"
 
+#. Default: "Allegati"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_allegati"
+msgstr ""
+
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
 msgid "come_fare_per_come_fare"
 msgstr "How to do"
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_modulistica"
+msgstr ""
 
 #. Default: "Panoramica"
 #: components/View/ComeFarePer/ComeFarePerDescrizione
@@ -1481,11 +1491,6 @@ msgstr "More informations"
 #: components/View/ComeFarePer/ComeFarePerApprofondimenti
 msgid "comefareper_approfondimenti"
 msgstr "Insights"
-
-#. Default: "Documenti"
-#: components/View/ComeFarePer/ComeFarePerAllegati
-msgid "comefareper_documenti"
-msgstr "Documents"
 
 #. Default: "Contatti"
 #: components/Blocks/Contacts/schema
@@ -2054,6 +2059,11 @@ msgstr ""
 #: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
 msgstr ""
+
+#. Default: "Icona per {topic_title}"
+#: components/View/commons/PageHeader/HeaderIcon
+msgid "icon_title"
+msgstr "Icon for {topic_title}"
 
 #. Default: "Blocco con icone"
 #: components/Blocks/Icons/Sidebar
@@ -3428,12 +3438,12 @@ msgid "select_risultato"
 msgstr "result"
 
 #. Default: "Servizio non attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_off"
 msgstr "Service not available"
 
 #. Default: "Servizio attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_on"
 msgstr "Service available"
 
@@ -3496,12 +3506,6 @@ msgstr "Where"
 #: components/View/Servizio/ServizioDocumenti
 msgid "servizio_modulistica"
 msgstr "Forms"
-
-#. Default: "Servizio online"
-#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
-#: components/Cards/CardSimple/CardSimple
-msgid "servizio_online_chip"
-msgstr "Online service"
 
 #. Default: "Orari del servizio"
 #: components/View/Servizio/ServizioOrari

@@ -721,11 +721,6 @@ msgstr ""
 msgid "Seleziona un'icona"
 msgstr ""
 
-#. Default: "Servizio disponibile e prenotabile"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
-msgid "Service available"
-msgstr ""
-
 #. Default: "Sono occorsi degli errori"
 #: components/Search/Search
 msgid "Sono occorsi degli errori"
@@ -1462,9 +1457,24 @@ msgstr ""
 msgid "come_fare_per_a_chi_si_rivolge"
 msgstr ""
 
+#. Default: "Allegati"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_allegati"
+msgstr ""
+
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
 msgid "come_fare_per_come_fare"
+msgstr ""
+
+#. Default: "Documenti"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_documenti"
+msgstr ""
+
+#. Default: "Modulistica"
+#: components/View/ComeFarePer/ComeFarePerDocumenti
+msgid "come_fare_per_modulistica"
 msgstr ""
 
 #. Default: "Panoramica"
@@ -1485,11 +1495,6 @@ msgstr ""
 #. Default: "Approfondimenti"
 #: components/View/ComeFarePer/ComeFarePerApprofondimenti
 msgid "comefareper_approfondimenti"
-msgstr ""
-
-#. Default: "Documenti"
-#: components/View/ComeFarePer/ComeFarePerAllegati
-msgid "comefareper_documenti"
 msgstr ""
 
 #. Default: "Contatti"
@@ -2058,6 +2063,11 @@ msgstr ""
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
 #: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
+msgstr ""
+
+#. Default: "Icona per {topic_title}"
+#: components/View/commons/PageHeader/HeaderIcon
+msgid "icon_title"
 msgstr ""
 
 #. Default: "Blocco con icone"
@@ -3433,12 +3443,12 @@ msgid "select_risultato"
 msgstr ""
 
 #. Default: "Servizio non attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_off"
 msgstr ""
 
 #. Default: "Servizio attivo"
-#: components/View/commons/PageHeader/PageHeaderStatoServizio
+#: components/View/Servizio/BadgeStatusServizio
 msgid "service_on"
 msgstr ""
 
@@ -3500,12 +3510,6 @@ msgstr ""
 #. Default: "Modulistica"
 #: components/View/Servizio/ServizioDocumenti
 msgid "servizio_modulistica"
-msgstr ""
-
-#. Default: "Servizio online"
-#: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
-#: components/Cards/CardSimple/CardSimple
-msgid "servizio_online_chip"
 msgstr ""
 
 #. Default: "Orari del servizio"

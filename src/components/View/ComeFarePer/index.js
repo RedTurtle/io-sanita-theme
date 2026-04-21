@@ -10,11 +10,7 @@ export const ComeFarePerAChiSiRivolge = loadable(() =>
     /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerAChiSiRivolge'
   ),
 );
-export const ComeFarePerAllegati = loadable(() =>
-  import(
-    /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerAllegati'
-  ),
-);
+
 export const ComeFarePerComeFare = loadable(() =>
   import(
     /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerComeFare'
@@ -24,6 +20,11 @@ export const ComeFarePerComeFare = loadable(() =>
 export const ComeFarePerDescrizione = loadable(() =>
   import(
     /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerDescrizione'
+  ),
+);
+export const ComeFarePerDocumenti = loadable(() =>
+  import(
+    /* webpackChunkName: "ISComeFarePerView" */ 'io-sanita-theme/components/View/ComeFarePer/ComeFarePerDocumenti'
   ),
 );
 export const ComeFarePerUlterioriInformazioni = loadable(() =>

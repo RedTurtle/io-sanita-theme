@@ -1,0 +1,10 @@
+.public-ui
+  .it-header-center-wrapper
+  .it-header-center-content-wrapper
+  .it-brand-wrapper
+  a,
+.navbar .navbar-collapsable .menu-wrapper .it-brand-wrapper a {
+  .icon:has(+ .it-brand-text.visually-hidden) {
+    width: auto;
+  }
+}

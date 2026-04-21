@@ -1,6 +1,6 @@
 {
   "name": "io-sanita-theme",
-  "version": "2.21.10",
+  "version": "2.25.1",
   "description": "io-sanita-theme: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RedTurtle/io-sanita-theme"
+    "url": "git+https://github.com/RedTurtle/io-sanita-theme.git"
   },
   "addons": [
     "@plone-collective/volto-sentry",

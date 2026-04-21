@@ -7,20 +7,14 @@ del modello dei siti ASL, la prop che va a leggere è: 'servizio_attivo'
 */
 
 import React from 'react';
-import { useIntl, defineMessages } from 'react-intl';
+import { useIntl } from 'react-intl';
 import Highlighter from 'react-highlight-words';
 import { Card, CardBody, CardTitle, CardText, Badge } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
+import { BadgeStatusServizio } from 'io-sanita-theme/components/View/Servizio';
 import { viewDate } from 'io-sanita-theme/helpers';
 import './cardSimple.scss';
-
-const messages = defineMessages({
-  servizioOnline: {
-    id: 'servizio_online_chip',
-    defaultMessage: 'Servizio online',
-  },
-});
 export const CardSimple = ({
   showDescription = true,
   showCategory = true,
@@ -38,8 +32,7 @@ export const CardSimple = ({
       ? viewDate(intl.locale, item.effective, 'DD MMMM YYYY')
       : null;
 
-  const isServizioOnline =
-    item['@type'] === 'Servizio' && item?.servizio_attivo;
+  const isServizio = item['@type'] === 'Servizio';
 
   const title = highlight ? (
     <Highlighter
@@ -63,7 +56,7 @@ export const CardSimple = ({
     item.description
   );
 
-  const display_badge = isServizioOnline || badgeText?.length > 0;
+  const display_badge = isServizio || badgeText?.length > 0;
   return (
     <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
@@ -86,11 +79,11 @@ export const CardSimple = ({
           {/* Chip badge: servizio attivo per servizi o badge con badgeText */}
           {display_badge && (
             <div className={showDescription ? 'mb-3' : ''}>
-              <Badge color="info">
-                {isServizioOnline
-                  ? intl.formatMessage(messages.servizioOnline)
-                  : badgeText}
-              </Badge>
+              {isServizio ? (
+                <BadgeStatusServizio item={item} />
+              ) : (
+                <Badge color="info">{badgeText}</Badge>
+              )}
             </div>
           )}
 

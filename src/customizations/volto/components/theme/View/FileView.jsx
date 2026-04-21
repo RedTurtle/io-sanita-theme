@@ -2,12 +2,14 @@
  * File view component.
  * @module components/theme/View/FileView
  * - changed card layout
+ * - decodeURI filename
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Container, Row, Col } from 'design-react-kit';
+import { Col, Container, Row } from 'design-react-kit';
+
 import { DownloadFileFormat } from 'io-sanita-theme/helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 /**
  * File view component class.
@@ -35,7 +37,7 @@ const FileView = ({ content }) => (
         <Col className="card-wrapper card-teaser-wrapper">
           <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
             <div className="card-body">
-              <h2 className="card-title h5">{content.file.filename}</h2>
+              <h2 className="card-title h5">{decodeURI(content.file.filename)}</h2>
               <DownloadFileFormat file={content.file} iconSize="2x" />
             </div>
           </div>

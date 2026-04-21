@@ -1,10 +1,12 @@
 import React from 'react';
 import cx from 'classnames';
+import { useSelector } from 'react-redux';
 import { useIntl } from 'react-intl';
 import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'io-sanita-theme/helpers';
 
 const BrandText = ({ mobile = false, getParent = false }) => {
+  const subsite = useSelector((state) => state.subsite?.data);
   const intl = useIntl();
   let title = SiteProperty({
     property: 'site_title',
@@ -27,8 +29,16 @@ const BrandText = ({ mobile = false, getParent = false }) => {
     </React.Fragment>
   ));
 
+  const hide_title = SiteProperty({
+    property: 'hide_title',
+    defaultValue: false,
+    getValue: true,
+    getParent: false,
+  });
+  const visuallyHidden = !subsite && hide_title;
+
   return (
-    <div className="it-brand-text">
+    <div className={cx('it-brand-text', { 'visually-hidden': visuallyHidden })}>
       {title && <div className="it-brand-title">{title}</div>}
       {description && (
         <div

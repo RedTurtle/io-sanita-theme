@@ -1,5 +1,85 @@
 # Changelog
 
+## [2.25.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.25.0...2.25.1) (2026-04-21)
+
+### Bug Fixes
+
+* import icon ASL ([c678ec5](https://github.com/RedTurtle/io-sanita-theme/commit/c678ec5d3ae4a44a912393dd3e9d183940e3028e))
+
+## [2.25.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.24.0...2.25.0) (2026-04-21)
+
+### Features
+
+* argument icon added, same pattern in io-comune ([#127](https://github.com/RedTurtle/io-sanita-theme/issues/127)) ([4f97960](https://github.com/RedTurtle/io-sanita-theme/commit/4f979605f275d87495d068efd2a1d370f1442fcf))
+
+### Bug Fixes
+
+* badge of status Servizio - removed unused message ([#123](https://github.com/RedTurtle/io-sanita-theme/issues/123)) ([0b80cd9](https://github.com/RedTurtle/io-sanita-theme/commit/0b80cd92c7b1cc0739155e73b5e546676cb21acf))
+* badge styles in folderContent for programmato and scaduto ([#130](https://github.com/RedTurtle/io-sanita-theme/issues/130)) ([2e25c73](https://github.com/RedTurtle/io-sanita-theme/commit/2e25c736b4d14952792d563c51c6696a382cf059))
+* changed icon Struttura in folder content ([#129](https://github.com/RedTurtle/io-sanita-theme/issues/129)) ([e69b30d](https://github.com/RedTurtle/io-sanita-theme/commit/e69b30d6d438b9c2032ff60a4c0ef97553aee20c))
+* show pdc description inside contact card ([#128](https://github.com/RedTurtle/io-sanita-theme/issues/128)) ([b9854c8](https://github.com/RedTurtle/io-sanita-theme/commit/b9854c8620059372b3feac7a56ba45d1bc4ad1ac))
+* show related documents in ComeFarePer ([#131](https://github.com/RedTurtle/io-sanita-theme/issues/131)) ([e268b22](https://github.com/RedTurtle/io-sanita-theme/commit/e268b22f4f1ed87faa33c04aa7dbb952d4c3ad1e))
+* title in contact card now is not clickable ([#125](https://github.com/RedTurtle/io-sanita-theme/issues/125)) ([8514127](https://github.com/RedTurtle/io-sanita-theme/commit/851412702cb60e6bbe8ce9cf0e312da014941913))
+* video not cropped when aligned right/left ([#126](https://github.com/RedTurtle/io-sanita-theme/issues/126)) ([887ad5b](https://github.com/RedTurtle/io-sanita-theme/commit/887ad5bbdac253e227610c1de7cb082399d8edbb))
+* z-index of toolbar ([#124](https://github.com/RedTurtle/io-sanita-theme/issues/124)) ([8456b1f](https://github.com/RedTurtle/io-sanita-theme/commit/8456b1ff82a9ccac24267325b77908c76826baad))
+
+### Maintenance
+
+* i18n ([de9b9bb](https://github.com/RedTurtle/io-sanita-theme/commit/de9b9bb35323ebd3e3ab7b6555685df17f9266b2))
+* preparing release 2.25.0 ([ab6a8e0](https://github.com/RedTurtle/io-sanita-theme/commit/ab6a8e06798d41fdc5f7a48c8bda96fd278cf7b9))
+
+## [2.24.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.23.2...2.24.0) (2026-04-10)
+
+### Features
+
+* create new component for badge service status ([#122](https://github.com/RedTurtle/io-sanita-theme/issues/122)) ([2452d1e](https://github.com/RedTurtle/io-sanita-theme/commit/2452d1e26fa963b3043695b4e99a6f59108e1f38))
+* video block added in grid block ([#121](https://github.com/RedTurtle/io-sanita-theme/issues/121)) ([a08d2a2](https://github.com/RedTurtle/io-sanita-theme/commit/a08d2a2a893e109e2f0135670a7cf4652865dbf6))
+
+### Maintenance
+
+* preparing release 2.24.0 ([6332b72](https://github.com/RedTurtle/io-sanita-theme/commit/6332b72f23634f305e1be5050b8b1555fe251377))
+
+### Documentation
+
+* test ([65db9b9](https://github.com/RedTurtle/io-sanita-theme/commit/65db9b93b686c6a422ea437144a085ce540ab164))
+
+## [2.23.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.23.0...2.23.2) (2026-03-20)
+
+### Bug Fixes
+
+* alert block height in view mode  ([#120](https://github.com/RedTurtle/io-sanita-theme/issues/120)) ([58c969e](https://github.com/RedTurtle/io-sanita-theme/commit/58c969eda0d02e76b6535863eda7230db2808b14))
+* uridecode filename ([#119](https://github.com/RedTurtle/io-sanita-theme/issues/119)) ([eea9e68](https://github.com/RedTurtle/io-sanita-theme/commit/eea9e681fc78a29ee50167191e1f558984da5bda))
+
+### Changes
+
+* make codebase more flexible for addons ([#116](https://github.com/RedTurtle/io-sanita-theme/issues/116)) ([3e1b034](https://github.com/RedTurtle/io-sanita-theme/commit/3e1b034df7b0556ec6cb94cf7f29b0d92dba9788))
+
+### Maintenance
+
+* release-md ([3195b61](https://github.com/RedTurtle/io-sanita-theme/commit/3195b61b0c62bcbe4160470a33629e2ecf56ac31))
+
+## [2.23.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.22.1...2.23.0) (2026-03-19)
+
+### Features
+
+* title in header could be hidden by settings panel and in that case loggo has width auto ([#117](https://github.com/RedTurtle/io-sanita-theme/issues/117)) ([7a7af44](https://github.com/RedTurtle/io-sanita-theme/commit/7a7af4419b61d359db2d5ff26ea1f004e1991d95))
+
+### Bug Fixes
+
+* download/file and display-file/file url ([bacf5cf](https://github.com/RedTurtle/io-sanita-theme/commit/bacf5cf1bbc7c90b6ec16d236dea6122fdc9f60c))
+* link color in callout dark ([#118](https://github.com/RedTurtle/io-sanita-theme/issues/118)) ([9bbbf02](https://github.com/RedTurtle/io-sanita-theme/commit/9bbbf0249a158f2dd2b03e05dee15eab0271c0aa))
+* objectbrowser searchableType now consider selectableTypes ([c2976b5](https://github.com/RedTurtle/io-sanita-theme/commit/c2976b5bbc71a41e87f6c13163e5498275109a3d))
+
+## [2.22.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.10...2.22.1) (2025-11-03)
+
+### Features
+
+* replace fixed sorting with query string-based sorting ([#114](https://github.com/RedTurtle/io-sanita-theme/issues/114)) ([29d8195](https://github.com/RedTurtle/io-sanita-theme/commit/29d8195f40afc76b821d416763d8db3fecd9ebf7))
+
+### Maintenance
+
+* package.json fix ([c762a2f](https://github.com/RedTurtle/io-sanita-theme/commit/c762a2f043fa8743d82392a9a697cf4ce87e6c79))
+
 ## [2.21.10](https://github.com/RedTurtle/io-sanita-theme/compare/2.21.9...2.21.10) (2025-10-10)
 
 ### Bug Fixes

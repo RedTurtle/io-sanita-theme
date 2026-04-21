@@ -32,7 +32,7 @@ const Footer = ({ intl }) => {
     contentType = null;
   }
 
-  const NoFeedbackFormFor =
+  const noFeedbackFormFor =
     config.settings.siteProperties.noFeedbackFormFor || [];
   const showFeedbackForm = config.settings.siteProperties
     ?.enableNoFeedbackFormFor
