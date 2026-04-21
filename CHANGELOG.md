@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.25.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.25.0...2.25.1) (2026-04-21)
+
+### Bug Fixes
+
+* import icon ASL ([c678ec5](https://github.com/RedTurtle/io-sanita-theme/commit/c678ec5d3ae4a44a912393dd3e9d183940e3028e))
+
 ## [2.25.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.24.0...2.25.0) (2026-04-21)
 
 ### Features
