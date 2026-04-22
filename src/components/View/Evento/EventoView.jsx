@@ -17,6 +17,7 @@ import {
   Metadata,
   Placeholder,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -104,6 +105,7 @@ const EventoView = ({ content, location }) => {
       </div>
       <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

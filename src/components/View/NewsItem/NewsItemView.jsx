@@ -19,6 +19,7 @@ import {
   Metadata,
   Placeholder,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -112,6 +113,7 @@ const NewsItemView = ({ content, location }) => {
 
       <Placeholder position="afterContent" content={content} />
       <RelatedItems list={related_items} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
