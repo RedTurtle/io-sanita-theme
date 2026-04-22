@@ -4,10 +4,13 @@
     overflow: unset;
 }
 
-#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock,
-.view-editview .content-area #page-edit .column .blocks-widget .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock {
+#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock:first-of-type,
+.view-editview .content-area #page-edit .column .blocks-widget .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock:first-of-type {
     overflow-x: scroll;
     word-break: break-all;
+}
+
+#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock .full-width {
     position: unset !important;
     margin: 0px !important;
 }
