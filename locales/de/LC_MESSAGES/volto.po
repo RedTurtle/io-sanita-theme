@@ -1892,6 +1892,11 @@ msgstr ""
 msgid "expire"
 msgstr ""
 
+#. Default: "Esplora"
+#: components/View/commons/RelatedItemInEvidence/ItemInEvidence
+msgid "explore"
+msgstr ""
+
 #. Default: "Inserisci una parola chiave per trovare una risposta"
 #: components/View/FAQ/FaqFolder/FaqFolderView
 msgid "faq_search"
@@ -2090,6 +2095,11 @@ msgstr ""
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "icons_linkMoreTitle"
+msgstr ""
+
+#. Default: "Contenuti in evidenza"
+#: components/View/commons/RelatedItemInEvidence/RelatedItemInEvidence
+msgid "inEvidenceItems"
 msgstr ""
 
 #. Default: "Indice della pagina"
