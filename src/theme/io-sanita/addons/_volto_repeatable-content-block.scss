@@ -1,16 +1,46 @@
-.contenttype-document #view #page-document .repeatableContentBlock,
-.contenttype-document .block-editor-repeatableContentBlock .repeatableContentBlock {
-    // PER LA VIEW DI PAGE
-    overflow: unset;
-}
-
-#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock:first-of-type,
-.view-editview .content-area #page-edit .column .blocks-widget .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock:first-of-type {
-    overflow-x: scroll;
-    word-break: break-all;
-}
-
-#view .row-column-menu-left #main-content-section .it-page-section .repeatableContentBlock .full-width {
+.view-viewview #main-content-section .repeatableContentBlock .full-width {
+    width: 100% !important;
     position: unset !important;
     margin: 0px !important;
+}
+
+.view-viewview #main-content-section .repeatableContentBlock {
+    word-break: break-all;
+    font-family: 'Titillium Web' !important;
+}
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .full-width,
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .block.image.align.full img.full-width {
+    width: 100% !important;
+    position: unset !important;
+    margin: 0px !important;
+    max-width: 100% !important;
+}
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .full-width .container {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .full-width .container .row {
+    margin: 0px !important;
+}
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock * {
+    font-size: 12px !important;
+}
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .col-sm-12 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.view-editview .blocks-widget-container .repeatableContentBlock::before {
+    height: 40px !important;
+    top: -1.5rem !important;
+}
+
+#main-content-section .repeatableContentBlock .public-ui .full-width .col-lg-4 {
+    width: 70% !important;
 }
