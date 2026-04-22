@@ -41,6 +41,13 @@
 - ...
  -->
 
+## Versione 2.26.0 (22/04/2026)
+
+### Fix
+
+- Aggiunta la sezione Documenti correlati in ComeFarePer CT
+- Mostrare contenuto correlato in evidenza nella Pagina
+
 ## Versione 2.25.0 (21/04/2026)
 
 ### Fix
@@ -53,7 +60,6 @@
 - Mostrare il testo della descrizione del Punto di contatto all'interno della card Contatti
 - Modifica icona Struttura in Folder Content
 - Sistemata la visualizzazione dell'etichetta "Programmato" accanto al titolo dei contenuti in Folder Content: ora viene mostrata come badge ben distinguibile dal titolo.
-- Aggiunta la sezione Documenti correlati in ComeFarePer CT
 
 ## Versione 2.24.0 (10/04/2026)
 
