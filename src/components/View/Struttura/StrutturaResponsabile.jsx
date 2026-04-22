@@ -1,8 +1,13 @@
-import React from 'react';
+import { Col, Row } from 'design-react-kit';
+import {
+  RichText,
+  RichTextSection,
+  richTextHasContent,
+} from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
-import { RichTextSection } from 'io-sanita-theme/helpers';
+
 import { CardPersona } from 'io-sanita-theme/components';
-import { Row, Col } from 'design-react-kit';
+import React from 'react';
 
 const messages = defineMessages({
   responsabile: {
@@ -13,8 +18,10 @@ const messages = defineMessages({
 
 const StrutturaResponsabile = ({ content }) => {
   const intl = useIntl();
-
-  return content?.responsabile_correlato?.length > 0 ? (
+  const has_richTextContent = richTextHasContent(
+    content?.responsabile_correlato_text,
+  );
+  return content?.responsabile_correlato?.length > 0 || has_richTextContent ? (
     <RichTextSection
       tag_id="responsabile"
       title={intl.formatMessage(messages.responsabile)}
@@ -28,6 +35,12 @@ const StrutturaResponsabile = ({ content }) => {
           );
         })}
       </Row>
+      {/* Contenuto testuale alternativo, usato ad esempio con il sync virtualdesk */}
+      {has_richTextContent && (
+        <div className="richtext-blocks font-serif">
+            <RichText data={content?.responsabile_correlato_text} />
+        </div>
+      )}
     </RichTextSection>
   ) : (
     <></>
