@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.26.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.25.1...2.26.0) (2026-04-22)
+
+### Features
+
+* struttura ct altenative text fields ([#134](https://github.com/RedTurtle/io-sanita-theme/issues/134)) ([3018de8](https://github.com/RedTurtle/io-sanita-theme/commit/3018de8fd18fa8b94a7b5f47dcfe69698fb318ed))
+
+### Bug Fixes
+
+* loop request in cartella modulistica view ([#133](https://github.com/RedTurtle/io-sanita-theme/issues/133)) ([8305465](https://github.com/RedTurtle/io-sanita-theme/commit/830546574623fc41e2a29095de5c1b999d392a17))
+* show related content in evidence in ct views ([#132](https://github.com/RedTurtle/io-sanita-theme/issues/132)) ([f990f59](https://github.com/RedTurtle/io-sanita-theme/commit/f990f595182c60f8a5137c9e8f848318195893f2))
+
+### Maintenance
+
+* i18n ([d64f454](https://github.com/RedTurtle/io-sanita-theme/commit/d64f4547124576ec7be26ad791aad37013968739))
+* releaselog ([861ee72](https://github.com/RedTurtle/io-sanita-theme/commit/861ee72b55d6e0568655d962f7de35b2b1ab1290))
+
 ## [2.25.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.25.0...2.25.1) (2026-04-21)
 
 ### Bug Fixes
