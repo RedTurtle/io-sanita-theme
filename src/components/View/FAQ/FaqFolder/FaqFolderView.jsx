@@ -174,7 +174,9 @@ const FaqFolderView = ({ content }) => {
 
       <RelatedItems content={content} list={content?.servizi_collegati ?? []} />
 
-      <Placeholder position="afterRelatedItems" content={content} />
+      <RelatedItemInEvidence content={content} />
+      
+      <Placeholder position="afterRelatedItems" content={content} />  
     </>
   );
 };
