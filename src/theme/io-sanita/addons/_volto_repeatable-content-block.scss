@@ -4,9 +4,10 @@
     margin: 0px !important;
 }
 
-.view-viewview #main-content-section .repeatableContentBlock {
+.view-viewview #main-content-section .repeatableContentBlock * {
     word-break: break-all;
     font-family: 'Titillium Web' !important;
+    font-size: 14px !important;
 }
 
 .view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock .full-width,
