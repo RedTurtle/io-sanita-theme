@@ -34,7 +34,7 @@ export const ExampleStrrutturaItem = {
     title: 'Ambulatori dei medici di base',
   },
   effective: '2024-04-17T10:40:05+00:00',
-  circoscrizione: null,
+  dsistretto: 'Distretto 1',
   city: 'Palazzuolo sul senio',
   country: {
     title: 'Italia',
