@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.27.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.26.0...2.27.0) (2026-04-29)
+
+### Features
+
+* rimosso circoscrizione (non usato), aggiunto distretto ([#136](https://github.com/RedTurtle/io-sanita-theme/issues/136)) ([1cc9a79](https://github.com/RedTurtle/io-sanita-theme/commit/1cc9a7957b4a1b6ccc6c7677081fd6a1ebc1aedd))
+
+### Maintenance
+
+* locales ([2ca5e63](https://github.com/RedTurtle/io-sanita-theme/commit/2ca5e639814709a0bdfcb5ee512e06c391cd8ee8))
+* typo ([6d0e641](https://github.com/RedTurtle/io-sanita-theme/commit/6d0e641b0a1b28c254d237bdc3abef79cc4a33cb))
+
 ## [2.26.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.25.1...2.26.0) (2026-04-22)
 
 ### Features
