@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-04-22T13:21:59.420Z\n"
+"POT-Creation-Date: 2026-04-29T13:30:21.407Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1907,11 +1907,6 @@ msgstr ""
 #. Default: "Area territoriale"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_area_territoriale"
-msgstr ""
-
-#. Default: "Circoscrizione"
-#: components/View/Farmacia/FarmaciaDove
-msgid "farmacia_circoscrizione"
 msgstr ""
 
 #. Default: "Comune"

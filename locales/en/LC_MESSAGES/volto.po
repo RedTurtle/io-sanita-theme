@@ -1907,11 +1907,6 @@ msgstr "Search results for FAQ"
 msgid "farmacia_area_territoriale"
 msgstr "Territorial area"
 
-#. Default: "Circoscrizione"
-#: components/View/Farmacia/FarmaciaDove
-msgid "farmacia_circoscrizione"
-msgstr "Constituency"
-
 #. Default: "Comune"
 #: components/View/Farmacia/FarmaciaDove
 msgid "farmacia_comune"
