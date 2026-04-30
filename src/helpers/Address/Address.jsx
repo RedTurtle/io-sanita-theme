@@ -1,8 +1,8 @@
+import { Icon } from 'io-sanita-theme/components';
 /*TODO:
 - implementare il calcolo della distanza
 */
 import React from 'react';
-import { Icon } from 'io-sanita-theme/components';
 
 const Address = ({ item, showAddress = true, showDistance, tag }) => {
   const address_row_2 = ['zip_code', 'city', 'province']
@@ -15,6 +15,7 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
     typeof item.area_territoriale === 'object'
       ? item.area_territoriale && item.area_territoriale.value
       : item.area_territoriale;
+  const distretto = item.distretto;
 
   return item.street?.length > 0 || address_row_2.length ? (
     <>
@@ -31,6 +32,12 @@ const Address = ({ item, showAddress = true, showDistance, tag }) => {
             <>
               <br />
               {address_row_2}
+            </>
+          )}
+          {distretto && (
+            <>
+              <br />
+              {item.distretto}
             </>
           )}
         </AddressWrapperTag>

@@ -41,7 +41,7 @@
 - ...
  -->
 
- ## Versione X.X.X (dd/mm/yyyy)
+## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
 
@@ -54,6 +54,12 @@
 ### Fix
 
 - 
+
+## Versione 2.27.0 (29/04/2026)
+
+### Novità
+
+- Aggiunto distretto (opzionale) tra i campi degli indirizzi.
 
 ## Versione 2.26.0 (22/04/2026)
 
