@@ -9057,6 +9057,7 @@ __metadata:
     volto-form-block-italia: 1.1.1
     volto-gdpr-privacy: 2.2.15
     volto-querywidget-with-browser: 0.4.3
+    volto-repeatable-content-block: 1.5.0
     volto-rss-block: 3.0.1
     volto-rt-carousel: 1.0.0
     volto-secondarymenu: 4.1.4
@@ -11028,6 +11029,13 @@ __metadata:
     registry-url: ^6.0.0
     semver: ^7.3.7
   checksum: 28bec6f42bf9fba66b7c8fea07576fc23d08ec7923433f7835d6cd8654e72169d74f9738b3785107d18a476ae76712e0daeb1dddcd6930e69f9e4b47eba7c0ca
+  languageName: node
+  linkType: hard
+
+"papaparse@npm:5.4.1":
+  version: 5.4.1
+  resolution: "papaparse@npm:5.4.1"
+  checksum: fc9e52f7158dca3517c229e3309065b1ab5da6c7194572fba4f31ff138bc43e3c91182cc40365cc828f97fe10d0aca416068fd731661058bea0f69ddb84a411a
   languageName: node
   linkType: hard
 
@@ -14197,6 +14205,17 @@ __metadata:
   peerDependencies:
     "@plone/volto": ^17.0.0
   checksum: 29058af567e3cc643ed8f3b0be61e0054496d2468a8ffeab3695da955372faea419fee89c8b6427eb7bd11860293086768059060c103f1b7e443bed22a33fef2
+  languageName: node
+  linkType: hard
+
+"volto-repeatable-content-block@npm:1.5.0":
+  version: 1.5.0
+  resolution: "volto-repeatable-content-block@npm:1.5.0"
+  dependencies:
+    papaparse: 5.4.1
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+  checksum: 50521177baadc279b439b1fa036f7d26f279cfef8e0a56a5cdcd9e8d5846346f0895e1ade45341a80b8e16b369332d7d0aedd1f07f1e05635658dab8dc0048a7
   languageName: node
   linkType: hard
 

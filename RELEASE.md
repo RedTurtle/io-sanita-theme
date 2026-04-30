@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- 
+
+### Novità
+
+- Aggiunto il blocco "Contenuto da replicare" sia nella Pagina sia nei blocchi dei campi per i vari CT
+
+### Fix
+
+- 
+
 ## Versione 2.27.0 (29/04/2026)
 
 ### Novità

@@ -1,0 +1,57 @@
+.view-viewview #main-content-section .repeatableContentBlock {
+    * {
+        word-break: break-all;
+        font-family: 'Titillium Web';
+        font-size: 14px;
+
+    }
+
+    .full-width {
+        width: 100% !important;
+        position: unset !important;
+        margin: 0px !important;
+    }
+}
+
+
+.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock {
+
+    * {
+        font-size: 12px !important;
+
+    }
+
+    .full-width,
+    .block.image.align.full img.full-width {
+        width: 100% !important;
+        position: unset !important;
+        margin: 0px !important;
+        max-width: 100%;
+
+    }
+
+    .full-width {
+        .container {
+            max-width: 100%;
+            width: 100% !important;
+        }
+
+        .row {
+            margin: 0px;
+        }
+    }
+
+    .col-sm-12 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    ::before {
+        height: 40px;
+        top: -1.5rem;
+    }
+}
+
+#main-content-section .repeatableContentBlock .public-ui .full-width .col-lg-4 {
+    width: 70%;
+}

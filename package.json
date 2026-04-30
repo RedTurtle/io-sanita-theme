@@ -37,7 +37,8 @@
     "volto-venue",
     "volto-site-settings",
     "volto-rss-block",
-    "@eeacms/volto-taxonomy"
+    "@eeacms/volto-taxonomy",
+    "volto-repeatable-content-block"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -105,6 +106,7 @@
     "volto-form-block-italia": "1.1.1",
     "volto-gdpr-privacy": "2.2.15",
     "volto-querywidget-with-browser": "0.4.3",
+    "volto-repeatable-content-block": "1.5.0",
     "volto-rss-block": "3.0.1",
     "volto-rt-carousel": "1.0.0",
     "volto-secondarymenu": "4.1.4",
