@@ -41,11 +41,12 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.28.0 (05/05/2026)
 
 ### Migliorie
 
-- 
+- Sistemate le icone dei tipi di contenuto nella vista dei contenuti.
+- Nella vista dei contenuti, è ora possibile mostrare/nascondere le colonne desiderate dall'apposito pulsante.
 
 ### Novità
 
@@ -53,7 +54,7 @@
 
 ### Fix
 
-- 
+- Sistemata l'apertura del menu di azioni su un singolo elemento nella vista dei contenuti. Ora il menu si apre solo sull'elemento cliccato ed è visibile, senza più problemi di apertura e scorrimento della pagina
 
 ## Versione 2.27.0 (29/04/2026)
 
