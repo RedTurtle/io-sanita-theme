@@ -60,18 +60,20 @@ const messages = defineMessages({
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const Steps = ({ content, steps = [] }) => {
+const Steps = ({ content }) => {
   const intl = useIntl();
   const [activeItem, setActiveItem] = useState('');
   const [allOpen, setAllOpen] = useState(false);
+
+  const steps =
+    content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
+  const { loadedSteps } = useLoadSteps(steps);
 
   useEffect(() => {
     setActiveItem('');
   }, [allOpen]);
 
-  const { loadedSteps } = useLoadSteps(steps);
-
-  return steps.length > 0 ? (
+  return loadedSteps.length > 0 && loadedSteps.length == steps.length ? (
     <div className="steps">
       <Button
         color="link"
@@ -92,8 +94,7 @@ const Steps = ({ content, steps = [] }) => {
         />
       </Button>
       <Accordion background="active">
-        {steps.map((s, index) => {
-          const step = loadedSteps[s['@id']] ?? s;
+        {loadedSteps.map((step, index) => {
           const itemIndex = index + 1;
           const toggleItem = () => {
             setActiveItem(activeItem !== itemIndex ? itemIndex : '');
@@ -191,7 +192,9 @@ const Steps = ({ content, steps = [] }) => {
         })}
       </Accordion>
     </div>
-  ) : null;
+  ) : (
+    <></>
+  );
 };
 
 /**

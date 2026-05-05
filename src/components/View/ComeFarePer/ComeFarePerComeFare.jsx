@@ -17,7 +17,8 @@ const messages = defineMessages({
 
 const ComeFarePerComeFare = ({ content }) => {
   const intl = useIntl();
-  const steps = content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
+  const steps =
+    content?.items?.filter((item) => item['@type'] === 'Step') ?? [];
 
   return richTextHasContent(content?.come_fare) || steps.length > 0 ? (
     <RichTextSection
@@ -31,7 +32,7 @@ const ComeFarePerComeFare = ({ content }) => {
           </div>
         </div>
       )}
-      <Steps content={content} steps={steps} />
+      <Steps content={content} />
     </RichTextSection>
   ) : (
     <></>
@@ -41,6 +42,5 @@ const ComeFarePerComeFare = ({ content }) => {
 export default ComeFarePerComeFare;
 
 ComeFarePerComeFare.propTypes = {
-  content: PropTypes.shape({
-  }).isRequired,
+  content: PropTypes.shape({}).isRequired,
 };

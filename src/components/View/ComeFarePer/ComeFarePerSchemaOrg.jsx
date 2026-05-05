@@ -48,9 +48,8 @@ const ComeFarePerSchemaOrg = ({ content }) => {
     );
   }
 
-  if (steps.length > 0 && Object.keys(loadedSteps).length === steps.length) {
-    schemaOrg.step = Object.keys(loadedSteps).map((id, index) => {
-      const step = loadedSteps[id];
+  if (loadedSteps.length > 0 && loadedSteps.length == steps.length) {
+    schemaOrg.step = loadedSteps.map((step, index) => {
       const stepSchemaOrg = {
         '@type': 'HowToStep',
         position: index + 1,
