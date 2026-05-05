@@ -19,6 +19,7 @@ import {
   RelatedItems,
   Metadata,
   Placeholder,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import { TextOrBlocks, useDebouncedEffect } from 'io-sanita-theme/helpers';
@@ -175,8 +176,8 @@ const FaqFolderView = ({ content }) => {
       <RelatedItems content={content} list={content?.servizi_collegati ?? []} />
 
       <RelatedItemInEvidence content={content} />
-      
-      <Placeholder position="afterRelatedItems" content={content} />  
+
+      <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
 };
