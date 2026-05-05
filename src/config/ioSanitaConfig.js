@@ -26,6 +26,13 @@ import faCogSVG from 'io-sanita-theme/icons/cog.svg';
 import faSitemapSVG from 'io-sanita-theme/icons/sitemap.svg';
 import faBuildingSVG from 'io-sanita-theme/icons/building.svg';
 import faAslSVG from 'io-sanita-theme/icons/ASL.svg';
+import faCircleDotSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/circle-dot.svg';
+import faListCheckSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/list-check.svg';
+import faClipboardQuestionSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/clipboard-question.svg';
+import faClipboardListSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/clipboard-list.svg';
+import faFileContractSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/file-contract.svg';
+import faHouseMedicalFlagSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/house-medical-flag.svg';
+import faAddressBook from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/address-book.svg';
 import faFileDownloadSVG from 'io-sanita-theme/icons/file-download.svg';
 import faQuestionSVG from 'io-sanita-theme/icons/question-solid.svg';
 import bandoSVG from 'io-sanita-theme/icons/bando.svg';
@@ -154,6 +161,12 @@ export default function applyConfig(config) {
       UnitaOrganizzativa: faBuildingSVG,
       Modulo: faFileDownloadSVG,
       Faq: faQuestionSVG,
+      Step: faCircleDotSVG,
+      ComeFarePer: faListCheckSVG,
+      FaqFolder: faClipboardQuestionSVG,
+      Farmacia: faHouseMedicalFlagSVG,
+      PuntoDiContatto: faAddressBook,
+      survey: faClipboardListSVG,
     },
     controlpanels: [
       ...(config.settings.controlpanels ?? []),
