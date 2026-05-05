@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.28.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.27.0...2.28.0) (2026-05-05)
+
+### Features
+
+* add contenuto da replicare block ([#135](https://github.com/RedTurtle/io-sanita-theme/issues/135)) ([578f9a4](https://github.com/RedTurtle/io-sanita-theme/commit/578f9a43bc97a07444d01fabf0ea5f04c8e48a7b))
+
+### Bug Fixes
+
+* faq folderview import ([37cfd3b](https://github.com/RedTurtle/io-sanita-theme/commit/37cfd3b9c15ba78ba1c8ddfa5c7174f39c0ae73f))
+* folder-content more popover open ([c88d3e8](https://github.com/RedTurtle/io-sanita-theme/commit/c88d3e817ff57a4eecf79958c13eb3d212f13a2e))
+* icons for CT in folder content ([ffc7f0f](https://github.com/RedTurtle/io-sanita-theme/commit/ffc7f0fd9b38fd57f3d8b1e1b8ef477751d6e120))
+* sometimes uo in steps were not loaded ([ddc635d](https://github.com/RedTurtle/io-sanita-theme/commit/ddc635dd1b838f49f9fc75d18ac30be3ad3e214d))
+
+### Maintenance
+
+* preparing release 2.28.0 ([cb0a294](https://github.com/RedTurtle/io-sanita-theme/commit/cb0a294b23e9acf5bf6892cf7fb0683d6b511a2d))
+* releaselog ([16109c1](https://github.com/RedTurtle/io-sanita-theme/commit/16109c1371e2c782ebbb0693d6536e2f1de1d323))
+* revert volto-form-block-italia version ([5616eae](https://github.com/RedTurtle/io-sanita-theme/commit/5616eae1c8a077a1b26d99ea27b1719fa4ddeb3c))
+* updated deps to remove duplicate api calls ([eb99334](https://github.com/RedTurtle/io-sanita-theme/commit/eb99334958d055da2c70038fd613c79bae4e193d))
+* updated volto-contents-next ([7f7d0f9](https://github.com/RedTurtle/io-sanita-theme/commit/7f7d0f90c08d6cc260d254878dd5d47108b7c844))
+* updated volto-form-block-italia ([d638639](https://github.com/RedTurtle/io-sanita-theme/commit/d638639e3f72e974cf6bf947095545bf4f48d412))
+
 ## [2.27.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.26.0...2.27.0) (2026-04-29)
 
 ### Features
