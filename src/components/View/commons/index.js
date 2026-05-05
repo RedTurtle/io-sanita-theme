@@ -105,6 +105,11 @@ export const RelatedItems = loadable(() =>
     /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/RelatedItems'
   ),
 );
+export const RelatedItemInEvidence = loadable(() =>
+  import(
+    /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/RelatedItemInEvidence/RelatedItemInEvidence'
+  ),
+);
 export const SearchSectionForm = loadable(() =>
   import(
     /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/SearchSectionForm'

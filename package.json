@@ -1,6 +1,6 @@
 {
   "name": "io-sanita-theme",
-  "version": "2.25.1",
+  "version": "2.28.0",
   "description": "io-sanita-theme: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -37,7 +37,8 @@
     "volto-venue",
     "volto-site-settings",
     "volto-rss-block",
-    "@eeacms/volto-taxonomy"
+    "@eeacms/volto-taxonomy",
+    "volto-repeatable-content-block"
   ],
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
@@ -80,7 +81,7 @@
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
     "@eeacms/volto-taxonomy": "5.1.1",
     "@loadable/babel-plugin": "5.13.2",
-    "@plone-collective/volto-contents-next": "0.5.0",
+    "@plone-collective/volto-contents-next": "0.5.4",
     "@plone-collective/volto-sentry": "0.3.1",
     "@release-it/conventional-changelog": "^9.0.3",
     "bootstrap-italia": "2.9.2",
@@ -105,13 +106,14 @@
     "volto-form-block-italia": "1.1.1",
     "volto-gdpr-privacy": "2.2.15",
     "volto-querywidget-with-browser": "0.4.3",
+    "volto-repeatable-content-block": "1.5.0",
     "volto-rss-block": "3.0.1",
     "volto-rt-carousel": "1.0.0",
     "volto-secondarymenu": "4.1.4",
     "volto-site-settings": "0.4.7",
     "volto-slate-italia": "1.0.9",
-    "volto-slimheader": "0.1.5",
-    "volto-social-settings": "3.1.1",
+    "volto-slimheader": "0.1.6",
+    "volto-social-settings": "3.1.2",
     "volto-subfooter": "3.1.3",
     "volto-subsites": "4.0.2",
     "volto-venue": "4.1.1"

@@ -6,13 +6,14 @@ import { getContent, resetContent } from '@plone/volto/actions/content/content';
 export const useLoadSteps = (steps = []) => {
   const dispatch = useDispatch();
   const subrequests = useSelector((state) => state.content?.subrequests);
-  const [loadedSteps, setLoadedSteps] = useState({});
+  const [loadedSteps, setLoadedSteps] = useState([]);
 
   // one request is made for every step
   useEffect(() => {
-    steps.forEach((item) => {
-      const url = flattenToAppURL(item['@id']);
-      const subrequest_id = item['@id'];
+    steps.forEach((step) => {
+      const url = flattenToAppURL(step['@id']);
+      const subrequest_id = step['@id'];
+
       const requested =
         subrequests?.[subrequest_id]?.loading ||
         subrequests?.[subrequest_id]?.loaded;
@@ -34,7 +35,10 @@ export const useLoadSteps = (steps = []) => {
       const subrequest_id = item['@id'];
       const step = subrequests?.[subrequest_id]?.data;
       if (subrequests?.[subrequest_id]?.loaded && step) {
-        setLoadedSteps({ ...loadedSteps, [item['@id']]: step });
+        setLoadedSteps((prevLoadedSteps) => [
+          ...prevLoadedSteps.filter((s) => s['@id'] !== step['@id']),
+          step,
+        ]);
       }
     });
   }, [subrequests]);

@@ -17,6 +17,7 @@ import {
   RelatedItems,
   Placeholder,
   Metadata,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 import { TextOrBlocks } from 'io-sanita-theme/helpers';
 
@@ -58,7 +59,12 @@ const CartellaModulisticaView = ({ content }) => {
   const modulistica = modulisticaItems?.data?.items ?? [];
 
   useEffect(() => {
-    if (hasItems && !modulisticaItems.loading && !modulisticaItems.loaded) {
+    if (
+      hasItems &&
+      !modulisticaItems.loading &&
+      !modulisticaItems.loaded &&
+      !modulisticaItems.error
+    ) {
       dispatch(getModulisticaItems(flattenToAppURL(modulistica_items_url)));
     }
   }, [dispatch, hasItems, modulisticaItems, modulistica_items_url]);
@@ -210,6 +216,7 @@ const CartellaModulisticaView = ({ content }) => {
 
       <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} list={content?.servizi_collegati ?? []} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

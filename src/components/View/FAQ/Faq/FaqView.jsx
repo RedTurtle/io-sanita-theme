@@ -11,6 +11,7 @@ import {
   RelatedItems,
   Metadata,
   Placeholder,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import { TextOrBlocks } from 'io-sanita-theme/helpers';
@@ -39,6 +40,7 @@ const FaqView = ({ content }) => {
 
       <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </div>
   );

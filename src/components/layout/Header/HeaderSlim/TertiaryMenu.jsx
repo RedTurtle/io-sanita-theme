@@ -19,6 +19,9 @@ const TertiaryMenu = ({ mobile = false }) => {
   const pathname = useLocation().pathname;
   const dispatch = useDispatch();
 
+  const slimHeaderLoading = useSelector(
+    (state) => state.slimHeader?.loadingResults,
+  );
   const slimHeader = useSelector((state) => state.slimHeader?.result);
   const slimHeaderItems = getItemsByPath(slimHeader, pathname)
     ?.filter((item) => item.visible)
@@ -31,8 +34,10 @@ const TertiaryMenu = ({ mobile = false }) => {
     });
 
   useEffect(() => {
-    dispatch(getSlimHeader());
-  }, [dispatch]);
+    if (!slimHeader && !slimHeaderLoading) {
+      dispatch(getSlimHeader());
+    }
+  }, []);
 
   const items = slimHeaderItems ?? [];
 

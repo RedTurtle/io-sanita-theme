@@ -41,6 +41,34 @@
 - ...
  -->
 
+## Versione 2.28.0 (05/05/2026)
+
+### Migliorie
+
+- Sistemate le icone dei tipi di contenuto nella vista dei contenuti.
+- Nella vista dei contenuti, è ora possibile mostrare/nascondere le colonne desiderate dall'apposito pulsante.
+
+### Novità
+
+- Aggiunto il blocco "Contenuto da replicare" sia nella Pagina sia nei blocchi dei campi per i vari CT
+
+### Fix
+
+- Sistemata l'apertura del menu di azioni su un singolo elemento nella vista dei contenuti. Ora il menu si apre solo sull'elemento cliccato ed è visibile, senza più problemi di apertura e scorrimento della pagina
+
+## Versione 2.27.0 (29/04/2026)
+
+### Novità
+
+- Aggiunto distretto (opzionale) tra i campi degli indirizzi.
+
+## Versione 2.26.0 (22/04/2026)
+
+### Fix
+
+- Aggiunta la sezione Documenti correlati in ComeFarePer CT
+- Mostrare contenuto correlato in evidenza nella Pagina
+
 ## Versione 2.25.0 (21/04/2026)
 
 ### Fix
@@ -53,7 +81,6 @@
 - Mostrare il testo della descrizione del Punto di contatto all'interno della card Contatti
 - Modifica icona Struttura in Folder Content
 - Sistemata la visualizzazione dell'etichetta "Programmato" accanto al titolo dei contenuti in Folder Content: ora viene mostrata come badge ben distinguibile dal titolo.
-- Aggiunta la sezione Documenti correlati in ComeFarePer CT
 
 ## Versione 2.24.0 (10/04/2026)
 

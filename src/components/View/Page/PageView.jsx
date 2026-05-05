@@ -17,6 +17,7 @@ import {
   Placeholder,
   Metadata,
   RelatedItems,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import { defineMessages, useIntl } from 'react-intl';
@@ -71,7 +72,6 @@ const PageView = ({ content, token, location, history }) => {
                     {content?.title}
                   </h1>
                 </Placeholder>
-
                 <p className="description">{content?.description}</p>
               </div>
               {rightHeaderHasContent && (
@@ -113,6 +113,7 @@ const PageView = ({ content, token, location, history }) => {
           />
         </div>
         <RelatedItems content={content} />
+        <RelatedItemInEvidence content={content} />
         <Placeholder position="afterContent" content={content} />
       </>
     );

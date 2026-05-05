@@ -10,6 +10,7 @@ import {
   RelatedItems,
   Metadata,
   Placeholder,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import {
@@ -46,6 +47,8 @@ const ModuloView = ({ content }) => {
 
       <RelatedItems content={content} />
 
+      <RelatedItemInEvidence content={content} />
+      
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

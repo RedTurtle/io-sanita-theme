@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
-import { Row, Col } from 'design-react-kit';
-import { LocationsMap } from 'io-sanita-theme/components/View/commons';
+import { Col, Row } from 'design-react-kit';
+
 import { CardPlace } from 'io-sanita-theme/components';
+import { LocationsMap } from 'io-sanita-theme/components/View/commons';
+import PropTypes from 'prop-types';
+import React from 'react';
+import omit from 'lodash/omit';
 
 /**
  * Locations view component class.
@@ -18,8 +19,7 @@ const Locations = ({ content = {}, locations = [] }) => {
     content.street ||
     content.city ||
     content.zip_code ||
-    content.quartiere ||
-    content.circoscrizione
+    content.quartiere
   ) {
     location_items.push(omit(content, ['@id']));
   }

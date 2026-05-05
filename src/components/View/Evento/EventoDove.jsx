@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import {
+  RichText,
+  RichTextSection,
+  hasGeolocation,
+  richTextHasContent,
+} from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 
-import {
-  RichTextSection,
-  richTextHasContent,
-  RichText,
-  hasGeolocation,
-} from 'io-sanita-theme/helpers';
 import { Locations } from 'io-sanita-theme/components/View/commons';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const messages = defineMessages({
   dove: {
@@ -28,7 +27,6 @@ const EventoDove = ({ content }) => {
     content?.zip_code?.length > 0 ||
     content?.city?.length > 0 ||
     content?.quartiere?.length > 0 ||
-    content?.circoscrizione?.length > 0 ||
     content?.country?.length > 0 ||
     richTextHasContent(content?.webinar) ? (
     <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>

@@ -31,6 +31,7 @@ import {
   RelatedItems,
   Placeholder,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 export const PersonaViewSectionsOrder = [
@@ -98,6 +99,7 @@ const PersonaView = ({ content }) => {
       </div>
       <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

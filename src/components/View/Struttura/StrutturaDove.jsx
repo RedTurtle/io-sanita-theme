@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { defineMessages, useIntl } from 'react-intl';
 import { RichTextSection, hasGeolocation } from 'io-sanita-theme/helpers';
+import { defineMessages, useIntl } from 'react-intl';
+
 import { Locations } from 'io-sanita-theme/components/View/commons';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const messages = defineMessages({
   dove: {
@@ -20,7 +21,6 @@ const StrutturaDove = ({ content }) => {
     content?.zip_code?.length > 0 ||
     content?.city?.length > 0 ||
     content?.quartiere?.length > 0 ||
-    content?.circoscrizione?.length > 0 ||
     content?.country?.length > 0 ? (
     <RichTextSection tag_id="dove" title={intl.formatMessage(messages.dove)}>
       <Locations content={content} />

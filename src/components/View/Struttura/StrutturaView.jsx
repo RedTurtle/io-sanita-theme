@@ -37,6 +37,7 @@ import {
   useSideMenu,
   Metadata,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 export const StrutturaSectionsOrder = [
@@ -110,6 +111,7 @@ const StrutturaView = ({ content }) => {
       </div>
       <Placeholder position="afterContent" content={content} />
       <RelatedItems content={content} list={content?.related_news ?? []} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

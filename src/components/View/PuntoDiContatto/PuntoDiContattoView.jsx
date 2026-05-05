@@ -21,6 +21,7 @@ import {
   useSideMenu,
   Metadata,
   commonIntlMessages,
+  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 
 import { ContentTypeViewSections } from 'io-sanita-theme/helpers';
@@ -78,6 +79,7 @@ const PuntoDiContattoView = ({ content }) => {
       </div>
       <Placeholder position="afterContent" content={content} />
       <RelatedItems list={content?.relatedItems} />
+      <RelatedItemInEvidence content={content} />
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );
