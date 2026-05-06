@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.28.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.0...2.28.1) (2026-05-06)
+
+### Maintenance
+
+* updated volto-contents-next ([d082f30](https://github.com/RedTurtle/io-sanita-theme/commit/d082f300244c6eba48e7017471365dcc9b1f8f9f))
+
 ## [2.28.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.27.0...2.28.0) (2026-05-05)
 
 ### Features
