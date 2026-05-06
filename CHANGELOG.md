@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.28.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.1...2.28.2) (2026-05-06)
+
+### Maintenance
+
+* updated volto-form-block-italia to 1.1.2 ([#137](https://github.com/RedTurtle/io-sanita-theme/issues/137)) ([a387650](https://github.com/RedTurtle/io-sanita-theme/commit/a3876503eb63be939517249585d4313a41615d46))
+
 ## [2.28.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.0...2.28.1) (2026-05-06)
 
 ### Maintenance
