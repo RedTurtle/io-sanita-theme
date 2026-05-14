@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Sistemato il blocco "Cerca servizi e procedure" in modo tale che consideri il path all'interno del quale fare la ricerca.
+
 ## Versione 2.28.0 (05/05/2026)
 
 ### Migliorie
