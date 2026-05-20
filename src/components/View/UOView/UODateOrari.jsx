@@ -10,12 +10,8 @@ import {
 const messages = defineMessages({
   date_e_orari: {
     id: 'uo_date_e_orari',
-    defaultMessage: 'Date e orari',
-  },
-  orari: {
-    id: 'uo_orari',
-    defaultMessage: 'Orari',
-  },
+    defaultMessage: 'Orari di apertura',
+  }
 });
 
 const UODateOrari = ({ content }) => {
@@ -28,7 +24,6 @@ const UODateOrari = ({ content }) => {
     >
       {richTextHasContent(content.orari) && (
         <RichText
-          title={intl.formatMessage(messages.orari)}
           data={content.orari}
         />
       )}
