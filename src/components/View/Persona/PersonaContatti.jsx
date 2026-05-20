@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { CardContatti } from 'io-sanita-theme/components';
-import { RichTextSection } from 'io-sanita-theme/helpers';
+import { RichTextSection, richTextHasContent } from 'io-sanita-theme/helpers';
 import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
@@ -19,7 +19,7 @@ const PersonaContatti = ({ content }) => {
   const intl = useIntl();
 
   return content?.pdc_correlato?.length > 0 ||
-    content?.informazioni_contatto?.data ?
+    richTextHasContent(content?.informazioni_contatto) ?
     (
       <RichTextSection
         tag_id="contatti"
@@ -35,7 +35,7 @@ const PersonaContatti = ({ content }) => {
         </Row>
         <Row>
           {/* Informazioni di contatto */}
-          {content?.informazioni_contatto?.data && (
+          {richTextHasContent(content?.informazioni_contatto) && (
             <Col lg={6} className="py-lg-2 informazioni-contatto-wrapper">
               <RichTextSection
                 data={content.informazioni_contatto}
