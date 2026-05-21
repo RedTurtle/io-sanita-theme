@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-04-29T13:30:21.407Z\n"
+"POT-Creation-Date: 2026-05-21T07:35:08.783Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -2567,6 +2567,11 @@ msgstr ""
 msgid "persona_gallery"
 msgstr ""
 
+#. Default: "Informazioni di contatto"
+#: components/View/Persona/PersonaContatti
+msgid "persona_informazioni_contatto"
+msgstr ""
+
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
 msgid "persona_orari_ricevimento"
@@ -3893,7 +3898,7 @@ msgstr ""
 msgid "struttura_cos_e"
 msgstr ""
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/Struttura/StrutturaDateOrari
 msgid "struttura_date_e_orari"
 msgstr ""
@@ -3906,11 +3911,6 @@ msgstr ""
 #. Default: "Galleria"
 #: components/View/Struttura/StrutturaGalleria
 msgid "struttura_gallery"
-msgstr ""
-
-#. Default: "Orari"
-#: components/View/Struttura/StrutturaDateOrari
-msgid "struttura_orari"
 msgstr ""
 
 #. Default: "Personale della struttura"
@@ -4104,7 +4104,7 @@ msgstr ""
 msgid "uo_contatti"
 msgstr ""
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/UOView/UODateOrari
 msgid "uo_date_e_orari"
 msgstr ""
@@ -4122,11 +4122,6 @@ msgstr ""
 #. Default: "Fa parte di"
 #: components/View/UOView/UOFaParteDi
 msgid "uo_fa_parte_di"
-msgstr ""
-
-#. Default: "Orari"
-#: components/View/UOView/UODateOrari
-msgid "uo_orari"
 msgstr ""
 
 #. Default: "Personale"

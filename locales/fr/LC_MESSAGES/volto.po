@@ -2572,6 +2572,11 @@ msgstr ""
 msgid "persona_gallery"
 msgstr ""
 
+#. Default: "Informazioni di contatto"
+#: components/View/Persona/PersonaContatti
+msgid "persona_informazioni_contatto"
+msgstr ""
+
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
 msgid "persona_orari_ricevimento"
@@ -3898,7 +3903,7 @@ msgstr ""
 msgid "struttura_cos_e"
 msgstr ""
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/Struttura/StrutturaDateOrari
 msgid "struttura_date_e_orari"
 msgstr ""
@@ -3911,11 +3916,6 @@ msgstr ""
 #. Default: "Galleria"
 #: components/View/Struttura/StrutturaGalleria
 msgid "struttura_gallery"
-msgstr ""
-
-#. Default: "Orari"
-#: components/View/Struttura/StrutturaDateOrari
-msgid "struttura_orari"
 msgstr ""
 
 #. Default: "Personale della struttura"
@@ -4109,7 +4109,7 @@ msgstr ""
 msgid "uo_contatti"
 msgstr ""
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/UOView/UODateOrari
 msgid "uo_date_e_orari"
 msgstr ""
@@ -4127,11 +4127,6 @@ msgstr ""
 #. Default: "Fa parte di"
 #: components/View/UOView/UOFaParteDi
 msgid "uo_fa_parte_di"
-msgstr ""
-
-#. Default: "Orari"
-#: components/View/UOView/UODateOrari
-msgid "uo_orari"
 msgstr ""
 
 #. Default: "Personale"

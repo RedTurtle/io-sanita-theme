@@ -2565,6 +2565,11 @@ msgstr "Where"
 msgid "persona_gallery"
 msgstr "Gallery"
 
+#. Default: "Informazioni di contatto"
+#: components/View/Persona/PersonaContatti
+msgid "persona_informazioni_contatto"
+msgstr ""
+
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
 msgid "persona_orari_ricevimento"
@@ -3891,7 +3896,7 @@ msgstr "Related structures"
 msgid "struttura_cos_e"
 msgstr "What is it"
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/Struttura/StrutturaDateOrari
 msgid "struttura_date_e_orari"
 msgstr "Dates and times"
@@ -3905,11 +3910,6 @@ msgstr "Where"
 #: components/View/Struttura/StrutturaGalleria
 msgid "struttura_gallery"
 msgstr "Gallery"
-
-#. Default: "Orari"
-#: components/View/Struttura/StrutturaDateOrari
-msgid "struttura_orari"
-msgstr "Times"
 
 #. Default: "Personale della struttura"
 #: components/View/Struttura/StrutturaPersonale
@@ -4102,7 +4102,7 @@ msgstr "Skills"
 msgid "uo_contatti"
 msgstr "Contacts"
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/UOView/UODateOrari
 msgid "uo_date_e_orari"
 msgstr "Dates and times"
@@ -4121,11 +4121,6 @@ msgstr "Where"
 #: components/View/UOView/UOFaParteDi
 msgid "uo_fa_parte_di"
 msgstr "Part of"
-
-#. Default: "Orari"
-#: components/View/UOView/UODateOrari
-msgid "uo_orari"
-msgstr "Times"
 
 #. Default: "Personale"
 #: components/View/UOView/UOPersonale
