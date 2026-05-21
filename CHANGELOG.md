@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.29.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.2...2.29.0) (2026-05-21)
+
+### Features
+
+* added text block in contact section inside CT Person to add contact info ([#140](https://github.com/RedTurtle/io-sanita-theme/issues/140)) ([8d261e8](https://github.com/RedTurtle/io-sanita-theme/commit/8d261e8c027e284b4c060a30391dcc769af3d23d))
+* cambiato blocco orari in strutture/uo, rivisto titolo, rimosso sottotilo ([#141](https://github.com/RedTurtle/io-sanita-theme/issues/141)) ([df92ec7](https://github.com/RedTurtle/io-sanita-theme/commit/df92ec76cc580c2d951de996c75a850419d8c801))
+
+### Bug Fixes
+
+* listen to path when searching servizi o procedure ([#139](https://github.com/RedTurtle/io-sanita-theme/issues/139)) ([e9b6135](https://github.com/RedTurtle/io-sanita-theme/commit/e9b6135b398d57551cf1a49e4ca7969e9f723b1c))
+
+### Maintenance
+
+* update po ([67e8668](https://github.com/RedTurtle/io-sanita-theme/commit/67e86683f8a7ffc5d796df835871b66983c7fdec))
+
 ## [2.28.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.1...2.28.2) (2026-05-06)
 
 ### Maintenance
