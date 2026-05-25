@@ -46,6 +46,7 @@
 ### Fix
 
 - Sistemato il blocco "Cerca servizi e procedure" in modo tale che consideri il path all'interno del quale fare la ricerca.
+- Gestita la mancanza di geolocalizzazione all'interno del CT Persona in modo tale da non mostrare 0 all'interno della card Persona quando assente.
 
 ## Versione 2.28.0 (05/05/2026)
 
