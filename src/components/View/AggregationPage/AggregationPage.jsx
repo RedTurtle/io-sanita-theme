@@ -17,7 +17,6 @@ import {
   PageHeader,
   SkipToMainContent,
   commonIntlMessages,
-  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 import {
   CardSimple,
@@ -54,7 +53,7 @@ const messages = defineMessages({
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-const AggregationPage = ({ match, route, location, content }) => {
+const AggregationPage = ({ match, route, location }) => {
   const intl = useIntl();
   const dispatch = useDispatch();
   const id = match?.params?.id ?? '';
@@ -253,10 +252,6 @@ const AggregationPage = ({ match, route, location, content }) => {
           </section>
         </div>
       </div>
-      {/* NON SI POTREBBE TOGLIERE RELATESITEMINEVIDENCE DATO CHE CONTENT NON VERRà POPOLATO E QUINDI MAI MOSTRATO? */}
-      {content && content.correlato_in_evidenza && (
-        <RelatedItemInEvidence content={content} />
-      )}
     </>
   );
 };

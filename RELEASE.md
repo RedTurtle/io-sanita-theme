@@ -46,6 +46,7 @@
 ### Fix
 
 - Sistemato il blocco "Cerca servizi e procedure" in modo tale che consideri il path all'interno del quale fare la ricerca.
+- Rimosso il componente Contenuto correlato in evidenza all'interno di un Aggregation Page in quanto non sarebbe mai stato mostrato per i contenuti che venivano passati e causata un bug sulla pagina
 
 ## Versione 2.28.0 (05/05/2026)
 
