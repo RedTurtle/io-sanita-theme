@@ -37,12 +37,6 @@ export const getItemIcon = (item) => {
 
 export const hasGeolocation = (item) => {
   if (item?.geolocation?.latitude !== 0 && item?.geolocation?.longitude !== 0) {
-    return (
-      item?.geolocation &&
-      item?.geolocation?.latitude &&
-      item?.geolocation?.longitude &&
-      item?.geolocation?.latitude !== 0 &&
-      item?.geolocation?.longitude !== 0
-    );
+    return true;
   } 
 };
