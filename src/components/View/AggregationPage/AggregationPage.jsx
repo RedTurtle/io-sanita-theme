@@ -17,7 +17,6 @@ import {
   PageHeader,
   SkipToMainContent,
   commonIntlMessages,
-  RelatedItemInEvidence,
 } from 'io-sanita-theme/components/View/commons';
 import {
   CardSimple,
@@ -253,7 +252,6 @@ const AggregationPage = ({ match, route, location }) => {
           </section>
         </div>
       </div>
-      <RelatedItemInEvidence content={content}/>
     </>
   );
 };
