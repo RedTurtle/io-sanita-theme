@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.30.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.29.0...2.30.0) (2026-05-27)
+
+### Features
+
+* ulteriori info in uo ([#144](https://github.com/RedTurtle/io-sanita-theme/issues/144)) ([4ff54b0](https://github.com/RedTurtle/io-sanita-theme/commit/4ff54b01727f1c0455a2cd8b04aa50418e010f10))
+
+### Bug Fixes
+
+* handle no geolocation in person card avoiding to show 0 ([#143](https://github.com/RedTurtle/io-sanita-theme/issues/143)) ([58e9eb3](https://github.com/RedTurtle/io-sanita-theme/commit/58e9eb3410e5ec19d75ab57e2eeb96576e30757f))
+* handle related-item-in-evidence in aggregationPage ([#142](https://github.com/RedTurtle/io-sanita-theme/issues/142)) ([54a48ec](https://github.com/RedTurtle/io-sanita-theme/commit/54a48ec223ff49b1f2142a5827d7dc29a374197e))
+
+### Maintenance
+
+* locales ([66f612d](https://github.com/RedTurtle/io-sanita-theme/commit/66f612d2bd6b46ea5211228bd34df7b0f4323b1e))
+* releaselog ([85d5c9a](https://github.com/RedTurtle/io-sanita-theme/commit/85d5c9aa94fbc441cfdddcaaf293b69bfd0acedf))
+* typo ([df9e3ae](https://github.com/RedTurtle/io-sanita-theme/commit/df9e3aed3398673947d762b3d2ab3dd2c5c88600))
+* typo ([a84a5f9](https://github.com/RedTurtle/io-sanita-theme/commit/a84a5f93a125a3d45608dbc25a2e961b00432119))
+
 ## [2.29.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.2...2.29.0) (2026-05-21)
 
 ### Features
