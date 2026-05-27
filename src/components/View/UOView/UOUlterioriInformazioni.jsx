@@ -32,8 +32,9 @@ const UOUlterioriInformazioni = ({ content }) => {
       {content.ulteriori_informazioni && (
         <RichText data={content.ulteriori_informazioni} />
       )}
+      {/* presente ad esempio con il sync virtualdesk */}
       {content.come_accedere && (
-        <div className="mt-4">
+        <div className="mt-4 richtext-blocks">
           <h3>{intl.formatMessage(messages.come_accedere)}</h3>
           <RichText data={content.come_accedere} />
         </div>
