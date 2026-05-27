@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.30.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.0...2.30.1) (2026-05-27)
+
+### Bug Fixes
+
+* missing import ([0e91a38](https://github.com/RedTurtle/io-sanita-theme/commit/0e91a38ceb94654c918fbec805e37e5a42c4a2a9))
+
 ## [2.30.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.29.0...2.30.0) (2026-05-27)
 
 ### Features
