@@ -1,5 +1,9 @@
 import React from 'react';
-import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
+import {
+  richTextHasContent,
+  RichText,
+  RichTextSection,
+} from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -7,7 +11,7 @@ const messages = defineMessages({
     id: 'other_info',
     defaultMessage: 'Ulteriori informazioni',
   },
-    come_accedere: {
+  come_accedere: {
     id: 'struttura_come_accedere',
     defaultMessage: 'Come accedere',
   },
@@ -15,9 +19,11 @@ const messages = defineMessages({
 
 const UOUlterioriInformazioni = ({ content }) => {
   const intl = useIntl();
-  const has_richTextUlteriori = richTextHasContent(content?.ulteriori_informazioni);
+  const has_richTextUlteriori = richTextHasContent(
+    content?.ulteriori_informazioni,
+  );
   const has_come_accedere = richTextHasContent(content?.come_accedere);
-  return (has_richTextUlteriori || has_come_accedere) ? (
+  return has_richTextUlteriori || has_come_accedere ? (
     <RichTextSection
       tag_id="more_info"
       title={intl.formatMessage(messages.other_info)}
