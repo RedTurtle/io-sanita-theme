@@ -1,7 +1,6 @@
 import React from 'react';
 import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
-import { defineMessages, useIntl } from 'react-intl';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
