@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.29.0 (27/05/2026)
 
 ### Fix
 
