@@ -3873,6 +3873,7 @@ msgstr "Alerts and news"
 
 #. Default: "Come accedere"
 #: components/View/Struttura/StrutturaComeAccedere
+#: components/View/UOView/UOUlterioriInformazioni
 msgid "struttura_come_accedere"
 msgstr "How to access"
 
