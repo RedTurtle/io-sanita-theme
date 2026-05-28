@@ -391,6 +391,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       'callout_block',
       'rssBlock',
       'repeatableContentBlock',
+      'slateTable',
       //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
     ],
 
