@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.31.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.2...2.31.0) (2026-05-28)
+
+### Features
+
+* added table block in text editor ([#145](https://github.com/RedTurtle/io-sanita-theme/issues/145)) ([7c49d67](https://github.com/RedTurtle/io-sanita-theme/commit/7c49d67dedb3710128db04544884e0cdcaf0326b))
+
+### Maintenance
+
+* preparing release 2.31.0 ([b17fcf4](https://github.com/RedTurtle/io-sanita-theme/commit/b17fcf4fb965a5c2786231c182aaac653165c2a9))
+
 ## [2.30.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.1...2.30.2) (2026-05-27)
 
 ### Bug Fixes
