@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.31.0 (28/05/2026)
+
+### Novità
+
+- Abilitato il blocco tabella nell'editor di testo per i campi a blocchi dei content-type.
+
 ## Versione 2.30.0 (27/05/2026)
 
 ### Fix
