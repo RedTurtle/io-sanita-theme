@@ -308,9 +308,9 @@ $search-input-color: #484848;
           }
 
           .react-select__single-value {
+            color: $search-input-color !important;
             // color: #fff !important;
             font-weight: 300;
-            color: $search-input-color !important;
           }
         }
       }

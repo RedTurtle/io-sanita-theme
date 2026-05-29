@@ -33,13 +33,11 @@ const NewsItemACuraDi = ({ content }) => {
           ))}
         </Row>
       )}
-
     </RichTextSection>
   ) : (
     <></>
   );
 };
-
 
 NewsItemACuraDi.propTypes = {
   content: PropTypes.shape({

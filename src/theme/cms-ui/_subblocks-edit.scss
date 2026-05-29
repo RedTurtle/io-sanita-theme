@@ -3,26 +3,26 @@
     .single-block.subblock-edit {
       .dragsubblock,
       .ui.basic.button.delete-button {
+        z-index: 3;
+        border: 1px solid #9bcfe1 !important;
         border-radius: 100% !important;
 
         color: #575757 !important;
-        border: 1px solid #9bcfe1 !important;
-        z-index: 3;
       }
 
       .dragsubblock {
         top: -18px;
-        margin-top: -5px;
         left: -0.75rem;
-        padding: 5px;
-        line-height: 0;
-        background-color: #fff;
+        display: flex;
         width: 32px;
         height: 32px;
-        text-align: center;
-        display: flex;
         align-items: center;
         justify-content: center;
+        padding: 5px;
+        margin-top: -5px;
+        background-color: #fff;
+        line-height: 0;
+        text-align: center;
 
         &:hover,
         &:active {

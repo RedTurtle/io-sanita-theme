@@ -3,6 +3,7 @@ import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
+import { useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   uo: { id: 'CardCategoryBottom_UO', defaultMessage: 'Unità operativa' },
@@ -17,6 +18,7 @@ const CardCategoryBottom = ({
   showCategory = true,
 }) => {
   const intl = useIntl();
+  const homepath = useHomePath();
   let defaultCategory = item?.type_title ? { title: item.type_title } : null;
   const portal_type = item['@type'] ?? item.portal_type;
   switch (item['@type']) {
@@ -53,7 +55,11 @@ const CardCategoryBottom = ({
               href={
                 isEditMode
                   ? '#'
-                  : getAggregationPageUrl('topics', display_category.token)
+                  : getAggregationPageUrl(
+                      homepath,
+                      'topics',
+                      display_category.token,
+                    )
               }
             >
               <span className="text">{display_category.title}</span>

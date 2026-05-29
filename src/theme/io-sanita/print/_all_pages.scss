@@ -8,9 +8,9 @@
   }
   .public-ui h1,
   .public-ui .h1 {
+    margin-bottom: 0.5rem !important;
     font-size: 1.5rem !important;
     line-height: normal !important;
-    margin-bottom: 0.5rem !important;
   }
 
   // floating buttons
@@ -317,8 +317,8 @@
     display: none;
   }
   .subsite-header {
-    background-image: none !important;
     background-color: unset;
+    background-image: none !important;
     .text {
       color: $body-color !important;
     }

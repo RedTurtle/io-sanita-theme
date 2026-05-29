@@ -22,11 +22,7 @@ const StrutturaDateOrari = ({ content }) => {
       tag_id="date_e_orari"
       title={intl.formatMessage(messages.date_e_orari)}
     >
-      {richTextHasContent(content.orari) && (
-        <RichText
-          data={content.orari}
-        />
-      )}
+      {richTextHasContent(content.orari) && <RichText data={content.orari} />}
     </RichTextSection>
   );
 };

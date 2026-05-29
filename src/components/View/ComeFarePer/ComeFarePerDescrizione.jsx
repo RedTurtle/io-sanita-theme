@@ -25,9 +25,7 @@ const ComeFarePerDescrizione = ({ content }) => {
       {richTextHasContent(content?.panoramica) && (
         <div className="mt-4">
           <div className="mb-5">
-            <RichText
-              data={content?.panoramica}
-            />
+            <RichText data={content?.panoramica} />
           </div>
         </div>
       )}

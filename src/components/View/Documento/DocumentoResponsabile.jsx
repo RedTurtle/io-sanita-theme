@@ -15,20 +15,20 @@ const DocumentoResponsabile = ({ content }) => {
   const intl = useIntl();
 
   return content?.uo_correlata?.length > 0 ? (
-      <RichTextSection
-        tag_id="responsabile"
-        title={intl.formatMessage(messages.responsabile)}
-      >
-        <Row>
-          {content.uo_correlata.map((item) => {
-            return (
-              <Col lg={6} className="py-lg-2" key={item['@id']}>
-                <CardPlace item={item} />
-              </Col>
-            );
-          })}
-        </Row>
-      </RichTextSection>
+    <RichTextSection
+      tag_id="responsabile"
+      title={intl.formatMessage(messages.responsabile)}
+    >
+      <Row>
+        {content.uo_correlata.map((item) => {
+          return (
+            <Col lg={6} className="py-lg-2" key={item['@id']}>
+              <CardPlace item={item} />
+            </Col>
+          );
+        })}
+      </Row>
+    </RichTextSection>
   ) : (
     <></>
   );

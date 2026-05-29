@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   procedure_collegate: {
@@ -19,8 +19,7 @@ const ServizioProcedureCollegate = ({ content }) => {
       title={intl.formatMessage(messages.procedure_collegate)}
       show_title={true}
       data={content.procedure_collegate_esito}
-    >
-    </RichTextSection>
+    ></RichTextSection>
   ) : (
     <></>
   );
