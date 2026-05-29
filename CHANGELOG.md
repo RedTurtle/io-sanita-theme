@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.31.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.0...2.31.1) (2026-05-29)
+
+### Bug Fixes
+
+* gelocation edge cases ([#146](https://github.com/RedTurtle/io-sanita-theme/issues/146)) ([0ec2a50](https://github.com/RedTurtle/io-sanita-theme/commit/0ec2a509ba4098cdce3932145a11c4596313ddec))
+
 ## [2.31.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.2...2.31.0) (2026-05-28)
 
 ### Features
