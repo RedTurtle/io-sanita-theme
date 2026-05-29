@@ -28,6 +28,7 @@ export const useLoadSteps = (steps = []) => {
         dispatch(resetContent(item['@id']));
       });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export const useLoadSteps = (steps = []) => {
         ]);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subrequests]);
 
   return { loadedSteps };

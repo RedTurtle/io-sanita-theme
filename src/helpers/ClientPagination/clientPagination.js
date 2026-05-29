@@ -10,6 +10,7 @@ export const useClientPagination = ({ items, b_size = 4 }) => {
     const start = (currentPage - 1) * b_size;
     const end = start + b_size;
     setDisplayItems(items.slice(start, end));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
   const totalPages = Math.ceil(items.length / b_size);
