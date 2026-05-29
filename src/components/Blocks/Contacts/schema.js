@@ -55,7 +55,6 @@ export function ContactsSchema({
     properties: {
       bg_color: {
         title: 'Colore di sfondo',
-        default: 'none',
         widget: 'color_picker',
         default: 'bg-primary-lightest',
         colors: [

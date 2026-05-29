@@ -82,7 +82,6 @@ export function IconsSchema({
 
       bg_color: {
         title: 'Colore di sfondo',
-        default: 'none',
         widget: 'color_picker',
         default: 'bg-primary-lightest',
         colors: [
