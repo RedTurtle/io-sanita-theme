@@ -1,5 +1,6 @@
 import { defineMessages } from 'react-intl';
 import { addSchemaField } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
+import { addSchemaStyles } from 'io-sanita-theme/helpers';
 
 import config from '@plone/volto/registry';
 

@@ -1,11 +1,8 @@
-import { defineMessages } from 'react-intl';
-
 import ListingBlockSchema from '@plone/volto/components/manage/Blocks/Listing/schema';
 
 import { addFieldsetAfter } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
 
 export const schemaListing = (props) => {
-  const intl = props.intl;
   const baseSchema = ListingBlockSchema(props);
 
   const defaultFieldset = baseSchema.fieldsets.find(
@@ -19,10 +16,6 @@ export const schemaListing = (props) => {
         field !== 'querystring',
     );
   }
-
-  const findFieldset = (fieldset) => {
-    return fieldset.id === 'linkmore';
-  };
 
   addFieldsetAfter(baseSchema, 'default', {
     id: 'criteria',
@@ -40,10 +33,3 @@ export const schemaListing = (props) => {
 
   return baseSchema;
 };
-
-const messages = defineMessages({
-  alignButton: {
-    id: 'alignButton',
-    defaultMessage: 'Allinea il bottone a destra',
-  },
-});

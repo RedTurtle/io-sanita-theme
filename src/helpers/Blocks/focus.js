@@ -42,7 +42,7 @@ export const useHandleDetachedBlockFocus = (
   defaultSelectedField,
 ) => {
   const [selectedField, setSelectedField] = useState(defaultSelectedField);
-  const { selected, onSelectBlock, block } = blockProps;
+  const { selected } = blockProps;
 
   useEffect(() => {
     if (selected && !selectedField) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from 'react';
+import { useEffect, useState, createRef } from 'react';
 import { scrollIntoView } from 'io-sanita-theme/helpers';
 
 export const useClientPagination = ({ items, b_size = 4 }) => {

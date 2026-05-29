@@ -1,7 +1,4 @@
-import config from '@plone/volto/registry';
 import { defineMessages, createIntlCache, createIntl } from 'react-intl';
-
-import { addStyling } from '@plone/volto/helpers';
 
 const messages = defineMessages({
   panels: { id: 'Panels', defaultMessage: 'Pannelli' },

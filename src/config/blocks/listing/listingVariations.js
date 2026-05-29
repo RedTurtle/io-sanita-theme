@@ -63,8 +63,7 @@ import {
 
   // addPhotogalleryTemplateOptions,
 } from 'io-sanita-theme/config/blocks/listing/ListingOptions';
-import { cloneBlock, removeListingVariation } from 'io-sanita-theme/helpers';
-import { title } from 'process';
+import { cloneBlock } from 'io-sanita-theme/helpers';
 
 const iosanitaListingVariations = [
   {
