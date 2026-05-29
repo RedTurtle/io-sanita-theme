@@ -766,6 +766,10 @@ body.cms-ui {
   .blocks-chooser .ui.accordion .title ~ .content {
     display: contents;
   }
+
+  .blocks-widget .blocks-widget-container .block-editor-slateTable .slateTable .toolbar {
+    top: -50px !important;
+  }
 }
 
 /*Has toolbar*/
