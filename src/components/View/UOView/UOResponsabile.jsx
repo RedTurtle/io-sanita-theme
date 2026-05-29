@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-// import { RichTextSection, richTextHasContent, RichText } from 'io-sanita-theme/helpers';
+import { RichTextSection, richTextHasContent, RichText } from 'io-sanita-theme/helpers';
 import { CardPersona } from 'io-sanita-theme/components';
 import { Row, Col } from 'design-react-kit';
 
