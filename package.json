@@ -46,7 +46,13 @@
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
     "release-alpha": "release-it --preRelease=alpha",
-    "release-rc": "release-it --preRelease=rc"
+    "release-rc": "release-it --preRelease=rc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier": "prettier --check src",
+    "prettier:fix": "prettier --write src",
+    "stylelint": "stylelint --allow-empty-input 'src/**/*.{less,scss,css,overrides}'",
+    "stylelint:fix": "stylelint --fix --allow-empty-input 'src/**/*.{less,scss,css,overrides}'"
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
