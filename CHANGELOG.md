@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.31.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.1...2.31.2) (2026-05-29)
+
+### Bug Fixes
+
+* responsabile custom in UO (per sync) ([#148](https://github.com/RedTurtle/io-sanita-theme/issues/148)) ([a169a70](https://github.com/RedTurtle/io-sanita-theme/commit/a169a709a524bdca51696c4fd4669bdf45ec98c0))
+
 ## [2.31.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.0...2.31.1) (2026-05-29)
 
 ### Bug Fixes
