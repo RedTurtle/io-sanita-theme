@@ -40,8 +40,8 @@ export const addSchemaStyles = ({
     },
   },
 }) => {
-  let fieldSet = schema.fieldsets.filter((f) => f.id == fieldsetName);
-  if (fieldSet?.length == 0) {
+  let fieldSet = schema.fieldsets.filter((f) => f.id === fieldsetName);
+  if (fieldSet?.length === 0) {
     fieldSet = {
       id: fieldsetName,
       title: fieldsetName,

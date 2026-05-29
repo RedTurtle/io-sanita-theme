@@ -16,7 +16,7 @@ export const useClientPagination = ({ items, b_size = 4 }) => {
 
   const onPaginationChange = (activePage) => {
     let page = activePage;
-    if (page != currentPage && ref?.current) {
+    if (page !== currentPage && ref?.current) {
       scrollIntoView({ ref: ref.current });
     }
     setCurrentPage(page);

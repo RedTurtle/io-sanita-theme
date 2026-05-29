@@ -32,7 +32,7 @@ export function ContactsSchema({
 }) {
   formData.bg_color =
     ['primary', 'secondary'].indexOf(formData.bg_color ?? '') >= 0
-      ? formData.bg_color == 'primary'
+      ? formData.bg_color === 'primary'
         ? 'bg-primary-lightest'
         : 'bg-primary-dark'
       : formData.bg_color;
