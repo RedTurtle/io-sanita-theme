@@ -2,8 +2,9 @@ import { defineMessages, useIntl } from 'react-intl';
 import React from 'react';
 import { Card, CardTitle, CardBody } from 'design-react-kit';
 import PropTypes from 'prop-types';
-
+import { useSelector } from 'react-redux';
 import { viewDate } from 'io-sanita-theme/helpers';
+import moment from 'moment-timezone';
 
 const messages = defineMessages({
   effective: {
@@ -88,43 +89,51 @@ const BandoDates = ({ content }) => {
   return content ? <Dates dates={dates} /> : null;
 };
 
-const Dates = ({ dates }) => (
-  <div className="point-list-wrapper my-4 mb-5">
-    {dates.map((item, index) => {
-      return (
-        item.date && (
-          <div className="point-list" key={index}>
-            <div
-              className="point-list-aside point-list-warning"
-              aria-label={item.date.format('DD MMMM Y')}
-            >
-              <span className="point-date text-monospace" aria-hidden={true}>
-                {item.date.format('DD')}
-              </span>
-              <span className="point-month text-monospace" aria-hidden={true}>
-                {item.date.format('MMM')}/{item.date.format('YY')}
-              </span>
-            </div>
-            <div className="point-list-content">
-              <Card
-                className="card card-teaser rounded shadow"
-                noWrapper={true}
-                tag="div"
+const Dates = ({ dates }) => {
+  const site = useSelector((state) => state.site.data);
+  const tz = site?.['plone.portal_timezone'] ?? 'Europe/Rome';
+
+  return (
+    <div className="point-list-wrapper my-4 mb-5">
+      {dates.map((item, index) => {
+        return (
+          item.date && (
+            <div className="point-list" key={index}>
+              <div
+                className="point-list-aside point-list-warning"
+                aria-label={moment.tz(item.date, tz).format('DD MMMM Y')}
               >
-                <CardBody tag="div" className={'card-body'}>
-                  <CardTitle tag="p">
-                    {item.show_hour && <>{item.date.format('HH:mm')} - </>}
-                    {item.label}
-                  </CardTitle>
-                </CardBody>
-              </Card>
+                <span className="point-date text-monospace" aria-hidden={true}>
+                  {moment.tz(item.date, tz).format('DD')}
+                </span>
+                <span className="point-month text-monospace" aria-hidden={true}>
+                  {moment.tz(item.date, tz).format('MMM')}/
+                  {moment.tz(item.date, tz).format('YY')}
+                </span>
+              </div>
+              <div className="point-list-content">
+                <Card
+                  className="card card-teaser rounded shadow"
+                  noWrapper={true}
+                  tag="div"
+                >
+                  <CardBody tag="div" className={'card-body'}>
+                    <CardTitle tag="p">
+                      {item.show_hour && (
+                        <>{moment.tz(item.date, tz).format('HH:mm')} - </>
+                      )}
+                      {item.label}
+                    </CardTitle>
+                  </CardBody>
+                </Card>
+              </div>
             </div>
-          </div>
-        )
-      );
-    })}
-  </div>
-);
+          )
+        );
+      })}
+    </div>
+  );
+};
 
 export { Dates };
 
