@@ -1,5 +1,5 @@
-export const GET_SEARCH_BANDI_FILTERS = 'GET_SEARCH_BANDI_FILTERS';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
+export const GET_SEARCH_BANDI_FILTERS = 'GET_SEARCH_BANDI_FILTERS';
 
 /**
  * Get search bandi filters.

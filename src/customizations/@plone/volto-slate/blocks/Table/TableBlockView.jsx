@@ -94,14 +94,14 @@ const View = ({ data }) => {
         state.column !== index
           ? 'ascending'
           : state.direction === 'ascending'
-            ? 'descending'
-            : 'ascending',
+          ? 'descending'
+          : 'ascending',
       sortLabel:
         state.column !== index
           ? intl.formatMessage(messages.ascendingTableSort)
           : state.direction === 'ascending'
-            ? intl.formatMessage(messages.descendingTableSort)
-            : intl.formatMessage(messages.ascendingTableSort),
+          ? intl.formatMessage(messages.descendingTableSort)
+          : intl.formatMessage(messages.ascendingTableSort),
     });
   };
 

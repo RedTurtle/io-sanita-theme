@@ -38,7 +38,7 @@ const StrutturaResponsabile = ({ content }) => {
       {/* Contenuto testuale alternativo, usato ad esempio con il sync virtualdesk */}
       {has_richTextContent && (
         <div className="richtext-blocks font-serif">
-            <RichText data={content?.responsabile_correlato_text} />
+          <RichText data={content?.responsabile_correlato_text} />
         </div>
       )}
     </RichTextSection>

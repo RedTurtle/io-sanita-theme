@@ -26,9 +26,9 @@
 
     .card-title,
     .card-body h5.card-title {
-      color: transparent;
-      margin-bottom: 1rem;
       min-height: 2rem;
+      margin-bottom: 1rem;
+      color: transparent;
     }
 
     .category-top {
@@ -112,8 +112,8 @@
 
   .skeleton-item-title {
     @extend %skeleton-animation;
-    background-color: var(--skeleton-bg);
     min-height: 0.5em;
+    background-color: var(--skeleton-bg);
   }
 
   .slick-slider {

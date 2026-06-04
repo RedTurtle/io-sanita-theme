@@ -7,9 +7,13 @@ const Placeholder = ({ content, position, children }) => {
   const PlaceholderComponent =
     config.views?.ioSanitaContentTypesViewsConfig?.[contentType]?.placeholder?.[
       position
-    ] ;
+    ];
 
-  return PlaceholderComponent? <PlaceholderComponent content={content} children={children} /> : <React.Fragment children={children}/> ;
+  return PlaceholderComponent ? (
+    <PlaceholderComponent content={content} children={children} />
+  ) : (
+    <React.Fragment children={children} />
+  );
 };
 
 export default Placeholder;

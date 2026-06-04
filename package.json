@@ -40,13 +40,31 @@
     "@eeacms/volto-taxonomy",
     "volto-repeatable-content-block"
   ],
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.overrides",
+        "options": {
+          "parser": "less"
+        }
+      }
+    ]
+  },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
     "release-alpha": "release-it --preRelease=alpha",
-    "release-rc": "release-it --preRelease=rc"
+    "release-rc": "release-it --preRelease=rc",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prettier": "prettier --check src",
+    "prettier:fix": "prettier --write src",
+    "stylelint": "stylelint --allow-empty-input 'src/**/*.{less,scss,css,overrides}'",
+    "stylelint:fix": "stylelint --fix --allow-empty-input 'src/**/*.{less,scss,css,overrides}'"
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
@@ -70,7 +88,8 @@
     "stylelint": "15.10.3",
     "stylelint-config-idiomatic-order": "9.0.0",
     "stylelint-config-sass-guidelines": "10.0.0",
-    "stylelint-prettier": "4.0.2"
+    "stylelint-prettier": "4.0.2",
+    "typescript": "5.3.3"
   },
   "peerDependencies": {
     "@plone/volto": "^18.0.0"

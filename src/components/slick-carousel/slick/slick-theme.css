@@ -6,9 +6,6 @@
 /* Arrows */
 .slick-prev,
 .slick-next {
-  font-size: 0;
-  line-height: 0;
-
   position: absolute;
   top: 50%;
 
@@ -17,16 +14,18 @@
   width: 20px;
   height: 20px;
   padding: 0;
+  border: none;
+  background: transparent;
+
+  color: transparent;
+
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
+  outline: none;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
-
-  cursor: pointer;
-
-  color: transparent;
-  border: none;
-  outline: none;
-  background: transparent;
 }
 
 /* Dots */

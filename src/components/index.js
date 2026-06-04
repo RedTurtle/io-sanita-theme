@@ -1,5 +1,4 @@
 import loadable from '@loadable/component';
-import OverlayLoading from './OverlayLoading/OverlayLoading';
 
 export Icon from 'io-sanita-theme/components/Icon/Icon';
 export FontAwesomeIcon from 'io-sanita-theme/components/Icon/FontAwesomeIcon';

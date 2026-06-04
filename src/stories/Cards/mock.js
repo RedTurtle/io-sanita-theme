@@ -102,7 +102,7 @@ export const ExampleLink = {
   review_state: 'private',
   title: 'Test del collegamento',
   type_title: 'Collegamento',
-  remoteUrl: "/link-di-test",
+  remoteUrl: '/link-di-test',
 };
 
 export const ExampleSimpleItem = {

@@ -1,5 +1,3 @@
-import { SchemaOrgUtils } from './SchemaOrg/SchemaOrg';
-
 export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export {
   viewDate,

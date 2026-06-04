@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { HelpBox } from 'io-sanita-theme/components/View/commons';
-import {
-  richTextHasContent,
-  RichTextSection,
-} from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   ulteriori_informazioni: {
@@ -23,7 +20,7 @@ const NewsItemUlterioriInformazioni = ({ content }) => {
       tag_id="ulteriori_informazioni"
       title={intl.formatMessage(messages.ulteriori_informazioni)}
     >
-        <HelpBox text={content?.ulteriori_informazioni} />
+      <HelpBox text={content?.ulteriori_informazioni} />
     </RichTextSection>
   ) : (
     <></>

@@ -1,5 +1,4 @@
 import { ConfigType } from '@plone/registry';
-import { validateTempiScadenze } from 'io-sanita-theme/helpers/FormValidation/DataGrid';
 
 export const registerIOSanitaValidators = (config: ConfigType) => {
   //   esempio

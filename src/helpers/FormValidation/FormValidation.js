@@ -1,6 +1,5 @@
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
-import { defineMessages } from 'react-intl';
 
 export const blocksFieldIsEmpty = (field) => {
   return (

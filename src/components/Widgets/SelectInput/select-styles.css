@@ -44,11 +44,11 @@
 }
 
 .react-select__option .icon-container .icon {
-  height: 1rem;
   width: auto;
+  height: 1rem;
 }
 
 .react-select__control .react-select__input input:focus:not(.focus--mouse) {
-  outline: none !important;
   box-shadow: none !important;
+  outline: none !important;
 }

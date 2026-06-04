@@ -120,8 +120,8 @@
   border-top: var(--is-footer-borders); // $footer-borders;
   a,
   button {
-    word-break: normal;
     font-size: $footer-font-size !important;
+    word-break: normal;
   }
 
   a,
