@@ -193,20 +193,20 @@ body.cms-ui {
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
   .block.numbersBlock > .ui.basic.button.delete-button {
-    background-color: #fff !important;
-    color: #575757 !important;
+    min-height: unset;
+    padding: 5px !important;
     border: 1px solid #fff !important;
     border-radius: 100% !important;
-    padding: 5px !important;
-    margin-right: -40px !important;
-    line-height: 0;
     margin-top: -5px;
-    min-height: unset;
+    margin-right: -40px !important;
+    background-color: #fff !important;
+    color: #575757 !important;
+    line-height: 0;
 
     svg,
     svg:not(:hover) {
-      line-height: 0;
       fill: currentColor !important;
+      line-height: 0;
     }
 
     .icon {
@@ -270,16 +270,16 @@ body.cms-ui {
   }
 
   .react-select__option .icon-container .icon {
-    height: 1rem;
     width: auto;
+    height: 1rem;
   }
 
   //slate
   .editor-link {
     &.input-anchorlink-theme {
       input {
-        font-size: 0.8rem;
         padding: 0 0.3rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -644,8 +644,8 @@ body.cms-ui {
       .expired {
         display: inline-block;
         padding: 2px 8px;
-        margin-left: 0.5em;
         border-radius: 4px;
+        margin-left: 0.5em;
         font-size: 0.8em;
         font-weight: 600;
         text-decoration: none;
@@ -757,10 +757,10 @@ body.cms-ui {
   /*Colors widget*/
   .color-picker-widget {
     .ui.circular.button {
-      border-radius: 100%;
       width: 2em;
       height: 2em;
       padding: 1em;
+      border-radius: 100%;
 
       &.bg-none {
         background-image: repeating-conic-gradient(
@@ -781,9 +781,9 @@ body.cms-ui {
         margin-top: 0;
 
         .ui.attached.tabular.menu {
-          margin-top: -1rem;
           max-width: 100%;
           height: 100%;
+          margin-top: -1rem;
         }
       }
     }
