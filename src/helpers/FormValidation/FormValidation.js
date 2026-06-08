@@ -24,7 +24,10 @@ export const blocksFieldIsEmpty = (field) => {
           )?.length
         );
       }
-      return false;
+      // qualsiasi altro tipo di blocco (callout, immagine, video, listing, ...)
+      // è considerato contenuto valido: la presenza del blocco rende il campo
+      // non vuoto, coerentemente con richTextHasContent
+      return true;
     })?.length === 0
   );
 };

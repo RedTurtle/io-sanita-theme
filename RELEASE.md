@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Fix
+
+- Corretta la validazione dei campi a blocchi obbligatori: ora un campo contenente solo blocchi non testuali (es. Callout, Immagine, Video) viene riconosciuto come compilato e il contenuto può essere salvato.
+
 ## Versione 2.31.0 (28/05/2026)
 
 ### Novità
