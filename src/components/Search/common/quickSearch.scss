@@ -17,8 +17,8 @@
 
     @media (max-width: #{map-get($grid-breakpoints, xl)}) {
       &.scroll-on-mobile.flex-wrap {
-        overflow-x: scroll;
         flex-wrap: nowrap !important;
+        overflow-x: scroll;
 
         > .btn.quick-item {
           text-wrap: nowrap;

@@ -48,7 +48,7 @@ const ModuloView = ({ content }) => {
       <RelatedItems content={content} />
 
       <RelatedItemInEvidence content={content} />
-      
+
       <Placeholder position="afterRelatedItems" content={content} />
     </>
   );

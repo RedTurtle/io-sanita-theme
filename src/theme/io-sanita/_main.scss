@@ -40,8 +40,8 @@ a {
 }
 
 .icon.external-link {
-  vertical-align: baseline;
   fill: currentColor;
+  vertical-align: baseline;
 }
 
 .font-small {
@@ -95,10 +95,10 @@ iframe {
     display: inline-block;
     padding: 12px 24px;
     border-radius: $btn-border-radius;
+    margin: 0;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    margin: 0;
     &:hover,
     &:active {
       font-weight: 600;
@@ -201,8 +201,8 @@ iframe {
   .icon.fa-icon.placeholder {
     //to prevent layout shift
     display: inline-block;
-    height: 1em;
     width: auto;
+    height: 1em;
     line-height: 1;
   }
 }

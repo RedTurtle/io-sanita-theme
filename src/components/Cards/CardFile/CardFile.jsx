@@ -145,7 +145,11 @@ export const CardFile = ({
                 item={!isEditMode ? _item : null}
                 href={isEditMode ? '#' : ''}
                 className="card-title-link flex-grow-1 pe-4"
-                target={_item['@type'] === 'Link' || showPDFPreview ? '_blank' : '_self'}
+                target={
+                  _item['@type'] === 'Link' || showPDFPreview
+                    ? '_blank'
+                    : '_self'
+                }
                 rel={_item['@type'] === 'Link' ? 'noopener noreferrer' : ''}
                 data-element={titleDataElement}
               >

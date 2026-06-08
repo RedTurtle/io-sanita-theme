@@ -2,10 +2,7 @@ import {
   AGGREGATION_PAGE_ARGOMENTO,
   AGGREGATION_PAGE_TIPOLOGIA_UTENTE,
 } from 'io-sanita-theme/config/ioSanitaConfig';
-import { useHomePath } from 'io-sanita-theme/helpers';
-
-export const getAggregationPageUrl = (type, value) => {
-  const homepath = useHomePath();
+export const getAggregationPageUrl = (homepath, type, value) => {
   let href =
     homepath +
     (type === 'topics'

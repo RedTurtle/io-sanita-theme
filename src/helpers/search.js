@@ -70,9 +70,9 @@ const updateGroupCheckedStatus = (group, checked) =>
 const getSections = (fetchedSections, location, subsite) => {
   const pathname = location?.pathname?.length ? location.pathname : '/';
   let items = getItemsByPath(fetchedSections, pathname, !subsite);
-  items.map((item) => {
+  items.forEach((item) => {
     item['@id'] = flattenToAppURL(item['@id']);
-    item.items.map((i) => (i['@id'] = flattenToAppURL(i['@id'])));
+    item.items.forEach((i) => (i['@id'] = flattenToAppURL(i['@id'])));
   });
   return items;
 };

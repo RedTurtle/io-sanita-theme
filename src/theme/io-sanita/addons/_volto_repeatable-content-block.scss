@@ -1,57 +1,55 @@
 .view-viewview #main-content-section .repeatableContentBlock {
-    * {
-        word-break: break-all;
-        font-family: 'Titillium Web';
-        font-size: 14px;
+  * {
+    font-family: 'Titillium Web';
+    font-size: 14px;
+    word-break: break-all;
+  }
 
-    }
-
-    .full-width {
-        width: 100% !important;
-        position: unset !important;
-        margin: 0px !important;
-    }
+  .full-width {
+    position: unset !important;
+    width: 100% !important;
+    margin: 0px !important;
+  }
 }
 
+.view-editview
+  .blocks-widget-container
+  .block-editor-repeatableContentBlock
+  .repeatableContentBlock {
+  * {
+    font-size: 12px !important;
+  }
 
-.view-editview .blocks-widget-container .block-editor-repeatableContentBlock .repeatableContentBlock {
+  .full-width,
+  .block.image.align.full img.full-width {
+    position: unset !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0px !important;
+  }
 
-    * {
-        font-size: 12px !important;
-
+  .full-width {
+    .container {
+      width: 100% !important;
+      max-width: 100%;
     }
 
-    .full-width,
-    .block.image.align.full img.full-width {
-        width: 100% !important;
-        position: unset !important;
-        margin: 0px !important;
-        max-width: 100%;
-
+    .row {
+      margin: 0px;
     }
+  }
 
-    .full-width {
-        .container {
-            max-width: 100%;
-            width: 100% !important;
-        }
+  .col-sm-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 
-        .row {
-            margin: 0px;
-        }
-    }
-
-    .col-sm-12 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    ::before {
-        height: 40px;
-        top: -1.5rem;
-    }
+  ::before {
+    top: -1.5rem;
+    height: 40px;
+  }
 }
 
 #main-content-section .repeatableContentBlock .public-ui .full-width .col-lg-4 {
-    width: 70%;
+  width: 70%;
 }

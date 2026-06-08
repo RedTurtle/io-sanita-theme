@@ -2,9 +2,9 @@
 
 .search-view {
   .form-check .form-control {
-    min-height: 1.5rem;
     top: 0;
     left: 0;
+    min-height: 1.5rem;
   }
 
   @media (min-width: 576px) {
@@ -16,13 +16,13 @@
   @media (max-width: #{map-get($grid-breakpoints, lg)}) {
     #filtersCollapse {
       position: fixed;
+      z-index: 99999;
       top: 0;
       left: 0;
+      overflow: scroll;
       width: 100vw;
       height: 100vh;
       background-color: #fff;
-      z-index: 99999;
-      overflow: scroll;
 
       .column-filters,
       .mobile-filters-header {

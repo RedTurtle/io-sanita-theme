@@ -4,9 +4,9 @@
  */
 
 const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
-const fileLoaderFinder = makeLoaderFinder('file-loader');
-const urlLoaderFinder = makeLoaderFinder('url-loader');
-const lessLoaderFinder = makeLoaderFinder('less-loader');
+// const fileLoaderFinder = makeLoaderFinder('file-loader');
+// const urlLoaderFinder = makeLoaderFinder('url-loader');
+// const lessLoaderFinder = makeLoaderFinder('less-loader');
 const babelLoaderFinder = makeLoaderFinder('babel-loader');
 
 const plugins = (defaultPlugins) => {

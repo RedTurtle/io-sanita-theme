@@ -42,7 +42,7 @@ export const useHandleDetachedBlockFocus = (
   defaultSelectedField,
 ) => {
   const [selectedField, setSelectedField] = useState(defaultSelectedField);
-  const { selected, onSelectBlock, block } = blockProps;
+  const { selected } = blockProps;
 
   useEffect(() => {
     if (selected && !selectedField) {
@@ -50,6 +50,7 @@ export const useHandleDetachedBlockFocus = (
     } else if (!selected) {
       setSelectedField(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
 
   useEffect(() => {
@@ -68,6 +69,7 @@ export const useHandleDetachedBlockFocus = (
         }
       };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected, selectedField]);
 
   return { selectedField, setSelectedField };

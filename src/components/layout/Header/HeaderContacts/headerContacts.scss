@@ -3,30 +3,30 @@
 
 .header-contacts {
   @include rem-size(font-size, 14);
-  background-color: var(--primary-lightest);
   padding: 0.3rem 0;
   border-bottom: 1px solid var(--primary-lighter);
+  background-color: var(--primary-lightest);
 
   .row {
-    row-gap: 0.5rem;
     column-gap: 1em;
+    row-gap: 0.5rem;
 
     @media (max-width: #{map-get($grid-breakpoints, md)}) {
-      row-gap: 0.5rem;
       column-gap: 0;
+      row-gap: 0.5rem;
     }
     .col.contact-wrapper {
       display: flex;
-      flex-grow: 0;
-      flex-basis: auto;
       width: auto;
+      flex-basis: auto;
+      flex-grow: 0;
       align-items: center;
       column-gap: 0.5em;
 
       .icon {
         width: 1.2em;
-        height: 1.2em;
         min-width: 1.2em;
+        height: 1.2em;
       }
       .link-value {
         p {
@@ -65,8 +65,8 @@
 @media (max-width: #{map-get($grid-breakpoints, ml)}) {
   .it-header-wrapper.is-sticky.it-header-sticky {
     .header-contacts .container {
-      padding-left: 0;
       padding-right: 0;
+      padding-left: 0;
     }
   }
 }

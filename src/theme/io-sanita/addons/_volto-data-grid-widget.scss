@@ -1,22 +1,21 @@
 .data-grid-widget {
-    .ui.stackable.equal.grid {
-        padding-left: 1rem;
-        padding-right: 1rem;
+  .ui.stackable.equal.grid {
+    padding-right: 1rem;
+    padding-left: 1rem;
 
-        .row {
-            .column.field-column {
-                padding-right: 0;
-            }
+    .row {
+      .column.field-column {
+        padding-right: 0;
+      }
 
-            .column.term-actions {
-                padding: 0 0.5rem 0 0.8rem;
+      .column.term-actions {
+        padding: 0 0.5rem 0 0.8rem;
 
-                button.delete-term {
-                    padding-right: 0;
-                    padding-left: 0;
-                }
-            }
+        button.delete-term {
+          padding-right: 0;
+          padding-left: 0;
         }
-
+      }
     }
+  }
 }
