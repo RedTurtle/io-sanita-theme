@@ -192,7 +192,7 @@ body.cms-ui {
   .drag.handle.wrapper,
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
-  .block.numbersBlock>.ui.basic.button.delete-button {
+  .block.numbersBlock > .ui.basic.button.delete-button {
     background-color: #fff !important;
     color: #575757 !important;
     border: 1px solid #fff !important;
@@ -244,7 +244,7 @@ body.cms-ui {
 
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
-  .block.numbersBlock>.ui.basic.button.delete-button,
+  .block.numbersBlock > .ui.basic.button.delete-button,
   .block.contacts .ui.basic.button.delete-button {
     margin-right: -39px !important;
 
@@ -392,7 +392,7 @@ body.cms-ui {
           text-overflow: ellipsis;
           white-space: nowrap;
 
-          &:hover+.tooltip-text {
+          &:hover + .tooltip-text {
             opacity: 1;
             visibility: visible;
           }
@@ -486,7 +486,6 @@ body.cms-ui {
     //bs-colors
     .button.primary,
     .button.callout_note {
-
       &,
       &.active {
         background-color: var(--bs-primary);
@@ -494,7 +493,6 @@ body.cms-ui {
     }
 
     .button.info {
-
       &,
       &.active {
         background-color: var(--bs-info);
@@ -502,7 +500,6 @@ body.cms-ui {
     }
 
     .button.success {
-
       &,
       &.active {
         background-color: var(--bs-success);
@@ -510,7 +507,6 @@ body.cms-ui {
     }
 
     .button.warning {
-
       &,
       &.active {
         background-color: var(--bs-warning);
@@ -518,7 +514,6 @@ body.cms-ui {
     }
 
     .button.danger {
-
       &,
       &.active {
         background-color: var(--bs-danger);
@@ -545,7 +540,6 @@ body.cms-ui {
   /*Blocchi*/
   .block.image {
     .block.align {
-
       &.left,
       &.right {
         z-index: 0;
@@ -554,7 +548,6 @@ body.cms-ui {
   }
 
   .block-editor-listing {
-
     //blocchi listing con sfondo, in edit non vede gli stili di pb-4 ecc perchè sono sotto cms-ui
     &.pb-4 {
       .block.listing {
@@ -599,17 +592,16 @@ body.cms-ui {
 
   .block-editor-title,
   .block-editor-description {
-    &+[class^='block-editor'] {
+    & + [class^='block-editor'] {
       margin-top: 2.8rem;
     }
   }
 
-  .block-editor-title+.block-editor-description {
+  .block-editor-title + .block-editor-description {
     margin-top: 0;
   }
 
   .block-editor-description {
-
     &,
     .documentDescription {
       color: $body-color;
@@ -686,7 +678,6 @@ body.cms-ui {
   /*History*/
   &.view-diffview,
   &.section-historyview {
-
     .ui.table,
     #toolbar .ui.table {
       width: 100%;
@@ -772,8 +763,10 @@ body.cms-ui {
       padding: 1em;
 
       &.bg-none {
-        background-image: repeating-conic-gradient(#f5f2fa 0 25%,
-            transparent 0 50%);
+        background-image: repeating-conic-gradient(
+          #f5f2fa 0 25%,
+          transparent 0 50%
+        );
         background-position: 50%;
         background-size: 12px 12px;
       }
@@ -797,11 +790,15 @@ body.cms-ui {
   }
 
   /* Dropdown menu blocks */
-  .blocks-chooser .ui.accordion .title~.content {
+  .blocks-chooser .ui.accordion .title ~ .content {
     display: contents;
   }
 
-  .blocks-widget .blocks-widget-container .block-editor-slateTable .slateTable .toolbar {
+  .blocks-widget
+    .blocks-widget-container
+    .block-editor-slateTable
+    .slateTable
+    .toolbar {
     top: -50px;
   }
 }
