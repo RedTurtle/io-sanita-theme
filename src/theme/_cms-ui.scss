@@ -12,7 +12,8 @@ body.cms-ui {
     font-family: $font-family-sans-serif;
 
     %heading {
-      margin-top: 0; /* 1*/
+      margin-top: 0;
+      /* 1*/
       margin-bottom: $headings-margin-bottom;
       color: $headings-color;
       font-family: $font-family-sans-serif;
@@ -24,6 +25,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h1-font-size);
       font-weight: 700 !important;
+
       @include media-breakpoint-up(sm) {
         font-size: 3rem;
         line-height: 3.5rem;
@@ -33,9 +35,11 @@ body.cms-ui {
     h2 {
       @extend %heading;
       @include font-size($h2-font-size);
+
       &:not(.h3):not(.h4):not(.h5):not(.h6) {
         font-weight: 700 !important;
       }
+
       @include media-breakpoint-up(sm) {
         font-size: 2.5rem;
         line-height: 3rem;
@@ -46,6 +50,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h3-font-size);
       font-weight: 700 !important;
+
       @include media-breakpoint-up(sm) {
         font-size: 2rem;
         line-height: 2.5rem;
@@ -56,6 +61,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h4-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.75rem;
         line-height: 2rem;
@@ -66,6 +72,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h5-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -76,6 +83,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h6-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.125rem;
       }
@@ -87,6 +95,7 @@ body.cms-ui {
     }
 
     @import 'bootstrap-italia/src/scss/custom/type'; //to apply styles for headers on different screen sizes
+
     &,
     p,
     ul,
@@ -193,19 +202,23 @@ body.cms-ui {
     background-color: #fff !important;
     color: #575757 !important;
     line-height: 0;
+
     svg,
     svg:not(:hover) {
       fill: currentColor !important;
       line-height: 0;
     }
+
     .icon {
       background: none;
     }
+
     &:hover,
     &:focus,
     &:focus-within {
       background-color: black !important;
       color: #fff !important;
+
       svg {
         fill: #fff !important;
       }
@@ -215,10 +228,12 @@ body.cms-ui {
   &.has-toolbar.has-sidebar .drag.handle.wrapper,
   .drag.handle.wrapper {
     margin-left: -40px !important;
+
     &:hover {
       background-color: #4e8aa5 !important;
     }
   }
+
   // @media only screen and (min-width: 1655px) {
   //   &.has-toolbar.has-sidebar .drag.handle.wrapper {
   //     margin-left: -40px !important;
@@ -232,6 +247,7 @@ body.cms-ui {
   .block.numbersBlock > .ui.basic.button.delete-button,
   .block.contacts .ui.basic.button.delete-button {
     margin-right: -39px !important;
+
     &:hover,
     &:focus,
     &:focus-within {
@@ -267,6 +283,7 @@ body.cms-ui {
       }
     }
   }
+
   /*Date picker*/
   .SingleDatePicker {
     z-index: unset;
@@ -314,6 +331,7 @@ body.cms-ui {
     .ui .grid h3 .content {
       font-size: 1rem;
     }
+
     a {
       text-decoration: none;
 
@@ -473,18 +491,21 @@ body.cms-ui {
         background-color: var(--bs-primary);
       }
     }
+
     .button.info {
       &,
       &.active {
         background-color: var(--bs-info);
       }
     }
+
     .button.success {
       &,
       &.active {
         background-color: var(--bs-success);
       }
     }
+
     .button.warning {
       &,
       &.active {
@@ -533,15 +554,19 @@ body.cms-ui {
         padding-bottom: 0.2rem !important; //per simulare il pb-4
       }
     }
+
     &.full-width {
       .drag.handle.wrapper {
         left: 20%;
+
         @media (max-width: #{map-get($grid-breakpoints, sm)}) {
           left: 10%;
         }
       }
+
       .ui.delete-button {
         right: 20%;
+
         @media (max-width: #{map-get($grid-breakpoints, sm)}) {
           right: 10%;
         }
@@ -555,7 +580,8 @@ body.cms-ui {
       min-width: 1px;
 
       &:empty:before {
-        display: block; /* For Firefox */
+        display: block;
+        /* For Firefox */
         content: attr(placeholder);
         font-weight: inherit;
         opacity: 0.333;
@@ -637,6 +663,7 @@ body.cms-ui {
       }
     }
   }
+
   #page-contents.ui.container.folder-contents {
     @media (min-width: 992px) {
       width: 90% !important;
@@ -766,6 +793,14 @@ body.cms-ui {
   .blocks-chooser .ui.accordion .title ~ .content {
     display: contents;
   }
+
+  .blocks-widget
+    .blocks-widget-container
+    .block-editor-slateTable
+    .slateTable
+    .toolbar {
+    top: -50px;
+  }
 }
 
 /*Has toolbar*/
@@ -774,6 +809,7 @@ body.has-toolbar {
     .toolbar-content.show {
       z-index: 501;
     }
+
     .personal-tools {
       .avatar {
         width: 220px;
@@ -781,6 +817,7 @@ body.has-toolbar {
       }
     }
   }
+
   &.public-ui #toolbar {
     .toolbar {
       &:before {
