@@ -45,7 +45,7 @@
 
 ### Fix
 
-- Corretta la validazione dei campi a blocchi obbligatori: ora un campo contenente solo blocchi non testuali (es. Immagine, Video) viene riconosciuto come compilato. I blocchi che prevedono testo (Callout, Tabella, HTML) richiedono invece la presenza effettiva di testo: un blocco Callout vuoto non rende il campo compilato.
+- Corretta la validazione dei campi a blocchi obbligatori: ora un campo contenente solo blocchi non testuali (es. Immagine, Video) viene riconosciuto come compilato. I blocchi che prevedono testo (Callout, Tabella, HTML) richiedono invece la presenza effettiva di testo: un blocco Callout vuoto non rende il campo compilato. I blocchi senza contenuto (es. Interruzione di pagina) non rendono il campo compilato.
 
 ## Versione 2.31.0 (28/05/2026)
 

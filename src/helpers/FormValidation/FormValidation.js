@@ -52,8 +52,11 @@ const blockHasContent = (block) => {
       return slateValueHasText(block?.title) || slateValueHasText(block?.text);
     case 'html':
       return !!block?.html?.trim()?.length;
+    case 'break':
+      // l'interruzione di pagina non porta contenuto
+      return false;
     default:
-      // qualsiasi altro blocco (immagine, video, break, rss, ...): la presenza
+      // qualsiasi altro blocco (immagine, video, rss, ...): la presenza
       // del blocco è contenuto valido, coerentemente con richTextHasContent
       return true;
   }
