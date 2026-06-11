@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione 2.31.3 (11/06/2026)
 
 ### Fix
 
