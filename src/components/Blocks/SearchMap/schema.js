@@ -17,6 +17,14 @@ const messages = defineMessages({
     id: 'search_map_Show types',
     defaultMessage: 'Mostra i filtri per tipologia',
   },
+  show_city: {
+    id: 'search_map_Show city',
+    defaultMessage: 'Mostra il filtro per comune',
+  },
+  show_distretto: {
+    id: 'search_map_Show distretto',
+    defaultMessage: 'Mostra il filtro per distretto',
+  },
   portal_type: {
     id: 'search_map_ct',
     defaultMessage: 'Tipo di contenuto',
@@ -39,7 +47,9 @@ export function SearchMapSchema({ formData, intl }) {
           'path',
           'portal_type',
           'show_search_bar',
-          ...(formData.portal_type === 'Struttura' ? ['show_types'] : []),
+          ...(formData.portal_type === 'Struttura'
+            ? ['show_types', 'show_city', 'show_distretto']
+            : []),
         ],
       },
     ],
@@ -69,6 +79,14 @@ export function SearchMapSchema({ formData, intl }) {
       },
       show_types: {
         title: intl.formatMessage(messages.show_types),
+        type: 'boolean',
+      },
+      show_city: {
+        title: intl.formatMessage(messages.show_city),
+        type: 'boolean',
+      },
+      show_distretto: {
+        title: intl.formatMessage(messages.show_distretto),
         type: 'boolean',
       },
     },
