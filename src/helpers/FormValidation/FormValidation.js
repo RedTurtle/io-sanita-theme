@@ -1,32 +1,69 @@
 import isEmpty from 'lodash/isEmpty';
 import filter from 'lodash/filter';
+import { serializeNodesToText } from '@plone/volto-slate/editor/render';
+
+/**
+ * Verifica se un valore slate (array di nodi) contiene del testo.
+ * Gestisce anche il caso di valore stringa (contenuti legacy).
+ * @param {Array|string} value valore slate o stringa
+ * @returns {boolean}
+ */
+const slateValueHasText = (value) => {
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+  if (!Array.isArray(value)) {
+    return false;
+  }
+  return serializeNodesToText(value).trim().length > 0;
+};
+
+/**
+ * Verifica se un blocco "porta contenuto" ai fini della validazione di un
+ * campo a blocchi obbligatorio.
+ * - per i blocchi che prevedono del testo (slate, text, table, slateTable,
+ *   callout, html) richiede che il testo sia effettivamente presente: es. un
+ *   blocco Callout senza testo non rende il campo compilato;
+ * - per gli altri blocchi (immagine, video, break, rss, contenuto da
+ *   replicare, ...) la sola presenza del blocco è considerata contenuto valido.
+ * @param {object} block
+ * @returns {boolean}
+ */
+const blockHasContent = (block) => {
+  switch (block?.['@type']) {
+    case 'slate':
+      return !!block?.plaintext?.trim()?.length;
+    case 'text':
+      return !!block?.text?.blocks?.filter((b) => !!b.text.trim())?.length;
+    case 'table':
+      // tabella DraftJS legacy: almeno una cella con testo
+      return !!block?.table?.rows?.some((row) =>
+        row?.cells?.some((cell) =>
+          cell?.value?.blocks?.some((b) => !!b?.text?.trim()),
+        ),
+      );
+    case 'slateTable':
+      // tabella slate: almeno una cella con testo
+      return !!block?.table?.rows?.some((row) =>
+        row?.cells?.some((cell) => slateValueHasText(cell?.value)),
+      );
+    case 'callout_block':
+      // il callout è compilato se ha testo nel titolo o nel corpo
+      return slateValueHasText(block?.title) || slateValueHasText(block?.text);
+    case 'html':
+      return !!block?.html?.trim()?.length;
+    case 'break':
+      // l'interruzione di pagina non porta contenuto
+      return false;
+    default:
+      // qualsiasi altro blocco (immagine, video, rss, ...): la presenza
+      // del blocco è contenuto valido, coerentemente con richTextHasContent
+      return true;
+  }
+};
 
 export const blocksFieldIsEmpty = (field) => {
-  return (
-    filter(field?.blocks, (block) => {
-      if (block?.['@type'] === 'slate') {
-        return !!block?.plaintext?.trim()?.length;
-      }
-      if (block?.['@type'] === 'text') {
-        return !!block?.text?.blocks?.filter((block) => !!block.text.trim())
-          ?.length;
-      }
-      if (block?.['@type'] === 'table') {
-        return (
-          // se non ci sono righe che hanno almeno una cella che contenga testo
-          !!block?.table?.rows?.filter(
-            (row) =>
-              row?.cells?.filter(
-                (cell) =>
-                  cell?.value?.blocks?.filter((block) => !!block?.text?.trim())
-                    ?.length > 0,
-              )?.length > 0,
-          )?.length
-        );
-      }
-      return false;
-    })?.length === 0
-  );
+  return filter(field?.blocks, blockHasContent)?.length === 0;
 };
 
 /**
