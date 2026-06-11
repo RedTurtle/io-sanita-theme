@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.31.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.2...2.31.3) (2026-06-11)
+
+### Bug Fixes
+
+* controllo validazione blocco testo risoltoi ([#150](https://github.com/RedTurtle/io-sanita-theme/issues/150)) ([8b63e2e](https://github.com/RedTurtle/io-sanita-theme/commit/8b63e2e34a0de6c0873169ff9dd806bd6ba088b2))
+* table edit buttons position in text editor ([#147](https://github.com/RedTurtle/io-sanita-theme/issues/147)) ([5b32aff](https://github.com/RedTurtle/io-sanita-theme/commit/5b32aff0a843c4d601f1ae134558c8a96c7a8d6c))
+
+### Maintenance
+
+* aggiunto linting ([#149](https://github.com/RedTurtle/io-sanita-theme/issues/149)) ([0a2e932](https://github.com/RedTurtle/io-sanita-theme/commit/0a2e93263d0b88016110db0ddf7df8377b98b6c0))
+* locales ([04b9884](https://github.com/RedTurtle/io-sanita-theme/commit/04b9884dd65702be3a04aa908a502f34cb6f12c8))
+* preparing release 2.31.3 ([a06ef20](https://github.com/RedTurtle/io-sanita-theme/commit/a06ef207c99ed39fb2c4c341438aa90c9cbf3afc))
+
 ## [2.31.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.1...2.31.2) (2026-05-29)
 
 ### Bug Fixes
