@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-05-27T13:14:14.832Z\n"
+"POT-Creation-Date: 2026-06-11T07:39:40.656Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1016,11 +1016,6 @@ msgstr ""
 #. Default: "Scadrà il {date}"
 #: components/Blocks/Alert/Wrapper
 msgid "alert_willExpire"
-msgstr ""
-
-#. Default: "Allinea il bottone a destra"
-#: components/Blocks/Listing/schema
-msgid "alignButton"
 msgstr ""
 
 #. Default: "Allinea le card al centro"

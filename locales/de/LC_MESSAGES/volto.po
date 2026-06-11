@@ -1021,11 +1021,6 @@ msgstr ""
 msgid "alert_willExpire"
 msgstr ""
 
-#. Default: "Allinea il bottone a destra"
-#: components/Blocks/Listing/schema
-msgid "alignButton"
-msgstr ""
-
 #. Default: "Allinea le card al centro"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
