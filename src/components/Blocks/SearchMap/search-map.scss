@@ -9,6 +9,7 @@
     .subjects {
       display: flex;
       overflow: scroll;
+      flex-wrap: wrap;
       button {
         flex: 0 0 auto;
       }
