@@ -3207,6 +3207,16 @@ msgstr ""
 msgid "search_map_Show types"
 msgstr ""
 
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show city"
+msgstr ""
+
+#. Default: "Mostra il filtro per distretto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show distretto"
+msgstr ""
+
 #. Default: "Ricerca con mappa"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_block_title"
@@ -3246,6 +3256,26 @@ msgstr ""
 #: components/Blocks/SearchMap/Body
 msgid "search_mapall_subjects"
 msgstr "All"
+
+#. Default: "Tutti i comuni"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_cities"
+msgstr "All municipalities"
+
+#. Default: "Tutti i distretti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_distretti"
+msgstr "All districts"
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr "Municipality"
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
+msgstr "District"
 
 #. Default: "Filtra per"
 #: components/Blocks/SearchMap/Body
