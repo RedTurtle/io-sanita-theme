@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.32.0 (12/06/2026)
+
+### Migliorie
+
+- Aggiunta filtri di ricerca per comune e distretto nel blocco "Cerca strutture".
+
 ## Versione 2.31.3 (11/06/2026)
 
 ### Fix
