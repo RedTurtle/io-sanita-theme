@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-06-11T07:39:40.656Z\n"
+"POT-Creation-Date: 2026-06-12T14:38:11.948Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -3199,6 +3199,16 @@ msgstr ""
 msgid "search_map_Search path"
 msgstr ""
 
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show city"
+msgstr ""
+
+#. Default: "Mostra il filtro per distretto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show distretto"
+msgstr ""
+
 #. Default: "Mostra la barra di ricerca"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
@@ -3217,6 +3227,16 @@ msgstr ""
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr ""
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
 msgstr ""
 
 #. Default: "Cerca"
@@ -3242,6 +3262,16 @@ msgstr ""
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
+msgstr ""
+
+#. Default: "Tutti i comuni"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_cities"
+msgstr ""
+
+#. Default: "Tutti i distretti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_distretti"
 msgstr ""
 
 #. Default: "Tutti"

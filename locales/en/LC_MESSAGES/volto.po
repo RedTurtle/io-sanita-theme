@@ -3197,16 +3197,6 @@ msgstr "Users"
 msgid "search_map_Search path"
 msgstr ""
 
-#. Default: "Mostra la barra di ricerca"
-#: components/Blocks/SearchMap/schema
-msgid "search_map_Show search bar"
-msgstr ""
-
-#. Default: "Mostra i filtri per tipologia"
-#: components/Blocks/SearchMap/schema
-msgid "search_map_Show types"
-msgstr ""
-
 #. Default: "Mostra il filtro per comune"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show city"
@@ -3215,6 +3205,16 @@ msgstr ""
 #. Default: "Mostra il filtro per distretto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show distretto"
+msgstr ""
+
+#. Default: "Mostra la barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show search bar"
+msgstr ""
+
+#. Default: "Mostra i filtri per tipologia"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show types"
 msgstr ""
 
 #. Default: "Ricerca con mappa"
@@ -3226,6 +3226,16 @@ msgstr ""
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
 msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr "Municipality"
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
+msgstr "District"
 
 #. Default: "Cerca"
 #: components/Widgets/SearchBar/SearchBar
@@ -3252,11 +3262,6 @@ msgstr "Search for facilities near you"
 msgid "search_map_title"
 msgstr ""
 
-#. Default: "Tutti"
-#: components/Blocks/SearchMap/Body
-msgid "search_mapall_subjects"
-msgstr "All"
-
 #. Default: "Tutti i comuni"
 #: components/Blocks/SearchMap/Body
 msgid "search_mapall_cities"
@@ -3267,15 +3272,10 @@ msgstr "All municipalities"
 msgid "search_mapall_distretti"
 msgstr "All districts"
 
-#. Default: "Comune"
+#. Default: "Tutti"
 #: components/Blocks/SearchMap/Body
-msgid "search_map_label_city"
-msgstr "Municipality"
-
-#. Default: "Distretto"
-#: components/Blocks/SearchMap/Body
-msgid "search_map_label_distretto"
-msgstr "District"
+msgid "search_mapall_subjects"
+msgstr "All"
 
 #. Default: "Filtra per"
 #: components/Blocks/SearchMap/Body

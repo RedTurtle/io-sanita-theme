@@ -3,7 +3,6 @@
  * @module volto-slate/blocks/Table/Edit
  */
 
-
 // Customizations:
 // prevent the submit of the form when adding a row o column from the toolbar
 
