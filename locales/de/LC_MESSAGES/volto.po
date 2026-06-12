@@ -3072,6 +3072,21 @@ msgstr ""
 msgid "search_farmacia_searchable_text_label"
 msgstr ""
 
+#. Default: "Mostra il filtro per ente territoriale"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_area_territoriale"
+msgstr ""
+
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_comune"
+msgstr ""
+
+#. Default: "Mostra il filtro per località"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita"
+msgstr ""
+
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_comune"
