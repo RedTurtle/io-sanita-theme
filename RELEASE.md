@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione 2.33.0 (15/06/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca strutture" è ora possibile scegliere se mostrare la ricerca libera (attiva di default) e se visualizzare il filtro per tipologia come pulsanti (comportamento attuale) oppure come menu a tendina.
+
 ## Versione 2.32.0 (12/06/2026)
 
 ### Migliorie

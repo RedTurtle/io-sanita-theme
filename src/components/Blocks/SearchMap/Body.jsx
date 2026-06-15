@@ -86,6 +86,14 @@ const messages = defineMessages({
     id: 'search_map_label_distretto',
     defaultMessage: 'Distretto',
   },
+  label_tipologia: {
+    id: 'search_map_label_tipologia',
+    defaultMessage: 'Tipologia',
+  },
+  all_tipologie: {
+    id: 'search_map_all_tipologie',
+    defaultMessage: 'Tutte le tipologie',
+  },
 });
 
 const LeafIcon = (options, item) => {
@@ -503,46 +511,88 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
                 )}
 
                 {data.show_types && subjects.size > 0 && (
-                  <div className="subjects pb-3">
-                    {/*Chip 'tutti'*/}
-                    <Chip
-                      color="primary"
-                      simple
-                      tag={Button}
-                      onClick={() => {
-                        toggleSubject('_all_');
-                      }}
-                      className={cx({ active: filters.subjects.size === 0 })}
-                      aria-controls={results_region_id}
-                      aria-label={intl.formatMessage(
-                        messages.remove_all_subjects,
-                      )}
-                    >
-                      <ChipLabel>
-                        {intl.formatMessage(messages.all_subjects)}
-                      </ChipLabel>
-                    </Chip>
+                  <>
+                    {data.types_as_select ? (
+                      <Row className="pb-3 g-2">
+                        <Col xs="auto">
+                          <label
+                            htmlFor={block_id + '-tipologia-select'}
+                            className="form-label"
+                          >
+                            {intl.formatMessage(messages.label_tipologia)}
+                          </label>
+                          <select
+                            id={block_id + '-tipologia-select'}
+                            className="form-select"
+                            value={[...filters.subjects][0] ?? ''}
+                            aria-controls={results_region_id}
+                            onChange={(e) =>
+                              setFilters({
+                                ...filters,
+                                subjects: e.target.value
+                                  ? new Set([e.target.value])
+                                  : new Set(),
+                              })
+                            }
+                          >
+                            <option value="">
+                              {intl.formatMessage(messages.all_tipologie)}
+                            </option>
+                            {[...subjects].sort().map((s) => (
+                              <option key={s} value={s}>
+                                {s}
+                              </option>
+                            ))}
+                          </select>
+                        </Col>
+                      </Row>
+                    ) : (
+                      <div className="subjects pb-3">
+                        {/*Chip 'tutti'*/}
+                        <Chip
+                          color="primary"
+                          simple
+                          tag={Button}
+                          onClick={() => {
+                            toggleSubject('_all_');
+                          }}
+                          className={cx({
+                            active: filters.subjects.size === 0,
+                          })}
+                          aria-controls={results_region_id}
+                          aria-label={intl.formatMessage(
+                            messages.remove_all_subjects,
+                          )}
+                        >
+                          <ChipLabel>
+                            {intl.formatMessage(messages.all_subjects)}
+                          </ChipLabel>
+                        </Chip>
 
-                    {/*Chip delle varie categorie*/}
-                    {[...subjects].map((s) => (
-                      <Chip
-                        color="primary"
-                        simple
-                        tag={Button}
-                        key={s}
-                        onClick={() => {
-                          toggleSubject(s);
-                        }}
-                        className={cx({ active: filters.subjects.has(s) })}
-                        aria-label={
-                          intl.formatMessage(messages.filter_by) + ' ' + s
-                        }
-                        aria-controls={results_region_id}
-                      >
-                        <ChipLabel>{s}</ChipLabel>
-                      </Chip>
-                    ))}
-                  </div>
+                        {/*Chip delle varie categorie*/}
+                        {[...subjects].map((s) => (
+                          <Chip
+                            color="primary"
+                            simple
+                            tag={Button}
+                            key={s}
+                            onClick={() => {
+                              toggleSubject(s);
+                            }}
+                            className={cx({
+                              active: filters.subjects.has(s),
+                            })}
+                            aria-label={
+                              intl.formatMessage(messages.filter_by) + ' ' + s
+                            }
+                            aria-controls={results_region_id}
+                          >
+                            <ChipLabel>{s}</ChipLabel>
+                          </Chip>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
 
