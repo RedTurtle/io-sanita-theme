@@ -422,9 +422,12 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
                       <SearchBar
                         id={block_id}
                         title={title}
-                        textDescription={intl.formatMessage(
-                          messages.searchable_text_decription,
-                        )}
+                        textDescription={
+                          data.text_description ||
+                          intl.formatMessage(
+                            messages.searchable_text_decription,
+                          )
+                        }
                         value={filters.searchableText}
                         onChange={(v) => {
                           setFilters({ ...filters, searchableText: v });

@@ -13,6 +13,10 @@ const messages = defineMessages({
     id: 'search_map_Show search bar',
     defaultMessage: 'Mostra la barra di ricerca',
   },
+  text_description: {
+    id: 'search_map_text_description',
+    defaultMessage: 'Testo descrittivo della barra di ricerca',
+  },
   show_types: {
     id: 'search_map_Show types',
     defaultMessage: 'Mostra i filtri per tipologia',
@@ -47,6 +51,7 @@ export function SearchMapSchema({ formData, intl }) {
           'path',
           'portal_type',
           'show_search_bar',
+          ...(formData.show_search_bar ? ['text_description'] : []),
           ...(formData.portal_type === 'Struttura'
             ? ['show_types', 'show_city', 'show_distretto']
             : []),
@@ -76,6 +81,9 @@ export function SearchMapSchema({ formData, intl }) {
         title: intl.formatMessage(messages.show_search_bar),
         type: 'boolean',
         default: true,
+      },
+      text_description: {
+        title: intl.formatMessage(messages.text_description),
       },
       show_types: {
         title: intl.formatMessage(messages.show_types),
