@@ -119,8 +119,6 @@ const Search = () => {
   const searchFilters = useSelector((state) => state.searchFilters.result);
   const searchResults = useSelector((state) => state.searchResults);
   const [sections, setSections] = useState([]);
-  console.log(qs.parse(location.search)?.sort_order);
-
   const [filters, setFilters] = useState({
     searchableText: qs.parse(location.search)?.SearchableText ?? '',
     parliamo_di: [],
