@@ -41,6 +41,20 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Migliorie
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+
 ## Versione 2.32.0 (12/06/2026)
 
 ### Migliorie
