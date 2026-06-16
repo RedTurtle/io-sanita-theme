@@ -119,6 +119,7 @@ const Search = () => {
   const searchFilters = useSelector((state) => state.searchFilters.result);
   const searchResults = useSelector((state) => state.searchResults);
   const [sections, setSections] = useState([]);
+
   const [filters, setFilters] = useState({
     searchableText: qs.parse(location.search)?.SearchableText ?? '',
     parliamo_di: [],
