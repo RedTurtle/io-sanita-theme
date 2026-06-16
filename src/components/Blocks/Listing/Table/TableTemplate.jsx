@@ -86,7 +86,10 @@ const TableTemplate = (props) => {
                     c.field_properties ??
                     ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
                     {};
-                  let render_value = JSON.stringify(item[c.field]);
+                  const raw = item[c.field];
+                  let render_value = Array.isArray(raw)
+                    ? raw.map((v) => v?.title ?? v).join(', ')
+                    : raw?.title ?? JSON.stringify(raw);
 
                   if (field_properties) {
                     const field = {
