@@ -45,6 +45,8 @@
 
 ### Migliorie
 
+- Nel blocco "Cerca strutture" è ora possibile personalizzare il testo descrittivo del campo di ricerca libero e se visualizzare il filtro per tipologia come pulsanti (comportamento di default) oppure come menu a tendina.
+
 - ...
 
 ### Novità

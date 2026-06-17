@@ -11,11 +11,19 @@ const messages = defineMessages({
   },
   show_search_bar: {
     id: 'search_map_Show search bar',
-    defaultMessage: 'Mostra la barra di ricerca',
+    defaultMessage: 'Mostra la ricerca libera',
+  },
+  text_description: {
+    id: 'search_map_text_description',
+    defaultMessage: 'Testo descrittivo della barra di ricerca',
   },
   show_types: {
     id: 'search_map_Show types',
     defaultMessage: 'Mostra i filtri per tipologia',
+  },
+  types_as_select: {
+    id: 'search_map_types_as_select',
+    defaultMessage: 'Filtra tipologia con menu a tendina',
   },
   show_city: {
     id: 'search_map_Show city',
@@ -47,8 +55,14 @@ export function SearchMapSchema({ formData, intl }) {
           'path',
           'portal_type',
           'show_search_bar',
+          ...(formData.show_search_bar ? ['text_description'] : []),
           ...(formData.portal_type === 'Struttura'
-            ? ['show_types', 'show_city', 'show_distretto']
+            ? [
+                'show_types',
+                ...(formData.show_types ? ['types_as_select'] : []),
+                'show_city',
+                'show_distretto',
+              ]
             : []),
         ],
       },
@@ -77,9 +91,17 @@ export function SearchMapSchema({ formData, intl }) {
         type: 'boolean',
         default: true,
       },
+      text_description: {
+        title: intl.formatMessage(messages.text_description),
+      },
       show_types: {
         title: intl.formatMessage(messages.show_types),
         type: 'boolean',
+      },
+      types_as_select: {
+        title: intl.formatMessage(messages.types_as_select),
+        type: 'boolean',
+        default: false,
       },
       show_city: {
         title: intl.formatMessage(messages.show_city),
