@@ -41,17 +41,13 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.33.0 (17/06/2026)
 
 ### Migliorie
 
 - Nel blocco "Cerca strutture" è ora possibile personalizzare il testo descrittivo del campo di ricerca libero e se visualizzare il filtro per tipologia come pulsanti (comportamento di default) oppure come menu a tendina.
 
 - Nel blocco "Ricerca farmacie" ora è possibile scegliere dalle impostazioni del blocco quali filtri mostrare: ente territoriale, comune e località, sia per la ricerca dei turni che delle ferie. I blocchi esistenti mantengono il comportamento attuale.
-
-### Novità
-
-- ...
 
 ### Fix
 
