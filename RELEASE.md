@@ -41,11 +41,21 @@
 - ...
  -->
 
-## Versione 2.33.0 (15/06/2026)
+## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
 
 - Nel blocco "Cerca strutture" è ora possibile personalizzare il testo descrittivo del campo di ricerca libero e se visualizzare il filtro per tipologia come pulsanti (comportamento di default) oppure come menu a tendina.
+
+- ...
+
+### Novità
+
+- ...
+
+### Fix
+
+- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
 
 ## Versione 2.32.0 (12/06/2026)
 
