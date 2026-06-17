@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-06-12T15:05:59.398Z\n"
+"POT-Creation-Date: 2026-06-17T13:05:19.697Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -3224,7 +3224,7 @@ msgstr ""
 msgid "search_map_Show distretto"
 msgstr ""
 
-#. Default: "Mostra la barra di ricerca"
+#. Default: "Mostra la ricerca libera"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
 msgstr ""
@@ -3232,6 +3232,11 @@ msgstr ""
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tutte le tipologie"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_all_tipologie"
 msgstr ""
 
 #. Default: "Ricerca con mappa"
@@ -3254,6 +3259,11 @@ msgstr ""
 msgid "search_map_label_distretto"
 msgstr ""
 
+#. Default: "Tipologia"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_tipologia"
+msgstr ""
+
 #. Default: "Cerca"
 #: components/Widgets/SearchBar/SearchBar
 msgid "search_map_searchable_text_button"
@@ -3274,9 +3284,19 @@ msgstr ""
 msgid "search_map_searchable_text_default_label_strutture"
 msgstr ""
 
+#. Default: "Testo descrittivo della barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_text_description"
+msgstr ""
+
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
+msgstr ""
+
+#. Default: "Filtra tipologia con menu a tendina"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_types_as_select"
 msgstr ""
 
 #. Default: "Tutti i comuni"
