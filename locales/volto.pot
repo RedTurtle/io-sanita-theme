@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-06-15T09:01:19.380Z\n"
+"POT-Creation-Date: 2026-06-17T13:05:19.697Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -3067,6 +3067,21 @@ msgstr ""
 #. Default: "Farmacia"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_searchable_text_label"
+msgstr ""
+
+#. Default: "Mostra il filtro per ente territoriale"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_area_territoriale"
+msgstr ""
+
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_comune"
+msgstr ""
+
+#. Default: "Mostra il filtro per località"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita"
 msgstr ""
 
 #. Default: "Comune"

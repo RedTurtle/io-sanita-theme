@@ -36,6 +36,9 @@ const messages = defineMessages({
 
 const SearchFilters = ({
   searchType,
+  showAreaTerritoriale,
+  showComune,
+  showLocalita,
   filters,
   setFilters,
   options,
@@ -63,81 +66,81 @@ const SearchFilters = ({
       </Col>
 
       {searchType === 'shifts' && (
-        <>
-          <Col lg="3" className="d-flex flex-column">
-            <DatetimeWidget
-              id="date_farmacie"
-              dateOnly={true}
-              resettable={false}
-              value={filters['date']}
-              onChange={(opt, value) => {
-                setFilters({
-                  ...filters,
-                  date: new Date(value).toISOString(),
-                });
-              }}
-              title=""
-            />
-            <small className="ps-2">{intl.formatMessage(messages.date)}</small>{' '}
-          </Col>
-
-          <Col lg="3">
-            <SelectInput
-              id="area_territoriale"
-              value={filters.area_territoriale ?? ''}
-              placeholder={intl.formatMessage(messages.area_territoriale)}
-              onChange={(opt) => {
-                setFilters({ ...filters, area_territoriale: opt });
-              }}
-              options={options.aree_territoriali ?? []}
-              isClearable={true}
-              isSearchable={true}
-            />
-          </Col>
-        </>
+        <Col lg="3" className="d-flex flex-column">
+          <DatetimeWidget
+            id="date_farmacie"
+            dateOnly={true}
+            resettable={false}
+            value={filters['date']}
+            onChange={(opt, value) => {
+              setFilters({
+                ...filters,
+                date: new Date(value).toISOString(),
+              });
+            }}
+            title=""
+          />
+          <small className="ps-2">{intl.formatMessage(messages.date)}</small>{' '}
+        </Col>
       )}
 
-      {searchType === 'vacations' && (
-        <>
-          <Col lg="3" className="d-flex align-center">
-            <SelectInput
-              id="comune"
-              value={
-                filters['comune'] && {
-                  value: filters['comune'],
-                  label: filters['comune'],
-                }
-              }
-              placeholder={intl.formatMessage(messages.comune)}
-              onChange={(opt) => {
-                setFilters({ ...filters, comune: opt?.value });
-                // checkClearComune(opt);
-              }}
-              options={options.comuni ?? []}
-              isClearable={true}
-              isSearchable={true}
-            />
-          </Col>
+      {showAreaTerritoriale && (
+        <Col lg="3">
+          <SelectInput
+            id="area_territoriale"
+            value={filters.area_territoriale ?? ''}
+            placeholder={intl.formatMessage(messages.area_territoriale)}
+            onChange={(opt) => {
+              setFilters({ ...filters, area_territoriale: opt });
+            }}
+            options={options.aree_territoriali ?? []}
+            isClearable={true}
+            isSearchable={true}
+          />
+        </Col>
+      )}
 
-          <Col lg="3" className="d-flex align-center">
-            <SelectInput
-              id="localita"
-              value={
-                filters.localita && {
-                  value: filters['localita'],
-                  label: filters['localita'],
-                }
+      {showComune && (
+        <Col lg="3" className="d-flex align-center">
+          <SelectInput
+            id="comune"
+            value={
+              filters['comune'] && {
+                value: filters['comune'],
+                label: filters['comune'],
               }
-              placeholder={intl.formatMessage(messages.localita)}
-              onChange={(opt) => {
-                setFilters({ ...filters, localita: opt?.value });
-              }}
-              options={options.localita ?? []}
-              isClearable={true}
-              isSearchable={true}
-            />
-          </Col>
-        </>
+            }
+            placeholder={intl.formatMessage(messages.comune)}
+            onChange={(opt) => {
+              setFilters({ ...filters, comune: opt?.value });
+              // checkClearComune(opt);
+            }}
+            options={options.comuni ?? []}
+            isClearable={true}
+            isSearchable={true}
+          />
+        </Col>
+      )}
+
+      {showLocalita && (
+        <Col lg="3" className="d-flex align-center">
+          <SelectInput
+            id="localita"
+            value={
+              filters.localita && {
+                value: filters['localita'],
+                label: filters['localita'],
+              }
+            }
+            placeholder={intl.formatMessage(messages.localita)}
+            onChange={(opt) => {
+              setFilters({ ...filters, localita: opt?.value });
+            }}
+            options={options.localita ?? []}
+            isClearable={true}
+            isSearchable={true}
+          />
+        </Col>
       )}
     </Row>
   );
