@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.33.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.32.0...2.33.0) (2026-06-17)
+
+### Features
+
+* filtri configurabili (ente territoriale, comune, località) nel blocco Ricerca farmacie ([#154](https://github.com/RedTurtle/io-sanita-theme/issues/154)) ([338eba6](https://github.com/RedTurtle/io-sanita-theme/commit/338eba67fc8760bfdc3191a2474a8497cee8b23c))
+* Search strutture - widget for type filter and description text for searchable text ([#156](https://github.com/RedTurtle/io-sanita-theme/issues/156)) ([625925a](https://github.com/RedTurtle/io-sanita-theme/commit/625925a3fa40299add2dfaa1f31e976ddbe83208))
+
+### Maintenance
+
+* cleanup unesed locales ([#155](https://github.com/RedTurtle/io-sanita-theme/issues/155)) ([c92e281](https://github.com/RedTurtle/io-sanita-theme/commit/c92e28158b5552dabcbfa20a44e8370dcc69dfbc))
+
 ## [2.32.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.3...2.32.0) (2026-06-12)
 
 ### Features
