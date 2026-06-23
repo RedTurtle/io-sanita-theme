@@ -4,8 +4,9 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import { useIntl, defineMessages } from 'react-intl';
-import { Row, Col, Table } from 'design-react-kit';
+import { Table } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useSelector } from 'react-redux';
 
@@ -13,13 +14,25 @@ import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
-import moment from 'moment';
 import config from '@plone/volto/registry';
 import './table-templates.scss';
 
 const messages = defineMessages({
   title: { id: 'tabletemplate_column_title', defaultMessage: 'Titolo' },
 });
+
+// Gli utenti anonimi non ricevono lo schema @types, quindi le colonne data
+// verrebbero mostrate come stringhe ISO grezze. Riconosce una data/datetime ISO
+// dal valore stesso e la formatta, mantenendo l'ora solo quando significativa
+// I valori non-data passano invariati, così gli altri tipi di campo non
+// comportano costi aggiuntivi.
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}|$)/;
+const formatIso = (value) => {
+  if (typeof value !== 'string') return JSON.stringify(value);
+  if (!ISO_DATE.test(value)) return value;
+  const hasTime = value.indexOf('T') > 0 && value.indexOf('T00:00') < 0;
+  return moment(value).format(hasTime ? 'DD/MM/YYYY HH:mm' : 'DD/MM/YYYY');
+};
 
 const TableTemplate = (props) => {
   const {
@@ -39,17 +52,6 @@ const TableTemplate = (props) => {
 
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
-
-  // aggiungere i nomi dei campi da mostrare con data e ora (es. 'effective', 'apertura_bando', ...)
-  const SHOW_TIME_FIELDS = [];
-  const formatIso = (field, v) => {
-    if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(v))
-      return JSON.stringify(v);
-    const fmt = SHOW_TIME_FIELDS.includes(field)
-      ? 'DD/MM/YYYY HH:mm'
-      : 'DD/MM/YYYY';
-    return moment(v).format(fmt);
-  };
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -101,7 +103,7 @@ const TableTemplate = (props) => {
                   const raw = item[c.field];
                   let render_value = Array.isArray(raw)
                     ? raw.map((v) => v?.title ?? v).join(', ')
-                    : raw?.title ?? formatIso(c.field, raw);
+                    : raw?.title ?? formatIso(raw);
 
                   if (
                     field_properties &&
