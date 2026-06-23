@@ -13,6 +13,7 @@ import { ListingContainer } from 'io-sanita-theme/components/Blocks';
 import { LinkMore } from 'io-sanita-theme/components';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
+import moment from 'moment';
 import config from '@plone/volto/registry';
 import './table-templates.scss';
 
@@ -38,6 +39,17 @@ const TableTemplate = (props) => {
 
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
+
+  // aggiungere i nomi dei campi da mostrare con data e ora (es. 'effective', 'apertura_bando', ...)
+  const SHOW_TIME_FIELDS = [];
+  const formatIso = (field, v) => {
+    if (typeof v !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(v))
+      return JSON.stringify(v);
+    const fmt = SHOW_TIME_FIELDS.includes(field)
+      ? 'DD/MM/YYYY HH:mm'
+      : 'DD/MM/YYYY';
+    return moment(v).format(fmt);
+  };
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -89,9 +101,12 @@ const TableTemplate = (props) => {
                   const raw = item[c.field];
                   let render_value = Array.isArray(raw)
                     ? raw.map((v) => v?.title ?? v).join(', ')
-                    : raw?.title ?? JSON.stringify(raw);
+                    : raw?.title ?? formatIso(c.field, raw);
 
-                  if (field_properties) {
+                  if (
+                    field_properties &&
+                    Object.keys(field_properties).length > 0
+                  ) {
                     const field = {
                       ...field_properties,
                       id: c.field,
