@@ -3,7 +3,6 @@
  * @module volto-slate/blocks/Table/Edit
  */
 
-
 // Customizations:
 // Add type="button" to toolbar buttons to prevent form submission when table is inside a form
 
