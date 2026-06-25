@@ -4,7 +4,7 @@
  */
 
 // Customizations:
-// prevent the submit of the form when adding a row o column from the toolbar
+// Add type="button" to toolbar buttons to prevent form submission when table is inside a form
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -200,9 +200,7 @@ class Edit extends Component {
     });
   }
 
-  onInsertRowBefore(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onInsertRowBefore() {
     const table = this.props.data.table;
     this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
@@ -223,9 +221,7 @@ class Edit extends Component {
     });
   }
 
-  onInsertRowAfter(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onInsertRowAfter() {
     const table = this.props.data.table;
     this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
@@ -240,9 +236,7 @@ class Edit extends Component {
     });
   }
 
-  onInsertColBefore(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onInsertColBefore() {
     const table = this.props.data.table;
     this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
@@ -266,9 +260,7 @@ class Edit extends Component {
     });
   }
 
-  onInsertColAfter(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onInsertColAfter() {
     const table = this.props.data.table;
     this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
@@ -286,9 +278,7 @@ class Edit extends Component {
     });
   }
 
-  onDeleteCol(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onDeleteCol() {
     const table = this.props.data.table;
 
     if (this.state.selected.cell === table.rows[0].cells.length - 1) {
@@ -315,9 +305,7 @@ class Edit extends Component {
     });
   }
 
-  onDeleteRow(ev) {
-    ev.preventDefault();
-    ev.stopPropagation();
+  onDeleteRow() {
     const table = this.props.data.table;
 
     if (this.state.selected.row === table.rows.length - 1) {
@@ -361,6 +349,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onInsertRowBefore}
                 title={this.props.intl.formatMessage(messages.insertRowBefore)}
                 aria-label={this.props.intl.formatMessage(
@@ -374,6 +363,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onInsertRowAfter}
                 title={this.props.intl.formatMessage(messages.insertRowAfter)}
                 aria-label={this.props.intl.formatMessage(
@@ -387,6 +377,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onDeleteRow}
                 disabled={this.props.data.table?.rows?.length === 1}
                 title={this.props.intl.formatMessage(messages.deleteRow)}
@@ -399,6 +390,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onInsertColBefore}
                 title={this.props.intl.formatMessage(messages.insertColBefore)}
                 aria-label={this.props.intl.formatMessage(
@@ -412,6 +404,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onInsertColAfter}
                 title={this.props.intl.formatMessage(messages.insertColAfter)}
                 aria-label={this.props.intl.formatMessage(
@@ -425,6 +418,7 @@ class Edit extends Component {
               <Button
                 icon
                 basic
+                type="button"
                 onClick={this.onDeleteCol}
                 disabled={this.props.data.table?.rows?.[0].cells.length === 1}
                 title={this.props.intl.formatMessage(messages.deleteCol)}
