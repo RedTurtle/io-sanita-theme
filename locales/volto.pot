@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-06-11T07:39:40.656Z\n"
+"POT-Creation-Date: 2026-06-17T13:05:19.697Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -3069,6 +3069,21 @@ msgstr ""
 msgid "search_farmacia_searchable_text_label"
 msgstr ""
 
+#. Default: "Mostra il filtro per ente territoriale"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_area_territoriale"
+msgstr ""
+
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_comune"
+msgstr ""
+
+#. Default: "Mostra il filtro per località"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita"
+msgstr ""
+
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_comune"
@@ -3199,7 +3214,17 @@ msgstr ""
 msgid "search_map_Search path"
 msgstr ""
 
-#. Default: "Mostra la barra di ricerca"
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show city"
+msgstr ""
+
+#. Default: "Mostra il filtro per distretto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show distretto"
+msgstr ""
+
+#. Default: "Mostra la ricerca libera"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
 msgstr ""
@@ -3207,6 +3232,11 @@ msgstr ""
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tutte le tipologie"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_all_tipologie"
 msgstr ""
 
 #. Default: "Ricerca con mappa"
@@ -3217,6 +3247,21 @@ msgstr ""
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr ""
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
+msgstr ""
+
+#. Default: "Tipologia"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_tipologia"
 msgstr ""
 
 #. Default: "Cerca"
@@ -3239,9 +3284,29 @@ msgstr ""
 msgid "search_map_searchable_text_default_label_strutture"
 msgstr ""
 
+#. Default: "Testo descrittivo della barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_text_description"
+msgstr ""
+
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
+msgstr ""
+
+#. Default: "Filtra tipologia con menu a tendina"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_types_as_select"
+msgstr ""
+
+#. Default: "Tutti i comuni"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_cities"
+msgstr ""
+
+#. Default: "Tutti i distretti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_distretti"
 msgstr ""
 
 #. Default: "Tutti"

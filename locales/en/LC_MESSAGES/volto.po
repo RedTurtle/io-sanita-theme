@@ -3067,6 +3067,21 @@ msgstr "Enter the name of the pharmacy"
 msgid "search_farmacia_searchable_text_label"
 msgstr "Pharmacy"
 
+#. Default: "Mostra il filtro per ente territoriale"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_area_territoriale"
+msgstr "Show the territorial area filter"
+
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_comune"
+msgstr "Show the municipality filter"
+
+#. Default: "Mostra il filtro per località"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita"
+msgstr "Show the location filter"
+
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
 msgid "search_farmacia_sort_comune"
@@ -3197,7 +3212,17 @@ msgstr "Users"
 msgid "search_map_Search path"
 msgstr ""
 
-#. Default: "Mostra la barra di ricerca"
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show city"
+msgstr ""
+
+#. Default: "Mostra il filtro per distretto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show distretto"
+msgstr ""
+
+#. Default: "Mostra la ricerca libera"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
 msgstr ""
@@ -3205,6 +3230,11 @@ msgstr ""
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tutte le tipologie"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_all_tipologie"
 msgstr ""
 
 #. Default: "Ricerca con mappa"
@@ -3215,6 +3245,21 @@ msgstr ""
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr "Municipality"
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
+msgstr "District"
+
+#. Default: "Tipologia"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_tipologia"
 msgstr ""
 
 #. Default: "Cerca"
@@ -3237,10 +3282,30 @@ msgstr "Search for GPs and pediatricians near you"
 msgid "search_map_searchable_text_default_label_strutture"
 msgstr "Search for facilities near you"
 
+#. Default: "Testo descrittivo della barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_text_description"
+msgstr ""
+
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
 msgstr ""
+
+#. Default: "Filtra tipologia con menu a tendina"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_types_as_select"
+msgstr ""
+
+#. Default: "Tutti i comuni"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_cities"
+msgstr "All municipalities"
+
+#. Default: "Tutti i distretti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_distretti"
+msgstr "All districts"
 
 #. Default: "Tutti"
 #: components/Blocks/SearchMap/Body

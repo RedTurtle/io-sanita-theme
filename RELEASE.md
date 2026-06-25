@@ -41,6 +41,24 @@
 - ...
  -->
 
+## Versione 2.33.0 (17/06/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca strutture" è ora possibile personalizzare il testo descrittivo del campo di ricerca libero e se visualizzare il filtro per tipologia come pulsanti (comportamento di default) oppure come menu a tendina.
+
+- Nel blocco "Ricerca farmacie" ora è possibile scegliere dalle impostazioni del blocco quali filtri mostrare: ente territoriale, comune e località, sia per la ricerca dei turni che delle ferie. I blocchi esistenti mantengono il comportamento attuale.
+
+### Fix
+
+- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+
+## Versione 2.32.0 (12/06/2026)
+
+### Migliorie
+
+- Aggiunta filtri di ricerca per comune e distretto nel blocco "Cerca strutture".
+
 ## Versione 2.31.3 (11/06/2026)
 
 ### Fix

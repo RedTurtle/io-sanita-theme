@@ -13,6 +13,18 @@ const messages = defineMessages({
     id: 'search_farmacie_block_title',
     defaultMessage: 'Ricerca Farmacie',
   },
+  show_area_territoriale: {
+    id: 'search_farmacia_show_area_territoriale',
+    defaultMessage: 'Mostra il filtro per ente territoriale',
+  },
+  show_comune: {
+    id: 'search_farmacia_show_comune',
+    defaultMessage: 'Mostra il filtro per comune',
+  },
+  show_localita: {
+    id: 'search_farmacia_show_localita',
+    defaultMessage: 'Mostra il filtro per località',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -22,7 +34,13 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       {
         id: 'default',
         title: 'Default',
-        fields: ['title', 'search_type'],
+        fields: [
+          'title',
+          'search_type',
+          'show_area_territoriale',
+          'show_comune',
+          'show_localita',
+        ],
       },
     ],
     properties: {
@@ -36,6 +54,21 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       },
       title: {
         title: intl.formatMessage(messages.title),
+      },
+      show_area_territoriale: {
+        title: intl.formatMessage(messages.show_area_territoriale),
+        type: 'boolean',
+        default: formData?.search_type !== 'vacations',
+      },
+      show_comune: {
+        title: intl.formatMessage(messages.show_comune),
+        type: 'boolean',
+        default: formData?.search_type === 'vacations',
+      },
+      show_localita: {
+        title: intl.formatMessage(messages.show_localita),
+        type: 'boolean',
+        default: formData?.search_type === 'vacations',
       },
     },
     required: [],

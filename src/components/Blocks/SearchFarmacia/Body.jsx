@@ -48,6 +48,12 @@ const Body = ({ isEditMode, data, id }) => {
   const intl = useIntl();
   const resultsRef = createRef();
   const searchType = data?.search_type; // type of search, Ferie o Turni ('shifts' or 'vacations')
+  // fallback dinamico per i blocchi salvati prima dell'introduzione dei flag:
+  // Turni mostrava solo l'ente territoriale, Ferie solo comune e località
+  const showAreaTerritoriale =
+    data.show_area_territoriale ?? searchType !== 'vacations';
+  const showComune = data.show_comune ?? searchType === 'vacations';
+  const showLocalita = data.show_localita ?? searchType === 'vacations';
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -251,6 +257,9 @@ const Body = ({ isEditMode, data, id }) => {
                     block_id={id}
                     setFilters={setFilters}
                     searchType={searchType}
+                    showAreaTerritoriale={showAreaTerritoriale}
+                    showComune={showComune}
+                    showLocalita={showLocalita}
                     filters={filters}
                     options={filtersOptions}
                     ariaControls={resultsWrapperId}

@@ -70,6 +70,30 @@ const messages = defineMessages({
     id: 'search_mapremove_all_subjects',
     defaultMessage: 'Mostra tutte le categorie',
   },
+  all_cities: {
+    id: 'search_mapall_cities',
+    defaultMessage: 'Tutti i comuni',
+  },
+  all_distretti: {
+    id: 'search_mapall_distretti',
+    defaultMessage: 'Tutti i distretti',
+  },
+  label_city: {
+    id: 'search_map_label_city',
+    defaultMessage: 'Comune',
+  },
+  label_distretto: {
+    id: 'search_map_label_distretto',
+    defaultMessage: 'Distretto',
+  },
+  label_tipologia: {
+    id: 'search_map_label_tipologia',
+    defaultMessage: 'Tipologia',
+  },
+  all_tipologie: {
+    id: 'search_map_all_tipologie',
+    defaultMessage: 'Tutte le tipologie',
+  },
 });
 
 const LeafIcon = (options, item) => {
@@ -128,9 +152,13 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
   const [filters, setFilters] = useState({
     searchableText: '',
     subjects: new Set(),
+    city: '',
+    distretto: '',
   });
   const [markers, setMarkers] = useState([]);
   const [subjects, setSubjects] = useState(new Set());
+  const [cities, setCities] = useState(new Set());
+  const [distretti, setDistretti] = useState(new Set());
   const [rendered_items, setRenderedItems] = useState([]);
 
   const querystringResults = useSelector((state) => {
@@ -146,6 +174,8 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
   const doSearch = () => {
     //default filtes
     setSubjects(new Set());
+    setCities(new Set());
+    setDistretti(new Set());
     setCurrentPage(1);
 
     let query = [
@@ -195,6 +225,22 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
       });
     }
 
+    if (filters.city) {
+      query.push({
+        i: 'city',
+        o: 'plone.app.querystring.operation.selection.is',
+        v: [filters.city],
+      });
+    }
+
+    if (filters.distretto) {
+      query.push({
+        i: 'distretto',
+        o: 'plone.app.querystring.operation.selection.is',
+        v: [filters.distretto],
+      });
+    }
+
     dispatch(
       getQueryStringResults(
         subsite ? flattenToAppURL(subsite['@id']) : '',
@@ -204,6 +250,8 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
             'struttura_ricevimento',
             'struttura_in_cui_opera',
             'incarico_metadata',
+            'city',
+            'distretto',
           ], //'_all',
           query: query,
           b_size: b_size,
@@ -284,6 +332,26 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
     }
   };
 
+  const calculateCities = () => {
+    if (cities.size === 0) {
+      let vals = new Set();
+      items.forEach((item) => {
+        if (item.city) vals.add(item.city);
+      });
+      setCities(vals);
+    }
+  };
+
+  const calculateDistretti = () => {
+    if (distretti.size === 0) {
+      let vals = new Set();
+      items.forEach((item) => {
+        if (item.distretto) vals.add(item.distretto);
+      });
+      setDistretti(vals);
+    }
+  };
+
   useEffect(() => {
     setItems(resultsReducer(resultItems));
   }, [resultItems]);
@@ -291,6 +359,8 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
   useEffect(() => {
     calculateMarkers();
     calculateSubjects();
+    calculateCities();
+    calculateDistretti();
   }, [items]);
 
   useEffect(() => {
@@ -360,9 +430,12 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
                       <SearchBar
                         id={block_id}
                         title={title}
-                        textDescription={intl.formatMessage(
-                          messages.searchable_text_decription,
-                        )}
+                        textDescription={
+                          data.text_description ||
+                          intl.formatMessage(
+                            messages.searchable_text_decription,
+                          )
+                        }
                         value={filters.searchableText}
                         onChange={(v) => {
                           setFilters({ ...filters, searchableText: v });
@@ -372,47 +445,154 @@ const SearchMapBody = ({ data, id, path, properties, block, inEditMode }) => {
                     </Col>
                   </Row>
                 )}
-                {data.show_types && subjects.size > 0 && (
-                  <div className="subjects pb-3">
-                    {/*Chip 'tutti'*/}
-                    <Chip
-                      color="primary"
-                      simple
-                      tag={Button}
-                      onClick={() => {
-                        toggleSubject('_all_');
-                      }}
-                      className={cx({ active: filters.subjects.size === 0 })}
-                      aria-controls={results_region_id}
-                      aria-label={intl.formatMessage(
-                        messages.remove_all_subjects,
-                      )}
-                    >
-                      <ChipLabel>
-                        {intl.formatMessage(messages.all_subjects)}
-                      </ChipLabel>
-                    </Chip>
+                {((data.show_city && cities.size > 0) ||
+                  (data.show_distretto && distretti.size > 0)) && (
+                  <Row className="pb-3 g-2">
+                    {data.show_city && cities.size > 0 && (
+                      <Col xs="auto">
+                        <label
+                          htmlFor={block_id + '-city-select'}
+                          className="form-label"
+                        >
+                          {intl.formatMessage(messages.label_city)}
+                        </label>
+                        <select
+                          id={block_id + '-city-select'}
+                          className="form-select"
+                          value={filters.city}
+                          aria-controls={results_region_id}
+                          onChange={(e) =>
+                            setFilters({ ...filters, city: e.target.value })
+                          }
+                        >
+                          <option value="">
+                            {intl.formatMessage(messages.all_cities)}
+                          </option>
+                          {[...cities].sort().map((c) => (
+                            <option key={c} value={c}>
+                              {c}
+                            </option>
+                          ))}
+                        </select>
+                      </Col>
+                    )}
+                    {data.show_distretto && distretti.size > 0 && (
+                      <Col xs="auto">
+                        <label
+                          htmlFor={block_id + '-distretto-select'}
+                          className="form-label"
+                        >
+                          {intl.formatMessage(messages.label_distretto)}
+                        </label>
+                        <select
+                          id={block_id + '-distretto-select'}
+                          className="form-select"
+                          value={filters.distretto}
+                          aria-controls={results_region_id}
+                          onChange={(e) =>
+                            setFilters({
+                              ...filters,
+                              distretto: e.target.value,
+                            })
+                          }
+                        >
+                          <option value="">
+                            {intl.formatMessage(messages.all_distretti)}
+                          </option>
+                          {[...distretti].sort().map((d) => (
+                            <option key={d} value={d}>
+                              {d}
+                            </option>
+                          ))}
+                        </select>
+                      </Col>
+                    )}
+                  </Row>
+                )}
 
-                    {/*Chip delle varie categorie*/}
-                    {[...subjects].map((s) => (
-                      <Chip
-                        color="primary"
-                        simple
-                        tag={Button}
-                        key={s}
-                        onClick={() => {
-                          toggleSubject(s);
-                        }}
-                        className={cx({ active: filters.subjects.has(s) })}
-                        aria-label={
-                          intl.formatMessage(messages.filter_by) + ' ' + s
-                        }
-                        aria-controls={results_region_id}
-                      >
-                        <ChipLabel>{s}</ChipLabel>
-                      </Chip>
-                    ))}
-                  </div>
+                {data.show_types && subjects.size > 0 && (
+                  <>
+                    {data.types_as_select ? (
+                      <Row className="pb-3 g-2">
+                        <Col xs="auto">
+                          <label
+                            htmlFor={block_id + '-tipologia-select'}
+                            className="form-label"
+                          >
+                            {intl.formatMessage(messages.label_tipologia)}
+                          </label>
+                          <select
+                            id={block_id + '-tipologia-select'}
+                            className="form-select"
+                            value={[...filters.subjects][0] ?? ''}
+                            aria-controls={results_region_id}
+                            onChange={(e) =>
+                              setFilters({
+                                ...filters,
+                                subjects: e.target.value
+                                  ? new Set([e.target.value])
+                                  : new Set(),
+                              })
+                            }
+                          >
+                            <option value="">
+                              {intl.formatMessage(messages.all_tipologie)}
+                            </option>
+                            {[...subjects].sort().map((s) => (
+                              <option key={s} value={s}>
+                                {s}
+                              </option>
+                            ))}
+                          </select>
+                        </Col>
+                      </Row>
+                    ) : (
+                      <div className="subjects pb-3">
+                        {/*Chip 'tutti'*/}
+                        <Chip
+                          color="primary"
+                          simple
+                          tag={Button}
+                          onClick={() => {
+                            toggleSubject('_all_');
+                          }}
+                          className={cx({
+                            active: filters.subjects.size === 0,
+                          })}
+                          aria-controls={results_region_id}
+                          aria-label={intl.formatMessage(
+                            messages.remove_all_subjects,
+                          )}
+                        >
+                          <ChipLabel>
+                            {intl.formatMessage(messages.all_subjects)}
+                          </ChipLabel>
+                        </Chip>
+
+                        {/*Chip delle varie categorie*/}
+                        {[...subjects].map((s) => (
+                          <Chip
+                            color="primary"
+                            simple
+                            tag={Button}
+                            key={s}
+                            onClick={() => {
+                              toggleSubject(s);
+                            }}
+                            className={cx({
+                              active: filters.subjects.has(s),
+                            })}
+                            aria-label={
+                              intl.formatMessage(messages.filter_by) + ' ' + s
+                            }
+                            aria-controls={results_region_id}
+                          >
+                            <ChipLabel>{s}</ChipLabel>
+                          </Chip>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
 

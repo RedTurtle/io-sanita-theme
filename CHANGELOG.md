@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.33.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.32.0...2.33.0) (2026-06-17)
+
+### Features
+
+* filtri configurabili (ente territoriale, comune, località) nel blocco Ricerca farmacie ([#154](https://github.com/RedTurtle/io-sanita-theme/issues/154)) ([338eba6](https://github.com/RedTurtle/io-sanita-theme/commit/338eba67fc8760bfdc3191a2474a8497cee8b23c))
+* Search strutture - widget for type filter and description text for searchable text ([#156](https://github.com/RedTurtle/io-sanita-theme/issues/156)) ([625925a](https://github.com/RedTurtle/io-sanita-theme/commit/625925a3fa40299add2dfaa1f31e976ddbe83208))
+
+### Maintenance
+
+* cleanup unesed locales ([#155](https://github.com/RedTurtle/io-sanita-theme/issues/155)) ([c92e281](https://github.com/RedTurtle/io-sanita-theme/commit/c92e28158b5552dabcbfa20a44e8370dcc69dfbc))
+
+## [2.32.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.3...2.32.0) (2026-06-12)
+
+### Features
+
+* aggiunta ricertca per comune/distretto su blocco searchmap ([#152](https://github.com/RedTurtle/io-sanita-theme/issues/152)) ([1aff10f](https://github.com/RedTurtle/io-sanita-theme/commit/1aff10f00963987a00a4acd6aafb754e50d72108))
+
+### Bug Fixes
+
+* bottoni categorie searchmap ([#151](https://github.com/RedTurtle/io-sanita-theme/issues/151)) ([058aa59](https://github.com/RedTurtle/io-sanita-theme/commit/058aa59acb0f5d721d653458e38be43f0adf0653))
+* prevent the submit of the form when adding a row o column from the toolbar ([#153](https://github.com/RedTurtle/io-sanita-theme/issues/153)) ([cf723b2](https://github.com/RedTurtle/io-sanita-theme/commit/cf723b2dfd0974d470b40ab54ce3f683f7a558a0))
+
+### Maintenance
+
+* prettier ([11b8f22](https://github.com/RedTurtle/io-sanita-theme/commit/11b8f222e8c6d4eb5f93d52069ec3ff2517970b7))
+
 ## [2.31.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.2...2.31.3) (2026-06-11)
 
 ### Bug Fixes
