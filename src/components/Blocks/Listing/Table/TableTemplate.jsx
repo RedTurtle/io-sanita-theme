@@ -103,7 +103,8 @@ const TableTemplate = (props) => {
                       behavior: field_properties.behavior,
                     };
                     if (field_properties.widget === 'datetime') {
-                      widget_props.format = 'DD/MM/yyyy HH:MM';
+                      // HH:mm -> minutes (HH:MM would render the month)
+                      widget_props.format = 'DD/MM/yyyy HH:mm';
                     }
                     // per questi campi si è deciso dii non pubblicare ora:minuti
                     switch (c.field) {

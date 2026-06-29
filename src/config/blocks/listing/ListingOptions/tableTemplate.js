@@ -63,6 +63,10 @@ const ColumnSchema = ({ intl }) => ({
       description: intl.formatMessage(messages.title_description),
       widget: 'ct_title_column',
     },
+    field_properties: {
+      title: ' ',
+      widget: 'ct_field_properties',
+    },
     // sortable: {
     //   title: intl.formatMessage(messages.sortable),
     //   type: 'boolean',
@@ -109,7 +113,11 @@ export const addTableTemplateOptions = (
       schemaExtender: (schema, data, intl) => {
         const mutated = cloneDeep(schema);
         if (data.ct) {
-          mutated.fieldsets[0].fields.push('field', 'title' /*, 'sortable'*/);
+          mutated.fieldsets[0].fields.push(
+            'field',
+            'title',
+            'field_properties' /*, 'sortable'*/,
+          );
           mutated.properties.field.ct = data.ct;
         }
         return mutated;
