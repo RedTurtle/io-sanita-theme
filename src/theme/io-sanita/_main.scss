@@ -227,6 +227,19 @@ iframe {
   background-color: $primary-darker !important;
 }
 
+/* Immagini flottate (align left/right): il blocco contiene solo l'immagine
+   in float, quindi ha altezza in-flow = 0. In public-ui `.block` ha
+   margin-bottom: 1.5rem che spinge in basso il testo che avvolge l'immagine,
+   disallineando il top del testo rispetto al top dell'immagine (in edit non
+   accade perché la regola è scoped .public-ui). Azzeriamo il margine per
+   allineare view ed edit. */
+.public-ui {
+  .block.image.align.left,
+  .block.image.align.right {
+    margin-bottom: 0;
+  }
+}
+
 /*Full-width*/
 .full-width,
 .ui.image img.full-width,
