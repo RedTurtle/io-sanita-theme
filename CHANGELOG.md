@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.33.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.0...2.33.1) (2026-07-01)
+
+### Bug Fixes
+
+* Blocco elenco a tabella: ora salva lo schema del campo nelle colonne (us76479) ([#161](https://github.com/RedTurtle/io-sanita-theme/issues/161)) ([0066c38](https://github.com/RedTurtle/io-sanita-theme/commit/0066c38333e624d1332bac33e7d2dc1bdf409230))
+* prevent submit pressing enter on slate table editing buttons ([#160](https://github.com/RedTurtle/io-sanita-theme/issues/160)) ([81cd708](https://github.com/RedTurtle/io-sanita-theme/commit/81cd70806a05f7ae7617f8f8389faffa2e66542d))
+* text and floated images alignment ([#162](https://github.com/RedTurtle/io-sanita-theme/issues/162)) ([01c0386](https://github.com/RedTurtle/io-sanita-theme/commit/01c0386518bf31c4079b03d9ef81576a55c44089))
+
+### Maintenance
+
+* preparing release 2.33.1 ([3fefeb1](https://github.com/RedTurtle/io-sanita-theme/commit/3fefeb18d82592f9925520a201ddc04b8210e176))
+
 ## [2.33.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.32.0...2.33.0) (2026-06-17)
 
 ### Features
