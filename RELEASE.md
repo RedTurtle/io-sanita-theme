@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- Immagini affiancate al testo (allineamento a destra/sinistra): corretto un disallineamento verticale per cui, in visualizzazione, il testo che avvolge l'immagine partiva più in basso rispetto al bordo superiore dell'immagine, mentre in modifica appariva correttamente allineato.
+
 ## Versione 2.33.0 (17/06/2026)
 
 ### Migliorie
