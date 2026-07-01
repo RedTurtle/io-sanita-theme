@@ -41,11 +41,12 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.33.1 (01/07/2026)
 
 ### Fix
 
 - Immagini affiancate al testo (allineamento a destra/sinistra): corretto un disallineamento verticale per cui, in visualizzazione, il testo che avvolge l'immagine partiva più in basso rispetto al bordo superiore dell'immagine, mentre in modifica appariva correttamente allineato.
+- Sistemata la visualizzazione del formato dei campi nel template "Tabella" del blocco elenco. Ora tutte le tipologie di campo vengono visualizzate correttamente.
 
 ## Versione 2.33.0 (17/06/2026)
 
