@@ -5,7 +5,7 @@ import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { useIntl, defineMessages } from 'react-intl';
-import { Row, Col, Table } from 'design-react-kit';
+import { Table } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useSelector } from 'react-redux';
 
@@ -103,7 +103,8 @@ const TableTemplate = (props) => {
                       behavior: field_properties.behavior,
                     };
                     if (field_properties.widget === 'datetime') {
-                      widget_props.format = 'DD/MM/yyyy HH:MM';
+                      // HH:mm -> minutes (HH:MM would render the month)
+                      widget_props.format = 'DD/MM/yyyy HH:mm';
                     }
                     // per questi campi si è deciso dii non pubblicare ora:minuti
                     switch (c.field) {
