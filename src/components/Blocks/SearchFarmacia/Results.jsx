@@ -46,7 +46,7 @@ const messages = defineMessages({
   },
   turni: {
     id: 'search_farmacia_table_turni',
-    defaultMessage: 'Periodi di Turno',
+    defaultMessage: 'Periodo e tipologia di turno',
   },
   turni_en: {
     id: 'search_farmacia_table_turni_en',
@@ -250,7 +250,7 @@ const Results = ({ items, isEditMode, searchType }) => {
                   searchType={searchType}
                 />
 
-                {/* Periodi di turno */}
+                {/* Periodo e tipologia di turno */}
                 {searchType !== 'vacations' && (
                   <td className="turni">
                     <div className="th d-lg-none">

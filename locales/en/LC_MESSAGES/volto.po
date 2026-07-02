@@ -3157,7 +3157,7 @@ msgstr "Contact numbers"
 msgid "search_farmacia_table_recapiti_en"
 msgstr ""
 
-#. Default: "Periodi di Turno"
+#. Default: "Periodo e tipologia di turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni"
 msgstr "Shifts periods"
