@@ -2,6 +2,7 @@ import { DatetimeWidget } from '@plone/volto/components/manage/Widgets';
 import { Row, Col } from 'design-react-kit';
 import { SearchBar, SelectInput } from 'io-sanita-theme/components';
 import { defineMessages, useIntl } from 'react-intl';
+import { getComuneSelectValue } from './comuniUtils';
 
 const messages = defineMessages({
   search_keyword: {
@@ -104,12 +105,7 @@ const SearchFilters = ({
         <Col lg="3" className="d-flex align-center">
           <SelectInput
             id="comune"
-            value={
-              filters['comune'] && {
-                value: filters['comune'],
-                label: filters['comune'],
-              }
-            }
+            value={getComuneSelectValue(filters.comune, options.comuni)}
             placeholder={intl.formatMessage(messages.comune)}
             onChange={(opt) => {
               setFilters({ ...filters, comune: opt?.value });

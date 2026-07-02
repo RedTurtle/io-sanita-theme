@@ -2,6 +2,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Table } from 'semantic-ui-react';
+import { getActiveTurni } from './turniUtils';
 
 const messages = defineMessages({
   nome: {
@@ -179,7 +180,13 @@ const PeriodsStructure = ({ periods }) => {
   );
 };
 
-const Results = ({ items, isEditMode, searchType }) => {
+const Results = ({
+  items,
+  isEditMode,
+  searchType,
+  onlyActiveTurno,
+  searchDate,
+}) => {
   const intl = useIntl();
 
   return (
@@ -230,51 +237,58 @@ const Results = ({ items, isEditMode, searchType }) => {
             </Table.Row>
           </Table.Header>
           <tbody>
-            {items.map((item, i) => (
-              <tr key={i}>
-                <td className="nome">
-                  {item['@id'] && (
-                    <p>
-                      <UniversalLink
-                        item={!isEditMode ? item : null}
-                        href={isEditMode ? '#' : null}
-                      >
-                        {item.title}
-                      </UniversalLink>
-                    </p>
+            {items.map((item, i) => {
+              const turniDaMostrare =
+                onlyActiveTurno && searchDate
+                  ? getActiveTurni(item.turni, searchDate)
+                  : item.turni;
+
+              return (
+                <tr key={i}>
+                  <td className="nome">
+                    {item['@id'] && (
+                      <p>
+                        <UniversalLink
+                          item={!isEditMode ? item : null}
+                          href={isEditMode ? '#' : null}
+                        >
+                          {item.title}
+                        </UniversalLink>
+                      </p>
+                    )}
+                  </td>
+                  <ContactColumns
+                    isEditMode={isEditMode}
+                    item={item}
+                    searchType={searchType}
+                  />
+
+                  {/* Periodo e tipologia di turno */}
+                  {searchType !== 'vacations' && (
+                    <td className="turni">
+                      <div className="th d-lg-none">
+                        {intl.formatMessage(messages.turni)}
+                        <br />
+                        {intl.formatMessage(messages.turni_en)}
+                      </div>
+                      <PeriodsStructure periods={turniDaMostrare} />
+                    </td>
                   )}
-                </td>
-                <ContactColumns
-                  isEditMode={isEditMode}
-                  item={item}
-                  searchType={searchType}
-                />
 
-                {/* Periodo e tipologia di turno */}
-                {searchType !== 'vacations' && (
-                  <td className="turni">
-                    <div className="th d-lg-none">
-                      {intl.formatMessage(messages.turni)}
-                      <br />
-                      {intl.formatMessage(messages.turni_en)}
-                    </div>
-                    <PeriodsStructure periods={item.turni} />
-                  </td>
-                )}
-
-                {/* Periodi di ferie */}
-                {searchType === 'vacations' && (
-                  <td className="ferie">
-                    <div className="th d-lg-none">
-                      {intl.formatMessage(messages.ferie)}
-                      <br />
-                      {intl.formatMessage(messages.ferie_en)}
-                    </div>
-                    <PeriodsStructure periods={item.ferie} />
-                  </td>
-                )}
-              </tr>
-            ))}
+                  {/* Periodi di ferie */}
+                  {searchType === 'vacations' && (
+                    <td className="ferie">
+                      <div className="th d-lg-none">
+                        {intl.formatMessage(messages.ferie)}
+                        <br />
+                        {intl.formatMessage(messages.ferie_en)}
+                      </div>
+                      <PeriodsStructure periods={item.ferie} />
+                    </td>
+                  )}
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       ) : (

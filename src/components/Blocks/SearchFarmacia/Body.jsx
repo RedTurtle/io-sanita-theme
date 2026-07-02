@@ -11,6 +11,8 @@ import {
 import { Container, Col, Row, Spinner } from 'design-react-kit';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
+import { isDateWithinTurno } from './turniUtils';
+import { getComuniOptions, filterFarmacieByComune } from './comuniUtils';
 
 /* Style */
 import './search-farmacia.scss';
@@ -92,17 +94,10 @@ const Body = ({ isEditMode, data, id }) => {
   useEffect(() => {
     if (searchFarmacia?.items) {
       setFiltersOptions({
-        comuni: [
-          ...new Set(searchFarmacia.items.map((item) => item.comune).sort()),
-        ].map((item) => {
-          return { value: item, label: item };
-        }),
+        comuni: getComuniOptions(searchFarmacia.items),
         localita: [
           ...new Set(
-            searchFarmacia.items
-              .filter(
-                (item) => !filters.comune || item.comune === filters.comune,
-              )
+            filterFarmacieByComune(searchFarmacia.items, filters.comune)
               .map((item) => item.localita)
               .sort(),
           ),
@@ -133,25 +128,9 @@ const Body = ({ isEditMode, data, id }) => {
     if (searchType === 'shifts' && filters.date && items?.length > 0) {
       const inputDate = new Date(filters.date).getTime();
 
-      newResults = newResults.filter((item) => {
-        const checkTurno = item?.turni?.map((turno) => {
-          const dalSplit = turno?.dal.split('/');
-          const alSplit = turno?.al.split('/');
-          const turnoDal = new Date(
-            +dalSplit[2],
-            dalSplit[1] - 1,
-            +dalSplit[0],
-          ).getTime();
-          const turnoAl = new Date(
-            +alSplit[2],
-            alSplit[1] - 1,
-            +alSplit[0],
-          ).getTime();
-
-          return turnoDal <= inputDate && turnoAl >= inputDate ? true : false;
-        });
-        return checkTurno && checkTurno.includes(true);
-      });
+      newResults = newResults.filter((item) =>
+        item?.turni?.some((turno) => isDateWithinTurno(turno, inputDate)),
+      );
     }
 
     // Turni - filtro Area Territoriale
@@ -163,11 +142,7 @@ const Body = ({ isEditMode, data, id }) => {
 
     // Ferie - filtro Comune
     if (filters.comune && filters.comune !== null) {
-      newResults = newResults.filter(
-        (item) =>
-          item.comune &&
-          item.comune.toLowerCase() === filters.comune.toLowerCase(),
-      );
+      newResults = filterFarmacieByComune(newResults, filters.comune);
     }
 
     // Ferie - filtro Località
@@ -321,6 +296,8 @@ const Body = ({ isEditMode, data, id }) => {
                 items={resultsPage}
                 isEditMode={isEditMode}
                 searchType={searchType}
+                onlyActiveTurno={data?.only_active_turno}
+                searchDate={filters.date}
               />
               {results && results.length > b_size && (
                 <Pagination

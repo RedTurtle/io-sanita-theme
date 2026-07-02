@@ -44,6 +44,8 @@
 ## Versione X.X.X (dd/mm/yyyy)
 
 ### Migliorie
+
+- Nel blocco di ricerca delle farmacie possibilità di visualizzare solo i turni relativi alla data scelta
 - Nel blocco di ricerca delle farmacie la colonna 'Periodi di Turno' è stata rinominata in 'Periodo e tipologia di turno'
 
 ## Versione 2.33.1 (01/07/2026)

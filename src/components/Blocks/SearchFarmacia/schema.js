@@ -25,6 +25,11 @@ const messages = defineMessages({
     id: 'search_farmacia_show_localita',
     defaultMessage: 'Mostra il filtro per località',
   },
+  only_active_turno: {
+    id: 'search_farmacia_only_active_turno',
+    defaultMessage:
+      'Mostra solo il turno del giorno selezionato (anziché tutti i periodi)',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -40,6 +45,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_area_territoriale',
           'show_comune',
           'show_localita',
+          'only_active_turno',
         ],
       },
     ],
@@ -69,6 +75,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
         title: intl.formatMessage(messages.show_localita),
         type: 'boolean',
         default: formData?.search_type === 'vacations',
+      },
+      only_active_turno: {
+        title: intl.formatMessage(messages.only_active_turno),
+        type: 'boolean',
+        default: false,
       },
     },
     required: [],
