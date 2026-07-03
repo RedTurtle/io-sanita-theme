@@ -39,11 +39,11 @@ const messages = defineMessages({
   },
   recapiti: {
     id: 'search_farmacia_table_recapiti',
-    defaultMessage: 'Recapiti',
+    defaultMessage: 'Telefono',
   },
   recapiti_en: {
     id: 'search_farmacia_table_recapiti_en',
-    defaultMessage: 'Contact numbers',
+    defaultMessage: 'Phone number',
   },
   turni: {
     id: 'search_farmacia_table_turni',
@@ -69,22 +69,23 @@ const messages = defineMessages({
     id: 'search_farmacia_period_to',
     defaultMessage: 'al',
   },
-  telefono: {
-    id: 'search_farmacia_telefono',
-    defaultMessage: 'Telefono',
-  },
-  telefono_turno: {
-    id: 'search_farmacia_telefono_turno',
-    defaultMessage: 'Telefono turno',
-  },
   no_results: {
     id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
 });
 
-const ContactColumns = ({ isEditMode, item, searchType }) => {
+const ContactColumns = ({
+  isEditMode,
+  item,
+  searchType,
+  showCap,
+  showProvincia,
+}) => {
   const intl = useIntl();
+  const showZip = showCap && item?.zip_code;
+  const showProv = showProvincia && item?.provincia;
+  const hasSecondAddressLine = showZip || item?.localita || showProv;
 
   return (
     <>
@@ -115,14 +116,14 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
           {intl.formatMessage(messages.indirizzo_en)}
         </div>
 
-        {item?.street || item?.zip_code || item?.localita || item?.provincia ? (
+        {item?.street || hasSecondAddressLine ? (
           <p>
             {item?.street && item.street}
-            {item?.street && item?.zip_code && <br />}
-            {item?.zip_code && item.zip_code}
-            {item?.zip_code && item?.localita && <> </>}
+            {item?.street && hasSecondAddressLine && <br />}
+            {showZip && item.zip_code}
+            {showZip && item?.localita && <> </>}
             {item?.localita && item.localita}
-            {item?.provincia && <> ({item.provincia}) </>}
+            {showProv && <> ({item.provincia}) </>}
           </p>
         ) : (
           <> - </>
@@ -136,7 +137,6 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         </div>
         {item.telefono && searchType === 'vacations' && (
           <p className="my-0">
-            {`${intl.formatMessage(messages.telefono)}: `}
             <PuntoDiContattoValue
               value={{ tipo: 'telefono', valore: item.telefono }}
             />
@@ -144,7 +144,6 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         )}
         {item.telefono_turno && searchType !== 'vacations' && (
           <p className="my-0">
-            {`${intl.formatMessage(messages.telefono_turno)}: `}
             <PuntoDiContattoValue
               value={{ tipo: 'telefono', valore: item.telefono_turno }}
             />
@@ -186,6 +185,8 @@ const Results = ({
   searchType,
   onlyActiveTurno,
   searchDate,
+  showCap,
+  showProvincia,
 }) => {
   const intl = useIntl();
 
@@ -261,6 +262,8 @@ const Results = ({
                     isEditMode={isEditMode}
                     item={item}
                     searchType={searchType}
+                    showCap={showCap}
+                    showProvincia={showProvincia}
                   />
 
                   {/* Periodo e tipologia di turno */}

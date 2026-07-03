@@ -30,6 +30,14 @@ const messages = defineMessages({
     defaultMessage:
       'Mostra solo il turno del giorno selezionato (anziché tutti i periodi)',
   },
+  show_cap: {
+    id: 'search_farmacia_show_cap',
+    defaultMessage: 'Mostra il CAP nella tabella dei risultati',
+  },
+  show_provincia: {
+    id: 'search_farmacia_show_provincia',
+    defaultMessage: 'Mostra la provincia nella tabella dei risultati',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -46,6 +54,8 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_comune',
           'show_localita',
           'only_active_turno',
+          'show_cap',
+          'show_provincia',
         ],
       },
     ],
@@ -80,6 +90,16 @@ export function SearchFarmaciaSchema({ formData, intl }) {
         title: intl.formatMessage(messages.only_active_turno),
         type: 'boolean',
         default: false,
+      },
+      show_cap: {
+        title: intl.formatMessage(messages.show_cap),
+        type: 'boolean',
+        default: true,
+      },
+      show_provincia: {
+        title: intl.formatMessage(messages.show_provincia),
+        type: 'boolean',
+        default: true,
       },
     },
     required: [],

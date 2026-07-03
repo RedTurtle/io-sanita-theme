@@ -56,6 +56,8 @@ const Body = ({ isEditMode, data, id }) => {
     data.show_area_territoriale ?? searchType !== 'vacations';
   const showComune = data.show_comune ?? searchType === 'vacations';
   const showLocalita = data.show_localita ?? searchType === 'vacations';
+  const showCap = data.show_cap ?? true;
+  const showProvincia = data.show_provincia ?? true;
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -298,6 +300,8 @@ const Body = ({ isEditMode, data, id }) => {
                 searchType={searchType}
                 onlyActiveTurno={data?.only_active_turno}
                 searchDate={filters.date}
+                showCap={showCap}
+                showProvincia={showProvincia}
               />
               {results && results.length > b_size && (
                 <Pagination
