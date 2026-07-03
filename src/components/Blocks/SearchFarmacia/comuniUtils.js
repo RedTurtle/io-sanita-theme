@@ -3,9 +3,10 @@
  * present in the loaded farmacie.
  */
 export const getComuniOptions = (items) =>
-  [...new Set((items ?? []).map((item) => item.comune).sort())].map(
-    (item) => ({ value: item, label: item }),
-  );
+  [...new Set((items ?? []).map((item) => item.comune).sort())].map((item) => ({
+    value: item,
+    label: item,
+  }));
 
 /**
  * Farmacie whose `comune` matches the given value (case-insensitive).
