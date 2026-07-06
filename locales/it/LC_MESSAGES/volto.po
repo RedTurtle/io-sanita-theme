@@ -3027,6 +3027,11 @@ msgstr ""
 msgid "search_farmacia_no_results"
 msgstr ""
 
+#. Default: "Mostra solo il turno del giorno selezionato (anziché tutti i periodi)"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_only_active_turno"
+msgstr ""
+
 #. Default: "Dal"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_period_from"
@@ -3072,6 +3077,11 @@ msgstr ""
 msgid "search_farmacia_show_area_territoriale"
 msgstr ""
 
+#. Default: "Mostra il CAP nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_cap"
+msgstr ""
+
 #. Default: "Mostra il filtro per comune"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_comune"
@@ -3080,6 +3090,21 @@ msgstr ""
 #. Default: "Mostra il filtro per località"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_localita"
+msgstr ""
+
+#. Default: "Mostra la colonna Località nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita_colonna"
+msgstr ""
+
+#. Default: "Mostra la mappa con le farmacie trovate"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_map"
+msgstr ""
+
+#. Default: "Mostra la provincia nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_provincia"
 msgstr ""
 
 #. Default: "Comune"
@@ -3147,12 +3172,12 @@ msgstr ""
 msgid "search_farmacia_table_nome_en"
 msgstr ""
 
-#. Default: "Recapiti"
+#. Default: "Telefono"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti"
 msgstr ""
 
-#. Default: "Contact numbers"
+#. Default: "Phone number"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti_en"
 msgstr ""
@@ -3165,16 +3190,6 @@ msgstr ""
 #. Default: "Shifts periods"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
-msgstr ""
-
-#. Default: "Telefono"
-#: components/Blocks/SearchFarmacia/Results
-msgid "search_farmacia_telefono"
-msgstr ""
-
-#. Default: "Telefono turno"
-#: components/Blocks/SearchFarmacia/Results
-msgid "search_farmacia_telefono_turno"
 msgstr ""
 
 #. Default: "Titolo"
