@@ -42,6 +42,10 @@ const messages = defineMessages({
     id: 'search_farmacia_show_localita_colonna',
     defaultMessage: 'Mostra la colonna Località nella tabella dei risultati',
   },
+  show_map: {
+    id: 'search_farmacia_show_map',
+    defaultMessage: 'Mostra la mappa con le farmacie trovate',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -61,6 +65,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_cap',
           'show_provincia',
           'show_localita_colonna',
+          'show_map',
         ],
       },
     ],
@@ -110,6 +115,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
         title: intl.formatMessage(messages.show_localita_colonna),
         type: 'boolean',
         default: true,
+      },
+      show_map: {
+        title: intl.formatMessage(messages.show_map),
+        type: 'boolean',
+        default: false,
       },
     },
     required: [],

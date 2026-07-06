@@ -8,29 +8,14 @@ export const parseItDate = (value, { endOfDay = false } = {}) => {
   const [day, month, year] = datePart.split('/');
   if (!day || !month || !year) return null;
 
-  let hours = 0;
-  let minutes = 0;
-  let seconds = 0;
-  let milliseconds = 0;
-  if (timePart) {
-    const [hh, mm] = timePart.split(':');
-    hours = +hh || 0;
-    minutes = +mm || 0;
-  } else if (endOfDay) {
-    hours = 23;
-    minutes = 59;
-    seconds = 59;
-    milliseconds = 999;
-  }
-
   const timestamp = new Date(
     +year,
     +month - 1,
     +day,
-    hours,
-    minutes,
-    seconds,
-    milliseconds,
+    timePart ? timePart.split(':')[0] : endOfDay ? 23 : 0,
+    timePart ? timePart.split(':')[1] : endOfDay ? 59 : 0,
+    endOfDay ? 59 : 0,
+    endOfDay ? 999 : 0,
   ).getTime();
   return Number.isNaN(timestamp) ? null : timestamp;
 };

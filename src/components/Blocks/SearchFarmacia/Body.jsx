@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
@@ -9,10 +9,12 @@ import {
   LinkedHeadline,
 } from 'io-sanita-theme/components';
 import { Container, Col, Row, Spinner } from 'design-react-kit';
+import { OSMMap } from 'volto-venue';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
 import { isDateWithinTurno } from './turniUtils';
 import { getComuniOptions, filterFarmacieByComune } from './comuniUtils';
+import { getFarmacieMarkers } from './mapUtils';
 
 /* Style */
 import './search-farmacia.scss';
@@ -59,6 +61,7 @@ const Body = ({ isEditMode, data, id }) => {
   const showCap = data.show_cap ?? true;
   const showProvincia = data.show_provincia ?? true;
   const showLocalitaColonna = data.show_localita_colonna ?? true;
+  const showMap = data.show_map ?? false;
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -208,6 +211,12 @@ const Body = ({ isEditMode, data, id }) => {
     }
   }, [currentPage, results]);
 
+  // tutte le farmacie trovate hanno un pin sulla mappa, anche quelle non nella pagina corrente
+  const markers = useMemo(
+    () => (showMap ? getFarmacieMarkers(results, intl) : []),
+    [showMap, results, intl],
+  );
+
   const resultsWrapperId = 'search-farmacie-results_' + id;
   return (
     <div className="block iosanita-block-search farmacia">
@@ -286,6 +295,18 @@ const Body = ({ isEditMode, data, id }) => {
                 </Col>
               </Row>
             </form>
+
+            {showMap && markers.length > 0 && (
+              <div className="farmacie-map mb-4">
+                <OSMMap
+                  markers={markers}
+                  cluster={true}
+                  showTooltip={true}
+                  showPopup={true}
+                  mapOptions={{ scrollWheelZoom: false }}
+                />
+              </div>
+            )}
 
             <div
               className="farmacie-results shadow"
