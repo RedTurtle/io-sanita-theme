@@ -1,6 +1,28 @@
 import ReactDOMServer from 'react-dom/server';
+import { defineMessages } from 'react-intl';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { mapPinDirections } from 'io-sanita-theme/helpers';
 import ioSanitaPin from 'io-sanita-theme/components/Blocks/SearchMap/map-pin.svg';
+import { getActiveTurni } from './turniUtils';
+
+const messages = defineMessages({
+  period_from: {
+    id: 'search_farmacia_map_period_from',
+    defaultMessage: 'Dal',
+  },
+  period_to: {
+    id: 'search_farmacia_map_period_to',
+    defaultMessage: 'al',
+  },
+  turni: {
+    id: 'search_farmacia_map_turni',
+    defaultMessage: 'Periodo e tipologia di turno',
+  },
+  view_details: {
+    id: 'search_farmacia_map_view_details',
+    defaultMessage: 'Vedi scheda della farmacia',
+  },
+});
 
 const LeafIcon = (options, item) => {
   return {
@@ -16,6 +38,52 @@ const LeafIcon = (options, item) => {
   };
 };
 
+// stesse informazioni mostrate in una riga della tabella dei risultati (Results.jsx)
+const FarmaciaPopupInfo = ({
+  item,
+  intl,
+  searchType,
+  showCap,
+  showProvincia,
+  showLocalitaColonna,
+  onlyActiveTurno,
+  searchDate,
+}) => {
+  const showZip = showCap && item?.zip_code;
+  const showProv = showProvincia && item?.provincia;
+  const turniDaMostrare =
+    onlyActiveTurno && searchDate
+      ? getActiveTurni(item.turni, searchDate)
+      : item.turni;
+  const periods = searchType === 'vacations' ? item.ferie : turniDaMostrare;
+
+  return (
+    <div className="farmacia-map-popup-info">
+        <p className="mb-1">
+          {item?.street} - {item?.comune}
+          {showLocalitaColonna && item?.localita ? ` - ${item.localita}` : ''}
+          {showZip ? ` ${item.zip_code}` : ''}
+          {showProv ? ` (${item.provincia})` : ''}
+        </p>
+      {periods?.length > 0 && (
+        <p className="mb-1">
+          <strong>{intl.formatMessage(messages.turni)}</strong>
+          <br />
+          {periods.map((pd, i) => (
+            <span key={i}>
+              {intl.formatMessage(messages.period_from)}
+              {pd?.dal && <> {pd.dal}</>}{' '}
+              {intl.formatMessage(messages.period_to)}
+              {pd?.al && <> {pd.al}</>}
+              <br />
+            </span>
+          ))}
+        </p>
+      )}
+    </div>
+  );
+};
+
 // i dati delle farmacie arrivano da @searchfarmacie con lat/lng piatte
 // (latitudine/longitudine) invece del campo geolocation annidato
 export const hasFarmaciaGeolocation = (item) => {
@@ -24,7 +92,7 @@ export const hasFarmaciaGeolocation = (item) => {
   return !!item && !!lat && !!lng;
 };
 
-export const getFarmaciaMarker = (item, intl) => {
+export const getFarmaciaMarker = (item, intl, options = {}) => {
   if (!hasFarmaciaGeolocation(item)) {
     return null;
   }
@@ -50,9 +118,15 @@ export const getFarmaciaMarker = (item, intl) => {
       },
       point,
     ),
-    popupContent: mapPinDirections(point, intl),
+    popupContent: mapPinDirections(
+      point,
+      intl,
+      <FarmaciaPopupInfo item={point} intl={intl} {...options} />,
+    ),
   };
 };
 
-export const getFarmacieMarkers = (items, intl) =>
-  (items ?? []).map((item) => getFarmaciaMarker(item, intl)).filter(Boolean);
+export const getFarmacieMarkers = (items, intl, options = {}) =>
+  (items ?? [])
+    .map((item) => getFarmaciaMarker(item, intl, options))
+    .filter(Boolean);

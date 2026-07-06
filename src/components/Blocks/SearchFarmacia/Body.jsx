@@ -213,8 +213,30 @@ const Body = ({ isEditMode, data, id }) => {
 
   // tutte le farmacie trovate hanno un pin sulla mappa, anche quelle non nella pagina corrente
   const markers = useMemo(
-    () => (showMap ? getFarmacieMarkers(results, intl) : []),
-    [showMap, results, intl],
+    () =>
+      showMap
+        ? getFarmacieMarkers(results, intl, {
+            isEditMode,
+            searchType,
+            showCap,
+            showProvincia,
+            showLocalitaColonna,
+            onlyActiveTurno: data?.only_active_turno,
+            searchDate: filters.date,
+          })
+        : [],
+    [
+      showMap,
+      results,
+      intl,
+      isEditMode,
+      searchType,
+      showCap,
+      showProvincia,
+      showLocalitaColonna,
+      data?.only_active_turno,
+      filters.date,
+    ],
   );
 
   const resultsWrapperId = 'search-farmacie-results_' + id;
