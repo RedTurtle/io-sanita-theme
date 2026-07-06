@@ -81,6 +81,7 @@ const ContactColumns = ({
   searchType,
   showCap,
   showProvincia,
+  showLocalitaColonna,
 }) => {
   const intl = useIntl();
   const showZip = showCap && item?.zip_code;
@@ -99,15 +100,17 @@ const ContactColumns = ({
         {item?.comune ? <p>{item.comune}</p> : <> - </>}
       </td>
 
-      <td className="localita">
-        <div className="th d-lg-none">
-          {intl.formatMessage(messages.localita)}
-          <br />
-          {intl.formatMessage(messages.localita_en)}
-        </div>
+      {showLocalitaColonna && (
+        <td className="localita">
+          <div className="th d-lg-none">
+            {intl.formatMessage(messages.localita)}
+            <br />
+            {intl.formatMessage(messages.localita_en)}
+          </div>
 
-        {item?.localita ? <p>{item.localita}</p> : <> - </>}
-      </td>
+          {item?.localita ? <p>{item.localita}</p> : <> - </>}
+        </td>
+      )}
 
       <td className="indirizzo">
         <div className="th d-lg-none">
@@ -187,6 +190,7 @@ const Results = ({
   searchDate,
   showCap,
   showProvincia,
+  showLocalitaColonna,
 }) => {
   const intl = useIntl();
 
@@ -204,11 +208,13 @@ const Results = ({
                 {intl.formatMessage(messages.comune)} <br />
                 {intl.formatMessage(messages.comune_en)}
               </Table.HeaderCell>
-              <Table.HeaderCell>
-                {intl.formatMessage(messages.localita)}
-                <br />
-                {intl.formatMessage(messages.localita_en)}
-              </Table.HeaderCell>
+              {showLocalitaColonna && (
+                <Table.HeaderCell>
+                  {intl.formatMessage(messages.localita)}
+                  <br />
+                  {intl.formatMessage(messages.localita_en)}
+                </Table.HeaderCell>
+              )}
               <Table.HeaderCell>
                 {intl.formatMessage(messages.indirizzo)}
                 <br />
@@ -264,6 +270,7 @@ const Results = ({
                     searchType={searchType}
                     showCap={showCap}
                     showProvincia={showProvincia}
+                    showLocalitaColonna={showLocalitaColonna}
                   />
 
                   {/* Periodo e tipologia di turno */}

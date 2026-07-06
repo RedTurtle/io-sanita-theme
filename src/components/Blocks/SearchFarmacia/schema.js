@@ -38,6 +38,10 @@ const messages = defineMessages({
     id: 'search_farmacia_show_provincia',
     defaultMessage: 'Mostra la provincia nella tabella dei risultati',
   },
+  show_localita_colonna: {
+    id: 'search_farmacia_show_localita_colonna',
+    defaultMessage: 'Mostra la colonna Località nella tabella dei risultati',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -56,6 +60,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'only_active_turno',
           'show_cap',
           'show_provincia',
+          'show_localita_colonna',
         ],
       },
     ],
@@ -98,6 +103,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       },
       show_provincia: {
         title: intl.formatMessage(messages.show_provincia),
+        type: 'boolean',
+        default: true,
+      },
+      show_localita_colonna: {
+        title: intl.formatMessage(messages.show_localita_colonna),
         type: 'boolean',
         default: true,
       },

@@ -58,6 +58,7 @@ const Body = ({ isEditMode, data, id }) => {
   const showLocalita = data.show_localita ?? searchType === 'vacations';
   const showCap = data.show_cap ?? true;
   const showProvincia = data.show_provincia ?? true;
+  const showLocalitaColonna = data.show_localita_colonna ?? true;
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -302,6 +303,7 @@ const Body = ({ isEditMode, data, id }) => {
                 searchDate={filters.date}
                 showCap={showCap}
                 showProvincia={showProvincia}
+                showLocalitaColonna={showLocalitaColonna}
               />
               {results && results.length > b_size && (
                 <Pagination
