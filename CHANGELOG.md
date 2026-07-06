@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.33.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.1...2.33.2) (2026-07-06)
+
 ## [2.33.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.0...2.33.1) (2026-07-01)
 
 ### Bug Fixes
