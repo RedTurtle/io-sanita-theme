@@ -141,3 +141,50 @@ export const getFarmacieMarkers = (items, intl, options = {}) =>
   (items ?? [])
     .map((item) => getFarmaciaMarker(item, intl, options))
     .filter(Boolean);
+
+// firma indipendente dall'ordine degli item: usata per evitare di ricreare
+// l'array dei marker (e quindi lo zoom/i bounds della mappa) quando cambia solo
+// l'ordinamento della tabella dei risultati, e non l'insieme delle farmacie mostrate
+export const getFarmacieMarkersSignature = (items, options = {}) => {
+  const {
+    isEditMode,
+    searchType,
+    showCap,
+    showProvincia,
+    showLocalitaColonna,
+    onlyActiveTurno,
+    searchDate,
+  } = options;
+
+  const itemsSignature = (items ?? [])
+    .filter(hasFarmaciaGeolocation)
+    .map((item) =>
+      JSON.stringify([
+        item['@id'],
+        item.latitudine,
+        item.longitudine,
+        item.comune,
+        item.localita,
+        item.street,
+        item.zip_code,
+        item.provincia,
+        item.telefono,
+        item.telefono_turno,
+        item.turni,
+        item.ferie,
+      ]),
+    )
+    .sort()
+    .join('|');
+
+  return [
+    itemsSignature,
+    isEditMode,
+    searchType,
+    showCap,
+    showProvincia,
+    showLocalitaColonna,
+    onlyActiveTurno,
+    searchDate,
+  ].join('::');
+};
