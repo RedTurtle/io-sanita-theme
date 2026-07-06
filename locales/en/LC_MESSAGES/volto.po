@@ -15,7 +15,7 @@ msgstr ""
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "A short hint that describes the expected value within this block"
-msgstr ""
+msgstr "A short hint that describes the expected value within this block"
 
 #. Default: "Accedi all'area personale"
 #: components/layout/Header/HeaderSlim/HeaderLogin
@@ -25,63 +25,63 @@ msgstr "Login to your personal area"
 #. Default: "Accordion"
 #: components/Blocks/Accordion/Edit
 msgid "Accordion"
-msgstr ""
+msgstr "Accordion"
 
 #. Default: "Accordion Title size"
 #: components/Blocks/Accordion/Schema
 msgid "Accordion Title size"
-msgstr ""
+msgstr "Accordion Title size"
 
 #. Default: "Accordion block"
 #: components/Blocks/Accordion/Edit
 #: components/Blocks/Accordion/Schema
 msgid "Accordion block"
-msgstr ""
+msgstr "Accordion block"
 
 #. Default: "Accordion block settings"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Accordion block settings"
-msgstr ""
+msgstr "Accordion block settings"
 
 #. Default: "Accordion title"
 #: components/Blocks/Accordion/Schema
 msgid "Accordion title"
-msgstr ""
+msgstr "Accordion title"
 
 #. Default: "Aggiungi elemento"
 #: components/Blocks/Contacts/Edit
 msgid "Add accordion item"
-msgstr ""
+msgstr "Add item"
 
 #. Default: "Aggiungi elemento"
 #: components/Blocks/Icons/Edit
 msgid "Add icons item"
-msgstr ""
+msgstr "Add item"
 
 #. Default: "Allow multiple panels open at a time"
 #: components/Blocks/Accordion/Schema
 msgid "Allow multiple panels open at a time"
-msgstr ""
+msgstr "Allow multiple panels open at a time"
 
 #. Default: "Allow only the following blocks types"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Allow only the following blocks types"
-msgstr ""
+msgstr "Allow only the following blocks types"
 
 #. Default: "Allowed blocks"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Allowed blocks"
-msgstr ""
+msgstr "Allowed blocks"
 
 #. Default: "Aspetto"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "Aspetto"
-msgstr ""
+msgstr "Appearance"
 
 #. Default: "Attenzione!"
 #: components/Search/Search
@@ -97,17 +97,17 @@ msgstr "Notice"
 #. Default: "Bottom"
 #: overrideTranslations
 msgid "Bottom"
-msgstr ""
+msgstr "Bottom"
 
 #. Default: "Browse"
 #: components/Blocks/Hero/Edit
 msgid "Browse"
-msgstr ""
+msgstr "Browse"
 
 #. Default: "Callout"
 #: components/Blocks/Callout/Sidebar
 msgid "Callout"
-msgstr ""
+msgstr "Callout"
 
 #. Default: "Vedi"
 #: components/Blocks/Listing/SimpleCard/Card/SimpleCardDefault
@@ -128,7 +128,7 @@ msgstr "View on map"
 #. Default: "Center"
 #: overrideTranslations
 msgid "Center"
-msgstr ""
+msgstr "Center"
 
 #. Default: "Cerca"
 #: components/layout/Header/HeaderSearch/HeaderSearch
@@ -158,7 +158,7 @@ msgstr "Click here to replace file"
 #. Default: "Collapsed by default"
 #: components/Blocks/Accordion/Schema
 msgid "Collapsed by default"
-msgstr ""
+msgstr "Collapsed by default"
 
 #. Default: "Contenuto"
 #: components/View/AggregationPage/SideMenu
@@ -169,7 +169,7 @@ msgstr "Content"
 #. Default: "Current filters applied"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "Current filters applied"
-msgstr ""
+msgstr "Current filters applied"
 
 #. Default: "Date aggiuntive"
 #: components/View/Evento/Dates
@@ -195,128 +195,128 @@ msgstr "Between {start} and {end}"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Default"
-msgstr ""
+msgstr "Default"
 
 #. Default: "Delete col"
 #: overrideTranslations
 msgid "Delete col"
-msgstr ""
+msgstr "Delete col"
 
 #. Default: "Delete row"
 #: overrideTranslations
 msgid "Delete row"
-msgstr ""
+msgstr "Delete row"
 
 #. Default: "Delete table"
 #: overrideTranslations
 msgid "Delete table"
-msgstr ""
+msgstr "Delete table"
 
 #. Default: "Descrizione..."
 #: components/Blocks/Contacts/Edit
 #: components/Blocks/Hero/Edit
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. Default: "Descrizione..."
 #: components/Blocks/Accordion/Edit
 #: components/Blocks/Icons/Edit
 msgid "Description placeholder"
-msgstr ""
+msgstr "Description placeholder"
 
 #. Default: "Detailed expected value within this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Detailed expected value within this block"
-msgstr ""
+msgstr "Detailed expected value within this block"
 
 #. Default: "Dimensione della mappa"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "Dimensione della mappa"
-msgstr ""
+msgstr "Map size"
 
 #. Default: "Disable creation of new blocks after this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable creation of new blocks after this block"
-msgstr ""
+msgstr "Disable creation of new blocks after this block"
 
 #. Default: "Disable drag & drop on this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable drag & drop on this block"
-msgstr ""
+msgstr "Disable drag & drop on this block"
 
 #. Default: "Disable editing on accordion block settings"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable editing on accordion block settings"
-msgstr ""
+msgstr "Disable editing on accordion block settings"
 
 #. Default: "Disable editing on accordion titles"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable editing on accordion titles"
-msgstr ""
+msgstr "Disable editing on accordion titles"
 
 #. Default: "Disable editing on this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable editing on this block"
-msgstr ""
+msgstr "Disable editing on this block"
 
 #. Default: "Disable inner buttons"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable inner buttons"
-msgstr ""
+msgstr "Disable inner buttons"
 
 #. Default: "Disable new blocks"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Disable new blocks"
-msgstr ""
+msgstr "Disable new blocks"
 
 #. Default: "Divide each row into separate cells"
 #: overrideTranslations
 msgid "Divide each row into separate cells"
-msgstr ""
+msgstr "Divide each row into separate cells"
 
 #. Default: "Don't allow deletion of this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Don't allow deletion of this block"
-msgstr ""
+msgstr "Don't allow deletion of this block"
 
 #. Default: "Drag and drop"
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "Drag and drop"
-msgstr ""
+msgstr "Drag and drop"
 
 #. Default: "Enable filtering"
 #: components/Blocks/Accordion/Schema
 msgid "Enable filtering"
-msgstr ""
+msgstr "Enable filtering"
 
 #. Default: "Enter Title"
 #: components/Blocks/Accordion/AccordionEdit
 msgid "Enter Title"
-msgstr ""
+msgstr "Enter Title"
 
 #. Default: "Etichetta"
 #: config/blocks/listing/ListingOptions/utils
 msgid "Etichetta path filter"
-msgstr ""
+msgstr "Label"
 
 #. Default: "Event end date must be on or after {startDateValueOrStartFieldName}"
 #: helpers/Translations/overrideTranslations
 msgid "Event end date must be on or after {startDateValueOrStartFieldName}"
-msgstr ""
+msgstr "Event end date must be on or after {startDateValueOrStartFieldName}"
 
 #. Default: "Event start date must be on or before {endDateValueOrEndFieldName}"
 #: helpers/Translations/overrideTranslations
 msgid "Event start date must be on or before {endDateValueOrEndFieldName}"
-msgstr ""
+msgstr "Event start date must be on or before {endDateValueOrEndFieldName}"
 
 #. Default: "Non ho trovato la risposta che cercavi"
 #: components/View/FAQ/FaqFolder/FaqFolderView
@@ -327,24 +327,24 @@ msgstr "I didn't find the answer you were looking for"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Fixed layout"
-msgstr ""
+msgstr "Fixed layout"
 
 #. Default: "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
-msgstr ""
+msgstr "Fixed layout, New panes (tabs) created by Editor within this block will be ignored"
 
 #. Default: "Fixed position"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Fixed position"
-msgstr ""
+msgstr "Fixed position"
 
 #. Default: "Fixed width table cells"
 #: overrideTranslations
 msgid "Fixed width table cells"
-msgstr ""
+msgstr "Fixed width table cells"
 
 #. Default: "Vai al contenuto"
 #: components/View/commons/SkipToMainContent
@@ -354,82 +354,82 @@ msgstr "Go to content"
 #. Default: "HTML"
 #: components/Blocks/HTML/schema
 msgid "HTML"
-msgstr ""
+msgstr "HTML"
 
 #. Default: "H2"
 #: components/Blocks/Accordion/Schema
 msgid "Heading 2"
-msgstr ""
+msgstr "H2"
 
 #. Default: "H3"
 #: components/Blocks/Accordion/Schema
 msgid "Heading 3"
-msgstr ""
+msgstr "H3"
 
 #. Default: "H4"
 #: components/Blocks/Accordion/Schema
 msgid "Heading 4"
-msgstr ""
+msgstr "H4"
 
 #. Default: "H5"
 #: components/Blocks/Accordion/Schema
 msgid "Heading 5"
-msgstr ""
+msgstr "H5"
 
 #. Default: "H6"
 #: components/Blocks/Accordion/Schema
 msgid "Heading 6"
-msgstr ""
+msgstr "H6"
 
 #. Default: "Headline"
 #: components/Blocks/Accordion/Schema
 #: components/Blocks/HTML/schema
 msgid "Headline"
-msgstr ""
+msgstr "Headline"
 
 #. Default: "Helper text"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Helper text"
-msgstr ""
+msgstr "Helper text"
 
 #. Default: "Hero"
 #: components/Blocks/Hero/HeroSidebar
 msgid "Hero"
-msgstr ""
+msgstr "Hero"
 
 #. Default: "Hide all block related buttons within this block"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Hide all block related buttons within this block"
-msgstr ""
+msgstr "Hide all block related buttons within this block"
 
 #. Default: "Hide headers"
 #: overrideTranslations
 msgid "Hide headers"
-msgstr ""
+msgstr "Hide headers"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #. Default: "ID Lighthouse"
 #: config/blocks/listing/ListingOptions/linkMoreOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "ID Lighthouse"
-msgstr ""
+msgstr "ID Lighthouse"
 
 #. Default: "Identificativo di servizio a solo uso interno, utilizzato per le verifiche AgID inerenti al PNRR."
 #: config/blocks/listing/ListingOptions/linkMoreOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "ID Lighthouse Help Description"
-msgstr ""
+msgstr "Internal-use only service identifier, used for AgID checks related to the PNRR."
 
 #. Default: "Image"
 #: components/Blocks/Hero/Edit
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #. Default: "Impostazioni cookie"
 #: components/layout/Footer/FooterSmall
@@ -444,33 +444,33 @@ msgstr "In this section"
 #. Default: "Insert col after"
 #: overrideTranslations
 msgid "Insert col after"
-msgstr ""
+msgstr "Insert col after"
 
 #. Default: "Insert col before"
 #: overrideTranslations
 msgid "Insert col before"
-msgstr ""
+msgstr "Insert col before"
 
 #. Default: "Insert row after"
 #: overrideTranslations
 msgid "Insert row after"
-msgstr ""
+msgstr "Insert row after"
 
 #. Default: "Insert row before"
 #: overrideTranslations
 msgid "Insert row before"
-msgstr ""
+msgstr "Insert row before"
 
 #. Default: "Instructions"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Instructions"
-msgstr ""
+msgstr "Instructions"
 
 #. Default: "Interruzione di pagina"
 #: components/Blocks/Break/Edit
 msgid "Interruzione di pagina"
-msgstr ""
+msgstr "Page break"
 
 #. Default: "Iscriviti per riceverla"
 #: components/layout/Footer/FooterNewsletterSubscribe
@@ -485,22 +485,22 @@ msgstr "The event will not be held on the following dates"
 #. Default: "Left"
 #: overrideTranslations
 msgid "Left"
-msgstr ""
+msgstr "Left"
 
 #. Default: "Link a"
 #: components/manage/Widgets/LinkToWidget/LinkToWidget
 msgid "Link to"
-msgstr ""
+msgstr "Link to"
 
 #. Default: "Link ad altro"
 #: components/Blocks/Hero/HeroSidebar
 msgid "LinkMore"
-msgstr ""
+msgstr "Link to other"
 
 #. Default: "Testo per il link ad altro"
 #: components/Blocks/Hero/HeroSidebar
 msgid "Linkto title"
-msgstr ""
+msgstr "Link to other text"
 
 #. Default: "Sto caricando la pagina richiesta..."
 #: components/AppExtras/PageLoader/PageLoader
@@ -515,12 +515,12 @@ msgstr "Logout"
 #. Default: "Make the table compact"
 #: overrideTranslations
 msgid "Make the table compact"
-msgstr ""
+msgstr "Make the table compact"
 
 #. Default: "Make the table sortable"
 #: overrideTranslations
 msgid "Make the table sortable"
-msgstr ""
+msgstr "Make the table sortable"
 
 #. Default: "Menu selezionato"
 #: components/layout/Navigation/MegaMenu/MegaMenu
@@ -531,12 +531,12 @@ msgstr "Menu selected"
 #. Default: "Middle"
 #: overrideTranslations
 msgid "Middle"
-msgstr ""
+msgstr "Middle"
 
 #. Default: "Mostra i filtri per percorso"
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra i filtri per percorso"
-msgstr ""
+msgstr "Show path filters"
 
 #. Default: "Mostra lo sfondo del blocco"
 #: components/Blocks/Accordion/Schema
@@ -544,7 +544,7 @@ msgstr ""
 #: config/blocks/listing/ListingOptions/defaultOptions
 #: config/blocks/listing/ListingOptions/utils
 msgid "Mostra lo sfondo del blocco"
-msgstr ""
+msgstr "Show block background"
 
 #. Default: "Pagina successiva"
 #: components/Pagination/PaginationItem
@@ -559,7 +559,7 @@ msgstr "There are no points to show on the map"
 #. Default: "Non exclusive"
 #: components/Blocks/Accordion/Schema
 msgid "Non exclusive"
-msgstr ""
+msgstr "Non exclusive"
 
 #. Default: "- apri in nuova scheda"
 #: components/layout/Header/SocialHeader
@@ -574,7 +574,7 @@ msgstr "Open in a new tab"
 #. Default: "Options"
 #: components/Blocks/Accordion/Schema
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #. Default: "Pagina"
 #: components/Pagination/PaginationItem
@@ -584,12 +584,12 @@ msgstr "Page"
 #. Default: "Pannello"
 #: components/Blocks/Accordion/Schema
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #. Default: "Pannelli"
 #: components/Blocks/Accordion/Schema
 msgid "Panels"
-msgstr ""
+msgstr "Panels"
 
 #. Default: "Filtro"
 #: config/blocks/listing/ListingOptions/utils
@@ -604,7 +604,7 @@ msgstr "Pause"
 #. Default: "Percorso"
 #: config/blocks/listing/ListingOptions/utils
 msgid "Percorso path filter"
-msgstr ""
+msgstr "Path"
 
 #. Default: "Seleziona per riprodurre lo slider"
 #: components/Slider/ButtonPlayPause
@@ -620,40 +620,40 @@ msgstr "Previous page"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Read-only"
-msgstr ""
+msgstr "Read-only"
 
 #. Default: "Read-only settings"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Read-only settings"
-msgstr ""
+msgstr "Read-only settings"
 
 #. Default: "Read-only titles"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Read-only titles"
-msgstr ""
+msgstr "Read-only titles"
 
 #. Default: "Reduce complexity"
 #: overrideTranslations
 msgid "Reduce complexity"
-msgstr ""
+msgstr "Reduce complexity"
 
 #. Default: "Remove block"
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "Remove block"
-msgstr ""
+msgstr "Remove block"
 
 #. Default: "Required"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Required"
-msgstr ""
+msgstr "Required"
 
 #. Default: "Right"
 #: overrideTranslations
 msgid "Right"
-msgstr ""
+msgstr "Right"
 
 #. Default: "Rimuovi il file"
 #: components/Widgets/FileWidget
@@ -668,7 +668,7 @@ msgstr "Scroll to top"
 #. Default: "Ricerca bandi"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "SearchBandiBlock"
-msgstr ""
+msgstr "Search for calls"
 
 #. Default: "Cerca una parola chiave"
 #: helpers/Translations/searchBlockExtendedTranslations
@@ -678,18 +678,18 @@ msgstr "Search by keyword"
 #. Default: "Search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "SearchSearchBlockButtonText"
-msgstr ""
+msgstr "Search"
 
 #. Default: "Section friendly name"
 #: components/Blocks/Accordion/LayoutSchema
 #: components/Blocks/Accordion/Schema
 msgid "Section friendly name"
-msgstr ""
+msgstr "Section friendly name"
 
 #. Default: "Section help"
 #: components/Blocks/Accordion/Edit
 msgid "Section help"
-msgstr ""
+msgstr "Section help"
 
 #. Default: "Seguici su"
 #: components/layout/Header/SocialHeader
@@ -714,7 +714,7 @@ msgstr "Select a file"
 #. Default: "Seleziona un'icona nella barra a lato"
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Seleziona un'icona"
-msgstr ""
+msgstr "Select an icon in the sidebar"
 
 #. Default: "Sono occorsi degli errori"
 #: components/Search/Search
@@ -724,7 +724,7 @@ msgstr "Some errors occurued"
 #. Default: "Stripe alternate rows with color"
 #: overrideTranslations
 msgid "Stripe alternate rows with color"
-msgstr ""
+msgstr "Stripe alternate rows with color"
 
 #. Default: "Iscriviti"
 #: components/layout/Footer/FooterNewsletterSubscribe
@@ -734,27 +734,27 @@ msgstr "Subscribe"
 #. Default: "Table"
 #: overrideTranslations
 msgid "Table"
-msgstr ""
+msgstr "Table"
 
 #. Default: "Table color inverted"
 #: overrideTranslations
 msgid "Table color inverted"
-msgstr ""
+msgstr "Table color inverted"
 
 #. Default: "Testo..."
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Testo placeholder"
-msgstr ""
+msgstr "Text placeholder"
 
 #. Default: "Testo..."
 #: components/Blocks/Contacts/Block/EditBlock
 msgid "Text placeholder"
-msgstr ""
+msgstr "Text placeholder"
 
 #. Default: "Thank you."
 #: components/Unauthorized/Unauthorized
 msgid "Thank you."
-msgstr ""
+msgstr "Thank you."
 
 #. Default: "Tipi di contenuto"
 #: components/View/AggregationPage/SideMenu
@@ -769,28 +769,28 @@ msgstr "Content types"
 #: components/Blocks/Hero/Edit
 #: components/Blocks/Icons/Edit
 msgid "Title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Title size"
 #: components/Blocks/Accordion/Schema
 msgid "Title size"
-msgstr ""
+msgstr "Title size"
 
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "Titolo"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Titolo..."
 #: components/Blocks/Contacts/Block/EditBlock
 #: components/Blocks/Icons/Block/EditBlock
 msgid "Titolo placeholder"
-msgstr ""
+msgstr "Title placeholder"
 
 #. Default: "Top"
 #: overrideTranslations
 msgid "Top"
-msgstr ""
+msgstr "Top"
 
 #. Default: "Trascina qui il file..."
 #: components/Widgets/FileWidget
@@ -810,47 +810,47 @@ msgstr "Drop the file here to replace existing file"
 #. Default: "Digita la descrizione…"
 #: components/Blocks/CTA/Block
 msgid "Type description…"
-msgstr ""
+msgstr "Type description…"
 
 #. Default: "Digita il testo…"
 #: components/Blocks/Alert/Edit
 #: components/Blocks/Callout/Edit
 #: helpers/Translations/overrideTranslations
 msgid "Type text…"
-msgstr ""
+msgstr "Type text…"
 
 #. Default: "Type the title…"
 #: components/Blocks/Callout/Edit
 #: components/Blocks/CTA/Block
 msgid "Type the title…"
-msgstr ""
+msgstr "Type the title…"
 
 #. Default: "Unauthorized"
 #: components/Unauthorized/Unauthorized
 msgid "Unauthorized"
-msgstr ""
+msgstr "Unauthorized"
 
 #. Default: "Unknown Block {block}"
 #: components/Blocks/Accordion/EditBlockWrapper
 #: components/layout/Navigation/MegaMenu/MegaMenu
 #: components/View/Page/PageView
 msgid "Unknown Block"
-msgstr ""
+msgstr "Unknown Block {block}"
 
 #. Default: "Upload a new image"
 #: components/Blocks/Hero/Edit
 msgid "Upload a new image"
-msgstr ""
+msgstr "Upload a new image"
 
 #. Default: "Uploading image"
 #: components/Blocks/Hero/Edit
 msgid "Uploading image"
-msgstr ""
+msgstr "Uploading image"
 
 #. Default: "Utente"
 #: components/layout/Header/HeaderSlim/HeaderLogin
 msgid "User"
-msgstr ""
+msgstr "User"
 
 #. Default: "Vai alla pagina"
 #: components/layout/Footer/FooterInfos
@@ -884,12 +884,12 @@ msgstr "View all"
 #. Default: "Visible only in view mode"
 #: overrideTranslations
 msgid "Visible only in view mode"
-msgstr ""
+msgstr "Visible only in view mode"
 
 #. Default: "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
 #: overrideTranslations
 msgid "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
-msgstr ""
+msgstr "We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:"
 
 #. Default: "You are trying to access a protected resource, please {login} first."
 #: components/Unauthorized/Unauthorized
@@ -899,22 +899,22 @@ msgstr "You are trying to access a protected resource, please {login} first."
 #. Default: "Type to filter..."
 #: components/Blocks/Accordion/AccordionFilter
 msgid "accordion-Type to filter..."
-msgstr ""
+msgstr "Type to filter..."
 
 #. Default: "Insert a keyword to filter below titles.."
 #: components/Blocks/Accordion/AccordionFilter
 msgid "accordion-filter description"
-msgstr ""
+msgstr "Insert a keyword to filter below titles.."
 
 #. Default: "Titolo per il link ad altro"
 #: components/Blocks/Accordion/Schema
 msgid "accordion_linkMoreTitle"
-msgstr ""
+msgstr "Title for the link to other"
 
 #. Default: "Add block in position"
 #: components/Blocks/Accordion/NewBlockAddButton
 msgid "add_block_in_position"
-msgstr ""
+msgstr "Add block in position"
 
 #. Default: "Tutti"
 #: components/View/AggregationPage/AggregationPage
@@ -939,93 +939,93 @@ msgstr "No results found"
 #. Default: "Pubblicazione attiva."
 #: components/Blocks/Alert/Wrapper
 msgid "alert_activeDate"
-msgstr ""
+msgstr "Currently active."
 
 #. Default: "Colore di sfondo"
 #: components/Blocks/Alert/schema
 msgid "alert_bg_olor"
-msgstr ""
+msgstr "Background color"
 
 #. Default: "Rosso"
 #: components/Blocks/Alert/schema
 msgid "alert_color_danger"
-msgstr ""
+msgstr "Red"
 
 #. Default: "Arancione"
 #: components/Blocks/Alert/schema
 msgid "alert_color_orange"
-msgstr ""
+msgstr "Orange"
 
 #. Default: "Giallo"
 #: components/Blocks/Alert/schema
 msgid "alert_color_warning"
-msgstr ""
+msgstr "Yellow"
 
 #. Default: "Scadenza"
 #: components/Blocks/Alert/schema
 msgid "alert_endDate"
-msgstr ""
+msgstr "Expiry"
 
 #. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_endDate_descr"
-msgstr ""
+msgstr "If this field is filled in, the banner will be shown until this date. If both the \"Start\" and \"Expiry\" fields are empty, the banner is always visible."
 
 #. Default: "Non visibile. C'è un errore sulle date: la data di scadenza è anteriore alla data d'inizio"
 #: components/Blocks/Alert/Wrapper
 msgid "alert_errorDate"
-msgstr ""
+msgstr "Not visible. There is a date error: the expiry date is earlier than the start date"
 
 #. Default: "Non visibile. E' scaduto il {date}."
 #: components/Blocks/Alert/Wrapper
 msgid "alert_expiredDate"
-msgstr ""
+msgstr "Not visible. It expired on {date}."
 
 #. Default: "Non visibile. Verà pubblicato il {date}"
 #: components/Blocks/Alert/Wrapper
 msgid "alert_futureDate"
-msgstr ""
+msgstr "Not visible. It will be published on {date}"
 
 #. Default: "Immagine"
 #: components/Blocks/Alert/schema
 msgid "alert_image"
-msgstr ""
+msgstr "Image"
 
 #. Default: "Dimensione immagine"
 #: components/Blocks/Alert/schema
 msgid "alert_image_size"
-msgstr ""
+msgstr "Image size"
 
 #. Default: "Inizio"
 #: components/Blocks/Alert/schema
 msgid "alert_startDate"
-msgstr ""
+msgstr "Start"
 
 #. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_startDate_descr"
-msgstr ""
+msgstr "If this field is filled in, the banner will be shown starting from this date. If both the \"Start\" and \"Expiry\" fields are empty, the banner is always visible."
 
 #. Default: "Periodo di visibilità"
 #: components/Blocks/Alert/schema
 msgid "alert_validity"
-msgstr ""
+msgstr "Visibility period"
 
 #. Default: "Scadrà il {date}"
 #: components/Blocks/Alert/Wrapper
 msgid "alert_willExpire"
-msgstr ""
+msgstr "Will expire on {date}"
 
 #. Default: "Allinea le card al centro"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "alignCards"
-msgstr ""
+msgstr "Center align cards"
 
 #. Default: "Mostra l'immagine per tutti gli elementi"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "always_show_image"
-msgstr ""
+msgstr "Show the image for all items"
 
 #. Default: "Amministrazione"
 #: components/View/commons/RelatedItems
@@ -1040,12 +1040,12 @@ msgstr "Opening date"
 #. Default: "APPStore Link"
 #: components/Blocks/Hero/HeroSidebar
 msgid "appStoreLink"
-msgstr ""
+msgstr "APPStore Link"
 
 #. Default: "ascending"
 #: overrideTranslations
 msgid "ascendingTableSort"
-msgstr ""
+msgstr "ascending"
 
 #. Default: "Allegato"
 #: components/Cards/CardFile/CardFile
@@ -1067,13 +1067,13 @@ msgstr "Autoplay"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "autoplay_speed"
-msgstr ""
+msgstr "Autoplay speed"
 
 #. Default: "La velocità di autoplay deve essere espressa in secondi."
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "autoplay_speed_description"
-msgstr ""
+msgstr "The autoplay speed must be expressed in seconds."
 
 #. Default: "Usa le frecce Su e Giu per scegliere un'opzione"
 #: components/Widgets/SelectInput/SelectInput
@@ -1169,12 +1169,12 @@ msgstr "press left to focus selected values"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "backgroundImage"
-msgstr ""
+msgstr "Background image"
 
 #. Default: "Nessun filtro da mostrare. Seleziona i filtri di ricerca da mostrare dalla sidebar laterale."
 #: components/Blocks/SearchBandi/Edit
 msgid "bandi_search_no_filters"
-msgstr ""
+msgstr "No filters to show. Select the search filters to show from the side sidebar."
 
 #. Default: "A chi si rivolge"
 #: components/View/Bando/BandoAChiSiRivolge
@@ -1267,12 +1267,12 @@ msgstr "View"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "bg_color"
-msgstr ""
+msgstr "Background color"
 
 #. Default: "Colore di sfondo"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "block_bg_color"
-msgstr ""
+msgstr "Background color"
 
 #. Default: "Percorso di navigazione"
 #: components/Breadcrumbs/Breadcrumbs
@@ -1282,17 +1282,17 @@ msgstr "Navigation path"
 #. Default: "Stile"
 #: components/Blocks/Callout/Sidebar
 msgid "callout_style"
-msgstr ""
+msgstr "Style"
 
 #. Default: "Base"
 #: components/Blocks/Callout/Sidebar
 msgid "callout_style_basic"
-msgstr ""
+msgstr "Basic"
 
 #. Default: "In evidenza"
 #: components/Blocks/Callout/Sidebar
 msgid "callout_style_highlight"
-msgstr ""
+msgstr "Highlighted"
 
 #. Default: "Ultimo agg.to:"
 #: components/Cards/CardFile/CardFile
@@ -1343,7 +1343,7 @@ msgstr "Search a module"
 #. Default: "Icona categoria"
 #: components/Cards/common/CardCategoryTop
 msgid "category_icon"
-msgstr ""
+msgstr "Category icon"
 
 #. Default: "Chiusura del procedimento"
 #: components/Blocks/Listing/Bandi/BandiTemplate
@@ -1354,17 +1354,17 @@ msgstr "Closing of procedure"
 #. Default: "Clear all filters"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearAllFilters"
-msgstr ""
+msgstr "Clear all filters"
 
 #. Default: "Clear {filterName} filter"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearFilter"
-msgstr ""
+msgstr "Clear {filterName} filter"
 
 #. Default: "Clear search"
 #: helpers/Translations/searchBlockExtendedTranslations
 msgid "clearSearch"
-msgstr ""
+msgstr "Clear search"
 
 #. Default: "Chiudi menu"
 #: components/layout/Navigation/CollapseNavigation
@@ -1389,58 +1389,58 @@ msgstr "Back"
 #. Default: "Colore"
 #: components/Blocks/Callout/Sidebar
 msgid "color"
-msgstr ""
+msgstr "Color"
 
 #. Default: "Danger"
 #: components/Blocks/Callout/Sidebar
 msgid "color_danger"
-msgstr ""
+msgstr "Danger"
 
 #. Default: "Default"
 #: components/Blocks/Callout/Sidebar
 msgid "color_default"
-msgstr ""
+msgstr "Default"
 
 #. Default: "Note"
 #: components/Blocks/Callout/Sidebar
 msgid "color_note"
-msgstr ""
+msgstr "Note"
 
 #. Default: "Primario"
 #: components/Blocks/Icons/Sidebar
 msgid "color_primary"
-msgstr ""
+msgstr "Primary"
 
 #. Default: "Primario scuro"
 #: components/Blocks/Icons/schema
 msgid "color_primary_dark"
-msgstr ""
+msgstr "Dark primary"
 
 #. Default: "Primario chiaro"
 #: components/Blocks/Icons/schema
 msgid "color_primary_light"
-msgstr ""
+msgstr "Light primary"
 
 #. Default: "Secondario"
 #: components/Blocks/Icons/Sidebar
 msgid "color_secondary"
-msgstr ""
+msgstr "Secondary"
 
 #. Default: "Success"
 #: components/Blocks/Callout/Sidebar
 msgid "color_success"
-msgstr ""
+msgstr "Success"
 
 #. Default: "Trasparente"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "color_transparent"
-msgstr ""
+msgstr "Transparent"
 
 #. Default: "Warning"
 #: components/Blocks/Callout/Sidebar
 msgid "color_warning"
-msgstr ""
+msgstr "Warning"
 
 #. Default: "A chi si rivolge"
 #: components/View/ComeFarePer/ComeFarePerAChiSiRivolge
@@ -1450,7 +1450,7 @@ msgstr "Who is it for"
 #. Default: "Allegati"
 #: components/View/ComeFarePer/ComeFarePerDocumenti
 msgid "come_fare_per_allegati"
-msgstr ""
+msgstr "Attachments"
 
 #. Default: "Come fare"
 #: components/View/ComeFarePer/ComeFarePerComeFare
@@ -1460,12 +1460,12 @@ msgstr "How to do"
 #. Default: "Documenti"
 #: components/View/ComeFarePer/ComeFarePerDocumenti
 msgid "come_fare_per_documenti"
-msgstr ""
+msgstr "Documents"
 
 #. Default: "Modulistica"
 #: components/View/ComeFarePer/ComeFarePerDocumenti
 msgid "come_fare_per_modulistica"
-msgstr ""
+msgstr "Forms"
 
 #. Default: "Panoramica"
 #: components/View/ComeFarePer/ComeFarePerDescrizione
@@ -1490,57 +1490,57 @@ msgstr "Insights"
 #. Default: "Contatti"
 #: components/Blocks/Contacts/schema
 msgid "contacts_block_title"
-msgstr ""
+msgstr "Contacts"
 
 #. Default: "Link ad altro"
 #: components/Blocks/Contacts/schema
 msgid "contacts_linkMore"
-msgstr ""
+msgstr "Link to other"
 
 #. Default: "Link"
 #: components/Blocks/Contacts/schema
 msgid "contacts_linkMoreHref"
-msgstr ""
+msgstr "Link"
 
 #. Default: "Titolo per il link ad altro"
 #: components/Blocks/Contacts/schema
 msgid "contacts_linkMoreTitle"
-msgstr ""
+msgstr "Title for the link to other"
 
 #. Default: "Blocco CTA"
 #: components/Blocks/CTA/schema
 msgid "cta_block"
-msgstr ""
+msgstr "CTA block"
 
 #. Default: "Immagine predefinita"
 #: components/Blocks/CTA/schema
 msgid "cta_default_image"
-msgstr ""
+msgstr "Default image"
 
 #. Default: "Mostra a tutta larghezza"
 #: components/Blocks/CTA/schema
 msgid "cta_full_width"
-msgstr ""
+msgstr "Show full width"
 
 #. Default: "Immagine di sfondo"
 #: components/Blocks/CTA/schema
 msgid "cta_image"
-msgstr ""
+msgstr "Background image"
 
 #. Default: "Link della CTA"
 #: components/Blocks/CTA/schema
 msgid "cta_link"
-msgstr ""
+msgstr "CTA link"
 
 #. Default: "Titolo per il link della CTA"
 #: components/Blocks/CTA/schema
 msgid "cta_linkTitle"
-msgstr ""
+msgstr "Title for the CTA link"
 
 #. Default: "attivo"
 #: components/ReleaseLog/ReleaseLog
 msgid "currentActive"
-msgstr ""
+msgstr "active"
 
 #. Default: "dal {dateStart} fino a conclusione"
 #: components/View/commons/PageHeader/PageHeaderEventDates
@@ -1705,17 +1705,17 @@ msgstr "Start date"
 #. Default: "delete"
 #: components/Blocks/Accordion/EditBlockWrapper
 msgid "delete"
-msgstr ""
+msgstr "delete"
 
 #. Default: "descending"
 #: overrideTranslations
 msgid "descendingTableSort"
-msgstr ""
+msgstr "descending"
 
 #. Default: "Testo per il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils
 msgid "detail_link_label"
-msgstr ""
+msgstr "Text for the detail link"
 
 #. Default: "Documenti e dati"
 #: components/View/commons/RelatedItems
@@ -1765,7 +1765,7 @@ msgstr "Referral service"
 #. Default: "Fatto"
 #: components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget
 msgid "done_edit_social_links"
-msgstr ""
+msgstr "Done"
 
 #. Default: "Navigazione elementi slider"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
@@ -1775,7 +1775,7 @@ msgstr "Slider items navigation"
 #. Default: "Download and Play video"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "downloadPlayVideo"
-msgstr ""
+msgstr "Download and Play video"
 
 #. Default: "Apri il menu"
 #: components/Widgets/SelectInput/SelectInput
@@ -1790,17 +1790,17 @@ msgstr "Close menu"
 #. Default: "Modifica i social"
 #: components/manage/Widgets/SubsiteSocialLinksWidget/SubsiteSocialLinksWidget
 msgid "edit_social_links"
-msgstr ""
+msgstr "Edit social links"
 
 #. Default: "Email"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "email"
-msgstr ""
+msgstr "Email"
 
 #. Default: "YouTube Video {id}"
 #: components/EmbeddedVideo/EmbeddedVideo
 msgid "embedVideo"
-msgstr ""
+msgstr "YouTube Video {id}"
 
 #. Default: "Fine evento"
 #: components/View/Evento/Dates
@@ -1885,7 +1885,7 @@ msgstr "Expire"
 #. Default: "Esplora"
 #: components/View/commons/RelatedItemInEvidence/ItemInEvidence
 msgid "explore"
-msgstr ""
+msgstr "Explore"
 
 #. Default: "Inserisci una parola chiave per trovare una risposta"
 #: components/View/FAQ/FaqFolder/FaqFolderView
@@ -2037,7 +2037,7 @@ msgstr "Previous image"
 #. Default: "Nascondi le date"
 #: config/blocks/listing/ListingOptions/utils
 msgid "hide_dates"
-msgstr ""
+msgstr "Hide dates"
 
 #. Default: "homepage"
 #: components/BrandWrapper/BrandWrapper
@@ -2048,12 +2048,12 @@ msgstr "Home page"
 #: components/Blocks/Callout/Sidebar
 #: components/manage/Widgets/IconWidget/IconWidget
 msgid "icon"
-msgstr ""
+msgstr "Icon"
 
 #. Default: "Puoi selezionare un’icona fra quelle proposte nel menu a tendina oppure puoi scrivere/incollare nel campo di testo il nome di un’icona di fontawesome 6"
 #: components/manage/Widgets/IconWidget/IconWidget
 msgid "iconDescription"
-msgstr ""
+msgstr "You can select an icon from those suggested in the dropdown menu, or you can type/paste the name of a Font Awesome 6 icon into the text field"
 
 #. Default: "Icona per {topic_title}"
 #: components/View/commons/PageHeader/HeaderIcon
@@ -2063,29 +2063,29 @@ msgstr "Icon for {topic_title}"
 #. Default: "Blocco con icone"
 #: components/Blocks/Icons/Sidebar
 msgid "icons_blocks"
-msgstr ""
+msgstr "Icons block"
 
 #. Default: "Link ad altro"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "icons_linkMore"
-msgstr ""
+msgstr "Link to other"
 
 #. Default: "Link ad altro"
 #: components/Blocks/Icons/schema
 msgid "icons_linkMoreHref"
-msgstr ""
+msgstr "Link to other"
 
 #. Default: "Titolo per il link ad altro"
 #: components/Blocks/Icons/schema
 #: components/Blocks/Icons/Sidebar
 msgid "icons_linkMoreTitle"
-msgstr ""
+msgstr "Title for the link to other"
 
 #. Default: "Contenuti in evidenza"
 #: components/View/commons/RelatedItemInEvidence/RelatedItemInEvidence
 msgid "inEvidenceItems"
-msgstr ""
+msgstr "Featured content"
 
 #. Default: "Indice della pagina"
 #: components/View/commons/SideMenu/SideMenu
@@ -2105,17 +2105,17 @@ msgstr "Link"
 #. Default: "Link ad altro"
 #: components/Blocks/Hero/StoresButtons
 msgid "linkMore"
-msgstr ""
+msgstr "Link to other"
 
 #. Default: "LinkedIn"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "linkedin"
-msgstr ""
+msgstr "LinkedIn"
 
 #. Default: "Descrizione"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "listing_Descrizione"
-msgstr ""
+msgstr "Description"
 
 #. Default: "Questo evento ha più date: vedi tutte"
 #: helpers/dates
@@ -2125,7 +2125,7 @@ msgstr "This event has multiple dates: see all"
 #. Default: "Colore dell'elemento"
 #: config/blocks/listing/ListingOptions/defaultOptions
 msgid "listing_items_color"
-msgstr ""
+msgstr "Item color"
 
 #. Default: "Premi Invio per caricare il video, poi premi Tab per navigare sul video."
 #: components/EmbeddedVideo/EmbeddedVideo
@@ -2135,7 +2135,7 @@ msgstr "Press Enter to load video, then press Tab to go to the video"
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "location_to_search"
-msgstr ""
+msgstr "Location to search"
 
 #. Default: "log in"
 #: components/Unauthorized/Unauthorized
@@ -2145,80 +2145,80 @@ msgstr "log in"
 #. Default: "Log in"
 #: components/LoginAgid/LoginAgid
 msgid "login_agid"
-msgstr ""
+msgstr "Log in"
 
 #. Default: "To access the site and its services, use one of the following methods."
 #: components/LoginAgid/LoginAgid
 msgid "login_agid_description"
-msgstr ""
+msgstr "To access the site and its services, use one of the following methods."
 
 #. Default: "Other users"
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_agid_other"
-msgstr ""
+msgstr "Other users"
 
 #. Default: "Alternatively you can use these methods."
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_agid_other_description"
-msgstr ""
+msgstr "Alternatively you can use these methods."
 
 #. Default: "CIE"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_cie"
-msgstr ""
+msgstr "CIE"
 
 #. Default: "Log in with CIE."
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_cie_description"
-msgstr ""
+msgstr "Log in with CIE."
 
 #. Default: "How to activate CIE"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_cie_help"
-msgstr ""
+msgstr "How to activate CIE"
 
 #. Default: "Log in as employee"
 #: components/LoginAgid/LoginAgid
 #: components/Unauthorized/Unauthorized
 msgid "login_plone_user"
-msgstr ""
+msgstr "Log in as employee"
 
 #. Default: "SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid"
-msgstr ""
+msgstr "SPID"
 
 #. Default: "Log in with SPID, the public digital identity system."
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid_description"
-msgstr ""
+msgstr "Log in with SPID, the public digital identity system."
 
 #. Default: "How to activate SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_spid_help"
-msgstr ""
+msgstr "How to activate SPID"
 
 #. Default: "Login with CIE"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_with_cie"
-msgstr ""
+msgstr "Login with CIE"
 
 #. Default: "Login with SPID"
 #: components/LoginAgid/LoginAgidButtons
 msgid "login_with_spid"
-msgstr ""
+msgstr "Login with SPID"
 
 #. Default: "Logo"
 #: components/BrandWrapper/BrandWrapper
 msgid "logo-subsite-alt"
-msgstr ""
+msgstr "Logo"
 
 #. Default: "mail@example.com"
 #: components/layout/Footer/FooterNewsletterSubscribe
 msgid "mail@example.com"
-msgstr ""
+msgstr "mail@example.com"
 
 #. Default: "Invia"
 #: components/View/commons/Sharing/Sharing
@@ -2233,17 +2233,17 @@ msgstr "Main menu"
 #. Default: "Grande"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "map_size_large"
-msgstr ""
+msgstr "Large"
 
 #. Default: "Media"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "map_size_medium"
-msgstr ""
+msgstr "Medium"
 
 #. Default: "Piccola"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "map_size_small"
-msgstr ""
+msgstr "Small"
 
 #. Default: "min"
 #: components/View/commons/PageHeader/PageHeader
@@ -2281,7 +2281,7 @@ msgstr "Alternative formats"
 #. Default: "Non alterare le dimensioni naturali dell'immagine"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "natural_image_size"
-msgstr ""
+msgstr "Do not alter the natural size of the image"
 
 #. Default: "Documenti"
 #: components/View/NewsItem/NewsItemDocumenti
@@ -2331,7 +2331,7 @@ msgstr "Other informations"
 #. Default: "Video"
 #: components/View/NewsItem/NewsItemGallery
 msgid "news_video_gallery"
-msgstr ""
+msgstr "Video"
 
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchBandi/Body
@@ -2372,7 +2372,7 @@ msgstr "This event has an open/variable end date."
 #. Default: "or you can go to the"
 #: overrideTranslations
 msgid "or you can go to the "
-msgstr ""
+msgstr "or you can go to the"
 
 #. Default: "Ordina per"
 #: components/Search/Search
@@ -2397,7 +2397,7 @@ msgstr "Other infos"
 #. Default: "Non mostrare l'icona di accessibilità per i link a siti esterni"
 #: config/blocks/listing/ListingOptions/smallBlockLinksTemplate
 msgid "override_links_accessibility_marker"
-msgstr ""
+msgstr "Do not show the accessibility icon for links to external sites"
 
 #. Default: "Contenuto della pagina"
 #: components/View/commons/intlMessages
@@ -2417,12 +2417,12 @@ msgstr "Page selector"
 #. Default: "Panel {panel_index}"
 #: components/manage/Widgets/PanelsWidget/PanelsWidget
 msgid "panel_index"
-msgstr ""
+msgstr "Panel {panel_index}"
 
 #. Default: "Add"
 #: components/manage/Widgets/PanelsWidget/PanelsWidget
 msgid "panels_widget_Add"
-msgstr ""
+msgstr "Add"
 
 #. Default: "Main site menu"
 #: components/layout/Header/HeaderSlim/ParentSiteMenu
@@ -2442,7 +2442,7 @@ msgstr "Sponsored by"
 #. Default: "Account"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_account"
-msgstr ""
+msgstr "Account"
 
 #. Default: "Contatti"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
@@ -2457,7 +2457,7 @@ msgstr "Related"
 #. Default: "Email"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_email"
-msgstr ""
+msgstr "Email"
 
 #. Default: "Eventi"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
@@ -2467,12 +2467,12 @@ msgstr "Events"
 #. Default: "Fax"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_fax"
-msgstr ""
+msgstr "Fax"
 
 #. Default: "LinkedIn"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_linkedin"
-msgstr ""
+msgstr "LinkedIn"
 
 #. Default: "Persone"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
@@ -2487,7 +2487,7 @@ msgstr "Services"
 #. Default: "Social"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_social"
-msgstr ""
+msgstr "Social"
 
 #. Default: "Strutture"
 #: components/View/PuntoDiContatto/PuntoDiContattoCorrelati
@@ -2512,13 +2512,13 @@ msgstr "Web site"
 #. Default: "Twitter"
 #: helpers/Views/PuntoDiContattoValue
 msgid "pdc_x"
-msgstr ""
+msgstr "Twitter"
 
 #. Default: "PEC"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "pec"
-msgstr ""
+msgstr "PEC"
 
 #. Default: "Incarichi"
 #: components/View/Persona/PersonaIncarichi
@@ -2543,7 +2543,7 @@ msgstr "Contacts"
 #. Default: "Curriculum Vitae"
 #: components/View/Persona/PersonaDocumenti
 msgid "persona_cv"
-msgstr ""
+msgstr "Curriculum Vitae"
 
 #. Default: "Documenti"
 #: components/View/Persona/PersonaDocumenti
@@ -2563,7 +2563,7 @@ msgstr "Gallery"
 #. Default: "Informazioni di contatto"
 #: components/View/Persona/PersonaContatti
 msgid "persona_informazioni_contatto"
-msgstr ""
+msgstr "Contact information"
 
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
@@ -2583,7 +2583,7 @@ msgstr "Operational unit to which you belong"
 #. Default: "PlayStore Link"
 #: components/Blocks/Hero/HeroSidebar
 msgid "playStoreLink"
-msgstr ""
+msgstr "PlayStore Link"
 
 #. Default: "Precedente"
 #: components/Slider/PrevArrow
@@ -2598,7 +2598,7 @@ msgstr "Book online"
 #. Default: "Anteprima dell'icona scelta"
 #: components/manage/Widgets/IconWidget/IconPreviewWidget
 msgid "previewIconSelected"
-msgstr ""
+msgstr "Preview of the selected icon"
 
 #. Default: "Stampa"
 #: components/View/commons/Sharing/Sharing
@@ -2629,82 +2629,82 @@ msgstr "Quick search"
 #. Default: "Ricerca rapida"
 #: components/Blocks/QuickSearch/schema
 msgid "quick_search_block_title"
-msgstr ""
+msgstr "Quick search"
 
 #. Default: "Etichetta"
 #: components/Blocks/QuickSearch/schema
 msgid "quick_search_quickLink_label"
-msgstr ""
+msgstr "Label"
 
 #. Default: "Link a"
 #: components/Blocks/QuickSearch/schema
 msgid "quick_search_quickLink_url"
-msgstr ""
+msgstr "Link to"
 
 #. Default: "Link veloci"
 #: components/Blocks/QuickSearch/schema
 msgid "quick_search_quickLinks"
-msgstr ""
+msgstr "Quick links"
 
 #. Default: "Titolo"
 #: components/Blocks/QuickSearch/schema
 msgid "quick_search_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Aggiungi radice di navigazione"
 #: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-add-rootpath"
-msgstr ""
+msgstr "Add navigation root"
 
 #. Default: "Aggiungi scorciatoia"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-additem"
-msgstr ""
+msgstr "Add shortcut"
 
 #. Default: "Rimuovi radice di navigazione"
 #: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-delete-rootpath"
-msgstr ""
+msgstr "Remove navigation root"
 
 #. Default: "Rimuovi"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-deleteitem-button"
-msgstr ""
+msgstr "Remove"
 
 #. Default: "Aggiungi una nuova scorciatoia, oppure selezionane una"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-emptyActiveItem"
-msgstr ""
+msgstr "Add a new shortcut, or select one"
 
 #. Default: "Seleziona un percorso"
 #: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-emptyActiveRootPath"
-msgstr ""
+msgstr "Select a path"
 
 #. Default: "Scorciatoie"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-items-header"
-msgstr ""
+msgstr "Shortcuts"
 
 #. Default: "Sposta dopo"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-move-item-down"
-msgstr ""
+msgstr "Move after"
 
 #. Default: "Sposta prima"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget
 msgid "quicksearchwidget-move-item-up"
-msgstr ""
+msgstr "Move before"
 
 #. Default: "Radice di navigazione"
 #: components/manage/Widgets/PathsWidget/PathsWidget
 msgid "quicksearchwidget-rootpath"
-msgstr ""
+msgstr "Navigation root"
 
 #. Default: "Titolo"
 #: components/manage/Widgets/QuickSearch/QuickSearchConfigurationForm
 msgid "quicksearchwidget-title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Rassegna:"
 #: components/Blocks/Listing/commons/RassegnaInfo
@@ -2775,13 +2775,13 @@ msgstr "weekdays"
 #: components/Blocks/Rss/CardWithImageRssTemplate
 #: components/Blocks/Rss/CardWithoutImageRssTemplate
 msgid "rss_no_results"
-msgstr ""
+msgstr "No results from RSS feed."
 
 #. Default: "Read more"
 #: components/Blocks/Rss/CardWithImageRssTemplate
 #: components/Blocks/Rss/CardWithoutImageRssTemplate
 msgid "rss_read_more"
-msgstr ""
+msgstr "Read more"
 
 #. Default: "Categoria"
 #: components/Blocks/SearchBandi/DefaultFilters
@@ -2817,12 +2817,12 @@ msgstr "Search"
 #. Default: "Nascondi tutte le sezioni"
 #: components/Widgets/SearchSections/SearchSections
 msgid "search-hideAllSections"
-msgstr ""
+msgstr "Hide all sections"
 
 #. Default: "Mostra tutte le sezioni"
 #: components/Widgets/SearchSections/SearchSections
 msgid "search-showAllSections"
-msgstr ""
+msgstr "Show all sections"
 
 #. Default: "Filtro per Categoria"
 #: components/Blocks/SearchBandi/DefaultFilters
@@ -2857,78 +2857,78 @@ msgstr "Entity filter"
 #. Default: "Filtro 1"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_filter_one"
-msgstr ""
+msgstr "Filter 1"
 
 #. Default: "Filtro 3"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_filter_three"
-msgstr ""
+msgstr "Filter 3"
 
 #. Default: "Filtro 2"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_filter_two"
-msgstr ""
+msgstr "Filter 2"
 
 #. Default: "Seleziona i filtri di ricerca da mostrare nel blocco."
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_help"
-msgstr ""
+msgstr "Select the search filters to show in the block."
 
 #. Default: "Questi filtri non verranno visualizzati dall'utente ma consentono di pre filtrare i bandi secondo alcuni criteri."
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_help_filters"
-msgstr ""
+msgstr "These filters will not be shown to the user but allow the calls to be pre-filtered according to certain criteria."
 
 #. Default: "Filtri pre-impostati"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_pre_filters"
-msgstr ""
+msgstr "Pre-set filters"
 
 #. Default: "Primario"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_primarycolor"
-msgstr ""
+msgstr "Primary"
 
 #. Default: "Filtro per data di scadenza del bando"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_scadenza_filter"
-msgstr ""
+msgstr "Filter by call expiry date"
 
 #. Default: "Scadenza dal"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_scadenza_filter_from"
-msgstr ""
+msgstr "Expiry from"
 
 #. Default: "Scadenza al"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_scadenza_filter_to"
-msgstr ""
+msgstr "Expiry to"
 
 #. Default: "Secondario"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_secondaryColor"
-msgstr ""
+msgstr "Secondary"
 
 #. Default: "Ternario"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_tertiaryColor"
-msgstr ""
+msgstr "Tertiary"
 
 #. Default: "Filtro di testo"
 #: components/Blocks/SearchBandi/DefaultFilters
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_text_filter"
-msgstr ""
+msgstr "Text filter"
 
 #. Default: "Filtro per tipologia"
 #: components/Blocks/SearchBandi/DefaultFilters
 msgid "searchBlock_tipologia_filter"
-msgstr ""
+msgstr "Filter by type"
 
 #. Default: "Filtro per luoghi"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "searchBlock_venue_filter"
-msgstr ""
+msgstr "Filter by venue"
 
 #. Default: "Cerca contenuti in"
 #: components/View/commons/PageHeader/SearchSectionForm
@@ -2938,7 +2938,7 @@ msgstr "Search contents in"
 #. Default: "Cerca nella sezione"
 #: components/Widgets/SearchSections/SearchSections
 msgid "searchInSection"
-msgstr ""
+msgstr "Search in section"
 
 #. Default: "Cerca nel sito"
 #: components/layout/Header/HeaderSearch/HeaderSearch
@@ -2949,7 +2949,7 @@ msgstr "Search site"
 #. Default: "Risultati ricerca {searchableText}"
 #: components/Search/Search
 msgid "search_Search results"
-msgstr ""
+msgstr "Search results {searchableText}"
 
 #. Default: "Filtri avanzati"
 #: components/Search/Search
@@ -3030,7 +3030,7 @@ msgstr "No results found"
 #. Default: "Mostra solo il turno del giorno selezionato (anziché tutti i periodi)"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_only_active_turno"
-msgstr ""
+msgstr "Show only the shift for the selected day (instead of all periods)"
 
 #. Default: "Dal"
 #: components/Blocks/SearchFarmacia/Results
@@ -3080,7 +3080,7 @@ msgstr "Show the territorial area filter"
 #. Default: "Mostra il CAP nella tabella dei risultati"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_cap"
-msgstr ""
+msgstr "Show the postal code in the results table"
 
 #. Default: "Mostra il filtro per comune"
 #: components/Blocks/SearchFarmacia/schema
@@ -3095,17 +3095,17 @@ msgstr "Show the location filter"
 #. Default: "Mostra la colonna Località nella tabella dei risultati"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_localita_colonna"
-msgstr ""
+msgstr "Show the Locality column in the results table"
 
 #. Default: "Mostra la mappa con le farmacie trovate"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_map"
-msgstr ""
+msgstr "Show the map with the pharmacies found"
 
 #. Default: "Mostra la provincia nella tabella dei risultati"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_provincia"
-msgstr ""
+msgstr "Show the province in the results table"
 
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
@@ -3130,7 +3130,7 @@ msgstr "Municipality"
 #. Default: "Municipality"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_comune_en"
-msgstr ""
+msgstr "Municipality"
 
 #. Default: "Periodi di Ferie"
 #: components/Blocks/SearchFarmacia/Results
@@ -3140,7 +3140,7 @@ msgstr "Holiday periods"
 #. Default: "Vacations"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_ferie_en"
-msgstr ""
+msgstr "Vacations"
 
 #. Default: "Indirizzo"
 #: components/Blocks/SearchFarmacia/Results
@@ -3150,7 +3150,7 @@ msgstr "Address"
 #. Default: "Address"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_indirizzo_en"
-msgstr ""
+msgstr "Address"
 
 #. Default: "Località"
 #: components/Blocks/SearchFarmacia/Results
@@ -3160,7 +3160,7 @@ msgstr "Location"
 #. Default: "Locality"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_localita_en"
-msgstr ""
+msgstr "Locality"
 
 #. Default: "Denominazione Farmacia"
 #: components/Blocks/SearchFarmacia/Results
@@ -3170,7 +3170,7 @@ msgstr "Pharmacy name"
 #. Default: "Pharmacy name"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_nome_en"
-msgstr ""
+msgstr "Pharmacy name"
 
 #. Default: "Telefono"
 #: components/Blocks/SearchFarmacia/Results
@@ -3180,7 +3180,7 @@ msgstr "Contact numbers"
 #. Default: "Phone number"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti_en"
-msgstr ""
+msgstr "Phone number"
 
 #. Default: "Periodo e tipologia di turno"
 #: components/Blocks/SearchFarmacia/Results
@@ -3190,7 +3190,7 @@ msgstr "Shifts periods"
 #. Default: "Shifts periods"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
-msgstr ""
+msgstr "Shifts periods"
 
 #. Default: "Titolo"
 #: components/Blocks/SearchFarmacia/schema
@@ -3200,7 +3200,7 @@ msgstr "Title"
 #. Default: "Ricerca Farmacie"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacie_block_title"
-msgstr ""
+msgstr "Pharmacy search"
 
 #. Default: "Cerca nel sito"
 #: components/Search/Search
@@ -3225,42 +3225,42 @@ msgstr "Users"
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Search path"
-msgstr ""
+msgstr "Location to search"
 
 #. Default: "Mostra il filtro per comune"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show city"
-msgstr ""
+msgstr "Show the municipality filter"
 
 #. Default: "Mostra il filtro per distretto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show distretto"
-msgstr ""
+msgstr "Show the district filter"
 
 #. Default: "Mostra la ricerca libera"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
-msgstr ""
+msgstr "Show free-text search"
 
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
-msgstr ""
+msgstr "Show the type filters"
 
 #. Default: "Tutte le tipologie"
 #: components/Blocks/SearchMap/Body
 msgid "search_map_all_tipologie"
-msgstr ""
+msgstr "All types"
 
 #. Default: "Ricerca con mappa"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_block_title"
-msgstr ""
+msgstr "Map search"
 
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
-msgstr ""
+msgstr "Content type"
 
 #. Default: "Comune"
 #: components/Blocks/SearchMap/Body
@@ -3275,7 +3275,7 @@ msgstr "District"
 #. Default: "Tipologia"
 #: components/Blocks/SearchMap/Body
 msgid "search_map_label_tipologia"
-msgstr ""
+msgstr "Type"
 
 #. Default: "Cerca"
 #: components/Widgets/SearchBar/SearchBar
@@ -3300,17 +3300,17 @@ msgstr "Search for facilities near you"
 #. Default: "Testo descrittivo della barra di ricerca"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_text_description"
-msgstr ""
+msgstr "Descriptive text for the search bar"
 
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Filtra tipologia con menu a tendina"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_types_as_select"
-msgstr ""
+msgstr "Filter type with dropdown menu"
 
 #. Default: "Tutti i comuni"
 #: components/Blocks/SearchMap/Body
@@ -3385,7 +3385,7 @@ msgstr "Search results for Services"
 #. Default: "Cerca servizi o procedure"
 #: components/Blocks/SearchServiziProcedure/schema
 msgid "search_sp_block_title"
-msgstr ""
+msgstr "Search services or procedures"
 
 #. Default: "Filtri"
 #: components/Blocks/SearchServiziProcedure/Body
@@ -3415,7 +3415,7 @@ msgstr "Results"
 #. Default: "Posizione in cui cercare"
 #: components/Blocks/SearchServiziProcedure/schema
 msgid "search_sp_search_path"
-msgstr ""
+msgstr "Location to search"
 
 #. Default: "*Inserisci parole chiave, ad esempio “Richiedere esenzioni”"
 #: components/Blocks/SearchServiziProcedure/Body
@@ -3445,7 +3445,7 @@ msgstr "Select filters"
 #. Default: "Titolo"
 #: components/Blocks/SearchServiziProcedure/schema
 msgid "search_sp_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "*Inserisci parole chiave, ad esempio “Vaccinazioni”"
 #: components/Widgets/SearchBar/SearchBar
@@ -3460,52 +3460,52 @@ msgstr "Searched for: <em>{searchedtext}</em>"
 #. Default: "Aggiungi elemento"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-additem"
-msgstr ""
+msgstr "Add item"
 
 #. Default: "Rimuovi sezione"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
 msgid "searchsectionswidget-deleteitem-button"
-msgstr ""
+msgstr "Remove section"
 
 #. Default: "Aggiungi una nuova sezione, o selezionane una."
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-emptyActiveItem"
-msgstr ""
+msgstr "Add a new section, or select one."
 
 #. Default: "Mostra le sezioni figlie"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
 msgid "searchsectionswidget-expand_children"
-msgstr ""
+msgstr "Show child sections"
 
 #. Default: "Sezioni"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-items-header"
-msgstr ""
+msgstr "Sections"
 
 #. Default: "Link"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
 msgid "searchsectionswidget-linkUrl"
-msgstr ""
+msgstr "Link"
 
 #. Default: "Seleziona un url interno cliccando sl bottone a destra. Se la sezione è vuota (non ha figli), non verrà mostrata."
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
 msgid "searchsectionswidget-linkUrl_description"
-msgstr ""
+msgstr "Select an internal url by clicking the button on the right. If the section is empty (has no children), it will not be shown."
 
 #. Default: "Sposta dopo"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-move-item-down"
-msgstr ""
+msgstr "Move after"
 
 #. Default: "Sposta prima"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationWidget
 msgid "searchsectionswidget-move-item-up"
-msgstr ""
+msgstr "Move before"
 
 #. Default: "Titolo"
 #: components/manage/Widgets/SearchSections/SearchSectionsConfigurationForm
 msgid "searchsectionswidget-title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Nessuna opzione"
 #: components/Widgets/SelectInput/SelectInput
@@ -3625,7 +3625,7 @@ msgstr "Responsible Operational Unit"
 #. Default: "Disponi su 4 colonne"
 #: config/blocks/listing/ListingOptions/cardWithImageTemplate
 msgid "set_four_columns"
-msgstr ""
+msgstr "Arrange in 4 columns"
 
 #. Default: "Condividi"
 #: components/View/commons/Sharing/Sharing
@@ -3635,91 +3635,91 @@ msgstr "Share"
 #. Default: "Mostra la categoria"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_category"
-msgstr ""
+msgstr "Show the category"
 
 #. Default: "Mostra la descrizione"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_description"
-msgstr ""
+msgstr "Show the description"
 
 #. Default: "Mostra il link al dettaglio"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_detail_link"
-msgstr ""
+msgstr "Show the link to the detail"
 
 #. Default: "Mostra i puntini di scorrimento"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_dots"
-msgstr ""
+msgstr "Show scroll dots"
 
 #. Default: "Mostra l'ente"
 #: config/blocks/listing/ListingOptions/bandiTemplate
 msgid "show_ente"
-msgstr ""
+msgstr "Show the entity"
 
 #. Default: "A tutta larghezza"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_full_width"
-msgstr ""
+msgstr "Full width"
 
 #. Default: "Mostra l'icona"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_icon"
-msgstr ""
+msgstr "Show the icon"
 
 #. Default: "Mostra la descrizione"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 msgid "show_image_description"
-msgstr ""
+msgstr "Show the description"
 
 #. Default: "Apri l'anteprima in popup"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/photogalleryTemplate
 msgid "show_image_popup"
-msgstr ""
+msgstr "Open the preview in a popup"
 
 #. Default: "Mostra il titolo"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "show_image_title"
-msgstr ""
+msgstr "Show the title"
 
 #. Default: "Mostra la mappa a tutta larghezza"
 #: config/blocks/listing/ListingOptions/mapTemplate
 msgid "show_map_full_width"
-msgstr ""
+msgstr "Show the map at full width"
 
 #. Default: "Mostra il nastro solo sulla prima card"
 #: config/blocks/listing/ListingOptions/ribbonCardTemplate
 msgid "show_only_first_ribbon"
-msgstr ""
+msgstr "Show the ribbon only on the first card"
 
 #. Default: "Permette di aprire l'anteprima di tutti i PDF di questo elenco in una tab separata altrimenti vengono scaricati."
 #: config/blocks/listing/ListingOptions/attachmentCardTemplate
 msgid "show_pdf_desc"
-msgstr ""
+msgstr "Allows the preview of all PDFs in this list to be opened in a separate tab, otherwise they are downloaded."
 
 #. Default: "Mostra i PDF in anteprima"
 #: config/blocks/listing/ListingOptions/attachmentCardTemplate
 msgid "show_pdf_preview"
-msgstr ""
+msgstr "Show PDF previews"
 
 #. Default: "Mostra elenco puntato"
 #: config/blocks/listing/ListingOptions/simpleListTemplate
 msgid "show_pointer_list"
-msgstr ""
+msgstr "Show bulleted list"
 
 #. Default: "Mostra la sezione"
 #: config/blocks/listing/ListingOptions/utils
 msgid "show_section"
-msgstr ""
+msgstr "Show the section"
 
 #. Default: "Mostra la tipologia"
 #: config/blocks/listing/ListingOptions/bandiTemplate
 msgid "show_tipologia"
-msgstr ""
+msgstr "Show the type"
 
 #. Default: "Indice della pagina"
 #: components/View/commons/intlMessages
@@ -3739,27 +3739,27 @@ msgstr "Navigation progress"
 #. Default: "Compatto"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_compact"
-msgstr ""
+msgstr "Compact"
 
 #. Default: "Qui puoi selezionare, per il template 'Card semplice', un aspetto diverso da quello di default."
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_description"
-msgstr ""
+msgstr "Here you can select, for the 'Simple card' template, an appearance different from the default one."
 
 #. Default: "Collegamenti a Categorie"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_ghost"
-msgstr ""
+msgstr "Links to Categories"
 
 #. Default: "Collegamenti a Come fare per"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_guide"
-msgstr ""
+msgstr "Links to How to do"
 
 #. Default: "Un elemento per riga"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
 msgid "simplecard_listing_appearance_oneforrow"
-msgstr ""
+msgstr "One item per row"
 
 #. Default: "Strutture / Luoghi"
 #: config/blocks/listing/ListingOptions/simpleCardTemplate
@@ -3789,13 +3789,13 @@ msgstr "Go to navigation"
 #. Default: "Skiplinks"
 #: components/SkipLinks/SkipLinks
 msgid "skiplinks-description"
-msgstr ""
+msgstr "Skiplinks"
 
 #. Default: "Skype"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "skype"
-msgstr ""
+msgstr "Skype"
 
 #. Default: "Vai alla slide {index}"
 #: components/Blocks/Listing/Carousel/CarouselTemplate
@@ -3806,40 +3806,40 @@ msgstr "Go to slide {index}"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_description"
-msgstr ""
+msgstr "Here you can select, for the 'Carousel' template, an appearance different from the default one for the items shown in the slider."
 
 #. Default: "Gallery"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 msgid "slider_listing_appearance_gallery"
-msgstr ""
+msgstr "Gallery"
 
 #. Default: "Card con immagine"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_imagecard"
-msgstr ""
+msgstr "Card with image"
 
 #. Default: "Card semplice"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slider_listing_appearance_simplecard"
-msgstr ""
+msgstr "Simple card"
 
 #. Default: "N° slide da mostrare"
 #: config/blocks/listing/ListingOptions/carouselTemplate
 #: config/blocks/listing/ListingOptions/sliderTemplate
 msgid "slidesToShow"
-msgstr ""
+msgstr "Number of slides to show"
 
 #. Default: "Data (prima i più recenti)"
 #: components/Widgets/SortByWidget/SortByWidget
 msgid "sort_Date"
-msgstr ""
+msgstr "Date (most recent first)"
 
 #. Default: "Data di apertura"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_apertura_bando"
-msgstr ""
+msgstr "Call opening date"
 
 #. Default: "Ordina per"
 #: components/Widgets/SortByWidget/SortByWidget
@@ -3849,17 +3849,17 @@ msgstr "Order by"
 #. Default: "Chiusura procedimento bando"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_chiusura_procedimento_bando"
-msgstr ""
+msgstr "Call procedure closing"
 
 #. Default: "Data di pubblicazione"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_effective_date"
-msgstr ""
+msgstr "Publication date"
 
 #. Default: "Data di modifica"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_modified_date"
-msgstr ""
+msgstr "Modification date"
 
 #. Default: "Alfabeticamente"
 #: components/Widgets/SortByWidget/SortByWidget
@@ -3869,12 +3869,12 @@ msgstr "Alphabetically"
 #. Default: "Ordina per"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_on"
-msgstr ""
+msgstr "Sort by"
 
 #. Default: "Ordine inverso"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_order"
-msgstr ""
+msgstr "Reverse order"
 
 #. Default: "Rilevanza"
 #: components/Widgets/SortByWidget/SortByWidget
@@ -3884,12 +3884,12 @@ msgstr "Relevance"
 #. Default: "Scadenza termini partecipazione"
 #: components/Blocks/SearchBandi/Sidebar
 msgid "sort_scadenza_bando"
-msgstr ""
+msgstr "Application deadline"
 
 #. Default: "Sponsor"
 #: components/View/Evento/EventoSponsors
 msgid "sponsors"
-msgstr ""
+msgstr "Sponsors"
 
 #. Default: "Inizio evento"
 #: components/View/Evento/Dates
@@ -4015,37 +4015,37 @@ msgstr "Next"
 #. Default: "Colore delle righe alternato"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variation_alternate_rows"
-msgstr ""
+msgstr "Alternate row color"
 
 #. Default: "Colonne della tabella"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variation_columns"
-msgstr ""
+msgstr "Table columns"
 
 #. Default: "Colonna"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variaton_column"
-msgstr ""
+msgstr "Column"
 
 #. Default: "Tipo di contenuto"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variaton_ct"
-msgstr ""
+msgstr "Content type"
 
 #. Default: "Campo"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variaton_field"
-msgstr ""
+msgstr "Field"
 
 #. Default: "Titolo"
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variaton_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Titolo della colonna. Se vuoi, puoi modificare il titolo di default."
 #: config/blocks/listing/ListingOptions/tableTemplate
 msgid "table_variaton_title_description"
-msgstr ""
+msgstr "Column title. If you want, you can change the default title."
 
 #. Default: "Etichetta colonna del titolo"
 #: config/blocks/listing/ListingOptions/tableTemplate
@@ -4071,7 +4071,7 @@ msgstr "Phone"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "telegram"
-msgstr ""
+msgstr "Telegram"
 
 #. Default: "Tempi e scadenze"
 #: components/View/Bando/BandoDate
@@ -4116,47 +4116,47 @@ msgstr "Open"
 #. Default: "Tutto per"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_block_title"
-msgstr ""
+msgstr "All for"
 
 #. Default: "Descrizione"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_description"
-msgstr ""
+msgstr "Description"
 
 #. Default: "Mostra l'icona"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_show_icon"
-msgstr ""
+msgstr "Show the icon"
 
 #. Default: "Tassonomie"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_taxonomies"
-msgstr ""
+msgstr "Taxonomies"
 
 #. Default: "Titolo"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_title"
-msgstr ""
+msgstr "Title"
 
 #. Default: "Parliamo di"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_topics"
-msgstr ""
+msgstr "Let's talk about"
 
 #. Default: "A chi si rivolge"
 #: components/Blocks/TopicsList/schema
 msgid "topics_list_users"
-msgstr ""
+msgstr "Who it's for"
 
 #. Default: "X"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 msgid "twitter"
-msgstr ""
+msgstr "X"
 
 #. Default: "You are trying to access a protected resource, please login first."
 #: components/Unauthorized/Unauthorized
 msgid "unauthorized_description"
-msgstr ""
+msgstr "You are trying to access a protected resource, please login first."
 
 #. Default: "Allegati"
 #: components/View/UOView/UODocumenti
@@ -4232,7 +4232,7 @@ msgstr "Update date"
 #. Default: "Utility Menu"
 #: components/layout/Header/HeaderSlim/HeaderSlim
 msgid "utilityMenu"
-msgstr ""
+msgstr "Utility Menu"
 
 #. Default: "Vedi su Apple Maps"
 #: helpers/Address/mapPin
@@ -4253,7 +4253,7 @@ msgstr "View on Google Maps"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
 #: helpers/Views/PuntoDiContattoValue
 msgid "whatsapp"
-msgstr ""
+msgstr "Whatsapp"
 
 #. Default: "Questo evento ha luogo per tutta la giornata."
 #: components/View/Evento/Dates
