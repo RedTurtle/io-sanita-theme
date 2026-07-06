@@ -1,4 +1,4 @@
-import { createRef, useEffect, useMemo, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
@@ -14,7 +14,7 @@ import Results from './Results';
 import SearchFilters from './SearchFilters';
 import { isDateWithinTurno } from './turniUtils';
 import { getComuniOptions, filterFarmacieByComune } from './comuniUtils';
-import { getFarmacieMarkers } from './mapUtils';
+import { getFarmacieMarkers, getFarmacieMarkersSignature } from './mapUtils';
 
 /* Style */
 import './search-farmacia.scss';
@@ -212,10 +212,28 @@ const Body = ({ isEditMode, data, id }) => {
   }, [currentPage, results]);
 
   // tutte le farmacie trovate hanno un pin sulla mappa, anche quelle non nella pagina corrente
-  const markers = useMemo(
-    () => (showMap ? getFarmacieMarkers(results, intl) : []),
-    [showMap, results, intl],
-  );
+  const markerOptions = {
+    isEditMode,
+    searchType,
+    showCap,
+    showProvincia,
+    showLocalitaColonna,
+    onlyActiveTurno: data?.only_active_turno,
+    searchDate: filters.date,
+  };
+
+  // OSMMap rifà il fitBounds/zoom ogni volta che l'array markers cambia
+  // riferimento: la firma è indipendente dall'ordine, così cambiare
+  // l'ordinamento della tabella non causa un nuovo array di marker e non
+  // resetta lo zoom della mappa
+  const markersSignature = showMap
+    ? getFarmacieMarkersSignature(results, markerOptions)
+    : '';
+  const [markers, setMarkers] = useState([]);
+  useEffect(() => {
+    setMarkers(showMap ? getFarmacieMarkers(results, intl, markerOptions) : []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showMap, markersSignature, intl]);
 
   const resultsWrapperId = 'search-farmacie-results_' + id;
   return (
@@ -257,41 +275,13 @@ const Body = ({ isEditMode, data, id }) => {
                 </Col>
 
                 {/* Total number of results */}
-                <Col xs={3} lg={6} className="align-self-center">
+                <Col xs={12} className="align-self-center">
                   {results && results?.length > 0 && (
                     <div className="total-result small" aria-live="polite">
                       <span className="fw-bold">{results.length}</span>{' '}
                       {intl.formatMessage(messages.results)}
                     </div>
                   )}
-                </Col>
-
-                {/* Sort by */}
-                <Col xs={9} lg={6} className="d-flex justify-content-end">
-                  <SortByWidget
-                    order={filters.order}
-                    action={(sortby) => {
-                      setFilters({ ...filters, order: sortby });
-                    }}
-                    options={[
-                      {
-                        sort_on: 'title',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.nome),
-                      },
-                      {
-                        sort_on: 'comune',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.comune),
-                      },
-                      {
-                        sort_on: 'localita',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.localita),
-                      },
-                    ]}
-                    ariaControls={resultsWrapperId}
-                  />
                 </Col>
               </Row>
             </form>
@@ -307,6 +297,36 @@ const Body = ({ isEditMode, data, id }) => {
                 />
               </div>
             )}
+
+            {/* Sort by: ha effetto solo sulla tabella dei risultati, non sulla mappa */}
+            <Row>
+              <Col xs={12} className="d-flex justify-content-end">
+                <SortByWidget
+                  order={filters.order}
+                  action={(sortby) => {
+                    setFilters({ ...filters, order: sortby });
+                  }}
+                  options={[
+                    {
+                      sort_on: 'title',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.nome),
+                    },
+                    {
+                      sort_on: 'comune',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.comune),
+                    },
+                    {
+                      sort_on: 'localita',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.localita),
+                    },
+                  ]}
+                  ariaControls={resultsWrapperId}
+                />
+              </Col>
+            </Row>
 
             <div
               className="farmacie-results shadow"

@@ -49,7 +49,7 @@
 - Nel blocco di ricerca delle farmacie la colonna 'Periodi di Turno' è stata rinominata in 'Periodo e tipologia di turno'
 - Nel blocco di ricerca delle farmacie è ora possibile scegliere dalle impostazioni del blocco se mostrare il CAP e la provincia nell'indirizzo dei risultati
 - Nella tabella dei risultati del blocco di ricerca delle farmacie la colonna 'Recapiti' è stata rinominata in 'Telefono'
-- Nel blocco di ricerca delle farmacie è ora possibile scegliere dalle impostazioni del blocco di visualizzare una mappa con la posizione delle farmacie trovate
+- Nel blocco di ricerca delle farmacie è ora possibile scegliere dalle impostazioni del blocco di visualizzare una mappa con la posizione delle farmacie trovate; il balloon di ogni farmacia mostra le stesse informazioni presenti nella tabella dei risultati (comune, indirizzo, telefono, turni/ferie)
 
 ## Versione 2.33.1 (01/07/2026)
 
