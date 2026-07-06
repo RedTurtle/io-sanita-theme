@@ -45,6 +45,10 @@ const messages = defineMessages({
     id: 'search_farmacia_results_aria',
     defaultMessage: 'Risultati della ricerca farmacie',
   },
+  opendata_csv_link: {
+    id: 'search_farmacia_opendata_csv_link',
+    defaultMessage: 'Scarica il CSV open data con tutti i turni delle farmacie',
+  },
 });
 
 const Body = ({ isEditMode, data, id }) => {
@@ -62,6 +66,7 @@ const Body = ({ isEditMode, data, id }) => {
   const showProvincia = data.show_provincia ?? true;
   const showLocalitaColonna = data.show_localita_colonna ?? true;
   const showMap = data.show_map ?? false;
+  const showOpendataCsvLink = data.show_opendata_csv_link ?? false;
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -335,6 +340,16 @@ const Body = ({ isEditMode, data, id }) => {
                 />
               )}
             </div>
+
+            {showOpendataCsvLink && (
+              <div className="opendata-csv-link mt-3">
+                <a
+                  href={`${config.settings.apiPath}/farmacie-opendata/@@download/turni.csv`}
+                >
+                  {intl.formatMessage(messages.opendata_csv_link)}
+                </a>
+              </div>
+            )}
           </Container>
         ) : (
           <Container className="d-flex justify-content-center mt-3">

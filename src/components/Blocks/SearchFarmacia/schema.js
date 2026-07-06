@@ -46,6 +46,11 @@ const messages = defineMessages({
     id: 'search_farmacia_show_map',
     defaultMessage: 'Mostra la mappa con le farmacie trovate',
   },
+  show_opendata_csv_link: {
+    id: 'search_farmacia_show_opendata_csv_link',
+    defaultMessage:
+      'Mostra il link al CSV open data con tutti i turni delle farmacie',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
@@ -66,6 +71,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_provincia',
           'show_localita_colonna',
           'show_map',
+          'show_opendata_csv_link',
         ],
       },
     ],
@@ -118,6 +124,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       },
       show_map: {
         title: intl.formatMessage(messages.show_map),
+        type: 'boolean',
+        default: false,
+      },
+      show_opendata_csv_link: {
+        title: intl.formatMessage(messages.show_opendata_csv_link),
         type: 'boolean',
         default: false,
       },
