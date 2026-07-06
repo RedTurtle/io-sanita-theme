@@ -2,6 +2,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { PuntoDiContattoValue } from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Table } from 'semantic-ui-react';
+import { getActiveTurni } from './turniUtils';
 
 const messages = defineMessages({
   nome: {
@@ -38,15 +39,15 @@ const messages = defineMessages({
   },
   recapiti: {
     id: 'search_farmacia_table_recapiti',
-    defaultMessage: 'Recapiti',
+    defaultMessage: 'Telefono',
   },
   recapiti_en: {
     id: 'search_farmacia_table_recapiti_en',
-    defaultMessage: 'Contact numbers',
+    defaultMessage: 'Phone number',
   },
   turni: {
     id: 'search_farmacia_table_turni',
-    defaultMessage: 'Periodi di Turno',
+    defaultMessage: 'Periodo e tipologia di turno',
   },
   turni_en: {
     id: 'search_farmacia_table_turni_en',
@@ -68,22 +69,24 @@ const messages = defineMessages({
     id: 'search_farmacia_period_to',
     defaultMessage: 'al',
   },
-  telefono: {
-    id: 'search_farmacia_telefono',
-    defaultMessage: 'Telefono',
-  },
-  telefono_turno: {
-    id: 'search_farmacia_telefono_turno',
-    defaultMessage: 'Telefono turno',
-  },
   no_results: {
     id: 'search_farmacia_no_results',
     defaultMessage: 'Nessun risultato trovato',
   },
 });
 
-const ContactColumns = ({ isEditMode, item, searchType }) => {
+const ContactColumns = ({
+  isEditMode,
+  item,
+  searchType,
+  showCap,
+  showProvincia,
+  showLocalitaColonna,
+}) => {
   const intl = useIntl();
+  const showZip = showCap && item?.zip_code;
+  const showProv = showProvincia && item?.provincia;
+  const hasSecondAddressLine = showZip || item?.localita || showProv;
 
   return (
     <>
@@ -97,15 +100,17 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         {item?.comune ? <p>{item.comune}</p> : <> - </>}
       </td>
 
-      <td className="localita">
-        <div className="th d-lg-none">
-          {intl.formatMessage(messages.localita)}
-          <br />
-          {intl.formatMessage(messages.localita_en)}
-        </div>
+      {showLocalitaColonna && (
+        <td className="localita">
+          <div className="th d-lg-none">
+            {intl.formatMessage(messages.localita)}
+            <br />
+            {intl.formatMessage(messages.localita_en)}
+          </div>
 
-        {item?.localita ? <p>{item.localita}</p> : <> - </>}
-      </td>
+          {item?.localita ? <p>{item.localita}</p> : <> - </>}
+        </td>
+      )}
 
       <td className="indirizzo">
         <div className="th d-lg-none">
@@ -114,14 +119,14 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
           {intl.formatMessage(messages.indirizzo_en)}
         </div>
 
-        {item?.street || item?.zip_code || item?.localita || item?.provincia ? (
+        {item?.street || hasSecondAddressLine ? (
           <p>
             {item?.street && item.street}
-            {item?.street && item?.zip_code && <br />}
-            {item?.zip_code && item.zip_code}
-            {item?.zip_code && item?.localita && <> </>}
+            {item?.street && hasSecondAddressLine && <br />}
+            {showZip && item.zip_code}
+            {showZip && item?.localita && <> </>}
             {item?.localita && item.localita}
-            {item?.provincia && <> ({item.provincia}) </>}
+            {showProv && <> ({item.provincia}) </>}
           </p>
         ) : (
           <> - </>
@@ -135,7 +140,6 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         </div>
         {item.telefono && searchType === 'vacations' && (
           <p className="my-0">
-            {`${intl.formatMessage(messages.telefono)}: `}
             <PuntoDiContattoValue
               value={{ tipo: 'telefono', valore: item.telefono }}
             />
@@ -143,7 +147,6 @@ const ContactColumns = ({ isEditMode, item, searchType }) => {
         )}
         {item.telefono_turno && searchType !== 'vacations' && (
           <p className="my-0">
-            {`${intl.formatMessage(messages.telefono_turno)}: `}
             <PuntoDiContattoValue
               value={{ tipo: 'telefono', valore: item.telefono_turno }}
             />
@@ -179,7 +182,16 @@ const PeriodsStructure = ({ periods }) => {
   );
 };
 
-const Results = ({ items, isEditMode, searchType }) => {
+const Results = ({
+  items,
+  isEditMode,
+  searchType,
+  onlyActiveTurno,
+  searchDate,
+  showCap,
+  showProvincia,
+  showLocalitaColonna,
+}) => {
   const intl = useIntl();
 
   return (
@@ -196,11 +208,13 @@ const Results = ({ items, isEditMode, searchType }) => {
                 {intl.formatMessage(messages.comune)} <br />
                 {intl.formatMessage(messages.comune_en)}
               </Table.HeaderCell>
-              <Table.HeaderCell>
-                {intl.formatMessage(messages.localita)}
-                <br />
-                {intl.formatMessage(messages.localita_en)}
-              </Table.HeaderCell>
+              {showLocalitaColonna && (
+                <Table.HeaderCell>
+                  {intl.formatMessage(messages.localita)}
+                  <br />
+                  {intl.formatMessage(messages.localita_en)}
+                </Table.HeaderCell>
+              )}
               <Table.HeaderCell>
                 {intl.formatMessage(messages.indirizzo)}
                 <br />
@@ -230,51 +244,61 @@ const Results = ({ items, isEditMode, searchType }) => {
             </Table.Row>
           </Table.Header>
           <tbody>
-            {items.map((item, i) => (
-              <tr key={i}>
-                <td className="nome">
-                  {item['@id'] && (
-                    <p>
-                      <UniversalLink
-                        item={!isEditMode ? item : null}
-                        href={isEditMode ? '#' : null}
-                      >
-                        {item.title}
-                      </UniversalLink>
-                    </p>
+            {items.map((item, i) => {
+              const turniDaMostrare =
+                onlyActiveTurno && searchDate
+                  ? getActiveTurni(item.turni, searchDate)
+                  : item.turni;
+
+              return (
+                <tr key={i}>
+                  <td className="nome">
+                    {item['@id'] && (
+                      <p>
+                        <UniversalLink
+                          item={!isEditMode ? item : null}
+                          href={isEditMode ? '#' : null}
+                        >
+                          {item.title}
+                        </UniversalLink>
+                      </p>
+                    )}
+                  </td>
+                  <ContactColumns
+                    isEditMode={isEditMode}
+                    item={item}
+                    searchType={searchType}
+                    showCap={showCap}
+                    showProvincia={showProvincia}
+                    showLocalitaColonna={showLocalitaColonna}
+                  />
+
+                  {/* Periodo e tipologia di turno */}
+                  {searchType !== 'vacations' && (
+                    <td className="turni">
+                      <div className="th d-lg-none">
+                        {intl.formatMessage(messages.turni)}
+                        <br />
+                        {intl.formatMessage(messages.turni_en)}
+                      </div>
+                      <PeriodsStructure periods={turniDaMostrare} />
+                    </td>
                   )}
-                </td>
-                <ContactColumns
-                  isEditMode={isEditMode}
-                  item={item}
-                  searchType={searchType}
-                />
 
-                {/* Periodi di turno */}
-                {searchType !== 'vacations' && (
-                  <td className="turni">
-                    <div className="th d-lg-none">
-                      {intl.formatMessage(messages.turni)}
-                      <br />
-                      {intl.formatMessage(messages.turni_en)}
-                    </div>
-                    <PeriodsStructure periods={item.turni} />
-                  </td>
-                )}
-
-                {/* Periodi di ferie */}
-                {searchType === 'vacations' && (
-                  <td className="ferie">
-                    <div className="th d-lg-none">
-                      {intl.formatMessage(messages.ferie)}
-                      <br />
-                      {intl.formatMessage(messages.ferie_en)}
-                    </div>
-                    <PeriodsStructure periods={item.ferie} />
-                  </td>
-                )}
-              </tr>
-            ))}
+                  {/* Periodi di ferie */}
+                  {searchType === 'vacations' && (
+                    <td className="ferie">
+                      <div className="th d-lg-none">
+                        {intl.formatMessage(messages.ferie)}
+                        <br />
+                        {intl.formatMessage(messages.ferie_en)}
+                      </div>
+                      <PeriodsStructure periods={item.ferie} />
+                    </td>
+                  )}
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       ) : (

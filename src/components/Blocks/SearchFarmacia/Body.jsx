@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
@@ -9,8 +9,12 @@ import {
   LinkedHeadline,
 } from 'io-sanita-theme/components';
 import { Container, Col, Row, Spinner } from 'design-react-kit';
+import { OSMMap } from 'volto-venue';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
+import { isDateWithinTurno } from './turniUtils';
+import { getComuniOptions, filterFarmacieByComune } from './comuniUtils';
+import { getFarmacieMarkers } from './mapUtils';
 
 /* Style */
 import './search-farmacia.scss';
@@ -54,6 +58,10 @@ const Body = ({ isEditMode, data, id }) => {
     data.show_area_territoriale ?? searchType !== 'vacations';
   const showComune = data.show_comune ?? searchType === 'vacations';
   const showLocalita = data.show_localita ?? searchType === 'vacations';
+  const showCap = data.show_cap ?? true;
+  const showProvincia = data.show_provincia ?? true;
+  const showLocalitaColonna = data.show_localita_colonna ?? true;
+  const showMap = data.show_map ?? false;
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -92,17 +100,10 @@ const Body = ({ isEditMode, data, id }) => {
   useEffect(() => {
     if (searchFarmacia?.items) {
       setFiltersOptions({
-        comuni: [
-          ...new Set(searchFarmacia.items.map((item) => item.comune).sort()),
-        ].map((item) => {
-          return { value: item, label: item };
-        }),
+        comuni: getComuniOptions(searchFarmacia.items),
         localita: [
           ...new Set(
-            searchFarmacia.items
-              .filter(
-                (item) => !filters.comune || item.comune === filters.comune,
-              )
+            filterFarmacieByComune(searchFarmacia.items, filters.comune)
               .map((item) => item.localita)
               .sort(),
           ),
@@ -133,25 +134,9 @@ const Body = ({ isEditMode, data, id }) => {
     if (searchType === 'shifts' && filters.date && items?.length > 0) {
       const inputDate = new Date(filters.date).getTime();
 
-      newResults = newResults.filter((item) => {
-        const checkTurno = item?.turni?.map((turno) => {
-          const dalSplit = turno?.dal.split('/');
-          const alSplit = turno?.al.split('/');
-          const turnoDal = new Date(
-            +dalSplit[2],
-            dalSplit[1] - 1,
-            +dalSplit[0],
-          ).getTime();
-          const turnoAl = new Date(
-            +alSplit[2],
-            alSplit[1] - 1,
-            +alSplit[0],
-          ).getTime();
-
-          return turnoDal <= inputDate && turnoAl >= inputDate ? true : false;
-        });
-        return checkTurno && checkTurno.includes(true);
-      });
+      newResults = newResults.filter((item) =>
+        item?.turni?.some((turno) => isDateWithinTurno(turno, inputDate)),
+      );
     }
 
     // Turni - filtro Area Territoriale
@@ -163,11 +148,7 @@ const Body = ({ isEditMode, data, id }) => {
 
     // Ferie - filtro Comune
     if (filters.comune && filters.comune !== null) {
-      newResults = newResults.filter(
-        (item) =>
-          item.comune &&
-          item.comune.toLowerCase() === filters.comune.toLowerCase(),
-      );
+      newResults = filterFarmacieByComune(newResults, filters.comune);
     }
 
     // Ferie - filtro Località
@@ -229,6 +210,12 @@ const Body = ({ isEditMode, data, id }) => {
       setResultsPage(results.slice(start, end));
     }
   }, [currentPage, results]);
+
+  // tutte le farmacie trovate hanno un pin sulla mappa, anche quelle non nella pagina corrente
+  const markers = useMemo(
+    () => (showMap ? getFarmacieMarkers(results, intl) : []),
+    [showMap, results, intl],
+  );
 
   const resultsWrapperId = 'search-farmacie-results_' + id;
   return (
@@ -309,6 +296,18 @@ const Body = ({ isEditMode, data, id }) => {
               </Row>
             </form>
 
+            {showMap && markers.length > 0 && (
+              <div className="farmacie-map mb-4">
+                <OSMMap
+                  markers={markers}
+                  cluster={true}
+                  showTooltip={true}
+                  showPopup={true}
+                  mapOptions={{ scrollWheelZoom: false }}
+                />
+              </div>
+            )}
+
             <div
               className="farmacie-results shadow"
               role="region"
@@ -321,6 +320,11 @@ const Body = ({ isEditMode, data, id }) => {
                 items={resultsPage}
                 isEditMode={isEditMode}
                 searchType={searchType}
+                onlyActiveTurno={data?.only_active_turno}
+                searchDate={filters.date}
+                showCap={showCap}
+                showProvincia={showProvincia}
+                showLocalitaColonna={showLocalitaColonna}
               />
               {results && results.length > b_size && (
                 <Pagination
