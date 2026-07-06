@@ -40,8 +40,8 @@ export const isDateWithinTurno = (turno, targetDate) => {
     targetDate instanceof Date
       ? targetDate.getTime()
       : typeof targetDate === 'string'
-        ? new Date(targetDate).getTime()
-        : targetDate;
+      ? new Date(targetDate).getTime()
+      : targetDate;
   const dal = parseItDate(turno?.dal);
   const al = parseItDate(turno?.al, { endOfDay: true });
   if (dal === null || al === null || target == null) return false;
@@ -49,6 +49,5 @@ export const isDateWithinTurno = (turno, targetDate) => {
 };
 
 export const getActiveTurni = (turni, targetDate) => {
-  
   return (turni ?? []).filter((turno) => isDateWithinTurno(turno, targetDate));
 };
