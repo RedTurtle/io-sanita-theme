@@ -42,6 +42,7 @@ const LeafIcon = (options, item) => {
 const FarmaciaPopupInfo = ({
   item,
   intl,
+  isEditMode,
   searchType,
   showCap,
   showProvincia,
@@ -59,12 +60,12 @@ const FarmaciaPopupInfo = ({
 
   return (
     <div className="farmacia-map-popup-info">
-        <p className="mb-1">
-          {item?.street} - {item?.comune}
-          {showLocalitaColonna && item?.localita ? ` - ${item.localita}` : ''}
-          {showZip ? ` ${item.zip_code}` : ''}
-          {showProv ? ` (${item.provincia})` : ''}
-        </p>
+      <p className="mb-1">
+        {item?.street} - {item?.comune}
+        {showLocalitaColonna && item?.localita ? ` - ${item.localita}` : ''}
+        {showZip ? ` ${item.zip_code}` : ''}
+        {showProv ? ` (${item.provincia})` : ''}
+      </p>
       {periods?.length > 0 && (
         <p className="mb-1">
           <strong>{intl.formatMessage(messages.turni)}</strong>
@@ -78,6 +79,16 @@ const FarmaciaPopupInfo = ({
               <br />
             </span>
           ))}
+        </p>
+      )}
+      {item?.['@id'] && (
+        <p className="mb-0">
+          <UniversalLink
+            item={!isEditMode ? item : null}
+            href={isEditMode ? '#' : null}
+          >
+            {intl.formatMessage(messages.view_details)}
+          </UniversalLink>
         </p>
       )}
     </div>
