@@ -3021,6 +3021,26 @@ msgstr "Select day"
 msgid "search_farmacia_localita"
 msgstr "Location"
 
+#. Default: "Dal"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_period_from"
+msgstr ""
+
+#. Default: "al"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_period_to"
+msgstr ""
+
+#. Default: "Periodo e tipologia di turno"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_turni"
+msgstr ""
+
+#. Default: "Vedi scheda della farmacia"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_view_details"
+msgstr ""
+
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchFarmacia/Body
 #: components/Blocks/SearchFarmacia/Results
@@ -3030,6 +3050,11 @@ msgstr "No results found"
 #. Default: "Mostra solo il turno del giorno selezionato (anziché tutti i periodi)"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_only_active_turno"
+msgstr ""
+
+#. Default: "Scarica il CSV open data con tutti i turni delle farmacie"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_opendata_csv_link"
 msgstr ""
 
 #. Default: "Dal"
@@ -3100,6 +3125,11 @@ msgstr ""
 #. Default: "Mostra la mappa con le farmacie trovate"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_map"
+msgstr ""
+
+#. Default: "Mostra il link al CSV open data con tutti i turni delle farmacie"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_opendata_csv_link"
 msgstr ""
 
 #. Default: "Mostra la provincia nella tabella dei risultati"
