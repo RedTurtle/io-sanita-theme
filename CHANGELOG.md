@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.34.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.2...2.34.0) (2026-07-07)
+
+### Features
+
+* opendata link ([#166](https://github.com/RedTurtle/io-sanita-theme/issues/166)) ([89135aa](https://github.com/RedTurtle/io-sanita-theme/commit/89135aac45682019d963574afc4eeeb3624ce5c0))
+
+### Bug Fixes
+
+* baloon su mappe farmacie ([#165](https://github.com/RedTurtle/io-sanita-theme/issues/165)) ([b955deb](https://github.com/RedTurtle/io-sanita-theme/commit/b955deb019f48e3ab74a795ae580acbe206143d8))
+
+### Maintenance
+
+* locales ([a5e2768](https://github.com/RedTurtle/io-sanita-theme/commit/a5e2768c68aa85bea4d707ae6003e73cf05ea49e))
+
 ## [2.33.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.1...2.33.2) (2026-07-06)
 
 ## [2.33.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.0...2.33.1) (2026-07-01)
