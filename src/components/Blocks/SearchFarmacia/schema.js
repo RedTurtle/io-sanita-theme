@@ -1,3 +1,4 @@
+import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
@@ -54,6 +55,11 @@ const messages = defineMessages({
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
+  // Opzione visibile solo sui siti che abilitano esplicitamente il feature
+  // flag (non tutti i backend esportano /farmacie-opendata/@@download/turni.csv).
+  const opendataCsvLinkEnabled =
+    config.settings.siteProperties.enableFarmacieOpendataCsvLink ?? false;
+
   return {
     title: intl.formatMessage(messages.search_farmacie_block_title),
     fieldsets: [
@@ -71,7 +77,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_provincia',
           'show_localita_colonna',
           'show_map',
-          'show_opendata_csv_link',
+          ...(opendataCsvLinkEnabled ? ['show_opendata_csv_link'] : []),
         ],
       },
     ],

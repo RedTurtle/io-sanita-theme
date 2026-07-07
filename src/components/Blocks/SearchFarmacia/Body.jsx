@@ -66,7 +66,10 @@ const Body = ({ isEditMode, data, id }) => {
   const showProvincia = data.show_provincia ?? true;
   const showLocalitaColonna = data.show_localita_colonna ?? true;
   const showMap = data.show_map ?? false;
-  const showOpendataCsvLink = data.show_opendata_csv_link ?? false;
+  const opendataCsvLinkEnabled =
+    config.settings.siteProperties.enableFarmacieOpendataCsvLink ?? false;
+  const showOpendataCsvLink =
+    opendataCsvLinkEnabled && (data.show_opendata_csv_link ?? false);
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
