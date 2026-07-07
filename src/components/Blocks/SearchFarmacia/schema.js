@@ -1,3 +1,4 @@
+import config from '@plone/volto/registry';
 import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
@@ -46,9 +47,19 @@ const messages = defineMessages({
     id: 'search_farmacia_show_map',
     defaultMessage: 'Mostra la mappa con le farmacie trovate',
   },
+  show_opendata_csv_link: {
+    id: 'search_farmacia_show_opendata_csv_link',
+    defaultMessage:
+      'Mostra il link al CSV open data con tutti i turni delle farmacie',
+  },
 });
 
 export function SearchFarmaciaSchema({ formData, intl }) {
+  // Opzione visibile solo sui siti che abilitano esplicitamente il feature
+  // flag (non tutti i backend esportano /farmacie-opendata/@@download/turni.csv).
+  const opendataCsvLinkEnabled =
+    config.settings.siteProperties.enableFarmacieOpendataCsvLink ?? false;
+
   return {
     title: intl.formatMessage(messages.search_farmacie_block_title),
     fieldsets: [
@@ -66,6 +77,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_provincia',
           'show_localita_colonna',
           'show_map',
+          ...(opendataCsvLinkEnabled ? ['show_opendata_csv_link'] : []),
         ],
       },
     ],
@@ -118,6 +130,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       },
       show_map: {
         title: intl.formatMessage(messages.show_map),
+        type: 'boolean',
+        default: false,
+      },
+      show_opendata_csv_link: {
+        title: intl.formatMessage(messages.show_opendata_csv_link),
         type: 'boolean',
         default: false,
       },

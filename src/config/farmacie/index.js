@@ -26,6 +26,12 @@ export const applyFarmacieConfig = (config) => {
 
   config.views.contentTypesViews.Farmacia = FarmaciaView;
 
+  // Feature flag: non tutti i siti hanno il backend con l'endpoint
+  // /farmacie-opendata/@@download/turni.csv, quindi l'opzione per mostrare
+  // il link nel blocco Ricerca Farmacie va abilitata esplicitamente dal
+  // tema del singolo cliente (es. ausl-modena-theme) che vuole usarla.
+  config.settings.siteProperties.enableFarmacieOpendataCsvLink = false;
+
   // TODO: valutare di spostarle su backends
   config.settings.siteProperties.listAreeTerritoriali = [
     {
