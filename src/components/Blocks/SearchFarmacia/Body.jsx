@@ -346,10 +346,7 @@ const Body = ({ isEditMode, data, id }) => {
 
             {showOpendataCsvLink && (
               <div className="opendata-csv-link mt-3">
-                <a
-                  href="/farmacie-opendata/@@download/turni.csv"
-                  download
-                >
+                <a href="/farmacie-opendata/@@download/turni.csv" download>
                   {intl.formatMessage(messages.opendata_csv_link)}
                 </a>
               </div>
