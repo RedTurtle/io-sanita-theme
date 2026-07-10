@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.35.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.34.0...2.35.0) (2026-07-10)
+
+### Features
+
+* mostra tipo turno in pagina farmacia e blocco Ricerca Farmacie ([#168](https://github.com/RedTurtle/io-sanita-theme/issues/168)) ([8b3c979](https://github.com/RedTurtle/io-sanita-theme/commit/8b3c979d54c47583857b6c0640d772c8409e7ce2))
+
+### Bug Fixes
+
+* Fixed the height in the smallBlockLinksTemplate to 100% instead of 100px ([#167](https://github.com/RedTurtle/io-sanita-theme/issues/167)) ([3826f9f](https://github.com/RedTurtle/io-sanita-theme/commit/3826f9f00215108ec467eb3e684a2d8969cfc33a))
+
+### Maintenance
+
+* locales ([4e6c04f](https://github.com/RedTurtle/io-sanita-theme/commit/4e6c04f038e1a1daa63a9c5e55182280c65539c8))
+
 ## [2.34.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.2...2.34.0) (2026-07-07)
 
 ### Features
