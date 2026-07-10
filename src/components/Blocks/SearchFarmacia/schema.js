@@ -47,6 +47,10 @@ const messages = defineMessages({
     id: 'search_farmacia_show_map',
     defaultMessage: 'Mostra la mappa con le farmacie trovate',
   },
+  show_tipo_turno: {
+    id: 'search_farmacia_show_tipo_turno',
+    defaultMessage: 'Mostra il tipo di turno nella tabella dei risultati',
+  },
   show_opendata_csv_link: {
     id: 'search_farmacia_show_opendata_csv_link',
     defaultMessage:
@@ -77,6 +81,7 @@ export function SearchFarmaciaSchema({ formData, intl }) {
           'show_provincia',
           'show_localita_colonna',
           'show_map',
+          'show_tipo_turno',
           ...(opendataCsvLinkEnabled ? ['show_opendata_csv_link'] : []),
         ],
       },
@@ -130,6 +135,11 @@ export function SearchFarmaciaSchema({ formData, intl }) {
       },
       show_map: {
         title: intl.formatMessage(messages.show_map),
+        type: 'boolean',
+        default: false,
+      },
+      show_tipo_turno: {
+        title: intl.formatMessage(messages.show_tipo_turno),
         type: 'boolean',
         default: false,
       },

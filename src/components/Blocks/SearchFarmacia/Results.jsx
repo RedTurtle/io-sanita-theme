@@ -157,7 +157,7 @@ const ContactColumns = ({
   );
 };
 
-const PeriodsStructure = ({ periods }) => {
+const PeriodsStructure = ({ periods, showTipoTurno }) => {
   const intl = useIntl();
   return (
     <p>
@@ -168,7 +168,7 @@ const PeriodsStructure = ({ periods }) => {
             {pd?.dal && <> {pd.dal} </>}
             {intl.formatMessage(messages.period_to) + ' '}
             {pd?.al && <>{pd.al}</>}
-            {pd?.tipo_turno && <> – {pd.tipo_turno}</>}
+            {showTipoTurno && pd?.tipo_turno && <> – {pd.tipo_turno}</>}
             <br />
           </span>
         ))
@@ -188,6 +188,7 @@ const Results = ({
   showCap,
   showProvincia,
   showLocalitaColonna,
+  showTipoTurno,
 }) => {
   const intl = useIntl();
 
@@ -278,7 +279,10 @@ const Results = ({
                         <br />
                         {intl.formatMessage(messages.turni_en)}
                       </div>
-                      <PeriodsStructure periods={turniDaMostrare} />
+                      <PeriodsStructure
+                        periods={turniDaMostrare}
+                        showTipoTurno={showTipoTurno}
+                      />
                     </td>
                   )}
 

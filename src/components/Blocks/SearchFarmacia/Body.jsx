@@ -66,6 +66,7 @@ const Body = ({ isEditMode, data, id }) => {
   const showProvincia = data.show_provincia ?? true;
   const showLocalitaColonna = data.show_localita_colonna ?? true;
   const showMap = data.show_map ?? false;
+  const showTipoTurno = data.show_tipo_turno ?? false;
   const opendataCsvLinkEnabled =
     config.settings.siteProperties.enableFarmacieOpendataCsvLink ?? false;
   const showOpendataCsvLink =
@@ -226,6 +227,7 @@ const Body = ({ isEditMode, data, id }) => {
     showCap,
     showProvincia,
     showLocalitaColonna,
+    showTipoTurno,
     onlyActiveTurno: data?.only_active_turno,
     searchDate: filters.date,
   };
@@ -353,6 +355,7 @@ const Body = ({ isEditMode, data, id }) => {
                 showCap={showCap}
                 showProvincia={showProvincia}
                 showLocalitaColonna={showLocalitaColonna}
+                showTipoTurno={showTipoTurno}
               />
               {results && results.length > b_size && (
                 <Pagination

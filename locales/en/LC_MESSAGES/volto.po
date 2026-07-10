@@ -3132,6 +3132,11 @@ msgstr ""
 msgid "search_farmacia_show_map"
 msgstr ""
 
+#. Default: "Mostra il tipo di turno nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_tipo_turno"
+msgstr ""
+
 #. Default: "Mostra il link al CSV open data con tutti i turni delle farmacie"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_opendata_csv_link"
