@@ -23,6 +23,7 @@ const messages = defineMessages({
 
 const FarmaciaTurni = ({ content }) => {
   const intl = useIntl();
+  const hasTipoTurno = content?.turni?.some((shift) => shift.tipo_turno);
 
   return content?.turni?.length > 0 ? (
     <RichTextSection tag_id="turni" title={intl.formatMessage(messages.turni)}>
@@ -35,9 +36,11 @@ const FarmaciaTurni = ({ content }) => {
             <th scope="col" className="text-uppercase">
               {intl.formatMessage(messages.turni_to)}
             </th>
-            <th scope="col" className="text-uppercase">
-              {intl.formatMessage(messages.turni_tipo)}
-            </th>
+            {hasTipoTurno && (
+              <th scope="col" className="text-uppercase">
+                {intl.formatMessage(messages.turni_tipo)}
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
@@ -45,7 +48,7 @@ const FarmaciaTurni = ({ content }) => {
             <tr key={index}>
               <td>{shift.dal}</td>
               <td>{shift.al}</td>
-              <td>{shift.tipo_turno}</td>
+              {hasTipoTurno && <td>{shift.tipo_turno}</td>}
             </tr>
           ))}
         </tbody>
