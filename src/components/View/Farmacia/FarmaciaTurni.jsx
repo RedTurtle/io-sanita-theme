@@ -15,6 +15,10 @@ const messages = defineMessages({
     id: 'farmacia_turni_to',
     defaultMessage: 'Al',
   },
+  turni_tipo: {
+    id: 'farmacia_turni_tipo',
+    defaultMessage: 'Tipo turno',
+  },
 });
 
 const FarmaciaTurni = ({ content }) => {
@@ -31,6 +35,9 @@ const FarmaciaTurni = ({ content }) => {
             <th scope="col" className="text-uppercase">
               {intl.formatMessage(messages.turni_to)}
             </th>
+            <th scope="col" className="text-uppercase">
+              {intl.formatMessage(messages.turni_tipo)}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +45,7 @@ const FarmaciaTurni = ({ content }) => {
             <tr key={index}>
               <td>{shift.dal}</td>
               <td>{shift.al}</td>
+              <td>{shift.tipo_turno}</td>
             </tr>
           ))}
         </tbody>

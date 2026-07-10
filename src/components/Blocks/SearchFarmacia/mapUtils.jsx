@@ -76,6 +76,7 @@ const FarmaciaPopupInfo = ({
               {pd?.dal && <> {pd.dal}</>}{' '}
               {intl.formatMessage(messages.period_to)}
               {pd?.al && <> {pd.al}</>}
+              {pd?.tipo_turno && <> – {pd.tipo_turno}</>}
               <br />
             </span>
           ))}

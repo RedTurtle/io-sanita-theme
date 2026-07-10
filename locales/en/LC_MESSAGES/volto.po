@@ -1967,6 +1967,11 @@ msgstr "From"
 msgid "farmacia_turni_to"
 msgstr "To"
 
+#. Default: "Tipo turno"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni_tipo"
+msgstr "Shift type"
+
 #. Default: "Non ho avuto dubbi su quello che stavo facendo"
 #: overrideTranslations
 msgid "feedback_clear_proceeding"
@@ -3215,9 +3220,9 @@ msgstr ""
 #. Default: "Periodo e tipologia di turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni"
-msgstr "Shifts periods"
+msgstr "Shift periods and type"
 
-#. Default: "Shifts periods"
+#. Default: "Shift periods and type"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
 msgstr ""

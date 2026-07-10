@@ -51,7 +51,7 @@ const messages = defineMessages({
   },
   turni_en: {
     id: 'search_farmacia_table_turni_en',
-    defaultMessage: 'Shifts periods',
+    defaultMessage: 'Shift periods and type',
   },
   ferie: {
     id: 'search_farmacia_table_ferie',
@@ -167,12 +167,9 @@ const PeriodsStructure = ({ periods }) => {
             {intl.formatMessage(messages.period_from)}
             {pd?.dal && <> {pd.dal} </>}
             {intl.formatMessage(messages.period_to) + ' '}
-            {pd?.al && (
-              <>
-                {pd.al}
-                <br />
-              </>
-            )}
+            {pd?.al && <>{pd.al}</>}
+            {pd?.tipo_turno && <> – {pd.tipo_turno}</>}
+            <br />
           </span>
         ))
       ) : (
