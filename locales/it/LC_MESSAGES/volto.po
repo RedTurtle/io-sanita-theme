@@ -3041,6 +3041,11 @@ msgstr ""
 msgid "search_farmacia_map_turni"
 msgstr ""
 
+#. Default: "Periodo di turno"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_turni_no_tipo"
+msgstr ""
+
 #. Default: "Vedi scheda della farmacia"
 #: components/Blocks/SearchFarmacia/mapUtils
 msgid "search_farmacia_map_view_details"
@@ -3230,6 +3235,16 @@ msgstr ""
 #. Default: "Shift periods and type"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
+msgstr ""
+
+#. Default: "Periodo di turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni_no_tipo"
+msgstr ""
+
+#. Default: "Shift periods"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni_no_tipo_en"
 msgstr ""
 
 #. Default: "Titolo"

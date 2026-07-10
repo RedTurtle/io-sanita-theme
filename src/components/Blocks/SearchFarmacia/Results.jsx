@@ -53,6 +53,14 @@ const messages = defineMessages({
     id: 'search_farmacia_table_turni_en',
     defaultMessage: 'Shift periods and type',
   },
+  turni_no_tipo: {
+    id: 'search_farmacia_table_turni_no_tipo',
+    defaultMessage: 'Periodo di turno',
+  },
+  turni_no_tipo_en: {
+    id: 'search_farmacia_table_turni_no_tipo_en',
+    defaultMessage: 'Shift periods',
+  },
   ferie: {
     id: 'search_farmacia_table_ferie',
     defaultMessage: 'Periodi di Ferie',
@@ -234,9 +242,15 @@ const Results = ({
                 </>
               ) : (
                 <Table.HeaderCell>
-                  {intl.formatMessage(messages.turni)}
+                  {intl.formatMessage(
+                    showTipoTurno ? messages.turni : messages.turni_no_tipo,
+                  )}
                   <br />
-                  {intl.formatMessage(messages.turni_en)}
+                  {intl.formatMessage(
+                    showTipoTurno
+                      ? messages.turni_en
+                      : messages.turni_no_tipo_en,
+                  )}
                 </Table.HeaderCell>
               )}
             </Table.Row>
@@ -275,9 +289,17 @@ const Results = ({
                   {searchType !== 'vacations' && (
                     <td className="turni">
                       <div className="th d-lg-none">
-                        {intl.formatMessage(messages.turni)}
+                        {intl.formatMessage(
+                          showTipoTurno
+                            ? messages.turni
+                            : messages.turni_no_tipo,
+                        )}
                         <br />
-                        {intl.formatMessage(messages.turni_en)}
+                        {intl.formatMessage(
+                          showTipoTurno
+                            ? messages.turni_en
+                            : messages.turni_no_tipo_en,
+                        )}
                       </div>
                       <PeriodsStructure
                         periods={turniDaMostrare}

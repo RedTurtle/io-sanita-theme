@@ -18,6 +18,10 @@ const messages = defineMessages({
     id: 'search_farmacia_map_turni',
     defaultMessage: 'Periodo e tipologia di turno',
   },
+  turni_no_tipo: {
+    id: 'search_farmacia_map_turni_no_tipo',
+    defaultMessage: 'Periodo di turno',
+  },
   view_details: {
     id: 'search_farmacia_map_view_details',
     defaultMessage: 'Vedi scheda della farmacia',
@@ -69,7 +73,11 @@ const FarmaciaPopupInfo = ({
       </p>
       {periods?.length > 0 && (
         <p className="mb-1">
-          <strong>{intl.formatMessage(messages.turni)}</strong>
+          <strong>
+            {intl.formatMessage(
+              showTipoTurno ? messages.turni : messages.turni_no_tipo,
+            )}
+          </strong>
           <br />
           {periods.map((pd, i) => (
             <span key={i}>
