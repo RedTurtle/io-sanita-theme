@@ -1967,6 +1967,11 @@ msgstr "From"
 msgid "farmacia_turni_to"
 msgstr "To"
 
+#. Default: "Tipo turno"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni_tipo"
+msgstr "Shift type"
+
 #. Default: "Non ho avuto dubbi su quello che stavo facendo"
 #: overrideTranslations
 msgid "feedback_clear_proceeding"
@@ -3036,6 +3041,11 @@ msgstr ""
 msgid "search_farmacia_map_turni"
 msgstr ""
 
+#. Default: "Periodo di turno"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_turni_no_tipo"
+msgstr ""
+
 #. Default: "Vedi scheda della farmacia"
 #: components/Blocks/SearchFarmacia/mapUtils
 msgid "search_farmacia_map_view_details"
@@ -3127,6 +3137,11 @@ msgstr ""
 msgid "search_farmacia_show_map"
 msgstr ""
 
+#. Default: "Mostra il tipo di turno nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_tipo_turno"
+msgstr ""
+
 #. Default: "Mostra il link al CSV open data con tutti i turni delle farmacie"
 #: components/Blocks/SearchFarmacia/schema
 msgid "search_farmacia_show_opendata_csv_link"
@@ -3215,11 +3230,21 @@ msgstr ""
 #. Default: "Periodo e tipologia di turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni"
-msgstr "Shifts periods"
+msgstr "Shift periods and type"
 
-#. Default: "Shifts periods"
+#. Default: "Shift periods and type"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
+msgstr ""
+
+#. Default: "Periodo di turno"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni_no_tipo"
+msgstr "Shift period"
+
+#. Default: "Shift periods"
+#: components/Blocks/SearchFarmacia/Results
+msgid "search_farmacia_table_turni_no_tipo_en"
 msgstr ""
 
 #. Default: "Titolo"

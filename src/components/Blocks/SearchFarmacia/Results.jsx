@@ -51,7 +51,15 @@ const messages = defineMessages({
   },
   turni_en: {
     id: 'search_farmacia_table_turni_en',
-    defaultMessage: 'Shifts periods',
+    defaultMessage: 'Shift periods and type',
+  },
+  turni_no_tipo: {
+    id: 'search_farmacia_table_turni_no_tipo',
+    defaultMessage: 'Periodo di turno',
+  },
+  turni_no_tipo_en: {
+    id: 'search_farmacia_table_turni_no_tipo_en',
+    defaultMessage: 'Shift periods',
   },
   ferie: {
     id: 'search_farmacia_table_ferie',
@@ -157,7 +165,7 @@ const ContactColumns = ({
   );
 };
 
-const PeriodsStructure = ({ periods }) => {
+const PeriodsStructure = ({ periods, showTipoTurno }) => {
   const intl = useIntl();
   return (
     <p>
@@ -167,12 +175,9 @@ const PeriodsStructure = ({ periods }) => {
             {intl.formatMessage(messages.period_from)}
             {pd?.dal && <> {pd.dal} </>}
             {intl.formatMessage(messages.period_to) + ' '}
-            {pd?.al && (
-              <>
-                {pd.al}
-                <br />
-              </>
-            )}
+            {pd?.al && <>{pd.al}</>}
+            {showTipoTurno && pd?.tipo_turno && <> – {pd.tipo_turno}</>}
+            <br />
           </span>
         ))
       ) : (
@@ -191,6 +196,7 @@ const Results = ({
   showCap,
   showProvincia,
   showLocalitaColonna,
+  showTipoTurno,
 }) => {
   const intl = useIntl();
 
@@ -236,9 +242,15 @@ const Results = ({
                 </>
               ) : (
                 <Table.HeaderCell>
-                  {intl.formatMessage(messages.turni)}
+                  {intl.formatMessage(
+                    showTipoTurno ? messages.turni : messages.turni_no_tipo,
+                  )}
                   <br />
-                  {intl.formatMessage(messages.turni_en)}
+                  {intl.formatMessage(
+                    showTipoTurno
+                      ? messages.turni_en
+                      : messages.turni_no_tipo_en,
+                  )}
                 </Table.HeaderCell>
               )}
             </Table.Row>
@@ -277,11 +289,22 @@ const Results = ({
                   {searchType !== 'vacations' && (
                     <td className="turni">
                       <div className="th d-lg-none">
-                        {intl.formatMessage(messages.turni)}
+                        {intl.formatMessage(
+                          showTipoTurno
+                            ? messages.turni
+                            : messages.turni_no_tipo,
+                        )}
                         <br />
-                        {intl.formatMessage(messages.turni_en)}
+                        {intl.formatMessage(
+                          showTipoTurno
+                            ? messages.turni_en
+                            : messages.turni_no_tipo_en,
+                        )}
                       </div>
-                      <PeriodsStructure periods={turniDaMostrare} />
+                      <PeriodsStructure
+                        periods={turniDaMostrare}
+                        showTipoTurno={showTipoTurno}
+                      />
                     </td>
                   )}
 
