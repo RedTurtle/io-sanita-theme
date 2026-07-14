@@ -265,16 +265,18 @@ const Results = ({
               return (
                 <tr key={i}>
                   <td className="nome">
-                    {item['@id'] && (
-                      <p>
+                    <p>
+                      {item['@id'] ? (
                         <UniversalLink
                           item={!isEditMode ? item : null}
                           href={isEditMode ? '#' : null}
                         >
                           {item.title}
                         </UniversalLink>
-                      </p>
-                    )}
+                      ) : (
+                        item.title
+                      )}
+                    </p>
                   </td>
                   <ContactColumns
                     isEditMode={isEditMode}
