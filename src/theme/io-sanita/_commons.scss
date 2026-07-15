@@ -1,0 +1,9 @@
+// Questo evita che le tabelle su control panel si allunghino
+body {
+  table {
+    th,
+    td {
+      word-break: break-word;
+    }
+  }
+}
