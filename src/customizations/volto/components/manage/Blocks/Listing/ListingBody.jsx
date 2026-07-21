@@ -114,7 +114,7 @@ const ListingBody = withQuerystringResults((props) => {
     isFolderContentsListing,
     hasLoaded,
     id,
-    block,
+    total,
     // additionalFilters,
     // addFilters,
   } = props;
@@ -184,7 +184,8 @@ const ListingBody = withQuerystringResults((props) => {
               <ListingBodyTemplate
                 items={listingItems}
                 isEditMode={isEditMode}
-                block={block}
+                block={id}
+                total={total}
                 {...listingBodyProps}
               />
               {totalPages > 1 && (

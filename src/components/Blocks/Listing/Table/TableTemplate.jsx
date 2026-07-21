@@ -8,9 +8,10 @@ import { useIntl, defineMessages } from 'react-intl';
 import { Table } from 'design-react-kit';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { useSelector } from 'react-redux';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { ListingContainer } from 'io-sanita-theme/components/Blocks';
-import { LinkMore } from 'io-sanita-theme/components';
+import { Icon, LinkMore } from 'io-sanita-theme/components';
 import { getWidget } from '@plone/volto/helpers/Widget/utils';
 
 import config from '@plone/volto/registry';
@@ -18,6 +19,18 @@ import './table-templates.scss';
 
 const messages = defineMessages({
   title: { id: 'tabletemplate_column_title', defaultMessage: 'Titolo' },
+  results: {
+    id: 'tabletemplate_results',
+    defaultMessage: 'risultati',
+  },
+  exportCsv: {
+    id: 'tabletemplate_export_csv',
+    defaultMessage: 'Esporta file CSV',
+  },
+  exportPdf: {
+    id: 'tabletemplate_export_pdf',
+    defaultMessage: 'Esporta file PDF',
+  },
 });
 
 const TableTemplate = (props) => {
@@ -31,6 +44,8 @@ const TableTemplate = (props) => {
     linkTitle,
     linkHref,
     linkmore_id_lighthouse,
+    block,
+    total,
   } = props;
 
   const intl = useIntl();
@@ -38,6 +53,12 @@ const TableTemplate = (props) => {
 
   // necessario per gli edditor nel momento in cui aggiungono nuove colonne
   const ct_schema = useSelector((state) => state.ct_schema?.subrequests);
+
+  const contentUrl = useSelector((state) =>
+    flattenToAppURL(state.content?.data?.['@id'] ?? ''),
+  );
+  const csvUrl = `${contentUrl}/listing-block-export/@@download/csv?block_id=${block}`;
+  const pdfUrl = `${contentUrl}/listing-block-export/@@download/pdf?block_id=${block}`;
 
   let render_columns =
     (columns ?? []).filter((c) => c.field === 'title').length > 0
@@ -53,6 +74,36 @@ const TableTemplate = (props) => {
   return (
     <div className="table-template">
       <ListingContainer data={props} isEditMode={isEditMode}>
+        {!isEditMode && block && (
+          <div className="table-template-export d-flex align-items-center justify-content-between mb-4">
+            <div className="total-result">
+              <span className="fw-bold">{total ?? items.length}</span>{' '}
+              {intl.formatMessage(messages.results)}
+            </div>
+
+            <div className="d-flex flex-wrap gap-2">
+              <a
+                href={csvUrl}
+                download
+                rel="noopener noreferrer"
+                className="btn-icon btn btn-xs btn-outline-primary"
+              >
+                {intl.formatMessage(messages.exportCsv)}
+                <Icon icon="it-download" padding aria-hidden={true} />
+              </a>
+              <a
+                href={pdfUrl}
+                download
+                rel="noopener noreferrer"
+                className="btn-icon btn btn-xs btn-outline-primary"
+              >
+                {intl.formatMessage(messages.exportPdf)}
+                <Icon icon="it-download" padding aria-hidden={true} />
+              </a>
+            </div>
+          </div>
+        )}
+
         <Table size="sm" responsive bordered striped={alternate_rows ?? false}>
           <thead className="table-light">
             <tr>
@@ -84,8 +135,7 @@ const TableTemplate = (props) => {
                 {render_columns.map((c, index) => {
                   const field_properties =
                     c.field_properties ??
-                    ct_schema?.[c.ct]?.result?.properties?.[c.field] ??
-                    {};
+                    ct_schema?.[c.ct]?.result?.properties?.[c.field];
                   const raw = item[c.field];
                   let render_value = Array.isArray(raw)
                     ? raw.map((v) => v?.title ?? v).join(', ')
