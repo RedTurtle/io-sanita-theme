@@ -49,7 +49,7 @@
 
 ### Novità
 
-- Nel blocco elenco inserendo una tabella è possibile scaricare in formato csv o pdf i dati della tabella tramite i relativi bottoni aggiunti
+- Nella variazione "Tabella" del blocco elenco, è ora possibile scaricare in formato csv o pdf i dati della tabella
 
 ### Fix
 
