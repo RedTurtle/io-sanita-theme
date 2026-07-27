@@ -49,11 +49,12 @@
 
 ### Novità
 
-- ...
+- Nella variazione "Tabella" del blocco elenco, è ora possibile scaricare in formato csv o pdf i dati della tabella
 
 ### Fix
 
 - L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
+
 
 ## Versione 2.34.0 (07/07/2026)
 
