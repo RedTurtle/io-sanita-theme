@@ -537,16 +537,6 @@ body.cms-ui {
     margin-bottom: 1rem;
   }
 
-  /*Blocchi*/
-  .block.image {
-    .block.align {
-      &.left,
-      &.right {
-        z-index: 0;
-      }
-    }
-  }
-
   .block-editor-listing {
     //blocchi listing con sfondo, in edit non vede gli stili di pb-4 ecc perchè sono sotto cms-ui
     &.pb-4 {
