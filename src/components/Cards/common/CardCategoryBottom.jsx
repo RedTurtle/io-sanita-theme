@@ -7,6 +7,7 @@ import { useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   uo: { id: 'CardCategoryBottom_UO', defaultMessage: 'Unità operativa' },
+  event: { id: 'CardCategoryBottom_Event', defaultMessage: 'Evento' },
 });
 const CardCategoryBottom = ({
   item,
@@ -37,6 +38,9 @@ const CardCategoryBottom = ({
       break;
     case 'UnitaOrganizzativa':
       defaultCategory = intl.formatMessage(messages.uo);
+      break;
+    case 'Event':
+      defaultCategory = intl.formatMessage(messages.event);
       break;
     default:
       break;

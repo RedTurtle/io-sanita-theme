@@ -120,6 +120,11 @@ msgstr ""
 msgid "CardCategoryBottom_UO"
 msgstr ""
 
+#. Default: "Evento"
+#: components/Cards/common/CardCategoryBottom
+msgid "CardCategoryBottom_Event"
+msgstr ""
+
 #. Default: "Apri in Google Maps"
 #: components/Cards/CardPlace/CardPlace
 msgid "CardPlace: view on googlemaps"
