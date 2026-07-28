@@ -51,7 +51,7 @@ const PageHeaderDates = ({ content }) => {
           <div className="col-12">
             <small>{intl.formatMessage(messages.expire)}:</small>
             <p className="font-monospace">
-              {viewDate(intl.locale, content.expires, 'DD-MM-Y')}
+              {viewDate(intl.locale, content.expires, 'DD MMMM YYYY')}
             </p>
           </div>
         </div>
