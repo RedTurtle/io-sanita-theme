@@ -55,6 +55,7 @@
 
 - L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
 - Risolto un problema per cui il blocco immagine con allineamento a sinistra o a destra (testo a fianco dell'immagine) risultava quasi impossibile da selezionare/cliccare in modifica, perché il blocco successivo lo ricopriva.
+- Il riquadro di selezione del blocco immagine con allineamento a sinistra o a destra ora copre correttamente tutta l'altezza dell'immagine, invece di limitarsi a una piccola striscia in alto.
 
 
 ## Versione 2.34.0 (07/07/2026)
