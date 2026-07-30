@@ -41,21 +41,19 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
-
-### Migliorie
-
-- ...
+## Versione 2.36.0 (30/07/2026)
 
 ### Novità
 
-- Nella variazione "Tabella" del blocco elenco, è ora possibile scaricare in formato csv o pdf i dati della tabella
+- Nella variazione "Tabella" del blocco elenco, è ora possibile scaricare in formato CSV o PDF i dati della tabella.
 
 ### Fix
 
 - L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
-- Risolto un problema per cui il blocco immagine con allineamento a sinistra o a destra (testo a fianco dell'immagine) risultava quasi impossibile da selezionare/cliccare in modifica. Ora il blocco immagine con allineamento a sinistra/destra del testo è facilmente selezionabile al click. 
-
+- Risolto un problema per cui il blocco immagine con allineamento a sinistra o a destra (testo a fianco dell'immagine) risultava quasi impossibile da selezionare/cliccare in modifica. Ora il blocco immagine con allineamento a sinistra/destra del testo è facilmente selezionabile al click.
+- Unificato il formato delle date mostrate nell'intestazione di una pagina.
+- Tradotta in italiano la categoria "Event" che compariva nelle card che mostrano un evento.
+- Risoluto un problema durante l'editing di elenchi puntati (anche durante il copia/incolla di testo negli elenchi puntati).
 
 ## Versione 2.34.0 (07/07/2026)
 
