@@ -115,15 +115,15 @@ msgstr ""
 msgid "Card detail label"
 msgstr "View"
 
-#. Default: "Unità operativa"
-#: components/Cards/common/CardCategoryBottom
-msgid "CardCategoryBottom_UO"
-msgstr "Operational unit"
-
 #. Default: "Evento"
 #: components/Cards/common/CardCategoryBottom
 msgid "CardCategoryBottom_Event"
 msgstr "Event"
+
+#. Default: "Unità operativa"
+#: components/Cards/common/CardCategoryBottom
+msgid "CardCategoryBottom_UO"
+msgstr "Operational unit"
 
 #. Default: "Apri in Google Maps"
 #: components/Cards/CardPlace/CardPlace
@@ -4121,6 +4121,21 @@ msgstr "Title"
 #: components/Blocks/Listing/Table/TableTemplate
 msgid "tabletemplate_column_title"
 msgstr "Title"
+
+#. Default: "Esporta file CSV"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_csv"
+msgstr ""
+
+#. Default: "Esporta file PDF"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_pdf"
+msgstr ""
+
+#. Default: "risultati"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_results"
+msgstr ""
 
 #. Default: "Telefono"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti

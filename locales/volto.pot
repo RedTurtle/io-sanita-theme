@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-07-10T19:12:06.394Z\n"
+"POT-Creation-Date: 2026-07-30T08:04:31.462Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -117,14 +117,14 @@ msgstr ""
 msgid "Card detail label"
 msgstr ""
 
-#. Default: "Unità operativa"
-#: components/Cards/common/CardCategoryBottom
-msgid "CardCategoryBottom_UO"
-msgstr ""
-
 #. Default: "Evento"
 #: components/Cards/common/CardCategoryBottom
 msgid "CardCategoryBottom_Event"
+msgstr ""
+
+#. Default: "Unità operativa"
+#: components/Cards/common/CardCategoryBottom
+msgid "CardCategoryBottom_UO"
 msgstr ""
 
 #. Default: "Apri in Google Maps"
@@ -4122,6 +4122,21 @@ msgstr ""
 #. Default: "Titolo"
 #: components/Blocks/Listing/Table/TableTemplate
 msgid "tabletemplate_column_title"
+msgstr ""
+
+#. Default: "Esporta file CSV"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_csv"
+msgstr ""
+
+#. Default: "Esporta file PDF"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_pdf"
+msgstr ""
+
+#. Default: "risultati"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_results"
 msgstr ""
 
 #. Default: "Telefono"
