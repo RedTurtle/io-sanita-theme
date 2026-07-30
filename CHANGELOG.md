@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.36.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.35.0...2.36.0) (2026-07-30)
+
+### Features
+
+* Added download buttons in "Tabella" listing variation, to export data in  CSV or PDF format ([#170](https://github.com/RedTurtle/io-sanita-theme/issues/170)) ([b6ce032](https://github.com/RedTurtle/io-sanita-theme/commit/b6ce032903f50b613d64fa522531c5c8ce93c557))
+
+### Bug Fixes
+
+* mostra farmacia nel blocco turni anche senza link ([6e2c308](https://github.com/RedTurtle/io-sanita-theme/commit/6e2c308f363d9dc3530cf92df68ece0e2e9dbf4e))
+* select image block left/right aligned in editmode ([#174](https://github.com/RedTurtle/io-sanita-theme/issues/174)) ([1a5deb5](https://github.com/RedTurtle/io-sanita-theme/commit/1a5deb524128f3bcd8a85dd1dccf053128a406cf))
+* traduzione in italiano della CardCategoryBottom 'Event' ([#172](https://github.com/RedTurtle/io-sanita-theme/issues/172)) ([c37d56f](https://github.com/RedTurtle/io-sanita-theme/commit/c37d56fb3cac150b054f6c4fa244b48849823576))
+* uniformato formato data di scadenza a quello della data di pubblicazione nel PageHeader ([#173](https://github.com/RedTurtle/io-sanita-theme/issues/173)) ([f998d28](https://github.com/RedTurtle/io-sanita-theme/commit/f998d2886ea9e31fd90d350539ea013fe7be8de5))
+
+### Maintenance
+
+* locales ([c4b247e](https://github.com/RedTurtle/io-sanita-theme/commit/c4b247ed369b6f28c9ad6530917e1a4f36690e34))
+* update volto-slate-italia to 1.0.10 ([#171](https://github.com/RedTurtle/io-sanita-theme/issues/171)) ([e83aebe](https://github.com/RedTurtle/io-sanita-theme/commit/e83aebeb775b624f7b2be5f6ebe83794b54912e2))
+
+### Documentation
+
+* release.md ([575c89d](https://github.com/RedTurtle/io-sanita-theme/commit/575c89d95b69cd6a5eae047144fb588a91565be9))
+
 ## [2.35.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.34.0...2.35.0) (2026-07-10)
 
 ### Features
