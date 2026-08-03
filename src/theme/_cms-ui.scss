@@ -585,18 +585,6 @@ body.cms-ui {
       .drag.handle.wrapper {
         left: 50%;
       }
-
-      &:has(img.medium) {
-        .drag.handle.wrapper {
-          left: 75%;
-        }
-      }
-
-      &:has(img.small) {
-        .drag.handle.wrapper {
-          left: 85%;
-        }
-      }
     }
 
     /* Image left */
@@ -609,6 +597,28 @@ body.cms-ui {
         margin-right: 1.7rem;
       }
     }
+  }
+
+  // Rimosso il max-width percentuale di Volto core sull'immagine allineata
+  // a sinistra/destra (sia quello per size small/medium/large, sia quello
+  // generico su .block.align.left/right .ui.image/img): è calcolato
+  // rispetto a un contenitore diverso da quello che il tema limita al 50%
+  // sopra su .ui.drag.block.image, quindi le due percentuali in cascata
+  // non combaciano e lasciano spazio bianco tra bordo e immagine.
+  .block.image.align.left img.large,
+  .block.image.align.right img.large,
+  .block.image.align.left img.medium,
+  .block.image.align.right img.medium,
+  .block.image.align.left img.small,
+  .block.image.align.right img.small {
+    max-width: 100%;
+  }
+
+  .block.align.left .ui.image,
+  .block.align.left img,
+  .block.align.right .ui.image,
+  .block.align.right img {
+    max-width: 100%;
   }
 
   .block-editor-listing {
