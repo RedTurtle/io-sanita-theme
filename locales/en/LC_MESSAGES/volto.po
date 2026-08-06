@@ -921,6 +921,36 @@ msgstr ""
 msgid "add_block_in_position"
 msgstr ""
 
+#. Default: "Aggiungi al calendario"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar"
+msgstr ""
+
+#. Default: "Apple"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_apple"
+msgstr ""
+
+#. Default: "Google"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_google"
+msgstr ""
+
+#. Default: "Outlook"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlook"
+msgstr ""
+
+#. Default: "Outlook.com"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlookcom"
+msgstr ""
+
+#. Default: "Yahoo"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_yahoo"
+msgstr ""
+
 #. Default: "Tutti"
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_all"
