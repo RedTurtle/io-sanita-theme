@@ -5,21 +5,21 @@ const escapeICSText = (text = '') =>
     .replace(/,/g, '\\,')
     .replace(/;/g, '\\;');
 
-const formatDate = (moment, date, wholeDay) =>
+const formatDate = (date, wholeDay) =>
   wholeDay
-    ? moment(date).utc().format('YYYYMMDD')
-    : moment(date).utc().format('YYYYMMDD[T]HHmmss[Z]');
+    ? date.clone().utc().format('YYYYMMDD')
+    : date.clone().utc().format('YYYYMMDD[T]HHmmss[Z]');
 
 /**
  * Builds a calendar URL (Google, Yahoo, Outlook.com) or an .ics payload
  * (Apple, Outlook desktop) for a Plone Event content.
  * @function buildCalendarUrl
- * @param {object} moment moment.js instance (from injectLazyLibs)
  * @param {object} event {title, description, location, start, end, wholeDay, recurrence, url}
+ *   start/end must be moment instances (see io-sanita-theme/helpers viewDate)
  * @param {string} provider one of 'google', 'yahoo', 'outlookcom', 'apple', 'outlook'
  * @returns {string} URL or .ics content
  */
-export const buildCalendarUrl = (moment, event, provider) => {
+export const buildCalendarUrl = (event, provider) => {
   const {
     title,
     description,
@@ -30,8 +30,8 @@ export const buildCalendarUrl = (moment, event, provider) => {
     recurrence,
     url,
   } = event;
-  const startFormatted = formatDate(moment, start, wholeDay);
-  const endFormatted = formatDate(moment, end, wholeDay);
+  const startFormatted = formatDate(start, wholeDay);
+  const endFormatted = formatDate(end, wholeDay);
 
   switch (provider) {
     case 'google': {
@@ -45,10 +45,7 @@ export const buildCalendarUrl = (moment, event, provider) => {
       return `https://calendar.google.com/calendar/render?${params.toString()}`;
     }
     case 'yahoo': {
-      const durationMinutes = Math.max(
-        moment(end).diff(moment(start), 'minutes'),
-        30,
-      );
+      const durationMinutes = Math.max(end.diff(start, 'minutes'), 30);
       const dur = `${String(Math.floor(durationMinutes / 60)).padStart(
         2,
         '0',
@@ -68,8 +65,8 @@ export const buildCalendarUrl = (moment, event, provider) => {
     case 'outlookcom': {
       const params = new URLSearchParams({
         rru: 'addevent',
-        startdt: moment(start).toISOString(),
-        enddt: moment(end).toISOString(),
+        startdt: start.toISOString(),
+        enddt: end.toISOString(),
         subject: title || '',
         body: description || '',
         location: location || '',

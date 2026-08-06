@@ -11,9 +11,8 @@ import {
 } from 'design-react-kit';
 
 import { toPublicURL } from '@plone/volto/helpers/Url/Url';
-import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { Icon } from 'io-sanita-theme/components';
-import { buildCalendarUrl } from 'io-sanita-theme/helpers';
+import { buildCalendarUrl, viewDate } from 'io-sanita-theme/helpers';
 import './addToCalendar.scss';
 
 const messages = defineMessages({
@@ -101,21 +100,23 @@ const downloadIcs = (icsContent, filename) => {
  * @params {object} content: Content object.
  * @returns {string} Markup of the component.
  */
-const PageHeaderAddToCalendar = ({ content, moment: momentlib }) => {
+const PageHeaderAddToCalendar = ({ content }) => {
   const intl = useIntl();
 
-  if (content?.['@type'] !== 'Event') {
+  if (content?.['@type'] !== 'Event' || !content.start) {
     return null;
   }
 
-  const moment = momentlib.default;
+  const start = viewDate(intl.locale, content.start);
+  // open_end events have no end date: fall back to start (punctual event)
+  const end = content.end ? viewDate(intl.locale, content.end) : start;
 
   const event = {
     title: content.title,
     description: content.description,
     location: getEventLocation(content),
-    start: content.start,
-    end: content.end,
+    start,
+    end,
     wholeDay: content.whole_day,
     recurrence: content.recurrence,
     url: toPublicURL(content['@id']),
@@ -123,14 +124,14 @@ const PageHeaderAddToCalendar = ({ content, moment: momentlib }) => {
 
   const handleFileDownload = (e, providerId) => {
     e.preventDefault();
-    const ics = buildCalendarUrl(moment, event, providerId);
+    const ics = buildCalendarUrl(event, providerId);
     downloadIcs(ics, `${content.id || 'evento'}.ics`);
   };
 
   return (
     <UncontrolledDropdown className="d-inline add-to-calendar-dropdown mt-3">
       <DropdownToggle
-        className="btn-icon btn btn-outline-primary"
+        className="btn btn-icon btn-dropdown btn-outline-primary"
         color=""
         tag="button"
         caret
@@ -150,9 +151,7 @@ const PageHeaderAddToCalendar = ({ content, moment: momentlib }) => {
             <LinkListItem
               key={provider.id}
               href={
-                provider.isFile
-                  ? '#'
-                  : buildCalendarUrl(moment, event, provider.id)
+                provider.isFile ? '#' : buildCalendarUrl(event, provider.id)
               }
               target={provider.isFile ? undefined : '_blank'}
               rel={provider.isFile ? undefined : 'noreferrer'}
@@ -166,7 +165,7 @@ const PageHeaderAddToCalendar = ({ content, moment: momentlib }) => {
                 color=""
                 icon={provider.icon}
                 padding={false}
-                size=""
+                size="sm"
                 aria-hidden={true}
               />
               <span>{intl.formatMessage(messages[provider.message])}</span>
@@ -182,4 +181,4 @@ PageHeaderAddToCalendar.propTypes = {
   content: PropTypes.object,
 };
 
-export default injectLazyLibs(['moment'])(PageHeaderAddToCalendar);
+export default PageHeaderAddToCalendar;
