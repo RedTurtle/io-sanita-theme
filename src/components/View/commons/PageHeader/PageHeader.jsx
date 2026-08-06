@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import config from '@plone/volto/registry';
 import {
+  PageHeaderAddToCalendar,
   PageHeaderBando,
   PageHeaderDates,
   viewPageHeaderDates,
@@ -77,6 +78,8 @@ const PageHeader = (props) => {
           <PageHeaderPersona content={content} />
 
           <PageHeaderEventDates content={content} />
+
+          <PageHeaderAddToCalendar content={content} />
 
           <PageHeaderDocumento content={content} />
 
