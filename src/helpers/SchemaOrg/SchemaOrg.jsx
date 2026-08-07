@@ -43,7 +43,6 @@ const SchemaOrg = ({ content, schema = {} }) => {
     ...schema,
   };
 
-  console.log('SchemaOrg', schemaOrg);
   return (
     <Helmet>
       <script type="application/ld+json" data-element="metatag">
