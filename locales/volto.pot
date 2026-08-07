@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-07-30T08:04:31.462Z\n"
+"POT-Creation-Date: 2026-08-06T08:37:25.375Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -921,6 +921,36 @@ msgstr ""
 #. Default: "Add block in position"
 #: components/Blocks/Accordion/NewBlockAddButton
 msgid "add_block_in_position"
+msgstr ""
+
+#. Default: "Aggiungi al calendario"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar"
+msgstr ""
+
+#. Default: "Apple"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_apple"
+msgstr ""
+
+#. Default: "Google"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_google"
+msgstr ""
+
+#. Default: "Outlook"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlook"
+msgstr ""
+
+#. Default: "Outlook.com"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlookcom"
+msgstr ""
+
+#. Default: "Yahoo"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_yahoo"
 msgstr ""
 
 #. Default: "Tutti"

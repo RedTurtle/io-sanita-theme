@@ -49,6 +49,11 @@ export const PageHeader = loadable(() =>
   ),
 );
 
+export const PageHeaderAddToCalendar = loadable(() =>
+  import(
+    /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderAddToCalendar'
+  ),
+);
 export const PageHeaderBando = loadable(() =>
   import(
     /* webpackChunkName: "ISViewsCommons" */ 'io-sanita-theme/components/View/commons/PageHeader/PageHeaderBando'

@@ -84,3 +84,6 @@ export SchemaOrg, {
 
 //scroll
 export { scrollIntoView, getMainOffset } from 'io-sanita-theme/helpers/scroll';
+
+//calendar
+export { buildCalendarUrl } from 'io-sanita-theme/helpers/Calendar/calendar';
