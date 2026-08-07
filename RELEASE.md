@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione x.x.x (xx/xx/xxxx)
+
+### Novità
+
+- Nella pagina di dettaglio di un Evento è ora disponibile il pulsante "Aggiungi al calendario", che permette di esportare la data dell'evento nel proprio calendario personale (Apple, Google, Outlook, Outlook.com, Yahoo).
+
 ## Versione 2.36.0 (30/07/2026)
 
 ### Novità
