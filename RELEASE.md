@@ -41,11 +41,16 @@
 - ...
  -->
 
-## Versione x.x.x (xx/xx/xxxx)
+## Versione 2.37.0 (12/08/2026)
 
 ### Novità
 
 - Nella pagina di dettaglio di un Evento è ora disponibile il pulsante "Aggiungi al calendario", che permette di esportare la data dell'evento nel proprio calendario personale (Apple, Google, Outlook, Outlook.com, Yahoo).
+
+### Fix
+
+- sistemata la selezione dei blocchi immagine allineati a destra/sinistra del testo in modalità di edit.
+- sistemati diversi bug sull'editor di testo quando si prova a unire il testo di un blocco con quello del blocco precedente premendo il tasto "cancella" (Backspace)
 
 ## Versione 2.36.0 (30/07/2026)
 
