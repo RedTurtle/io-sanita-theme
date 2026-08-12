@@ -6,14 +6,14 @@
       position: relative;
 
       &:after {
-        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 1.5rem;
+        display: block;
         width: 2px;
         height: 100%;
-        display: block;
-        position: absolute;
-        left: 1.5rem;
-        bottom: -0.5rem;
         background-color: #c5c7c9;
+        content: '';
       }
     }
 
@@ -21,11 +21,11 @@
       z-index: 1;
 
       .accordion-button {
-        background-color: var(--primary-lightest);
-        border-top: none;
-        color: var(--text-color);
         padding: 0;
+        border-top: none;
         margin-top: 1rem;
+        background-color: var(--primary-lightest);
+        color: var(--text-color);
 
         .step-number,
         .step-title {
@@ -40,16 +40,16 @@
         }
 
         & + .accordion-wrap-btn {
-          margin-left: 1.5rem;
-          border-top: 0.5rem solid white;
           padding-left: 1.8rem;
+          border-top: 0.5rem solid white;
+          margin-left: 1.5rem;
         }
       }
     }
 
     .accordion-body {
-      margin-left: 2.8rem;
       padding-bottom: 12px;
+      margin-left: 2.8rem;
       h2,
       h3,
       h4,
@@ -62,8 +62,8 @@
     &.accordion-background-active {
       .accordion-header {
         .accordion-button[aria-expanded='true'] {
-          background-color: var(--primary-dark);
           border-color: var(--primary-dark);
+          background-color: var(--primary-dark);
 
           &:after {
             content: none;

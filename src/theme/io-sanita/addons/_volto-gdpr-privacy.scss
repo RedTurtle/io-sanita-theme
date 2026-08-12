@@ -203,11 +203,11 @@
 }
 
 button.gdpr-privacy-show-banner {
+  z-index: 100;
   border-radius: 0;
   margin: 0;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
-  z-index: 100;
 }
 
 body.has-toolbar {

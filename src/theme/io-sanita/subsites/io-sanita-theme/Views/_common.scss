@@ -57,15 +57,15 @@
   //date evento, date bandi
   .point-list-wrapper .point-list .point-list-aside.point-list-warning {
     @if $subsite-light-theme {
-      color: $subsite-link-color;
       border-color: $subsite-link-color;
+      color: $subsite-link-color;
 
       &:after {
         background-color: $subsite-link-color;
       }
     } @else {
-      color: $subsite-primary;
       border-color: $subsite-primary;
+      color: $subsite-primary;
 
       &:after {
         background-color: $subsite-primary;

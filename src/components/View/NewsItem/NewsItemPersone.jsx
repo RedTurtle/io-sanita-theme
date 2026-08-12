@@ -33,13 +33,11 @@ const NewsItemPersone = ({ content }) => {
           ))}
         </Row>
       )}
-
     </RichTextSection>
   ) : (
     <></>
   );
 };
-
 
 NewsItemPersone.propTypes = {
   content: PropTypes.shape({

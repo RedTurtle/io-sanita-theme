@@ -1,0 +1,23 @@
+.add-to-calendar-dropdown {
+  .link-list-wrapper {
+    ul {
+      li {
+        a.list-item,
+        a.list-item a,
+        button.btn-link {
+          display: flex;
+          align-items: center;
+          font-size: var(--bs-dropdown-font-size);
+
+          .icon {
+            margin-right: 0.5em;
+          }
+        }
+
+        button.btn-link {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

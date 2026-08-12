@@ -3,9 +3,9 @@
 .subsite-footer {
   //default bg color as main site
   padding: 2rem 0;
+  border-bottom: var(--is-footer-borders); // $footer-borders;
   background-color: $footer-top-background;
   color: $white;
-  border-bottom: var(--is-footer-borders); // $footer-borders;
 
   &,
   p,

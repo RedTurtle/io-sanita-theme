@@ -1,4 +1,3 @@
-import { rssBlock as defaultRssBlock } from 'volto-rss-block';
 import divideHorizontalSVG from '@plone/volto/icons/divide-horizontal.svg';
 import searchSVG from '@plone/volto/icons/zoom.svg';
 import calloutSVG from '@plone/volto/icons/megaphone.svg';
@@ -52,10 +51,7 @@ import {
   CardWithImageRssTemplate,
   CardWithImageRssTemplateSkeleton,
 } from 'io-sanita-theme/components/Blocks';
-import {
-  AccordionLayoutSchema,
-  defaultAllowedBlocks,
-} from 'io-sanita-theme/components/Blocks/Accordion/Schema';
+import { AccordionLayoutSchema } from 'io-sanita-theme/components/Blocks/Accordion/Schema';
 import { schemaListing } from 'io-sanita-theme/components/Blocks/Listing/schema';
 import { getIoSanitaListingVariations } from 'io-sanita-theme/config/blocks/listing/listingVariations';
 import { cloneBlock } from 'io-sanita-theme/helpers';
@@ -391,6 +387,7 @@ export const applyIoSanitaBlocksConfig = (config) => {
       'callout_block',
       'rssBlock',
       'repeatableContentBlock',
+      'slateTable',
       //se si aggiunge un nuovo blocco, verificare che in edit non ci siano bottoni che provocano il submit della form. Se succede, gestirli con e.prevenDefault() e.stopPropagation().
     ],
 

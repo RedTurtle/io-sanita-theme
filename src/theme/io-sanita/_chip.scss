@@ -1,8 +1,8 @@
 .chip,
 .public-ui .chip {
   &.chip-accent {
-    background-color: transparent;
     border-color: var(--is-accent);
+    background-color: transparent;
     color: var(--is-accent);
     .icon {
       fill: var(--is-accent);
@@ -13,8 +13,8 @@
     }
 
     &:hover {
-      background-color: var(--is-accent);
       border-color: var(--is-accent);
+      background-color: var(--is-accent);
 
       & > .chip-label {
         color: var(--is-accent-contrast-text);

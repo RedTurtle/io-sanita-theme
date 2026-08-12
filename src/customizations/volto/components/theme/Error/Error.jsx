@@ -9,8 +9,8 @@ import loadable from '@loadable/component';
 import config from '@plone/volto/registry';
 
 const sentryLibraries = {
-  Sentry: loadable.lib(
-    () => import(/* webpackChunkName: "s_entry-browser" */ '@sentry/browser'),
+  Sentry: loadable.lib(() =>
+    import(/* webpackChunkName: "s_entry-browser" */ '@sentry/browser'),
   ),
 };
 

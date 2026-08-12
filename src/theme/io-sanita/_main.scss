@@ -40,8 +40,8 @@ a {
 }
 
 .icon.external-link {
-  vertical-align: baseline;
   fill: currentColor;
+  vertical-align: baseline;
 }
 
 .font-small {
@@ -95,10 +95,10 @@ iframe {
     display: inline-block;
     padding: 12px 24px;
     border-radius: $btn-border-radius;
+    margin: 0;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    margin: 0;
     &:hover,
     &:active {
       font-weight: 600;
@@ -201,8 +201,8 @@ iframe {
   .icon.fa-icon.placeholder {
     //to prevent layout shift
     display: inline-block;
-    height: 1em;
     width: auto;
+    height: 1em;
     line-height: 1;
   }
 }
@@ -225,6 +225,19 @@ iframe {
 }
 .bg-primary-darker {
   background-color: $primary-darker !important;
+}
+
+/* Immagini flottate (align left/right): il blocco contiene solo l'immagine
+   in float, quindi ha altezza in-flow = 0. In public-ui `.block` ha
+   margin-bottom: 1.5rem che spinge in basso il testo che avvolge l'immagine,
+   disallineando il top del testo rispetto al top dell'immagine (in edit non
+   accade perché la regola è scoped .public-ui). Azzeriamo il margine per
+   allineare view ed edit. */
+.public-ui {
+  .block.image.align.left,
+  .block.image.align.right {
+    margin-bottom: 0;
+  }
 }
 
 /*Full-width*/

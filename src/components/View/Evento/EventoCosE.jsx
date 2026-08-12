@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
+import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   cos_e: {
@@ -25,7 +25,6 @@ const EventoCosE = ({ content }) => {
       show_title={true}
       data={content.descrizione_estesa}
     >
-
       {/* TO DO: da excell è da spostare nell'hero della pagina */}
       {/* Tipologia evento */}
       {content?.tipologia_evento && (

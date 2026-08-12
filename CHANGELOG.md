@@ -1,5 +1,199 @@
 # Changelog
 
+## [2.37.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.36.0...2.37.0) (2026-08-12)
+
+### Features
+
+* add Aggiungi al calendario button on Event pages (Apple/Google/… ([#176](https://github.com/RedTurtle/io-sanita-theme/issues/176)) ([71d98f8](https://github.com/RedTurtle/io-sanita-theme/commit/71d98f80f8f81d026d04761348c77ed794c9342d))
+
+### Bug Fixes
+
+* select block Image left/right aligned in editmode ([#175](https://github.com/RedTurtle/io-sanita-theme/issues/175)) ([89bcaad](https://github.com/RedTurtle/io-sanita-theme/commit/89bcaadab029fd18a41dfc3af1bbe41dfa5b6f86))
+
+### Maintenance
+
+* updated volto-slate-italia to 1.0.11 ([c6a40ea](https://github.com/RedTurtle/io-sanita-theme/commit/c6a40ea1b0ef11eaa1942b69161a49c79a2e79a2))
+
+### Documentation
+
+* release.md ([e278bbf](https://github.com/RedTurtle/io-sanita-theme/commit/e278bbfc04e185d9f3721a6e97d0408410a851a1))
+
+## [2.36.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.35.0...2.36.0) (2026-07-30)
+
+### Features
+
+* Added download buttons in "Tabella" listing variation, to export data in  CSV or PDF format ([#170](https://github.com/RedTurtle/io-sanita-theme/issues/170)) ([b6ce032](https://github.com/RedTurtle/io-sanita-theme/commit/b6ce032903f50b613d64fa522531c5c8ce93c557))
+
+### Bug Fixes
+
+* mostra farmacia nel blocco turni anche senza link ([6e2c308](https://github.com/RedTurtle/io-sanita-theme/commit/6e2c308f363d9dc3530cf92df68ece0e2e9dbf4e))
+* select image block left/right aligned in editmode ([#174](https://github.com/RedTurtle/io-sanita-theme/issues/174)) ([1a5deb5](https://github.com/RedTurtle/io-sanita-theme/commit/1a5deb524128f3bcd8a85dd1dccf053128a406cf))
+* traduzione in italiano della CardCategoryBottom 'Event' ([#172](https://github.com/RedTurtle/io-sanita-theme/issues/172)) ([c37d56f](https://github.com/RedTurtle/io-sanita-theme/commit/c37d56fb3cac150b054f6c4fa244b48849823576))
+* uniformato formato data di scadenza a quello della data di pubblicazione nel PageHeader ([#173](https://github.com/RedTurtle/io-sanita-theme/issues/173)) ([f998d28](https://github.com/RedTurtle/io-sanita-theme/commit/f998d2886ea9e31fd90d350539ea013fe7be8de5))
+
+### Maintenance
+
+* locales ([c4b247e](https://github.com/RedTurtle/io-sanita-theme/commit/c4b247ed369b6f28c9ad6530917e1a4f36690e34))
+* update volto-slate-italia to 1.0.10 ([#171](https://github.com/RedTurtle/io-sanita-theme/issues/171)) ([e83aebe](https://github.com/RedTurtle/io-sanita-theme/commit/e83aebeb775b624f7b2be5f6ebe83794b54912e2))
+
+### Documentation
+
+* release.md ([575c89d](https://github.com/RedTurtle/io-sanita-theme/commit/575c89d95b69cd6a5eae047144fb588a91565be9))
+
+## [2.35.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.34.0...2.35.0) (2026-07-10)
+
+### Features
+
+* mostra tipo turno in pagina farmacia e blocco Ricerca Farmacie ([#168](https://github.com/RedTurtle/io-sanita-theme/issues/168)) ([8b3c979](https://github.com/RedTurtle/io-sanita-theme/commit/8b3c979d54c47583857b6c0640d772c8409e7ce2))
+
+### Bug Fixes
+
+* Fixed the height in the smallBlockLinksTemplate to 100% instead of 100px ([#167](https://github.com/RedTurtle/io-sanita-theme/issues/167)) ([3826f9f](https://github.com/RedTurtle/io-sanita-theme/commit/3826f9f00215108ec467eb3e684a2d8969cfc33a))
+
+### Maintenance
+
+* locales ([4e6c04f](https://github.com/RedTurtle/io-sanita-theme/commit/4e6c04f038e1a1daa63a9c5e55182280c65539c8))
+
+## [2.34.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.2...2.34.0) (2026-07-07)
+
+### Features
+
+* opendata link ([#166](https://github.com/RedTurtle/io-sanita-theme/issues/166)) ([89135aa](https://github.com/RedTurtle/io-sanita-theme/commit/89135aac45682019d963574afc4eeeb3624ce5c0))
+
+### Bug Fixes
+
+* baloon su mappe farmacie ([#165](https://github.com/RedTurtle/io-sanita-theme/issues/165)) ([b955deb](https://github.com/RedTurtle/io-sanita-theme/commit/b955deb019f48e3ab74a795ae580acbe206143d8))
+
+### Maintenance
+
+* locales ([a5e2768](https://github.com/RedTurtle/io-sanita-theme/commit/a5e2768c68aa85bea4d707ae6003e73cf05ea49e))
+
+## [2.33.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.1...2.33.2) (2026-07-06)
+
+## [2.33.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.33.0...2.33.1) (2026-07-01)
+
+### Bug Fixes
+
+* Blocco elenco a tabella: ora salva lo schema del campo nelle colonne (us76479) ([#161](https://github.com/RedTurtle/io-sanita-theme/issues/161)) ([0066c38](https://github.com/RedTurtle/io-sanita-theme/commit/0066c38333e624d1332bac33e7d2dc1bdf409230))
+* prevent submit pressing enter on slate table editing buttons ([#160](https://github.com/RedTurtle/io-sanita-theme/issues/160)) ([81cd708](https://github.com/RedTurtle/io-sanita-theme/commit/81cd70806a05f7ae7617f8f8389faffa2e66542d))
+* text and floated images alignment ([#162](https://github.com/RedTurtle/io-sanita-theme/issues/162)) ([01c0386](https://github.com/RedTurtle/io-sanita-theme/commit/01c0386518bf31c4079b03d9ef81576a55c44089))
+
+### Maintenance
+
+* preparing release 2.33.1 ([3fefeb1](https://github.com/RedTurtle/io-sanita-theme/commit/3fefeb18d82592f9925520a201ddc04b8210e176))
+
+## [2.33.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.32.0...2.33.0) (2026-06-17)
+
+### Features
+
+* filtri configurabili (ente territoriale, comune, località) nel blocco Ricerca farmacie ([#154](https://github.com/RedTurtle/io-sanita-theme/issues/154)) ([338eba6](https://github.com/RedTurtle/io-sanita-theme/commit/338eba67fc8760bfdc3191a2474a8497cee8b23c))
+* Search strutture - widget for type filter and description text for searchable text ([#156](https://github.com/RedTurtle/io-sanita-theme/issues/156)) ([625925a](https://github.com/RedTurtle/io-sanita-theme/commit/625925a3fa40299add2dfaa1f31e976ddbe83208))
+
+### Maintenance
+
+* cleanup unesed locales ([#155](https://github.com/RedTurtle/io-sanita-theme/issues/155)) ([c92e281](https://github.com/RedTurtle/io-sanita-theme/commit/c92e28158b5552dabcbfa20a44e8370dcc69dfbc))
+
+## [2.32.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.3...2.32.0) (2026-06-12)
+
+### Features
+
+* aggiunta ricertca per comune/distretto su blocco searchmap ([#152](https://github.com/RedTurtle/io-sanita-theme/issues/152)) ([1aff10f](https://github.com/RedTurtle/io-sanita-theme/commit/1aff10f00963987a00a4acd6aafb754e50d72108))
+
+### Bug Fixes
+
+* bottoni categorie searchmap ([#151](https://github.com/RedTurtle/io-sanita-theme/issues/151)) ([058aa59](https://github.com/RedTurtle/io-sanita-theme/commit/058aa59acb0f5d721d653458e38be43f0adf0653))
+* prevent the submit of the form when adding a row o column from the toolbar ([#153](https://github.com/RedTurtle/io-sanita-theme/issues/153)) ([cf723b2](https://github.com/RedTurtle/io-sanita-theme/commit/cf723b2dfd0974d470b40ab54ce3f683f7a558a0))
+
+### Maintenance
+
+* prettier ([11b8f22](https://github.com/RedTurtle/io-sanita-theme/commit/11b8f222e8c6d4eb5f93d52069ec3ff2517970b7))
+
+## [2.31.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.2...2.31.3) (2026-06-11)
+
+### Bug Fixes
+
+* controllo validazione blocco testo risoltoi ([#150](https://github.com/RedTurtle/io-sanita-theme/issues/150)) ([8b63e2e](https://github.com/RedTurtle/io-sanita-theme/commit/8b63e2e34a0de6c0873169ff9dd806bd6ba088b2))
+* table edit buttons position in text editor ([#147](https://github.com/RedTurtle/io-sanita-theme/issues/147)) ([5b32aff](https://github.com/RedTurtle/io-sanita-theme/commit/5b32aff0a843c4d601f1ae134558c8a96c7a8d6c))
+
+### Maintenance
+
+* aggiunto linting ([#149](https://github.com/RedTurtle/io-sanita-theme/issues/149)) ([0a2e932](https://github.com/RedTurtle/io-sanita-theme/commit/0a2e93263d0b88016110db0ddf7df8377b98b6c0))
+* locales ([04b9884](https://github.com/RedTurtle/io-sanita-theme/commit/04b9884dd65702be3a04aa908a502f34cb6f12c8))
+* preparing release 2.31.3 ([a06ef20](https://github.com/RedTurtle/io-sanita-theme/commit/a06ef207c99ed39fb2c4c341438aa90c9cbf3afc))
+
+## [2.31.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.1...2.31.2) (2026-05-29)
+
+### Bug Fixes
+
+* responsabile custom in UO (per sync) ([#148](https://github.com/RedTurtle/io-sanita-theme/issues/148)) ([a169a70](https://github.com/RedTurtle/io-sanita-theme/commit/a169a709a524bdca51696c4fd4669bdf45ec98c0))
+
+## [2.31.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.31.0...2.31.1) (2026-05-29)
+
+### Bug Fixes
+
+* gelocation edge cases ([#146](https://github.com/RedTurtle/io-sanita-theme/issues/146)) ([0ec2a50](https://github.com/RedTurtle/io-sanita-theme/commit/0ec2a509ba4098cdce3932145a11c4596313ddec))
+
+## [2.31.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.2...2.31.0) (2026-05-28)
+
+### Features
+
+* added table block in text editor ([#145](https://github.com/RedTurtle/io-sanita-theme/issues/145)) ([7c49d67](https://github.com/RedTurtle/io-sanita-theme/commit/7c49d67dedb3710128db04544884e0cdcaf0326b))
+
+### Maintenance
+
+* preparing release 2.31.0 ([b17fcf4](https://github.com/RedTurtle/io-sanita-theme/commit/b17fcf4fb965a5c2786231c182aaac653165c2a9))
+
+## [2.30.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.1...2.30.2) (2026-05-27)
+
+### Bug Fixes
+
+* missing import ([bcebfdf](https://github.com/RedTurtle/io-sanita-theme/commit/bcebfdf83d2dbd55ec06306314a161b97f9a973f))
+
+## [2.30.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.30.0...2.30.1) (2026-05-27)
+
+### Bug Fixes
+
+* missing import ([0e91a38](https://github.com/RedTurtle/io-sanita-theme/commit/0e91a38ceb94654c918fbec805e37e5a42c4a2a9))
+
+## [2.30.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.29.0...2.30.0) (2026-05-27)
+
+### Features
+
+* ulteriori info in uo ([#144](https://github.com/RedTurtle/io-sanita-theme/issues/144)) ([4ff54b0](https://github.com/RedTurtle/io-sanita-theme/commit/4ff54b01727f1c0455a2cd8b04aa50418e010f10))
+
+### Bug Fixes
+
+* handle no geolocation in person card avoiding to show 0 ([#143](https://github.com/RedTurtle/io-sanita-theme/issues/143)) ([58e9eb3](https://github.com/RedTurtle/io-sanita-theme/commit/58e9eb3410e5ec19d75ab57e2eeb96576e30757f))
+* handle related-item-in-evidence in aggregationPage ([#142](https://github.com/RedTurtle/io-sanita-theme/issues/142)) ([54a48ec](https://github.com/RedTurtle/io-sanita-theme/commit/54a48ec223ff49b1f2142a5827d7dc29a374197e))
+
+### Maintenance
+
+* locales ([66f612d](https://github.com/RedTurtle/io-sanita-theme/commit/66f612d2bd6b46ea5211228bd34df7b0f4323b1e))
+* releaselog ([85d5c9a](https://github.com/RedTurtle/io-sanita-theme/commit/85d5c9aa94fbc441cfdddcaaf293b69bfd0acedf))
+* typo ([df9e3ae](https://github.com/RedTurtle/io-sanita-theme/commit/df9e3aed3398673947d762b3d2ab3dd2c5c88600))
+* typo ([a84a5f9](https://github.com/RedTurtle/io-sanita-theme/commit/a84a5f93a125a3d45608dbc25a2e961b00432119))
+
+## [2.29.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.2...2.29.0) (2026-05-21)
+
+### Features
+
+* added text block in contact section inside CT Person to add contact info ([#140](https://github.com/RedTurtle/io-sanita-theme/issues/140)) ([8d261e8](https://github.com/RedTurtle/io-sanita-theme/commit/8d261e8c027e284b4c060a30391dcc769af3d23d))
+* cambiato blocco orari in strutture/uo, rivisto titolo, rimosso sottotilo ([#141](https://github.com/RedTurtle/io-sanita-theme/issues/141)) ([df92ec7](https://github.com/RedTurtle/io-sanita-theme/commit/df92ec76cc580c2d951de996c75a850419d8c801))
+
+### Bug Fixes
+
+* listen to path when searching servizi o procedure ([#139](https://github.com/RedTurtle/io-sanita-theme/issues/139)) ([e9b6135](https://github.com/RedTurtle/io-sanita-theme/commit/e9b6135b398d57551cf1a49e4ca7969e9f723b1c))
+
+### Maintenance
+
+* update po ([67e8668](https://github.com/RedTurtle/io-sanita-theme/commit/67e86683f8a7ffc5d796df835871b66983c7fdec))
+
+## [2.28.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.1...2.28.2) (2026-05-06)
+
+### Maintenance
+
+* updated volto-form-block-italia to 1.1.2 ([#137](https://github.com/RedTurtle/io-sanita-theme/issues/137)) ([a387650](https://github.com/RedTurtle/io-sanita-theme/commit/a3876503eb63be939517249585d4313a41615d46))
+
 ## [2.28.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.28.0...2.28.1) (2026-05-06)
 
 ### Maintenance

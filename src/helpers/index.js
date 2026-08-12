@@ -1,5 +1,3 @@
-import { SchemaOrgUtils } from './SchemaOrg/SchemaOrg';
-
 export { getSiteProperty } from 'io-sanita-theme/helpers/config';
 export {
   viewDate,
@@ -86,3 +84,6 @@ export SchemaOrg, {
 
 //scroll
 export { scrollIntoView, getMainOffset } from 'io-sanita-theme/helpers/scroll';
+
+//calendar
+export { buildCalendarUrl } from 'io-sanita-theme/helpers/Calendar/calendar';

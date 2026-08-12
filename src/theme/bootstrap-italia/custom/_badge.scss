@@ -8,15 +8,15 @@
   }
 
   &.bg-info {
-    background-color: rgba(var(--bs-info-rgb), 0.1) !important;
     border: 1px solid rgba(var(--bs-info-rgb), 0.25);
+    background-color: rgba(var(--bs-info-rgb), 0.1) !important;
   }
   &.bg-danger {
-    background-color: rgba(var(--bs-danger-rgb), 0.1) !important;
     border: 1px solid rgba(var(--bs-danger-rgb), 0.25);
+    background-color: rgba(var(--bs-danger-rgb), 0.1) !important;
   }
   &.bg-warning {
-    background-color: rgba(var(--bs-warning-rgb), 0.1) !important;
     border: 1px solid rgba(var(--bs-warning-rgb), 0.25);
+    background-color: rgba(var(--bs-warning-rgb), 0.1) !important;
   }
 }

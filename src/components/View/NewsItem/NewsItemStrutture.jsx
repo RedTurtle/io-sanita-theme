@@ -17,7 +17,10 @@ const NewsItemStrutture = ({ content }) => {
   const intl = useIntl();
 
   return content?.struttura_correlata?.length > 0 ? (
-    <RichTextSection tag_id="strutture" title={intl.formatMessage(messages.dove)}>
+    <RichTextSection
+      tag_id="strutture"
+      title={intl.formatMessage(messages.dove)}
+    >
       <Locations
         content={content}
         locations={content?.struttura_correlata ?? []}

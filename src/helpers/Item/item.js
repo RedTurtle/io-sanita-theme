@@ -36,11 +36,12 @@ export const getItemIcon = (item) => {
 };
 
 export const hasGeolocation = (item) => {
-  return (
-    item?.geolocation &&
-    item?.geolocation?.latitude &&
-    item?.geolocation?.longitude &&
+  if (
+    item &&
+    item.geolocation &&
     item?.geolocation?.latitude !== 0 &&
     item?.geolocation?.longitude !== 0
-  );
+  ) {
+    return true;
+  }
 };

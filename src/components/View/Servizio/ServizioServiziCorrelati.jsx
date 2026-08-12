@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
-import {Row, Col} from 'design-react-kit';
+import { Row, Col } from 'design-react-kit';
 import { RichTextSection } from 'io-sanita-theme/helpers';
 import { CardSimple } from 'io-sanita-theme/components';
 
@@ -16,7 +16,10 @@ const ServizioServiziCorrelati = ({ content }) => {
   const intl = useIntl();
 
   return content?.servizio_correlato?.length > 0 ? (
-    <RichTextSection tag_id="servizi" title={intl.formatMessage(messages.servizi_correlati)}>
+    <RichTextSection
+      tag_id="servizi"
+      title={intl.formatMessage(messages.servizi_correlati)}
+    >
       {content?.servizio_correlato?.length > 0 && (
         <Row>
           {content?.servizio_correlato?.map((item, i) => (

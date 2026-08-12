@@ -41,6 +41,85 @@
 - ...
  -->
 
+## Versione 2.37.0 (12/08/2026)
+
+### Novità
+
+- Nella pagina di dettaglio di un Evento è ora disponibile il pulsante "Aggiungi al calendario", che permette di esportare la data dell'evento nel proprio calendario personale (Apple, Google, Outlook, Outlook.com, Yahoo).
+
+### Fix
+
+- sistemata la selezione dei blocchi immagine allineati a destra/sinistra del testo in modalità di edit.
+- sistemati diversi bug sull'editor di testo quando si prova a unire il testo di un blocco con quello del blocco precedente premendo il tasto "cancella" (Backspace)
+
+## Versione 2.36.0 (30/07/2026)
+
+### Novità
+
+- Nella variazione "Tabella" del blocco elenco, è ora possibile scaricare in formato CSV o PDF i dati della tabella.
+
+### Fix
+
+- L'altezza delle immagini all'interno del blocco 'link solo immagini' è stata aumentata e non ha più un limite massimo. Ora tutte le card avranno la stessa altezza.
+- Risolto un problema per cui il blocco immagine con allineamento a sinistra o a destra (testo a fianco dell'immagine) risultava quasi impossibile da selezionare/cliccare in modifica. Ora il blocco immagine con allineamento a sinistra/destra del testo è facilmente selezionabile al click.
+- Unificato il formato delle date mostrate nell'intestazione di una pagina.
+- Tradotta in italiano la categoria "Event" che compariva nelle card che mostrano un evento.
+- Risoluto un problema durante l'editing di elenchi puntati (anche durante il copia/incolla di testo negli elenchi puntati).
+
+## Versione 2.34.0 (07/07/2026)
+
+### Migliorie
+
+- Nel blocco di ricerca delle farmacie possibilità di visualizzare solo i turni relativi alla data scelta
+- Nel blocco di ricerca delle farmacie la colonna 'Periodi di Turno' è stata rinominata in 'Periodo e tipologia di turno'
+- Nel blocco di ricerca delle farmacie è ora possibile scegliere dalle impostazioni del blocco se mostrare il CAP e la provincia nell'indirizzo dei risultati
+- Nella tabella dei risultati del blocco di ricerca delle farmacie la colonna 'Recapiti' è stata rinominata in 'Telefono'
+- Nel blocco di ricerca delle farmacie è ora possibile scegliere dalle impostazioni del blocco di visualizzare una mappa con la posizione delle farmacie trovate; il balloon di ogni farmacia mostra le stesse informazioni presenti nella tabella dei risultati (comune, indirizzo, telefono, turni/ferie)
+
+## Versione 2.33.1 (01/07/2026)
+
+### Fix
+
+- Immagini affiancate al testo (allineamento a destra/sinistra): corretto un disallineamento verticale per cui, in visualizzazione, il testo che avvolge l'immagine partiva più in basso rispetto al bordo superiore dell'immagine, mentre in modifica appariva correttamente allineato.
+- Sistemata la visualizzazione del formato dei campi nel template "Tabella" del blocco elenco. Ora tutte le tipologie di campo vengono visualizzate correttamente.
+
+## Versione 2.33.0 (17/06/2026)
+
+### Migliorie
+
+- Nel blocco "Cerca strutture" è ora possibile personalizzare il testo descrittivo del campo di ricerca libero e se visualizzare il filtro per tipologia come pulsanti (comportamento di default) oppure come menu a tendina.
+
+- Nel blocco "Ricerca farmacie" ora è possibile scegliere dalle impostazioni del blocco quali filtri mostrare: ente territoriale, comune e località, sia per la ricerca dei turni che delle ferie. I blocchi esistenti mantengono il comportamento attuale.
+
+### Fix
+
+- Blocco Listing con template a tabella. Corretta la visualizzazione dei campi con valori multipli (es. "Destinatari") che causavano un errore di rendering. I valori vengono ora mostrati correttamente come etichette separate da virgola.
+
+## Versione 2.32.0 (12/06/2026)
+
+### Migliorie
+
+- Aggiunta filtri di ricerca per comune e distretto nel blocco "Cerca strutture".
+
+## Versione 2.31.3 (11/06/2026)
+
+### Fix
+
+- Corretta la validazione dei campi a blocchi obbligatori: ora un campo contenente solo blocchi non testuali (es. Immagine, Video) viene riconosciuto come compilato. I blocchi che prevedono testo (Callout, Tabella, HTML) richiedono invece la presenza effettiva di testo: un blocco Callout vuoto non rende il campo compilato. I blocchi senza contenuto (es. Interruzione di pagina) non rendono il campo compilato.
+
+## Versione 2.31.0 (28/05/2026)
+
+### Novità
+
+- Abilitato il blocco tabella nell'editor di testo per i campi a blocchi dei content-type.
+
+## Versione 2.30.0 (27/05/2026)
+
+### Fix
+
+- Sistemato il blocco "Cerca servizi e procedure" in modo tale che consideri il path all'interno del quale fare la ricerca.
+- Gestita la mancanza di geolocalizzazione all'interno del CT Persona in modo tale da non mostrare 0 all'interno della card Persona quando assente.
+
 ## Versione 2.28.0 (05/05/2026)
 
 ### Migliorie

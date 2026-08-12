@@ -59,7 +59,6 @@ export function CTASchema({
     properties: {
       'bg:noprefix': {
         title: 'Colore di sfondo',
-        default: 'none',
         widget: 'color_picker',
         default: 'bg-primary-dark',
         colors: [

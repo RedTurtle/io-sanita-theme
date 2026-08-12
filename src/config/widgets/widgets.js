@@ -12,6 +12,11 @@ const CTTitleColumnWidget = loadable(() =>
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/CTTitleColumnWidget/CTTitleColumnWidget'
   ),
 );
+const CTFieldPropertiesWidget = loadable(() =>
+  import(
+    /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/CTFieldPropertiesWidget/CTFieldPropertiesWidget'
+  ),
+);
 const QuickSearchConfigurationWidget = loadable(() =>
   import(
     /* webpackChunkName: "ISManage" */ 'io-sanita-theme/components/manage/Widgets/QuickSearch/QuickSearchConfigurationWidget'
@@ -99,6 +104,7 @@ const getIoSanitaWidgets = (config) => {
       linkTo: LinkToWidget,
       ct_fields: CTFieldsWidget,
       ct_title_column: CTTitleColumnWidget,
+      ct_field_properties: CTFieldPropertiesWidget,
     },
     views: {
       ...config.widgets.views,

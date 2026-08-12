@@ -31,11 +31,10 @@
     }
 
     .contact-title {
+      margin-bottom: 1rem;
       font-size: 1.35rem;
       font-weight: bold;
       line-height: 1.4em;
-
-      margin-bottom: 1rem;
     }
 
     .contact-text {
@@ -58,10 +57,10 @@
       }
 
       .icon-wrapper {
-        margin-top: 0.2rem;
-        margin-right: 1rem;
         display: flex;
         align-items: center;
+        margin-top: 0.2rem;
+        margin-right: 1rem;
       }
 
       .tel {

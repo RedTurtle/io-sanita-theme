@@ -17,10 +17,11 @@ const messages = defineMessages({
   },
 });
 
-export const mapPinDirections = (item, intl) => {
+export const mapPinDirections = (item, intl, extraContent) => {
   return (
     <div className="map-pin-popup">
       <div className="title">{item.title}</div>
+      {extraContent}
       <p>
         <UniversalLink
           href={`http://maps.google.com/?q=${item.street ?? ''} ${

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { getContent, resetContent } from '@plone/volto/actions/content/content';
@@ -28,6 +28,7 @@ export const useLoadSteps = (steps = []) => {
         dispatch(resetContent(item['@id']));
       });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -41,6 +42,7 @@ export const useLoadSteps = (steps = []) => {
         ]);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subrequests]);
 
   return { loadedSteps };

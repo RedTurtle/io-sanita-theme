@@ -12,7 +12,8 @@ body.cms-ui {
     font-family: $font-family-sans-serif;
 
     %heading {
-      margin-top: 0; /* 1*/
+      margin-top: 0;
+      /* 1*/
       margin-bottom: $headings-margin-bottom;
       color: $headings-color;
       font-family: $font-family-sans-serif;
@@ -24,6 +25,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h1-font-size);
       font-weight: 700 !important;
+
       @include media-breakpoint-up(sm) {
         font-size: 3rem;
         line-height: 3.5rem;
@@ -33,9 +35,11 @@ body.cms-ui {
     h2 {
       @extend %heading;
       @include font-size($h2-font-size);
+
       &:not(.h3):not(.h4):not(.h5):not(.h6) {
         font-weight: 700 !important;
       }
+
       @include media-breakpoint-up(sm) {
         font-size: 2.5rem;
         line-height: 3rem;
@@ -46,6 +50,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h3-font-size);
       font-weight: 700 !important;
+
       @include media-breakpoint-up(sm) {
         font-size: 2rem;
         line-height: 2.5rem;
@@ -56,6 +61,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h4-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.75rem;
         line-height: 2rem;
@@ -66,6 +72,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h5-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -76,6 +83,7 @@ body.cms-ui {
       @extend %heading;
       @include font-size($h6-font-size);
       font-weight: 600;
+
       @include media-breakpoint-up(sm) {
         font-size: 1.125rem;
       }
@@ -87,6 +95,7 @@ body.cms-ui {
     }
 
     @import 'bootstrap-italia/src/scss/custom/type'; //to apply styles for headers on different screen sizes
+
     &,
     p,
     ul,
@@ -184,28 +193,32 @@ body.cms-ui {
   .block .ui.basic.button.delete-button,
   .block.cta_block .ui.basic.button.delete-button,
   .block.numbersBlock > .ui.basic.button.delete-button {
-    background-color: #fff !important;
-    color: #575757 !important;
+    min-height: unset;
+    padding: 5px !important;
     border: 1px solid #fff !important;
     border-radius: 100% !important;
-    padding: 5px !important;
-    margin-right: -40px !important;
-    line-height: 0;
     margin-top: -5px;
-    min-height: unset;
+    margin-right: -40px !important;
+    background-color: #fff !important;
+    color: #575757 !important;
+    line-height: 0;
+
     svg,
     svg:not(:hover) {
-      line-height: 0;
       fill: currentColor !important;
+      line-height: 0;
     }
+
     .icon {
       background: none;
     }
+
     &:hover,
     &:focus,
     &:focus-within {
       background-color: black !important;
       color: #fff !important;
+
       svg {
         fill: #fff !important;
       }
@@ -215,10 +228,12 @@ body.cms-ui {
   &.has-toolbar.has-sidebar .drag.handle.wrapper,
   .drag.handle.wrapper {
     margin-left: -40px !important;
+
     &:hover {
       background-color: #4e8aa5 !important;
     }
   }
+
   // @media only screen and (min-width: 1655px) {
   //   &.has-toolbar.has-sidebar .drag.handle.wrapper {
   //     margin-left: -40px !important;
@@ -232,6 +247,7 @@ body.cms-ui {
   .block.numbersBlock > .ui.basic.button.delete-button,
   .block.contacts .ui.basic.button.delete-button {
     margin-right: -39px !important;
+
     &:hover,
     &:focus,
     &:focus-within {
@@ -254,19 +270,20 @@ body.cms-ui {
   }
 
   .react-select__option .icon-container .icon {
-    height: 1rem;
     width: auto;
+    height: 1rem;
   }
 
   //slate
   .editor-link {
     &.input-anchorlink-theme {
       input {
-        font-size: 0.8rem;
         padding: 0 0.3rem;
+        font-size: 0.8rem;
       }
     }
   }
+
   /*Date picker*/
   .SingleDatePicker {
     z-index: unset;
@@ -314,6 +331,7 @@ body.cms-ui {
     .ui .grid h3 .content {
       font-size: 1rem;
     }
+
     a {
       text-decoration: none;
 
@@ -473,18 +491,21 @@ body.cms-ui {
         background-color: var(--bs-primary);
       }
     }
+
     .button.info {
       &,
       &.active {
         background-color: var(--bs-info);
       }
     }
+
     .button.success {
       &,
       &.active {
         background-color: var(--bs-success);
       }
     }
+
     .button.warning {
       &,
       &.active {
@@ -517,13 +538,87 @@ body.cms-ui {
   }
 
   /*Blocchi*/
-  .block.image {
-    .block.align {
-      &.left,
-      &.right {
-        z-index: 0;
+  .block-editor-image {
+    &.right,
+    &.left {
+      .ui.drag.block.image {
+        z-index: 99;
+        max-width: 50%;
+        margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
+
+        .block.image,
+        .block.image img {
+          margin-bottom: 0;
+        }
+      }
+
+      &:has(img.small) {
+        .ui.drag.block.image {
+          max-width: 15%;
+        }
+      }
+
+      &:has(img.medium) {
+        .ui.drag.block.image {
+          max-width: 25%;
+        }
+      }
+
+      &:has(img.large) {
+        .ui.drag.block.image {
+          max-width: 50%;
+        }
       }
     }
+
+    /* Image right */
+    &.right {
+      .block.image {
+        float: right;
+      }
+
+      .ui.drag.block.image {
+        margin-left: 1rem;
+      }
+
+      .drag.handle.wrapper {
+        left: 50%;
+      }
+    }
+
+    /* Image left */
+    &.left {
+      .block.image {
+        float: left;
+      }
+
+      .ui.drag.block.image {
+        margin-right: 1.7rem;
+      }
+    }
+  }
+
+  // Rimosso il max-width percentuale di Volto core sull'immagine allineata
+  // a sinistra/destra (sia quello per size small/medium/large, sia quello
+  // generico su .block.align.left/right .ui.image/img): è calcolato
+  // rispetto a un contenitore diverso da quello che il tema limita al 50%
+  // sopra su .ui.drag.block.image, quindi le due percentuali in cascata
+  // non combaciano e lasciano spazio bianco tra bordo e immagine.
+  .block.image.align.left img.large,
+  .block.image.align.right img.large,
+  .block.image.align.left img.medium,
+  .block.image.align.right img.medium,
+  .block.image.align.left img.small,
+  .block.image.align.right img.small {
+    max-width: 100%;
+  }
+
+  .block.align.left .ui.image,
+  .block.align.left img,
+  .block.align.right .ui.image,
+  .block.align.right img {
+    max-width: 100%;
   }
 
   .block-editor-listing {
@@ -533,15 +628,19 @@ body.cms-ui {
         padding-bottom: 0.2rem !important; //per simulare il pb-4
       }
     }
+
     &.full-width {
       .drag.handle.wrapper {
         left: 20%;
+
         @media (max-width: #{map-get($grid-breakpoints, sm)}) {
           left: 10%;
         }
       }
+
       .ui.delete-button {
         right: 20%;
+
         @media (max-width: #{map-get($grid-breakpoints, sm)}) {
           right: 10%;
         }
@@ -555,7 +654,8 @@ body.cms-ui {
       min-width: 1px;
 
       &:empty:before {
-        display: block; /* For Firefox */
+        display: block;
+        /* For Firefox */
         content: attr(placeholder);
         font-weight: inherit;
         opacity: 0.333;
@@ -618,8 +718,8 @@ body.cms-ui {
       .expired {
         display: inline-block;
         padding: 2px 8px;
-        margin-left: 0.5em;
         border-radius: 4px;
+        margin-left: 0.5em;
         font-size: 0.8em;
         font-weight: 600;
         text-decoration: none;
@@ -637,6 +737,7 @@ body.cms-ui {
       }
     }
   }
+
   #page-contents.ui.container.folder-contents {
     @media (min-width: 992px) {
       width: 90% !important;
@@ -730,10 +831,10 @@ body.cms-ui {
   /*Colors widget*/
   .color-picker-widget {
     .ui.circular.button {
-      border-radius: 100%;
       width: 2em;
       height: 2em;
       padding: 1em;
+      border-radius: 100%;
 
       &.bg-none {
         background-image: repeating-conic-gradient(
@@ -754,9 +855,9 @@ body.cms-ui {
         margin-top: 0;
 
         .ui.attached.tabular.menu {
-          margin-top: -1rem;
           max-width: 100%;
           height: 100%;
+          margin-top: -1rem;
         }
       }
     }
@@ -766,6 +867,14 @@ body.cms-ui {
   .blocks-chooser .ui.accordion .title ~ .content {
     display: contents;
   }
+
+  .blocks-widget
+    .blocks-widget-container
+    .block-editor-slateTable
+    .slateTable
+    .toolbar {
+    top: -50px;
+  }
 }
 
 /*Has toolbar*/
@@ -774,6 +883,7 @@ body.has-toolbar {
     .toolbar-content.show {
       z-index: 501;
     }
+
     .personal-tools {
       .avatar {
         width: 220px;
@@ -781,6 +891,7 @@ body.has-toolbar {
       }
     }
   }
+
   &.public-ui #toolbar {
     .toolbar {
       &:before {

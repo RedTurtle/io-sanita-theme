@@ -40,9 +40,10 @@ const Header = ({ pathname }) => {
     const headerSlim = headerSlimRef.current;
 
     if (headerWrapper.offsetHeight && headerSlim.offsetHeight) {
-
-      // 5px è lo scarto quando sei mobile, 120 l'altezza fissa quando non si è su mobile 
-      const heightForDevice = window.matchMedia('(max-width: 991px)').matches ? (headerSlim.offsetHeight - 5) : (headerSlim.offsetHeight + 120);
+      // 5px è lo scarto quando sei mobile, 120 l'altezza fissa quando non si è su mobile
+      const heightForDevice = window.matchMedia('(max-width: 991px)').matches
+        ? headerSlim.offsetHeight - 5
+        : headerSlim.offsetHeight + 120;
 
       setHeaderHeight(headerWrapper.offsetHeight);
 
@@ -69,7 +70,7 @@ const Header = ({ pathname }) => {
         >
           {/* SLIM HEADER */}
           <div ref={headerSlimRef} id="headerSlimWrapper">
-            <HeaderSlim  />
+            <HeaderSlim />
           </div>
 
           {/* MAIN HEADER */}

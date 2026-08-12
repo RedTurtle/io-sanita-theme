@@ -115,6 +115,11 @@ msgstr ""
 msgid "Card detail label"
 msgstr "View"
 
+#. Default: "Evento"
+#: components/Cards/common/CardCategoryBottom
+msgid "CardCategoryBottom_Event"
+msgstr "Event"
+
 #. Default: "Unità operativa"
 #: components/Cards/common/CardCategoryBottom
 msgid "CardCategoryBottom_UO"
@@ -916,6 +921,36 @@ msgstr ""
 msgid "add_block_in_position"
 msgstr ""
 
+#. Default: "Aggiungi al calendario"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar"
+msgstr ""
+
+#. Default: "Apple"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_apple"
+msgstr ""
+
+#. Default: "Google"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_google"
+msgstr ""
+
+#. Default: "Outlook"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlook"
+msgstr ""
+
+#. Default: "Outlook.com"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_outlookcom"
+msgstr ""
+
+#. Default: "Yahoo"
+#: components/View/commons/PageHeader/PageHeaderAddToCalendar
+msgid "add_to_calendar_yahoo"
+msgstr ""
+
 #. Default: "Tutti"
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_all"
@@ -1014,11 +1049,6 @@ msgstr ""
 #. Default: "Scadrà il {date}"
 #: components/Blocks/Alert/Wrapper
 msgid "alert_willExpire"
-msgstr ""
-
-#. Default: "Allinea il bottone a destra"
-#: components/Blocks/Listing/schema
-msgid "alignButton"
 msgstr ""
 
 #. Default: "Allinea le card al centro"
@@ -1967,6 +1997,11 @@ msgstr "Shifts"
 msgid "farmacia_turni_from"
 msgstr "From"
 
+#. Default: "Tipo turno"
+#: components/View/Farmacia/FarmaciaTurni
+msgid "farmacia_turni_tipo"
+msgstr "Shift type"
+
 #. Default: "Al"
 #: components/View/Farmacia/FarmaciaTurni
 msgid "farmacia_turni_to"
@@ -2565,6 +2600,11 @@ msgstr "Where"
 msgid "persona_gallery"
 msgstr "Gallery"
 
+#. Default: "Informazioni di contatto"
+#: components/View/Persona/PersonaContatti
+msgid "persona_informazioni_contatto"
+msgstr ""
+
 #. Default: "Orari di ricevimento"
 #: components/View/Persona/PersonaOrariRicevimento
 msgid "persona_orari_ricevimento"
@@ -3021,11 +3061,46 @@ msgstr "Select day"
 msgid "search_farmacia_localita"
 msgstr "Location"
 
+#. Default: "Dal"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_period_from"
+msgstr ""
+
+#. Default: "al"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_period_to"
+msgstr ""
+
+#. Default: "Periodo e tipologia di turno"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_turni"
+msgstr ""
+
+#. Default: "Periodo di turno"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_turni_no_tipo"
+msgstr ""
+
+#. Default: "Vedi scheda della farmacia"
+#: components/Blocks/SearchFarmacia/mapUtils
+msgid "search_farmacia_map_view_details"
+msgstr ""
+
 #. Default: "Nessun risultato trovato"
 #: components/Blocks/SearchFarmacia/Body
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_no_results"
 msgstr "No results found"
+
+#. Default: "Mostra solo il turno del giorno selezionato (anziché tutti i periodi)"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_only_active_turno"
+msgstr ""
+
+#. Default: "Scarica il CSV open data con tutti i turni delle farmacie"
+#: components/Blocks/SearchFarmacia/Body
+msgid "search_farmacia_opendata_csv_link"
+msgstr ""
 
 #. Default: "Dal"
 #: components/Blocks/SearchFarmacia/Results
@@ -3066,6 +3141,51 @@ msgstr "Enter the name of the pharmacy"
 #: components/Blocks/SearchFarmacia/SearchFilters
 msgid "search_farmacia_searchable_text_label"
 msgstr "Pharmacy"
+
+#. Default: "Mostra il filtro per ente territoriale"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_area_territoriale"
+msgstr "Show the territorial area filter"
+
+#. Default: "Mostra il CAP nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_cap"
+msgstr ""
+
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_comune"
+msgstr "Show the municipality filter"
+
+#. Default: "Mostra il filtro per località"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita"
+msgstr "Show the location filter"
+
+#. Default: "Mostra la colonna Località nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_localita_colonna"
+msgstr ""
+
+#. Default: "Mostra la mappa con le farmacie trovate"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_map"
+msgstr ""
+
+#. Default: "Mostra il link al CSV open data con tutti i turni delle farmacie"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_opendata_csv_link"
+msgstr ""
+
+#. Default: "Mostra la provincia nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_provincia"
+msgstr ""
+
+#. Default: "Mostra il tipo di turno nella tabella dei risultati"
+#: components/Blocks/SearchFarmacia/schema
+msgid "search_farmacia_show_tipo_turno"
+msgstr ""
 
 #. Default: "Comune"
 #: components/Blocks/SearchFarmacia/Body
@@ -3132,35 +3252,35 @@ msgstr "Pharmacy name"
 msgid "search_farmacia_table_nome_en"
 msgstr ""
 
-#. Default: "Recapiti"
+#. Default: "Telefono"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti"
 msgstr "Contact numbers"
 
-#. Default: "Contact numbers"
+#. Default: "Phone number"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_recapiti_en"
 msgstr ""
 
-#. Default: "Periodi di Turno"
+#. Default: "Periodo e tipologia di turno"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni"
-msgstr "Shifts periods"
+msgstr "Shift periods and type"
 
-#. Default: "Shifts periods"
+#. Default: "Shift periods and type"
 #: components/Blocks/SearchFarmacia/Results
 msgid "search_farmacia_table_turni_en"
 msgstr ""
 
-#. Default: "Telefono"
+#. Default: "Periodo di turno"
 #: components/Blocks/SearchFarmacia/Results
-msgid "search_farmacia_telefono"
-msgstr "Phone"
+msgid "search_farmacia_table_turni_no_tipo"
+msgstr "Shift period"
 
-#. Default: "Telefono turno"
+#. Default: "Shift periods"
 #: components/Blocks/SearchFarmacia/Results
-msgid "search_farmacia_telefono_turno"
-msgstr "Shift phone"
+msgid "search_farmacia_table_turni_no_tipo_en"
+msgstr ""
 
 #. Default: "Titolo"
 #: components/Blocks/SearchFarmacia/schema
@@ -3197,7 +3317,17 @@ msgstr "Users"
 msgid "search_map_Search path"
 msgstr ""
 
-#. Default: "Mostra la barra di ricerca"
+#. Default: "Mostra il filtro per comune"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show city"
+msgstr ""
+
+#. Default: "Mostra il filtro per distretto"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_Show distretto"
+msgstr ""
+
+#. Default: "Mostra la ricerca libera"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show search bar"
 msgstr ""
@@ -3205,6 +3335,11 @@ msgstr ""
 #. Default: "Mostra i filtri per tipologia"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_Show types"
+msgstr ""
+
+#. Default: "Tutte le tipologie"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_all_tipologie"
 msgstr ""
 
 #. Default: "Ricerca con mappa"
@@ -3215,6 +3350,21 @@ msgstr ""
 #. Default: "Tipo di contenuto"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_ct"
+msgstr ""
+
+#. Default: "Comune"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_city"
+msgstr "Municipality"
+
+#. Default: "Distretto"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_distretto"
+msgstr "District"
+
+#. Default: "Tipologia"
+#: components/Blocks/SearchMap/Body
+msgid "search_map_label_tipologia"
 msgstr ""
 
 #. Default: "Cerca"
@@ -3237,10 +3387,30 @@ msgstr "Search for GPs and pediatricians near you"
 msgid "search_map_searchable_text_default_label_strutture"
 msgstr "Search for facilities near you"
 
+#. Default: "Testo descrittivo della barra di ricerca"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_text_description"
+msgstr ""
+
 #. Default: "Titolo"
 #: components/Blocks/SearchMap/schema
 msgid "search_map_title"
 msgstr ""
+
+#. Default: "Filtra tipologia con menu a tendina"
+#: components/Blocks/SearchMap/schema
+msgid "search_map_types_as_select"
+msgstr ""
+
+#. Default: "Tutti i comuni"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_cities"
+msgstr "All municipalities"
+
+#. Default: "Tutti i distretti"
+#: components/Blocks/SearchMap/Body
+msgid "search_mapall_distretti"
+msgstr "All districts"
 
 #. Default: "Tutti"
 #: components/Blocks/SearchMap/Body
@@ -3868,6 +4038,7 @@ msgstr "Alerts and news"
 
 #. Default: "Come accedere"
 #: components/View/Struttura/StrutturaComeAccedere
+#: components/View/UOView/UOUlterioriInformazioni
 msgid "struttura_come_accedere"
 msgstr "How to access"
 
@@ -3891,7 +4062,7 @@ msgstr "Related structures"
 msgid "struttura_cos_e"
 msgstr "What is it"
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/Struttura/StrutturaDateOrari
 msgid "struttura_date_e_orari"
 msgstr "Dates and times"
@@ -3905,11 +4076,6 @@ msgstr "Where"
 #: components/View/Struttura/StrutturaGalleria
 msgid "struttura_gallery"
 msgstr "Gallery"
-
-#. Default: "Orari"
-#: components/View/Struttura/StrutturaDateOrari
-msgid "struttura_orari"
-msgstr "Times"
 
 #. Default: "Personale della struttura"
 #: components/View/Struttura/StrutturaPersonale
@@ -3985,6 +4151,21 @@ msgstr "Title"
 #: components/Blocks/Listing/Table/TableTemplate
 msgid "tabletemplate_column_title"
 msgstr "Title"
+
+#. Default: "Esporta file CSV"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_csv"
+msgstr ""
+
+#. Default: "Esporta file PDF"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_export_pdf"
+msgstr ""
+
+#. Default: "risultati"
+#: components/Blocks/Listing/Table/TableTemplate
+msgid "tabletemplate_results"
+msgstr ""
 
 #. Default: "Telefono"
 #: components/View/PuntoDiContatto/PuntoDiContattoContatti
@@ -4102,7 +4283,7 @@ msgstr "Skills"
 msgid "uo_contatti"
 msgstr "Contacts"
 
-#. Default: "Date e orari"
+#. Default: "Orari di apertura"
 #: components/View/UOView/UODateOrari
 msgid "uo_date_e_orari"
 msgstr "Dates and times"
@@ -4121,11 +4302,6 @@ msgstr "Where"
 #: components/View/UOView/UOFaParteDi
 msgid "uo_fa_parte_di"
 msgstr "Part of"
-
-#. Default: "Orari"
-#: components/View/UOView/UODateOrari
-msgid "uo_orari"
-msgstr "Times"
 
 #. Default: "Personale"
 #: components/View/UOView/UOPersonale

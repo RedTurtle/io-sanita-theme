@@ -3,9 +3,9 @@ body.public-ui {
   .accordion-block {
     .search-bar-widget {
       label {
-        visibility: hidden;
         height: 0;
         margin: 0 !important;
+        visibility: hidden;
       }
     }
     .public-ui {
@@ -18,8 +18,8 @@ body.public-ui {
           h4,
           h5,
           h6 {
-            margin: 0 !important;
             width: 100%;
+            margin: 0 !important;
             color: var(--bs-primary);
           }
           .accordion-button {

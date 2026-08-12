@@ -1,5 +1,9 @@
 import React from 'react';
-import { richTextHasContent, RichTextSection } from 'io-sanita-theme/helpers';
+import {
+  richTextHasContent,
+  RichText,
+  RichTextSection,
+} from 'io-sanita-theme/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 
 const messages = defineMessages({
@@ -7,17 +11,35 @@ const messages = defineMessages({
     id: 'other_info',
     defaultMessage: 'Ulteriori informazioni',
   },
+  come_accedere: {
+    id: 'struttura_come_accedere',
+    defaultMessage: 'Come accedere',
+  },
 });
 
 const UOUlterioriInformazioni = ({ content }) => {
   const intl = useIntl();
-  return richTextHasContent(content.ulteriori_informazioni) ? (
+  const has_richTextUlteriori = richTextHasContent(
+    content?.ulteriori_informazioni,
+  );
+  const has_come_accedere = richTextHasContent(content?.come_accedere);
+  return has_richTextUlteriori || has_come_accedere ? (
     <RichTextSection
-      data={content.ulteriori_informazioni}
       tag_id="more_info"
       title={intl.formatMessage(messages.other_info)}
       anchorOffset={true}
-    />
+    >
+      {content.ulteriori_informazioni && (
+        <RichText data={content.ulteriori_informazioni} />
+      )}
+      {/* presente ad esempio con il sync virtualdesk */}
+      {content.come_accedere && (
+        <div className="mt-4 richtext-blocks">
+          <h3>{intl.formatMessage(messages.come_accedere)}</h3>
+          <RichText data={content.come_accedere} />
+        </div>
+      )}
+    </RichTextSection>
   ) : null;
 };
 

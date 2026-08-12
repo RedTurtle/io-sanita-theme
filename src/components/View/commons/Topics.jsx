@@ -5,6 +5,7 @@ import { Chip, ChipLabel } from 'design-react-kit';
 
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
+import { useHomePath } from 'io-sanita-theme/helpers';
 
 /**
  * Topics view component class.
@@ -22,6 +23,7 @@ const messages = defineMessages({
 
 const Topics = ({ content, titleTag = 'h3' }) => {
   const intl = useIntl();
+  const homepath = useHomePath();
   const list = content.parliamo_di_metadata ?? content.parliamo_di; // gli argomenti possono esssere in uno di questi due campi, a seconda di dove arriva l'oggetto principale (brain o load)
 
   const Tag = ({ tagName, children, ...props }) =>
@@ -34,7 +36,7 @@ const Topics = ({ content, titleTag = 'h3' }) => {
       </Tag>
       {list.map((item, i) => (
         <UniversalLink
-          href={getAggregationPageUrl('topics', item.token)}
+          href={getAggregationPageUrl(homepath, 'topics', item.token)}
           key={item.token}
           className="text-decoration-none me-2 d-inline-block"
           data-element="service-topic"

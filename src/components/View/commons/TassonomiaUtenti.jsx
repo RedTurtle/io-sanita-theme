@@ -3,6 +3,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Chip, ChipLabel } from 'design-react-kit';
 import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
+import { useHomePath } from 'io-sanita-theme/helpers';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Icon } from 'io-sanita-theme/components';
 
@@ -14,6 +15,7 @@ import { Icon } from 'io-sanita-theme/components';
  */
 
 const TassonomiaUtenti = ({ content }) => {
+  const homepath = useHomePath();
   const list =
     content?.a_chi_si_rivolge_tassonomia_metadata ??
     content?.a_chi_si_rivolge_tassonomia; // la tassonomia utenti può esssere in uno di questi due campi, a seconda di dove arriva l'oggetto principale (brain o load)
@@ -27,6 +29,7 @@ const TassonomiaUtenti = ({ content }) => {
         return (
           <UniversalLink
             href={getAggregationPageUrl(
+              homepath,
               'a_chi_si_rivolge_tassonomia',
               item.token,
             )}

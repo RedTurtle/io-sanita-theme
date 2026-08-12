@@ -3,9 +3,11 @@ import cx from 'classnames';
 import { useIntl, defineMessages } from 'react-intl';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { getAggregationPageUrl } from 'io-sanita-theme/helpers/aggregation';
+import { useHomePath } from 'io-sanita-theme/helpers';
 
 const messages = defineMessages({
   uo: { id: 'CardCategoryBottom_UO', defaultMessage: 'Unità operativa' },
+  event: { id: 'CardCategoryBottom_Event', defaultMessage: 'Evento' },
 });
 const CardCategoryBottom = ({
   item,
@@ -17,6 +19,7 @@ const CardCategoryBottom = ({
   showCategory = true,
 }) => {
   const intl = useIntl();
+  const homepath = useHomePath();
   let defaultCategory = item?.type_title ? { title: item.type_title } : null;
   const portal_type = item['@type'] ?? item.portal_type;
   switch (item['@type']) {
@@ -36,6 +39,9 @@ const CardCategoryBottom = ({
     case 'UnitaOrganizzativa':
       defaultCategory = intl.formatMessage(messages.uo);
       break;
+    case 'Event':
+      defaultCategory = intl.formatMessage(messages.event);
+      break;
     default:
       break;
   }
@@ -53,7 +59,11 @@ const CardCategoryBottom = ({
               href={
                 isEditMode
                   ? '#'
-                  : getAggregationPageUrl('topics', display_category.token)
+                  : getAggregationPageUrl(
+                      homepath,
+                      'topics',
+                      display_category.token,
+                    )
               }
             >
               <span className="text">{display_category.title}</span>

@@ -9,6 +9,7 @@
     .subjects {
       display: flex;
       overflow: scroll;
+      flex-wrap: wrap;
       button {
         flex: 0 0 auto;
       }
@@ -23,8 +24,8 @@
   }
 
   #geocoded-result {
-    height: auto;
     width: 100%; //serve per farlo quadrato
+    height: auto;
     padding-bottom: 100%; //serve per farlo quadrato
     .leaflet-top {
       z-index: 400;

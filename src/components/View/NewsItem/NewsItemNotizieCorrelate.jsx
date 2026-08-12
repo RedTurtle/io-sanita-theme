@@ -5,7 +5,7 @@ import { defineMessages, useIntl } from 'react-intl';
 
 import { RichTextSection } from 'io-sanita-theme/helpers';
 import { CardSimple } from 'io-sanita-theme/components';
-import {Row, Col} from 'design-react-kit';
+import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
   notizie_correlate: {
@@ -18,7 +18,10 @@ const NewsItemNotizieCorrelate = ({ content }) => {
   const intl = useIntl();
 
   return content?.notizia_correlata?.length > 0 ? (
-    <RichTextSection tag_id="notizie_correlate" title={intl.formatMessage(messages.notizie_correlate)}>
+    <RichTextSection
+      tag_id="notizie_correlate"
+      title={intl.formatMessage(messages.notizie_correlate)}
+    >
       {content?.notizia_correlata?.length > 0 && (
         <Row>
           {content?.notizia_correlata?.map((item, i) => (

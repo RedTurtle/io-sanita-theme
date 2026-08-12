@@ -20,18 +20,18 @@ const AttachmentCardTemplateSkeleton = (props) => {
 
           <Row>
             {[0, 1, 2].map((i) => (
-            <Col lg={4}>
-              <Card
-                className="align-items-top rounded shadow no-after"
-                noWrapper
-                teaser
-                key={i}
-              >
-                <CardBody className="pb-5">
-                  <CardTitle tag="h3"> </CardTitle>
-                </CardBody>
-              </Card>
-            </Col>
+              <Col lg={4}>
+                <Card
+                  className="align-items-top rounded shadow no-after"
+                  noWrapper
+                  teaser
+                  key={i}
+                >
+                  <CardBody className="pb-5">
+                    <CardTitle tag="h3"> </CardTitle>
+                  </CardBody>
+                </Card>
+              </Col>
             ))}
           </Row>
         </div>

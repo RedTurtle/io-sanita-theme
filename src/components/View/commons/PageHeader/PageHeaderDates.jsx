@@ -22,12 +22,12 @@ const messages = defineMessages({
   },
 });
 
-export const viewPageHeaderDates=(content)=>{
+export const viewPageHeaderDates = (content) => {
   const view_effective = content?.effective && content?.['@type'] !== 'Event';
   const view_expires = content?.expires;
-  const view =view_effective !=null || view_expires!=null;
-  return {view, view_effective, view_expires};
-}
+  const view = view_effective != null || view_expires != null;
+  return { view, view_effective, view_expires };
+};
 
 const PageHeaderDates = ({ content }) => {
   const intl = useIntl();
@@ -51,7 +51,7 @@ const PageHeaderDates = ({ content }) => {
           <div className="col-12">
             <small>{intl.formatMessage(messages.expire)}:</small>
             <p className="font-monospace">
-              {viewDate(intl.locale, content.expires, 'DD-MM-Y')}
+              {viewDate(intl.locale, content.expires, 'DD MMMM YYYY')}
             </p>
           </div>
         </div>

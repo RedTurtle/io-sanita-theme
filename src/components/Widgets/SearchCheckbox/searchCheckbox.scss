@@ -2,9 +2,9 @@
 
 .search-checkbox {
   .form-check [type='checkbox'] + label {
-    font-size: 1rem;
     margin-bottom: 0;
-    font-weight: $font-weight-semibold;
     color: var(--bs-body-color-rgb);
+    font-size: 1rem;
+    font-weight: $font-weight-semibold;
   }
 }

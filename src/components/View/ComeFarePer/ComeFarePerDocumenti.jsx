@@ -12,7 +12,10 @@ const messages = defineMessages({
     id: 'come_fare_per_allegati',
     defaultMessage: 'Allegati',
   },
-  modulistica: { id: 'come_fare_per_modulistica', defaultMessage: 'Modulistica' },
+  modulistica: {
+    id: 'come_fare_per_modulistica',
+    defaultMessage: 'Modulistica',
+  },
   documenti: {
     id: 'come_fare_per_documenti',
     defaultMessage: 'Documenti',

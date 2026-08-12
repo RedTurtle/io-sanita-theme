@@ -30,7 +30,6 @@ import faCircleDotSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svg
 import faListCheckSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/list-check.svg';
 import faClipboardQuestionSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/clipboard-question.svg';
 import faClipboardListSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/clipboard-list.svg';
-import faFileContractSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/file-contract.svg';
 import faHouseMedicalFlagSVG from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/house-medical-flag.svg';
 import faAddressBook from 'io-sanita-theme/icons/fontawesome-free-6.4.0-web/svgs/solid/address-book.svg';
 import faFileDownloadSVG from 'io-sanita-theme/icons/file-download.svg';
@@ -69,8 +68,6 @@ import { applyFarmacieConfig } from './farmacie';
 import applyUtilitiesConfig from 'io-sanita-theme/config/utilities';
 
 import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
-import { component } from 'design-react-kit/dist/types/Icon/assets/ItAndroidSquare';
-
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 

@@ -14,9 +14,9 @@ body:not(.section-edit):not(.section-add) {
   .public-ui .it-header-wrapper.it-header-sticky {
     &.is-sticky {
       position: fixed;
+      z-index: 500;
       top: 0;
       width: 100%;
-      z-index: 500;
 
       .display-only-when-sticky {
         display: block;

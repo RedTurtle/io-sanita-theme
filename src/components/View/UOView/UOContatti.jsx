@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { CardContatti } from 'io-sanita-theme/components';
-import { RichTextSection } from 'io-sanita-theme/helpers';
+import {
+  RichTextSection,
+  richTextHasContent,
+  RichText,
+} from 'io-sanita-theme/helpers';
 import { Row, Col } from 'design-react-kit';
 
 const messages = defineMessages({
@@ -13,8 +17,8 @@ const messages = defineMessages({
 
 const UOContatti = ({ content }) => {
   const intl = useIntl();
-
-  return content?.pdc_correlato?.length > 0 ? (
+  const has_richTextContent = richTextHasContent(content?.pdc_correlato_text);
+  return content?.pdc_correlato?.length > 0 || has_richTextContent ? (
     <RichTextSection
       tag_id="contatti"
       title={intl.formatMessage(messages.contatti)}
@@ -27,6 +31,12 @@ const UOContatti = ({ content }) => {
           </Col>
         ))}
       </Row>
+      {/* Contenuto testuale alternativo, usato ad esempio con il sync virtualdesk */}
+      {has_richTextContent && (
+        <div className="richtext-blocks font-serif">
+          <RichText data={content?.pdc_correlato_text} />
+        </div>
+      )}
     </RichTextSection>
   ) : null;
 };

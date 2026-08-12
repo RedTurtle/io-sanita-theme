@@ -4,6 +4,8 @@ on:
   release:
     types: [released]
 
+permissions: {}
+
 jobs:
   update:
     name: Update themes

@@ -2,7 +2,6 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
-
 /**
  * PageHeaderNewsItem view component class.
  * @function PageHeaderNewsItem
@@ -22,7 +21,11 @@ const PageHeaderNewsItem = ({ content }) => {
 
   return (
     <>
-      {content.tipologia_notizia &&  <p className="mb-0 font-monospace text-uppercase">{content.tipologia_notizia.title}</p>}
+      {content.tipologia_notizia && (
+        <p className="mb-0 font-monospace text-uppercase">
+          {content.tipologia_notizia.title}
+        </p>
+      )}
       {content.numero_progressivo_cs && (
         <p className="mb-0">
           <strong>

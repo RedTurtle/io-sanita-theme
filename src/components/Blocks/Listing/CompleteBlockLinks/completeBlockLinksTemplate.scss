@@ -9,9 +9,9 @@
       border-bottom-width: 8px;
 
       h3.card-title.h5 {
+        color: var(--bs-link-color);
         font-size: 1rem !important;
         line-height: 1.44444rem;
-        color: var(--bs-link-color);
 
         .external-link {
           flex-shrink: 0;

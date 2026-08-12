@@ -9,8 +9,12 @@ import {
   LinkedHeadline,
 } from 'io-sanita-theme/components';
 import { Container, Col, Row, Spinner } from 'design-react-kit';
+import { OSMMap } from 'volto-venue';
 import Results from './Results';
 import SearchFilters from './SearchFilters';
+import { isDateWithinTurno } from './turniUtils';
+import { getComuniOptions, filterFarmacieByComune } from './comuniUtils';
+import { getFarmacieMarkers, getFarmacieMarkersSignature } from './mapUtils';
 
 /* Style */
 import './search-farmacia.scss';
@@ -41,6 +45,10 @@ const messages = defineMessages({
     id: 'search_farmacia_results_aria',
     defaultMessage: 'Risultati della ricerca farmacie',
   },
+  opendata_csv_link: {
+    id: 'search_farmacia_opendata_csv_link',
+    defaultMessage: 'Scarica il CSV open data con tutti i turni delle farmacie',
+  },
 });
 
 const Body = ({ isEditMode, data, id }) => {
@@ -48,6 +56,21 @@ const Body = ({ isEditMode, data, id }) => {
   const intl = useIntl();
   const resultsRef = createRef();
   const searchType = data?.search_type; // type of search, Ferie o Turni ('shifts' or 'vacations')
+  // fallback dinamico per i blocchi salvati prima dell'introduzione dei flag:
+  // Turni mostrava solo l'ente territoriale, Ferie solo comune e località
+  const showAreaTerritoriale =
+    data.show_area_territoriale ?? searchType !== 'vacations';
+  const showComune = data.show_comune ?? searchType === 'vacations';
+  const showLocalita = data.show_localita ?? searchType === 'vacations';
+  const showCap = data.show_cap ?? true;
+  const showProvincia = data.show_provincia ?? true;
+  const showLocalitaColonna = data.show_localita_colonna ?? true;
+  const showMap = data.show_map ?? false;
+  const showTipoTurno = data.show_tipo_turno ?? false;
+  const opendataCsvLinkEnabled =
+    config.settings.siteProperties.enableFarmacieOpendataCsvLink ?? false;
+  const showOpendataCsvLink =
+    opendataCsvLinkEnabled && (data.show_opendata_csv_link ?? false);
   const b_size = 10; // number of page results to show
   const [currentPage, setCurrentPage] = useState(0);
   const [filters, setFilters] = useState({
@@ -86,17 +109,10 @@ const Body = ({ isEditMode, data, id }) => {
   useEffect(() => {
     if (searchFarmacia?.items) {
       setFiltersOptions({
-        comuni: [
-          ...new Set(searchFarmacia.items.map((item) => item.comune).sort()),
-        ].map((item) => {
-          return { value: item, label: item };
-        }),
+        comuni: getComuniOptions(searchFarmacia.items),
         localita: [
           ...new Set(
-            searchFarmacia.items
-              .filter(
-                (item) => !filters.comune || item.comune === filters.comune,
-              )
+            filterFarmacieByComune(searchFarmacia.items, filters.comune)
               .map((item) => item.localita)
               .sort(),
           ),
@@ -127,25 +143,9 @@ const Body = ({ isEditMode, data, id }) => {
     if (searchType === 'shifts' && filters.date && items?.length > 0) {
       const inputDate = new Date(filters.date).getTime();
 
-      newResults = newResults.filter((item) => {
-        const checkTurno = item?.turni?.map((turno) => {
-          const dalSplit = turno?.dal.split('/');
-          const alSplit = turno?.al.split('/');
-          const turnoDal = new Date(
-            +dalSplit[2],
-            dalSplit[1] - 1,
-            +dalSplit[0],
-          ).getTime();
-          const turnoAl = new Date(
-            +alSplit[2],
-            alSplit[1] - 1,
-            +alSplit[0],
-          ).getTime();
-
-          return turnoDal <= inputDate && turnoAl >= inputDate ? true : false;
-        });
-        return checkTurno && checkTurno.includes(true);
-      });
+      newResults = newResults.filter((item) =>
+        item?.turni?.some((turno) => isDateWithinTurno(turno, inputDate)),
+      );
     }
 
     // Turni - filtro Area Territoriale
@@ -157,11 +157,7 @@ const Body = ({ isEditMode, data, id }) => {
 
     // Ferie - filtro Comune
     if (filters.comune && filters.comune !== null) {
-      newResults = newResults.filter(
-        (item) =>
-          item.comune &&
-          item.comune.toLowerCase() === filters.comune.toLowerCase(),
-      );
+      newResults = filterFarmacieByComune(newResults, filters.comune);
     }
 
     // Ferie - filtro Località
@@ -224,6 +220,31 @@ const Body = ({ isEditMode, data, id }) => {
     }
   }, [currentPage, results]);
 
+  // tutte le farmacie trovate hanno un pin sulla mappa, anche quelle non nella pagina corrente
+  const markerOptions = {
+    isEditMode,
+    searchType,
+    showCap,
+    showProvincia,
+    showLocalitaColonna,
+    showTipoTurno,
+    onlyActiveTurno: data?.only_active_turno,
+    searchDate: filters.date,
+  };
+
+  // OSMMap rifà il fitBounds/zoom ogni volta che l'array markers cambia
+  // riferimento: la firma è indipendente dall'ordine, così cambiare
+  // l'ordinamento della tabella non causa un nuovo array di marker e non
+  // resetta lo zoom della mappa
+  const markersSignature = showMap
+    ? getFarmacieMarkersSignature(results, markerOptions)
+    : '';
+  const [markers, setMarkers] = useState([]);
+  useEffect(() => {
+    setMarkers(showMap ? getFarmacieMarkers(results, intl, markerOptions) : []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showMap, markersSignature, intl]);
+
   const resultsWrapperId = 'search-farmacie-results_' + id;
   return (
     <div className="block iosanita-block-search farmacia">
@@ -251,6 +272,9 @@ const Body = ({ isEditMode, data, id }) => {
                     block_id={id}
                     setFilters={setFilters}
                     searchType={searchType}
+                    showAreaTerritoriale={showAreaTerritoriale}
+                    showComune={showComune}
+                    showLocalita={showLocalita}
                     filters={filters}
                     options={filtersOptions}
                     ariaControls={resultsWrapperId}
@@ -261,7 +285,7 @@ const Body = ({ isEditMode, data, id }) => {
                 </Col>
 
                 {/* Total number of results */}
-                <Col xs={3} lg={6} className="align-self-center">
+                <Col xs={12} className="align-self-center">
                   {results && results?.length > 0 && (
                     <div className="total-result small" aria-live="polite">
                       <span className="fw-bold">{results.length}</span>{' '}
@@ -269,36 +293,50 @@ const Body = ({ isEditMode, data, id }) => {
                     </div>
                   )}
                 </Col>
-
-                {/* Sort by */}
-                <Col xs={9} lg={6} className="d-flex justify-content-end">
-                  <SortByWidget
-                    order={filters.order}
-                    action={(sortby) => {
-                      setFilters({ ...filters, order: sortby });
-                    }}
-                    options={[
-                      {
-                        sort_on: 'title',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.nome),
-                      },
-                      {
-                        sort_on: 'comune',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.comune),
-                      },
-                      {
-                        sort_on: 'localita',
-                        sort_order: 'ascending',
-                        title: intl.formatMessage(messages.localita),
-                      },
-                    ]}
-                    ariaControls={resultsWrapperId}
-                  />
-                </Col>
               </Row>
             </form>
+
+            {showMap && markers.length > 0 && (
+              <div className="farmacie-map mb-4">
+                <OSMMap
+                  markers={markers}
+                  cluster={true}
+                  showTooltip={true}
+                  showPopup={true}
+                  mapOptions={{ scrollWheelZoom: false }}
+                />
+              </div>
+            )}
+
+            {/* Sort by: ha effetto solo sulla tabella dei risultati, non sulla mappa */}
+            <Row>
+              <Col xs={12} className="d-flex justify-content-end">
+                <SortByWidget
+                  order={filters.order}
+                  action={(sortby) => {
+                    setFilters({ ...filters, order: sortby });
+                  }}
+                  options={[
+                    {
+                      sort_on: 'title',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.nome),
+                    },
+                    {
+                      sort_on: 'comune',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.comune),
+                    },
+                    {
+                      sort_on: 'localita',
+                      sort_order: 'ascending',
+                      title: intl.formatMessage(messages.localita),
+                    },
+                  ]}
+                  ariaControls={resultsWrapperId}
+                />
+              </Col>
+            </Row>
 
             <div
               className="farmacie-results shadow"
@@ -312,6 +350,12 @@ const Body = ({ isEditMode, data, id }) => {
                 items={resultsPage}
                 isEditMode={isEditMode}
                 searchType={searchType}
+                onlyActiveTurno={data?.only_active_turno}
+                searchDate={filters.date}
+                showCap={showCap}
+                showProvincia={showProvincia}
+                showLocalitaColonna={showLocalitaColonna}
+                showTipoTurno={showTipoTurno}
               />
               {results && results.length > b_size && (
                 <Pagination
@@ -322,6 +366,14 @@ const Body = ({ isEditMode, data, id }) => {
                 />
               )}
             </div>
+
+            {showOpendataCsvLink && (
+              <div className="opendata-csv-link mt-3">
+                <a href="/farmacie-opendata/@@download/turni.csv" download>
+                  {intl.formatMessage(messages.opendata_csv_link)}
+                </a>
+              </div>
+            )}
           </Container>
         ) : (
           <Container className="d-flex justify-content-center mt-3">

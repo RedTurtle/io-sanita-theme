@@ -9,12 +9,12 @@
 
     button {
       display: flex;
+      width: 3.1rem;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
       padding: 0.35rem;
-      width: 3.1rem;
 
       border: none;
       border-radius: var(--bs-border-radius);

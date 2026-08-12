@@ -10,11 +10,7 @@ import {
 const messages = defineMessages({
   date_e_orari: {
     id: 'struttura_date_e_orari',
-    defaultMessage: 'Date e orari',
-  },
-  orari: {
-    id: 'struttura_orari',
-    defaultMessage: 'Orari',
+    defaultMessage: 'Orari di apertura',
   },
 });
 
@@ -26,12 +22,7 @@ const StrutturaDateOrari = ({ content }) => {
       tag_id="date_e_orari"
       title={intl.formatMessage(messages.date_e_orari)}
     >
-      {richTextHasContent(content.orari) && (
-        <RichText
-          title={intl.formatMessage(messages.orari)}
-          data={content.orari}
-        />
-      )}
+      {richTextHasContent(content.orari) && <RichText data={content.orari} />}
     </RichTextSection>
   );
 };

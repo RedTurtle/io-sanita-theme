@@ -118,6 +118,14 @@ const Body = ({ data, id, path, properties, inEditMode }) => {
       },
     ];
 
+    if (data.path && data.path[0]) {
+      query.push({
+        i: 'path',
+        o: 'plone.app.querystring.operation.string.absolutePath',
+        v: flattenToAppURL(data.path[0]['@id']),
+      });
+    }
+
     // user filters
     if (filters.searchableText?.length > 0) {
       query.push({

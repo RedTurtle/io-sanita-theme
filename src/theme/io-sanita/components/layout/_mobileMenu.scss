@@ -28,10 +28,10 @@
           color: $header-center-text-color;
           a {
             display: flex;
-            text-decoration: none;
             align-items: center;
             justify-content: space-between;
             color: $header-center-text-color;
+            text-decoration: none;
           }
 
           h2 {

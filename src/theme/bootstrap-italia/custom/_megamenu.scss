@@ -53,10 +53,10 @@
             a {
               justify-content: flex-end;
               span {
+                margin-right: 0.6em;
+                font-size: 0.889rem;
                 font-weight: $font-weight-bold;
                 text-transform: uppercase;
-                font-size: 0.889rem;
-                margin-right: 0.6em;
               }
             }
           }
@@ -110,8 +110,8 @@
 @media (min-width: #{map-get($grid-breakpoints, lg)}) {
   .navbar {
     .dropdown-menu {
-      left: 0;
       right: 0;
+      left: 0;
     }
     &.has-megamenu {
       li.nav-item {
