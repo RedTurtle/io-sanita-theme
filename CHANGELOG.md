@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.37.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.36.0...2.37.0) (2026-08-12)
+
+### Features
+
+* add Aggiungi al calendario button on Event pages (Apple/Google/… ([#176](https://github.com/RedTurtle/io-sanita-theme/issues/176)) ([71d98f8](https://github.com/RedTurtle/io-sanita-theme/commit/71d98f80f8f81d026d04761348c77ed794c9342d))
+
+### Bug Fixes
+
+* select block Image left/right aligned in editmode ([#175](https://github.com/RedTurtle/io-sanita-theme/issues/175)) ([89bcaad](https://github.com/RedTurtle/io-sanita-theme/commit/89bcaadab029fd18a41dfc3af1bbe41dfa5b6f86))
+
+### Maintenance
+
+* updated volto-slate-italia to 1.0.11 ([c6a40ea](https://github.com/RedTurtle/io-sanita-theme/commit/c6a40ea1b0ef11eaa1942b69161a49c79a2e79a2))
+
+### Documentation
+
+* release.md ([e278bbf](https://github.com/RedTurtle/io-sanita-theme/commit/e278bbfc04e185d9f3721a6e97d0408410a851a1))
+
 ## [2.36.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.35.0...2.36.0) (2026-07-30)
 
 ### Features
