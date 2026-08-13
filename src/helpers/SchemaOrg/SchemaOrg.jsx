@@ -1,5 +1,6 @@
 import { useIntl } from 'react-intl';
 import { Helmet } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
 import { SiteProperty } from 'volto-site-settings';
 import { getSiteProperty } from 'io-sanita-theme/helpers';
 
@@ -28,6 +29,13 @@ const getSiteTitle = () => {
 };
 
 const SchemaOrg = ({ content, schema = {} }) => {
+  const isVoltoSchemaorgInstalled = config.settings.addonsInfo?.some(
+    (addon) => addon.name === '@redturtle/volto-schemaorg',
+  );
+  if (isVoltoSchemaorgInstalled) {
+    return null;
+  }
+
   const contentSchema = content ? { name: content.title } : {};
   let schemaOrg = {
     '@context': 'https://schema.org',
