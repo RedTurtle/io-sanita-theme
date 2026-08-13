@@ -131,7 +131,7 @@ const PageHeaderAddToCalendar = ({ content }) => {
   return (
     <UncontrolledDropdown className="d-inline add-to-calendar-dropdown mt-3">
       <DropdownToggle
-        className="btn btn-icon btn-dropdown btn-outline-primary"
+        className="btn btn-icon btn-outline-primary"
         color=""
         tag="button"
         caret
