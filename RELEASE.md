@@ -41,6 +41,14 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Fix
+
+- - All'interno del blocco video dentro un blocco Griglia, è stato risolto il problema per cui non era possibile digitare o incollare l'url se il blocco video non era già selezionato.
+
+
+
 ## Versione 2.37.0 (12/08/2026)
 
 ### Novità
