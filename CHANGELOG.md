@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.37.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.37.0...2.37.1) (2026-09-01)
+
+### Bug Fixes
+
+* add to calendar button in Event view ([#178](https://github.com/RedTurtle/io-sanita-theme/issues/178)) ([4e29368](https://github.com/RedTurtle/io-sanita-theme/commit/4e29368f7278ffde3e5e34ee0cdc20e0f7e3fb59))
+* disable custom schemaorg when @redturtle/volto-schemaorg is active ([#177](https://github.com/RedTurtle/io-sanita-theme/issues/177)) ([9c10011](https://github.com/RedTurtle/io-sanita-theme/commit/9c100110c385af396c93834add591b15138eddcb))
+* url updating in Video block in grid block - Bug76122 ([#179](https://github.com/RedTurtle/io-sanita-theme/issues/179)) ([2643a02](https://github.com/RedTurtle/io-sanita-theme/commit/2643a02112a295ad648459b27127d5c051796ac8))
+
 ## [2.37.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.36.0...2.37.0) (2026-08-12)
 
 ### Features
