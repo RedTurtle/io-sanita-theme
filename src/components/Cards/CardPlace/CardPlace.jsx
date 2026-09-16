@@ -37,6 +37,7 @@ const CardPlace = ({
   titleTag = 'h3',
   className,
   titleDataElement,
+  extraContent,
 }) => {
   const intl = useIntl();
   const latLong = hasGeolocation(item)
@@ -105,6 +106,8 @@ const CardPlace = ({
           <VoltoIcon className="icon-svg-custom" name={ASLIcon} />
         </AvatarIcon>
       </CardBody>
+
+      {extraContent}
 
       {type === 'complete' && size !== 'small' && showGeolocation && (
         <CardFooter className="mx-4 py-3 text-end pe-0 fw-semibold">
