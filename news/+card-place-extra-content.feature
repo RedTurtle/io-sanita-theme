@@ -1,0 +1,1 @@
+Aggiunta la prop opzionale `extraContent` a `CardPlace`, renderizzata dentro la card subito prima del footer con il link alla mappa. Serve ad altri add-on che vogliono mostrare informazioni extra (es. contatti) senza duplicare il markup della card. Nessun impatto sugli usi esistenti (prop opzionale, `undefined` di default).
