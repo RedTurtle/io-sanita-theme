@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.38.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.37.1...2.38.0) (2026-09-22)
+
+### Features
+
+* aggiunge la prop extraContent a CardPlace ([#181](https://github.com/RedTurtle/io-sanita-theme/issues/181)) ([56fcaf1](https://github.com/RedTurtle/io-sanita-theme/commit/56fcaf1c6ba4265190151a2feb0a18c5d8609427))
+
+### Maintenance
+
+* updated volto-slate-italia to 1.0.12 ([#183](https://github.com/RedTurtle/io-sanita-theme/issues/183)) ([60f2594](https://github.com/RedTurtle/io-sanita-theme/commit/60f25944cc9f973f6489d8197acfe0b12ef46a52))
+
 ## [2.37.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.37.0...2.37.1) (2026-09-01)
 
 ### Bug Fixes
