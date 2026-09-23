@@ -34,17 +34,30 @@ const EventoSchemaOrg = ({ content }) => {
     );
   }
   // se l'evento è fisico priorità all'indirizzo scritto direttamente nel CT, in alternativa la prima struttura associata
-  if (content.street && content.zip_code && content.city) {
+  if (
+    content.street ||
+    content.city ||
+    content.zip_code ||
+    content.nome_sede
+  ) {
     schemaOrg.location = {
       '@type': 'Place',
       name: content?.nome_sede || 'Sede',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: content.street,
-        addressLocality: content.city,
-        postalCode: content.zip_code,
+        ...(content.street && { streetAddress: content.street }),
+        ...(content.city && { addressLocality: content.city }),
+        ...(content.zip_code && { postalCode: content.zip_code }),
         addressCountry: 'IT',
       },
+      ...(content.geolocation?.latitude &&
+        content.geolocation?.longitude && {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: content.geolocation.latitude,
+            longitude: content.geolocation.longitude,
+          },
+        }),
     };
   } else if (content.struttura_correlata?.length > 0) {
     schemaOrg.location = {
@@ -52,12 +65,19 @@ const EventoSchemaOrg = ({ content }) => {
       name: content.struttura_correlata[0].title,
       address: {
         '@type': 'PostalAddress',
-        // questi sono campi obbligatori per la struttura
-        streetAddress: content.struttura_correlata[0].street,
-        addressLocality: content.struttura_correlata[0].city,
-        postalCode: content.struttura_correlata[0].zip_code,
+        ...(content.struttura_correlata[0].street && { streetAddress: content.struttura_correlata[0].street }),
+        ...(content.struttura_correlata[0].city && { addressLocality: content.struttura_correlata[0].city }),
+        ...(content.struttura_correlata[0].zip_code && { postalCode: content.struttura_correlata[0].zip_code }),
         addressCountry: 'IT',
       },
+      ...(content.struttura_correlata[0]?.geolocation?.latitude &&
+        content.struttura_correlata[0]?.geolocation?.longitude && {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: content.struttura_correlata[0].geolocation.latitude,
+            longitude: content.struttura_correlata[0].geolocation.longitude,
+          },
+        }),
     };
   }
 
@@ -86,13 +106,13 @@ const EventoSchemaOrg = ({ content }) => {
     );
   }
   if (content.persona_correlata?.length > 0) {
-    attendeeList.push(content.persona_correlata.map((item) => item.title));
+    attendeeList.push(...content.persona_correlata.map((item) => item.title));
   }
   if (attendeeList.length > 0) {
-    schemaOrg.attendee = {
+    schemaOrg.attendee = attendeeList.map((name) => ({
       '@type': 'Person',
-      name: attendeeList.join(', '),
-    };
+      name,
+    }));
   }
 
   // a chi si rivolge
