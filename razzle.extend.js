@@ -3,36 +3,58 @@
  * @module razzle.config
  */
 
-const makeLoaderFinder = require('razzle-dev-utils/makeLoaderFinder');
+/**
+ * This file is required through the `io-sanita-theme` symlink inside a
+ * consuming site's node_modules. Node resolves symlinked modules to their real
+ * filesystem path before processing further requires, so a plain
+ * `require('@plone/razzle-dev-utils/...')` here would search this repo's own
+ * (sibling, unrelated) directory tree instead of the consuming site's
+ * node_modules. Anchor the resolution to process.cwd() — razzle always runs
+ * with the site's root as the working directory — to find the real package.
+ */
+const makeLoaderFinder = require(
+  require.resolve('@plone/razzle-dev-utils/makeLoaderFinder', {
+    paths: [process.cwd()],
+  }),
+);
 // const fileLoaderFinder = makeLoaderFinder('file-loader');
 // const urlLoaderFinder = makeLoaderFinder('url-loader');
 // const lessLoaderFinder = makeLoaderFinder('less-loader');
 const babelLoaderFinder = makeLoaderFinder('babel-loader');
 
+// Volto 19 passes plugins as objects, not bare strings, so the previous
+// `plugin !== 'scss'` never matched and the default scss plugin was kept
+// alongside ours. It also no longer resolves a plugin by name alone, hence
+// the explicit `object:`.
+const sassOptions = {
+  includePaths: ['node_modules'],
+  outputStyle: 'expanded',
+  sourceMap: true,
+  quiet: true,
+  quietDeps: true,
+  // Bootstrap Italia and design-react-kit still use the legacy sass APIs;
+  // without this every build prints thousands of deprecation warnings.
+  silenceDeprecations: [
+    'import',
+    'global-builtin',
+    'color-functions',
+    'legacy-js-api',
+  ],
+};
+
 const plugins = (defaultPlugins) => {
-  const newPlugins = defaultPlugins.filter((plugin) => plugin !== 'scss');
+  const newPlugins = defaultPlugins.filter((plugin) => plugin.name !== 'scss');
   newPlugins.push({
     name: 'scss',
+    object: require(
+      require.resolve('@plone/volto/webpack-plugins/webpack-scss-plugin', {
+        paths: [process.cwd()],
+      }),
+    ),
     options: {
       sass: {
-        dev: {
-          sassOptions: {
-            includePaths: ['node_modules'],
-            outputStyle: 'expanded',
-            sourceMap: true,
-            quiet: true,
-            quietDeps: true,
-          },
-        },
-        prod: {
-          sassOptions: {
-            includePaths: ['node_modules'],
-            outputStyle: 'expanded',
-            sourceMap: true,
-            quiet: true,
-            quietDeps: true,
-          },
-        },
+        dev: { sassOptions },
+        prod: { sassOptions },
       },
     },
   });

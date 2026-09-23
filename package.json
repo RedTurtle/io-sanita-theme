@@ -1,6 +1,6 @@
 {
   "name": "io-sanita-theme",
-  "version": "2.38.0",
+  "version": "3.0.0-alpha.0",
   "description": "io-sanita-theme: Volto add-on",
   "main": "src/index.js",
   "license": "MIT",
@@ -92,16 +92,23 @@
     "typescript": "5.3.3"
   },
   "peerDependencies": {
-    "@plone/volto": "^18.0.0"
+    "@plone/volto": "19.4.1"
+  },
+  "engines": {
+    "node": "^22 || ^24"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.18.9",
     "@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
     "@babel/plugin-proposal-throw-expressions": "7.18.6",
-    "@eeacms/volto-taxonomy": "5.1.1",
+    "@eeacms/volto-taxonomy": "6.0.5",
     "@loadable/babel-plugin": "5.13.2",
     "@plone-collective/volto-contents-next": "0.5.5",
-    "@plone-collective/volto-sentry": "0.3.1",
+    "@plone-collective/volto-sentry": "1.0.1",
     "@release-it/conventional-changelog": "^9.0.3",
     "bootstrap-italia": "2.9.2",
     "design-react-kit": "5.0.0-10",
@@ -116,25 +123,25 @@
     "typeface-lora": "1.1.13",
     "typeface-roboto-mono": "1.1.13",
     "typeface-titillium-web": "1.1.13",
-    "volto-blocks-widget": "3.4.4",
-    "volto-data-grid-widget": "2.3.1",
-    "volto-dropdownmenu": "4.1.4",
-    "volto-editablefooter": "5.1.9",
-    "volto-feedback": "0.6.2",
+    "volto-blocks-widget": "3.4.11",
+    "volto-data-grid-widget": "2.4.1",
+    "volto-dropdownmenu": "4.1.6",
+    "volto-editablefooter": "5.1.12",
+    "volto-feedback": "0.7.3",
     "volto-feedback-italia": "1.0.8",
     "volto-form-block-italia": "1.1.2",
-    "volto-gdpr-privacy": "2.2.15",
-    "volto-querywidget-with-browser": "0.4.3",
+    "volto-gdpr-privacy": "2.4.0",
+    "volto-querywidget-with-browser": "0.4.4",
     "volto-repeatable-content-block": "1.5.0",
     "volto-rss-block": "3.0.1",
-    "volto-rt-carousel": "1.0.0",
-    "volto-secondarymenu": "4.1.4",
+    "volto-rt-carousel": "1.0.1",
+    "volto-secondarymenu": "4.1.6",
     "volto-site-settings": "0.4.7",
     "volto-slate-italia": "1.0.12",
     "volto-slimheader": "0.1.6",
     "volto-social-settings": "3.1.2",
-    "volto-subfooter": "3.1.3",
+    "volto-subfooter": "3.1.5",
     "volto-subsites": "4.0.2",
-    "volto-venue": "4.1.1"
+    "volto-venue": "4.1.2"
   }
 }

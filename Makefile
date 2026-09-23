@@ -22,7 +22,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6
-VOLTO_VERSION=17.0.0
+VOLTO_VERSION=19.4.1
 
 ADDON_NAME='io-sanita-theme'
 ADDON_PATH='io-sanita-theme'
