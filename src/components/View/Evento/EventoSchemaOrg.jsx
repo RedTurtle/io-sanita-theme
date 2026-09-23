@@ -106,13 +106,13 @@ const EventoSchemaOrg = ({ content }) => {
     );
   }
   if (content.persona_correlata?.length > 0) {
-    attendeeList.push(...content.persona_correlata.map((item) => item.title));
+    attendeeList.push(content.persona_correlata.map((item) => item.title));
   }
   if (attendeeList.length > 0) {
-    schemaOrg.attendee = attendeeList.map((name) => ({
+    schemaOrg.attendee = {
       '@type': 'Person',
-      name,
-    }));
+      name: attendeeList.join(', '),
+    };
   }
 
   // a chi si rivolge
