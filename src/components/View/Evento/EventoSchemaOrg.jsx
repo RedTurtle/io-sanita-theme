@@ -43,13 +43,18 @@ const EventoSchemaOrg = ({ content }) => {
     schemaOrg.location = {
       '@type': 'Place',
       name: content?.nome_sede || 'Sede',
-      address: {
-        '@type': 'PostalAddress',
-        ...(content.street && { streetAddress: content.street }),
-        ...(content.city && { addressLocality: content.city }),
-        ...(content.zip_code && { postalCode: content.zip_code }),
-        addressCountry: 'IT',
-      },
+      ...((content.street ||
+        content.city ||
+        content.zip_code ||
+        (content.geolocation?.latitude && content.geolocation?.longitude)) && {
+        address: {
+          '@type': 'PostalAddress',
+          ...(content.street && { streetAddress: content.street }),
+          ...(content.city && { addressLocality: content.city }),
+          ...(content.zip_code && { postalCode: content.zip_code }),
+          addressCountry: 'IT',
+        },
+      }),
       ...(content.geolocation?.latitude &&
         content.geolocation?.longitude && {
           geo: {
@@ -63,13 +68,19 @@ const EventoSchemaOrg = ({ content }) => {
     schemaOrg.location = {
       '@type': 'Place',
       name: content.struttura_correlata[0].title,
-      address: {
-        '@type': 'PostalAddress',
-        ...(content.struttura_correlata[0].street && { streetAddress: content.struttura_correlata[0].street }),
-        ...(content.struttura_correlata[0].city && { addressLocality: content.struttura_correlata[0].city }),
-        ...(content.struttura_correlata[0].zip_code && { postalCode: content.struttura_correlata[0].zip_code }),
-        addressCountry: 'IT',
-      },
+      ...((content.struttura_correlata[0].street ||
+        content.struttura_correlata[0].city ||
+        content.struttura_correlata[0].zip_code ||
+        (content.struttura_correlata[0].geolocation?.latitude &&
+          content.struttura_correlata[0].geolocation?.longitude)) && {
+        address: {
+          '@type': 'PostalAddress',
+          ...(content.struttura_correlata[0].street && { streetAddress: content.struttura_correlata[0].street }),
+          ...(content.struttura_correlata[0].city && { addressLocality: content.struttura_correlata[0].city }),
+          ...(content.struttura_correlata[0].zip_code && { postalCode: content.struttura_correlata[0].zip_code }),
+          addressCountry: 'IT',
+        },
+      }),
       ...(content.struttura_correlata[0]?.geolocation?.latitude &&
         content.struttura_correlata[0]?.geolocation?.longitude && {
           geo: {
