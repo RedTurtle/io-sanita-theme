@@ -47,6 +47,7 @@
 
 - - All'interno del blocco video dentro un blocco Griglia, è stato risolto il problema per cui non era possibile digitare o incollare l'url se il blocco video non era già selezionato.
 - Copiando e incollando una tabella da un altro documento o da una pagina web, ora viene inserito un vero blocco Tabella, modificabile e con lo stesso aspetto di una tabella creata a mano: prima al suo posto compariva un riquadro con la scritta "Blocco table sconosciuto".
+- Accessibilità: la pagina di errore 404 ora ha un titolo (es. "Pagina non trovata - Nome del sito"), che prima era vuoto: così la scheda del browser, la cronologia e i lettori di schermo riconoscono subito che si tratta di una pagina non trovata.
 
 
 
