@@ -123,6 +123,7 @@ const NotFound = () => {
               }}
               showSubmit={true}
               ref={inputRef}
+              ariaLabel={intl.formatMessage(messages.searchLabel)}
             />
           </div>
         </div>
