@@ -1,5 +1,7 @@
 /* CUSTOMIZATIONS:
   - Agid styling
+  - a11y: rimosso aria-describedby, che puntava al testo della label e non a un
+    id presente nel DOM (WCAG 4.1.1/4.1.2)
 */
 import React from 'react';
 import { Toggle, FormGroup } from 'design-react-kit';
@@ -20,7 +22,6 @@ const ToggleFacet = (props) => {
           onChange={({ target }) => {
             onChange(facet.field.value, target.checked);
           }}
-          aria-describedby={facet?.field?.label}
         />
       </FormGroup>
     </div>
