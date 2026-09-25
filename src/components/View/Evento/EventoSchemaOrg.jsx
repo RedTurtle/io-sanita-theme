@@ -27,12 +27,6 @@ const EventoSchemaOrg = ({ content }) => {
     schemaOrg.description = description.join('. ');
   }
 
-  // se l'evento è online
-  if (richTextHasContent(content.webinar)) {
-    schemaOrg.eventAttendanceMode = SchemaOrgUtils.fieldDataToPlainText(
-      content.webinar,
-    );
-  }
   // se l'evento è fisico priorità all'indirizzo scritto direttamente nel CT, in alternativa la prima struttura associata
   if (
     content.street ||
@@ -90,6 +84,39 @@ const EventoSchemaOrg = ({ content }) => {
           },
         }),
     };
+  }
+
+  // modalità di partecipazione
+  const isOnline = richTextHasContent(content.webinar);
+  if (isOnline && schemaOrg.location) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/MixedEventAttendanceMode';
+  } else if (isOnline) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/OnlineEventAttendanceMode';
+  } else if (schemaOrg.location) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/OfflineEventAttendanceMode';
+  }
+
+  // se l'evento è online aggiungo il luogo virtuale
+  if (isOnline) {
+    const webinarText = SchemaOrgUtils.fieldDataToPlainText(content.webinar);
+    const webinarUrl =
+      JSON.stringify(content.webinar).match(/"url":"([^"]+)"/)?.[1] ||
+      webinarText.match(/(https?:\/\/|www\.)\S+/)?.[0];
+    const virtualLocation = {
+      '@type': 'VirtualLocation',
+      name: webinarText,
+      ...(webinarUrl && {
+        url: /^https?:\/\//.test(webinarUrl)
+          ? webinarUrl
+          : `https://${webinarUrl}`,
+      }),
+    };
+    schemaOrg.location = schemaOrg.location
+      ? [schemaOrg.location, virtualLocation]
+      : virtualLocation;
   }
 
   // organizzatore interno
