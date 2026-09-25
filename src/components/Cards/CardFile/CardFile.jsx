@@ -115,10 +115,12 @@ export const CardFile = ({
   const defaultIcon = (
     <Icon
       icon="it-document"
-      alt={intl.formatMessage(messages.attachment)}
-      title={intl.formatMessage(messages.attachment)}
       color="accent"
       size="lg"
+      alt={intl.formatMessage(messages.attachment)}
+      title={intl.formatMessage(messages.attachment)}
+      aria-hidden="true"
+      focusable="false"
     />
   );
 
@@ -126,10 +128,12 @@ export const CardFile = ({
     _item['@type'] === 'Link' ? (
       <Icon
         icon="it-external-link"
-        alt={intl.formatMessage(messages.link)}
-        title={intl.formatMessage(messages.link)}
         color="accent"
         size="lg"
+        alt={intl.formatMessage(messages.link)}
+        title={intl.formatMessage(messages.link)}
+        aria-hidden="true"
+        focusable="false"
       />
     ) : (
       <FileIcon item={_item} fileFormat={file ? true : false} />

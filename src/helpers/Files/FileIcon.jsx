@@ -54,9 +54,15 @@ const FileIcon = ({
           alt={file.filename}
           title={file.filename}
           color="accent"
+          aria-hidden="true"
+          focusable="false"
         />
       ) : (
-        <Icon className="icon-svg-custom icon-accent" name={icon.name} />
+        <Icon
+          className="icon-svg-custom icon-accent"
+          name={icon.name}
+          ariaHidden="true"
+        />
       )}
       {showLabel && <span className="ms-4">{label}</span>}
     </>
