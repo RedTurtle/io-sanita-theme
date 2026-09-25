@@ -83,7 +83,7 @@ const FontAwesomeIcon = (props) => {
       }}
       aria-labelledby={props['aria-hidden'] ? undefined : iconID}
       aria-hidden={props['aria-hidden']}
-      focusable={props.focusable}
+      focusable={props['aria-hidden'] ? undefined : props.focusable}
     />
   ) : icon ? (
     <span

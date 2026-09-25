@@ -21,7 +21,6 @@ const FileIcon = ({
   size = '2x',
   showLabel = false,
   fileFormat = false,
-  decorative = false,
 }) => {
   const intl = useIntl();
   const defaultIcon = { lib: 'far', name: 'file-lines', svg_format: false };
@@ -52,17 +51,17 @@ const FileIcon = ({
       {!icon.svg_format ? (
         <IconFA
           icon={[icon.lib, icon.name]}
-          alt={decorative ? undefined : file.filename}
-          title={decorative ? undefined : file.filename}
+          alt={file.filename}
+          title={file.filename}
           color="accent"
-          aria-hidden={decorative ? 'true' : undefined}
-          focusable={decorative ? 'false' : undefined}
+          aria-hidden="true"
+          focusable="false"
         />
       ) : (
         <Icon
           className="icon-svg-custom icon-accent"
           name={icon.name}
-          ariaHidden={decorative ? 'true' : undefined}
+          ariaHidden="true"
         />
       )}
       {showLabel && <span className="ms-4">{label}</span>}
