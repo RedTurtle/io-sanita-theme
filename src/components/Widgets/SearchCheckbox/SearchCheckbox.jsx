@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { defineMessages, useIntl } from 'react-intl';
-import { Input, FormGroup, Label, Collapse, Button } from 'design-react-kit';
+import { FormGroup, Label, Collapse, Button } from 'design-react-kit';
 import values from 'lodash/values';
 import cx from 'classnames';
 import './searchCheckbox.scss';
@@ -111,7 +111,12 @@ const SearchCheckbox = ({
       {options.map((item, index) => {
         return (
           <FormGroup check tag="div" key={item.value + index}>
-            <Input
+            {/* a11y: input nativo e non <Input> di design-react-kit, perché
+            quest'ultimo aggiunge sempre aria-describedby="<id>Description"
+            anche quando la descrizione non esiste, e non è sovrascrivibile
+            dall'esterno. */}
+            <input
+              className="form-control"
               id={item.value + index}
               type="checkbox"
               checked={filters?.[filterKey]?.indexOf(item.value) >= 0}

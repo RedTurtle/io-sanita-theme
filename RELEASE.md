@@ -47,6 +47,7 @@
 
 - - All'interno del blocco video dentro un blocco Griglia, è stato risolto il problema per cui non era possibile digitare o incollare l'url se il blocco video non era già selezionato.
 - Copiando e incollando una tabella da un altro documento o da una pagina web, ora viene inserito un vero blocco Tabella, modificabile e con lo stesso aspetto di una tabella creata a mano: prima al suo posto compariva un riquadro con la scritta "Blocco table sconosciuto".
+- Accessibilità: nei filtri della ricerca del sito, del blocco "Cerca servizi e procedure" (Come fare per) e dei blocchi Ricerca, le caselle di scelta rimandavano a descrizioni che non esistono nella pagina. Il riferimento è stato tolto: i lettori di schermo continuano ad annunciare il nome del filtro, senza più relazioni non valide. Nessun cambiamento visibile.
 
 
 
