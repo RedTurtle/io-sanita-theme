@@ -23,6 +23,7 @@ export {
   checkIfValidVideoLink,
 } from 'io-sanita-theme/helpers/video';
 export { useDebouncedEffect } from 'io-sanita-theme/helpers/debounce';
+export { removeDanglingAriaDescribedby } from 'io-sanita-theme/helpers/a11y';
 
 //url
 export { isResolveUID, useHomePath } from 'io-sanita-theme/helpers/url';
