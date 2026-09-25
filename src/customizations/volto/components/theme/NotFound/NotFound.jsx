@@ -2,11 +2,13 @@
 CUSTOMIZATIONS:
 - Removed the "Site Administration" link, added a link to the home page
 - Added a Search in site bar
+- Added Helmet title (a11y: WCAG 2.4.2)
 */
 
 import { useEffect, useState, useRef } from 'react';
 
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
+import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import { FormattedMessage } from 'react-intl';
 import { defineMessages, useIntl } from 'react-intl';
 import { useLocation } from 'react-router-dom';
@@ -49,6 +51,10 @@ const messages = defineMessages({
   searchLabel: {
     id: 'searchLabel',
     defaultMessage: 'Cerca nel sito',
+  },
+  error404title: {
+    id: 'error404title',
+    defaultMessage: 'Pagina non trovata',
   },
   error404maintext: {
     id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
@@ -97,6 +103,7 @@ const NotFound = () => {
 
   return (
     <Container className="view-wrapper px-5 text-center py-3">
+      <Helmet title={intl.formatMessage(messages.error404title)} />
       <BodyClass className="page-not-found" />
       <h1>
         <FormattedMessage
