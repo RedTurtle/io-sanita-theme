@@ -80,10 +80,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
     <>
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
-          <div
-            className="point-list-aside point-list-primary fw-normal"
-            aria-label={start.format('DD MMMM Y')}
-          >
+          <div className="point-list-aside point-list-primary fw-normal">
+            <span className="visually-hidden">{start.format('DD MMMM Y')}</span>
             <span className="point-date font-monospace" aria-hidden={true}>
               {start.format('DD')}
             </span>
@@ -118,10 +116,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         </div>
         {!openEnd && (
           <div className="point-list">
-            <div
-              className="point-list-aside point-list-primary fw-normal"
-              aria-label={end.format('DD MMMM Y')}
-            >
+            <div className="point-list-aside point-list-primary fw-normal">
+              <span className="visually-hidden">{end.format('DD MMMM Y')}</span>
               <span className="point-date font-monospace" aria-hidden={true}>
                 {end.format('DD')}
               </span>
@@ -158,7 +154,9 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       )}
       {additionalDates.length > 0 && (
         <div className="mt-4">
-          <h5>{intl.formatMessage(messages.additional_dates)}</h5>
+          <h3 className="h5">
+            {intl.formatMessage(messages.additional_dates)}
+          </h3>
           {additionalDates.map((additionalDate, i) => (
             <div className="font-serif" key={i}>
               {viewDate(intl.locale, additionalDate, 'dddd DD MMMM YYYY')}
@@ -168,7 +166,7 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
       )}
       {exdates.length > 0 && (
         <div className="mt-4">
-          <h5>{intl.formatMessage(messages.excluded_dates)}</h5>
+          <h3 className="h5">{intl.formatMessage(messages.excluded_dates)}</h3>
           {exdates.map((exDate, i) => (
             <div className="font-serif" key={'exdate' + i}>
               {viewDate(intl.locale, exDate, 'dddd DD MMMM YYYY')}
