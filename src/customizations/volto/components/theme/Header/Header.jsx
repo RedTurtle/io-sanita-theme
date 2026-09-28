@@ -61,7 +61,7 @@ const Header = ({ pathname }) => {
   return (
     <div className="public-ui">
       {/* <Headers sticky={true} className={mini ? 'is-sticky' : undefined}> */}
-      <div ref={headerWrapperRef} id="mainHeaderWrapper">
+      <header ref={headerWrapperRef} id="mainHeaderWrapper">
         <Headers
           className={cx({
             'is-sticky': mini && !isEditMode,
@@ -84,7 +84,7 @@ const Header = ({ pathname }) => {
 
         {/* SUBSITE HEADER */}
         <SubsiteHeader />
-      </div>
+      </header>
       {/* SPACE HEADER WHEN IS STICKY */}
       <div id="headerSpacer" style={{ height: mini ? headerHeight : 0 }} />
     </div>
