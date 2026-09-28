@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.38.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.0...2.38.1) (2026-09-28)
+
+### Bug Fixes
+
+* a11y - remove unresolvable aria-describedby in search filters - WCAG 4.1.1/4.1.2 ([#188](https://github.com/RedTurtle/io-sanita-theme/issues/188)) ([4d78a06](https://github.com/RedTurtle/io-sanita-theme/commit/4d78a06397fecd39129e55ce99e916a8d4740a83))
+* a11y for AttachmentCArd icon and ariaLabel ([#187](https://github.com/RedTurtle/io-sanita-theme/issues/187)) ([1d200ee](https://github.com/RedTurtle/io-sanita-theme/commit/1d200ee7bf4e91440f690774a8ff17d149aec2c0))
+* added aria label in search bar in 404 page([#186](https://github.com/RedTurtle/io-sanita-theme/issues/186)) ([305822d](https://github.com/RedTurtle/io-sanita-theme/commit/305822d06169cd865d22453d8a7164847230a6c9))
+* schema.org for Event: handle location and online event ([#184](https://github.com/RedTurtle/io-sanita-theme/issues/184)) ([9557c75](https://github.com/RedTurtle/io-sanita-theme/commit/9557c759cb68042ab2dee4c99bf8df3e899ace04))
+* set document title on 404 page - WCAG 2.4.2 ([#185](https://github.com/RedTurtle/io-sanita-theme/issues/185)) ([c70602c](https://github.com/RedTurtle/io-sanita-theme/commit/c70602c3da0a681661a4579abd31bf11074baef7))
+
+### Maintenance
+
+* preparing release 2.38.1 ([aed1539](https://github.com/RedTurtle/io-sanita-theme/commit/aed153946378fd626fb224ae532ea64bddd3495e))
+* update volto-gdpr-privacy to 2.4.0 ([#191](https://github.com/RedTurtle/io-sanita-theme/issues/191)) ([236a362](https://github.com/RedTurtle/io-sanita-theme/commit/236a362d46eeb31cf082f6541eb509ea21a007b4))
+* volto-venue updated to 4.2.0 ([#190](https://github.com/RedTurtle/io-sanita-theme/issues/190)) ([e864a4d](https://github.com/RedTurtle/io-sanita-theme/commit/e864a4daedd87d20ca3702d1925e7af3b0109ee6))
+
 ## [2.38.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.37.1...2.38.0) (2026-09-22)
 
 ### Features
