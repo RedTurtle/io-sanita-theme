@@ -1842,6 +1842,11 @@ msgstr ""
 msgid "end"
 msgstr ""
 
+#. Default: "Pagina non trovata"
+#: overrideTranslations
+msgid "error404title"
+msgstr ""
+
 #. Default: "Url dell'evento"
 #: components/View/Evento/EventoUlterioriInformazioni
 msgid "event_url"
