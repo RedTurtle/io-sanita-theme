@@ -55,7 +55,6 @@ const FileIcon = ({
           title={file.filename}
           color="accent"
           aria-hidden="true"
-          focusable="false"
         />
       ) : (
         <Icon
