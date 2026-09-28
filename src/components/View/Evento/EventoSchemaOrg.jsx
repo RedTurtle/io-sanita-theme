@@ -27,38 +27,96 @@ const EventoSchemaOrg = ({ content }) => {
     schemaOrg.description = description.join('. ');
   }
 
-  // se l'evento è online
-  if (richTextHasContent(content.webinar)) {
-    schemaOrg.eventAttendanceMode = SchemaOrgUtils.fieldDataToPlainText(
-      content.webinar,
-    );
-  }
   // se l'evento è fisico priorità all'indirizzo scritto direttamente nel CT, in alternativa la prima struttura associata
-  if (content.street && content.zip_code && content.city) {
+  if (
+    content.street ||
+    content.city ||
+    content.zip_code ||
+    content.nome_sede
+  ) {
     schemaOrg.location = {
       '@type': 'Place',
       name: content?.nome_sede || 'Sede',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: content.street,
-        addressLocality: content.city,
-        postalCode: content.zip_code,
-        addressCountry: 'IT',
-      },
+      ...((content.street ||
+        content.city ||
+        content.zip_code ||
+        (content.geolocation?.latitude && content.geolocation?.longitude)) && {
+        address: {
+          '@type': 'PostalAddress',
+          ...(content.street && { streetAddress: content.street }),
+          ...(content.city && { addressLocality: content.city }),
+          ...(content.zip_code && { postalCode: content.zip_code }),
+          addressCountry: 'IT',
+        },
+      }),
+      ...(content.geolocation?.latitude &&
+        content.geolocation?.longitude && {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: content.geolocation.latitude,
+            longitude: content.geolocation.longitude,
+          },
+        }),
     };
   } else if (content.struttura_correlata?.length > 0) {
     schemaOrg.location = {
       '@type': 'Place',
       name: content.struttura_correlata[0].title,
-      address: {
-        '@type': 'PostalAddress',
-        // questi sono campi obbligatori per la struttura
-        streetAddress: content.struttura_correlata[0].street,
-        addressLocality: content.struttura_correlata[0].city,
-        postalCode: content.struttura_correlata[0].zip_code,
-        addressCountry: 'IT',
-      },
+      ...((content.struttura_correlata[0].street ||
+        content.struttura_correlata[0].city ||
+        content.struttura_correlata[0].zip_code ||
+        (content.struttura_correlata[0].geolocation?.latitude &&
+          content.struttura_correlata[0].geolocation?.longitude)) && {
+        address: {
+          '@type': 'PostalAddress',
+          ...(content.struttura_correlata[0].street && { streetAddress: content.struttura_correlata[0].street }),
+          ...(content.struttura_correlata[0].city && { addressLocality: content.struttura_correlata[0].city }),
+          ...(content.struttura_correlata[0].zip_code && { postalCode: content.struttura_correlata[0].zip_code }),
+          addressCountry: 'IT',
+        },
+      }),
+      ...(content.struttura_correlata[0]?.geolocation?.latitude &&
+        content.struttura_correlata[0]?.geolocation?.longitude && {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: content.struttura_correlata[0].geolocation.latitude,
+            longitude: content.struttura_correlata[0].geolocation.longitude,
+          },
+        }),
     };
+  }
+
+  // modalità di partecipazione
+  const isOnline = richTextHasContent(content.webinar);
+  if (isOnline && schemaOrg.location) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/MixedEventAttendanceMode';
+  } else if (isOnline) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/OnlineEventAttendanceMode';
+  } else if (schemaOrg.location) {
+    schemaOrg.eventAttendanceMode =
+      'https://schema.org/OfflineEventAttendanceMode';
+  }
+
+  // se l'evento è online aggiungo il luogo virtuale
+  if (isOnline) {
+    const webinarText = SchemaOrgUtils.fieldDataToPlainText(content.webinar);
+    const webinarUrl =
+      JSON.stringify(content.webinar).match(/"url":"([^"]+)"/)?.[1] ||
+      webinarText.match(/(https?:\/\/|www\.)\S+/)?.[0];
+    const virtualLocation = {
+      '@type': 'VirtualLocation',
+      name: webinarText,
+      ...(webinarUrl && {
+        url: /^https?:\/\//.test(webinarUrl)
+          ? webinarUrl
+          : `https://${webinarUrl}`,
+      }),
+    };
+    schemaOrg.location = schemaOrg.location
+      ? [schemaOrg.location, virtualLocation]
+      : virtualLocation;
   }
 
   // organizzatore interno
