@@ -28,12 +28,7 @@ const EventoSchemaOrg = ({ content }) => {
   }
 
   // se l'evento è fisico priorità all'indirizzo scritto direttamente nel CT, in alternativa la prima struttura associata
-  if (
-    content.street ||
-    content.city ||
-    content.zip_code ||
-    content.nome_sede
-  ) {
+  if (content.street || content.city || content.zip_code || content.nome_sede) {
     schemaOrg.location = {
       '@type': 'Place',
       name: content?.nome_sede || 'Sede',
@@ -69,9 +64,15 @@ const EventoSchemaOrg = ({ content }) => {
           content.struttura_correlata[0].geolocation?.longitude)) && {
         address: {
           '@type': 'PostalAddress',
-          ...(content.struttura_correlata[0].street && { streetAddress: content.struttura_correlata[0].street }),
-          ...(content.struttura_correlata[0].city && { addressLocality: content.struttura_correlata[0].city }),
-          ...(content.struttura_correlata[0].zip_code && { postalCode: content.struttura_correlata[0].zip_code }),
+          ...(content.struttura_correlata[0].street && {
+            streetAddress: content.struttura_correlata[0].street,
+          }),
+          ...(content.struttura_correlata[0].city && {
+            addressLocality: content.struttura_correlata[0].city,
+          }),
+          ...(content.struttura_correlata[0].zip_code && {
+            postalCode: content.struttura_correlata[0].zip_code,
+          }),
           addressCountry: 'IT',
         },
       }),
