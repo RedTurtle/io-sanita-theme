@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useClient } from '@plone/volto/hooks/client/useClient';
 import cx from 'classnames';
 import qs from 'query-string';
 import { useDispatch, useSelector } from 'react-redux';
@@ -118,6 +119,21 @@ const Search = () => {
   const subsite = useSelector((state) => state.subsite?.data);
   const searchFilters = useSelector((state) => state.searchFilters.result);
   const searchResults = useSelector((state) => state.searchResults);
+  // The search runs in a useEffect, so the server always renders this area
+  // with an empty result set, i.e. the spinner. The client must emit exactly
+  // the same markup on its first render or React fails hydration and throws
+  // the whole server-rendered tree away - which also leaves every
+  // design-react-kit icon on the page stuck on its empty placeholder.
+  // useClient() stays false until after mount on both sides.
+  const isClient = useClient();
+  // BISECT-DEBUG (temporaneo)
+  if (typeof window !== 'undefined') {
+    window.__srN = (window.__srN || 0) + 1;
+    if (window.__srN <= 4) {
+      // eslint-disable-next-line no-console
+      console.warn('BISECT render#' + window.__srN, JSON.stringify({ isClient, l: searchResults.loadingResults, e: searchResults.hasError, keys: Object.keys(searchResults.result || {}), tot: searchResults?.result?.items_total }));
+    }
+  }
   const [sections, setSections] = useState([]);
 
   const [filters, setFilters] = useState({
@@ -493,7 +509,8 @@ const Search = () => {
                 </Row>
 
                 {/* Risultati */}
-                {searchResults.loadingResults ||
+                {!isClient ||
+                searchResults.loadingResults ||
                 (!searchResults.hasError && isEmpty(searchResults.result)) ? (
                   <div className="d-flex justify-content-center p-4">
                     <Spinner active />

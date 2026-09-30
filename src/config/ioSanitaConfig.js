@@ -38,12 +38,10 @@ import bandoSVG from 'io-sanita-theme/icons/bando.svg';
 import logSVG from 'io-sanita-theme/icons/log.svg';
 
 import reducers from 'io-sanita-theme/reducers';
-import {
-  LoginAgid,
-  Icon,
-  FileWidget,
-  CardSimple,
-} from 'io-sanita-theme/components';
+import { Icon, FileWidget, CardSimple } from 'io-sanita-theme/components';
+// Imported from its own module rather than from the barrel, which exports it
+// through loadable(): see the note on ReleaseLog above.
+import LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
 import PageLoader from 'io-sanita-theme/components/AppExtras/PageLoader/PageLoader';
 import TrackFocus from 'io-sanita-theme/components/AppExtras/TrackFocus';
 import HandleAnchor from 'io-sanita-theme/components/AppExtras/HandleAnchor';
@@ -71,9 +69,11 @@ import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
 
-const ReleaseLog = loadable(() =>
-  import('io-sanita-theme/components/ReleaseLog/ReleaseLog'),
-);
+// Not loadable: a lazy component used directly as an `addonRoutes` component
+// renders nothing on the first client render while the server rendered it in
+// full, so React throws the whole hydrated tree away. Route components are
+// always needed for the route they serve, so splitting them buys nothing.
+import ReleaseLog from 'io-sanita-theme/components/ReleaseLog/ReleaseLog';
 
 const messages = defineMessages({
   search_brdc: {
