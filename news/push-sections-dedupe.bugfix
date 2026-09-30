@@ -1,0 +1,1 @@
+In `ContentTypeViewSections` il controllo anti-duplicati delle `pushSections` ora cerca la chiave in tutte le sezioni, non solo all'indice di inserimento: con un `atIndex` fuori range le sezioni non vengono più reinserite a ogni render.
