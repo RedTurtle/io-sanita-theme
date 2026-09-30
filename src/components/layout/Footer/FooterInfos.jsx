@@ -84,8 +84,8 @@ const FooterInfos = () => {
           widths={['xs', 'sm', 'md', 'lg', 'xl']}
           key={index}
         >
-          <h2 className="h4">
-            {column?.title && (
+          {column?.title && (
+            <h2 className="h4">
               <ConditionalLink
                 condition={column.titleLink?.length > 0}
                 item={column.titleLink?.[0]}
@@ -96,8 +96,8 @@ const FooterInfos = () => {
               >
                 {column.title}
               </ConditionalLink>
-            )}
-          </h2>
+            </h2>
+          )}
           {column.showSocial && <FooterSocials />}
           {richTextHasContent(column.slateText) ? (
             <TextBlockView data={{ value: column.slateText }} />

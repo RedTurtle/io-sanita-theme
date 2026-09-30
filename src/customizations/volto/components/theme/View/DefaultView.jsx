@@ -18,6 +18,7 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import { useDispatch, useSelector } from 'react-redux';
+import { isSubsiteRoot } from 'volto-subsites';
 
 import isEqual from 'lodash/isEqual';
 
@@ -33,6 +34,7 @@ const DefaultView = (props) => {
   const dispatch = useDispatch();
   const { views } = config.widgets;
   const contentSchema = useSelector((state) => state.schema?.schema);
+  const subsite = useSelector((state) => state.subsite?.data);
   const fieldsetsToExclude = [
     'categorization',
     'dates',
@@ -63,10 +65,20 @@ const DefaultView = (props) => {
   const Container =
     config.getComponent({ name: 'Container' }).component || DefaultContainer;
 
+  const isSiteRoot =
+    ['Plone Site', 'LRF'].includes(content?.['@type']) ||
+    isSubsiteRoot(location?.pathname || '', subsite);
+  const hasTitleBlock = Object.values(content?.blocks ?? {}).some(
+    (block) => block?.['@type'] === 'title',
+  );
+
   // If the content is not yet loaded, then do not show anything
   return contentLoaded ? (
     hasBlocksData(content) ? (
       <Container id="page-document" className="px-4">
+        {isSiteRoot && !hasTitleBlock && (
+          <h1 className="visually-hidden">{content.title}</h1>
+        )}
         <RenderBlocks {...props} path={path} />
       </Container>
     ) : (

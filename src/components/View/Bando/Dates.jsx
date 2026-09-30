@@ -94,10 +94,10 @@ const Dates = ({ dates }) => (
       return (
         item.date && (
           <div className="point-list" key={index}>
-            <div
-              className="point-list-aside point-list-warning"
-              aria-label={item.date.format('DD MMMM Y')}
-            >
+            <div className="point-list-aside point-list-warning">
+              <span className="visually-hidden">
+                {item.date.format('DD MMMM Y')}
+              </span>
               <span className="point-date text-monospace" aria-hidden={true}>
                 {item.date.format('DD')}
               </span>

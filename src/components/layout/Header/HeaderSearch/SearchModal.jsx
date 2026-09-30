@@ -95,7 +95,7 @@ const SearchModal = ({ closeModal, show }) => {
       toggle={closeModal}
       role="alertdialog"
     >
-      <ModalHeader toggle={closeModal} className="px-0 px-lg-4">
+      <ModalHeader toggle={closeModal} className="px-0 px-lg-4" tag="div">
         <Container className="">
           <div className="d-flex align-items-center">
             <Button

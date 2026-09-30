@@ -80,10 +80,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
     <>
       <div className="point-list-wrapper my-4 mb-5">
         <div className="point-list">
-          <div
-            className="point-list-aside point-list-primary fw-normal"
-            aria-label={start.format('DD MMMM Y')}
-          >
+          <div className="point-list-aside point-list-primary fw-normal">
+            <span className="visually-hidden">{start.format('DD MMMM Y')}</span>
             <span className="point-date font-monospace" aria-hidden={true}>
               {start.format('DD')}
             </span>
@@ -118,10 +116,8 @@ const Dates = ({ content, show_image, moment: momentlib, rrule }) => {
         </div>
         {!openEnd && (
           <div className="point-list">
-            <div
-              className="point-list-aside point-list-primary fw-normal"
-              aria-label={end.format('DD MMMM Y')}
-            >
+            <div className="point-list-aside point-list-primary fw-normal">
+              <span className="visually-hidden">{end.format('DD MMMM Y')}</span>
               <span className="point-date font-monospace" aria-hidden={true}>
                 {end.format('DD')}
               </span>
