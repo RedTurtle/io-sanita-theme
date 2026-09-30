@@ -1,8 +1,10 @@
 /* CUSTOMIZATIONS:
   - Agid styling
+  - a11y: rimosso l'aria-describedby non risolvibile (WCAG 4.1.1/4.1.2)
 */
 import React from 'react';
 import { Form, FormGroup, Input, Label } from 'design-react-kit';
+import { removeDanglingAriaDescribedby } from 'io-sanita-theme/helpers';
 import {
   selectFacetSchemaEnhancer,
   selectFacetStateToValue,
@@ -26,6 +28,9 @@ const CheckboxFacet = (props) => {
         {choices.map(({ label, value }, i) => (
           <FormGroup className="entry form-check-group" check key={value}>
             <Input
+              /* a11y: design-react-kit punta a un elemento descrittivo che
+                 qui non esiste, vedi removeDanglingAriaDescribedby */
+              innerRef={removeDanglingAriaDescribedby}
               disabled={isEditMode}
               id={label}
               type={'checkbox'}

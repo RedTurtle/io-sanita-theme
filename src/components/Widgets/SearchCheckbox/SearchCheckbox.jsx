@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { defineMessages, useIntl } from 'react-intl';
 import { Input, FormGroup, Label, Collapse, Button } from 'design-react-kit';
+import { removeDanglingAriaDescribedby } from 'io-sanita-theme/helpers';
 import values from 'lodash/values';
 import cx from 'classnames';
 import './searchCheckbox.scss';
@@ -112,6 +113,9 @@ const SearchCheckbox = ({
         return (
           <FormGroup check tag="div" key={item.value + index}>
             <Input
+              /* a11y: design-react-kit punta a un elemento descrittivo che
+                 qui non esiste, vedi removeDanglingAriaDescribedby */
+              innerRef={removeDanglingAriaDescribedby}
               id={item.value + index}
               type="checkbox"
               checked={filters?.[filterKey]?.indexOf(item.value) >= 0}

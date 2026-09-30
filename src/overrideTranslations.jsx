@@ -178,6 +178,10 @@ defineMessages({
     id: 'descendingTableSort',
     defaultMessage: 'descending',
   },
+  error404title: {
+    id: 'error404title',
+    defaultMessage: 'Pagina non trovata',
+  },
   error404maintext: {
     id: 'We apologize for the inconvenience, but the page you were trying to access is not at this address. You can use the search below to help you find what you are looking for:',
     defaultMessage:
