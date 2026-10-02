@@ -126,14 +126,6 @@ const Search = () => {
   // design-react-kit icon on the page stuck on its empty placeholder.
   // useClient() stays false until after mount on both sides.
   const isClient = useClient();
-  // BISECT-DEBUG (temporaneo)
-  if (typeof window !== 'undefined') {
-    window.__srN = (window.__srN || 0) + 1;
-    if (window.__srN <= 4) {
-      // eslint-disable-next-line no-console
-      console.warn('BISECT render#' + window.__srN, JSON.stringify({ isClient, l: searchResults.loadingResults, e: searchResults.hasError, keys: Object.keys(searchResults.result || {}), tot: searchResults?.result?.items_total }));
-    }
-  }
   const [sections, setSections] = useState([]);
 
   const [filters, setFilters] = useState({
