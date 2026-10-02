@@ -12,6 +12,29 @@ import {
 import VoltoRenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 /**
+ * Un blocco listing senza criteri di ricerca non ha nulla di sensato da
+ * mostrare, ma soprattutto in withQuerystringResults di Volto ricade nel ramo
+ * `dispatch(getContent(initialPath))`: una GET_CONTENT *non* subrequest, che
+ * sovrascrive lo stesso `state.content.data` usato dalla pagina corrente. Con
+ * più di un blocco così nella stessa pagina si innesca un ciclo di
+ * fetch/re-render senza fine, quindi qui non li renderizziamo affatto.
+ * La variante imageGallery è esclusa dal controllo perché, pur senza criteri,
+ * in Volto segue un ramo diverso (getQueryStringResults) e funziona.
+ */
+const isListingWithoutQuery = (blockData) => {
+  if (blockData?.['@type'] !== 'listing') return false;
+
+  const isImageGallery =
+    (!blockData.variation && blockData.template === 'imageGallery') ||
+    blockData.variation === 'imageGallery';
+  if (isImageGallery) return false;
+
+  // stessa fallback di Volto per i blocchi salvati prima dello schema blocks
+  const querystring = blockData.querystring || blockData;
+  return !(querystring?.query?.length > 0);
+};
+
+/**
  * RenderBlocks view component class.
  * @function RenderBlocks
  * @params {object} content: Content object.
@@ -30,8 +53,9 @@ const RenderBlocks = ({ content, exclude = ['title', 'description'] }) => {
     blocksLayoutFiltered =
       blockContent[blocksLayoutFieldname]?.items?.length > 0
         ? blockContent[blocksLayoutFieldname].items.filter((block) => {
-            const blockType = blockContent[blocksFieldname]?.[block]?.['@type'];
-            return exclude.indexOf(blockType) < 0;
+            const blockData = blockContent[blocksFieldname]?.[block];
+            if (isListingWithoutQuery(blockData)) return false;
+            return exclude.indexOf(blockData?.['@type']) < 0;
           })
         : null;
 
