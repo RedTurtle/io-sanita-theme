@@ -2,11 +2,25 @@
  * Body video block.
  * @module components/manage/Blocks/Video/Body
  *
- * Customizations:
- * - support external sources for preview image
- * - added ConditionalEmbed
- * - changed icon for preview with FontAwesome icon
- * - overhauled url checking, it would break on correct links and allow incorrect ones
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Video/Body.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - kept on the semantic-ui Embed with our FontAwesome play icon: upstream's
+ *   VideoEmbed (Volto 19) is not adopted, it would change the block's look
+ * - YouTube/Vimeo URLs are parsed with videoUrlHelper (io-sanita-theme), the
+ *   same rules checkIfValidVideoLink applies in Edit
+ * - preview_image may be an external URL
+ * - wrapped in ConditionalEmbed (volto-gdpr-privacy): the embed loads only
+ *   after cookie consent
+ * - external URLs play in a <video> tag when allowed (data.allowExternals or
+ *   config.settings.videoAllowExternalsDefault)
+ * - rendered on the client only, to avoid a hydration failure (588ee09)
+ * - playlists read the list= parameter from the URL: upstream 19.4.1 no
+ *   longer returns listID from getVideoIDAndPlaceholder, so its playlist
+ *   embed points to "list=undefined"
+ * - internal mp4 URLs are flattened also when they already contain @@download
+ * - PeerTube, autoplay and title (new in Volto 19) are not supported: our
+ *   Edit validation and sidebar don't offer them
  */
 
 import React, { useState, useEffect } from 'react';
@@ -16,7 +30,7 @@ import { Embed, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import { ConditionalEmbed } from 'volto-gdpr-privacy';
 
-import { isInternalURL, getParentUrl } from '@plone/volto/helpers/Url/Url';
+import { isInternalURL, flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { videoUrlHelper } from 'io-sanita-theme/helpers';
 import { FontAwesomeIcon } from 'io-sanita-theme/components';
 import config from '@plone/volto/registry';
@@ -38,7 +52,7 @@ const Body = ({ data, isEditMode }) => {
 
   let placeholder = null;
   let videoID = null;
-  let listID = null;
+  const listID = data.url?.match(/[?&]list=([^&#]+)/)?.[1] ?? null;
   if (data.url) {
     const [computedID, computedPlaceholder] = videoUrlHelper(
       data.url,
@@ -78,11 +92,6 @@ const Body = ({ data, isEditMode }) => {
     ref: ref,
   };
 
-  let apiPath = config.settings.apiPath;
-  if (!apiPath.endsWith('/')) {
-    apiPath += '/';
-  }
-
   return isClient ? (
     <>
       {data.url && (
@@ -94,7 +103,7 @@ const Body = ({ data, isEditMode }) => {
           <ConditionalEmbed url={data.url} suppressHydrationWarning>
             {data.url.match('youtu') ? (
               <>
-                {data.url.match('list') ? (
+                {listID ? (
                   <Embed
                     suppressHydrationWarning
                     url={`https://www.youtube.com/embed/videoseries?list=${listID}`}
@@ -114,14 +123,10 @@ const Body = ({ data, isEditMode }) => {
                       // eslint-disable-next-line jsx-a11y/media-has-caption
                       <video
                         src={
-                          isInternalURL(
-                            data.url.replace(getParentUrl(apiPath), ''),
-                          )
-                            ? `${data.url}${
-                                data.url.indexOf('@@download/file') < 0
-                                  ? '/@@download/file'
-                                  : ''
-                              }`
+                          isInternalURL(data.url)
+                            ? data.url.includes('@@download')
+                              ? flattenToAppURL(data.url)
+                              : `${flattenToAppURL(data.url)}/@@download/file`
                             : data.url
                         }
                         controls
