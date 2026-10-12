@@ -1,8 +1,11 @@
 /**
  * View container.
  * @module components/theme/View/View
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/View/View.jsx
+ *
  * Customization:
- * - added logging of errors
+ * - added logging of errors (console and Sentry) for CORS errors
  */
 
 import React, { Component } from 'react';
@@ -276,6 +279,13 @@ class View extends Component {
       }
       return (
         <div id="view">
+          <BodyClass
+            className={
+              FoundView.displayName
+                ? `view-${this.cleanViewName(FoundView.displayName)}`
+                : null
+            }
+          />
           <FoundView {...this.props} />
         </div>
       );
@@ -301,7 +311,7 @@ class View extends Component {
         />
         <SlotRenderer name="aboveContent" content={this.props.content} />
         <RenderedView
-          key={this.props.content['@id']}
+          key={flattenToAppURL(this.props.content['@id'])}
           content={this.props.content}
           location={this.props.location}
           token={this.props.token}
