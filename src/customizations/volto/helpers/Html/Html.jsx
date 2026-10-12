@@ -3,6 +3,8 @@
  * @module helpers/Html
  */
 /*
+ original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/helpers/Html/Html.jsx
+
  CUSTOMIZATIONS:
  - Rimosso <link rel="shortcut icon" href="/favicon.ico" /> perchè creato da volto-site-settings
  - Add shrink-to-fit=no in viewport meta
@@ -109,6 +111,12 @@ class Html extends Component {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
+
+          {config.settings.cssLayers && (
+            // Load the CSS layers from config, if any
+            <style>{`@layer ${config.settings.cssLayers.join(', ')};`}</style>
+          )}
+
           {head.style.toComponent()}
 
           <script

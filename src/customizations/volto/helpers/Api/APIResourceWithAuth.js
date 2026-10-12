@@ -1,14 +1,14 @@
 /**
-CUSTOMIZATIONS: 
- * Original from @plone/volto 18.9.1
- * 
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/helpers/Api/APIResourceWithAuth.js
+ *
+ * CUSTOMIZATIONS:
  * - querystring parameters are passed to the backend
- * 
  */
 
 import superagent from 'superagent';
 import config from '@plone/volto/registry';
 import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
+import { getApiSuffix, stripSubpathPrefix } from '@plone/volto/helpers/Url/Url';
 
 /**
  * Get a resource image/file with authenticated (if token exist) API headers
@@ -19,9 +19,9 @@ import { addHeadersFactory } from '@plone/volto/helpers/Proxy/Proxy';
 export const getAPIResourceWithAuth = (req) =>
   new Promise((resolve, reject) => {
     const { settings } = config;
-    const APISUFIX = settings.legacyTraverse ? '' : '/++api++';
-
+    const apiSuffix = getApiSuffix();
     let apiPath = '';
+
     if (settings.internalApiPath && __SERVER__) {
       apiPath = settings.internalApiPath;
     } else if (__DEVELOPMENT__ && settings.devProxyToApiPath) {
@@ -29,8 +29,12 @@ export const getAPIResourceWithAuth = (req) =>
     } else {
       apiPath = settings.apiPath;
     }
+
+    //strip subpath if any
+    const contentPath = stripSubpathPrefix(req.path);
+
     const request = superagent
-      .get(`${apiPath}${__DEVELOPMENT__ ? '' : APISUFIX}${req.path}`)
+      .get(`${apiPath}${__DEVELOPMENT__ ? '' : apiSuffix}${contentPath}`)
       .query(req.query)
       .maxResponseSize(settings.maxResponseSize)
       .responseType('blob');
