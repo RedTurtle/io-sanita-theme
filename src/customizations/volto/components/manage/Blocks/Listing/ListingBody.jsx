@@ -1,6 +1,10 @@
 /*
+original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Listing/ListingBody.jsx
+
 CUSTOMIZATIONS:
-- added skeleton
+- added skeleton, also for legacy `data.template` blocks
+- the aboveListingItems slot is rendered after the headline, only when there
+  are results (nothing is rendered without results in view-mode)
 - display nothing if no results in view-mode
 - pass 'block' prop to listing variation
 - italia pagination
@@ -19,6 +23,7 @@ import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import { TextBlockView } from '@plone/volto-slate/blocks/Text';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
 import { normalizeString } from '@plone/volto/helpers/Utils/Utils';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 import { Pagination } from 'io-sanita-theme/components';
 import {
@@ -114,6 +119,7 @@ const ListingBody = withQuerystringResults((props) => {
     isFolderContentsListing,
     hasLoaded,
     id,
+    content,
     total,
     // additionalFilters,
     // addFilters,
@@ -123,7 +129,6 @@ const ListingBody = withQuerystringResults((props) => {
   // Legacy support if template is present
   const variations = config.blocks?.blocksConfig['listing']?.variations || [];
   const defaultVariation = variations.filter((item) => item.isDefault)?.[0];
-  let SkeletonTemplate = null;
 
   if (data.template && !data.variation) {
     const legacyTemplateConfig = variations.find(
@@ -133,9 +138,9 @@ const ListingBody = withQuerystringResults((props) => {
   } else {
     ListingBodyTemplate =
       variation?.template ?? defaultVariation?.template ?? null;
-    SkeletonTemplate =
-      variation?.skeleton ?? defaultVariation.skeleton ?? DefaultSkeleton;
   }
+  const SkeletonTemplate =
+    variation?.skeleton ?? defaultVariation?.skeleton ?? DefaultSkeleton;
 
   const listingRef = createRef();
 
@@ -175,6 +180,11 @@ const ListingBody = withQuerystringResults((props) => {
               isEditMode={isEditMode}
               // additionalFilters={additionalFilters}
               // addFilters={addFilters}
+            />
+            <SlotRenderer
+              name="aboveListingItems"
+              content={content}
+              data={data}
             />
             <div
               ref={listingRef}
