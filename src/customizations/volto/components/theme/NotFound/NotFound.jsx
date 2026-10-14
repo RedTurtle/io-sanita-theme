@@ -1,4 +1,6 @@
 /*
+original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/NotFound/NotFound.jsx
+
 CUSTOMIZATIONS:
 - Removed the "Site Administration" link, added a link to the home page
 - Added a Search in site bar
@@ -69,10 +71,11 @@ const NotFound = () => {
   const inputRef = useRef(null);
   const [redirectingToResults, setRedirectingToResults] = useState(false);
   const subsite = useSelector((state) => state.subsite?.data);
+  const isMultilingual = useSelector(
+    (state) => state.site.data.features?.multilingual,
+  );
 
-  const navigationRootPath = config.settings.isMultilingual
-    ? `/${toBackendLang(lang)}`
-    : '/';
+  const navigationRootPath = isMultilingual ? `/${toBackendLang(lang)}` : '/';
 
   useEffect(() => {
     dispatch(getNavigation(navigationRootPath, config.settings.navDepth));

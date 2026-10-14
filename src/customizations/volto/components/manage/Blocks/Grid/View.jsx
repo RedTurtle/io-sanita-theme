@@ -1,16 +1,23 @@
 /**
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Grid/View.jsx
+ *
  * Customizations:
- * - used design-react-kit Grid component
+ * - used design-react-kit Row/Col instead of the semantic-ui Grid
+ * - the wrapper doesn't apply the `style` prop
  */
 import { Row, Col } from 'design-react-kit';
 import cx from 'classnames';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 import config from '@plone/volto/registry';
+import { GridContext } from '@plone/volto/components/manage/Blocks/Grid/context';
 
 const GridBlockView = (props) => {
   const { data, path, className } = props;
   const metadata = props.metadata || props.properties;
+  if (data.blocks_layout === undefined) {
+    return null;
+  }
   const columns = data.blocks_layout.items;
   const blocksConfig =
     config.blocks.blocksConfig[data['@type']].blocksConfig ||
@@ -29,17 +36,19 @@ const GridBlockView = (props) => {
     >
       {data.headline && <h2 className="headline">{data.headline}</h2>}
 
-      <Row>
-        <RenderBlocks
-          {...props}
-          blockWrapperTag={Col}
-          metadata={metadata}
-          content={data}
-          location={location}
-          blocksConfig={blocksConfig}
-          isContainer
-        />
-      </Row>
+      <GridContext.Provider value={columns.length}>
+        <Row>
+          <RenderBlocks
+            {...props}
+            blockWrapperTag={Col}
+            metadata={metadata}
+            content={data}
+            location={location}
+            blocksConfig={blocksConfig}
+            isContainer
+          />
+        </Row>
+      </GridContext.Provider>
     </div>
   );
 };

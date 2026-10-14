@@ -1,7 +1,14 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - added id to searchInput label to match aria-describedby tag
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/SearchInput.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: Bootstrap Italia input with a floating label and a
+ *   separate search button; no live-search icon button
+ * - added id to searchInput label to match aria-describedby tag
+ * - the clear button empties the query through onTriggerSearch(''), since
+ *   our withSearch has no removeSearchQuery
+ * - the clear button is a type="button", like upstream's
+ */
 import React, { useState } from 'react';
 import { Button, Icon, Input, Label } from 'design-react-kit';
 import { useIntl } from 'react-intl';
@@ -60,6 +67,7 @@ const SearchInput = (props) => {
       />
       {searchText && (
         <button
+          type="button"
           className="clear-icon bg-transparent"
           onClick={clearSearch}
           title={intl.formatMessage(commonSearchBlockMessages.clearSearch)}

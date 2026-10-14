@@ -1,7 +1,13 @@
-/* CUSTOMIZATIONS:
-  - Agid styling
-  - Pass more useful props to components
-*/
+/*
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/manage/Blocks/Search/components/FilterList.jsx
+ *
+ * CUSTOMIZATIONS:
+ * - Agid styling: Bootstrap Italia accordion that closes on click outside,
+ *   with the clear-all button at the bottom
+ * - Pass more useful props to components
+ * - toggle facets are counted among the applied filters
+ * - the accordion header is a type="button", like upstream's buttons
+ */
 import React, { useMemo, useRef } from 'react';
 import { Button, Icon } from 'design-react-kit';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -51,6 +57,7 @@ const FilterList = (props) => {
   return totalFilters > 0 ? (
     <div className={'accordion-wrapper filter-listing'} ref={ref}>
       <button
+        type="button"
         onClick={() => {
           setIsOpened(!isOpened);
         }}

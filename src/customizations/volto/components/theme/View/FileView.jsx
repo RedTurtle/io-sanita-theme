@@ -1,8 +1,12 @@
 /**
  * File view component.
  * @module components/theme/View/FileView
+ *
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/components/theme/View/FileView.jsx
+ *
+ * Customizations:
  * - changed card layout
- * - decodeURI filename
+ * - decodeURI filename, falling back to the raw one when it is malformed
  */
 
 import { Col, Container, Row } from 'design-react-kit';
@@ -10,6 +14,16 @@ import { Col, Container, Row } from 'design-react-kit';
 import { DownloadFileFormat } from 'io-sanita-theme/helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+const displayFilename = (filename) => {
+  try {
+    return decodeURI(filename);
+  } catch (e) {
+    // a stray "%" in the name makes decodeURI throw
+    return filename;
+  }
+};
 
 /**
  * File view component class.
@@ -38,7 +52,14 @@ const FileView = ({ content }) => (
           <div className="genericcard card card-teaser shadow p-4 mt-3 rounded">
             <div className="card-body">
               <h2 className="card-title h5">
-                {decodeURI(content.file.filename)}
+                {content.file.filename ? (
+                  displayFilename(content.file.filename)
+                ) : (
+                  <FormattedMessage
+                    id="Download file"
+                    defaultMessage="Download file"
+                  />
+                )}
               </h2>
               <DownloadFileFormat file={content.file} iconSize="2x" />
             </div>

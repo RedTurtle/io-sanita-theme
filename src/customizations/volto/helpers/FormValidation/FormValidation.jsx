@@ -1,7 +1,10 @@
 /**
+ * original: https://raw.githubusercontent.com/plone/volto/19.4.1/packages/volto/src/helpers/FormValidation/FormValidation.jsx
+ *
  * Customizzazione:
  * - test empty fields like dataGrid and blocks field (getRealEmptyField)
  * - Supporto alla validazione dei campi DataGridField
+ * - required fields listed twice are checked once
  */
 
 import map from 'lodash/map';
@@ -47,7 +50,14 @@ export const tryParseJSON = (requestItem) => {
     try {
       resultObj = JSON.parse(requestItem.replace(/'/g, '"'));
     } catch (e) {
-      resultObj = null;
+      try {
+        // Treats strings like: `'String "double quotes"'`
+        resultObj = JSON.parse(
+          requestItem.replace(/"/g, '\\"').replace(/'/g, '"'),
+        );
+      } catch (e) {
+        resultObj = null;
+      }
     }
   }
   return resultObj;
@@ -156,6 +166,7 @@ const validateFieldsPerFieldset = (
 
   Object.entries(schema.properties).forEach(([fieldId, field]) => {
     let fieldData = formData[fieldId];
+    field = { ...field, ...field.widgetOptions?.frontendOptions?.widgetProps };
 
     // Validation per specific validator set (format property)
     const hasSpecificValidator =
@@ -254,6 +265,10 @@ const validateFieldsPerFieldset = (
         ...perBehaviorFieldErrors,
         ...blockTypeFieldErrors,
       ];
+    }
+
+    if (errors[fieldId]) {
+      errors[fieldId].title = field.title;
     }
   });
 
