@@ -118,6 +118,7 @@ export default function applyConfig(config) {
     useEmailAsLogin: false,
     defaultPageSize: 24,
     navDepth: 2,
+    siteMapDepth: 3,
     cookieExpires: 15552000, //6 month
     querystringAdditionalFields: [],
 
