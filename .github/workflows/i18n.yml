@@ -24,6 +24,10 @@ jobs:
           node-version: "22"
           cache: "yarn"
 
+      # See lint.yml
+      - name: Serialize Yarn Classic runs
+        run: echo "--mutex \"file:${RUNNER_TEMP}/yarn-classic.lock\"" >> ~/.yarnrc
+
       - name: Install dependencies
         run: yarn install --immutable
 

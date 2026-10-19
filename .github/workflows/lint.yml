@@ -24,6 +24,11 @@ jobs:
           node-version: "22"
           cache: "yarn"
 
+      # Yarn packs the GitHub dependencies with Yarn Classic, in parallel on a
+      # shared cache: on a cold cache the runs corrupt each other (ENOENT).
+      - name: Serialize Yarn Classic runs
+        run: echo "--mutex \"file:${RUNNER_TEMP}/yarn-classic.lock\"" >> ~/.yarnrc
+
       # --immutable fails if yarn.lock is out of sync with package.json
       - name: Install dependencies
         run: yarn install --immutable
