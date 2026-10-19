@@ -956,12 +956,12 @@ msgstr ""
 msgid "aggregation_page_all"
 msgstr "All"
 
-#. Default: "Tutti i contenuti relativi all'argomento "{title}""
+#. Default: "Tutti i contenuti relativi all'argomento \"{title}\""
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_description_argument"
 msgstr "All contents for {title}"
 
-#. Default: "Tutti i contenuti dedicati a "{title}""
+#. Default: "Tutti i contenuti dedicati a \"{title}\""
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_description_tipologia_utente"
 msgstr "All contents for {title}"
@@ -1001,7 +1001,7 @@ msgstr ""
 msgid "alert_endDate"
 msgstr ""
 
-#. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi \"Inizio\" e \"Scadenza\" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_endDate_descr"
 msgstr ""
@@ -1036,7 +1036,7 @@ msgstr ""
 msgid "alert_startDate"
 msgstr ""
 
-#. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi \"Inizio\" e \"Scadenza\" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_startDate_descr"
 msgstr ""
@@ -2651,7 +2651,7 @@ msgstr "Print"
 msgid "publication_date"
 msgstr "Publication date"
 
-#. Default: "Effettua una ricerca per "{quick}""
+#. Default: "Effettua una ricerca per \"{quick}\""
 #: components/Search/common/QuickSearch
 msgid "quick-search-item"
 msgstr "Search for {quick}"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2026-08-06T08:37:25.375Z\n"
+"POT-Creation-Date: 2026-10-19T14:52:34.516Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -958,12 +958,12 @@ msgstr ""
 msgid "aggregation_page_all"
 msgstr ""
 
-#. Default: "Tutti i contenuti relativi all'argomento "{title}""
+#. Default: "Tutti i contenuti relativi all'argomento \"{title}\""
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_description_argument"
 msgstr ""
 
-#. Default: "Tutti i contenuti dedicati a "{title}""
+#. Default: "Tutti i contenuti dedicati a \"{title}\""
 #: components/View/AggregationPage/AggregationPage
 msgid "aggregation_page_description_tipologia_utente"
 msgstr ""
@@ -1003,7 +1003,7 @@ msgstr ""
 msgid "alert_endDate"
 msgstr ""
 
-#. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#. Default: "Se questo campo è compilato il banner verrà mostrato fino a questa data. Se entrambi i campi \"Inizio\" e \"Scadenza\" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_endDate_descr"
 msgstr ""
@@ -1038,7 +1038,7 @@ msgstr ""
 msgid "alert_startDate"
 msgstr ""
 
-#. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi "Inizio" e "Scadenza" sono vuoti il banner è sempre visibile."
+#. Default: "Se questo campo è compilato il banner verrà mostrato a partire da questa data. Se entrambi i campi \"Inizio\" e \"Scadenza\" sono vuoti il banner è sempre visibile."
 #: components/Blocks/Alert/schema
 msgid "alert_startDate_descr"
 msgstr ""
@@ -2653,7 +2653,7 @@ msgstr ""
 msgid "publication_date"
 msgstr ""
 
-#. Default: "Effettua una ricerca per "{quick}""
+#. Default: "Effettua una ricerca per \"{quick}\""
 #: components/Search/common/QuickSearch
 msgid "quick-search-item"
 msgstr ""
