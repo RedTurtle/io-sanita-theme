@@ -1,4 +1,3 @@
-import loadable from '@loadable/component';
 import { defineMessages } from 'react-intl';
 
 import menuSVG from '@plone/volto/icons/menu.svg';
@@ -39,6 +38,11 @@ import logSVG from 'io-sanita-theme/icons/log.svg';
 
 import reducers from 'io-sanita-theme/reducers';
 import { Icon, FileWidget, CardSimple } from 'io-sanita-theme/components';
+// Not loadable: a lazy component used directly as an `addonRoutes` component
+// renders nothing on the first client render while the server rendered it in
+// full, so React throws the whole hydrated tree away. Route components are
+// always needed for the route they serve, so splitting them buys nothing.
+import ReleaseLog from 'io-sanita-theme/components/ReleaseLog/ReleaseLog';
 // Imported from its own module rather than from the barrel, which exports it
 // through loadable(): see the note on ReleaseLog above.
 import LoginAgid from 'io-sanita-theme/components/LoginAgid/LoginAgid';
@@ -68,12 +72,6 @@ import applyUtilitiesConfig from 'io-sanita-theme/config/utilities';
 import getIoSanitaWidgets from 'io-sanita-theme/config/widgets/widgets';
 export const AGGREGATION_PAGE_ARGOMENTO = '/argomento/';
 export const AGGREGATION_PAGE_TIPOLOGIA_UTENTE = '/tipologia-utente/';
-
-// Not loadable: a lazy component used directly as an `addonRoutes` component
-// renders nothing on the first client render while the server rendered it in
-// full, so React throws the whole hydrated tree away. Route components are
-// always needed for the route they serve, so splitting them buys nothing.
-import ReleaseLog from 'io-sanita-theme/components/ReleaseLog/ReleaseLog';
 
 const messages = defineMessages({
   search_brdc: {
