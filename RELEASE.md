@@ -41,6 +41,10 @@
 - ...
  -->
 
+## Versione 2.38.2 (20/10/2026)
+
+- Accessibilità: sistemato l'ordine delle intestazioni nelle pagine che generavano problemi di accessiblità.
+
 ## Versione 2.38.1 (28/09/2026)
 
 - Accessibilità: la pagina di errore 404 ora ha un titolo (es. "Pagina non trovata - Nome del sito"), che prima era vuoto: così la scheda del browser, la cronologia e i lettori di schermo riconoscono subito che si tratta di una pagina non trovata.
