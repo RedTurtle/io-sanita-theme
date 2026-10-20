@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.38.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.1...2.38.2) (2026-10-20)
+
+### Bug Fixes
+
+* a11y h  ([a8492f9](https://github.com/RedTurtle/io-sanita-theme/commit/a8492f9aa565131f34247a2fd7d04b18037c6402))
+* a11y heading levels for Event date section ([#192](https://github.com/RedTurtle/io-sanita-theme/issues/192)) ([2862772](https://github.com/RedTurtle/io-sanita-theme/commit/28627723f91bd1d042016bfb2b8914f0d3b37fe2))
+* dedupe pushSections by key across all sections ([#193](https://github.com/RedTurtle/io-sanita-theme/issues/193)) ([f688ca8](https://github.com/RedTurtle/io-sanita-theme/commit/f688ca8da27b3ffabfa3722e7fc04bd697665580))
+* non renderizzare i blocchi listing senza criteri di ricerca ([#182](https://github.com/RedTurtle/io-sanita-theme/issues/182)) ([2d4d382](https://github.com/RedTurtle/io-sanita-theme/commit/2d4d382551ba79e46a73aa947ed9648c51d6fb8e))
+
+### Maintenance
+
+* preparing release 2.38.2 ([87c227b](https://github.com/RedTurtle/io-sanita-theme/commit/87c227bf08e5f063a17f840ce92d899330c79352))
+
 ## [2.38.1](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.0...2.38.1) (2026-09-28)
 
 ### Bug Fixes
