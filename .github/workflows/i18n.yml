@@ -1,0 +1,43 @@
+name: i18n
+
+on:
+  push:
+    branches: [main, 3.x]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  i18n:
+    name: Locales in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: "yarn"
+
+      # See lint.yml
+      - name: Serialize Yarn Classic runs
+        run: echo "--mutex \"file:${RUNNER_TEMP}/yarn-classic.lock\"" >> ~/.yarnrc
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Sync messages
+        run: yarn i18n
+
+      # POT-Creation-Date changes on every run, so it is not a real difference
+      - name: Check locales are committed
+        run: |
+          if ! git diff --exit-code -I 'POT-Creation-Date' -- locales; then
+            echo "::error::Locales are out of sync. Run 'make i18n' and commit the result."
+            exit 1
+          fi

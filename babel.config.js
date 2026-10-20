@@ -2,7 +2,7 @@ module.exports = function (api) {
   api.cache(true);
   const presets = [
     [
-      'razzle',
+      '@plone/babel-preset-razzle',
       {
         '@babel/preset-react': { runtime: 'automatic' },
       },

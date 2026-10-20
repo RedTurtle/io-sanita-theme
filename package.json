@@ -70,7 +70,7 @@
     "@babel/core": "7.19.6",
     "@babel/eslint-parser": "7.23.3",
     "@babel/plugin-syntax-export-namespace-from": "^7.8.3",
-    "@plone/scripts": "^3.3.2",
+    "@plone/scripts": "4.0.1",
     "babel-plugin-lodash": "^3.3.4",
     "eslint": "8.49.0",
     "eslint-config-prettier": "9.0.0",
