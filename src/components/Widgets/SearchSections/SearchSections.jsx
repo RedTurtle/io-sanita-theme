@@ -82,10 +82,10 @@ export default function SearchSections({
   return (
     <>
       {title && sections.length > 0 && (
-        <h6 className="text-uppercase">
+        <h2 className="h6 text-uppercase">
           {/* SECTION TITLE */}
           {title}
-        </h6>
+        </h2>
       )}
       {sections.map((s) => {
         const children =

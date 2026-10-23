@@ -18,7 +18,7 @@ const ContentTypeViewSections = ({ content, defaultSections }) => {
     pushable_sections.forEach((p) => {
       const i =
         p.atIndex > sections?.length - 1 ? sections?.length - 1 : p.atIndex;
-      if (sections[i].key !== p.key) {
+      if (!sections.some((s) => s.key === p.key)) {
         sections.splice(i, 0, p);
       }
     });

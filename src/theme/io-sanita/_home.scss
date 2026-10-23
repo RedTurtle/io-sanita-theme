@@ -1,9 +1,7 @@
 .siteroot,
 body.public-ui.contenttype-lrf:not(.section-search) {
   .documentFirstHeading {
-    height: 0;
-    margin: 0;
-    visibility: hidden;
+    @include visually-hidden;
   }
   #briciole {
     display: none;
@@ -14,9 +12,7 @@ body.subsite.subsite-root:not(.section-search) {
   &,
   .public-ui {
     .documentFirstHeading {
-      height: 0;
-      margin: 0;
-      visibility: hidden;
+      @include visually-hidden;
     }
     #briciole {
       display: none;

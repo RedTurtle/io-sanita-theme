@@ -22,6 +22,7 @@ export const CardSimple = ({
   isEditMode,
   className,
   titleTag = 'h5',
+  titleClassName,
   titleDataElement,
   highlight, //se si vuole evidenziare un testo, ad esempio nei risultati delle ricerche
   badgeText,
@@ -61,7 +62,12 @@ export const CardSimple = ({
     <Card className={`shadow rounded no-after card-simple ${className ?? ''}`}>
       <CardBody>
         <div className="card-body-main">
-          <CardTitle tag={titleTag} className={display_badge ? 'mb-1' : ''}>
+          <CardTitle
+            tag={titleTag}
+            className={[titleClassName, display_badge ? 'mb-1' : '']
+              .filter(Boolean)
+              .join(' ')}
+          >
             {item['@id'] ? (
               <UniversalLink
                 item={!isEditMode ? item : null}
