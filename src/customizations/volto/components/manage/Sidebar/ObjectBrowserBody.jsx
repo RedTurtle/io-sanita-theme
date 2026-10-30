@@ -534,9 +534,10 @@ class ObjectBrowserBody extends Component {
                           </Breadcrumb.Section>
                         ) : (
                           <>
-                            <Breadcrumb.Divider key={`divider-${item.url}`} />
+                            <Breadcrumb.Divider />
                             <Breadcrumb.Section
                               role="button"
+                              title={item}
                               onClick={() =>
                                 this.navigateTo(
                                   items.slice(0, index + 1).join('/'),
