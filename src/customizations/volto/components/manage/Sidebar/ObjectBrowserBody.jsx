@@ -534,7 +534,7 @@ class ObjectBrowserBody extends Component {
                           </Breadcrumb.Section>
                         ) : (
                           <>
-                            <Breadcrumb.Divider key={`divider-${items.slice(0, index + 1).join('/')}`} />
+                            <Breadcrumb.Divider />
                             <Breadcrumb.Section
                               role="button"
                               title={item}
