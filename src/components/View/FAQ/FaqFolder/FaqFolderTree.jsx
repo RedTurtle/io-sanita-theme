@@ -82,7 +82,7 @@ const FaqFolderTree = ({ tree }) => {
                           <div className="faq-description">{r.description}</div>
                         )}
                         <div className="faq-text">
-                          <TextOrBlocks content={r} />
+                          <TextOrBlocks content={r} nested />
                         </div>
                       </AccordionBody>
                     </div>

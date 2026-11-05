@@ -142,7 +142,7 @@ const CartellaModulisticaView = ({ content }) => {
                   {/* <h3>{section.title}</h3> */}
                   {section.blocks &&
                     Object.keys(section.blocks)?.length > 0 && (
-                      <TextOrBlocks content={section} />
+                      <TextOrBlocks content={section} nested />
                     )}
 
                   {section.items && section.items?.length > 0 && (
