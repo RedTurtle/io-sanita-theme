@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.38.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.2...2.38.3) (2026-11-11)
+
+### Bug Fixes
+
+* add title to objectbrowser breadcrumb items to show full text on hover ([#200](https://github.com/RedTurtle/io-sanita-theme/issues/200)) ([80fbc4f](https://github.com/RedTurtle/io-sanita-theme/commit/80fbc4fb52ada1cf371a837a17ff8227f8f6ad6f))
+* nascondere i listing senza criteri solo nei blocchi annidati ([#202](https://github.com/RedTurtle/io-sanita-theme/issues/202)) ([09e70ae](https://github.com/RedTurtle/io-sanita-theme/commit/09e70ae3ee3b893e91c43571069cc872416aa78e)), closes [#182](https://github.com/RedTurtle/io-sanita-theme/issues/182) [#182](https://github.com/RedTurtle/io-sanita-theme/issues/182)
+
 ## [2.38.2](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.1...2.38.2) (2026-10-20)
 
 ### Bug Fixes
