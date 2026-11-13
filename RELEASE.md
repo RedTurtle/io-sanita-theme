@@ -45,7 +45,7 @@
 
 ### Novità
 
-- aggiunto il blocco "Nascondi/Mostra" che permette di nascondere o mostrare contenuti nella pagina al clic dell'utente.
+- Aggiunto l'opzione "Nascondi/Mostra" sui blocchi, che permette di nascondere o mostrare contenuti nella pagina al click dell'utente.
 
 ## Versione 2.38.2 (20/10/2026)
 
