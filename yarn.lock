@@ -8756,6 +8756,7 @@ __metadata:
     volto-feedback-italia: 1.0.8
     volto-form-block-italia: 1.1.2
     volto-gdpr-privacy: 2.4.0
+    volto-hideshow-blocks: ^1.0.7
     volto-querywidget-with-browser: 0.4.3
     volto-repeatable-content-block: 1.5.0
     volto-rss-block: 3.0.1
@@ -13816,6 +13817,15 @@ __metadata:
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
   checksum: 96a56a3647dc9510051804a0880816cc4b0d5575e043b2b71e7579a411c01a34576bd4d2104621f9fff20f579b6f8a590776014a401410ef9a242312ede8b0bf
+  languageName: node
+  linkType: hard
+
+"volto-hideshow-blocks@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "volto-hideshow-blocks@npm:1.0.7"
+  peerDependencies:
+    "@plone/volto": ^17.0.0
+  checksum: a85b374319ab7d46bd3a073be1fb68c5a1d8bdcb15682bdbd53ebaf2aae51fbb36b9ebd27feb6025530c0a686805a9270638d9067db54cc8800e3a5bebcbd32e
   languageName: node
   linkType: hard
 
