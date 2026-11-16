@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.39.0](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.3...2.39.0) (2026-11-16)
+
+### Features
+
+* added volto-hideshow-blocks dependency ([#203](https://github.com/RedTurtle/io-sanita-theme/issues/203)) ([87538b9](https://github.com/RedTurtle/io-sanita-theme/commit/87538b9b103ac4f129d73f5fc13f1c572f2779a7))
+
+### Maintenance
+
+* preparing release 2.39.0 ([d2e48ad](https://github.com/RedTurtle/io-sanita-theme/commit/d2e48adf44dde5ad276f1df5593d3f8b25b98863))
+
 ## [2.38.3](https://github.com/RedTurtle/io-sanita-theme/compare/2.38.2...2.38.3) (2026-11-11)
 
 ### Bug Fixes
