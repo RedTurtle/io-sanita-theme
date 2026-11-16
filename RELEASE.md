@@ -41,7 +41,7 @@
 - ...
  -->
 
-## Versione X.X.X (dd/mm/yyyy)
+## Versione 2.39.0 (16/11/2026)
 
 ### Novità
 
