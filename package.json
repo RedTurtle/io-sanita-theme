@@ -38,7 +38,8 @@
     "volto-site-settings",
     "volto-rss-block",
     "@eeacms/volto-taxonomy",
-    "volto-repeatable-content-block"
+    "volto-repeatable-content-block",
+    "volto-hideshow-blocks"
   ],
   "prettier": {
     "trailingComma": "all",
