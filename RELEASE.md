@@ -41,6 +41,12 @@
 - ...
  -->
 
+## Versione X.X.X (dd/mm/yyyy)
+
+### Novità
+
+- Aggiunta l'opzione "Nascondi/Mostra" ai blocchi, che consente al redattore di nascondere o visualizzare alcuni blocchi contenuti nella pagina con un semplice click.
+
 ## Versione 2.38.2 (20/10/2026)
 
 - Accessibilità: sistemato l'ordine delle intestazioni nelle pagine che generavano problemi di accessiblità.
