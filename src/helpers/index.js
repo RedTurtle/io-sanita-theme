@@ -71,6 +71,11 @@ export PuntoDiContattoValue from 'io-sanita-theme/helpers/Views/PuntoDiContattoV
 //address and maps
 export Address from 'io-sanita-theme/helpers/Address/Address';
 export { mapPinDirections } from 'io-sanita-theme/helpers/Address/mapPin';
+export {
+  getGoogleMapsUrl,
+  getBingMapsUrl,
+  getAppleMapsUrl,
+} from 'io-sanita-theme/helpers/Address/mapsUrls';
 
 //item
 export { getItemIcon, hasGeolocation } from 'io-sanita-theme/helpers/Item/item';
