@@ -1,0 +1,1 @@
+Il link "Apri in Google Maps" di `CardPlace` e dei popup delle mappe usava un indirizzo non codificato mescolato alle coordinate e poteva puntare a un luogo sbagliato. Ora usa `https://www.google.com/maps/search/?api=1&query=` con le coordinate se presenti, altrimenti con l'indirizzo codificato (stesso encoding per i link Bing e Apple Maps).

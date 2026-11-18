@@ -14,7 +14,11 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import VoltoIcon from '@plone/volto/components/theme/Icon/Icon';
 import ASLIcon from 'io-sanita-theme/icons/ASL.svg';
 import { CardCategoryBottom } from 'io-sanita-theme/components';
-import { Address, hasGeolocation } from 'io-sanita-theme/helpers';
+import {
+  Address,
+  hasGeolocation,
+  getGoogleMapsUrl,
+} from 'io-sanita-theme/helpers';
 import { OSMMap } from 'volto-venue';
 import './cardPlace.scss';
 
@@ -136,9 +140,7 @@ const CardPlace = ({
               </>
             )}
           <UniversalLink
-            href={`http://maps.google.com/?q=${item?.street ?? ''} ${
-              item?.zip_code ?? ''
-            } ${item?.city ?? ''} ${item?.province ?? ''} ${latLong}`}
+            href={getGoogleMapsUrl(item)}
             target="_blank"
             rel="noopener noreferrer"
           >

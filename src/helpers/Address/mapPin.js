@@ -1,6 +1,11 @@
 import React from 'react';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { defineMessages } from 'react-intl';
+import {
+  getAppleMapsUrl,
+  getBingMapsUrl,
+  getGoogleMapsUrl,
+} from 'io-sanita-theme/helpers/Address/mapsUrls';
 
 const messages = defineMessages({
   view_on_googlemaps: {
@@ -24,11 +29,7 @@ export const mapPinDirections = (item, intl, extraContent) => {
       {extraContent}
       <p>
         <UniversalLink
-          href={`http://maps.google.com/?q=${item.street ?? ''} ${
-            item.zip_code ?? ''
-          } ${item.city ?? ''} ${item.province ?? ''} ${
-            item.geolocation.latitude
-          },${item.geolocation.longitude}`}
+          href={getGoogleMapsUrl(item)}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -37,9 +38,7 @@ export const mapPinDirections = (item, intl, extraContent) => {
       </p>
       <p>
         <UniversalLink
-          href={`https://bing.com/maps/default.aspx?where1=${
-            item.street ?? ''
-          } ${item.zip_code ?? ''} ${item.city ?? ''} ${item.province ?? ''}`}
+          href={getBingMapsUrl(item)}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -48,9 +47,7 @@ export const mapPinDirections = (item, intl, extraContent) => {
       </p>
       <p>
         <UniversalLink
-          href={`http://maps.apple.com/?q=${item.street ?? ''} ${
-            item.zip_code ?? ''
-          } ${item.city ?? ''} ${item.province ?? ''}`}
+          href={getAppleMapsUrl(item)}
           target="_blank"
           rel="noopener noreferrer"
         >
