@@ -1,6 +1,7 @@
 .siteroot,
 body.public-ui.contenttype-lrf:not(.section-search) {
-  .documentFirstHeading {
+  .documentFirstHeading,
+  .PageHeaderWrapper {
     height: 0;
     margin: 0;
     visibility: hidden;
@@ -13,7 +14,8 @@ body.public-ui.contenttype-lrf:not(.section-search) {
 body.subsite.subsite-root:not(.section-search) {
   &,
   .public-ui {
-    .documentFirstHeading {
+    .documentFirstHeading,
+    .PageHeaderWrapper {
       height: 0;
       margin: 0;
       visibility: hidden;
