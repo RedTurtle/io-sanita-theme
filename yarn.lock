@@ -10355,7 +10355,7 @@ __metadata:
     volto-blocks-widget: "github:collective/volto-blocks-widget"
     volto-data-grid-widget: 2.4.1
     volto-dropdownmenu: 4.1.6
-    volto-editablefooter: "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order"
+    volto-editablefooter: 5.1.13
     volto-feedback: 0.7.3
     volto-feedback-italia: 1.0.8
     volto-form-block-italia: 1.1.2
@@ -15525,13 +15525,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-editablefooter@github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order":
-  version: 5.1.11
-  resolution: "volto-editablefooter@https://github.com/RedTurtle/volto-editablefooter.git#commit=6942dc4f189cf191fcc94314187296522fcfaff0"
+"volto-editablefooter@npm:5.1.13":
+  version: 5.1.13
+  resolution: "volto-editablefooter@npm:5.1.13"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
     volto-blocks-widget: ">=3.4.0"
-  checksum: 5eb3712b5246c81f1aec79229793b2b59079bc8e7903873970bd9fef51efa878d0a7690f09bf6f0ec2c37bf84fcfd1cffe100edd48532a8d48ba6181a3cf3ae0
+  checksum: 83ad496686162ae40bc0c698abfeff62156ff9b9a8ef4c0e7c1a524c5ad9f04aaf8af2672a294d0fa8d5298faa199f3c3a62264d0abd7b9b0cbe7c46552aaea7
   languageName: node
   linkType: hard
 
