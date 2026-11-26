@@ -128,7 +128,7 @@
     "volto-blocks-widget": "github:collective/volto-blocks-widget",
     "volto-data-grid-widget": "2.4.1",
     "volto-dropdownmenu": "4.1.6",
-    "volto-editablefooter": "github:RedTurtle/volto-editablefooter#fix/footer-top-hooks-order",
+    "volto-editablefooter": "5.1.13",
     "volto-feedback": "0.7.3",
     "volto-feedback-italia": "1.0.8",
     "volto-form-block-italia": "1.1.2",
